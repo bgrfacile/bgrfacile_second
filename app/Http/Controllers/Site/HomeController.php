@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function __invoke()
     {
         if (Role::count() == 0) {
             app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
@@ -18,6 +18,6 @@ class HomeController extends Controller
         }
 
 
-        return view('welcome');
+        return view('site.Home');
     }
 }
