@@ -1,5 +1,5 @@
 require('./bootstrap');
- import  ReactDOM  from 'react-dom';
- import App from './components/App';
+import ReactDOM from 'react-dom';
+import RoutePath from './AppCourse/RoutePath';
 
- ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<RoutePath />, document.getElementById('root'));

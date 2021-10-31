@@ -20,7 +20,7 @@
             }">
 
                 <strong class="text-4xl font-medium text-black dark:text-gray-200"
-                    x-text="'+de '+Math.round(current)"></strong>
+                    x-text="''+Math.round(current)"></strong>
             </div>
 
         </div>

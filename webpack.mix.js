@@ -16,4 +16,17 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
-mix.js('resources/js/appCourse.js', 'public/js').react();
+mix.js('resources/js/appCourse.js', 'public/js')
+    .react()
+    .postCss('resources/css/appCourse.css', 'public/css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ])
+    .webpackConfig(require('./webpack.config'));
+
+
+if (mix.inProduction()) {
+    mix.version();
+}
+

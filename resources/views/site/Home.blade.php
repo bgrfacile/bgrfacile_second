@@ -1,5 +1,5 @@
 <x-site-layout>
-
+    <x-slot name="script"></x-slot>
     <x-slot name="header">
         <header class="bg-transparent dark:bg-gray-900 bg-cover bg-center bg-no-repeat headline"
             style="background-image: url(https://demo.gethugothemes.com/northendlab-light/images/banner/banner-bg.svg)">
@@ -32,7 +32,7 @@
                                 @click="open = false" class="absolute z-10 ml-4 mt-2">
                                 <div
                                     class="bg-white p-4 text-gray-500 dark:bg-gray-700 rounded-lg grid grid-rows-4 shadow-lg overflow-hidden w-full">
-                                    <a href="#"
+                                    <a href="{{ route('cours.page') }}"
                                         class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
                                         <x-svg-book-open class="mr-1 h-5 w-5" />
                                         <span class="text-base font-medium">Cours</span>
