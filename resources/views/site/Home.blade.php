@@ -1,5 +1,5 @@
 <x-site-layout>
-    <x-slot name="script"></x-slot>
+
     <x-slot name="header">
         <header class="bg-transparent dark:bg-gray-900 bg-cover bg-center bg-no-repeat headline"
             style="background-image: url(https://demo.gethugothemes.com/northendlab-light/images/banner/banner-bg.svg)">
@@ -37,17 +37,17 @@
                                         <x-svg-book-open class="mr-1 h-5 w-5" />
                                         <span class="text-base font-medium">Cours</span>
                                     </a>
-                                    <a href="#"
+                                    <a href="{{ route('exercices.page') }}"
                                         class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
                                         <x-svg-exo class="mr-1 h-5 w-5" />
                                         <span class="text-base font-medium">Exercices</span>
                                     </a>
-                                    <a href="#"
+                                    <a href="{{ route('formation.page') }}"
                                         class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
                                         <x-svg-formation class="mr-1 h-5 w-5" />
                                         <span class="text-base font-medium">Formations</span>
                                     </a>
-                                    <a href="#"
+                                    <a href="{{ route('bonus.page') }}"
                                         class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
                                         <x-svg-bonus class="mr-1 h-5 w-5" />
                                         <span class="text-base font-medium">Bonus</span>
@@ -184,8 +184,8 @@
                                 <x-svg-school class="w-full h-full object-cover" />
                             </div>
                             <div class="swiper-slide">
-                                <img class="w-full max-h-full object-cover" src="{{ asset('img/eleve_etudie.webp') }}"
-                                    alt="étudiants qui étudient">
+                                <img class="w-full max-h-full object-cover"
+                                    src="{{ asset('img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
                             </div>
                         </div>
                         {{-- <div class="swiper-pagination"></div> --}}

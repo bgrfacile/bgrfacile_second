@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js?id=f580d8fc9e5990211674",
-    "/js/appCourse.js": "/js/appCourse.js?id=e959bac7a287852d7566",
-    "/css/appCourse.css": "/css/appCourse.css?id=717266a7162be366b491",
-    "/css/app.css": "/css/app.css?id=d61579a6800bdad73693"
+    "/js/app.js": "/js/app.js",
+    "/js/appCourse.js": "/js/appCourse.js",
+    "/css/appCourse.css": "/css/appCourse.css",
+    "/css/app.css": "/css/app.css"
 }

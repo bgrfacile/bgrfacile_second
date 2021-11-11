@@ -1,4 +1,5 @@
-<nav x-data="{ open: false }" class="relative bg-white dark:bg-gray-800 border-b border-gray-100 shadow">
+<nav x-data="{ open: false }"
+    class="relative bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 shadow">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -33,15 +34,9 @@
                                 <div
                                     class="rounded-lg shadow-lg grid grid-cols-3 gap-4 bg-white dark:bg-gray-700 px-5 py-6 sm:gap-8 sm:p-8">
 
-                                    <a href="#"
+                                    <a href="{{ route('cours.page') }}"
                                         class="dark:text-gray-400 -m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 ">
-                                        <!-- Heroicon name: outline/chart-bar -->
-                                        <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                        </svg>
+                                        <x-svg-book-open class="flex-shrink-0 h-6 w-6" />
                                         <div class="ml-4">
                                             <p class="text-base font-medium text-gray-900 dark:text-gray-200">
                                                 Cours
@@ -52,15 +47,9 @@
                                         </div>
                                     </a>
 
-                                    <a href="#"
+                                    <a href="{{ route('exercices.page') }}"
                                         class="dark:text-gray-400 -m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
-                                        <!-- Heroicon name: outline/cursor-click -->
-                                        <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                                        </svg>
+                                        <x-svg-exo class="flex-shrink-0 h-6 w-6" />
                                         <div class="ml-4">
                                             <p class="text-base font-medium text-gray-900 dark:text-gray-200">
                                                 Exercices
@@ -71,15 +60,9 @@
                                         </div>
                                     </a>
 
-                                    <a href="#"
+                                    <a href="{{ route('formation.page') }}"
                                         class="dark:text-gray-400 -m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
-                                        <!-- Heroicon name: outline/cursor-click -->
-                                        <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                                        </svg>
+                                        <x-svg-formation class="flex-shrink-0 h-6 w-6" />
                                         <div class="ml-4">
                                             <p class="text-base font-medium text-gray-900 dark:text-gray-200">
                                                 Formations
@@ -90,15 +73,9 @@
                                         </div>
                                     </a>
 
-                                    <a href="#"
+                                    <a href="{{ route('bonus.page') }}"
                                         class="dark:text-gray-400 -m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">
-                                        <!-- Heroicon name: outline/cursor-click -->
-                                        <svg class="flex-shrink-0 h-6 w-6 text-indigo-600"
-                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                                        </svg>
+                                        <x-svg-bonus class="flex-shrink-0 h-6 w-6" />
                                         <div class="ml-4">
                                             <p class="text-base font-medium text-gray-900 dark:text-gray-200">
                                                 Bonus
@@ -117,10 +94,10 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('écoles en ligne') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('about.page')" :active="request()->routeIs('about.page')">
                         {{ __('Qui sommes nous?') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('donation.page')" :active="request()->routeIs('donation.page')">
                         {{ __('Faire un don') }}
                     </x-nav-link>
                 </div>
@@ -168,7 +145,7 @@
 
                                         <x-dropdown-link :href="route('logout')"
                                             onclick="event.preventDefault();this.closest('form').submit();">
-                                            {{ __('Log Out') }}
+                                            {{ __('Déconnexion') }}
                                         </x-dropdown-link>
                                     </form>
                                 </div>
@@ -219,9 +196,8 @@
                             @csrf
 
                             <x-responsive-nav-link :href="route('logout')"
-                                onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                            this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                onclick="event.preventDefault();                                                                                                                                                                                                                                                                                                                                                                 this.closest('form').submit();">
+                                {{ __('Déconnexion') }}
                             </x-responsive-nav-link>
                         </form>
                     </div>

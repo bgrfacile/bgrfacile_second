@@ -29,7 +29,7 @@
     </style>
     <!-- script -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    {{ $script }}
+
 </head>
 
 <body class="font-sans antialiased text-black" style="background-color: #e5e5f7;
