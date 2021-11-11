@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\AboutController;
+use App\Http\Controllers\Site\ContactController;
 use App\Http\Controllers\Site\CoursController;
 use App\Http\Controllers\Site\DonationController;
+use App\Http\Controllers\Site\EcoleEnLigneController;
 use App\Http\Controllers\Site\HomeController;
 use App\Http\Controllers\Site\ProfilController;
 use App\Models\User;
@@ -13,8 +15,13 @@ use Spatie\Permission\Models\Role;
 
 
 Route::get('/', HomeController::class)->name('home.page');
+Route::get('/ecole-en-ligne', [EcoleEnLigneController::class,'index'])->name('ecoleEnLigne.page');
+Route::get('/ecole-en-ligne/create', [EcoleEnLigneController::class,'create'])->name('ecoleEnLigne.create');
 Route::get('/donation', DonationController::class)->name('donation.page');
-Route::get('/qui-sommes-nous', AboutController::class)->name('about.page');
+Route::get('/qui-sommes-nous', [AboutController::class,'who'])->name('who.page');
+Route::get('/about', [AboutController::class,'about'])->name('about.page');
+Route::get('/politique-de-confidentialite', [AboutController::class,'politiqueDeConfidentialite'])->name('politique.page');
+Route::get('/contact', [ContactController::class,'index'])->name('contact.page');
 Route::get('/login2', function () {
     return view('site.login2');
 });

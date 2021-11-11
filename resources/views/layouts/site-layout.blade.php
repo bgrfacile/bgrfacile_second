@@ -27,6 +27,8 @@
         }
 
     </style>
+    <link rel="stylesheet"
+        href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- script -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -81,21 +83,26 @@ background-size: 10px 10px;">
                     <div class="flex flex-wrap items-top mb-6">
                         <div class="w-full lg:w-4/12 px-4 ml-auto">
                             <span class="block uppercase text-black text-lg font-bold mb-2 dark:text-gray-200">
-                                Pages
+                                Me contacter
                             </span>
                             <ul class="list-unstyled">
                                 <li>
                                     <a class="text-blueGray-600 dark:text-gray-400 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="">À propos de nous</a>
+                                        href="{{ route('contact.page') }}">Par Email</a>
                                 </li>
                                 <li>
                                     <a class="text-blueGray-600 dark:text-gray-400 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="">Home</a>
+                                        href="{{ route('about.page') }}">À propos du site</a>
                                 </li>
                                 <li>
                                     <a class="text-blueGray-600 dark:text-gray-400 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                        href="">Profil</a>
+                                        href="{{ route('who.page') }}">Qui sommes-nous?</a>
                                 </li>
+                                <li>
+                                    <a class="text-blueGray-600 dark:text-gray-400 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                        href="{{ route('politique.page') }}">Politique de confidentialité</a>
+                                </li>
+
                             </ul>
                         </div>
                         {{-- <div class="w-full lg:w-4/12 px-4">

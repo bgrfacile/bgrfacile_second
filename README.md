@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://www.bgrfacile.com" target="_blank">
-<img src="/public/img/logo_short_bgrfacile.png.svg" alt="logo bgrfacile">
+<img src="/public/img/logo_short_bgrfacile.png.svg" alt="logo bgrfacile" width="200" height="auto">
 </a>
 </p>
 

@@ -13,7 +13,7 @@ import ListManager from "../../components/ListManager";
 
 export default function CoursRoute() {
     return <>
-        <div className="flex p-2 h-screen rounded-box">
+        <div className="flex p-2 mb-4 rounded-box">
             <div className="mr-2 p-2 w-64 h-full rounded-box">
                 <ListManager/>
             </div>

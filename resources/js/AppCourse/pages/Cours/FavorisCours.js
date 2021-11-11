@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Route, BrowserRouter, Switch, Link } from "react-router-dom";
 import BreadCrumb from "../../components/BreadCrumb";
-import TreeItem from '@mui/lab/TreeItem';
-import TreeView from '@mui/lab/TreeView';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import CustomTreeItem from "../../hooks/TreeItemhook";
+import CardCoursItem from "../../components/Cards/CardCoursItem";
+
 
 function FavorisCours() {
     return (<>
-    ok
         <BreadCrumb title="Favoris" />
+        <div className="h-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8">
+        <CardCoursItem />
+        </div>
+
     </>);
 }
 
