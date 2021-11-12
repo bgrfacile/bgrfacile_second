@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import CustomTreeItem from "../hooks/CustomTreeItem";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import StyledTreeItem from "../hooks/StyledTreeItem";
 
 export default function ListManager() {
     return <>
@@ -21,7 +20,7 @@ export default function ListManager() {
                 <TreeItem nodeId="2" label="Cours Aléatoire" />
             </Link>
 
-            <StyledTreeItem className="text-red-500" nodeId="3" label="Cours Scolaires">
+            <CustomTreeItem className="text-red-500" nodeId="3" label="Cours Scolaires">
                 <Link to="/cours/scolaire">
                     <TreeItem className="text-gray-700"  nodeId="31" label="Collège" />
                 </Link>
@@ -29,7 +28,7 @@ export default function ListManager() {
                 <Link to="/cours/scolaire">
                     <TreeItem className="text-gray-700" nodeId="32" label="Lycée" />
                 </Link>
-            </StyledTreeItem>
+            </CustomTreeItem>
 
             <CustomTreeItem nodeId="4" label="Autres type de cours">
                 <Link to="/cours/others">
