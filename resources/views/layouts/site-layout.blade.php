@@ -39,7 +39,7 @@ opacity: 0.8;
 background-image: radial-gradient(#2196F3 0.5px, #e5e5f7 0.5px);
 background-size: 10px 10px;">
     <div class="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-700">
-        @include('layouts.navigavation-site')
+        @include('layouts.site-navigavation')
 
         <!-- Page Heading -->
         {{ $header }}

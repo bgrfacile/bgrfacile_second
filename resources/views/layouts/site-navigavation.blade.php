@@ -140,9 +140,13 @@
                             <x-slot name="content">
                                 <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
                                     <!-- Authentication -->
+                                    @role('super-admin')
+                                        <x-dropdown-link :href="route('dashboard')">
+                                            {{ __('Administration') }}
+                                        </x-dropdown-link>
+                                    @endrole
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
-
                                         <x-dropdown-link :href="route('logout')"
                                             onclick="event.preventDefault();this.closest('form').submit();">
                                             {{ __('Déconnexion') }}

@@ -52,6 +52,7 @@ export default function CardCoursItem() {
             <HtmlTooltip
                 disableFocusListener
                 title={<ToolTipDesc />}>
+                <h5 className="mt-4 text-black text-base">La biologie</h5>
                 <h4 className="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">La biologie</h4>
             </HtmlTooltip>
             <div className="my-4">
