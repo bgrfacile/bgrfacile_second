@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_AppDashboard_Pages_Dashboard_Index_js"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_AppDashboard_Pages_dashboard-layout_js"],{
 
 /***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
 /*!**********************************************************************!*\
@@ -20580,46 +20580,6 @@ __webpack_require__.r(__webpack_exports__);
 function within(min, value, max) {
   return (0,_math_js__WEBPACK_IMPORTED_MODULE_0__.max)(min, (0,_math_js__WEBPACK_IMPORTED_MODULE_0__.min)(value, max));
 }
-
-/***/ }),
-
-/***/ "./resources/js/AppDashboard/Pages/Dashboard/Index.js":
-/*!************************************************************!*\
-  !*** ./resources/js/AppDashboard/Pages/Dashboard/Index.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _dashboard_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../dashboard-layout */ "./resources/js/AppDashboard/Pages/dashboard-layout.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-var Index = function Index(_ref) {
-  var name = _ref.name;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "text-red-800",
-      children: ["Bienvenue dans l'index ", name]
-    })
-  });
-};
-
-Index.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_dashboard_layout__WEBPACK_IMPORTED_MODULE_1__.DashboardLayout, {
-    children: page
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
 
 /***/ }),
 

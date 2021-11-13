@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../../Shared/Layout';
+import { DashboardLayout } from '../dashboard-layout';
 
 
 const Index = ({ name }) => {
@@ -10,6 +10,10 @@ const Index = ({ name }) => {
     </>);
 }
 
-Index.layout = page => <Layout children={page} />;
+Index.layout = (page) => (
+    <DashboardLayout>
+      {page}
+    </DashboardLayout>
+  );
 
-export default Index;
+  export default Index;
