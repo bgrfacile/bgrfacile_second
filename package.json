@@ -26,6 +26,9 @@
     "dependencies": {
         "@emotion/react": "^11.5.0",
         "@emotion/styled": "^11.3.0",
+        "@inertiajs/inertia": "^0.10.1",
+        "@inertiajs/inertia-react": "^0.7.1",
+        "@inertiajs/progress": "^0.2.6",
         "@mui/icons-material": "^5.1.0",
         "@mui/lab": "^5.0.0-alpha.54",
         "@mui/material": "^5.1.0",

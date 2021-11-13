@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
+    <link href="{{ mix('/css/appDashboard.css') }}" rel="stylesheet" />
 
     <!-- Scripts -->
-    <script src="{{ mix('/js/app.js') }}" defer></script>
+    <script src="{{ mix('/js/appDashboard.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">
