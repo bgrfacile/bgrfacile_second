@@ -15,6 +15,7 @@ class CreateSlugUsersTable extends Migration
     {
         Schema::create('slug_users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('slug')->nullable();
             $table->string('hashid')->nullable();
             $table->timestamps();
