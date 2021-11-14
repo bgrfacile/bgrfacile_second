@@ -9,6 +9,6 @@ class ProfilController extends Controller
 {
     public function index($name = null)
     {
-        return view('site.profil');
+        return view('site.profile.profil');
     }
 }
