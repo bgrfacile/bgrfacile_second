@@ -1,4 +1,8 @@
 {
-    "/js/appDashboard.js": "/js/appDashboard.js?id=68d045028364a62158b5",
-    "/css/appDashboard.css": "/css/appDashboard.css?id=dbb1455336602a7c44e2"
+    "/js/app.js": "/js/app.js",
+    "/js/appCourse.js": "/js/appCourse.js",
+    "/js/appDashboard.js": "/js/appDashboard.js",
+    "/css/appDashboard.css": "/css/appDashboard.css",
+    "/css/appCourse.css": "/css/appCourse.css",
+    "/css/app.css": "/css/app.css"
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\ContactController;
@@ -23,9 +24,6 @@ Route::get('/qui-sommes-nous', [AboutController::class, 'who'])->name('who.page'
 Route::get('/about', [AboutController::class, 'about'])->name('about.page');
 Route::get('/politique-de-confidentialite', [AboutController::class, 'politiqueDeConfidentialite'])->name('politique.page');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.page');
-Route::get('/login2', function () {
-    return view('site.login2');
-});
 
 /*
     App React route
@@ -47,18 +45,9 @@ Route::view('/bonus/{path?}', 'site.contenus.appCours')
 Route::middleware(['auth'])->group(function () {
 
     Route::prefix('dashboard')->group(function () {
-        Route::get('/', function () {
-            $users = User::all()->reverse();
-            return view('dashboard', ['users' => $users]);
-        })->name('dashboard');
+        Route::get('/',[DashboardController::class,'index'])->name('dashboard');
 
         Route::get('user', [UserController::class, 'index']);
-
-        Route::get('test', function () {
-            return Inertia::render('Dashboard/Index', [
-                'name' => "benji",
-            ]);
-        });
     });
 
 

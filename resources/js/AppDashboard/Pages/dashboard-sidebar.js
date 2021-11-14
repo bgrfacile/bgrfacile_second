@@ -65,8 +65,6 @@ export const DashboardSidebar = (props) => {
     defaultMatches: true,
     noSsr: false
   });
-//   const lgUp = useMediaQuery("1200");
-//   const lgUp = false;
 
 
   const content = (
@@ -111,15 +109,15 @@ export const DashboardSidebar = (props) => {
                   color="inherit"
                   variant="subtitle1"
                 >
-                  Acme Inc
+                  Name User
                 </Typography>
                 <Typography
                   color="neutral.400"
                   variant="body2"
                 >
-                  Your tier
+                  Status
                   {' '}
-                  : Premium
+                  : Admin
                 </Typography>
               </div>
               <SelectorIcon
@@ -149,56 +147,6 @@ export const DashboardSidebar = (props) => {
           ))}
         </Box>
         <Divider sx={{ borderColor: '#2D3748' }} />
-        <Box
-          sx={{
-            px: 2,
-            py: 3
-          }}
-        >
-          <Typography
-            color="neutral.100"
-            variant="subtitle2"
-          >
-            Need more features?
-          </Typography>
-          <Typography
-            color="neutral.500"
-            variant="body2"
-          >
-            Check out our Pro solution template.
-          </Typography>
-          <Box
-            sx={{
-              display: 'flex',
-              mt: 2,
-              mx: 'auto',
-              width: '160px',
-              '& img': {
-                width: '100%'
-              }
-            }}
-          >
-            <img
-              alt="Go to pro"
-              src="https://picsum.photos/200/300"
-            />
-          </Box>
-          <InertiaLink
-            href="https://material-kit-pro-react.devias.io/"
-
-          >
-            <Button
-              color="secondary"
-              component="button"
-              endIcon={(<OpenInNewIcon />)}
-              fullWidth
-              sx={{ mt: 2 }}
-              variant="contained"
-            >
-              Pro Live Preview
-            </Button>
-          </InertiaLink>
-        </Box>
       </Box>
     </>
   );
