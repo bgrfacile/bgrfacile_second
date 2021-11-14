@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCyclesTable extends Migration
+class CreateSlugUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCyclesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cycles', function (Blueprint $table) {
+        Schema::create('slug_users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('diplome')->nullable();
-            $table->enum('isActif',['0','1'])->default('1');
+            $table->string('slug')->nullable();
+            $table->string('hashid')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateCyclesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cycles');
+        Schema::dropIfExists('slug_users');
     }
 }

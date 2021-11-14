@@ -52,6 +52,8 @@ Route::middleware(['auth'])->group(function () {
             return view('dashboard', ['users' => $users]);
         })->name('dashboard');
 
+        Route::get('user', [UserController::class, 'index']);
+
         Route::get('test', function () {
             return Inertia::render('Dashboard/Index', [
                 'name' => "benji",
@@ -62,12 +64,6 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/profile/{name?}', [ProfilController::class, 'index'])->name('profil.index');
-});
-
-
-
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('user', [UserController::class, 'index']);
 });
 
 require __DIR__ . '/auth.php';

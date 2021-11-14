@@ -21,9 +21,13 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name',
+        'lastname',
+        'profileImage',
+        'birthday',
         'email',
         'password',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -44,5 +48,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+     /**
+     * Get the slug user.
+     */
+    public function slugUser()
+    {
+        return $this->hasOne(SlugUser::class);
+    }
 
 }
