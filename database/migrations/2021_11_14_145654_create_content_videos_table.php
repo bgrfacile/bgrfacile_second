@@ -16,6 +16,8 @@ class CreateContentVideosTable extends Migration
         Schema::create('content_videos', function (Blueprint $table) {
             $table->id();
             $table->string('content');
+            $table->integer('contentable_id');
+            $table->string('contentable_type');
             $table->timestamps();
         });
     }

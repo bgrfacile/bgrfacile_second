@@ -16,6 +16,8 @@ class CreateContentTextesTable extends Migration
         Schema::create('content_textes', function (Blueprint $table) {
             $table->id();
             $table->longText('content');
+            $table->integer('contentable_id');
+            $table->string('contentable_type');
             $table->timestamps();
         });
     }

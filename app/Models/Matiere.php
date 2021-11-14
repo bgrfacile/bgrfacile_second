@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Matiere extends Model
 {
     use HasFactory;
+
+    protected $guarded =[];
+
+    public function cours()
+    {
+        return $this->belongsToMany(Cours::class,'cours_matieres');
+    }
+    public function exercices()
+    {
+        return $this->belongsToMany(Exercice::class,'exercices_matieres');
+    }
 }

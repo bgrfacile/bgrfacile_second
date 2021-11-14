@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContentAudioTable extends Migration
+class CreateExercicesUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateContentAudioTable extends Migration
      */
     public function up()
     {
-        Schema::create('content_audio', function (Blueprint $table) {
+        Schema::create('exercices_users', function (Blueprint $table) {
             $table->id();
-            $table->string('content');
-            $table->integer('contentable_id');
-            $table->string('contentable_type');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateContentAudioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('content_audio');
+        Schema::dropIfExists('exercices_users');
     }
 }

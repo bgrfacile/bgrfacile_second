@@ -19,14 +19,15 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'lastname',
-        'profileImage',
-        'birthday',
-        'email',
-        'password',
-    ];
+//    protected $fillable = [
+//        'name',
+//        'lastname',
+//        'profileImage',
+//        'birthday',
+//        'email',
+//        'password',
+//    ];
+    protected $guarded = [];
 
 
     /**
@@ -48,12 +49,21 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-     /**
+    /**
      * Get the slug user.
      */
     public function slugUser()
     {
         return $this->hasOne(SlugUser::class);
+    }
+
+    public function cours()
+    {
+        return $this->belongsToMany(Cours::class);
+    }
+    public function exercices()
+    {
+        return $this->belongsToMany(Exercice::class);
     }
 
 }

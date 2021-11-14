@@ -16,6 +16,8 @@ class CreateContentPdfsTable extends Migration
         Schema::create('content_pdfs', function (Blueprint $table) {
             $table->id();
             $table->string('content');
+            $table->integer('contentable_id');
+            $table->string('contentable_type');
             $table->timestamps();
         });
     }

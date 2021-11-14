@@ -16,6 +16,8 @@ class CreateContentImagesTable extends Migration
         Schema::create('content_images', function (Blueprint $table) {
             $table->id();
             $table->string('content');
+            $table->integer('contentable_id');
+            $table->string('contentable_type');
             $table->timestamps();
         });
     }

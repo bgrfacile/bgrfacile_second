@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class ContentPdf extends Model
 {
     use HasFactory;
+
+    protected $guarded =[];
+
+    public function contentable()
+    {
+        return $this->morphTo();
+    }
+
 }
