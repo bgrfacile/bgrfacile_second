@@ -55194,25 +55194,115 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Cours": [
+		"./resources/js/AppDashboard/Pages/Cours/index.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_index_js"
+	],
+	"./Cours/": [
+		"./resources/js/AppDashboard/Pages/Cours/index.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_index_js"
+	],
+	"./Cours/create": [
+		"./resources/js/AppDashboard/Pages/Cours/create.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_create_js"
+	],
+	"./Cours/create.js": [
+		"./resources/js/AppDashboard/Pages/Cours/create.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_create_js"
+	],
+	"./Cours/edit": [
+		"./resources/js/AppDashboard/Pages/Cours/edit.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_edit_js"
+	],
+	"./Cours/edit.js": [
+		"./resources/js/AppDashboard/Pages/Cours/edit.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_edit_js"
+	],
+	"./Cours/index": [
+		"./resources/js/AppDashboard/Pages/Cours/index.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_index_js"
+	],
+	"./Cours/index.js": [
+		"./resources/js/AppDashboard/Pages/Cours/index.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_index_js"
+	],
+	"./Cours/preference": [
+		"./resources/js/AppDashboard/Pages/Cours/preference.js",
+		9,
+		"resources_js_AppDashboard_Pages_Cours_preference_js"
+	],
+	"./Cours/preference.js": [
+		"./resources/js/AppDashboard/Pages/Cours/preference.js",
+		9,
+		"resources_js_AppDashboard_Pages_Cours_preference_js"
+	],
+	"./Cours/show": [
+		"./resources/js/AppDashboard/Pages/Cours/show.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_show_js"
+	],
+	"./Cours/show.js": [
+		"./resources/js/AppDashboard/Pages/Cours/show.js",
+		7,
+		"resources_js_AppDashboard_Pages_Cours_show_js"
+	],
 	"./Cycle": [
 		"./resources/js/AppDashboard/Pages/Cycle/index.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Cycle_index_js"
 	],
 	"./Cycle/": [
 		"./resources/js/AppDashboard/Pages/Cycle/index.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Cycle_index_js"
+	],
+	"./Cycle/create": [
+		"./resources/js/AppDashboard/Pages/Cycle/create.js",
+		9,
+		"resources_js_AppDashboard_Pages_Cycle_create_js"
+	],
+	"./Cycle/create.js": [
+		"./resources/js/AppDashboard/Pages/Cycle/create.js",
+		9,
+		"resources_js_AppDashboard_Pages_Cycle_create_js"
+	],
+	"./Cycle/edit": [
+		"./resources/js/AppDashboard/Pages/Cycle/edit.js",
+		9,
+		"resources_js_AppDashboard_Pages_Cycle_edit_js"
+	],
+	"./Cycle/edit.js": [
+		"./resources/js/AppDashboard/Pages/Cycle/edit.js",
+		9,
+		"resources_js_AppDashboard_Pages_Cycle_edit_js"
 	],
 	"./Cycle/index": [
 		"./resources/js/AppDashboard/Pages/Cycle/index.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Cycle_index_js"
 	],
 	"./Cycle/index.js": [
 		"./resources/js/AppDashboard/Pages/Cycle/index.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Cycle_index_js"
+	],
+	"./Cycle/show": [
+		"./resources/js/AppDashboard/Pages/Cycle/show.js",
+		9,
+		"resources_js_AppDashboard_Pages_Cycle_show_js"
+	],
+	"./Cycle/show.js": [
+		"./resources/js/AppDashboard/Pages/Cycle/show.js",
+		9,
+		"resources_js_AppDashboard_Pages_Cycle_show_js"
 	],
 	"./Dashboard/Index": [
 		"./resources/js/AppDashboard/Pages/Dashboard/Index.js",
@@ -55224,15 +55314,165 @@ var map = {
 		9,
 		"resources_js_AppDashboard_Pages_Dashboard_Index_js"
 	],
+	"./Level/IndexLevel": [
+		"./resources/js/AppDashboard/Pages/Level/IndexLevel.js",
+		9,
+		"resources_js_AppDashboard_Pages_Level_IndexLevel_js"
+	],
+	"./Level/IndexLevel.js": [
+		"./resources/js/AppDashboard/Pages/Level/IndexLevel.js",
+		9,
+		"resources_js_AppDashboard_Pages_Level_IndexLevel_js"
+	],
+	"./Level/create": [
+		"./resources/js/AppDashboard/Pages/Level/create.js",
+		7,
+		"resources_js_AppDashboard_Pages_Level_create_js"
+	],
+	"./Level/create.js": [
+		"./resources/js/AppDashboard/Pages/Level/create.js",
+		7,
+		"resources_js_AppDashboard_Pages_Level_create_js"
+	],
+	"./Level/edit": [
+		"./resources/js/AppDashboard/Pages/Level/edit.js",
+		7,
+		"resources_js_AppDashboard_Pages_Level_edit_js"
+	],
+	"./Level/edit.js": [
+		"./resources/js/AppDashboard/Pages/Level/edit.js",
+		7,
+		"resources_js_AppDashboard_Pages_Level_edit_js"
+	],
+	"./Level/show": [
+		"./resources/js/AppDashboard/Pages/Level/show.js",
+		7,
+		"resources_js_AppDashboard_Pages_Level_show_js"
+	],
+	"./Level/show.js": [
+		"./resources/js/AppDashboard/Pages/Level/show.js",
+		7,
+		"resources_js_AppDashboard_Pages_Level_show_js"
+	],
+	"./Matiere": [
+		"./resources/js/AppDashboard/Pages/Matiere/index.js",
+		9,
+		"resources_js_AppDashboard_Pages_Matiere_index_js"
+	],
+	"./Matiere/": [
+		"./resources/js/AppDashboard/Pages/Matiere/index.js",
+		9,
+		"resources_js_AppDashboard_Pages_Matiere_index_js"
+	],
+	"./Matiere/create": [
+		"./resources/js/AppDashboard/Pages/Matiere/create.js",
+		7,
+		"resources_js_AppDashboard_Pages_Matiere_create_js"
+	],
+	"./Matiere/create.js": [
+		"./resources/js/AppDashboard/Pages/Matiere/create.js",
+		7,
+		"resources_js_AppDashboard_Pages_Matiere_create_js"
+	],
+	"./Matiere/edit": [
+		"./resources/js/AppDashboard/Pages/Matiere/edit.js",
+		7,
+		"resources_js_AppDashboard_Pages_Matiere_edit_js"
+	],
+	"./Matiere/edit.js": [
+		"./resources/js/AppDashboard/Pages/Matiere/edit.js",
+		7,
+		"resources_js_AppDashboard_Pages_Matiere_edit_js"
+	],
+	"./Matiere/index": [
+		"./resources/js/AppDashboard/Pages/Matiere/index.js",
+		9,
+		"resources_js_AppDashboard_Pages_Matiere_index_js"
+	],
+	"./Matiere/index.js": [
+		"./resources/js/AppDashboard/Pages/Matiere/index.js",
+		9,
+		"resources_js_AppDashboard_Pages_Matiere_index_js"
+	],
+	"./Matiere/show": [
+		"./resources/js/AppDashboard/Pages/Matiere/show.js",
+		7,
+		"resources_js_AppDashboard_Pages_Matiere_show_js"
+	],
+	"./Matiere/show.js": [
+		"./resources/js/AppDashboard/Pages/Matiere/show.js",
+		7,
+		"resources_js_AppDashboard_Pages_Matiere_show_js"
+	],
 	"./Users/Index": [
 		"./resources/js/AppDashboard/Pages/Users/Index.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Users_Index_js"
 	],
 	"./Users/Index.js": [
 		"./resources/js/AppDashboard/Pages/Users/Index.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Users_Index_js"
+	],
+	"./Users/Professor": [
+		"./resources/js/AppDashboard/Pages/Users/Professor.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_Professor_js"
+	],
+	"./Users/Professor.js": [
+		"./resources/js/AppDashboard/Pages/Users/Professor.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_Professor_js"
+	],
+	"./Users/Student": [
+		"./resources/js/AppDashboard/Pages/Users/Student.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_Student_js"
+	],
+	"./Users/Student.js": [
+		"./resources/js/AppDashboard/Pages/Users/Student.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_Student_js"
+	],
+	"./Users/create": [
+		"./resources/js/AppDashboard/Pages/Users/create.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_create_js"
+	],
+	"./Users/create.js": [
+		"./resources/js/AppDashboard/Pages/Users/create.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_create_js"
+	],
+	"./Users/edit": [
+		"./resources/js/AppDashboard/Pages/Users/edit.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_edit_js"
+	],
+	"./Users/edit.js": [
+		"./resources/js/AppDashboard/Pages/Users/edit.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_edit_js"
+	],
+	"./Users/show": [
+		"./resources/js/AppDashboard/Pages/Users/show.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_show_js"
+	],
+	"./Users/show.js": [
+		"./resources/js/AppDashboard/Pages/Users/show.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_show_js"
+	],
+	"./Users/userSchool": [
+		"./resources/js/AppDashboard/Pages/Users/userSchool.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_userSchool_js"
+	],
+	"./Users/userSchool.js": [
+		"./resources/js/AppDashboard/Pages/Users/userSchool.js",
+		9,
+		"resources_js_AppDashboard_Pages_Users_userSchool_js"
 	],
 	"./dashboard-layout": [
 		"./resources/js/AppDashboard/Pages/dashboard-layout.js",
@@ -55263,6 +55503,16 @@ var map = {
 		"./resources/js/AppDashboard/Pages/dashboard-sidebar.js",
 		9,
 		"resources_js_AppDashboard_Pages_dashboard-sidebar_js"
+	],
+	"./preference/AllParametre": [
+		"./resources/js/AppDashboard/Pages/preference/AllParametre.js",
+		7,
+		"resources_js_AppDashboard_Pages_preference_AllParametre_js"
+	],
+	"./preference/AllParametre.js": [
+		"./resources/js/AppDashboard/Pages/preference/AllParametre.js",
+		7,
+		"resources_js_AppDashboard_Pages_preference_AllParametre_js"
 	]
 };
 function webpackAsyncContext(req) {
@@ -55411,7 +55661,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_AppDashboard_Pages_Cycle_index_js":"a97fd1a8e7802f153b41","resources_js_AppDashboard_Pages_Dashboard_Index_js":"304abb676eb1522f144f","resources_js_AppDashboard_Pages_Users_Index_js":"41bc25cd8a9ebbdb27df","resources_js_AppDashboard_Pages_dashboard-layout_js":"b62521b7fe6e75d1904a","resources_js_AppDashboard_Pages_dashboard-navbar_js":"572c4f5b3e89de49e46d","resources_js_AppDashboard_Pages_dashboard-sidebar_js":"b51e3c301c79190431af"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_AppDashboard_Pages_Cours_index_js":"c68fc719ef1c5aeae7c0","resources_js_AppDashboard_Pages_Cours_create_js":"ddfdcb0952ac9846e15c","resources_js_AppDashboard_Pages_Cours_edit_js":"fd04a619f73d6fd87a59","resources_js_AppDashboard_Pages_Cours_preference_js":"a8ebfc15e8c53dc5a968","resources_js_AppDashboard_Pages_Cours_show_js":"3933f961cb557bfca063","resources_js_AppDashboard_Pages_Cycle_index_js":"dd45b9d4c0f85ae34133","resources_js_AppDashboard_Pages_Cycle_create_js":"86e8083c33892d220e7a","resources_js_AppDashboard_Pages_Cycle_edit_js":"3bdb8dba37f5da38589a","resources_js_AppDashboard_Pages_Cycle_show_js":"edfedb135a9763505688","resources_js_AppDashboard_Pages_Dashboard_Index_js":"112096264d0586c1a599","resources_js_AppDashboard_Pages_Level_IndexLevel_js":"0416243b8cb505264a3a","resources_js_AppDashboard_Pages_Level_create_js":"3881e954cafaa83877e3","resources_js_AppDashboard_Pages_Level_edit_js":"2b7b347a27e4500d32fc","resources_js_AppDashboard_Pages_Level_show_js":"472ed87ec41ea31e8bc9","resources_js_AppDashboard_Pages_Matiere_index_js":"fda7cfa761a55fe3b9b3","resources_js_AppDashboard_Pages_Matiere_create_js":"cccb53caaea94f3aad68","resources_js_AppDashboard_Pages_Matiere_edit_js":"852d199e9c5f37e3ca74","resources_js_AppDashboard_Pages_Matiere_show_js":"8880f1ce0fa0ffd70276","resources_js_AppDashboard_Pages_Users_Index_js":"bcf44fbafdf9b71425d0","resources_js_AppDashboard_Pages_Users_Professor_js":"89c09b778fe990a99839","resources_js_AppDashboard_Pages_Users_Student_js":"b4f34f73ac5fafaf7a98","resources_js_AppDashboard_Pages_Users_create_js":"7484b8ea5f10260e4fca","resources_js_AppDashboard_Pages_Users_edit_js":"253d11ca2b61ff406542","resources_js_AppDashboard_Pages_Users_show_js":"c5a89b2152d2d7df2779","resources_js_AppDashboard_Pages_Users_userSchool_js":"5939c196037289685567","resources_js_AppDashboard_Pages_dashboard-layout_js":"3cbdad2b7c7df203a831","resources_js_AppDashboard_Pages_dashboard-navbar_js":"353ba515bae7444d01f2","resources_js_AppDashboard_Pages_dashboard-sidebar_js":"f1e266cc69095b7dbfcc","resources_js_AppDashboard_Pages_preference_AllParametre_js":"e6cddb95b7dac07c523f"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

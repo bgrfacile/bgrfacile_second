@@ -2,10 +2,10 @@ import React from 'react';
 import { DashboardLayout } from '../dashboard-layout';
 
 
-const Index = ({ name }) => {
+const Index = ({ users }) => {
     return (<>
         <div className="text-red-800">
-            Bienvenue dans l'index {name}
+            Bienvenue dans le dashboard
         </div>
     </>);
 }

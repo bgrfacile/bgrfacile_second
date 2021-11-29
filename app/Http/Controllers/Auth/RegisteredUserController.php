@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Str;
 
 class RegisteredUserController extends Controller
 {
@@ -50,9 +51,11 @@ class RegisteredUserController extends Controller
             $user->assignRole('super-admin') :
             $user->assignRole('viewer');
 
+        $slug_user = $user->slugUser()->create(['slug' => Str::slug($user->name)]);
+
         Auth::login($user);
 
         // return redirect(RouteServiceProvider::PROFIL);
-        return redirect()->route('profil.index');
+        return redirect()->route('profil.index', ['slugUser' => $slug_user->slug]);
     }
 }

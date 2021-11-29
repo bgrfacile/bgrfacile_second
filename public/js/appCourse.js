@@ -15445,24 +15445,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ RoutePath)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _Layouts_LayoutCourse__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Layouts/LayoutCourse */ "./resources/js/AppCourse/Layouts/LayoutCourse.js");
 /* harmony import */ var _pages_bonus_BonusIndex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/bonus/BonusIndex */ "./resources/js/AppCourse/pages/bonus/BonusIndex.js");
 /* harmony import */ var _pages_Cours_CoursIndex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Cours/CoursIndex */ "./resources/js/AppCourse/pages/Cours/CoursIndex.js");
-/* harmony import */ var _pages_Cours_FavorisCours__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Cours/FavorisCours */ "./resources/js/AppCourse/pages/Cours/FavorisCours.js");
-/* harmony import */ var _pages_Cours_RandomCours__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Cours/RandomCours */ "./resources/js/AppCourse/pages/Cours/RandomCours.js");
-/* harmony import */ var _pages_Cours_OthersCours__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Cours/OthersCours */ "./resources/js/AppCourse/pages/Cours/OthersCours.js");
-/* harmony import */ var _pages_Cours_ScolaireCours__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/Cours/ScolaireCours */ "./resources/js/AppCourse/pages/Cours/ScolaireCours.js");
-/* harmony import */ var _pages_Exercices_ExerciceIndex__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/Exercices/ExerciceIndex */ "./resources/js/AppCourse/pages/Exercices/ExerciceIndex.js");
-/* harmony import */ var _pages_formations_FormationIndex__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/formations/FormationIndex */ "./resources/js/AppCourse/pages/formations/FormationIndex.js");
-/* harmony import */ var _pages_notFound_NotFound__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/notFound/NotFound */ "./resources/js/AppCourse/pages/notFound/NotFound.js");
-/* harmony import */ var _pages_Cours_CoursRoute__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/Cours/CoursRoute */ "./resources/js/AppCourse/pages/Cours/CoursRoute.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
+/* harmony import */ var _pages_Exercices_ExerciceIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/Exercices/ExerciceIndex */ "./resources/js/AppCourse/pages/Exercices/ExerciceIndex.js");
+/* harmony import */ var _pages_formations_FormationIndex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/formations/FormationIndex */ "./resources/js/AppCourse/pages/formations/FormationIndex.js");
+/* harmony import */ var _pages_notFound_NotFound__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/notFound/NotFound */ "./resources/js/AppCourse/pages/notFound/NotFound.js");
+/* harmony import */ var _pages_Cours_CoursRoute__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/Cours/CoursRoute */ "./resources/js/AppCourse/pages/Cours/CoursRoute.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -15498,33 +15490,33 @@ function RoutePath() {
     formationItems: [],
     bonusItems: []
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.BrowserRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Layouts_LayoutCourse__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Switch, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Layouts_LayoutCourse__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Switch, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
             exact: true,
             path: "/cours",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_Cours_CoursIndex__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Cours_CoursIndex__WEBPACK_IMPORTED_MODULE_3__["default"], {
               listItem: els.coursItems
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
             path: "/cours/*",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_Cours_CoursRoute__WEBPACK_IMPORTED_MODULE_11__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Cours_CoursRoute__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
             exact: true,
             path: "/exercices",
-            component: _pages_Exercices_ExerciceIndex__WEBPACK_IMPORTED_MODULE_8__["default"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+            component: _pages_Exercices_ExerciceIndex__WEBPACK_IMPORTED_MODULE_4__["default"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
             exact: true,
             path: "/formation",
-            component: _pages_formations_FormationIndex__WEBPACK_IMPORTED_MODULE_9__["default"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+            component: _pages_formations_FormationIndex__WEBPACK_IMPORTED_MODULE_5__["default"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
             exact: true,
             path: "/bonus",
             component: _pages_bonus_BonusIndex__WEBPACK_IMPORTED_MODULE_2__["default"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
-            component: _pages_notFound_NotFound__WEBPACK_IMPORTED_MODULE_10__["default"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+            component: _pages_notFound_NotFound__WEBPACK_IMPORTED_MODULE_6__["default"]
           })]
         })
       })
@@ -16486,10 +16478,10 @@ function CoursIndex(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "h-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8",
-      children: listItem.map(function (item) {
+      children: listItem.map(function (item, key) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_Cards_CardItemBegin__WEBPACK_IMPORTED_MODULE_1__["default"], {
           element: item
-        }, item.title);
+        }, key);
       })
     })
   });
@@ -16744,7 +16736,7 @@ __webpack_require__.r(__webpack_exports__);
 function BonusIndex() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h1", {
-      children: "Bienvenue dans la section Bonus"
+      children: "Bienvenue dans la section Bonus "
     })
   });
 }

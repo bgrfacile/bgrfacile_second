@@ -15,6 +15,7 @@
     <link href="{{ mix('/css/appDashboard.css') }}" rel="stylesheet" />
 
     <!-- Scripts -->
+    @routes
     <script src="{{ mix('/js/appDashboard.js') }}" defer></script>
 </head>
 

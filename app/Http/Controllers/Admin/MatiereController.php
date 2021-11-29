@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Matiere;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class MatiereController extends Controller
 {
@@ -14,7 +16,7 @@ class MatiereController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Matiere/index');
     }
 
     /**
@@ -24,7 +26,7 @@ class MatiereController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Matiere/create');
     }
 
     /**
@@ -35,7 +37,13 @@ class MatiereController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "name"=>"string|required"
+        ]);
+        $matiere = Matiere::create([
+            "name"=>$request->name
+        ]);
+        return redirect()->route("matiere.index");
     }
 
     /**
@@ -46,7 +54,8 @@ class MatiereController extends Controller
      */
     public function show($id)
     {
-        //
+        $matiere = Matiere::find($id);
+        return Inertia::render('Matiere/show');
     }
 
     /**
@@ -57,7 +66,8 @@ class MatiereController extends Controller
      */
     public function edit($id)
     {
-        //
+        $matiere = Matiere::find($id);
+        return Inertia::render('Matiere/edit');
     }
 
     /**
@@ -69,7 +79,13 @@ class MatiereController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'string|required'
+        ]);
+        $matiere = Matiere::findorFail($id);
+        $matiere->name = $request->name;
+        $matiere->save();
+        return redirect()->route('matiere.index');
     }
 
     /**
@@ -80,6 +96,8 @@ class MatiereController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $matiere = Matiere::findOrFail($id);
+        $matiere->delete();
+        return back();
     }
 }

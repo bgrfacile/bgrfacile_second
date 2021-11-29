@@ -14,7 +14,6 @@ class DashboardController extends Controller
         $users = User::all()->reverse();
         return Inertia::render('Dashboard/Index', [
             'users' => $users->toJson(),
-            'name' => "benji",
         ]);
     }
 }

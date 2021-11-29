@@ -20574,13 +20574,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var Index = function Index(_ref) {
-  var name = _ref.name;
+  var users = _ref.users;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "text-red-800",
-      children: ["Bienvenue dans l'index ", name]
+      children: "Bienvenue dans le dashboard"
     })
   });
 };
@@ -20850,24 +20849,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/useMediaQuery/useMediaQuery.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Divider/Divider.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Drawer/Drawer.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/useMediaQuery/useMediaQuery.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Divider/Divider.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Drawer/Drawer.js");
 /* harmony import */ var _icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../icons/chart-bar */ "./resources/js/AppDashboard/icons/chart-bar.js");
-/* harmony import */ var _icons_cog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/cog */ "./resources/js/AppDashboard/icons/cog.js");
-/* harmony import */ var _icons_lock__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../icons/lock */ "./resources/js/AppDashboard/icons/lock.js");
-/* harmony import */ var _icons_selector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../icons/selector */ "./resources/js/AppDashboard/icons/selector.js");
-/* harmony import */ var _icons_shopping_bag__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../icons/shopping-bag */ "./resources/js/AppDashboard/icons/shopping-bag.js");
-/* harmony import */ var _icons_user__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../icons/user */ "./resources/js/AppDashboard/icons/user.js");
-/* harmony import */ var _icons_user_add__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../icons/user-add */ "./resources/js/AppDashboard/icons/user-add.js");
-/* harmony import */ var _icons_users__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../icons/users */ "./resources/js/AppDashboard/icons/users.js");
-/* harmony import */ var _icons_x_circle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../icons/x-circle */ "./resources/js/AppDashboard/icons/x-circle.js");
-/* harmony import */ var _components_logo__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/logo */ "./resources/js/AppDashboard/components/logo.js");
-/* harmony import */ var _components_nav_item__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/nav-item */ "./resources/js/AppDashboard/components/nav-item.js");
-/* harmony import */ var _theme_index__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../theme/index */ "./resources/js/AppDashboard/theme/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _icons_view_grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../icons/view-grid */ "./resources/js/AppDashboard/icons/view-grid.js");
+/* harmony import */ var _icons_cog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../icons/cog */ "./resources/js/AppDashboard/icons/cog.js");
+/* harmony import */ var _icons_lock__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../icons/lock */ "./resources/js/AppDashboard/icons/lock.js");
+/* harmony import */ var _icons_selector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../icons/selector */ "./resources/js/AppDashboard/icons/selector.js");
+/* harmony import */ var _icons_shopping_bag__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../icons/shopping-bag */ "./resources/js/AppDashboard/icons/shopping-bag.js");
+/* harmony import */ var _icons_user__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../icons/user */ "./resources/js/AppDashboard/icons/user.js");
+/* harmony import */ var _icons_user_add__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../icons/user-add */ "./resources/js/AppDashboard/icons/user-add.js");
+/* harmony import */ var _icons_users__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../icons/users */ "./resources/js/AppDashboard/icons/users.js");
+/* harmony import */ var _icons_x_circle__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../icons/x-circle */ "./resources/js/AppDashboard/icons/x-circle.js");
+/* harmony import */ var _components_logo__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/logo */ "./resources/js/AppDashboard/components/logo.js");
+/* harmony import */ var _components_nav_item__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/nav-item */ "./resources/js/AppDashboard/components/nav-item.js");
+/* harmony import */ var _theme_index__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../theme/index */ "./resources/js/AppDashboard/theme/index.js");
+/* harmony import */ var _icons_etudiant__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../icons/etudiant */ "./resources/js/AppDashboard/icons/etudiant.js");
+/* harmony import */ var _icons_professor__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../icons/professor */ "./resources/js/AppDashboard/icons/professor.js");
+/* harmony import */ var _icons_user_scholl__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../icons/user-scholl */ "./resources/js/AppDashboard/icons/user-scholl.js");
+/* harmony import */ var _icons_setting__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../icons/setting */ "./resources/js/AppDashboard/icons/setting.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -20888,91 +20892,181 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var items = [{
-  href: '/',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+
+
+
+
+
+
+var itemsDashboard = [{
+  href: '/dashboard',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_view_grid__WEBPACK_IMPORTED_MODULE_4__.ViewGrid, {
     fontSize: "small"
   }),
   title: 'Dashboard'
-}, {
-  href: '/customers',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_users__WEBPACK_IMPORTED_MODULE_10__.Users, {
+}];
+var itemsUsers = [{
+  href: '/dashboard/users',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_user__WEBPACK_IMPORTED_MODULE_9__.User, {
     fontSize: "small"
   }),
-  title: 'Customers'
+  title: 'Users'
 }, {
-  href: '/products',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_shopping_bag__WEBPACK_IMPORTED_MODULE_7__.ShoppingBag, {
+  href: '/dashboard/users/student',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_etudiant__WEBPACK_IMPORTED_MODULE_16__.Etudiant, {
     fontSize: "small"
   }),
-  title: 'Products'
+  title: 'étudiants'
 }, {
-  href: '/account',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_user__WEBPACK_IMPORTED_MODULE_8__.User, {
+  href: '/dashboard/users/professor',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_professor__WEBPACK_IMPORTED_MODULE_17__.Professor, {
     fontSize: "small"
   }),
-  title: 'Account'
+  title: 'Professeurs'
 }, {
-  href: '/settings',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_cog__WEBPACK_IMPORTED_MODULE_4__.Cog, {
+  href: '/dashboard/users/user-scholl',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_user_scholl__WEBPACK_IMPORTED_MODULE_18__.UserScholl, {
     fontSize: "small"
   }),
-  title: 'Settings'
+  title: 'Utilisateurs avec écoles'
 }, {
-  href: '/login',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_lock__WEBPACK_IMPORTED_MODULE_5__.Lock, {
+  href: '/dashboard/users/preference',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_setting__WEBPACK_IMPORTED_MODULE_19__.Setting, {
     fontSize: "small"
   }),
-  title: 'Login'
-}, {
-  href: '/register',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_user_add__WEBPACK_IMPORTED_MODULE_9__.UserAdd, {
+  title: 'Preférence User'
+}];
+var itemsCours = [{
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
     fontSize: "small"
   }),
-  title: 'Register'
+  title: 'All Cours'
 }, {
-  href: '/404',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_x_circle__WEBPACK_IMPORTED_MODULE_11__.XCircle, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
     fontSize: "small"
   }),
-  title: 'Error'
+  title: 'Cours Online'
+}, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Cours Offline'
+}, {
+  href: route("preference.cours"),
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Preférence Cours'
+}];
+var itemsExercices = [{
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'All Exos'
+}, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Exos Online'
+}, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Exos Offline'
+}, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Preférence Exo'
+}];
+var itemsFormations = [{
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'All Formations'
+}, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Formations Online'
+}, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Formations Offline'
+}, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Preférence Formations'
+}];
+var itemsEcoles = [{
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'All Ecoles en ligne'
+}, {
+  href: '/dashboard/user/all',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Preférence Ecoles en ligne'
+}];
+var itemsParametres = [{
+  href: '/dashboard/parametres',
+  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_chart_bar__WEBPACK_IMPORTED_MODULE_3__.ChartBar, {
+    fontSize: "small"
+  }),
+  title: 'Paramètre système'
 }];
 var DashboardSidebar = function DashboardSidebar(props) {
   var open = props.open,
       onClose = props.onClose;
-  var lgUp = (0,_mui_material__WEBPACK_IMPORTED_MODULE_16__["default"])(function (theme) {
+  var lgUp = (0,_mui_material__WEBPACK_IMPORTED_MODULE_21__["default"])(function (theme) {
     return theme.breakpoints.up('lg');
   }, {
     defaultMatches: true,
     noSsr: false
   });
 
-  var content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+  var content = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
       sx: {
         display: 'flex',
         flexDirection: 'column',
         height: '100%'
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
           sx: {
             p: 3
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
             href: "/",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_components_logo__WEBPACK_IMPORTED_MODULE_12__.Logo, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_logo__WEBPACK_IMPORTED_MODULE_13__.Logo, {
               sx: {
                 height: 42,
                 width: 42
               }
             })
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
           sx: {
             px: 2
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
             sx: {
               alignItems: 'center',
               backgroundColor: 'rgba(255, 255, 255, 0.04)',
@@ -20983,17 +21077,17 @@ var DashboardSidebar = function DashboardSidebar(props) {
               py: '11px',
               borderRadius: 1
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_23__["default"], {
                 color: "inherit",
                 variant: "subtitle1",
                 children: "Name User"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_18__["default"], {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_23__["default"], {
                 color: "neutral.400",
                 variant: "body2",
                 children: ["Status", ' ', ": Admin"]
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_icons_selector__WEBPACK_IMPORTED_MODULE_6__.Selector, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_icons_selector__WEBPACK_IMPORTED_MODULE_7__.Selector, {
               sx: {
                 color: 'neutral.500',
                 width: 14,
@@ -21002,32 +21096,125 @@ var DashboardSidebar = function DashboardSidebar(props) {
             })]
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
         sx: {
           borderColor: '#2D3748',
           my: 3
         }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
         sx: {
           flexGrow: 1
         },
-        children: items.map(function (item) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_components_nav_item__WEBPACK_IMPORTED_MODULE_13__.NavItem, {
+        children: itemsDashboard.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_nav_item__WEBPACK_IMPORTED_MODULE_14__.NavItem, {
             icon: item.icon,
             href: item.href,
             title: item.title
           }, item.title);
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_19__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
         sx: {
-          borderColor: '#2D3748'
+          borderColor: '#2D3748',
+          my: 3
         }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
+        sx: {
+          flexGrow: 1,
+          width: "100%"
+        },
+        children: itemsUsers.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_nav_item__WEBPACK_IMPORTED_MODULE_14__.NavItem, {
+            icon: item.icon,
+            href: item.href,
+            title: item.title
+          }, item.title);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        sx: {
+          borderColor: '#2D3748',
+          my: 3
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
+        sx: {
+          flexGrow: 1
+        },
+        children: itemsCours.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_nav_item__WEBPACK_IMPORTED_MODULE_14__.NavItem, {
+            icon: item.icon,
+            href: item.href,
+            title: item.title
+          }, item.title);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        sx: {
+          borderColor: '#2D3748',
+          my: 3
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
+        sx: {
+          flexGrow: 1
+        },
+        children: itemsExercices.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_nav_item__WEBPACK_IMPORTED_MODULE_14__.NavItem, {
+            icon: item.icon,
+            href: item.href,
+            title: item.title
+          }, item.title);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        sx: {
+          borderColor: '#2D3748',
+          my: 3
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
+        sx: {
+          flexGrow: 1
+        },
+        children: itemsFormations.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_nav_item__WEBPACK_IMPORTED_MODULE_14__.NavItem, {
+            icon: item.icon,
+            href: item.href,
+            title: item.title
+          }, item.title);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        sx: {
+          borderColor: '#2D3748',
+          my: 3
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
+        sx: {
+          flexGrow: 1
+        },
+        children: itemsEcoles.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_nav_item__WEBPACK_IMPORTED_MODULE_14__.NavItem, {
+            icon: item.icon,
+            href: item.href,
+            title: item.title
+          }, item.title);
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_24__["default"], {
+        sx: {
+          borderColor: '#2D3748',
+          my: 3
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_22__["default"], {
+        sx: {
+          flexGrow: 1
+        },
+        children: itemsParametres.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_components_nav_item__WEBPACK_IMPORTED_MODULE_14__.NavItem, {
+            icon: item.icon,
+            href: item.href,
+            title: item.title
+          }, item.title);
+        })
       })]
     })
   });
 
   if (lgUp) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_25__["default"], {
       anchor: "left",
       open: true,
       PaperProps: {
@@ -21042,7 +21229,7 @@ var DashboardSidebar = function DashboardSidebar(props) {
     });
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_20__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_20__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_25__["default"], {
     anchor: "left",
     onClose: onClose,
     open: open,
@@ -21221,6 +21408,9 @@ var NavItem = function NavItem(props) {
   }, others), {}, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.InertiaLink, {
       href: href,
+      style: {
+        width: '100%'
+      },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], {
         component: "button",
         startIcon: icon,
@@ -21244,7 +21434,8 @@ var NavItem = function NavItem(props) {
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
           sx: {
-            flexGrow: 1
+            flexGrow: 1,
+            width: "100%"
           },
           children: title
         })
@@ -21340,6 +21531,36 @@ var Cog = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__
 
 /***/ }),
 
+/***/ "./resources/js/AppDashboard/icons/etudiant.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/AppDashboard/icons/etudiant.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Etudiant": () => (/* binding */ Etudiant)
+/* harmony export */ });
+/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var Etudiant = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+  })
+}), 'Etudiant');
+
+/***/ }),
+
 /***/ "./resources/js/AppDashboard/icons/lock.js":
 /*!*************************************************!*\
   !*** ./resources/js/AppDashboard/icons/lock.js ***!
@@ -21368,6 +21589,37 @@ var Lock = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#_
 
 /***/ }),
 
+/***/ "./resources/js/AppDashboard/icons/professor.js":
+/*!******************************************************!*\
+  !*** ./resources/js/AppDashboard/icons/professor.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Professor": () => (/* binding */ Professor)
+/* harmony export */ });
+/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var Professor = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  className: "h-6 w-6",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+  })
+}), 'Professor');
+
+/***/ }),
+
 /***/ "./resources/js/AppDashboard/icons/selector.js":
 /*!*****************************************************!*\
   !*** ./resources/js/AppDashboard/icons/selector.js ***!
@@ -21393,6 +21645,42 @@ var Selector = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( 
     d: "M4 0C4.26519 5.66374e-05 4.51951 0.105451 4.707 0.293L7.707 3.293C7.88916 3.4816 7.98995 3.7342 7.98767 3.9964C7.9854 4.2586 7.88023 4.50941 7.69482 4.69482C7.50941 4.88023 7.2586 4.9854 6.9964 4.98767C6.7342 4.98995 6.4816 4.88916 6.293 4.707L4 2.414L1.707 4.707C1.5184 4.88916 1.2658 4.98995 1.0036 4.98767C0.741402 4.9854 0.49059 4.88023 0.305182 4.69482C0.119773 4.50941 0.0146042 4.2586 0.0123258 3.9964C0.0100473 3.7342 0.110842 3.4816 0.293 3.293L3.293 0.293C3.48049 0.105451 3.73481 5.66374e-05 4 0ZM0.293 9.293C0.480528 9.10553 0.734836 9.00021 1 9.00021C1.26516 9.00021 1.51947 9.10553 1.707 9.293L4 11.586L6.293 9.293C6.4816 9.11084 6.7342 9.01005 6.9964 9.01233C7.2586 9.0146 7.50941 9.11977 7.69482 9.30518C7.88023 9.49059 7.9854 9.7414 7.98767 10.0036C7.98995 10.2658 7.88916 10.5184 7.707 10.707L4.707 13.707C4.51947 13.8945 4.26516 13.9998 4 13.9998C3.73484 13.9998 3.48053 13.8945 3.293 13.707L0.293 10.707C0.105529 10.5195 0.000213623 10.2652 0.000213623 10C0.000213623 9.73484 0.105529 9.48053 0.293 9.293Z"
   })
 }), 'ChartSquareBar');
+
+/***/ }),
+
+/***/ "./resources/js/AppDashboard/icons/setting.js":
+/*!****************************************************!*\
+  !*** ./resources/js/AppDashboard/icons/setting.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Setting": () => (/* binding */ Setting)
+/* harmony export */ });
+/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var Setting = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+  })]
+}), 'Setting');
 
 /***/ }),
 
@@ -21478,6 +21766,41 @@ var UserCircle = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])
 
 /***/ }),
 
+/***/ "./resources/js/AppDashboard/icons/user-scholl.js":
+/*!********************************************************!*\
+  !*** ./resources/js/AppDashboard/icons/user-scholl.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "UserScholl": () => (/* binding */ UserScholl)
+/* harmony export */ });
+/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var UserScholl = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M12 14l9-5-9-5-9 5 9 5z"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    d: "M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
+  })]
+}), 'UserScholl');
+
+/***/ }),
+
 /***/ "./resources/js/AppDashboard/icons/user.js":
 /*!*************************************************!*\
   !*** ./resources/js/AppDashboard/icons/user.js ***!
@@ -21523,12 +21846,46 @@ __webpack_require__.r(__webpack_exports__);
 
 var Users = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 20 20",
-  fill: "currentColor",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-    d: "M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
   })
 }), 'Users');
+
+/***/ }),
+
+/***/ "./resources/js/AppDashboard/icons/view-grid.js":
+/*!******************************************************!*\
+  !*** ./resources/js/AppDashboard/icons/view-grid.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ViewGrid": () => (/* binding */ ViewGrid)
+/* harmony export */ });
+/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/createSvgIcon.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+var ViewGrid = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_1__["default"])( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
+  xmlns: "http://www.w3.org/2000/svg",
+  fill: "none",
+  viewBox: "0 0 24 24",
+  stroke: "currentColor",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    strokeWidth: 2,
+    d: "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+  })
+}), 'view-grid');
 
 /***/ }),
 

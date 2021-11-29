@@ -17,7 +17,8 @@ export const NavItem = (props) => {
       {...others}
     >
       <InertiaLink
-        href={href}>
+        href={href}
+        style={{ width: '100%', }}>
         <Button
           component="button"
           startIcon={icon}
@@ -40,7 +41,7 @@ export const NavItem = (props) => {
             }
           }}
         >
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1,width:"100%" }}>
             {title}
           </Box>
         </Button>
