@@ -16,7 +16,10 @@ class MatiereController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Matiere/index');
+        $matieres = Matiere::all();
+        return Inertia::render('Matiere/index', [
+            'matieres' => $matieres
+        ]);
     }
 
     /**
@@ -38,10 +41,10 @@ class MatiereController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name"=>"string|required"
+            "name" => "string|required"
         ]);
-        $matiere = Matiere::create([
-            "name"=>$request->name
+        Matiere::create([
+            "name" => $request->name
         ]);
         return redirect()->route("matiere.index");
     }
@@ -54,8 +57,10 @@ class MatiereController extends Controller
      */
     public function show($id)
     {
-        $matiere = Matiere::find($id);
-        return Inertia::render('Matiere/show');
+        $matiere = Matiere::findOrFail($id);
+        return Inertia::render('Matiere/show',[
+            'matiere'=>$matiere
+        ]);
     }
 
     /**
@@ -66,8 +71,10 @@ class MatiereController extends Controller
      */
     public function edit($id)
     {
-        $matiere = Matiere::find($id);
-        return Inertia::render('Matiere/edit');
+        $matiere = Matiere::findOrFail($id);
+        return Inertia::render('Matiere/edit',[
+            'matiere'=>$matiere
+        ]);
     }
 
     /**
@@ -80,7 +87,7 @@ class MatiereController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'=>'string|required'
+            'name' => 'string|required'
         ]);
         $matiere = Matiere::findorFail($id);
         $matiere->name = $request->name;

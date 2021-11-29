@@ -20,7 +20,8 @@ import { Etudiant as EtudiantIcon } from '../icons/etudiant';
 import { Professor as ProfessorIcon } from '../icons/professor';
 import { UserScholl as UserSchollIcon } from '../icons/user-scholl';
 import { Setting as SettingIcon } from '../icons/setting';
-import { Route } from 'react-router';
+import { BookOpen as BookOpenIcon } from '../icons/book';
+
 
 const itemsDashboard = [
     {
@@ -49,34 +50,34 @@ const itemsUsers = [
     {
         href: '/dashboard/users/user-scholl',
         icon: (<UserSchollIcon fontSize="small" />),
-        title: 'Utilisateurs avec écoles'
+        title: 'Promoteurs'
     },
-    {
+/*     {
         href: '/dashboard/users/preference',
         icon: (<SettingIcon fontSize="small" />),
         title: 'Preférence User'
-    },
+    }, */
 ];
 const itemsCours = [
     {
+        href: route('cours.index'),
+        icon: (<BookOpenIcon fontSize="small" />),
+        title: 'Cours'
+    },
+/*     {
         href: '/dashboard/user/all',
         icon: (<ChartBarIcon fontSize="small" />),
-        title: 'All Cours'
+        title: 'Cours On-line'
     },
     {
         href: '/dashboard/user/all',
         icon: (<ChartBarIcon fontSize="small" />),
-        title: 'Cours Online'
-    },
-    {
-        href: '/dashboard/user/all',
-        icon: (<ChartBarIcon fontSize="small" />),
-        title: 'Cours Offline'
-    },
+        title: 'Cours Off-line'
+    }, */
     {
         href: route("preference.cours"),
-        icon: (<ChartBarIcon fontSize="small" />),
-        title: 'Preférence Cours'
+        icon: (<SettingIcon fontSize="small" />),
+        title: 'Preférences-Cours'
     },
 ];
 const itemsExercices = [

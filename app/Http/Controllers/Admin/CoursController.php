@@ -16,7 +16,10 @@ class CoursController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Cours/index');
+        $cours = Cours::all();
+        return Inertia::render('Cours/index',[
+            'cours'=>$cours
+        ]);
     }
 
     /**
@@ -39,7 +42,7 @@ class CoursController extends Controller
     {
         $request->validate([
             "name"=>"required|string|min:3",
-            "coverImage0"=>"image"
+            "coverImage"=>"image"
         ]);
         $cours = Cours::create([
             "name"=>$request->name,

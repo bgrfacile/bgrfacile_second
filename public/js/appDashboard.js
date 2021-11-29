@@ -55326,32 +55326,32 @@ var map = {
 	],
 	"./Level/create": [
 		"./resources/js/AppDashboard/Pages/Level/create.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Level_create_js"
 	],
 	"./Level/create.js": [
 		"./resources/js/AppDashboard/Pages/Level/create.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Level_create_js"
 	],
 	"./Level/edit": [
 		"./resources/js/AppDashboard/Pages/Level/edit.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Level_edit_js"
 	],
 	"./Level/edit.js": [
 		"./resources/js/AppDashboard/Pages/Level/edit.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Level_edit_js"
 	],
 	"./Level/show": [
 		"./resources/js/AppDashboard/Pages/Level/show.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Level_show_js"
 	],
 	"./Level/show.js": [
 		"./resources/js/AppDashboard/Pages/Level/show.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Level_show_js"
 	],
 	"./Matiere": [
@@ -55366,22 +55366,22 @@ var map = {
 	],
 	"./Matiere/create": [
 		"./resources/js/AppDashboard/Pages/Matiere/create.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Matiere_create_js"
 	],
 	"./Matiere/create.js": [
 		"./resources/js/AppDashboard/Pages/Matiere/create.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Matiere_create_js"
 	],
 	"./Matiere/edit": [
 		"./resources/js/AppDashboard/Pages/Matiere/edit.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Matiere_edit_js"
 	],
 	"./Matiere/edit.js": [
 		"./resources/js/AppDashboard/Pages/Matiere/edit.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Matiere_edit_js"
 	],
 	"./Matiere/index": [
@@ -55396,12 +55396,12 @@ var map = {
 	],
 	"./Matiere/show": [
 		"./resources/js/AppDashboard/Pages/Matiere/show.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Matiere_show_js"
 	],
 	"./Matiere/show.js": [
 		"./resources/js/AppDashboard/Pages/Matiere/show.js",
-		7,
+		9,
 		"resources_js_AppDashboard_Pages_Matiere_show_js"
 	],
 	"./Users/Index": [
@@ -55661,7 +55661,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_AppDashboard_Pages_Cours_index_js":"c68fc719ef1c5aeae7c0","resources_js_AppDashboard_Pages_Cours_create_js":"ddfdcb0952ac9846e15c","resources_js_AppDashboard_Pages_Cours_edit_js":"fd04a619f73d6fd87a59","resources_js_AppDashboard_Pages_Cours_preference_js":"a8ebfc15e8c53dc5a968","resources_js_AppDashboard_Pages_Cours_show_js":"3933f961cb557bfca063","resources_js_AppDashboard_Pages_Cycle_index_js":"dd45b9d4c0f85ae34133","resources_js_AppDashboard_Pages_Cycle_create_js":"86e8083c33892d220e7a","resources_js_AppDashboard_Pages_Cycle_edit_js":"3bdb8dba37f5da38589a","resources_js_AppDashboard_Pages_Cycle_show_js":"edfedb135a9763505688","resources_js_AppDashboard_Pages_Dashboard_Index_js":"112096264d0586c1a599","resources_js_AppDashboard_Pages_Level_IndexLevel_js":"0416243b8cb505264a3a","resources_js_AppDashboard_Pages_Level_create_js":"3881e954cafaa83877e3","resources_js_AppDashboard_Pages_Level_edit_js":"2b7b347a27e4500d32fc","resources_js_AppDashboard_Pages_Level_show_js":"472ed87ec41ea31e8bc9","resources_js_AppDashboard_Pages_Matiere_index_js":"fda7cfa761a55fe3b9b3","resources_js_AppDashboard_Pages_Matiere_create_js":"cccb53caaea94f3aad68","resources_js_AppDashboard_Pages_Matiere_edit_js":"852d199e9c5f37e3ca74","resources_js_AppDashboard_Pages_Matiere_show_js":"8880f1ce0fa0ffd70276","resources_js_AppDashboard_Pages_Users_Index_js":"bcf44fbafdf9b71425d0","resources_js_AppDashboard_Pages_Users_Professor_js":"89c09b778fe990a99839","resources_js_AppDashboard_Pages_Users_Student_js":"b4f34f73ac5fafaf7a98","resources_js_AppDashboard_Pages_Users_create_js":"7484b8ea5f10260e4fca","resources_js_AppDashboard_Pages_Users_edit_js":"253d11ca2b61ff406542","resources_js_AppDashboard_Pages_Users_show_js":"c5a89b2152d2d7df2779","resources_js_AppDashboard_Pages_Users_userSchool_js":"5939c196037289685567","resources_js_AppDashboard_Pages_dashboard-layout_js":"3cbdad2b7c7df203a831","resources_js_AppDashboard_Pages_dashboard-navbar_js":"353ba515bae7444d01f2","resources_js_AppDashboard_Pages_dashboard-sidebar_js":"f1e266cc69095b7dbfcc","resources_js_AppDashboard_Pages_preference_AllParametre_js":"e6cddb95b7dac07c523f"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_AppDashboard_Pages_Cours_index_js":"c68fc719ef1c5aeae7c0","resources_js_AppDashboard_Pages_Cours_create_js":"ddfdcb0952ac9846e15c","resources_js_AppDashboard_Pages_Cours_edit_js":"fd04a619f73d6fd87a59","resources_js_AppDashboard_Pages_Cours_preference_js":"2220c01ce1cc02fb3838","resources_js_AppDashboard_Pages_Cours_show_js":"3933f961cb557bfca063","resources_js_AppDashboard_Pages_Cycle_index_js":"64177d0ea921a7ebc3be","resources_js_AppDashboard_Pages_Cycle_create_js":"601f87ac86a2e5722d75","resources_js_AppDashboard_Pages_Cycle_edit_js":"66e8166dfbe75c724a26","resources_js_AppDashboard_Pages_Cycle_show_js":"59368190bdbfcb730e4f","resources_js_AppDashboard_Pages_Dashboard_Index_js":"f414b155b35530e4c8ce","resources_js_AppDashboard_Pages_Level_IndexLevel_js":"5eeb39768f92f96557e1","resources_js_AppDashboard_Pages_Level_create_js":"43df6355b074339b0ffa","resources_js_AppDashboard_Pages_Level_edit_js":"e99edf5a57ab8c5659fa","resources_js_AppDashboard_Pages_Level_show_js":"bbdd9d4f61ef6c098152","resources_js_AppDashboard_Pages_Matiere_index_js":"5bfc39acea4185c0d119","resources_js_AppDashboard_Pages_Matiere_create_js":"e6595eaa2b6558588fba","resources_js_AppDashboard_Pages_Matiere_edit_js":"bfc854bf4eeb7766f979","resources_js_AppDashboard_Pages_Matiere_show_js":"64f875fbe3a9445c32b1","resources_js_AppDashboard_Pages_Users_Index_js":"7ce336f0f16e007c8ee2","resources_js_AppDashboard_Pages_Users_Professor_js":"18fbaa90118fea33b342","resources_js_AppDashboard_Pages_Users_Student_js":"9121d1dcadacf2e56b32","resources_js_AppDashboard_Pages_Users_create_js":"9010383c3a37e2689c4d","resources_js_AppDashboard_Pages_Users_edit_js":"3f00da2e6677b9a5daf1","resources_js_AppDashboard_Pages_Users_show_js":"cd2a492154642f3e3482","resources_js_AppDashboard_Pages_Users_userSchool_js":"93f3e67376b060f8a520","resources_js_AppDashboard_Pages_dashboard-layout_js":"cf0861567964d86fb2fc","resources_js_AppDashboard_Pages_dashboard-navbar_js":"353ba515bae7444d01f2","resources_js_AppDashboard_Pages_dashboard-sidebar_js":"fca556881fca60704f93","resources_js_AppDashboard_Pages_preference_AllParametre_js":"e6cddb95b7dac07c523f"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

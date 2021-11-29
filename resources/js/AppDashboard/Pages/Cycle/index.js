@@ -1,5 +1,5 @@
 import { Button, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import react from "react";
 import { Link } from '@inertiajs/inertia-react'
 import BasicModal from "../../components/Modal";
 import { DashboardLayout } from "../dashboard-layout";

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CycleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CoursController as CoursControllerAdmin;
+use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\MatiereController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\AboutController;
@@ -65,8 +66,9 @@ Route::middleware(['auth'])->group(function () {
         })->name('preference.cours');
 
         Route::resource('/cycle', CycleController::class);
-        Route::resource('/cours', CoursControllerAdmin::class);
+        Route::resource('/level', LevelController::class);
         Route::resource('/matiere', MatiereController::class);
+        Route::resource('/cours', CoursControllerAdmin::class);
 
         Route::prefix('/users')->group(function(){
             Route::get('/', [UserController::class, 'all'])->name('users.index');

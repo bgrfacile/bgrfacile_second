@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Level;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class LevelController extends Controller
 {
@@ -14,7 +16,10 @@ class LevelController extends Controller
      */
     public function index()
     {
-        //
+        $levels = Level::all();
+        return Inertia::render('Level/IndexLevel', [
+            'levels' => $levels
+        ]);
     }
 
     /**
@@ -24,7 +29,7 @@ class LevelController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Level/create');
     }
 
     /**
@@ -35,7 +40,13 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'string|required'
+        ]);
+        Level::create([
+            'name' => $request->name
+        ]);
+        return redirect()->route('level.index');
     }
 
     /**
@@ -46,7 +57,10 @@ class LevelController extends Controller
      */
     public function show($id)
     {
-        //
+        $level = Level::findOrFail($id);
+        return Inertia::render('Level/show',[
+            'level'=>$level
+        ]);
     }
 
     /**
@@ -57,7 +71,10 @@ class LevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $level = Level::findOrFail($id);
+        return Inertia::render('Level/edit',[
+            'level'=>$level
+        ]);
     }
 
     /**
@@ -69,7 +86,13 @@ class LevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'string|required'
+        ]);
+        $level = Level::findOrFail($id);
+        $level->name = $request->name;
+        $level->save();
+        return redirect()->route('level.index');
     }
 
     /**
@@ -80,6 +103,8 @@ class LevelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $level = Level::findOrFail($id);
+        $level->delete();
+        return back();
     }
 }
