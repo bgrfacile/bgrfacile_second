@@ -1,9 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Route, BrowserRouter, Switch, Link } from "react-router-dom";
 import BreadCrumb from "../../components/BreadCrumb";
 import Card2 from "../../components/Cards/itemCours";
-import RecipeReviewCard from "../../components/Cards/CardCoursItem";
 
 
 function FavorisCours() {
