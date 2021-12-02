@@ -24,7 +24,7 @@ export default function itemCours({ cour }) {
                 </CardActionArea>
                 <CardContent>
                     <div className="flex justify-between">
-                        <div className="flex-1 overflow-hidden"> user name</div>
+                        <div className="flex-1 overflow-hidden">Type de cours</div>
                         <div>
                             <Tooltip title="user">
                                 <IconButton aria-label="add to favorites">
