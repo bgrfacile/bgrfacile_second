@@ -37,7 +37,7 @@ class CoursController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

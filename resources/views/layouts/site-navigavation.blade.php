@@ -106,10 +106,10 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <div class="flex-shrink-0 flex items-center ml-4">
-                    <button type="button"
+                    <a href="{{ route('search.page') }}"
                         class="flex justify-center p-2 text-gray-500 transition duration-150 ease-in-out bg-gray-100 border border-transparent rounded-md lg:bg-white lg:dark:bg-gray-900 dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50">
                         <x-svg-search class="block h-6 w-6 text-gray-600" fill="none" stroke="currentColor" />
-                    </button>
+                    </a>
                 </div>
                 <div class="flex-shrink-0 flex items-center ml-4" x-data="{ open: false }"
                     x-init="$watch('open', value => value?document.querySelector('html').classList.add('dark'):document.querySelector('html').classList.remove('dark'))">
@@ -167,7 +167,7 @@
 
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open"
+                <button @click="open =! open"
                     class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"

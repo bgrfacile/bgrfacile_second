@@ -1,5 +1,5 @@
 const LogoShortBgrfacile = () => <>
-    <svg aria-hidden="true" className="w-auto h-6 block" xmlns="http://www.w3.org/2000/svg"
+    <svg aria-hidden="true" className="w-auto min-h-8 block" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 345.06 305.51">
         <defs></defs>
         <g id="Calque_2" data-name="Calque 2">

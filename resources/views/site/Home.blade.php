@@ -14,7 +14,7 @@
                         adipisicing elit.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start mt-6">
-                        <a class="btn btn-primary px-4 py-3 font-semibold" href="#">Lizer votre premier cours</a>
+                        <a class="btn btn-primary px-4 py-3 font-semibold" href="#">Lire son premier cours</a>
                         <div class="relative mt-2 sm:mt-0" x-data="{ open: false }" @click.away="open = false"
                             @close.stop="open = false">
                             <a @click="open =! open"
@@ -142,7 +142,7 @@
                         </div>
                         <h4 class="text-2xl font-semibold mt-2">Formateurs</h4>
                         <p class="flex-1 mt-2">
-                            Tous utilisateurs ayant le besion de partager ces connaissances, <strong
+                            Tout utilisateur ayant le besion de partager ces connaissances, <strong
                                 class="font-semibold">bgrfacile</strong> vous offres
                             la possibilité de crée du contenue et de le publier.
                             Une rénumération pouvant être perçu par ceux-ci.
@@ -154,7 +154,7 @@
                             <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/school.webp') }}"
                                 alt="">
                         </div>
-                        <h4 class="text-2xl font-semibold mt-2">écoles</h4>
+                        <h4 class="text-2xl font-semibold mt-2">écoles en ligne</h4>
                         <p class="flex-1 mt-2">
                             <strong class="font-semibold">bgrfacile</strong> offre la possibilité aux écoles de
                             s’enregistrer et de profiter des
@@ -235,20 +235,22 @@
                 <div class="md:py-2 h-auto md:h-96 w-full overflow-hidden flex justify-center items-center">
                     <div
                         class="w-full h-80 flex justify-center items-center md:max-w-lg overflow-hidden rounded-lg bg-transparent">
-                        <div class="player">
-                            <div id="info" class="info">
-                                <span class="artist">Stella victoire</span>
-                                <span class="name">Chronique Congolaise</span>
-                                <div class="progress-bar">
-                                    <div class="bar"></div>
+                        <div id="player_home">
+                            <div class="player">
+                                <div id="info" class="info">
+                                    <span class="artist"> </span>
+                                    <span class="name">l'étranger de Albert Camus</span>
+                                    <div class="progress-bar">
+                                        <div class="bar"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="control-panel" class="control-panel">
-                                <div class="album-art"></div>
-                                <div class="controls">
-                                    <div class="prev"></div>
-                                    <div id="play" class="play"></div>
-                                    <div class="next"></div>
+                                <div id="control-panel" class="control-panel">
+                                    <div class="album-art"></div>
+                                    <div class="controls">
+                                        <div class="prev"></div>
+                                        <div id="play" class="play"></div>
+                                        <div class="next"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

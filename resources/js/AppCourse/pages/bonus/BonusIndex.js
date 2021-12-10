@@ -2,6 +2,6 @@ import React from "react";
 
 export default function BonusIndex(){
     return <>
-    <h1>Bienvenue dans la section Bonus </h1>
+    <h2 className="text-2xl font-extrabold text-gray-900 pb-4">Bonus</h2>
     </>
 }

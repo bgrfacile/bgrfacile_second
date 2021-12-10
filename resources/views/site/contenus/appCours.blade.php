@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ mix('css/appCourse.css') }}">
 
     <!-- Scripts -->
+    @routes
     <script src="{{ mix('js/appCourse.js') }}" defer></script>
 </head>
 

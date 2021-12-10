@@ -49,6 +49,11 @@ Route::view('/formations/{path?}', 'site.contenus.appCours')
 Route::view('/bonus/{path?}', 'site.contenus.appCours')
     ->where('path', '.*')
     ->name('bonus.page');
+Route::view('/search/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('search.page');
+
+
 
 
 Route::middleware(['auth'])->group(function () {
@@ -60,7 +65,7 @@ Route::middleware(['auth'])->group(function () {
             $cycles = Cycle::all();
             $levels = Level::all();
             $matieres = Matiere::all();
-            return Inertia::render('Cours/preference',[
+            return Inertia::render('Cours/preference', [
                 'cycles' => $cycles,
                 'levels' => $levels,
                 'matieres' => $matieres,
@@ -72,7 +77,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('/matiere', MatiereController::class);
         Route::resource('/cours', CoursControllerAdmin::class);
 
-        Route::prefix('/users')->group(function(){
+        Route::prefix('/users')->group(function () {
             Route::get('/', [UserController::class, 'all'])->name('users.index');
             Route::get('/student', [UserController::class, 'student']);
             Route::get('/professor', [UserController::class, 'professor']);
@@ -97,8 +102,10 @@ Route::middleware(['auth'])->group(function () {
     });
 
 
-
-    Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
+    Route::view('/profile/{path?}', 'site.contenus.appCours')
+        ->where('path', '.*')
+        ->name('profil.index');
+    // Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
 });
 
 require __DIR__ . '/auth.php';
