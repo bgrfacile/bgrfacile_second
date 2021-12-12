@@ -13,6 +13,18 @@ import ScolaireCours from './pages/Cours/ScolaireCours';
 import OthersCours from './pages/Cours/OthersCours';
 import FavorisCours from './pages/Cours/FavorisCours';
 import Search from './pages/search/search';
+import NaviguationProfile from './pages/profile/naviguationProfile';
+import Followers from './pages/profile/followers';
+import EditProfile from './pages/profile/EditProfile';
+import Infos from './pages/profile/Infos';
+import MyCours from './pages/profile/MyCours';
+import MyExos from './pages/profile/MyExos';
+import Favoris from './pages/profile/Favoris';
+import CreateCours from './pages/profile/CreateCours';
+import CreateExos from './pages/profile/CreateExos';
+import NewApp from './pages/profile/NewApp';
+import DevenirFormateur from './pages/Formateur/DevenirFormateur';
+import DevenirPromoteur from './pages/Promoteur/DevenirPromoteur';
 
 
 
@@ -57,7 +69,19 @@ export default function RoutePath() {
                 <Route path="/formations/*" element={<FormationIndex />} />
                 <Route path="/bonus/*" element={<BonusIndex />} />
                 <Route path="/search/*" element={<Search />} />
-                <Route path="/profile/*" element={<Profile />} />
+                <Route element={<Profile />} >
+                    <Route path="/profile/*" element={<NewApp />} />
+                    <Route path="/profile/infos" element={<Infos />} />
+                    <Route path="/profile/my-cours" element={<MyCours />} />
+                    <Route path="/profile/my-cours/create" element={<CreateCours />} />
+                    <Route path="/profile/my-exos" element={<MyExos />} />
+                    <Route path="/profile/my-exos/create" element={<CreateExos />} />
+                    <Route path="/profile/favoris" element={<Favoris />} />
+                    <Route path="/profile/edit" element={<EditProfile />} />
+                    <Route path='/profile/followers' element={<Followers />} />
+                    <Route path='/profile/devenir-formateur' element={<DevenirFormateur />} />
+                    <Route path='/profile/devenir-promoteur' element={<DevenirPromoteur />} />
+                </Route>
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

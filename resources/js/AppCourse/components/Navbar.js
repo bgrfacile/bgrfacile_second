@@ -84,10 +84,10 @@ const NavBar = () => {
                             <button onClick={() => setIsOpen(!isOpen)}
                                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                                 <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                    <path class="inline-flex"
+                                    <path className="inline-flex"
                                         strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                         d="M4 6h16M4 12h16M4 18h16" />
-                                    <path class="hidden"
+                                    <path className="hidden"
                                         strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                                 </svg>
                             </button>
@@ -97,26 +97,26 @@ const NavBar = () => {
 
             </div>
             {isOpen && (
-            <div className="md:hidden max-w-full overflow-x-hidden mx-0 md:mx-4 py-2">
-                <div className="w-full overflow-x-scroll sm:overflow-x-auto flex justify-evenly items-center">
-                <CustomLink classActive={classNameLinkActive} to='/cours' className={className}>
-                    <Svgbook className='block h-10 w-auto' />
-                    <span>Cours</span>
-                </CustomLink>
-                <CustomLink classActive={classNameLinkActive} to='/exercices' className={className}>
-                    <SvgExo className='block h-10 w-auto' />
-                    <span>Exercices</span>
-                </CustomLink>
-                <CustomLink classActive={classNameLinkActive} to='/formations' className={className}>
-                    <SvgFormation className='block h-10 w-auto' />
-                    <span>Formations</span>
-                </CustomLink>
-                <CustomLink classActive={classNameLinkActive} to='/bonus' className={className}>
-                    <SvgBonus className='block h-10 w-auto' />
-                    <span>Bonus</span>
-                </CustomLink>
-                </div>
-            </div>)}
+                <div className="md:hidden max-w-full overflow-x-hidden mx-0 md:mx-4 py-2">
+                    <div className="w-full overflow-x-scroll sm:overflow-x-auto flex justify-evenly items-center">
+                        <CustomLink classActive={classNameLinkActive} to='/cours' className={className}>
+                            <Svgbook className='block h-10 w-auto' />
+                            <span>Cours</span>
+                        </CustomLink>
+                        <CustomLink classActive={classNameLinkActive} to='/exercices' className={className}>
+                            <SvgExo className='block h-10 w-auto' />
+                            <span>Exercices</span>
+                        </CustomLink>
+                        <CustomLink classActive={classNameLinkActive} to='/formations' className={className}>
+                            <SvgFormation className='block h-10 w-auto' />
+                            <span>Formations</span>
+                        </CustomLink>
+                        <CustomLink classActive={classNameLinkActive} to='/bonus' className={className}>
+                            <SvgBonus className='block h-10 w-auto' />
+                            <span>Bonus</span>
+                        </CustomLink>
+                    </div>
+                </div>)}
 
         </nav>
     </>
