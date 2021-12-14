@@ -13,9 +13,7 @@ export default function ListManager() {
             defaultCollapseIcon={<ExpandMoreIcon />}
             defaultExpandIcon={<ChevronRightIcon />}
             sx={{ flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}>
-            <Link to="/cours/favoris">
-                <TreeItem nodeId="1" label="Vos Favoris" />
-            </Link>
+
             <Link to="/cours/random">
                 <TreeItem nodeId="2" label="Cours Aléatoire" />
             </Link>

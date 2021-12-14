@@ -173,13 +173,17 @@ const Tiptap = () => {
     `,
     })
 
+    const getData = ()=>{
+        console.log(editor.getHTML());
+    }
+
     return (
         <div>
+            <button className="px-2 py-1 bg-green-400" onClick={getData}> get </button>
             <div className="mb-2">
                 <MenuBar editor={editor} />
             </div>
             <EditorContent editor={editor} className="mb-2 p-2 border" />
-
         </div>
     )
 }

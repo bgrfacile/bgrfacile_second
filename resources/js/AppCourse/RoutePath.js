@@ -11,7 +11,7 @@ import Profile from './pages/profile/profile';
 import RandomCours from './pages/Cours/RandomCours';
 import ScolaireCours from './pages/Cours/ScolaireCours';
 import OthersCours from './pages/Cours/OthersCours';
-import FavorisCours from './pages/Cours/FavorisCours';
+import FavorisCours from './pages/profile/FavorisCours';
 import Search from './pages/search/search';
 import NaviguationProfile from './pages/profile/naviguationProfile';
 import Followers from './pages/profile/followers';
@@ -25,6 +25,8 @@ import CreateExos from './pages/profile/CreateExos';
 import NewApp from './pages/profile/NewApp';
 import DevenirFormateur from './pages/Formateur/DevenirFormateur';
 import DevenirPromoteur from './pages/Promoteur/DevenirPromoteur';
+import FavorisExcerciceSolution from './pages/profile/FavorisExcerciceSolution';
+import FavorisFormation from './pages/profile/FavorisFormation';
 
 
 
@@ -60,7 +62,6 @@ export default function RoutePath() {
         <Routes>
             <Route element={<LayoutCourse />} >
                 <Route path="/cours" element={<CoursRoute />} >
-                    <Route path='/cours/favoris/*' element={<FavorisCours />} />
                     <Route path='/cours/random/*' element={<RandomCours />} />
                     <Route path='/cours/scolaire/*' element={<ScolaireCours />} />
                     <Route path='/cours/others/*' element={<OthersCours />} />
@@ -77,6 +78,9 @@ export default function RoutePath() {
                     <Route path="/profile/my-exos" element={<MyExos />} />
                     <Route path="/profile/my-exos/create" element={<CreateExos />} />
                     <Route path="/profile/favoris" element={<Favoris />} />
+                    <Route path="/profile/favoris/cours" element={<FavorisCours />} />
+                    <Route path="/profile/favoris/exercices-solutions" element={<FavorisExcerciceSolution />} />
+                    <Route path="/profile/favoris/formations" element={<FavorisFormation />} />
                     <Route path="/profile/edit" element={<EditProfile />} />
                     <Route path='/profile/followers' element={<Followers />} />
                     <Route path='/profile/devenir-formateur' element={<DevenirFormateur />} />
