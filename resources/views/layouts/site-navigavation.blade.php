@@ -1,5 +1,5 @@
-<nav x-data="{ open: false }"
-    class="relative bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 shadow">
+<nav x-data="{ open: false }" id="navbar"
+    class="fixed top-0 z-50 w-full bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 shadow">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -216,3 +216,6 @@
         </div>
     </div>
 </nav>
+<script>
+
+</script>

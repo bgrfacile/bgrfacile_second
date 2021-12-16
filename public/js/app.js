@@ -4030,6 +4030,20 @@ __webpack_require__(/*! ./plugins/darkMode */ "./resources/js/plugins/darkMode.j
 
 __webpack_require__(/*! ./plugins/player */ "./resources/js/plugins/player.js");
 
+var prevScrollpos = window.pageYOffset;
+
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-70px";
+  }
+
+  prevScrollpos = currentScrollPos;
+};
+
 var c = document.querySelector("#c"),
     d = c.getContext("2d"),
     M = Math,

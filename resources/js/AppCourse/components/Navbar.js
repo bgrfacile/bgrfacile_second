@@ -14,7 +14,7 @@ const NavBar = () => {
     const className = "flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700";
     const classNameLinkActive = "text-blue-600 bg-gray-200 dark:text-gray-200 dark:bg-gray-700";
     return <>
-        <nav className="bg-white w-full">
+        <nav className=" bg-white w-full">
             <div className="border-b flex flex-wrap sm:flex-nowrap relative justify-between items-center max-w-7xl mx-auto px-8 py-2 dark:bg-gray-800">
                 <div className="inline-flex">
                     <a href="/" className="flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700">
