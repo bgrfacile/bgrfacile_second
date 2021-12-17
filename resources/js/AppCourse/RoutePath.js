@@ -71,8 +71,8 @@ export default function RoutePath() {
                 <Route path="/bonus/*" element={<BonusIndex />} />
                 <Route path="/search/*" element={<Search />} />
                 <Route element={<Profile />} >
-                    <Route path="/profile/*" element={<NewApp />} />
-                    <Route path="/profile/infos" element={<Infos />} />
+                    <Route index path="/profile/*" element={<Infos />} />
+                    {/* <Route path="/profile/infos" element={<Infos />} /> */}
                     <Route path="/profile/my-cours" element={<MyCours />} />
                     <Route path="/profile/my-cours/create" element={<CreateCours />} />
                     <Route path="/profile/my-exos" element={<MyExos />} />

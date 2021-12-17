@@ -18,7 +18,7 @@ export default function ListManager() {
                 <TreeItem nodeId="2" label="Cours Aléatoire" />
             </Link>
 
-            <CustomTreeItem className="text-red-500" nodeId="3" label="Cours par programme académique">
+            <CustomTreeItem nodeId="3" label="Cours par programme académique">
                 <Link to="/cours/scolaire">
                     <TreeItem className="text-gray-700"  nodeId="31" label="Collège" />
                 </Link>
@@ -27,17 +27,6 @@ export default function ListManager() {
                     <TreeItem className="text-gray-700" nodeId="32" label="Lycée" />
                 </Link>
             </CustomTreeItem>
-
-            <CustomTreeItem nodeId="4" label="Les autres cours">
-                <Link to="/cours/others">
-                    <TreeItem nodeId="41" label="Html" />
-                </Link>
-
-                <Link to="/cours/others">
-                    <TreeItem nodeId="42" label="Css" />
-                </Link>
-            </CustomTreeItem>
-
         </TreeView>
     </>;
 }

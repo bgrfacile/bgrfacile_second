@@ -9,7 +9,6 @@ export default function CustomLink({ children, to,className,classActive, ...prop
     let resolved = useResolvedPath(to);
     let match = useMatch({ path: resolved.pathname, end: true });
     let active = match ? classActive : '';
-// console.log(match);
     return (
         <div>
             <Link
