@@ -69,7 +69,9 @@ export default function RoutePath() {
                 <Route path="/exercices/*" element={<ExerciceIndex />} />
                 <Route path="/formations/*" element={<FormationIndex />} />
                 <Route path="/bonus/*" element={<BonusIndex />} />
-                <Route path="/search/*" element={<Search />} />
+                <Route path="/search" element={<Search />} >
+                    <Route path=':q' element={<Search />} />
+                </Route>
                 <Route element={<Profile />} >
                     <Route index path="/profile/*" element={<Infos />} />
                     {/* <Route path="/profile/infos" element={<Infos />} /> */}
