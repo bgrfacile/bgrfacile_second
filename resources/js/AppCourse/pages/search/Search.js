@@ -4,23 +4,56 @@ import {
     useParams,
     useNavigate
 } from 'react-router-dom';
-import CardSearch from './CardSearch';
+// import CardSearch from './CardSearch';
 
 
-const SearchType = ({ label, focus }) => {
+const SearchType = ({ label, focus, onClick }) => {
     return (<>
         {focus ?
             <li className='border-b border-gray-200 p-2'>
-                <Link to={`?type=${label}`} className='block w-full border-red-500 border-l-4 px-4 py-2 text-sm transition-all duration-100 text-gray-700 hover:bg-red-200'>
+                <Link onClick={onClick} to={`?type=${label}`} className='block w-full border-red-500 border-l-4 px-4 py-2 text-sm transition-all duration-100 text-gray-700 hover:bg-red-200'>
                     <span className='font-bold'>{label}</span>
                 </Link>
             </li> :
             <li className='border-b border-gray-200 p-2'>
-                <Link to={`?type=${label}`} className='block w-full px-4 py-2 text-sm transition-all duration-100 text-gray-700 hover:bg-red-200'>
+                <Link onClick={onClick} to={`?type=${label}`} className='block w-full px-4 py-2 text-sm transition-all duration-100 text-gray-700 hover:bg-red-200'>
                     <span className='font-bold'>{label}</span>
                 </Link>
             </li>}
 
+    </>)
+}
+
+const CardSearch = ({ item }) => {
+    return (<>
+        <div className='py-6 border-b flex items-start'>
+            <div className='flex-shrink-0 mr-2'>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-auto w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+            </div>
+            <div className='w-full flex flex-col'>
+                <div className='flex justify-between'>
+                    <Link to={`?type=${item.title}`}>
+                        <h3 className='text-xl font-bold'>{item.title}</h3>
+                    </Link>
+                    <button className='flex items-center'>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        liker
+                    </button>
+                </div>
+                <p className='text-sm mb-1'>description</p>
+                <div>
+                    chips
+                </div>
+                <div className='flex items-center'>
+                    <span className='text-sm pr-1 text-gray-600'> j'aime</span>
+                    <span className='text-sm pr-1 text-gray-600'> favoris</span>
+                </div>
+            </div>
+        </div>
     </>)
 }
 
@@ -32,7 +65,7 @@ export default function Search() {
     let { q } = useParams();
     let focusAll, focusCourse, focusExercise, focusFormations, focusbonus;
     let navigate = useNavigate();
-
+    console.log(q);
     const getData = async () => {
         fetch("https://jsonplaceholder.typicode.com/todos/")
             .then(res => res.json())
@@ -53,6 +86,10 @@ export default function Search() {
             getData();
         }
     }, []);
+
+    // useEffect(() => {
+    //     setItems(items.filter(item => item.title.toLowerCase().includes(q.toLowerCase())));
+    // }, [items]);
 
     const queryParams = new URLSearchParams(location.search);
     const onChange = async (e) => {
@@ -84,6 +121,16 @@ export default function Search() {
         }
     }
 
+    const onChangeFiltre = async () => {
+        if (query !== '') {
+            navigate(`../search/${query}?type=All`, { replace: true });
+            getData();
+        } else {
+            navigate(`../search/?type=All`, { replace: true });
+            getData();
+        }
+    }
+
     return (
         <div className='w-full'>
             <div className="flex mx-auto pt-4 pb-8 border-b mb-2">
@@ -99,15 +146,15 @@ export default function Search() {
             <div className='grid grid-cols-4 gap-4'>
                 <div className='col-span-1'>
                     <ul className='border rounded-md'>
-                        <SearchType  label='All' focus={focusAll} />
-                        <SearchType label='Cours' focus={focusCourse} />
-                        <SearchType label='Exercices' focus={focusExercise} />
-                        <SearchType label='Formations' focus={focusFormations} />
-                        <SearchType label='Bonus' focus={focusbonus} />
+                        <SearchType onClick={onChangeFiltre} label='All' focus={focusAll} />
+                        <SearchType onClick={onChangeFiltre} label='Cours' focus={focusCourse} />
+                        <SearchType onClick={onChangeFiltre} label='Exercices' focus={focusExercise} />
+                        <SearchType onClick={onChangeFiltre} label='Formations' focus={focusFormations} />
+                        <SearchType onClick={onChangeFiltre} label='Bonus' focus={focusbonus} />
                     </ul>
 
                 </div>
-                <div className='col-span-3 p-1 bg-white flex flex-col items-stretch'>
+                <div className='col-span-3 px-4 bg-white flex flex-col items-stretch'>
                     {ListResultats()}
                 </div>
             </div>
