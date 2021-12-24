@@ -24,6 +24,18 @@ const SearchType = ({ label, focus, onClick }) => {
     </>)
 }
 
+const NoResult = () => {
+    return (<>
+        <div className=' h-full flex items-center justify-center'>
+            <div className='text-center'>
+                <img className='w-16 h-16 mx-auto object-cover' src='/img/no-results.png' alt='no result' />
+                <h1 className='text-3xl font-bold text-gray-900'>Aucun résultat</h1>
+                <p className='text-gray-600'>Veuillez réessayer avec un autre mot clé</p>
+            </div>
+        </div>
+    </>)
+}
+
 const CardSearch = ({ item }) => {
     return (<>
         <div className='py-6 border-b flex items-start'>
@@ -66,7 +78,8 @@ export default function Search() {
     let focusAll, focusCourse, focusExercise, focusFormations, focusbonus;
     let navigate = useNavigate();
     console.log(q);
-    const getData = async () => {
+    const getData = async (query) => {
+        console.log(query);
         fetch("https://jsonplaceholder.typicode.com/todos/")
             .then(res => res.json())
             .then(
@@ -87,10 +100,6 @@ export default function Search() {
         }
     }, []);
 
-    // useEffect(() => {
-    //     setItems(items.filter(item => item.title.toLowerCase().includes(q.toLowerCase())));
-    // }, [items]);
-
     const queryParams = new URLSearchParams(location.search);
     const onChange = async (e) => {
         e.preventDefault();
@@ -99,7 +108,7 @@ export default function Search() {
     const onSubmit = async (e) => {
         e.preventDefault();
         navigate(`../search/${query}`, { replace: true });
-        getData();
+        getData(query);
     }
 
     if (queryParams.has('type')) {
@@ -117,7 +126,7 @@ export default function Search() {
         if (items.length !== 0) {
             return items.map((item, index) => <CardSearch key={index} item={item} />);
         } else {
-            return <p>Aucun résultat</p>;
+            return <NoResult />;
         }
     }
 
@@ -154,7 +163,7 @@ export default function Search() {
                     </ul>
 
                 </div>
-                <div className='col-span-3 px-4 bg-white flex flex-col items-stretch'>
+                <div className='col-span-3 px-4 flex flex-col items-stretch'>
                     {ListResultats()}
                 </div>
             </div>

@@ -29647,12 +29647,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function BonusIndex() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-      className: "text-2xl font-extrabold text-gray-900 pb-4",
-      children: "Bonus"
+
+
+var CardBonus = function CardBonus(_ref) {
+  var label = _ref.label;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "flex flex-col justify-center items-center w-full h-80 bg-white rounded-sm shadow",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "cursor-pointer",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        src: "img/folder.png",
+        className: "w-24 h-24 object-cover mb-3 transform transition duration-500 hover:scale-110"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "text-xl font-bold text-center",
+        children: label
+      })]
     })
+  });
+};
+
+function BonusIndex() {
+  var styleGrid = {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gridGap: '1rem',
+    gridAutoRows: 'minmax(200px, auto)',
+    gridAutoColumns: 'minmax(300px, auto)',
+    gridAutoFlow: 'dense',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyItems: 'center',
+    alignSelf: 'center',
+    maxWidth: '1300px'
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "w-full mb-8 border-b text-gray-900",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+        className: "text-2xl font-extrabold pb-2",
+        children: "Bonus"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        className: "font-medium mb-2",
+        children: "Les Bonus sont des modules compl\xE9mentaires qu'offre le site pour vous aider \xE0 r\xE9ussir votre formation."
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: styleGrid,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(CardBonus, {
+        label: "Podcast"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(CardBonus, {
+        label: "Quizz"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(CardBonus, {
+        label: "Jeux"
+      })]
+    })]
   });
 }
 
@@ -30854,6 +30902,25 @@ function Profile(_ref) {
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_hooks_CustomLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
             classActive: classActive,
+            to: "/profile",
+            className: classDefault,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              className: "mr-2 h-6 w-6",
+              fill: "none",
+              viewBox: "0 0 24 24",
+              stroke: "currentColor",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                strokeLinecap: "round",
+                strokeLinejoin: "round",
+                strokeWidth: 2,
+                d: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              children: "\xE9coles en ligne"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_hooks_CustomLink__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            classActive: classActive,
             to: "/profile/favoris",
             className: classDefault,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
@@ -31094,6 +31161,28 @@ var SearchType = function SearchType(_ref) {
   });
 };
 
+var NoResult = function NoResult() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: " h-full flex items-center justify-center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "text-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          className: "w-16 h-16 mx-auto object-cover",
+          src: "/img/no-results.png",
+          alt: "no result"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+          className: "text-3xl font-bold text-gray-900",
+          children: "Aucun r\xE9sultat"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          className: "text-gray-600",
+          children: "Veuillez r\xE9essayer avec un autre mot cl\xE9"
+        })]
+      })
+    })
+  });
+};
+
 var CardSearch = function CardSearch(_ref2) {
   var item = _ref2.item;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
@@ -31148,10 +31237,10 @@ var CardSearch = function CardSearch(_ref2) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "flex items-center",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            className: "text-sm px-1 text-gray-600",
+            className: "text-sm pr-1 text-gray-600",
             children: " j'aime"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            className: "text-sm px-1 text-gray-600",
+            className: "text-sm pr-1 text-gray-600",
             children: " favoris"
           })]
         })]
@@ -31189,11 +31278,12 @@ function Search() {
   console.log(q);
 
   var getData = /*#__PURE__*/function () {
-    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+    var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(query) {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              console.log(query);
               fetch("https://jsonplaceholder.typicode.com/todos/").then(function (res) {
                 return res.json();
               }).then(function (result) {
@@ -31204,7 +31294,7 @@ function Search() {
                 setError(error);
               });
 
-            case 1:
+            case 2:
             case "end":
               return _context.stop();
           }
@@ -31212,7 +31302,7 @@ function Search() {
       }, _callee);
     }));
 
-    return function getData() {
+    return function getData(_x) {
       return _ref3.apply(this, arguments);
     };
   }();
@@ -31221,10 +31311,7 @@ function Search() {
     if (q !== undefined) {
       getData();
     }
-  }, []); // useEffect(() => {
-  //     setItems(items.filter(item => item.title.toLowerCase().includes(q.toLowerCase())));
-  // }, [items]);
-
+  }, []);
   var queryParams = new URLSearchParams(location.search);
 
   var onChange = /*#__PURE__*/function () {
@@ -31244,7 +31331,7 @@ function Search() {
       }, _callee2);
     }));
 
-    return function onChange(_x) {
+    return function onChange(_x2) {
       return _ref4.apply(this, arguments);
     };
   }();
@@ -31259,7 +31346,7 @@ function Search() {
               navigate("../search/".concat(query), {
                 replace: true
               });
-              getData();
+              getData(query);
 
             case 3:
             case "end":
@@ -31269,7 +31356,7 @@ function Search() {
       }, _callee3);
     }));
 
-    return function onSubmit(_x2) {
+    return function onSubmit(_x3) {
       return _ref5.apply(this, arguments);
     };
   }();
@@ -31293,9 +31380,7 @@ function Search() {
         }, index);
       });
     } else {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        children: "Aucun r\xE9sultat"
-      });
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(NoResult, {});
     }
   };
 
@@ -31374,7 +31459,7 @@ function Search() {
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "col-span-3 px-4 bg-white flex flex-col items-stretch",
+        className: "col-span-3 px-4 flex flex-col items-stretch",
         children: ListResultats()
       })]
     })]
