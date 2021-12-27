@@ -27,37 +27,14 @@ import DevenirFormateur from './pages/Formateur/DevenirFormateur';
 import DevenirPromoteur from './pages/Promoteur/DevenirPromoteur';
 import FavorisExcerciceSolution from './pages/profile/FavorisExcerciceSolution';
 import FavorisFormation from './pages/profile/FavorisFormation';
+import EcoleEnLigne from './pages/profile/EcoleEnLigne';
+import QuizzIndex from './pages/bonus/quiz/QuizzIndex';
+import PodcastIndex from './pages/bonus/podcast/PodcastIndex';
 
 
 
 export default function RoutePath() {
-    const els = {
-        coursItems: [
-            {
-                title: "Mes cours favoris",
-                url: route('formation.page'),
-                desc: "Visiter l'ensemble des contenues mise en favoris",
-            },
-            {
-                title: "cours random",
-                url: "/cours/random",
-                desc: "Lancer la roue et découvert du contenue que vous ne connessaisez peut-être pas.",
-            },
-            {
-                title: "cours scolaire",
-                url: "/cours/scolaire",
-                desc: "Tout les notions apprisent en cours se trouve ici.",
-            },
-            {
-                title: "Les auteurs cours",
-                url: "/cours/others",
-                desc: "Découvert notion differents de ceux qui sont apppris dans une classe classique",
-            },
-        ],
-        exercicesItems: [],
-        formationItems: [],
-        bonusItems: [],
-    };
+
     return (<>
         <Routes>
             <Route element={<LayoutCourse />} >
@@ -69,12 +46,15 @@ export default function RoutePath() {
                 <Route path="/exercices/*" element={<ExerciceIndex />} />
                 <Route path="/formations/*" element={<FormationIndex />} />
                 <Route path="/bonus/*" element={<BonusIndex />} />
+                <Route path='/bonus/quizz' element={<QuizzIndex />} />
+                <Route path='/bonus/podcast' element={<PodcastIndex />} />
                 <Route path="/search" element={<Search />} >
                     <Route path=':q' element={<Search />} />
                 </Route>
                 <Route element={<Profile />} >
                     <Route index path="/profile/*" element={<Infos />} />
                     {/* <Route path="/profile/infos" element={<Infos />} /> */}
+                    <Route path="/profile/ecole-en-ligne" element={<EcoleEnLigne />} />
                     <Route path="/profile/my-cours" element={<MyCours />} />
                     <Route path="/profile/my-cours/create" element={<CreateCours />} />
                     <Route path="/profile/my-exos" element={<MyExos />} />
