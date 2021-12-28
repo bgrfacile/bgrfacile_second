@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Empty from '../notFound/Empty';
 
-const ElementVide = () => <div>Aucun élement poster</div>
 
 const ElementNonVide = () => <div className="flex-1 bg-gray-500">
     Liste de vos cours
@@ -29,7 +29,7 @@ export default function MyExos() {
                     </div>
                 </div>
             </div>
-            {myExos.length == 0 ? <ElementVide /> : <ElementNonVide />}
+            {myExos.length == 0 ? <Empty /> : <ElementNonVide />}
         </div>
     )
 }

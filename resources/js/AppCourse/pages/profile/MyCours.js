@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Empty from '../notFound/Empty';
 
 const ElementVide = () => <div>Aucun élement poster</div>
 
@@ -32,7 +33,7 @@ export default function MyCours() {
                     </div>
                 </div>
             </div>
-            {mycourses.length == 0 ? <ElementVide /> : <ElementNonVide />}
+            {mycourses.length == 0 ? <Empty /> : <ElementNonVide />}
         </div>
     )
 }
