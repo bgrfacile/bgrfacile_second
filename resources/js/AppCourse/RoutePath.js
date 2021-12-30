@@ -71,7 +71,6 @@ export default function RoutePath() {
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>
-
     </>);
 
 }

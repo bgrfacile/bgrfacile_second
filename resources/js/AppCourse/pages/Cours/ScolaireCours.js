@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import BreadCrumb from "../../components/BreadCrumb";
 import Card2 from "../../components/Cards/itemCours";
 
-export default function ScolaireCours(){
+export default function ScolaireCours() {
     useEffect(() => {
         getAllCours();
     }, [])
@@ -17,12 +17,10 @@ export default function ScolaireCours(){
         })
             .catch(erro => console.error(`Error: ${error}`))
     }
-    console.log(cours);
     return (<>
-    <BreadCrumb title="Scolaires" />
-    <div className="h-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8">
+        <BreadCrumb title="Scolaires" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {cours.map((cour, key) => <Card2 key={key} cour={cour} />)}
         </div>
-
     </>);
 }

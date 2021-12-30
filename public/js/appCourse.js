@@ -2727,174 +2727,6 @@ function isHostComponent(element) {
 
 /***/ }),
 
-/***/ "./node_modules/@mui/icons-material/BarChartOutlined.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/@mui/icons-material/BarChartOutlined.js ***!
-  \**************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
-
-var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
-  d: "M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z"
-}), 'BarChartOutlined');
-
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@mui/icons-material/ChevronRight.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@mui/icons-material/ChevronRight.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
-
-var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
-  d: "M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-}), 'ChevronRight');
-
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@mui/icons-material/ClearAllOutlined.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/@mui/icons-material/ClearAllOutlined.js ***!
-  \**************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
-
-var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
-  d: "M5 13h14v-2H5v2zm-2 4h14v-2H3v2zM7 7v2h14V7H7z"
-}), 'ClearAllOutlined');
-
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@mui/icons-material/ExpandMore.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@mui/icons-material/ExpandMore.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
-
-var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
-  d: "M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6z"
-}), 'ExpandMore');
-
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@mui/icons-material/MusicNoteOutlined.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@mui/icons-material/MusicNoteOutlined.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
-
-var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
-  d: "m12 3 .01 10.55c-.59-.34-1.27-.55-2-.55C7.79 13 6 14.79 6 17s1.79 4 4.01 4S14 19.21 14 17V7h4V3h-6zm-1.99 16c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"
-}), 'MusicNoteOutlined');
-
-exports["default"] = _default;
-
-/***/ }),
-
-/***/ "./node_modules/@mui/icons-material/OndemandVideoOutlined.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@mui/icons-material/OndemandVideoOutlined.js ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = void 0;
-
-var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
-
-var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
-  d: "M9 7v8l7-4zm12-4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"
-}), 'OndemandVideoOutlined');
-
-exports["default"] = _default;
-
-/***/ }),
-
 /***/ "./node_modules/@mui/icons-material/Person.js":
 /*!****************************************************!*\
   !*** ./node_modules/@mui/icons-material/Person.js ***!
@@ -2923,10 +2755,10 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ "./node_modules/@mui/icons-material/TextSnippetOutlined.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@mui/icons-material/TextSnippetOutlined.js ***!
-  \*****************************************************************/
+/***/ "./node_modules/@mui/icons-material/RemoveRedEye.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@mui/icons-material/RemoveRedEye.js ***!
+  \**********************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -2944,8 +2776,8 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
-  d: "M14.17 5 19 9.83V19H5V5h9.17m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9.83c0-.53-.21-1.04-.59-1.41l-4.83-4.83c-.37-.38-.88-.59-1.41-.59zM7 15h10v2H7v-2zm0-4h10v2H7v-2zm0-4h7v2H7V7z"
-}), 'TextSnippetOutlined');
+  d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+}), 'RemoveRedEye');
 
 exports["default"] = _default;
 
@@ -3694,1016 +3526,6 @@ function useTreeItem(nodeId) {
 
 /***/ }),
 
-/***/ "./node_modules/@mui/lab/TreeView/TreeView.js":
-/*!****************************************************!*\
-  !*** ./node_modules/@mui/lab/TreeView/TreeView.js ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/useThemeProps.js");
-/* harmony import */ var _mui_material_styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/styles */ "./node_modules/@mui/material/styles/useTheme.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/composeClasses/composeClasses.js");
-/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/useId.js");
-/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/useForkRef.js");
-/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/useControlled.js");
-/* harmony import */ var _mui_material_utils__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material/utils */ "./node_modules/@mui/material/utils/ownerDocument.js");
-/* harmony import */ var _TreeViewContext__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./TreeViewContext */ "./node_modules/@mui/lab/TreeView/TreeViewContext.js");
-/* harmony import */ var _descendants__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./descendants */ "./node_modules/@mui/lab/TreeView/descendants.js");
-/* harmony import */ var _treeViewClasses__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./treeViewClasses */ "./node_modules/@mui/lab/TreeView/treeViewClasses.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-const _excluded = ["children", "className", "defaultCollapseIcon", "defaultEndIcon", "defaultExpanded", "defaultExpandIcon", "defaultParentIcon", "defaultSelected", "disabledItemsFocusable", "disableSelection", "expanded", "id", "multiSelect", "onBlur", "onFocus", "onKeyDown", "onNodeFocus", "onNodeSelect", "onNodeToggle", "selected"];
-
-
-
-
-
-
-
-
-
-
-
-const useUtilityClasses = ownerState => {
-  const {
-    classes
-  } = ownerState;
-  const slots = {
-    root: ['root']
-  };
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_6__["default"])(slots, _treeViewClasses__WEBPACK_IMPORTED_MODULE_7__.getTreeViewUtilityClass, classes);
-};
-
-const TreeViewRoot = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_8__["default"])('ul', {
-  name: 'MuiTreeView',
-  slot: 'Root',
-  overridesResolver: (props, styles) => styles.root
-})({
-  padding: 0,
-  margin: 0,
-  listStyle: 'none',
-  outline: 0
-});
-
-function isPrintableCharacter(string) {
-  return string && string.length === 1 && string.match(/\S/);
-}
-
-function findNextFirstChar(firstChars, startIndex, char) {
-  for (let i = startIndex; i < firstChars.length; i += 1) {
-    if (char === firstChars[i]) {
-      return i;
-    }
-  }
-
-  return -1;
-}
-
-function noopSelection() {
-  return false;
-}
-
-const defaultDefaultExpanded = [];
-const defaultDefaultSelected = [];
-const TreeView = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function TreeView(inProps, ref) {
-  const props = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_9__["default"])({
-    props: inProps,
-    name: 'MuiTreeView'
-  });
-
-  const {
-    children,
-    className,
-    defaultCollapseIcon,
-    defaultEndIcon,
-    defaultExpanded = defaultDefaultExpanded,
-    defaultExpandIcon,
-    defaultParentIcon,
-    defaultSelected = defaultDefaultSelected,
-    disabledItemsFocusable = false,
-    disableSelection = false,
-    expanded: expandedProp,
-    id: idProp,
-    multiSelect = false,
-    onBlur,
-    onFocus,
-    onKeyDown,
-    onNodeFocus,
-    onNodeSelect,
-    onNodeToggle,
-    selected: selectedProp
-  } = props,
-        other = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(props, _excluded);
-
-  const theme = (0,_mui_material_styles__WEBPACK_IMPORTED_MODULE_10__["default"])();
-  const isRtl = theme.direction === 'rtl';
-
-  const ownerState = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-    defaultExpanded,
-    defaultSelected,
-    disabledItemsFocusable,
-    disableSelection,
-    multiSelect
-  });
-
-  const classes = useUtilityClasses(ownerState);
-  const treeId = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_11__["default"])(idProp);
-  const treeRef = react__WEBPACK_IMPORTED_MODULE_2__.useRef(null);
-  const handleRef = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_12__["default"])(treeRef, ref);
-  const [focusedNodeId, setFocusedNodeId] = react__WEBPACK_IMPORTED_MODULE_2__.useState(null);
-  const nodeMap = react__WEBPACK_IMPORTED_MODULE_2__.useRef({});
-  const firstCharMap = react__WEBPACK_IMPORTED_MODULE_2__.useRef({});
-  const [expanded, setExpandedState] = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_13__["default"])({
-    controlled: expandedProp,
-    default: defaultExpanded,
-    name: 'TreeView',
-    state: 'expanded'
-  });
-  const [selected, setSelectedState] = (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_13__["default"])({
-    controlled: selectedProp,
-    default: defaultSelected,
-    name: 'TreeView',
-    state: 'selected'
-  });
-  /*
-   * Status Helpers
-   */
-
-  const isExpanded = react__WEBPACK_IMPORTED_MODULE_2__.useCallback(id => Array.isArray(expanded) ? expanded.indexOf(id) !== -1 : false, [expanded]);
-  const isExpandable = react__WEBPACK_IMPORTED_MODULE_2__.useCallback(id => nodeMap.current[id] && nodeMap.current[id].expandable, []);
-  const isSelected = react__WEBPACK_IMPORTED_MODULE_2__.useCallback(id => Array.isArray(selected) ? selected.indexOf(id) !== -1 : selected === id, [selected]);
-  const isDisabled = react__WEBPACK_IMPORTED_MODULE_2__.useCallback(id => {
-    let node = nodeMap.current[id]; // This can be called before the node has been added to the node map.
-
-    if (!node) {
-      return false;
-    }
-
-    if (node.disabled) {
-      return true;
-    }
-
-    while (node.parentId != null) {
-      node = nodeMap.current[node.parentId];
-
-      if (node.disabled) {
-        return true;
-      }
-    }
-
-    return false;
-  }, []);
-
-  const isFocused = id => focusedNodeId === id;
-  /*
-   * Child Helpers
-   */
-  // Using Object.keys -> .map to mimic Object.values we should replace with Object.values() once we stop IE11 support.
-
-
-  const getChildrenIds = id => Object.keys(nodeMap.current).map(key => {
-    return nodeMap.current[key];
-  }).filter(node => node.parentId === id).sort((a, b) => a.index - b.index).map(child => child.id);
-
-  const getNavigableChildrenIds = id => {
-    let childrenIds = getChildrenIds(id);
-
-    if (!disabledItemsFocusable) {
-      childrenIds = childrenIds.filter(node => !isDisabled(node));
-    }
-
-    return childrenIds;
-  };
-  /*
-   * Node Helpers
-   */
-
-
-  const getNextNode = id => {
-    // If expanded get first child
-    if (isExpanded(id) && getNavigableChildrenIds(id).length > 0) {
-      return getNavigableChildrenIds(id)[0];
-    }
-
-    let node = nodeMap.current[id];
-
-    while (node != null) {
-      // Try to get next sibling
-      const siblings = getNavigableChildrenIds(node.parentId);
-      const nextSibling = siblings[siblings.indexOf(node.id) + 1];
-
-      if (nextSibling) {
-        return nextSibling;
-      } // If the sibling does not exist, go up a level to the parent and try again.
-
-
-      node = nodeMap.current[node.parentId];
-    }
-
-    return null;
-  };
-
-  const getPreviousNode = id => {
-    const node = nodeMap.current[id];
-    const siblings = getNavigableChildrenIds(node.parentId);
-    const nodeIndex = siblings.indexOf(id);
-
-    if (nodeIndex === 0) {
-      return node.parentId;
-    }
-
-    let currentNode = siblings[nodeIndex - 1];
-
-    while (isExpanded(currentNode) && getNavigableChildrenIds(currentNode).length > 0) {
-      currentNode = getNavigableChildrenIds(currentNode).pop();
-    }
-
-    return currentNode;
-  };
-
-  const getLastNode = () => {
-    let lastNode = getNavigableChildrenIds(null).pop();
-
-    while (isExpanded(lastNode)) {
-      lastNode = getNavigableChildrenIds(lastNode).pop();
-    }
-
-    return lastNode;
-  };
-
-  const getFirstNode = () => getNavigableChildrenIds(null)[0];
-
-  const getParent = id => nodeMap.current[id].parentId;
-  /**
-   * This is used to determine the start and end of a selection range so
-   * we can get the nodes between the two border nodes.
-   *
-   * It finds the nodes' common ancestor using
-   * a naive implementation of a lowest common ancestor algorithm
-   * (https://en.wikipedia.org/wiki/Lowest_common_ancestor).
-   * Then compares the ancestor's 2 children that are ancestors of nodeA and NodeB
-   * so we can compare their indexes to work out which node comes first in a depth first search.
-   * (https://en.wikipedia.org/wiki/Depth-first_search)
-   *
-   * Another way to put it is which node is shallower in a trémaux tree
-   * https://en.wikipedia.org/wiki/Tr%C3%A9maux_tree
-   */
-
-
-  const findOrderInTremauxTree = (nodeAId, nodeBId) => {
-    if (nodeAId === nodeBId) {
-      return [nodeAId, nodeBId];
-    }
-
-    const nodeA = nodeMap.current[nodeAId];
-    const nodeB = nodeMap.current[nodeBId];
-
-    if (nodeA.parentId === nodeB.id || nodeB.parentId === nodeA.id) {
-      return nodeB.parentId === nodeA.id ? [nodeA.id, nodeB.id] : [nodeB.id, nodeA.id];
-    }
-
-    const aFamily = [nodeA.id];
-    const bFamily = [nodeB.id];
-    let aAncestor = nodeA.parentId;
-    let bAncestor = nodeB.parentId;
-    let aAncestorIsCommon = bFamily.indexOf(aAncestor) !== -1;
-    let bAncestorIsCommon = aFamily.indexOf(bAncestor) !== -1;
-    let continueA = true;
-    let continueB = true;
-
-    while (!bAncestorIsCommon && !aAncestorIsCommon) {
-      if (continueA) {
-        aFamily.push(aAncestor);
-        aAncestorIsCommon = bFamily.indexOf(aAncestor) !== -1;
-        continueA = aAncestor !== null;
-
-        if (!aAncestorIsCommon && continueA) {
-          aAncestor = nodeMap.current[aAncestor].parentId;
-        }
-      }
-
-      if (continueB && !aAncestorIsCommon) {
-        bFamily.push(bAncestor);
-        bAncestorIsCommon = aFamily.indexOf(bAncestor) !== -1;
-        continueB = bAncestor !== null;
-
-        if (!bAncestorIsCommon && continueB) {
-          bAncestor = nodeMap.current[bAncestor].parentId;
-        }
-      }
-    }
-
-    const commonAncestor = aAncestorIsCommon ? aAncestor : bAncestor;
-    const ancestorFamily = getChildrenIds(commonAncestor);
-    const aSide = aFamily[aFamily.indexOf(commonAncestor) - 1];
-    const bSide = bFamily[bFamily.indexOf(commonAncestor) - 1];
-    return ancestorFamily.indexOf(aSide) < ancestorFamily.indexOf(bSide) ? [nodeAId, nodeBId] : [nodeBId, nodeAId];
-  };
-
-  const getNodesInRange = (nodeA, nodeB) => {
-    const [first, last] = findOrderInTremauxTree(nodeA, nodeB);
-    const nodes = [first];
-    let current = first;
-
-    while (current !== last) {
-      current = getNextNode(current);
-      nodes.push(current);
-    }
-
-    return nodes;
-  };
-  /*
-   * Focus Helpers
-   */
-
-
-  const focus = (event, id) => {
-    if (id) {
-      setFocusedNodeId(id);
-
-      if (onNodeFocus) {
-        onNodeFocus(event, id);
-      }
-    }
-  };
-
-  const focusNextNode = (event, id) => focus(event, getNextNode(id));
-
-  const focusPreviousNode = (event, id) => focus(event, getPreviousNode(id));
-
-  const focusFirstNode = event => focus(event, getFirstNode());
-
-  const focusLastNode = event => focus(event, getLastNode());
-
-  const focusByFirstCharacter = (event, id, char) => {
-    let start;
-    let index;
-    const lowercaseChar = char.toLowerCase();
-    const firstCharIds = [];
-    const firstChars = []; // This really only works since the ids are strings
-
-    Object.keys(firstCharMap.current).forEach(nodeId => {
-      const firstChar = firstCharMap.current[nodeId];
-      const map = nodeMap.current[nodeId];
-      const visible = map.parentId ? isExpanded(map.parentId) : true;
-      const shouldBeSkipped = disabledItemsFocusable ? false : isDisabled(nodeId);
-
-      if (visible && !shouldBeSkipped) {
-        firstCharIds.push(nodeId);
-        firstChars.push(firstChar);
-      }
-    }); // Get start index for search based on position of currentItem
-
-    start = firstCharIds.indexOf(id) + 1;
-
-    if (start >= firstCharIds.length) {
-      start = 0;
-    } // Check remaining slots in the menu
-
-
-    index = findNextFirstChar(firstChars, start, lowercaseChar); // If not found in remaining slots, check from beginning
-
-    if (index === -1) {
-      index = findNextFirstChar(firstChars, 0, lowercaseChar);
-    } // If match was found...
-
-
-    if (index > -1) {
-      focus(event, firstCharIds[index]);
-    }
-  };
-  /*
-   * Expansion Helpers
-   */
-
-
-  const toggleExpansion = (event, value = focusedNodeId) => {
-    let newExpanded;
-
-    if (expanded.indexOf(value) !== -1) {
-      newExpanded = expanded.filter(id => id !== value);
-    } else {
-      newExpanded = [value].concat(expanded);
-    }
-
-    if (onNodeToggle) {
-      onNodeToggle(event, newExpanded);
-    }
-
-    setExpandedState(newExpanded);
-  };
-
-  const expandAllSiblings = (event, id) => {
-    const map = nodeMap.current[id];
-    const siblings = getChildrenIds(map.parentId);
-    const diff = siblings.filter(child => isExpandable(child) && !isExpanded(child));
-    const newExpanded = expanded.concat(diff);
-
-    if (diff.length > 0) {
-      setExpandedState(newExpanded);
-
-      if (onNodeToggle) {
-        onNodeToggle(event, newExpanded);
-      }
-    }
-  };
-  /*
-   * Selection Helpers
-   */
-
-
-  const lastSelectedNode = react__WEBPACK_IMPORTED_MODULE_2__.useRef(null);
-  const lastSelectionWasRange = react__WEBPACK_IMPORTED_MODULE_2__.useRef(false);
-  const currentRangeSelection = react__WEBPACK_IMPORTED_MODULE_2__.useRef([]);
-
-  const handleRangeArrowSelect = (event, nodes) => {
-    let base = selected.slice();
-    const {
-      start,
-      next,
-      current
-    } = nodes;
-
-    if (!next || !current) {
-      return;
-    }
-
-    if (currentRangeSelection.current.indexOf(current) === -1) {
-      currentRangeSelection.current = [];
-    }
-
-    if (lastSelectionWasRange.current) {
-      if (currentRangeSelection.current.indexOf(next) !== -1) {
-        base = base.filter(id => id === start || id !== current);
-        currentRangeSelection.current = currentRangeSelection.current.filter(id => id === start || id !== current);
-      } else {
-        base.push(next);
-        currentRangeSelection.current.push(next);
-      }
-    } else {
-      base.push(next);
-      currentRangeSelection.current.push(current, next);
-    }
-
-    if (onNodeSelect) {
-      onNodeSelect(event, base);
-    }
-
-    setSelectedState(base);
-  };
-
-  const handleRangeSelect = (event, nodes) => {
-    let base = selected.slice();
-    const {
-      start,
-      end
-    } = nodes; // If last selection was a range selection ignore nodes that were selected.
-
-    if (lastSelectionWasRange.current) {
-      base = base.filter(id => currentRangeSelection.current.indexOf(id) === -1);
-    }
-
-    let range = getNodesInRange(start, end);
-    range = range.filter(node => !isDisabled(node));
-    currentRangeSelection.current = range;
-    let newSelected = base.concat(range);
-    newSelected = newSelected.filter((id, i) => newSelected.indexOf(id) === i);
-
-    if (onNodeSelect) {
-      onNodeSelect(event, newSelected);
-    }
-
-    setSelectedState(newSelected);
-  };
-
-  const handleMultipleSelect = (event, value) => {
-    let newSelected;
-
-    if (selected.indexOf(value) !== -1) {
-      newSelected = selected.filter(id => id !== value);
-    } else {
-      newSelected = [value].concat(selected);
-    }
-
-    if (onNodeSelect) {
-      onNodeSelect(event, newSelected);
-    }
-
-    setSelectedState(newSelected);
-  };
-
-  const handleSingleSelect = (event, value) => {
-    const newSelected = multiSelect ? [value] : value;
-
-    if (onNodeSelect) {
-      onNodeSelect(event, newSelected);
-    }
-
-    setSelectedState(newSelected);
-  };
-
-  const selectNode = (event, id, multiple = false) => {
-    if (id) {
-      if (multiple) {
-        handleMultipleSelect(event, id);
-      } else {
-        handleSingleSelect(event, id);
-      }
-
-      lastSelectedNode.current = id;
-      lastSelectionWasRange.current = false;
-      currentRangeSelection.current = [];
-      return true;
-    }
-
-    return false;
-  };
-
-  const selectRange = (event, nodes, stacked = false) => {
-    const {
-      start = lastSelectedNode.current,
-      end,
-      current
-    } = nodes;
-
-    if (stacked) {
-      handleRangeArrowSelect(event, {
-        start,
-        next: end,
-        current
-      });
-    } else if (start != null && end != null) {
-      handleRangeSelect(event, {
-        start,
-        end
-      });
-    }
-
-    lastSelectionWasRange.current = true;
-  };
-
-  const rangeSelectToFirst = (event, id) => {
-    if (!lastSelectedNode.current) {
-      lastSelectedNode.current = id;
-    }
-
-    const start = lastSelectionWasRange.current ? lastSelectedNode.current : id;
-    selectRange(event, {
-      start,
-      end: getFirstNode()
-    });
-  };
-
-  const rangeSelectToLast = (event, id) => {
-    if (!lastSelectedNode.current) {
-      lastSelectedNode.current = id;
-    }
-
-    const start = lastSelectionWasRange.current ? lastSelectedNode.current : id;
-    selectRange(event, {
-      start,
-      end: getLastNode()
-    });
-  };
-
-  const selectNextNode = (event, id) => {
-    if (!isDisabled(getNextNode(id))) {
-      selectRange(event, {
-        end: getNextNode(id),
-        current: id
-      }, true);
-    }
-  };
-
-  const selectPreviousNode = (event, id) => {
-    if (!isDisabled(getPreviousNode(id))) {
-      selectRange(event, {
-        end: getPreviousNode(id),
-        current: id
-      }, true);
-    }
-  };
-
-  const selectAllNodes = event => {
-    selectRange(event, {
-      start: getFirstNode(),
-      end: getLastNode()
-    });
-  };
-  /*
-   * Mapping Helpers
-   */
-
-
-  const registerNode = react__WEBPACK_IMPORTED_MODULE_2__.useCallback(node => {
-    const {
-      id,
-      index,
-      parentId,
-      expandable,
-      idAttribute,
-      disabled
-    } = node;
-    nodeMap.current[id] = {
-      id,
-      index,
-      parentId,
-      expandable,
-      idAttribute,
-      disabled
-    };
-  }, []);
-  const unregisterNode = react__WEBPACK_IMPORTED_MODULE_2__.useCallback(id => {
-    const newMap = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, nodeMap.current);
-
-    delete newMap[id];
-    nodeMap.current = newMap;
-    setFocusedNodeId(oldFocusedNodeId => {
-      if (oldFocusedNodeId === id && treeRef.current === (0,_mui_material_utils__WEBPACK_IMPORTED_MODULE_14__["default"])(treeRef.current).activeElement) {
-        return getChildrenIds(null)[0];
-      }
-
-      return oldFocusedNodeId;
-    });
-  }, []);
-  const mapFirstChar = react__WEBPACK_IMPORTED_MODULE_2__.useCallback((id, firstChar) => {
-    firstCharMap.current[id] = firstChar;
-  }, []);
-  const unMapFirstChar = react__WEBPACK_IMPORTED_MODULE_2__.useCallback(id => {
-    const newMap = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, firstCharMap.current);
-
-    delete newMap[id];
-    firstCharMap.current = newMap;
-  }, []);
-  /**
-   * Event handlers and Navigation
-   */
-
-  const handleNextArrow = event => {
-    if (isExpandable(focusedNodeId)) {
-      if (isExpanded(focusedNodeId)) {
-        focusNextNode(event, focusedNodeId);
-      } else if (!isDisabled(focusedNodeId)) {
-        toggleExpansion(event);
-      }
-    }
-
-    return true;
-  };
-
-  const handlePreviousArrow = event => {
-    if (isExpanded(focusedNodeId) && !isDisabled(focusedNodeId)) {
-      toggleExpansion(event, focusedNodeId);
-      return true;
-    }
-
-    const parent = getParent(focusedNodeId);
-
-    if (parent) {
-      focus(event, parent);
-      return true;
-    }
-
-    return false;
-  };
-
-  const handleKeyDown = event => {
-    let flag = false;
-    const key = event.key; // If the tree is empty there will be no focused node
-
-    if (event.altKey || event.currentTarget !== event.target || !focusedNodeId) {
-      return;
-    }
-
-    const ctrlPressed = event.ctrlKey || event.metaKey;
-
-    switch (key) {
-      case ' ':
-        if (!disableSelection && !isDisabled(focusedNodeId)) {
-          if (multiSelect && event.shiftKey) {
-            selectRange(event, {
-              end: focusedNodeId
-            });
-            flag = true;
-          } else if (multiSelect) {
-            flag = selectNode(event, focusedNodeId, true);
-          } else {
-            flag = selectNode(event, focusedNodeId);
-          }
-        }
-
-        event.stopPropagation();
-        break;
-
-      case 'Enter':
-        if (!isDisabled(focusedNodeId)) {
-          if (isExpandable(focusedNodeId)) {
-            toggleExpansion(event);
-            flag = true;
-          }
-        }
-
-        event.stopPropagation();
-        break;
-
-      case 'ArrowDown':
-        if (multiSelect && event.shiftKey && !disableSelection) {
-          selectNextNode(event, focusedNodeId);
-        }
-
-        focusNextNode(event, focusedNodeId);
-        flag = true;
-        break;
-
-      case 'ArrowUp':
-        if (multiSelect && event.shiftKey && !disableSelection) {
-          selectPreviousNode(event, focusedNodeId);
-        }
-
-        focusPreviousNode(event, focusedNodeId);
-        flag = true;
-        break;
-
-      case 'ArrowRight':
-        if (isRtl) {
-          flag = handlePreviousArrow(event);
-        } else {
-          flag = handleNextArrow(event);
-        }
-
-        break;
-
-      case 'ArrowLeft':
-        if (isRtl) {
-          flag = handleNextArrow(event);
-        } else {
-          flag = handlePreviousArrow(event);
-        }
-
-        break;
-
-      case 'Home':
-        if (multiSelect && ctrlPressed && event.shiftKey && !disableSelection && !isDisabled(focusedNodeId)) {
-          rangeSelectToFirst(event, focusedNodeId);
-        }
-
-        focusFirstNode(event);
-        flag = true;
-        break;
-
-      case 'End':
-        if (multiSelect && ctrlPressed && event.shiftKey && !disableSelection && !isDisabled(focusedNodeId)) {
-          rangeSelectToLast(event, focusedNodeId);
-        }
-
-        focusLastNode(event);
-        flag = true;
-        break;
-
-      default:
-        if (key === '*') {
-          expandAllSiblings(event, focusedNodeId);
-          flag = true;
-        } else if (multiSelect && ctrlPressed && key.toLowerCase() === 'a' && !disableSelection) {
-          selectAllNodes(event);
-          flag = true;
-        } else if (!ctrlPressed && !event.shiftKey && isPrintableCharacter(key)) {
-          focusByFirstCharacter(event, focusedNodeId, key);
-          flag = true;
-        }
-
-    }
-
-    if (flag) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-
-    if (onKeyDown) {
-      onKeyDown(event);
-    }
-  };
-
-  const handleFocus = event => {
-    // if the event bubbled (which is React specific) we don't want to steal focus
-    if (event.target === event.currentTarget) {
-      const firstSelected = Array.isArray(selected) ? selected[0] : selected;
-      focus(event, firstSelected || getNavigableChildrenIds(null)[0]);
-    }
-
-    if (onFocus) {
-      onFocus(event);
-    }
-  };
-
-  const handleBlur = event => {
-    setFocusedNodeId(null);
-
-    if (onBlur) {
-      onBlur(event);
-    }
-  };
-
-  const activeDescendant = nodeMap.current[focusedNodeId] ? nodeMap.current[focusedNodeId].idAttribute : null;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_TreeViewContext__WEBPACK_IMPORTED_MODULE_15__["default"].Provider, {
-    value: {
-      icons: {
-        defaultCollapseIcon,
-        defaultExpandIcon,
-        defaultParentIcon,
-        defaultEndIcon
-      },
-      focus,
-      toggleExpansion,
-      isExpanded,
-      isExpandable,
-      isFocused,
-      isSelected,
-      isDisabled,
-      selectNode: disableSelection ? noopSelection : selectNode,
-      selectRange: disableSelection ? noopSelection : selectRange,
-      multiSelect,
-      disabledItemsFocusable,
-      mapFirstChar,
-      unMapFirstChar,
-      registerNode,
-      unregisterNode,
-      treeId
-    },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_descendants__WEBPACK_IMPORTED_MODULE_16__.DescendantProvider, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(TreeViewRoot, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-        role: "tree",
-        id: treeId,
-        "aria-activedescendant": activeDescendant,
-        "aria-multiselectable": multiSelect,
-        className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.root, className),
-        ref: handleRef,
-        tabIndex: 0,
-        onKeyDown: handleKeyDown,
-        onFocus: handleFocus,
-        onBlur: handleBlur,
-        ownerState: ownerState
-      }, other, {
-        children: children
-      }))
-    })
-  });
-});
- true ? TreeView.propTypes
-/* remove-proptypes */
-= {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
-
-  /**
-   * The content of the component.
-   */
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node),
-
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  classes: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object),
-
-  /**
-   * @ignore
-   */
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
-
-  /**
-   * The default icon used to collapse the node.
-   */
-  defaultCollapseIcon: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node),
-
-  /**
-   * The default icon displayed next to a end node. This is applied to all
-   * tree nodes and can be overridden by the TreeItem `icon` prop.
-   */
-  defaultEndIcon: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node),
-
-  /**
-   * Expanded node ids. (Uncontrolled)
-   * @default []
-   */
-  defaultExpanded: prop_types__WEBPACK_IMPORTED_MODULE_4___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_4___default().string)),
-
-  /**
-   * The default icon used to expand the node.
-   */
-  defaultExpandIcon: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node),
-
-  /**
-   * The default icon displayed next to a parent node. This is applied to all
-   * parent nodes and can be overridden by the TreeItem `icon` prop.
-   */
-  defaultParentIcon: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node),
-
-  /**
-   * Selected node ids. (Uncontrolled)
-   * When `multiSelect` is true this takes an array of strings; when false (default) a string.
-   * @default []
-   */
-  defaultSelected: prop_types__WEBPACK_IMPORTED_MODULE_4___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_4___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_4___default().string)), (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string)]),
-
-  /**
-   * If `true`, will allow focus on disabled items.
-   * @default false
-   */
-  disabledItemsFocusable: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
-
-  /**
-   * If `true` selection is disabled.
-   * @default false
-   */
-  disableSelection: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
-
-  /**
-   * Expanded node ids. (Controlled)
-   */
-  expanded: prop_types__WEBPACK_IMPORTED_MODULE_4___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_4___default().string)),
-
-  /**
-   * This prop is used to help implement the accessibility logic.
-   * If you don't provide this prop. It falls back to a randomly generated id.
-   */
-  id: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
-
-  /**
-   * If true `ctrl` and `shift` will trigger multiselect.
-   * @default false
-   */
-  multiSelect: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
-
-  /**
-   * @ignore
-   */
-  onBlur: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
-
-  /**
-   * @ignore
-   */
-  onFocus: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
-
-  /**
-   * @ignore
-   */
-  onKeyDown: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
-
-  /**
-   * Callback fired when tree items are focused.
-   *
-   * @param {React.SyntheticEvent} event The event source of the callback **Warning**: This is a generic event not a focus event.
-   * @param {string} value of the focused node.
-   */
-  onNodeFocus: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
-
-  /**
-   * Callback fired when tree items are selected/unselected.
-   *
-   * @param {React.SyntheticEvent} event The event source of the callback
-   * @param {string[] | string} nodeIds Ids of the selected nodes. When `multiSelect` is true
-   * this is an array of strings; when false (default) a string.
-   */
-  onNodeSelect: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
-
-  /**
-   * Callback fired when tree items are expanded/collapsed.
-   *
-   * @param {React.SyntheticEvent} event The event source of the callback.
-   * @param {array} nodeIds The ids of the expanded nodes.
-   */
-  onNodeToggle: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
-
-  /**
-   * Selected node ids. (Controlled)
-   * When `multiSelect` is true this takes an array of strings; when false (default) a string.
-   */
-  selected: prop_types__WEBPACK_IMPORTED_MODULE_4___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_4___default().arrayOf((prop_types__WEBPACK_IMPORTED_MODULE_4___default().string)), (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string)]),
-
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: prop_types__WEBPACK_IMPORTED_MODULE_4___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_4___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_4___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_4___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool)])), (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object)])
-} : 0;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TreeView);
-
-/***/ }),
-
 /***/ "./node_modules/@mui/lab/TreeView/TreeViewContext.js":
 /*!***********************************************************!*\
   !*** ./node_modules/@mui/lab/TreeView/TreeViewContext.js ***!
@@ -4948,29 +3770,6 @@ function DescendantProvider(props) {
   children: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().node),
   id: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string)
 } : 0;
-
-/***/ }),
-
-/***/ "./node_modules/@mui/lab/TreeView/treeViewClasses.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/@mui/lab/TreeView/treeViewClasses.js ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getTreeViewUtilityClass": () => (/* binding */ getTreeViewUtilityClass),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/generateUtilityClass/generateUtilityClass.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/generateUtilityClasses/generateUtilityClasses.js");
-
-function getTreeViewUtilityClass(slot) {
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_0__["default"])('MuiTreeView', slot);
-}
-const treeViewClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('MuiTreeView', ['root']);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (treeViewClasses);
 
 /***/ }),
 
@@ -28022,12 +26821,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function BreadCrumb(_ref) {
-  var title = _ref.title;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-      className: "text-2xl font-extrabold text-gray-900 pb-4",
+  var title = _ref.title,
+      result = _ref.result;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex justify-between items-center pb-1 mb-2 border-b",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+      className: "text-2xl font-extrabold text-gray-900",
       children: title
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      className: "bg-gray-500 p-1 rounded-full text-base leading-4 text-gray-100",
+      children: "45"
+    })]
   });
 }
 
@@ -28090,20 +26894,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardActionArea/CardActionArea.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardMedia/CardMedia.js");
 /* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardContent/CardContent.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Tooltip/Tooltip.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Chip/Chip.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardActions/CardActions.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Tooltip/Tooltip.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/IconButton/IconButton.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Typography/Typography.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/CardActions/CardActions.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Button/Button.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mui_icons_material_Person__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/icons-material/Person */ "./node_modules/@mui/icons-material/Person.js");
-/* harmony import */ var _mui_icons_material_BarChartOutlined__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/icons-material/BarChartOutlined */ "./node_modules/@mui/icons-material/BarChartOutlined.js");
-/* harmony import */ var _mui_icons_material_ClearAllOutlined__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/icons-material/ClearAllOutlined */ "./node_modules/@mui/icons-material/ClearAllOutlined.js");
-/* harmony import */ var _mui_icons_material_OndemandVideoOutlined__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/icons-material/OndemandVideoOutlined */ "./node_modules/@mui/icons-material/OndemandVideoOutlined.js");
-/* harmony import */ var _mui_icons_material_MusicNoteOutlined__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/icons-material/MusicNoteOutlined */ "./node_modules/@mui/icons-material/MusicNoteOutlined.js");
-/* harmony import */ var _mui_icons_material_TextSnippetOutlined__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/icons-material/TextSnippetOutlined */ "./node_modules/@mui/icons-material/TextSnippetOutlined.js");
+/* harmony import */ var _mui_material_Chip__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Chip */ "./node_modules/@mui/material/Chip/Chip.js");
+/* harmony import */ var _mui_icons_material_Person__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/icons-material/Person */ "./node_modules/@mui/icons-material/Person.js");
+/* harmony import */ var _mui_icons_material_RemoveRedEye__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/icons-material/RemoveRedEye */ "./node_modules/@mui/icons-material/RemoveRedEye.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -28117,110 +26919,76 @@ __webpack_require__.r(__webpack_exports__);
 function itemCours(_ref) {
   var cour = _ref.cour;
 
-  var handleClick = function handleClick() {
-    console.info('You clicked the Chip.');
-  };
+  var handleClick = function handleClick() {}; // sx={{ maxWidth: 345 }}
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      sx: {
-        maxWidth: 345
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          component: "img",
-          height: "140",
-          image: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
-          alt: "green iguana"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        component: "img",
+        height: "140",
+        image: "https://mui.com/static/images/cards/contemplative-reptile.jpg",
+        alt: "green iguana"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "flex justify-between items-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "flex justify-between",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "flex-1 overflow-hidden",
-            children: "Type de cours"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              title: "user",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
-                "aria-label": "add to favorites",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_icons_material_Person__WEBPACK_IMPORTED_MODULE_8__["default"], {})
-              })
-            })
+          className: "flex-1 overflow-hidden",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material_Chip__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            className: "mr-1",
+            size: "small",
+            label: "text",
+            color: "default"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material_Chip__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            className: "mr-1",
+            size: "small",
+            label: "video",
+            color: "info"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material_Chip__WEBPACK_IMPORTED_MODULE_6__["default"], {
+            className: "mr-1",
+            size: "small",
+            label: "audio",
+            color: "info"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
-          gutterBottom: true,
-          variant: "h5",
-          component: "div",
-          children: cour.name
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_9__["default"], {
-          style: {
-            overflowWrap: 'break-word'
-          },
-          className: "break-words max-h-20 h-20 overflow-y-hidden",
-          variant: "body2",
-          color: "text.secondary",
-          children: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "pt-4 pb-2 border-b flex justify-between items-center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "p-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_icons_material_BarChartOutlined__WEBPACK_IMPORTED_MODULE_10__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "flex-1",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
-              onClick: handleClick,
-              className: "ml-2 mb-1 inline-block",
-              label: "Chip Outlined",
-              variant: "outlined",
-              size: "small"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
+            title: "user",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_8__["default"], {
+              "aria-label": "add to favorites",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_icons_material_Person__WEBPACK_IMPORTED_MODULE_9__["default"], {})
             })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "pt-4 pb-2 border-b flex justify-between items-center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "p-2",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_icons_material_ClearAllOutlined__WEBPACK_IMPORTED_MODULE_12__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "flex-1",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
-              onClick: handleClick,
-              className: "ml-2 mb-1 inline-block",
-              label: "Chip Outlined",
-              variant: "outlined",
-              size: "small"
-            })
-          })]
+          })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_13__["default"], {
-        className: "pt-0",
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        gutterBottom: true,
+        variant: "h5",
+        component: "div",
+        children: cour.name
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_10__["default"], {
         style: {
-          display: 'flex',
-          justifyContent: 'space-evenly'
+          overflowWrap: 'break-word'
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
-          disabled: true,
-          variant: "outlined",
-          size: "medium",
-          color: "primary",
-          startIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_icons_material_OndemandVideoOutlined__WEBPACK_IMPORTED_MODULE_15__["default"], {}),
-          children: "vid\xE9o"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
-          variant: "outlined",
-          size: "medium",
-          color: "primary",
-          startIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_icons_material_TextSnippetOutlined__WEBPACK_IMPORTED_MODULE_16__["default"], {}),
-          children: "texte"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_14__["default"], {
-          disabled: true,
-          variant: "outlined",
-          size: "medium",
-          color: "primary",
-          startIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_icons_material_MusicNoteOutlined__WEBPACK_IMPORTED_MODULE_17__["default"], {}),
-          children: "audio"
-        })]
+        className: "break-words max-h-20 h-20 overflow-y-hidden",
+        variant: "body2",
+        color: "text.secondary",
+        children: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
       })]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      className: "pt-0",
+      style: {
+        display: 'flex',
+        justifyContent: 'space-evenly'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_material__WEBPACK_IMPORTED_MODULE_12__["default"], {
+        className: "w-full",
+        variant: "outlined",
+        size: "medium",
+        color: "primary",
+        startIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_mui_icons_material_RemoveRedEye__WEBPACK_IMPORTED_MODULE_13__["default"], {}),
+        children: "Lecture"
+      })
+    })]
   });
 }
 
@@ -28543,14 +27311,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ ListManager)
 /* harmony export */ });
-/* harmony import */ var _mui_lab__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/lab */ "./node_modules/@mui/lab/TreeView/TreeView.js");
-/* harmony import */ var _mui_lab__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/lab */ "./node_modules/@mui/lab/TreeItem/TreeItem.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _hooks_CustomTreeItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/CustomTreeItem */ "./resources/js/AppCourse/hooks/CustomTreeItem.js");
-/* harmony import */ var _mui_icons_material_ExpandMore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/icons-material/ExpandMore */ "./node_modules/@mui/icons-material/ExpandMore.js");
-/* harmony import */ var _mui_icons_material_ChevronRight__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/icons-material/ChevronRight */ "./node_modules/@mui/icons-material/ChevronRight.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_complex_tree__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-complex-tree */ "./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/UncontrolledTreeEnvironment.js");
+/* harmony import */ var react_complex_tree__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-complex-tree */ "./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/StaticTreeDataProvider.js");
+/* harmony import */ var react_complex_tree__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-complex-tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var react_complex_tree_lib_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-complex-tree/lib/style.css */ "./node_modules/react-complex-tree/lib/style.css");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
 
 
 
@@ -28561,43 +27338,96 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function ListManager() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_lab__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      "aria-label": "element deroulant",
-      defaultExpanded: ['3', '4'],
-      defaultCollapseIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_icons_material_ExpandMore__WEBPACK_IMPORTED_MODULE_4__["default"], {}),
-      defaultExpandIcon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_icons_material_ChevronRight__WEBPACK_IMPORTED_MODULE_5__["default"], {}),
-      sx: {
-        flexGrow: 1,
-        maxWidth: 400,
-        overflowY: 'auto'
-      },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-        to: "/cours/random",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_lab__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          nodeId: "2",
-          label: "Cours Al\xE9atoire"
+  // useEffect(() => {
+  //     getAllCours();
+  // }, [])
+  // let childrenitems = [];
+  // let itemsObject = {
+  //     root: {
+  //         index: 'root',
+  //         hasChildren: true,
+  //         children: childrenitems,
+  //         data: 'Root item',
+  //     }
+  // };
+  // const [items, getItems] = useState(itemsObject);
+  // const url = "http://127.0.0.1:8000/api/v1/items";
+  // const getAllCours = () => {
+  //     axios.get(`${url}`).then((response) => {
+  //         getItems(response.data);
+  //     })
+  //         .catch(erro => console.error(`Error: ${error}`))
+  // }
+  var items = {
+    root: {
+      index: 'root',
+      hasChildren: true,
+      children: ['child1', 'child2', 'child3'],
+      data: 'Root item'
+    },
+    child1: {
+      index: 'child1',
+      children: [],
+      data: 'Child item 1'
+    },
+    child2: {
+      index: 'child2',
+      hasChildren: true,
+      children: ['child3'],
+      data: 'Child item 2'
+    },
+    child3: {
+      index: 'child3',
+      children: [],
+      data: 'Child item 3'
+    }
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "p-2",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+      href: "#",
+      className: "block w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900",
+      children: "un cours aleatoire"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "flex justify-between items-center p-1",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+        className: "font-bold textba",
+        children: "Explorateur"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
+        xmlns: "http://www.w3.org/2000/svg",
+        className: "h-6 w-6",
+        fill: "none",
+        viewBox: "0 0 24 24",
+        stroke: "currentColor",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          strokeWidth: 2,
+          d: "M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_hooks_CustomTreeItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        nodeId: "3",
-        label: "Cours par programme acad\xE9mique",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-          to: "/cours/scolaire",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_lab__WEBPACK_IMPORTED_MODULE_7__["default"], {
-            className: "text-gray-700",
-            nodeId: "31",
-            label: "Coll\xE8ge"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
-          to: "/cours/scolaire",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_lab__WEBPACK_IMPORTED_MODULE_7__["default"], {
-            className: "text-gray-700",
-            nodeId: "32",
-            label: "Lyc\xE9e"
-          })
-        })]
       })]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "ml-1",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_complex_tree__WEBPACK_IMPORTED_MODULE_5__.UncontrolledTreeEnvironment, {
+        canDragAndDrop: true,
+        canDropOnItemWithChildren: true,
+        canReorderItems: true,
+        dataProvider: new react_complex_tree__WEBPACK_IMPORTED_MODULE_6__.StaticTreeDataProvider(items, function (item, data) {
+          return _objectSpread(_objectSpread({}, item), {}, {
+            data: data
+          });
+        }),
+        getItemTitle: function getItemTitle(item) {
+          return item.data;
+        },
+        viewState: {},
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_complex_tree__WEBPACK_IMPORTED_MODULE_7__.Tree, {
+          treeId: "tree-1",
+          rootItem: "root",
+          treeLabel: "Tree Example"
+        })
+      })
+    })]
   });
 }
 
@@ -29387,16 +28217,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function CoursRoute() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "h-screen overflow-hidden",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "flex rounded-box",
+      className: "flex flex-col md:flex-row items-stretch h-full",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "mr-2 p-2 w-64 h-full rounded-box",
+        className: "w-full md:w-80 pr-0 md:pr-7",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_ListManager__WEBPACK_IMPORTED_MODULE_1__["default"], {})
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "flex-1 h-full rounded-box",
+        className: "flex-1 overflow-y-auto",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Outlet, {})
       })]
     })
@@ -29524,12 +28354,11 @@ function ScolaireCours() {
     });
   };
 
-  console.log(cours);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_BreadCrumb__WEBPACK_IMPORTED_MODULE_2__["default"], {
       title: "Scolaires"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "h-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8",
+      className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
       children: cours.map(function (cour, key) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Cards_itemCours__WEBPACK_IMPORTED_MODULE_3__["default"], {
           cour: cour
@@ -31661,7 +30490,7 @@ var SearchType = function SearchType(_ref) {
 var NoResult = function NoResult() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: " h-full flex items-center justify-center",
+      className: "h-full flex items-center justify-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "text-center",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
@@ -32071,6 +30900,30 @@ function toVal(mix) {
 	}
 	return str;
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-complex-tree/lib/style.css":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-complex-tree/lib/style.css ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n  --rct-color-tree-bg: #f6f8fa;\n  --rct-color-tree-focus-outline: #0366d6;\n\n  --rct-color-focustree-item-selected-bg: #e8eaed;\n  --rct-color-focustree-item-selected-text: inherit;\n  --rct-color-focustree-item-focused-border: #0366d6;\n  --rct-color-focustree-item-draggingover-bg: #ebf0f4;\n  --rct-color-focustree-item-draggingover-color: inherit;\n\n  --rct-color-nonfocustree-item-selected-bg: #e8eaed;\n  --rct-color-nonfocustree-item-selected-text: inherit;\n  --rct-color-nonfocustree-item-focused-border: #dbdbdb;\n\n  --rct-color-search-highlight-bg: #a2aed2;\n  --rct-color-drag-between-line-bg: #0366d6;\n  --rct-color-arrow: #9aa5b3;\n\n  --rct-item-height: 22px;\n\n  --rct-color-renaming-input-submitbutton-bg: inherit;\n  --rct-color-renaming-input-submitbutton-bg-hover: #0366d6;\n  --rct-color-renaming-input-submitbutton-bg-active: #095fc1;\n\n  --rct-color-renaming-input-submitbutton-text: inherit;\n  --rct-color-renaming-input-submitbutton-text-hover: #ffffff;\n  --rct-color-renaming-input-submitbutton-text-active: #ffffff;\n}\n\n.rct-tree-root {\n  font-family: sans-serif;\n  background-color: var(--rct-color-tree-bg);\n  padding: 4px 0;\n}\n\n.rct-tree-root-focus {\n  outline: 1px solid var(--rct-color-tree-focus-outline);\n}\n\n.rct-tree-item-li {\n  font-size: 0.8rem;\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\n\n.rct-tree-item-title-container {\n  display: flex;\n  align-items: center;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid transparent;\n}\n\n.rct-tree-child-list {\n}\n.rct-tree-item-button {\n  flex-grow: 1;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  background-color: transparent;\n  font-family: inherit;\n  font-size: inherit;\n  border: none;\n  width: 100%;\n  height: var(--rct-item-height);\n  text-align: left;\n  color: inherit;\n  outline: none;\n}\n\n.rct-tree-item-arrow {\n  width: 16px;\n}\n\n.rct-tree-item-arrow svg {\n  width: 16px;\n}\n\n.rct-tree-item-arrow-path {\n  fill: var(--rct-color-arrow);\n}\n\n.rct-tree-items-container {\n  margin: 0;\n  padding: 0;\n}\n\n.rct-tree-root:not(.rct-tree-root-focus) .rct-tree-item-title-container-selected {\n  background-color: var(--rct-color-nonfocustree-item-selected-bg);\n  color: var(--rct-color-nonfocustree-item-selected-text);\n}\n.rct-tree-root.rct-tree-root-focus .rct-tree-item-title-container-selected {\n  background-color: var(--rct-color-focustree-item-selected-bg);\n  color: var(--rct-color-focustree-item-selected-text);\n}\n.rct-tree-root.rct-tree-root-focus .rct-tree-item-title-container-focused {\n  outline: none;\n  border-color: var(--rct-color-focustree-item-focused-border);\n}\n.rct-tree-root:not(.rct-tree-root-focus) .rct-tree-item-title-container-focused {\n  outline: none;\n  border-color: var(--rct-color-nonfocustree-item-focused-border);\n}\n\n.rct-tree-item-title-container-dragging-over {\n  background-color: var(--rct-color-focustree-item-draggingover-bg);\n  color: var(--rct-color-focustree-item-draggingover-color);\n}\n\n.rct-tree-item-button-search-match {\n  font-style: italic;\n}\n\n.rct-tree-item-search-highlight {\n  background-color: var(--rct-color-search-highlight-bg);\n}\n\n.rct-tree-drag-between-line {\n  position: absolute;\n  right: 0;\n  top: -2px;\n  height: 4px;\n  background-color: var(--rct-color-drag-between-line-bg);\n}\n\n.rct-tree-drag-between-line-top {\n  top: 0px;\n}\n\n.rct-tree-drag-between-line-bottom {\n  top: -4px;\n}\n\n.rct-tree-search-input-container {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 120px;\n}\n\n.rct-tree-search-input {\n  position: fixed;\n  width: 120px;\n}\n\n/* TODO see renaming form in multiple tree example, wraps around */\n.rct-tree-item-renaming-form {\n  flex-grow: 1;\n  display: flex;\n}\n.rct-tree-item-renaming-input {\n  flex-grow: 1;\n  background-color: inherit;\n  border: none;\n  color: inherit;\n  outline: none;\n}\n.rct-tree-item-renaming-submit-button {\n  border: none;\n  background-color: var(--rct-color-renaming-input-submitbutton-bg);\n  border-radius: 999px;\n  color: var(--rct-color-renaming-input-submitbutton-text);\n  cursor: pointer;\n}\n.rct-tree-item-renaming-submit-button:hover {\n  background-color: var(--rct-color-renaming-input-submitbutton-bg-hover);\n  color: var(--rct-color-renaming-input-submitbutton-text-hover);\n}\n.rct-tree-item-renaming-submit-button:active {\n  background-color: var(--rct-color-renaming-input-submitbutton-bg-active);\n  color: var(--rct-color-renaming-input-submitbutton-text-active);\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
@@ -65231,6 +64084,3466 @@ function checkStateComponent(plugin) {
 
 
 //# sourceMappingURL=index.es.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/EventEmitter.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/EventEmitter.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "EventEmitter": () => (/* binding */ EventEmitter)
+/* harmony export */ });
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var EventEmitter = /** @class */ (function () {
+    function EventEmitter(options) {
+        this.options = options;
+        this.handlerCount = 0;
+        this.handlers = [];
+    }
+    Object.defineProperty(EventEmitter.prototype, "numberOfHandlers", {
+        get: function () {
+            return this.handlers.filter(function (h) { return !!h; }).length;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    EventEmitter.prototype.emit = function (payload) {
+        var _a, _b;
+        return __awaiter(this, void 0, void 0, function () {
+            var promises, _i, _c, handler, res;
+            return __generator(this, function (_d) {
+                switch (_d.label) {
+                    case 0:
+                        promises = [];
+                        (_b = (_a = this.options) === null || _a === void 0 ? void 0 : _a.logger) === null || _b === void 0 ? void 0 : _b.call(_a, 'emit', payload);
+                        for (_i = 0, _c = this.handlers; _i < _c.length; _i++) {
+                            handler = _c[_i];
+                            if (handler) {
+                                res = handler(payload);
+                                if (typeof (res === null || res === void 0 ? void 0 : res.then) === 'function') {
+                                    promises.push(res);
+                                }
+                            }
+                        }
+                        return [4 /*yield*/, Promise.all(promises)];
+                    case 1:
+                        _d.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    EventEmitter.prototype.on = function (handler) {
+        var _a, _b;
+        (_b = (_a = this.options) === null || _a === void 0 ? void 0 : _a.logger) === null || _b === void 0 ? void 0 : _b.call(_a, 'on');
+        this.handlers.push(handler);
+        return this.handlerCount++;
+    };
+    EventEmitter.prototype.off = function (handlerId) {
+        this.delete(handlerId);
+    };
+    EventEmitter.prototype.delete = function (handlerId) {
+        var _a, _b;
+        (_b = (_a = this.options) === null || _a === void 0 ? void 0 : _a.logger) === null || _b === void 0 ? void 0 : _b.call(_a, 'off');
+        this.handlers[handlerId] = null;
+    };
+    return EventEmitter;
+}());
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js ***!
+  \****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useTreeEnvironment": () => (/* binding */ useTreeEnvironment),
+/* harmony export */   "ControlledTreeEnvironment": () => (/* binding */ ControlledTreeEnvironment)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _renderers_createDefaultRenderers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../renderers/createDefaultRenderers */ "./node_modules/react-complex-tree/lib/esm/renderers/createDefaultRenderers.js");
+/* harmony import */ var _tree_scrollIntoView__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tree/scrollIntoView */ "./node_modules/react-complex-tree/lib/esm/tree/scrollIntoView.js");
+/* harmony import */ var _InteractionManagerProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./InteractionManagerProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/InteractionManagerProvider.js");
+/* harmony import */ var _DragAndDropProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+/* harmony import */ var _environmentActions_EnvironmentActionsProvider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../environmentActions/EnvironmentActionsProvider */ "./node_modules/react-complex-tree/lib/esm/environmentActions/EnvironmentActionsProvider.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+
+
+
+
+var TreeEnvironmentContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+var useTreeEnvironment = function () { return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TreeEnvironmentContext); };
+var ControlledTreeEnvironment = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+    var _a, _b, _c;
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}), trees = _d[0], setTrees = _d[1];
+    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), activeTreeId = _e[0], setActiveTreeId = _e[1];
+    var viewState = props.viewState;
+    // Make sure that every tree view state has a focused item
+    for (var _i = 0, _f = Object.keys(trees); _i < _f.length; _i++) {
+        var treeId = _f[_i];
+        // TODO if the focus item is dragged out of the tree and is not within the expanded items
+        // TODO of that tree, the tree does not show any focus item anymore.
+        // Fix: use linear items to see if focus item is visible, and reset if not. Only refresh that
+        // information when the viewstate changes
+        if (!((_a = viewState[treeId]) === null || _a === void 0 ? void 0 : _a.focusedItem) && trees[treeId]) {
+            viewState[treeId] = __assign(__assign({}, viewState[treeId]), { focusedItem: (_c = (_b = props.items[trees[treeId].rootItem]) === null || _b === void 0 ? void 0 : _b.children) === null || _c === void 0 ? void 0 : _c[0] });
+        }
+    }
+    var environmentContextProps = __assign(__assign(__assign({}, (0,_renderers_createDefaultRenderers__WEBPACK_IMPORTED_MODULE_1__.createDefaultRenderers)(props)), props), { onFocusItem: function (item, treeId) {
+            var _a, _b, _c, _d, _e, _f;
+            (_a = props.onFocusItem) === null || _a === void 0 ? void 0 : _a.call(props, item, treeId);
+            var newItem = document.querySelector("[data-rct-tree=\"" + treeId + "\"] [data-rct-item-id=\"" + item.index + "\"]");
+            if ((_b = props.autoFocus) !== null && _b !== void 0 ? _b : true) {
+                if (((_d = (_c = document.activeElement) === null || _c === void 0 ? void 0 : _c.attributes.getNamedItem('data-rct-search-input')) === null || _d === void 0 ? void 0 : _d.value) !== 'true') {
+                    // Move DOM focus to item if the current focus is not on the search input
+                    (_f = (_e = newItem) === null || _e === void 0 ? void 0 : _e.focus) === null || _f === void 0 ? void 0 : _f.call(_e);
+                }
+                else {
+                    // Otherwise just manually scroll into view
+                    (0,_tree_scrollIntoView__WEBPACK_IMPORTED_MODULE_2__.scrollIntoView)(newItem);
+                }
+            }
+        }, registerTree: function (tree) {
+            var _a;
+            setTrees(function (trees) {
+                var _a;
+                return (__assign(__assign({}, trees), (_a = {}, _a[tree.treeId] = tree, _a)));
+            });
+            (_a = props.onRegisterTree) === null || _a === void 0 ? void 0 : _a.call(props, tree);
+        }, unregisterTree: function (treeId) {
+            var _a;
+            (_a = props.onUnregisterTree) === null || _a === void 0 ? void 0 : _a.call(props, trees[treeId]);
+            delete trees[treeId];
+            setTrees(trees);
+        }, setActiveTree: function (treeIdOrSetStateFunction, autoFocus) {
+            if (autoFocus === void 0) { autoFocus = true; }
+            var focusTree = function (treeId) {
+                var _a, _b, _c, _d;
+                if (autoFocus &&
+                    ((_a = props.autoFocus) !== null && _a !== void 0 ? _a : true) &&
+                    treeId &&
+                    !((_b = document.querySelector("[data-rct-tree=\"" + treeId + "\"]")) === null || _b === void 0 ? void 0 : _b.contains(document.activeElement))) {
+                    var focusItem = document.querySelector("[data-rct-tree=\"" + treeId + "\"] [data-rct-item-focus=\"true\"]");
+                    (_d = (_c = focusItem) === null || _c === void 0 ? void 0 : _c.focus) === null || _d === void 0 ? void 0 : _d.call(_c);
+                }
+            };
+            if (typeof treeIdOrSetStateFunction === 'function') {
+                setActiveTreeId(function (oldValue) {
+                    var treeId = treeIdOrSetStateFunction(oldValue);
+                    if (treeId !== oldValue) {
+                        focusTree(treeId);
+                    }
+                    return treeId;
+                });
+            }
+            else {
+                var treeId = treeIdOrSetStateFunction;
+                setActiveTreeId(treeId);
+                focusTree(treeId);
+            }
+        }, treeIds: Object.keys(trees), trees: trees, activeTreeId: activeTreeId });
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(TreeEnvironmentContext.Provider, { value: environmentContextProps },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_InteractionManagerProvider__WEBPACK_IMPORTED_MODULE_3__.InteractionManagerProvider, null,
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_4__.DragAndDropProvider, null,
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement(_environmentActions_EnvironmentActionsProvider__WEBPACK_IMPORTED_MODULE_5__.EnvironmentActionsProvider, { ref: ref }, props.children)))));
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useDragAndDrop": () => (/* binding */ useDragAndDrop),
+/* harmony export */   "DragAndDropProvider": () => (/* binding */ DragAndDropProvider)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _tree_getItemsLinearly__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../tree/getItemsLinearly */ "./node_modules/react-complex-tree/lib/esm/tree/getItemsLinearly.js");
+/* harmony import */ var _useOnDragOverTreeHandler__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useOnDragOverTreeHandler */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useOnDragOverTreeHandler.js");
+/* harmony import */ var _useCanDropAt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useCanDropAt */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useCanDropAt.js");
+/* harmony import */ var _useGetViableDragPositions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useGetViableDragPositions */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useGetViableDragPositions.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+
+
+
+
+var DragAndDropContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+var useDragAndDrop = function () { return react__WEBPACK_IMPORTED_MODULE_0__.useContext(DragAndDropContext); };
+var buildMapForTrees = function (treeIds, build) {
+    return treeIds.map(function (id) { return [id, build(id)]; }).reduce(function (a, _a) {
+        var _b;
+        var id = _a[0], obj = _a[1];
+        return (__assign(__assign({}, a), (_b = {}, _b[id] = obj, _b)));
+    }, {});
+};
+// TODO tidy up
+var DragAndDropProvider = function (props) {
+    var environment = (0,_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), isProgrammaticallyDragging = _a[0], setIsProgrammaticallyDragging = _a[1];
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(4), itemHeight = _b[0], setItemHeight = _b[1];
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}), linearItems = _c[0], setLinearItems = _c[1];
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}), viableDragPositions = _d[0], setViableDragPositions = _d[1];
+    var _e = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0), programmaticDragIndex = _e[0], setProgrammaticDragIndex = _e[1];
+    var _f = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), draggingItems = _f[0], setDraggingItems = _f[1];
+    var _g = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(), draggingPosition = _g[0], setDraggingPosition = _g[1];
+    var _h = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('_nodrag'), dragCode = _h[0], setDragCode = _h[1];
+    var resetProgrammaticDragIndexForCurrentTree = function (viableDragPositions, linearItems, draggingItems) {
+        var _a;
+        if (environment.activeTreeId &&
+            ((_a = environment.viewState[environment.activeTreeId]) === null || _a === void 0 ? void 0 : _a.focusedItem) &&
+            linearItems &&
+            draggingItems) {
+            var focusItem_1 = environment.viewState[environment.activeTreeId].focusedItem;
+            var treeDragPositions = getViableDragPositions(environment.activeTreeId, draggingItems, linearItems);
+            var newPos = treeDragPositions.findIndex(function (pos) {
+                if (pos.targetType === 'item') {
+                    return pos.targetItem === focusItem_1;
+                }
+                else if (pos.targetType === 'between-items') {
+                    return environment.items[pos.parentItem].children[pos.childIndex] === focusItem_1;
+                }
+            });
+            if (newPos) {
+                setProgrammaticDragIndex(Math.min(newPos + 1, treeDragPositions.length - 1));
+            }
+            else {
+                setProgrammaticDragIndex(0);
+            }
+        }
+        else {
+            setProgrammaticDragIndex(0);
+        }
+    };
+    var resetState = function () {
+        setIsProgrammaticallyDragging(false);
+        setItemHeight(4);
+        setLinearItems({});
+        setViableDragPositions({});
+        setProgrammaticDragIndex(0);
+        setDraggingItems(undefined);
+        setDraggingPosition(undefined);
+        setDragCode('_nodrag');
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        if (environment.activeTreeId &&
+            linearItems[environment.activeTreeId] &&
+            viableDragPositions[environment.activeTreeId]) {
+            resetProgrammaticDragIndexForCurrentTree(viableDragPositions[environment.activeTreeId], linearItems[environment.activeTreeId], draggingItems);
+        }
+    }, [environment.activeTreeId]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        if (isProgrammaticallyDragging && environment.activeTreeId) {
+            setDraggingPosition(viableDragPositions[environment.activeTreeId][programmaticDragIndex]);
+        }
+    }, [programmaticDragIndex, environment.activeTreeId]);
+    var canDropAt = (0,_useCanDropAt__WEBPACK_IMPORTED_MODULE_2__.useCanDropAt)();
+    var performDrag = function (draggingPosition) {
+        var _a;
+        if (draggingItems && !canDropAt(draggingPosition, draggingItems)) {
+            return;
+        }
+        setDraggingPosition(draggingPosition);
+        environment.setActiveTree(draggingPosition.treeId);
+        if (draggingItems && environment.activeTreeId !== draggingPosition.treeId) {
+            // TODO maybe do only if draggingItems are different to selectedItems
+            (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, draggingItems.map(function (item) { return item.index; }), draggingPosition.treeId);
+        }
+    };
+    var onDragOverTreeHandler = (0,_useOnDragOverTreeHandler__WEBPACK_IMPORTED_MODULE_3__.useOnDragOverTreeHandler)(dragCode, setDragCode, itemHeight, linearItems, setDraggingPosition, performDrag);
+    var getViableDragPositions = (0,_useGetViableDragPositions__WEBPACK_IMPORTED_MODULE_4__.useGetViableDragPositions)();
+    var onDropHandler = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return function () {
+        if (draggingItems && draggingPosition && environment.onDrop) {
+            environment.onDrop(draggingItems, draggingPosition);
+            requestAnimationFrame(function () {
+                var _a;
+                (_a = environment.onFocusItem) === null || _a === void 0 ? void 0 : _a.call(environment, draggingItems[0], draggingPosition.treeId);
+                resetState();
+            });
+        }
+    }; }, [draggingPosition, draggingItems, environment.onDrop, environment.onFocusItem]);
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        window.addEventListener('dragend', onDropHandler);
+        return function () { return window.removeEventListener('dragend', onDropHandler); };
+    }, [onDropHandler]);
+    var dnd = {
+        onStartDraggingItems: function (items, treeId) {
+            var _a, _b;
+            var treeLinearItems = buildMapForTrees(environment.treeIds, function (treeId) { var _a; return (0,_tree_getItemsLinearly__WEBPACK_IMPORTED_MODULE_5__.getItemsLinearly)(environment.trees[treeId].rootItem, (_a = environment.viewState[treeId]) !== null && _a !== void 0 ? _a : {}, environment.items); });
+            var treeViableDragPositions = buildMapForTrees(environment.treeIds, function (treeId) {
+                return getViableDragPositions(treeId, items, treeLinearItems[treeId]);
+            });
+            // TODO what if trees have different heights and drag target changes?
+            var height = (_b = (_a = document.querySelector("[data-rct-tree=\"" + treeId + "\"] [data-rct-item-container=\"true\"]")) === null || _a === void 0 ? void 0 : _a.offsetHeight) !== null && _b !== void 0 ? _b : 5;
+            setItemHeight(height);
+            setDraggingItems(items);
+            setLinearItems(treeLinearItems);
+            setViableDragPositions(treeViableDragPositions);
+            if (environment.activeTreeId) {
+                resetProgrammaticDragIndexForCurrentTree(treeViableDragPositions[environment.activeTreeId], treeLinearItems[environment.activeTreeId], items);
+            }
+        },
+        startProgrammaticDrag: function () {
+            var _a, _b, _c;
+            if (!environment.canDragAndDrop) {
+                return;
+            }
+            if (environment.activeTreeId) {
+                var draggingItems_1 = (_b = (_a = environment.viewState[environment.activeTreeId]) === null || _a === void 0 ? void 0 : _a.selectedItems) !== null && _b !== void 0 ? _b : [(_c = environment.viewState[environment.activeTreeId]) === null || _c === void 0 ? void 0 : _c.focusedItem];
+                if (draggingItems_1.length === 0 || draggingItems_1[0] === undefined) {
+                    return;
+                }
+                var resolvedDraggingItems = draggingItems_1.map(function (id) { return environment.items[id]; });
+                if (environment.canDrag && !environment.canDrag(resolvedDraggingItems)) {
+                    return;
+                }
+                dnd.onStartDraggingItems(resolvedDraggingItems, environment.activeTreeId);
+                setTimeout(function () {
+                    setIsProgrammaticallyDragging(true);
+                    // Needs to be done after onStartDraggingItems was called, so that viableDragPositions is populated
+                });
+            }
+        },
+        abortProgrammaticDrag: function () {
+            resetState();
+        },
+        completeProgrammaticDrag: function () {
+            onDropHandler();
+            resetState();
+        },
+        programmaticDragUp: function () {
+            setProgrammaticDragIndex(function (oldIndex) { return Math.max(0, oldIndex - 1); });
+        },
+        programmaticDragDown: function () {
+            if (environment.activeTreeId) {
+                setProgrammaticDragIndex(function (oldIndex) {
+                    return Math.min(viableDragPositions[environment.activeTreeId].length, oldIndex + 1);
+                });
+            }
+        },
+        draggingItems: draggingItems,
+        draggingPosition: draggingPosition,
+        itemHeight: itemHeight,
+        isProgrammaticallyDragging: isProgrammaticallyDragging,
+        onDragOverTreeHandler: onDragOverTreeHandler,
+        viableDragPositions: viableDragPositions,
+    };
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DragAndDropContext.Provider, { value: dnd }, props.children);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/InteractionManagerProvider.js":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/InteractionManagerProvider.js ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useInteractionManager": () => (/* binding */ useInteractionManager),
+/* harmony export */   "InteractionManagerProvider": () => (/* binding */ InteractionManagerProvider)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../types */ "./node_modules/react-complex-tree/lib/esm/types.js");
+/* harmony import */ var _ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _mergeInteractionManagers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mergeInteractionManagers */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/mergeInteractionManagers.js");
+/* harmony import */ var _buildInteractionMode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./buildInteractionMode */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/buildInteractionMode.js");
+
+
+
+
+
+
+var InteractionManagerContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+var useInteractionManager = function () { return react__WEBPACK_IMPORTED_MODULE_0__.useContext(InteractionManagerContext); };
+var InteractionManagerProvider = function (props) {
+    var environment = (0,_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var defaultInteractionMode = environment.defaultInteractionMode;
+    var interactionManager = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        var _a;
+        if (defaultInteractionMode && typeof defaultInteractionMode !== 'string') {
+            if (defaultInteractionMode.extends) {
+                return (0,_mergeInteractionManagers__WEBPACK_IMPORTED_MODULE_2__.mergeInteractionManagers)(defaultInteractionMode, (0,_buildInteractionMode__WEBPACK_IMPORTED_MODULE_3__.buildInteractionMode)(defaultInteractionMode.extends, environment));
+            }
+            else {
+                return defaultInteractionMode;
+            }
+        }
+        return (0,_buildInteractionMode__WEBPACK_IMPORTED_MODULE_3__.buildInteractionMode)((_a = defaultInteractionMode) !== null && _a !== void 0 ? _a : _types__WEBPACK_IMPORTED_MODULE_4__.InteractionMode.ClickItemToExpand, environment);
+    }, []); // TODO make sure that environment does not need to be refreshed
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(InteractionManagerContext.Provider, { value: interactionManager }, props.children));
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/buildInteractionMode.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/buildInteractionMode.js ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "buildInteractionMode": () => (/* binding */ buildInteractionMode)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./node_modules/react-complex-tree/lib/esm/types.js");
+/* harmony import */ var _interactionMode_DoubleClickItemToExpandInteractionManager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../interactionMode/DoubleClickItemToExpandInteractionManager */ "./node_modules/react-complex-tree/lib/esm/interactionMode/DoubleClickItemToExpandInteractionManager.js");
+/* harmony import */ var _interactionMode_ClickItemToExpandInteractionManager__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../interactionMode/ClickItemToExpandInteractionManager */ "./node_modules/react-complex-tree/lib/esm/interactionMode/ClickItemToExpandInteractionManager.js");
+/* harmony import */ var _interactionMode_ClickArrowToExpandInteractionManager__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../interactionMode/ClickArrowToExpandInteractionManager */ "./node_modules/react-complex-tree/lib/esm/interactionMode/ClickArrowToExpandInteractionManager.js");
+
+
+
+
+var buildInteractionMode = function (mode, environment) {
+    switch (mode) {
+        case _types__WEBPACK_IMPORTED_MODULE_0__.InteractionMode.DoubleClickItemToExpand:
+            return new _interactionMode_DoubleClickItemToExpandInteractionManager__WEBPACK_IMPORTED_MODULE_1__.DoubleClickItemToExpandInteractionManager(environment);
+        case _types__WEBPACK_IMPORTED_MODULE_0__.InteractionMode.ClickItemToExpand:
+            return new _interactionMode_ClickItemToExpandInteractionManager__WEBPACK_IMPORTED_MODULE_2__.ClickItemToExpandInteractionManager(environment);
+        case _types__WEBPACK_IMPORTED_MODULE_0__.InteractionMode.ClickArrowToExpand:
+            return new _interactionMode_ClickArrowToExpandInteractionManager__WEBPACK_IMPORTED_MODULE_3__.ClickArrowToExpandInteractionManager(environment);
+        default:
+            throw Error("Unknown interaction mode " + mode);
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/mergeInteractionManagers.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/mergeInteractionManagers.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "mergeInteractionManagers": () => (/* binding */ mergeInteractionManagers)
+/* harmony export */ });
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var mergeInteractionManagers = function (main, fallback) { return ({
+    mode: main.mode,
+    createInteractiveElementProps: function (item, treeId, actions, renderFlags) { return (__assign(__assign({}, fallback.createInteractiveElementProps(item, treeId, actions, renderFlags)), main.createInteractiveElementProps(item, treeId, actions, renderFlags))); },
+}); };
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useCanDropAt.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useCanDropAt.js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useCanDropAt": () => (/* binding */ useCanDropAt)
+/* harmony export */ });
+/* harmony import */ var _ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+
+var useCanDropAt = function () {
+    var environment = (0,_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__.useTreeEnvironment)();
+    return function (draggingPosition, draggingItems) {
+        if (draggingPosition.targetType === 'between-items') {
+            if (!environment.canReorderItems) {
+                return false;
+            }
+        }
+        else {
+            var resolvedItem = environment.items[draggingPosition.targetItem];
+            if ((!environment.canDropOnItemWithChildren && resolvedItem.hasChildren) ||
+                (!environment.canDropOnItemWithoutChildren && !resolvedItem.hasChildren)) {
+                return false;
+            }
+        }
+        if (environment.canDropAt && (!draggingItems || !environment.canDropAt(draggingItems, draggingPosition))) {
+            // setDraggingPosition(undefined);
+            return false;
+        }
+        return true;
+    };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useGetParentOfLinearItem.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useGetParentOfLinearItem.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useGetGetParentOfLinearItem": () => (/* binding */ useGetGetParentOfLinearItem)
+/* harmony export */ });
+/* harmony import */ var _ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+
+var useGetGetParentOfLinearItem = function () {
+    var environment = (0,_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__.useTreeEnvironment)();
+    return function (linearItems, itemLinearIndex, treeId) {
+        var depth = linearItems[itemLinearIndex].depth;
+        var parentLinearIndex = itemLinearIndex;
+        for (; !!linearItems[parentLinearIndex] && linearItems[parentLinearIndex].depth !== depth - 1; parentLinearIndex--)
+            ;
+        var parent = linearItems[parentLinearIndex];
+        if (!parent) {
+            parent = { item: environment.trees[treeId].rootItem, depth: 0 };
+            parentLinearIndex = 0;
+        }
+        return parent;
+    };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useGetViableDragPositions.js":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useGetViableDragPositions.js ***!
+  \****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useGetViableDragPositions": () => (/* binding */ useGetViableDragPositions)
+/* harmony export */ });
+/* harmony import */ var _useGetParentOfLinearItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useGetParentOfLinearItem */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useGetParentOfLinearItem.js");
+/* harmony import */ var _ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _useCanDropAt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useCanDropAt */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useCanDropAt.js");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+
+
+var useGetViableDragPositions = function () {
+    var environment = (0,_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__.useTreeEnvironment)();
+    var getParentOfLinearItem = (0,_useGetParentOfLinearItem__WEBPACK_IMPORTED_MODULE_1__.useGetGetParentOfLinearItem)();
+    var canDropAt = (0,_useCanDropAt__WEBPACK_IMPORTED_MODULE_2__.useCanDropAt)();
+    return function (treeId, draggingItems, linearItems) {
+        return linearItems
+            .map(function (_a, linearIndex) {
+            var _b, _c;
+            var item = _a.item, depth = _a.depth;
+            var parent = getParentOfLinearItem(linearItems, linearIndex, treeId);
+            var childIndex = environment.items[parent.item].children.indexOf(item);
+            var itemPosition = {
+                targetType: 'item',
+                parentItem: parent.item,
+                targetItem: item,
+                linearIndex: linearIndex,
+                depth: depth,
+                treeId: treeId,
+            };
+            var topPosition = {
+                targetType: 'between-items',
+                parentItem: parent.item,
+                linePosition: 'top',
+                childIndex: childIndex,
+                depth: depth,
+                treeId: treeId,
+                linearIndex: linearIndex,
+            };
+            var bottomPosition = {
+                targetType: 'between-items',
+                parentItem: parent.item,
+                linePosition: 'bottom',
+                linearIndex: linearIndex + 1,
+                childIndex: childIndex + 1,
+                depth: depth,
+                treeId: treeId,
+            };
+            var skipTopPosition = depth === ((_c = (_b = linearItems[linearIndex - 1]) === null || _b === void 0 ? void 0 : _b.depth) !== null && _c !== void 0 ? _c : -1);
+            if (skipTopPosition) {
+                return [itemPosition, bottomPosition];
+            }
+            else {
+                return [topPosition, itemPosition, bottomPosition];
+            }
+        })
+            .reduce(function (a, b) { return __spreadArray(__spreadArray([], a), b); }, [])
+            .filter(function (position) { return canDropAt(position, draggingItems); });
+    };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useOnDragOverTreeHandler.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useOnDragOverTreeHandler.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useOnDragOverTreeHandler": () => (/* binding */ useOnDragOverTreeHandler)
+/* harmony export */ });
+/* harmony import */ var _ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _useGetParentOfLinearItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useGetParentOfLinearItem */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/useGetParentOfLinearItem.js");
+
+
+var isOutsideOfContainer = function (e, treeBb) {
+    return e.clientX < treeBb.left || e.clientX > treeBb.right || e.clientY < treeBb.top || e.clientY > treeBb.bottom;
+};
+var getHoveringPosition = function (clientY, treeTop, itemHeight, capabilities) {
+    var hoveringPosition = (clientY - treeTop) / itemHeight;
+    var linearIndex = Math.floor(hoveringPosition);
+    var offset = undefined;
+    var lineThreshold = capabilities.canDropOnItemWithChildren || capabilities.canDropOnItemWithoutChildren ? 0.2 : 0.5;
+    if (hoveringPosition % 1 < lineThreshold) {
+        offset = 'top';
+    }
+    else if (hoveringPosition % 1 > 1 - lineThreshold) {
+        offset = 'bottom';
+    }
+    return { linearIndex: linearIndex, offset: offset };
+};
+var useOnDragOverTreeHandler = function (lastDragCode, setLastDragCode, itemHeight, linearItems, onDragAtPosition, onPerformDrag) {
+    var environment = (0,_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__.useTreeEnvironment)();
+    var getParentOfLinearItem = (0,_useGetParentOfLinearItem__WEBPACK_IMPORTED_MODULE_1__.useGetGetParentOfLinearItem)();
+    return function (e, treeId, containerRef) {
+        var _a, _b, _c, _d;
+        if (!environment.canDragAndDrop) {
+            return;
+        }
+        if (!containerRef.current) {
+            return;
+        }
+        if (e.clientX < 0 || e.clientY < 0) {
+            return; // TODO hotfix
+        }
+        var treeBb = containerRef.current.getBoundingClientRect();
+        var outsideContainer = isOutsideOfContainer(e, treeBb);
+        var _e = getHoveringPosition(e.clientY, treeBb.top, itemHeight, environment), linearIndex = _e.linearIndex, offset = _e.offset;
+        var nextDragCode = outsideContainer ? 'outside' : "" + treeId + linearIndex + (offset !== null && offset !== void 0 ? offset : '');
+        if (lastDragCode === nextDragCode) {
+            return;
+        }
+        setLastDragCode(nextDragCode);
+        if (outsideContainer) {
+            onDragAtPosition(undefined);
+            return;
+        }
+        if (linearIndex < 0 || linearIndex >= linearItems[treeId].length) {
+            onDragAtPosition(undefined);
+            return;
+        }
+        var targetItem = linearItems[treeId][linearIndex];
+        var depth = targetItem.depth;
+        var targetItemData = environment.items[targetItem.item];
+        if (!offset && !environment.canDropOnItemWithoutChildren && !targetItemData.hasChildren) {
+            onDragAtPosition(undefined);
+            return;
+        }
+        if (!offset && !environment.canDropOnItemWithChildren && targetItemData.hasChildren) {
+            onDragAtPosition(undefined);
+            return;
+        }
+        if (offset && !environment.canReorderItems) {
+            onDragAtPosition(undefined);
+            return;
+        }
+        var parent = getParentOfLinearItem(linearItems[treeId], linearIndex, treeId);
+        if ((_b = (_a = environment.viewState[treeId]) === null || _a === void 0 ? void 0 : _a.selectedItems) === null || _b === void 0 ? void 0 : _b.includes(targetItem.item)) {
+            return;
+        }
+        var newChildIndex = environment.items[parent.item].children.indexOf(targetItem.item) + (offset === 'top' ? 0 : 1);
+        if (offset === 'top' && depth === ((_d = (_c = linearItems[treeId][linearIndex - 1]) === null || _c === void 0 ? void 0 : _c.depth) !== null && _d !== void 0 ? _d : -1)) {
+            offset = 'bottom';
+            linearIndex -= 1;
+        }
+        var draggingPosition;
+        if (offset) {
+            draggingPosition = {
+                targetType: 'between-items',
+                treeId: treeId,
+                parentItem: parent.item,
+                depth: targetItem.depth,
+                linearIndex: linearIndex + (offset === 'top' ? 0 : 1),
+                // childIndex: linearIndex - parentLinearIndex - 1 + (offset === 'top' ? 0 : 1),
+                // childIndex: environment.items[parent.item].children!.indexOf(targetItem.item) + (offset === 'top' ? 0 : 1),
+                childIndex: newChildIndex,
+                linePosition: offset,
+            };
+        }
+        else {
+            draggingPosition = {
+                targetType: 'item',
+                treeId: treeId,
+                parentItem: parent.item,
+                targetItem: targetItem.item,
+                depth: targetItem.depth,
+                linearIndex: linearIndex,
+            };
+        }
+        onPerformDrag(draggingPosition);
+    };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/environmentActions/EnvironmentActionsProvider.js":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/environmentActions/EnvironmentActionsProvider.js ***!
+  \**************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useEnvironmentActions": () => (/* binding */ useEnvironmentActions),
+/* harmony export */   "EnvironmentActionsProvider": () => (/* binding */ EnvironmentActionsProvider)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _tree_getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tree/getItemsLinearly */ "./node_modules/react-complex-tree/lib/esm/tree/getItemsLinearly.js");
+/* harmony import */ var _useCreatedEnvironmentRef__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useCreatedEnvironmentRef */ "./node_modules/react-complex-tree/lib/esm/environmentActions/useCreatedEnvironmentRef.js");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+
+
+
+
+var EnvironmentActionsContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+var useEnvironmentActions = function () { return react__WEBPACK_IMPORTED_MODULE_0__.useContext(EnvironmentActionsContext); };
+var EnvironmentActionsProvider = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var dnd = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_2__.useDragAndDrop)();
+    // TODO change environment childs to use actions rather than output events where possible
+    var actions = {
+        abortProgrammaticDrag: function () {
+            dnd.abortProgrammaticDrag();
+        },
+        collapseItem: function (itemId, treeId) {
+            var _a;
+            (_a = environment.onCollapseItem) === null || _a === void 0 ? void 0 : _a.call(environment, environment.items[itemId], treeId);
+        },
+        completeProgrammaticDrag: function () {
+            dnd.completeProgrammaticDrag();
+        },
+        expandItem: function (itemId, treeId) {
+            var _a;
+            (_a = environment.onExpandItem) === null || _a === void 0 ? void 0 : _a.call(environment, environment.items[itemId], treeId);
+        },
+        focusItem: function (itemId, treeId) {
+            var _a;
+            (_a = environment.onFocusItem) === null || _a === void 0 ? void 0 : _a.call(environment, environment.items[itemId], treeId);
+        },
+        focusTree: function (treeId, autoFocus) {
+            if (autoFocus === void 0) { autoFocus = true; }
+            environment.setActiveTree(treeId, autoFocus);
+        },
+        moveFocusDown: function (treeId) {
+            var _a, _b;
+            var tree = environment.trees[treeId];
+            var linearItems = (0,_tree_getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__.getItemsLinearly)(tree.rootItem, (_a = environment.viewState[treeId]) !== null && _a !== void 0 ? _a : {}, environment.items);
+            var currentFocusIndex = linearItems.findIndex(function (_a) {
+                var _b;
+                var item = _a.item;
+                return item === ((_b = environment.viewState[treeId]) === null || _b === void 0 ? void 0 : _b.focusedItem);
+            });
+            var newIndex = currentFocusIndex !== undefined ? Math.min(linearItems.length - 1, currentFocusIndex + 1) : 0;
+            var newItem = environment.items[linearItems[newIndex].item];
+            (_b = environment.onFocusItem) === null || _b === void 0 ? void 0 : _b.call(environment, newItem, treeId);
+        },
+        moveFocusUp: function (treeId) {
+            var _a, _b;
+            var tree = environment.trees[treeId];
+            var linearItems = (0,_tree_getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__.getItemsLinearly)(tree.rootItem, (_a = environment.viewState[treeId]) !== null && _a !== void 0 ? _a : {}, environment.items);
+            var currentFocusIndex = linearItems.findIndex(function (_a) {
+                var _b;
+                var item = _a.item;
+                return item === ((_b = environment.viewState[treeId]) === null || _b === void 0 ? void 0 : _b.focusedItem);
+            });
+            var newIndex = currentFocusIndex !== undefined ? Math.max(0, currentFocusIndex - 1) : 0;
+            var newItem = environment.items[linearItems[newIndex].item];
+            (_b = environment.onFocusItem) === null || _b === void 0 ? void 0 : _b.call(environment, newItem, treeId);
+        },
+        moveProgrammaticDragPositionDown: function () {
+            dnd.programmaticDragDown();
+        },
+        moveProgrammaticDragPositionUp: function () {
+            dnd.programmaticDragUp();
+        },
+        renameItem: function (itemId, name, treeId) {
+            var _a;
+            (_a = environment.onRenameItem) === null || _a === void 0 ? void 0 : _a.call(environment, environment.items[itemId], name, treeId);
+        },
+        selectItems: function (itemsIds, treeId) {
+            var _a;
+            (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, itemsIds, treeId);
+        },
+        startProgrammaticDrag: function () {
+            dnd.startProgrammaticDrag();
+        },
+        toggleItemExpandedState: function (itemId, treeId) {
+            var _a, _b, _c, _d;
+            if ((_b = (_a = environment.viewState[treeId]) === null || _a === void 0 ? void 0 : _a.expandedItems) === null || _b === void 0 ? void 0 : _b.includes(itemId)) {
+                (_c = environment.onCollapseItem) === null || _c === void 0 ? void 0 : _c.call(environment, environment.items[itemId], treeId);
+            }
+            else {
+                (_d = environment.onExpandItem) === null || _d === void 0 ? void 0 : _d.call(environment, environment.items[itemId], treeId);
+            }
+        },
+        toggleItemSelectStatus: function (itemId, treeId) {
+            var _a, _b, _c, _d, _e, _f, _g;
+            if ((_b = (_a = environment.viewState[treeId]) === null || _a === void 0 ? void 0 : _a.selectedItems) === null || _b === void 0 ? void 0 : _b.includes(itemId)) {
+                (_c = environment.onSelectItems) === null || _c === void 0 ? void 0 : _c.call(environment, (_e = (_d = environment.viewState[treeId].selectedItems) === null || _d === void 0 ? void 0 : _d.filter(function (item) { return item !== itemId; })) !== null && _e !== void 0 ? _e : [], treeId);
+            }
+            else {
+                (_f = environment.onSelectItems) === null || _f === void 0 ? void 0 : _f.call(environment, __spreadArray(__spreadArray([], ((_g = environment.viewState[treeId].selectedItems) !== null && _g !== void 0 ? _g : [])), [itemId]), treeId);
+            }
+        },
+        invokePrimaryAction: function (itemId, treeId) {
+            var _a;
+            (_a = environment.onPrimaryAction) === null || _a === void 0 ? void 0 : _a.call(environment, environment.items[itemId], treeId);
+        },
+    };
+    (0,_useCreatedEnvironmentRef__WEBPACK_IMPORTED_MODULE_4__.useCreatedEnvironmentRef)(ref, actions);
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(EnvironmentActionsContext.Provider, { value: actions }, props.children);
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/environmentActions/useCreatedEnvironmentRef.js":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/environmentActions/useCreatedEnvironmentRef.js ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useCreatedEnvironmentRef": () => (/* binding */ useCreatedEnvironmentRef)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+var useCreatedEnvironmentRef = function (ref, actions) {
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var dnd = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_2__.useDragAndDrop)();
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle)(ref, function () { return (__assign(__assign(__assign({}, actions), environment), { treeEnvironmentContext: environment, dragAndDropContext: dnd })); });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/hotkeys/defaultKeyboardBindings.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/hotkeys/defaultKeyboardBindings.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "defaultKeyboardBindings": () => (/* binding */ defaultKeyboardBindings)
+/* harmony export */ });
+var defaultKeyboardBindings = {
+    expandSiblings: ['control+*'],
+    moveFocusToFirstItem: ['home'],
+    moveFocusToLastItem: ['end'],
+    primaryAction: ['enter'],
+    renameItem: ['f2'],
+    abortRenameItem: ['escape'],
+    toggleSelectItem: ['control+space'],
+    abortSearch: ['escape', 'enter'],
+    startSearch: [],
+    selectAll: ['control+a'],
+    startProgrammaticDnd: ['control+d'],
+    completeProgrammaticDnd: ['enter'],
+    abortProgrammaticDnd: ['escape'],
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/hotkeys/useHotkey.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/hotkeys/useHotkey.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useHotkey": () => (/* binding */ useHotkey)
+/* harmony export */ });
+/* harmony import */ var _useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../useHtmlElementEventListener */ "./node_modules/react-complex-tree/lib/esm/useHtmlElementEventListener.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _useKeyboardBindings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useKeyboardBindings */ "./node_modules/react-complex-tree/lib/esm/hotkeys/useKeyboardBindings.js");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+
+
+
+var elementsThatCanTakeText = ['input', 'textarea'];
+var useHotkey = function (combinationName, onHit, active, activatableWhileFocusingInput, deps) {
+    if (activatableWhileFocusingInput === void 0) { activatableWhileFocusingInput = false; }
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var pressedKeys = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)([]);
+    var keyboardBindings = (0,_useKeyboardBindings__WEBPACK_IMPORTED_MODULE_2__.useKeyboardBindings)();
+    var possibleCombinations = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return keyboardBindings[combinationName].map(function (combination) { return combination.split('+'); }); }, [combinationName, environment.keyboardBindings]);
+    (0,_useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_3__.useHtmlElementEventListener)(document, 'keydown', function (e) {
+        if (active === false) {
+            return;
+        }
+        if ((elementsThatCanTakeText.includes(e.target.tagName.toLowerCase()) ||
+            e.target.isContentEditable) &&
+            !activatableWhileFocusingInput) {
+            // Skip if an input is selected
+            return;
+        }
+        if (!pressedKeys.current.includes(e.key)) {
+            pressedKeys.current.push(e.key);
+            var pressedKeysLowercase_1 = pressedKeys.current.map(function (key) { return key.toLowerCase(); });
+            var partialMatch = possibleCombinations
+                .map(function (combination) {
+                return pressedKeysLowercase_1.map(function (key) { return combination.includes(key.toLowerCase()); }).reduce(function (a, b) { return a && b; }, true);
+            })
+                .reduce(function (a, b) { return a || b; }, false);
+            if (partialMatch) {
+                if (pressedKeys.current.length > 1 || !/^[a-zA-Z]$/.test(e.key)) {
+                    // Prevent default, but not if this is the first input and a letter (which should trigger a search)
+                    e.preventDefault();
+                }
+            }
+        }
+    }, [active]);
+    (0,_useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_3__.useHtmlElementEventListener)(document, 'keyup', function (e) {
+        if (active === false) {
+            return;
+        }
+        var pressedKeysLowercase = pressedKeys.current.map(function (key) { return key.toLowerCase(); });
+        var match = possibleCombinations
+            .map(function (combination) {
+            return combination.map(function (key) { return pressedKeysLowercase.includes(key.toLowerCase()); }).reduce(function (a, b) { return a && b; }, true);
+        })
+            .reduce(function (a, b) { return a || b; }, false);
+        if (match) {
+            requestAnimationFrame(function () { return onHit(e); });
+        }
+        pressedKeys.current = pressedKeys.current.filter(function (key) { return key !== e.key; });
+    }, __spreadArray([possibleCombinations, onHit, active], (deps !== null && deps !== void 0 ? deps : [])));
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/hotkeys/useKey.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/hotkeys/useKey.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useKey": () => (/* binding */ useKey)
+/* harmony export */ });
+/* harmony import */ var _useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../useHtmlElementEventListener */ "./node_modules/react-complex-tree/lib/esm/useHtmlElementEventListener.js");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+var useKey = function (key, onHit, active, deps) {
+    (0,_useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_0__.useHtmlElementEventListener)(document, 'keydown', function (e) {
+        if (!active) {
+            return;
+        }
+        if (active && key.toLowerCase() === e.key.toLowerCase()) {
+            onHit(e);
+        }
+    }, __spreadArray([active, key], (deps !== null && deps !== void 0 ? deps : [])));
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/hotkeys/useKeyboardBindings.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/hotkeys/useKeyboardBindings.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useKeyboardBindings": () => (/* binding */ useKeyboardBindings)
+/* harmony export */ });
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _defaultKeyboardBindings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./defaultKeyboardBindings */ "./node_modules/react-complex-tree/lib/esm/hotkeys/defaultKeyboardBindings.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+var useKeyboardBindings = function () {
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        if (environment.keyboardBindings) {
+            return __assign(__assign({}, _defaultKeyboardBindings__WEBPACK_IMPORTED_MODULE_2__.defaultKeyboardBindings), environment.keyboardBindings);
+        }
+        else {
+            return _defaultKeyboardBindings__WEBPACK_IMPORTED_MODULE_2__.defaultKeyboardBindings;
+        }
+    }, [environment.keyboardBindings]);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/interactionMode/ClickArrowToExpandInteractionManager.js":
+/*!*********************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/interactionMode/ClickArrowToExpandInteractionManager.js ***!
+  \*********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ClickArrowToExpandInteractionManager": () => (/* binding */ ClickArrowToExpandInteractionManager)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./node_modules/react-complex-tree/lib/esm/types.js");
+
+var ClickArrowToExpandInteractionManager = /** @class */ (function () {
+    function ClickArrowToExpandInteractionManager(environment) {
+        this.mode = _types__WEBPACK_IMPORTED_MODULE_0__.InteractionMode.ClickItemToExpand;
+        this.environment = environment;
+    }
+    ClickArrowToExpandInteractionManager.prototype.createInteractiveElementProps = function (item, treeId, actions, renderFlags) {
+        var _this = this;
+        return {
+            onClick: function (e) {
+                actions.focusItem();
+                if (e.shiftKey) {
+                    actions.selectUpTo();
+                }
+                else if (e.ctrlKey) {
+                    if (renderFlags.isSelected) {
+                        actions.unselectItem();
+                    }
+                    else {
+                        actions.addToSelectedItems();
+                    }
+                }
+                else {
+                    actions.selectItem();
+                    if (!item.hasChildren || _this.environment.canInvokePrimaryActionOnItemContainer) {
+                        actions.primaryAction();
+                    }
+                }
+            },
+            onFocus: function () {
+                actions.focusItem();
+            },
+            onDragStart: function (e) {
+                e.dataTransfer.dropEffect = 'move'; // TODO
+                // e.dataTransfer.setDragImage(environment.renderDraggingItem(viewState.selectedItems), 0, 0);
+                actions.startDragging();
+            },
+            onDragOver: function (e) {
+                e.preventDefault(); // Allow drop
+            },
+            draggable: renderFlags.canDrag && !renderFlags.isRenaming,
+            tabIndex: !renderFlags.isRenaming ? (renderFlags.isFocused ? 0 : -1) : undefined,
+        };
+    };
+    return ClickArrowToExpandInteractionManager;
+}());
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/interactionMode/ClickItemToExpandInteractionManager.js":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/interactionMode/ClickItemToExpandInteractionManager.js ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ClickItemToExpandInteractionManager": () => (/* binding */ ClickItemToExpandInteractionManager)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./node_modules/react-complex-tree/lib/esm/types.js");
+
+var ClickItemToExpandInteractionManager = /** @class */ (function () {
+    function ClickItemToExpandInteractionManager(environment) {
+        this.mode = _types__WEBPACK_IMPORTED_MODULE_0__.InteractionMode.ClickItemToExpand;
+        this.environment = environment;
+    }
+    ClickItemToExpandInteractionManager.prototype.createInteractiveElementProps = function (item, treeId, actions, renderFlags) {
+        var _this = this;
+        return {
+            onClick: function (e) {
+                actions.focusItem();
+                if (e.shiftKey) {
+                    actions.selectUpTo();
+                }
+                else if (e.ctrlKey) {
+                    if (renderFlags.isSelected) {
+                        actions.unselectItem();
+                    }
+                    else {
+                        actions.addToSelectedItems();
+                    }
+                }
+                else {
+                    if (item.hasChildren) {
+                        actions.toggleExpandedState();
+                    }
+                    actions.selectItem();
+                    if (!item.hasChildren || _this.environment.canInvokePrimaryActionOnItemContainer) {
+                        actions.primaryAction();
+                    }
+                }
+            },
+            onFocus: function () {
+                actions.focusItem();
+            },
+            onDragStart: function (e) {
+                e.dataTransfer.dropEffect = 'move'; // TODO
+                // e.dataTransfer.setDragImage(environment.renderDraggingItem(viewState.selectedItems), 0, 0);
+                actions.startDragging();
+            },
+            onDragOver: function (e) {
+                e.preventDefault(); // Allow drop
+            },
+            draggable: renderFlags.canDrag && !renderFlags.isRenaming,
+            tabIndex: !renderFlags.isRenaming ? (renderFlags.isFocused ? 0 : -1) : undefined,
+        };
+    };
+    return ClickItemToExpandInteractionManager;
+}());
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/interactionMode/DoubleClickItemToExpandInteractionManager.js":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/interactionMode/DoubleClickItemToExpandInteractionManager.js ***!
+  \**************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DoubleClickItemToExpandInteractionManager": () => (/* binding */ DoubleClickItemToExpandInteractionManager)
+/* harmony export */ });
+/* harmony import */ var _types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../types */ "./node_modules/react-complex-tree/lib/esm/types.js");
+
+var DoubleClickItemToExpandInteractionManager = /** @class */ (function () {
+    function DoubleClickItemToExpandInteractionManager(environment) {
+        this.mode = _types__WEBPACK_IMPORTED_MODULE_0__.InteractionMode.DoubleClickItemToExpand;
+        this.environment = environment;
+    }
+    DoubleClickItemToExpandInteractionManager.prototype.createInteractiveElementProps = function (item, treeId, actions, renderFlags) {
+        var _this = this;
+        return {
+            onClick: function (e) {
+                actions.focusItem();
+                if (e.shiftKey) {
+                    actions.selectUpTo();
+                }
+                else if (e.ctrlKey) {
+                    if (renderFlags.isSelected) {
+                        actions.unselectItem();
+                    }
+                    else {
+                        actions.addToSelectedItems();
+                    }
+                }
+                else {
+                    actions.selectItem();
+                }
+            },
+            onDoubleClick: function () {
+                actions.focusItem();
+                actions.selectItem();
+                if (item.hasChildren) {
+                    actions.toggleExpandedState();
+                }
+                if (!item.hasChildren || _this.environment.canInvokePrimaryActionOnItemContainer) {
+                    actions.primaryAction();
+                }
+            },
+            onFocus: function () {
+                actions.focusItem();
+            },
+            onDragStart: function (e) {
+                e.dataTransfer.dropEffect = 'move'; // TODO
+                // e.dataTransfer.setDragImage(environment.renderDraggingItem(viewState.selectedItems), 0, 0);
+                actions.startDragging();
+            },
+            onDragOver: function (e) {
+                e.preventDefault(); // Allow drop
+            },
+            draggable: renderFlags.canDrag && !renderFlags.isRenaming,
+            tabIndex: !renderFlags.isRenaming ? (renderFlags.isFocused ? 0 : -1) : undefined,
+        };
+    };
+    return DoubleClickItemToExpandInteractionManager;
+}());
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/renderers/createDefaultRenderers.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/renderers/createDefaultRenderers.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "createDefaultRenderers": () => (/* binding */ createDefaultRenderers)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+var cx = function () {
+    var classNames = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        classNames[_i] = arguments[_i];
+    }
+    return classNames.filter(function (cn) { return !!cn; }).join(' ');
+};
+var createDefaultRenderers = function (renderers) {
+    var newRenderers = __assign({ renderItemTitle: function (_a) {
+            var title = _a.title, context = _a.context, info = _a.info;
+            if (!info.isSearching || !context.isSearchMatching) {
+                return react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, title);
+            }
+            else {
+                var startIndex = title.toLowerCase().indexOf(info.search.toLowerCase());
+                return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+                    startIndex > 0 && react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, title.slice(0, startIndex)),
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "rct-tree-item-search-highlight" }, title.slice(startIndex, startIndex + info.search.length)),
+                    startIndex + info.search.length < title.length && (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, title.slice(startIndex + info.search.length, title.length)))));
+            }
+        }, renderItemArrow: function (_a) {
+            var item = _a.item, context = _a.context;
+            // Icons from https://blueprintjs.com/docs/#icons
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", __assign({ className: cx(item.hasChildren && 'rct-tree-item-arrow-hasChildren', 'rct-tree-item-arrow') }, context.arrowProps), item.hasChildren &&
+                (context.isExpanded ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", x: "0px", y: "0px", viewBox: "0 0 16 16", enableBackground: "new 0 0 16 16", xmlSpace: "preserve" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12,5c-0.28,0-0.53,0.11-0.71,0.29L8,8.59L4.71,5.29C4.53,5.11,4.28,5,4,5\n                      C3.45,5,3,5.45,3,6c0,0.28,0.11,0.53,0.29,0.71l4,4C7.47,10.89,7.72,11,8,11s0.53-0.11,0.71-0.29l4-4C12.89,6.53,13,6.28,13,6\n                      C13,5.45,12.55,5,12,5z", className: "rct-tree-item-arrow-path" }))))) : (react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", x: "0px", y: "0px", viewBox: "0 0 16 16", enableBackground: "new 0 0 16 16", xmlSpace: "preserve" },
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null,
+                        react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", null,
+                            react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M10.71,7.29l-4-4C6.53,3.11,6.28,3,6,3C5.45,3,5,3.45,5,4\n                      c0,0.28,0.11,0.53,0.29,0.71L8.59,8l-3.29,3.29C5.11,11.47,5,11.72,5,12c0,0.55,0.45,1,1,1c0.28,0,0.53-0.11,0.71-0.29l4-4\n                      C10.89,8.53,11,8.28,11,8C11,7.72,10.89,7.47,10.71,7.29z", className: "rct-tree-item-arrow-path" }))))))));
+        }, renderItem: function (_a) {
+            var _b;
+            var item = _a.item, depth = _a.depth, children = _a.children, title = _a.title, context = _a.context, arrow = _a.arrow;
+            var InteractiveComponent = context.isRenaming ? 'div' : 'button';
+            // TODO have only root li component create all the classes
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", __assign({}, context.itemContainerWithChildrenProps, { className: cx('rct-tree-item-li', item.hasChildren && 'rct-tree-item-li-hasChildren', context.isSelected && 'rct-tree-item-li-selected', context.isExpanded && 'rct-tree-item-li-expanded', context.isFocused && 'rct-tree-item-li-focused', context.isDraggingOver && 'rct-tree-item-li-dragging-over', context.isSearchMatching && 'rct-tree-item-li-search-match') }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", __assign({}, context.itemContainerWithoutChildrenProps, { style: { paddingLeft: (depth + 1) * ((_b = renderers.renderDepthOffset) !== null && _b !== void 0 ? _b : 10) + "px" }, className: cx('rct-tree-item-title-container', item.hasChildren && 'rct-tree-item-title-container-hasChildren', context.isSelected && 'rct-tree-item-title-container-selected', context.isExpanded && 'rct-tree-item-title-container-expanded', context.isFocused && 'rct-tree-item-title-container-focused', context.isDraggingOver && 'rct-tree-item-title-container-dragging-over', context.isSearchMatching && 'rct-tree-item-title-container-search-match') }),
+                    arrow,
+                    react__WEBPACK_IMPORTED_MODULE_0__.createElement(InteractiveComponent, __assign({}, context.interactiveElementProps, { className: cx('rct-tree-item-button', item.hasChildren && 'rct-tree-item-button-hasChildren', context.isSelected && 'rct-tree-item-button-selected', context.isExpanded && 'rct-tree-item-button-expanded', context.isFocused && 'rct-tree-item-button-focused', context.isDraggingOver && 'rct-tree-item-button-dragging-over', context.isSearchMatching && 'rct-tree-item-button-search-match') }), title)),
+                children));
+        }, renderRenameInput: function (_a) {
+            var inputProps = _a.inputProps, inputRef = _a.inputRef, submitButtonProps = _a.submitButtonProps, submitButtonRef = _a.submitButtonRef, formProps = _a.formProps;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("form", __assign({}, formProps, { className: "rct-tree-item-renaming-form" }),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", __assign({}, inputProps, { ref: inputRef, className: "rct-tree-item-renaming-input" })),
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", __assign({}, submitButtonProps, { ref: submitButtonRef, type: "submit", className: "rct-tree-item-renaming-submit-button", value: "\uD83D\uDDF8" }))));
+        }, renderDraggingItem: function () {
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null);
+        }, renderDraggingItemTitle: function () {
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null);
+        }, renderTreeContainer: function (_a) {
+            var children = _a.children, containerProps = _a.containerProps, info = _a.info;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: cx('rct-tree-root', info.isFocused && 'rct-tree-root-focus', info.isRenaming && 'rct-tree-root-renaming', info.areItemsSelected && 'rct-tree-root-itemsselected') },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", __assign({}, containerProps), children)));
+        }, renderItemsContainer: function (_a) {
+            var children = _a.children, containerProps = _a.containerProps;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", __assign({}, containerProps, { className: "rct-tree-items-container" }), children));
+        }, renderDragBetweenLine: function (_a) {
+            var _b;
+            var draggingPosition = _a.draggingPosition, lineProps = _a.lineProps;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", __assign({}, lineProps, { style: { left: draggingPosition.depth * ((_b = renderers.renderDepthOffset) !== null && _b !== void 0 ? _b : 10) + "px" }, className: cx('rct-tree-drag-between-line', draggingPosition.targetType === 'between-items' &&
+                    draggingPosition.linePosition === 'top' &&
+                    'rct-tree-drag-between-line-top', draggingPosition.targetType === 'between-items' &&
+                    draggingPosition.linePosition === 'bottom' &&
+                    'rct-tree-drag-between-line-bottom') })));
+        }, renderSearchInput: function (_a) {
+            var inputProps = _a.inputProps;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { className: cx('rct-tree-search-input-container') },
+                react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", __assign({}, inputProps, { className: cx('rct-tree-search-input') }))));
+        }, renderLiveDescriptorContainer: function (_a) {
+            var tree = _a.tree, children = _a.children;
+            return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { id: "rct-livedescription-" + tree.treeId, style: {
+                    clip: 'rect(0 0 0 0)',
+                    clipPath: 'inset(50%)',
+                    height: '1px',
+                    overflow: 'hidden',
+                    position: 'absolute',
+                    whiteSpace: 'nowrap',
+                    width: '1px',
+                } }, children));
+        }, renderDepthOffset: 4 }, renderers);
+    newRenderers.renderItem.displayName = 'RenderItem';
+    newRenderers.renderItemTitle.displayName = 'RenderItemTitle';
+    newRenderers.renderItemArrow.displayName = 'RenderItemArrow';
+    newRenderers.renderRenameInput.displayName = 'RenderRenameInput';
+    newRenderers.renderDraggingItem.displayName = 'RenderDraggingItem';
+    newRenderers.renderDraggingItemTitle.displayName = 'RenderDraggingItemTitle';
+    newRenderers.renderItemsContainer.displayName = 'RenderItemsContainer';
+    newRenderers.renderTreeContainer.displayName = 'RenderTreeContainer';
+    newRenderers.renderDragBetweenLine.displayName = 'RenderDragBetweenLine';
+    newRenderers.renderSearchInput.displayName = 'RenderSearchInput';
+    return newRenderers;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/search/SearchInput.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/search/SearchInput.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SearchInput": () => (/* binding */ SearchInput)
+/* harmony export */ });
+/* harmony import */ var _useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../useHtmlElementEventListener */ "./node_modules/react-complex-tree/lib/esm/useHtmlElementEventListener.js");
+/* harmony import */ var _hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hotkeys/useHotkey */ "./node_modules/react-complex-tree/lib/esm/hotkeys/useHotkey.js");
+/* harmony import */ var _tree_Tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../tree/Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _useSearchMatchFocus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useSearchMatchFocus */ "./node_modules/react-complex-tree/lib/esm/search/useSearchMatchFocus.js");
+/* harmony import */ var _tree_useViewState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tree/useViewState */ "./node_modules/react-complex-tree/lib/esm/tree/useViewState.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+
+
+
+var SearchInput = function (props) {
+    var _a;
+    var _b;
+    var _c = (0,_tree_Tree__WEBPACK_IMPORTED_MODULE_0__.useTree)(), search = _c.search, setSearch = _c.setSearch, treeId = _c.treeId, renderers = _c.renderers, renamingItem = _c.renamingItem;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    (0,_tree_useViewState__WEBPACK_IMPORTED_MODULE_2__.useViewState)();
+    var isActiveTree = environment.activeTreeId === treeId;
+    (0,_useSearchMatchFocus__WEBPACK_IMPORTED_MODULE_3__.useSearchMatchFocus)();
+    var clearSearch = function () {
+        var _a, _b, _c;
+        setSearch(null);
+        if ((_a = environment.autoFocus) !== null && _a !== void 0 ? _a : true) {
+            // Refocus item in tree
+            // TODO move logic as reusable method into tree or tree environment
+            var focusItem = document.querySelector("[data-rct-tree=\"" + treeId + "\"] [data-rct-item-focus=\"true\"]");
+            (_c = (_b = focusItem) === null || _b === void 0 ? void 0 : _b.focus) === null || _c === void 0 ? void 0 : _c.call(_b);
+        }
+    };
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_4__.useHotkey)('abortSearch', function () {
+        // Without the requestAnimationFrame, hitting enter to abort
+        // and then moving focus weirdly moves the selected item along
+        // with the focused item.
+        requestAnimationFrame(function () {
+            clearSearch();
+        });
+    }, isActiveTree && search !== null, true, [search, isActiveTree]);
+    (0,_useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_5__.useHtmlElementEventListener)(props.containerRef, 'keydown', function (e) {
+        var _a, _b, _c, _d;
+        var unicode = e.key.charCodeAt(0);
+        if (((_a = environment.canSearch) !== null && _a !== void 0 ? _a : true) &&
+            ((_b = environment.canSearchByStartingTyping) !== null && _b !== void 0 ? _b : true) &&
+            isActiveTree &&
+            search === null &&
+            !renamingItem &&
+            !e.ctrlKey &&
+            !e.shiftKey &&
+            !e.altKey &&
+            !e.metaKey &&
+            ((unicode >= 48 && unicode <= 57) || // number
+                // (unicode >= 65 && unicode <= 90) || // uppercase letter
+                (unicode >= 97 && unicode <= 122)) // lowercase letter
+        ) {
+            setSearch('');
+            (_d = (_c = document.querySelector('[data-rct-search-input="true"]')) === null || _c === void 0 ? void 0 : _c.focus) === null || _d === void 0 ? void 0 : _d.call(_c);
+        }
+    }, [isActiveTree, search, renamingItem, environment.canSearchByStartingTyping, environment.canSearch]);
+    if (!((_b = environment.canSearch) !== null && _b !== void 0 ? _b : true) || search === null) {
+        return null;
+    }
+    return renderers.renderSearchInput({
+        inputProps: __assign({ value: search, onChange: function (e) { return setSearch(e.target.value); }, onBlur: function () {
+                clearSearch();
+            }, 'aria-label': 'Search for items' }, (_a = {},
+            _a['data-rct-search-input'] = 'true',
+            _a)),
+    });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/search/defaultMatcher.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/search/defaultMatcher.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "defaultMatcher": () => (/* binding */ defaultMatcher)
+/* harmony export */ });
+var defaultMatcher = function (search, item, itemTitle) {
+    return itemTitle.toLowerCase().includes(search.toLowerCase());
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/search/useSearchMatchFocus.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/search/useSearchMatchFocus.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useSearchMatchFocus": () => (/* binding */ useSearchMatchFocus)
+/* harmony export */ });
+/* harmony import */ var _tree_Tree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tree/Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _tree_useGetLinearItems__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tree/useGetLinearItems */ "./node_modules/react-complex-tree/lib/esm/tree/useGetLinearItems.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _defaultMatcher__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./defaultMatcher */ "./node_modules/react-complex-tree/lib/esm/search/defaultMatcher.js");
+
+
+
+
+
+var useSearchMatchFocus = function () {
+    var _a = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)(), doesSearchMatchItem = _a.doesSearchMatchItem, items = _a.items, getItemTitle = _a.getItemTitle, onFocusItem = _a.onFocusItem;
+    var _b = (0,_tree_Tree__WEBPACK_IMPORTED_MODULE_2__.useTree)(), search = _b.search, treeId = _b.treeId;
+    var getLinearItems = (0,_tree_useGetLinearItems__WEBPACK_IMPORTED_MODULE_3__.useGetLinearItems)();
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        if (search && search.length > 0) {
+            requestAnimationFrame(function () {
+                var focusItem = getLinearItems().find(function (_a) {
+                    var item = _a.item;
+                    return (doesSearchMatchItem !== null && doesSearchMatchItem !== void 0 ? doesSearchMatchItem : _defaultMatcher__WEBPACK_IMPORTED_MODULE_4__.defaultMatcher)(search, items[item], getItemTitle(items[item]));
+                });
+                if (focusItem) {
+                    onFocusItem === null || onFocusItem === void 0 ? void 0 : onFocusItem(items[focusItem.item], treeId);
+                }
+            });
+        }
+    }, [search]);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/treeActions/TreeActionsProvider.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/treeActions/TreeActionsProvider.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useTreeActions": () => (/* binding */ useTreeActions),
+/* harmony export */   "TreeActionsProvider": () => (/* binding */ TreeActionsProvider)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _useCreatedTreeRef__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useCreatedTreeRef */ "./node_modules/react-complex-tree/lib/esm/treeActions/useCreatedTreeRef.js");
+/* harmony import */ var _tree_Tree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tree/Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _environmentActions_EnvironmentActionsProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../environmentActions/EnvironmentActionsProvider */ "./node_modules/react-complex-tree/lib/esm/environmentActions/EnvironmentActionsProvider.js");
+
+
+
+
+
+
+var EnvironmentActionsContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+var useTreeActions = function () { return react__WEBPACK_IMPORTED_MODULE_0__.useContext(EnvironmentActionsContext); };
+var TreeActionsProvider = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+    (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var tree = (0,_tree_Tree__WEBPACK_IMPORTED_MODULE_2__.useTree)();
+    (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_3__.useDragAndDrop)();
+    var envActions = (0,_environmentActions_EnvironmentActionsProvider__WEBPACK_IMPORTED_MODULE_4__.useEnvironmentActions)();
+    // TODO change tree childs to use actions rather than output events where possible
+    var actions = {
+        abortRenamingItem: function () {
+            tree.setRenamingItem(null);
+        },
+        abortSearch: function () {
+            tree.setSearch(null);
+        },
+        collapseItem: function (itemId) {
+            envActions.collapseItem(itemId, tree.treeId);
+        },
+        completeRenamingItem: function () {
+            // TODO
+        },
+        expandItem: function (itemId) {
+            envActions.expandItem(itemId, tree.treeId);
+        },
+        focusItem: function (itemId) {
+            envActions.focusItem(itemId, tree.treeId);
+        },
+        focusTree: function (autoFocus) {
+            if (autoFocus === void 0) { autoFocus = true; }
+            envActions.focusTree(tree.treeId, autoFocus);
+        },
+        invokePrimaryAction: function (itemId) {
+            envActions.invokePrimaryAction(itemId, tree.treeId);
+        },
+        moveFocusDown: function () {
+            envActions.moveFocusDown(tree.treeId);
+        },
+        moveFocusUp: function () {
+            envActions.moveFocusUp(tree.treeId);
+        },
+        renameItem: function (itemId, name) {
+            envActions.renameItem(itemId, name, tree.treeId);
+        },
+        selectItems: function (itemsIds) {
+            envActions.selectItems(itemsIds, tree.treeId);
+        },
+        setSearch: function (search) {
+            tree.setSearch(search);
+        },
+        startRenamingItem: function (itemId) {
+            tree.setRenamingItem(itemId);
+        },
+        stopRenamingItem: function () {
+            tree.setRenamingItem(null);
+        },
+        toggleItemExpandedState: function (itemId) {
+            envActions.toggleItemExpandedState(itemId, tree.treeId);
+        },
+        toggleItemSelectStatus: function (itemId) {
+            envActions.toggleItemSelectStatus(itemId, tree.treeId);
+        },
+    };
+    (0,_useCreatedTreeRef__WEBPACK_IMPORTED_MODULE_5__.useCreatedTreeRef)(ref, actions);
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(EnvironmentActionsContext.Provider, { value: actions }, props.children);
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/treeActions/useCreatedTreeRef.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/treeActions/useCreatedTreeRef.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useCreatedTreeRef": () => (/* binding */ useCreatedTreeRef)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+/* harmony import */ var _tree_Tree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tree/Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+
+var useCreatedTreeRef = function (ref, actions) {
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var tree = (0,_tree_Tree__WEBPACK_IMPORTED_MODULE_2__.useTree)();
+    var dnd = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_3__.useDragAndDrop)();
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useImperativeHandle)(ref, function () { return (__assign(__assign(__assign({}, actions), { treeEnvironmentContext: environment, dragAndDropContext: dnd, treeContext: tree }), tree.treeInformation)); });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/treeItem/TreeItem.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/treeItem/TreeItem.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TreeItem": () => (/* binding */ TreeItem)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _TreeItemChildren__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TreeItemChildren */ "./node_modules/react-complex-tree/lib/esm/treeItem/TreeItemChildren.js");
+/* harmony import */ var _tree_useViewState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../tree/useViewState */ "./node_modules/react-complex-tree/lib/esm/tree/useViewState.js");
+/* harmony import */ var _tree_Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tree/Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _useTreeItemRenderContext__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useTreeItemRenderContext */ "./node_modules/react-complex-tree/lib/esm/treeItem/useTreeItemRenderContext.js");
+/* harmony import */ var _TreeItemRenamingInput__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TreeItemRenamingInput */ "./node_modules/react-complex-tree/lib/esm/treeItem/TreeItemRenamingInput.js");
+
+
+
+
+
+
+
+var TreeItem = function (props) {
+    var _a, _b;
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), hasBeenRequested = _c[0], setHasBeenRequested = _c[1];
+    var _d = (0,_tree_Tree__WEBPACK_IMPORTED_MODULE_1__.useTree)(), renderers = _d.renderers, treeInformation = _d.treeInformation, renamingItem = _d.renamingItem;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__.useTreeEnvironment)();
+    var viewState = (0,_tree_useViewState__WEBPACK_IMPORTED_MODULE_3__.useViewState)();
+    var item = environment.items[props.itemIndex];
+    var isExpanded = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { var _a; return (_a = viewState.expandedItems) === null || _a === void 0 ? void 0 : _a.includes(props.itemIndex); }, [props.itemIndex, viewState.expandedItems]);
+    // Safely assume that renderContext exists, because if not, item also does not exist and the
+    // component will exit early anyways
+    var renderContext = (0,_useTreeItemRenderContext__WEBPACK_IMPORTED_MODULE_4__.useTreeItemRenderContext)(item);
+    if (item === undefined) {
+        if (!hasBeenRequested) {
+            setHasBeenRequested(true);
+            (_a = environment.onMissingItems) === null || _a === void 0 ? void 0 : _a.call(environment, [props.itemIndex]);
+        }
+        return null;
+    }
+    var children = item.hasChildren && isExpanded && item.children && (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TreeItemChildren__WEBPACK_IMPORTED_MODULE_5__.TreeItemChildren, { depth: props.depth + 1, parentId: props.itemIndex }, item.children));
+    var title = environment.getItemTitle(item);
+    var titleComponent = renamingItem === props.itemIndex ? (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TreeItemRenamingInput__WEBPACK_IMPORTED_MODULE_6__.TreeItemRenamingInput, { itemIndex: props.itemIndex })) : (renderers.renderItemTitle({
+        info: treeInformation,
+        context: renderContext,
+        title: title,
+        item: item,
+    }));
+    var arrowComponent = renderers.renderItemArrow({
+        info: treeInformation,
+        context: renderContext,
+        item: environment.items[props.itemIndex],
+    });
+    return ((_b = renderers.renderItem({
+        item: environment.items[props.itemIndex],
+        depth: props.depth,
+        title: titleComponent,
+        arrow: arrowComponent,
+        context: renderContext,
+        info: treeInformation,
+        children: children,
+    })) !== null && _b !== void 0 ? _b : null); // Type to use AllTreeRenderProps
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/treeItem/TreeItemChildren.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/treeItem/TreeItemChildren.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TreeItemChildren": () => (/* binding */ TreeItemChildren)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _TreeItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TreeItem */ "./node_modules/react-complex-tree/lib/esm/treeItem/TreeItem.js");
+/* harmony import */ var _tree_Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tree/Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+
+
+
+var TreeItemChildren = function (props) {
+    var _a = (0,_tree_Tree__WEBPACK_IMPORTED_MODULE_1__.useTree)(), renderers = _a.renderers, treeInformation = _a.treeInformation;
+    var childElements = [];
+    for (var _i = 0, _b = props.children; _i < _b.length; _i++) {
+        var child = _b[_i];
+        childElements.push(react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TreeItem__WEBPACK_IMPORTED_MODULE_2__.TreeItem, { key: child, itemIndex: child, depth: props.depth }));
+    }
+    if (childElements.length === 0) {
+        return null;
+    }
+    var containerProps = {
+        role: 'group',
+    };
+    return renderers.renderItemsContainer({
+        children: childElements,
+        info: treeInformation,
+        containerProps: containerProps,
+    });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/treeItem/TreeItemRenamingInput.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/treeItem/TreeItemRenamingInput.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TreeItemRenamingInput": () => (/* binding */ TreeItemRenamingInput)
+/* harmony export */ });
+/* harmony import */ var _tree_Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tree/Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hotkeys/useHotkey */ "./node_modules/react-complex-tree/lib/esm/hotkeys/useHotkey.js");
+
+
+
+
+var TreeItemRenamingInput = function (props) {
+    var _a = (0,_tree_Tree__WEBPACK_IMPORTED_MODULE_1__.useTree)(), renderers = _a.renderers, treeInformation = _a.treeInformation, setRenamingItem = _a.setRenamingItem, treeId = _a.treeId;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__.useTreeEnvironment)();
+    var inputRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+    var submitButtonRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+    var item = environment.items[props.itemIndex];
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(environment.getItemTitle(item)), title = _b[0], setTitle = _b[1];
+    var abort = function () {
+        var _a;
+        (_a = environment.onAbortRenamingItem) === null || _a === void 0 ? void 0 : _a.call(environment, item, treeInformation.treeId);
+        setRenamingItem(null);
+        requestAnimationFrame(function () {
+            environment.setActiveTree(treeId);
+        });
+    };
+    var confirm = function () {
+        var _a;
+        (_a = environment.onRenameItem) === null || _a === void 0 ? void 0 : _a.call(environment, item, title, treeInformation.treeId);
+        setRenamingItem(null);
+        requestAnimationFrame(function () {
+            environment.setActiveTree(treeId);
+        });
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        var _a, _b, _c;
+        environment.setActiveTree(treeId);
+        if ((_a = environment.autoFocus) !== null && _a !== void 0 ? _a : true) {
+            (_b = inputRef.current) === null || _b === void 0 ? void 0 : _b.select();
+            (_c = inputRef.current) === null || _c === void 0 ? void 0 : _c.focus();
+        }
+    }, [inputRef.current]);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_3__.useHotkey)('abortRenameItem', function () {
+        abort();
+    }, true, true);
+    var inputProps = {
+        value: title,
+        onChange: function (e) {
+            setTitle(e.target.value);
+        },
+        onBlur: function (e) {
+            if (e.relatedTarget !== submitButtonRef.current) {
+                abort();
+            }
+        },
+        'aria-label': 'New item name',
+        tabIndex: 0,
+    };
+    var submitButtonProps = {
+        onClick: function (e) {
+            e.stopPropagation();
+            confirm();
+        },
+    };
+    var formProps = {
+        onSubmit: function (e) {
+            e.preventDefault();
+            confirm();
+        },
+    };
+    return renderers.renderRenameInput({
+        item: item,
+        inputRef: inputRef,
+        submitButtonProps: submitButtonProps,
+        submitButtonRef: submitButtonRef,
+        formProps: formProps,
+        inputProps: inputProps,
+    });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/treeItem/useTreeItemRenderContext.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/treeItem/useTreeItemRenderContext.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useTreeItemRenderContext": () => (/* binding */ useTreeItemRenderContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _search_defaultMatcher__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../search/defaultMatcher */ "./node_modules/react-complex-tree/lib/esm/search/defaultMatcher.js");
+/* harmony import */ var _tree_Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../tree/Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _controlledEnvironment_InteractionManagerProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../controlledEnvironment/InteractionManagerProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/InteractionManagerProvider.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+/* harmony import */ var _tree_useSelectUpTo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../tree/useSelectUpTo */ "./node_modules/react-complex-tree/lib/esm/tree/useSelectUpTo.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+
+
+
+
+
+
+// TODO restructure file. Everything into one hook file without helper methods, let all props be generated outside (InteractionManager and AccessibilityPropsManager), ...
+var useTreeItemRenderContext = function (item) {
+    var _a, _b, _c;
+    var _d = (0,_tree_Tree__WEBPACK_IMPORTED_MODULE_1__.useTree)(), treeId = _d.treeId, search = _d.search, renamingItem = _d.renamingItem;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__.useTreeEnvironment)();
+    var interactionManager = (0,_controlledEnvironment_InteractionManagerProvider__WEBPACK_IMPORTED_MODULE_3__.useInteractionManager)();
+    var dnd = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_4__.useDragAndDrop)();
+    var selectUpTo = (0,_tree_useSelectUpTo__WEBPACK_IMPORTED_MODULE_5__.useSelectUpTo)();
+    var itemTitle = item && environment.getItemTitle(item);
+    var isSearchMatching = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        var _a;
+        return search === null || search.length === 0 || !item || !itemTitle
+            ? false
+            : ((_a = environment.doesSearchMatchItem) !== null && _a !== void 0 ? _a : _search_defaultMatcher__WEBPACK_IMPORTED_MODULE_6__.defaultMatcher)(search, item, itemTitle);
+    }, [search, itemTitle]);
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        var _a, _b;
+        var _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        if (!item) {
+            return undefined;
+        }
+        var viewState = environment.viewState[treeId];
+        var currentlySelectedItems = ((_d = (_c = viewState === null || viewState === void 0 ? void 0 : viewState.selectedItems) === null || _c === void 0 ? void 0 : _c.map(function (item) { return environment.items[item]; })) !== null && _d !== void 0 ? _d : ((viewState === null || viewState === void 0 ? void 0 : viewState.focusedItem) ? [environment.items[viewState === null || viewState === void 0 ? void 0 : viewState.focusedItem]] : [])).filter(function (item) { return !!item; });
+        var isItemPartOfSelectedItems = !!currentlySelectedItems.find(function (selectedItem) { return selectedItem.index === item.index; });
+        var canDragCurrentlySelectedItems = currentlySelectedItems &&
+            ((_f = (_e = environment.canDrag) === null || _e === void 0 ? void 0 : _e.call(environment, currentlySelectedItems)) !== null && _f !== void 0 ? _f : true) &&
+            currentlySelectedItems.map(function (item) { var _a; return (_a = item.canMove) !== null && _a !== void 0 ? _a : true; }).reduce(function (a, b) { return a && b; }, true);
+        var canDragThisItem = ((_h = (_g = environment.canDrag) === null || _g === void 0 ? void 0 : _g.call(environment, [item])) !== null && _h !== void 0 ? _h : true) && ((_j = item.canMove) !== null && _j !== void 0 ? _j : true);
+        var canDrag = environment.canDragAndDrop &&
+            ((isItemPartOfSelectedItems && canDragCurrentlySelectedItems) || (!isItemPartOfSelectedItems && canDragThisItem));
+        var canDropOn = environment.canDragAndDrop &&
+            !!((_l = (_k = dnd.viableDragPositions) === null || _k === void 0 ? void 0 : _k[treeId]) === null || _l === void 0 ? void 0 : _l.find(function (position) { return position.targetType === 'item' && position.targetItem === item.index; }));
+        var actions = {
+            // TODO disable most actions during rename
+            primaryAction: function () {
+                var _a;
+                (_a = environment.onPrimaryAction) === null || _a === void 0 ? void 0 : _a.call(environment, environment.items[item.index], treeId);
+            },
+            collapseItem: function () {
+                var _a;
+                (_a = environment.onCollapseItem) === null || _a === void 0 ? void 0 : _a.call(environment, item, treeId);
+            },
+            expandItem: function () {
+                var _a;
+                (_a = environment.onExpandItem) === null || _a === void 0 ? void 0 : _a.call(environment, item, treeId);
+            },
+            toggleExpandedState: function () {
+                var _a, _b, _c;
+                if ((_a = viewState === null || viewState === void 0 ? void 0 : viewState.expandedItems) === null || _a === void 0 ? void 0 : _a.includes(item.index)) {
+                    (_b = environment.onCollapseItem) === null || _b === void 0 ? void 0 : _b.call(environment, item, treeId);
+                }
+                else {
+                    (_c = environment.onExpandItem) === null || _c === void 0 ? void 0 : _c.call(environment, item, treeId);
+                }
+            },
+            selectItem: function () {
+                var _a;
+                (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, [item.index], treeId);
+            },
+            addToSelectedItems: function () {
+                var _a, _b;
+                (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, __spreadArray(__spreadArray([], ((_b = viewState === null || viewState === void 0 ? void 0 : viewState.selectedItems) !== null && _b !== void 0 ? _b : [])), [item.index]), treeId);
+            },
+            unselectItem: function () {
+                var _a, _b, _c;
+                (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, (_c = (_b = viewState === null || viewState === void 0 ? void 0 : viewState.selectedItems) === null || _b === void 0 ? void 0 : _b.filter(function (id) { return id !== item.index; })) !== null && _c !== void 0 ? _c : [], treeId);
+            },
+            selectUpTo: function () {
+                selectUpTo(item);
+            },
+            truncateItem: function () { },
+            untruncateItem: function () { },
+            toggleTruncatedState: function () { },
+            startRenamingItem: function () { },
+            focusItem: function () {
+                var _a;
+                (_a = environment.onFocusItem) === null || _a === void 0 ? void 0 : _a.call(environment, item, treeId);
+            },
+            startDragging: function () {
+                var _a, _b;
+                var selectedItems = (_a = viewState === null || viewState === void 0 ? void 0 : viewState.selectedItems) !== null && _a !== void 0 ? _a : [];
+                if (!selectedItems.includes(item.index)) {
+                    selectedItems = [item.index];
+                    (_b = environment.onSelectItems) === null || _b === void 0 ? void 0 : _b.call(environment, selectedItems, treeId);
+                }
+                if (canDrag) {
+                    dnd.onStartDraggingItems(selectedItems.map(function (id) { return environment.items[id]; }), treeId);
+                }
+            },
+        };
+        var renderFlags = {
+            isSelected: (_m = viewState === null || viewState === void 0 ? void 0 : viewState.selectedItems) === null || _m === void 0 ? void 0 : _m.includes(item.index),
+            isExpanded: (_o = viewState === null || viewState === void 0 ? void 0 : viewState.expandedItems) === null || _o === void 0 ? void 0 : _o.includes(item.index),
+            isFocused: (viewState === null || viewState === void 0 ? void 0 : viewState.focusedItem) === item.index,
+            isRenaming: renamingItem === item.index,
+            isDraggingOver: dnd.draggingPosition &&
+                dnd.draggingPosition.targetType === 'item' &&
+                dnd.draggingPosition.targetItem === item.index &&
+                dnd.draggingPosition.treeId === treeId,
+            isDraggingOverParent: false,
+            isSearchMatching: isSearchMatching,
+            canDrag: canDrag,
+            canDropOn: canDropOn,
+        };
+        var interactiveElementProps = __assign(__assign({}, interactionManager.createInteractiveElementProps(item, treeId, actions, renderFlags)), (_a = {},
+            _a['data-rct-item-interactive'] = true,
+            _a['data-rct-item-focus'] = renderFlags.isFocused ? 'true' : 'false',
+            _a['data-rct-item-id'] = item.index,
+            _a));
+        var itemContainerWithoutChildrenProps = __assign({}, (_b = {},
+            _b['data-rct-item-container'] = 'true',
+            _b));
+        var itemContainerWithChildrenProps = {
+            role: 'treeitem',
+            'aria-selected': renderFlags.isSelected,
+            'aria-expanded': item.hasChildren ? (renderFlags.isExpanded ? 'true' : 'false') : undefined,
+        };
+        var arrowProps = {
+            onClick: function () {
+                if (item.hasChildren) {
+                    actions.toggleExpandedState();
+                }
+                actions.selectItem();
+            },
+            onFocus: function () {
+                actions.focusItem();
+            },
+            onDragOver: function (e) {
+                e.preventDefault(); // Allow drop
+            },
+            'aria-hidden': true,
+            tabIndex: -1,
+            // TODO alternative interaction modes
+        };
+        return __assign(__assign(__assign({}, actions), renderFlags), { interactiveElementProps: interactiveElementProps, itemContainerWithChildrenProps: itemContainerWithChildrenProps, itemContainerWithoutChildrenProps: itemContainerWithoutChildrenProps, arrowProps: arrowProps });
+    }, [
+        environment,
+        (_a = environment.viewState[treeId]) === null || _a === void 0 ? void 0 : _a.expandedItems,
+        (_b = environment.viewState[treeId]) === null || _b === void 0 ? void 0 : _b.selectedItems,
+        renamingItem && renamingItem === (item === null || item === void 0 ? void 0 : item.index),
+        (_c = item === null || item === void 0 ? void 0 : item.index) !== null && _c !== void 0 ? _c : '___no_item',
+        treeId,
+        isSearchMatching,
+        dnd.draggingPosition,
+    ]);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/DragBetweenLine.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/DragBetweenLine.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DragBetweenLine": () => (/* binding */ DragBetweenLine)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Tree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+
+
+
+var DragBetweenLine = function (props) {
+    var _a;
+    var _b = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_1__.useDragAndDrop)(), draggingPosition = _b.draggingPosition, itemHeight = _b.itemHeight;
+    var renderers = (0,_Tree__WEBPACK_IMPORTED_MODULE_2__.useTree)().renderers;
+    var shouldDisplay = draggingPosition && draggingPosition.targetType === 'between-items' && draggingPosition.treeId === props.treeId;
+    if (!shouldDisplay) {
+        return null;
+    }
+    var lineProps = {
+        onDragOver: function (e) { return e.preventDefault(); }, // Allow dropping
+    };
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { style: {
+            position: 'absolute',
+            left: '0',
+            right: '0',
+            top: ((_a = draggingPosition === null || draggingPosition === void 0 ? void 0 : draggingPosition.linearIndex) !== null && _a !== void 0 ? _a : 0) * itemHeight + "px",
+        } }, renderers.renderDragBetweenLine({
+        draggingPosition: draggingPosition,
+        lineProps: lineProps,
+    })));
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/LiveDescription.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/LiveDescription.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LiveDescription": () => (/* binding */ LiveDescription)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _defaultLiveDescriptors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./defaultLiveDescriptors */ "./node_modules/react-complex-tree/lib/esm/tree/defaultLiveDescriptors.js");
+/* harmony import */ var _Tree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+/* harmony import */ var _resolveLiveDescriptor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./resolveLiveDescriptor */ "./node_modules/react-complex-tree/lib/esm/tree/resolveLiveDescriptor.js");
+/* harmony import */ var _hotkeys_useKeyboardBindings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hotkeys/useKeyboardBindings */ "./node_modules/react-complex-tree/lib/esm/hotkeys/useKeyboardBindings.js");
+
+
+
+
+
+
+
+
+var LiveDescription = function () {
+    var _a;
+    var env = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var tree = (0,_Tree__WEBPACK_IMPORTED_MODULE_2__.useTree)();
+    var dnd = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_3__.useDragAndDrop)();
+    var keys = (0,_hotkeys_useKeyboardBindings__WEBPACK_IMPORTED_MODULE_4__.useKeyboardBindings)();
+    if (!((_a = env.showLiveDescription) !== null && _a !== void 0 ? _a : true)) {
+        return null;
+    }
+    var descriptors = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { var _a; return (_a = env.liveDescriptors) !== null && _a !== void 0 ? _a : _defaultLiveDescriptors__WEBPACK_IMPORTED_MODULE_5__.defaultLiveDescriptors; }, []);
+    var LiveWrapper = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        return function (_a) {
+            var children = _a.children, live = _a.live;
+            return react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", { "aria-live": live, dangerouslySetInnerHTML: { __html: children } });
+        };
+    }, []);
+    var MainWrapper = tree.renderers.renderLiveDescriptorContainer;
+    if (tree.treeInformation.isRenaming) {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(MainWrapper, { tree: tree },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(LiveWrapper, { live: "polite" }, (0,_resolveLiveDescriptor__WEBPACK_IMPORTED_MODULE_6__.resolveLiveDescriptor)(descriptors.renamingItem, env, dnd, tree, keys))));
+    }
+    else if (tree.treeInformation.isSearching) {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(MainWrapper, { tree: tree },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(LiveWrapper, { live: "polite" }, (0,_resolveLiveDescriptor__WEBPACK_IMPORTED_MODULE_6__.resolveLiveDescriptor)(descriptors.searching, env, dnd, tree, keys))));
+    }
+    else if (tree.treeInformation.isProgrammaticallyDragging) {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(MainWrapper, { tree: tree },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(LiveWrapper, { live: "polite" }, (0,_resolveLiveDescriptor__WEBPACK_IMPORTED_MODULE_6__.resolveLiveDescriptor)(descriptors.programmaticallyDragging, env, dnd, tree, keys)),
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(LiveWrapper, { live: "assertive" }, (0,_resolveLiveDescriptor__WEBPACK_IMPORTED_MODULE_6__.resolveLiveDescriptor)(descriptors.programmaticallyDraggingTarget, env, dnd, tree, keys))));
+    }
+    else {
+        return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(MainWrapper, { tree: tree },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(LiveWrapper, { live: "off" }, (0,_resolveLiveDescriptor__WEBPACK_IMPORTED_MODULE_6__.resolveLiveDescriptor)(descriptors.introduction, env, dnd, tree, keys))));
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/Tree.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useTree": () => (/* binding */ useTree),
+/* harmony export */   "Tree": () => (/* binding */ Tree)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _TreeManager__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./TreeManager */ "./node_modules/react-complex-tree/lib/esm/tree/TreeManager.js");
+/* harmony import */ var _useCreatedTreeInformation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useCreatedTreeInformation */ "./node_modules/react-complex-tree/lib/esm/tree/useCreatedTreeInformation.js");
+/* harmony import */ var _getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getItemsLinearly */ "./node_modules/react-complex-tree/lib/esm/tree/getItemsLinearly.js");
+/* harmony import */ var _treeActions_TreeActionsProvider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../treeActions/TreeActionsProvider */ "./node_modules/react-complex-tree/lib/esm/treeActions/TreeActionsProvider.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+
+
+
+
+var TreeContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null); // TODO default value
+var useTree = function () { return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TreeContext); };
+var Tree = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+    var _a, _b;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var renderers = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return (__assign(__assign({}, environment), props)); }, [props, environment]);
+    var _c = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null), search = _c[0], setSearch = _c[1];
+    var _d = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null), renamingItem = _d[0], setRenamingItem = _d[1];
+    var rootItem = environment.items[props.rootItem];
+    var viewState = (_a = environment.viewState[props.treeId]) !== null && _a !== void 0 ? _a : {};
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        environment.registerTree({
+            treeId: props.treeId,
+            rootItem: props.rootItem,
+        });
+        return function () { return environment.unregisterTree(props.treeId); };
+    }, [props.treeId, props.rootItem]);
+    var treeInformation = (0,_useCreatedTreeInformation__WEBPACK_IMPORTED_MODULE_2__.useCreatedTreeInformation)(props, renamingItem, search);
+    var treeContextProps = {
+        treeId: props.treeId,
+        rootItem: props.rootItem,
+        treeLabel: props.treeLabel,
+        treeLabelledBy: props.treeLabelledBy,
+        getItemsLinearly: function () { return (0,_getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__.getItemsLinearly)(props.rootItem, viewState, environment.items); },
+        treeInformation: treeInformation,
+        search: search,
+        setSearch: setSearch,
+        renamingItem: renamingItem,
+        setRenamingItem: setRenamingItem,
+        renderers: renderers,
+    };
+    if (rootItem === undefined) {
+        (_b = environment.onMissingItems) === null || _b === void 0 ? void 0 : _b.call(environment, [props.rootItem]);
+        return null;
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(TreeContext.Provider, { value: treeContextProps },
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_treeActions_TreeActionsProvider__WEBPACK_IMPORTED_MODULE_4__.TreeActionsProvider, { ref: ref },
+            react__WEBPACK_IMPORTED_MODULE_0__.createElement(_TreeManager__WEBPACK_IMPORTED_MODULE_5__.TreeManager, null))));
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/TreeManager.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/TreeManager.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "TreeManager": () => (/* binding */ TreeManager)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _treeItem_TreeItemChildren__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../treeItem/TreeItemChildren */ "./node_modules/react-complex-tree/lib/esm/treeItem/TreeItemChildren.js");
+/* harmony import */ var _DragBetweenLine__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./DragBetweenLine */ "./node_modules/react-complex-tree/lib/esm/tree/DragBetweenLine.js");
+/* harmony import */ var _useFocusWithin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useFocusWithin */ "./node_modules/react-complex-tree/lib/esm/tree/useFocusWithin.js");
+/* harmony import */ var _useTreeKeyboardBindings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useTreeKeyboardBindings */ "./node_modules/react-complex-tree/lib/esm/tree/useTreeKeyboardBindings.js");
+/* harmony import */ var _search_SearchInput__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../search/SearchInput */ "./node_modules/react-complex-tree/lib/esm/search/SearchInput.js");
+/* harmony import */ var _Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+/* harmony import */ var _LiveDescription__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./LiveDescription */ "./node_modules/react-complex-tree/lib/esm/tree/LiveDescription.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+
+
+
+
+
+
+
+
+var TreeManager = function () {
+    var _a;
+    var _b = (0,_Tree__WEBPACK_IMPORTED_MODULE_1__.useTree)(), treeId = _b.treeId, rootItem = _b.rootItem, renderers = _b.renderers, treeInformation = _b.treeInformation;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__.useTreeEnvironment)();
+    var containerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+    var dnd = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_3__.useDragAndDrop)();
+    var isActiveTree = environment.activeTreeId === treeId;
+    (0,_useTreeKeyboardBindings__WEBPACK_IMPORTED_MODULE_4__.useTreeKeyboardBindings)();
+    (0,_useFocusWithin__WEBPACK_IMPORTED_MODULE_5__.useFocusWithin)(containerRef.current, function () {
+        environment.setActiveTree(treeId);
+    }, function () {
+        environment.setActiveTree(function (oldTreeId) {
+            return oldTreeId === treeId ? undefined : oldTreeId;
+        });
+    }, [environment.activeTreeId, treeId, isActiveTree]);
+    var rootChildren = environment.items[rootItem].children;
+    if (!rootChildren) {
+        throw Error("Root " + rootItem + " does not contain any children");
+    }
+    var treeChildren = (react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_LiveDescription__WEBPACK_IMPORTED_MODULE_6__.LiveDescription, null),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_treeItem_TreeItemChildren__WEBPACK_IMPORTED_MODULE_7__.TreeItemChildren, { depth: 0, parentId: treeId }, rootChildren),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DragBetweenLine__WEBPACK_IMPORTED_MODULE_8__.DragBetweenLine, { treeId: treeId }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(_search_SearchInput__WEBPACK_IMPORTED_MODULE_9__.SearchInput, { containerRef: containerRef.current })));
+    var containerProps = __assign({ 
+        // onDragOver: createOnDragOverHandler(environment, containerRef, lastHoverCode, getLinearItems, rootItem, treeId),
+        onDragOver: function (e) { return dnd.onDragOverTreeHandler(e, treeId, containerRef); }, onMouseDown: function () { return dnd.abortProgrammaticDrag(); }, ref: containerRef, style: { position: 'relative' }, role: 'tree', 'aria-label': !treeInformation.treeLabelledBy ? treeInformation.treeLabel : undefined, 'aria-labelledby': treeInformation.treeLabelledBy }, (_a = {},
+        _a['data-rct-tree'] = treeId,
+        _a));
+    return renderers.renderTreeContainer({
+        children: treeChildren,
+        info: treeInformation,
+        containerProps: containerProps,
+    });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/defaultLiveDescriptors.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/defaultLiveDescriptors.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "defaultLiveDescriptors": () => (/* binding */ defaultLiveDescriptors)
+/* harmony export */ });
+var defaultLiveDescriptors = {
+    introduction: "\n    <p>Accessibility guide for tree {treeLabel}.</p>\n    <p>\n      Navigate the tree with the arrow keys. Common tree hotkeys apply. Further keybindings are available:\n    </p>\n    <ul>\n      <li>{keybinding:primaryAction} to execute primary action on focused item</li>\n      <li>{keybinding:renameItem} to start renaming the focused item</li>\n      <li>{keybinding:abortRenameItem} to abort renaming an item</li>\n      <li>{keybinding:startProgrammaticDnd} to start dragging selected items</li>\n    </ul>\n    <p>\n      More details on keybindings are available <a href=\"https://rct.lukasbach.com/docs/guides/keyboard#default-bindings\" target=\"_blank\">here</a>.\n    </p>\n  ",
+    renamingItem: "\n    <p>Renaming the item {renamingItem}.</p>\n    <p>Use the keybinding {keybinding:abortRenameItem} to abort renaming.</p>\n  ",
+    searching: "\n    <p>Searching</p>\n  ",
+    programmaticallyDragging: "\n    <p>Dragging items {dragItems}.</p>\n    <p>Press the arrow keys to move the drag target.</p>\n    <p>Press {keybinding:completeProgrammaticDnd} to drop or {keybinding:abortProgrammaticDnd} to abort.</p>\n  ",
+    programmaticallyDraggingTarget: "\n    <p>Drop target is {dropTarget}.</p>\n  ",
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/getItemsLinearly.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/getItemsLinearly.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getItemsLinearly": () => (/* binding */ getItemsLinearly)
+/* harmony export */ });
+var getItemsLinearly = function (rootItem, viewState, items, depth) {
+    var _a, _b, _c;
+    if (depth === void 0) { depth = 0; }
+    var itemIds = [];
+    for (var _i = 0, _d = (_b = (_a = items[rootItem]) === null || _a === void 0 ? void 0 : _a.children) !== null && _b !== void 0 ? _b : []; _i < _d.length; _i++) {
+        var itemId = _d[_i];
+        var item = items[itemId];
+        itemIds.push({ item: itemId, depth: depth });
+        if (item && item.hasChildren && !!item.children && ((_c = viewState.expandedItems) === null || _c === void 0 ? void 0 : _c.includes(itemId))) {
+            itemIds.push.apply(itemIds, getItemsLinearly(itemId, viewState, items, depth + 1));
+        }
+    }
+    return itemIds;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/resolveLiveDescriptor.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/resolveLiveDescriptor.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "resolveLiveDescriptor": () => (/* binding */ resolveLiveDescriptor)
+/* harmony export */ });
+var resolveLiveDescriptor = function (descriptor, environment, dnd, tree, keyboardBindings) {
+    var getItemTitle = function (index) { return environment.getItemTitle(environment.items[index]); };
+    return descriptor.replace(/(\{[^\s\}]+)\}/g, function (variableNameWithBrackets) {
+        var _a, _b, _c;
+        var variableName = variableNameWithBrackets.slice(1, -1);
+        switch (variableName) {
+            case 'treeLabel':
+                return (_a = tree.treeLabel) !== null && _a !== void 0 ? _a : '';
+            case 'renamingItem':
+                return tree.renamingItem ? getItemTitle(tree.renamingItem) : 'None';
+            case 'dragItems':
+                return (_c = (_b = dnd.draggingItems) === null || _b === void 0 ? void 0 : _b.map(function (item) { return environment.getItemTitle(item); }).join(', ')) !== null && _c !== void 0 ? _c : 'None';
+            case 'dropTarget':
+                if (!dnd.draggingPosition) {
+                    return 'None';
+                }
+                else if (dnd.draggingPosition.targetType === 'item') {
+                    return 'within ' + getItemTitle(dnd.draggingPosition.targetItem);
+                }
+                else {
+                    var parentItem = environment.items[dnd.draggingPosition.parentItem];
+                    var parentTitle = environment.getItemTitle(parentItem);
+                    if (dnd.draggingPosition.childIndex === 0) {
+                        return "within " + parentTitle + " at the start";
+                    }
+                    else {
+                        return "within " + parentTitle + " after " + getItemTitle(parentItem.children[dnd.draggingPosition.childIndex - 1]);
+                    }
+                }
+            default:
+                if (variableName.startsWith('keybinding:')) {
+                    return keyboardBindings[variableName.slice(11)][0];
+                }
+                else {
+                    throw Error("Unknown live descriptor variable {" + variableName + "}");
+                }
+        }
+    });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/scrollIntoView.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/scrollIntoView.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "scrollIntoView": () => (/* binding */ scrollIntoView)
+/* harmony export */ });
+var scrollIntoView = function (element) {
+    if (!element) {
+        return;
+    }
+    if (element.scrollIntoViewIfNeeded) {
+        element.scrollIntoViewIfNeeded();
+    }
+    else {
+        var boundingBox = element.getBoundingClientRect();
+        var isElementInViewport = boundingBox.top >= 0 &&
+            boundingBox.left >= 0 &&
+            boundingBox.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            boundingBox.right <= (window.innerWidth || document.documentElement.clientWidth);
+        if (!isElementInViewport) {
+            element.scrollIntoView();
+        }
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/useCreatedTreeInformation.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/useCreatedTreeInformation.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useCreatedTreeInformation": () => (/* binding */ useCreatedTreeInformation)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+
+
+
+var useCreatedTreeInformation = function (tree, renamingItem, search) {
+    var _a;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var dnd = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_2__.useDragAndDrop)();
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        var _a, _b, _c, _d;
+        return ({
+            isFocused: environment.activeTreeId === tree.treeId,
+            isRenaming: !!renamingItem,
+            areItemsSelected: ((_c = (_b = (_a = environment.viewState[tree.treeId]) === null || _a === void 0 ? void 0 : _a.selectedItems) === null || _b === void 0 ? void 0 : _b.length) !== null && _c !== void 0 ? _c : 0) > 0,
+            isSearching: search !== null,
+            search: search,
+            isProgrammaticallyDragging: (_d = dnd.isProgrammaticallyDragging) !== null && _d !== void 0 ? _d : false,
+            treeId: tree.treeId,
+            rootItem: tree.rootItem,
+        });
+    }, [
+        environment.activeTreeId,
+        (_a = environment.viewState[tree.treeId]) === null || _a === void 0 ? void 0 : _a.selectedItems,
+        renamingItem,
+        tree.treeId,
+        search,
+        dnd.isProgrammaticallyDragging,
+    ]);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/useFocusWithin.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/useFocusWithin.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useFocusWithin": () => (/* binding */ useFocusWithin)
+/* harmony export */ });
+/* harmony import */ var _useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../useHtmlElementEventListener */ "./node_modules/react-complex-tree/lib/esm/useHtmlElementEventListener.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+
+var useFocusWithin = function (element, onFocusIn, onFocusOut, deps) {
+    if (deps === void 0) { deps = []; }
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false), focusWithin = _a[0], setFocusWithin = _a[1];
+    var isLoosingFocusFlag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+    (0,_useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_1__.useHtmlElementEventListener)(element, 'focusin', function () {
+        if (!focusWithin) {
+            setFocusWithin(true);
+            onFocusIn === null || onFocusIn === void 0 ? void 0 : onFocusIn();
+        }
+        if (isLoosingFocusFlag.current) {
+            isLoosingFocusFlag.current = false;
+        }
+    }, __spreadArray([focusWithin, onFocusIn], deps));
+    (0,_useHtmlElementEventListener__WEBPACK_IMPORTED_MODULE_1__.useHtmlElementEventListener)(element, 'focusout', function () {
+        isLoosingFocusFlag.current = true;
+        requestAnimationFrame(function () {
+            if (isLoosingFocusFlag.current && !(element === null || element === void 0 ? void 0 : element.contains(document.activeElement))) {
+                onFocusOut === null || onFocusOut === void 0 ? void 0 : onFocusOut();
+                isLoosingFocusFlag.current = false;
+                setFocusWithin(false);
+            }
+        });
+    }, __spreadArray([element, onFocusOut], deps));
+    return focusWithin;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/useGetLinearItems.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/useGetLinearItems.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useGetLinearItems": () => (/* binding */ useGetLinearItems)
+/* harmony export */ });
+/* harmony import */ var _getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getItemsLinearly */ "./node_modules/react-complex-tree/lib/esm/tree/getItemsLinearly.js");
+/* harmony import */ var _useViewState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./useViewState */ "./node_modules/react-complex-tree/lib/esm/tree/useViewState.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _Tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+
+
+
+
+var useGetLinearItems = function () {
+    var rootItem = (0,_Tree__WEBPACK_IMPORTED_MODULE_0__.useTree)().rootItem;
+    var viewState = (0,_useViewState__WEBPACK_IMPORTED_MODULE_1__.useViewState)();
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__.useTreeEnvironment)();
+    return function () { return (0,_getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__.getItemsLinearly)(rootItem, viewState, environment.items); };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/useMoveFocusToIndex.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/useMoveFocusToIndex.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useMoveFocusToIndex": () => (/* binding */ useMoveFocusToIndex)
+/* harmony export */ });
+/* harmony import */ var _useGetLinearItems__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./useGetLinearItems */ "./node_modules/react-complex-tree/lib/esm/tree/useGetLinearItems.js");
+/* harmony import */ var _useViewState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useViewState */ "./node_modules/react-complex-tree/lib/esm/tree/useViewState.js");
+/* harmony import */ var _Tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+
+
+
+
+var useMoveFocusToIndex = function () {
+    var treeId = (0,_Tree__WEBPACK_IMPORTED_MODULE_0__.useTree)().treeId;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)();
+    var getLinearItems = (0,_useGetLinearItems__WEBPACK_IMPORTED_MODULE_2__.useGetLinearItems)();
+    var viewState = (0,_useViewState__WEBPACK_IMPORTED_MODULE_3__.useViewState)();
+    return function (computeNewIndex) {
+        var _a, _b;
+        var linearItems = getLinearItems();
+        var currentIndex = (_a = linearItems.findIndex(function (item) { return item.item === viewState.focusedItem; })) !== null && _a !== void 0 ? _a : 0;
+        var newIndex = computeNewIndex(currentIndex, linearItems);
+        var newIndexBounded = Math.max(0, Math.min(linearItems.length - 1, newIndex));
+        var newFocusItem = environment.items[linearItems[newIndexBounded].item];
+        (_b = environment.onFocusItem) === null || _b === void 0 ? void 0 : _b.call(environment, newFocusItem, treeId);
+        return newFocusItem;
+    };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/useSelectUpTo.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/useSelectUpTo.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useSelectUpTo": () => (/* binding */ useSelectUpTo)
+/* harmony export */ });
+/* harmony import */ var _getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getItemsLinearly */ "./node_modules/react-complex-tree/lib/esm/tree/getItemsLinearly.js");
+/* harmony import */ var _useViewState__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./useViewState */ "./node_modules/react-complex-tree/lib/esm/tree/useViewState.js");
+/* harmony import */ var _Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+
+
+
+var useSelectUpTo = function () {
+    var viewState = (0,_useViewState__WEBPACK_IMPORTED_MODULE_0__.useViewState)();
+    var _a = (0,_Tree__WEBPACK_IMPORTED_MODULE_1__.useTree)(), rootItem = _a.rootItem, treeId = _a.treeId;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__.useTreeEnvironment)();
+    return function (item) {
+        var _a, _b, _c, _d, _e;
+        // TODO doesnt work that well if there are spaces between selections
+        if (viewState && viewState.selectedItems && viewState.selectedItems.length > 0) {
+            var linearItems = (0,_getItemsLinearly__WEBPACK_IMPORTED_MODULE_3__.getItemsLinearly)(rootItem, viewState, environment.items);
+            var selectionStart = linearItems.findIndex(function (linearItem) { var _a; return (_a = viewState.selectedItems) === null || _a === void 0 ? void 0 : _a.includes(linearItem.item); });
+            var selectionEnd = linearItems.findIndex(function (linearItem) { return linearItem.item === item.index; });
+            if (selectionStart < selectionEnd) {
+                var selection = linearItems.slice(selectionStart, selectionEnd + 1).map(function (_a) {
+                    var item = _a.item;
+                    return item;
+                });
+                (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, __spreadArray(__spreadArray([], ((_b = viewState === null || viewState === void 0 ? void 0 : viewState.selectedItems) !== null && _b !== void 0 ? _b : [])), selection), treeId);
+            }
+            else {
+                var selection = linearItems.slice(selectionEnd, selectionStart).map(function (_a) {
+                    var item = _a.item;
+                    return item;
+                });
+                (_c = environment.onSelectItems) === null || _c === void 0 ? void 0 : _c.call(environment, __spreadArray(__spreadArray([], ((_d = viewState === null || viewState === void 0 ? void 0 : viewState.selectedItems) !== null && _d !== void 0 ? _d : [])), selection), treeId);
+            }
+        }
+        else {
+            (_e = environment.onSelectItems) === null || _e === void 0 ? void 0 : _e.call(environment, [item.index], treeId);
+        }
+    };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/useTreeKeyboardBindings.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/useTreeKeyboardBindings.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useTreeKeyboardBindings": () => (/* binding */ useTreeKeyboardBindings)
+/* harmony export */ });
+/* harmony import */ var _hotkeys_useKey__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../hotkeys/useKey */ "./node_modules/react-complex-tree/lib/esm/hotkeys/useKey.js");
+/* harmony import */ var _hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../hotkeys/useHotkey */ "./node_modules/react-complex-tree/lib/esm/hotkeys/useHotkey.js");
+/* harmony import */ var _useMoveFocusToIndex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./useMoveFocusToIndex */ "./node_modules/react-complex-tree/lib/esm/tree/useMoveFocusToIndex.js");
+/* harmony import */ var _useViewState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./useViewState */ "./node_modules/react-complex-tree/lib/esm/tree/useViewState.js");
+/* harmony import */ var _Tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _useGetLinearItems__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useGetLinearItems */ "./node_modules/react-complex-tree/lib/esm/tree/useGetLinearItems.js");
+/* harmony import */ var _controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/DragAndDropProvider */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/DragAndDropProvider.js");
+/* harmony import */ var _useSelectUpTo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./useSelectUpTo */ "./node_modules/react-complex-tree/lib/esm/tree/useSelectUpTo.js");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+
+
+
+
+
+
+
+
+var useTreeKeyboardBindings = function () {
+    var _a;
+    var environment = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_0__.useTreeEnvironment)();
+    var _b = (0,_Tree__WEBPACK_IMPORTED_MODULE_1__.useTree)(), treeId = _b.treeId, setRenamingItem = _b.setRenamingItem, setSearch = _b.setSearch;
+    var dnd = (0,_controlledEnvironment_DragAndDropProvider__WEBPACK_IMPORTED_MODULE_2__.useDragAndDrop)();
+    var viewState = (0,_useViewState__WEBPACK_IMPORTED_MODULE_3__.useViewState)();
+    var moveFocusToIndex = (0,_useMoveFocusToIndex__WEBPACK_IMPORTED_MODULE_4__.useMoveFocusToIndex)();
+    var getLinearItems = (0,_useGetLinearItems__WEBPACK_IMPORTED_MODULE_5__.useGetLinearItems)();
+    var selectUpTo = (0,_useSelectUpTo__WEBPACK_IMPORTED_MODULE_6__.useSelectUpTo)();
+    var isActiveTree = environment.activeTreeId === treeId;
+    (0,_hotkeys_useKey__WEBPACK_IMPORTED_MODULE_7__.useKey)('arrowdown', function (e) {
+        e.preventDefault();
+        if (dnd.isProgrammaticallyDragging) {
+            dnd.programmaticDragDown();
+        }
+        else {
+            var newFocusItem = moveFocusToIndex(function (currentIndex) { return currentIndex + 1; });
+            if (e.shiftKey) {
+                selectUpTo(newFocusItem);
+            }
+        }
+    }, isActiveTree);
+    (0,_hotkeys_useKey__WEBPACK_IMPORTED_MODULE_7__.useKey)('arrowup', function (e) {
+        e.preventDefault();
+        if (dnd.isProgrammaticallyDragging) {
+            dnd.programmaticDragUp();
+        }
+        else {
+            var newFocusItem = moveFocusToIndex(function (currentIndex) { return currentIndex - 1; });
+            if (e.shiftKey) {
+                selectUpTo(newFocusItem);
+            }
+        }
+    }, isActiveTree);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('moveFocusToFirstItem', function (e) {
+        e.preventDefault();
+        moveFocusToIndex(function () { return 0; });
+    }, isActiveTree && !dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('moveFocusToLastItem', function (e) {
+        e.preventDefault();
+        moveFocusToIndex(function (currentIndex, linearItems) { return linearItems.length - 1; });
+    }, isActiveTree && !dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useKey__WEBPACK_IMPORTED_MODULE_7__.useKey)('arrowright', function (e) {
+        e.preventDefault();
+        moveFocusToIndex(function (currentIndex, linearItems) {
+            var _a, _b;
+            var item = environment.items[linearItems[currentIndex].item];
+            if (item.hasChildren) {
+                if ((_a = viewState.expandedItems) === null || _a === void 0 ? void 0 : _a.includes(item.index)) {
+                    return currentIndex + 1;
+                }
+                else {
+                    (_b = environment.onExpandItem) === null || _b === void 0 ? void 0 : _b.call(environment, item, treeId);
+                }
+            }
+            return currentIndex;
+        });
+    }, isActiveTree && !dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useKey__WEBPACK_IMPORTED_MODULE_7__.useKey)('arrowleft', function (e) {
+        e.preventDefault();
+        moveFocusToIndex(function (currentIndex, linearItems) {
+            var _a, _b;
+            var item = environment.items[linearItems[currentIndex].item];
+            var itemDepth = linearItems[currentIndex].depth;
+            if (item.hasChildren && ((_a = viewState.expandedItems) === null || _a === void 0 ? void 0 : _a.includes(item.index))) {
+                (_b = environment.onCollapseItem) === null || _b === void 0 ? void 0 : _b.call(environment, item, treeId);
+            }
+            else if (itemDepth > 0) {
+                var parentIndex = currentIndex;
+                for (parentIndex; linearItems[parentIndex].depth !== itemDepth - 1; parentIndex--)
+                    ;
+                return parentIndex;
+            }
+            return currentIndex;
+        });
+    }, isActiveTree && !dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('primaryAction', function (e) {
+        var _a, _b;
+        e.preventDefault();
+        if (viewState.focusedItem) {
+            (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, [viewState.focusedItem], treeId);
+            (_b = environment.onPrimaryAction) === null || _b === void 0 ? void 0 : _b.call(environment, environment.items[viewState.focusedItem], treeId);
+        }
+    }, isActiveTree && !dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('toggleSelectItem', function (e) {
+        var _a, _b, _c;
+        e.preventDefault();
+        if (viewState.focusedItem) {
+            if (viewState.selectedItems && viewState.selectedItems.includes(viewState.focusedItem)) {
+                (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, viewState.selectedItems.filter(function (item) { return item !== viewState.focusedItem; }), treeId);
+            }
+            else {
+                (_b = environment.onSelectItems) === null || _b === void 0 ? void 0 : _b.call(environment, __spreadArray(__spreadArray([], ((_c = viewState.selectedItems) !== null && _c !== void 0 ? _c : [])), [viewState.focusedItem]), treeId);
+            }
+        }
+    }, isActiveTree && !dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('selectAll', function (e) {
+        var _a;
+        e.preventDefault();
+        (_a = environment.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(environment, getLinearItems().map(function (_a) {
+            var item = _a.item;
+            return item;
+        }), treeId);
+    }, isActiveTree && !dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('renameItem', function (e) {
+        var _a;
+        if (viewState.focusedItem) {
+            e.preventDefault();
+            var item = environment.items[viewState.focusedItem];
+            (_a = environment.onStartRenamingItem) === null || _a === void 0 ? void 0 : _a.call(environment, item, treeId);
+            setRenamingItem(item.index);
+        }
+    }, isActiveTree && ((_a = environment.canRename) !== null && _a !== void 0 ? _a : true));
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('startSearch', function (e) {
+        var _a, _b;
+        e.preventDefault();
+        setSearch('');
+        (_b = (_a = document.querySelector('[data-rct-search-input="true"]')) === null || _a === void 0 ? void 0 : _a.focus) === null || _b === void 0 ? void 0 : _b.call(_a);
+    }, isActiveTree && !dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('startProgrammaticDnd', function (e) {
+        e.preventDefault();
+        dnd.startProgrammaticDrag();
+    }, isActiveTree);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('completeProgrammaticDnd', function (e) {
+        e.preventDefault();
+        dnd.completeProgrammaticDrag();
+    }, isActiveTree && dnd.isProgrammaticallyDragging);
+    (0,_hotkeys_useHotkey__WEBPACK_IMPORTED_MODULE_8__.useHotkey)('abortProgrammaticDnd', function (e) {
+        e.preventDefault();
+        dnd.abortProgrammaticDrag();
+    }, isActiveTree && dnd.isProgrammaticallyDragging);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/tree/useViewState.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/tree/useViewState.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useViewState": () => (/* binding */ useViewState)
+/* harmony export */ });
+/* harmony import */ var _Tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tree */ "./node_modules/react-complex-tree/lib/esm/tree/Tree.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+
+
+var useViewState = function () {
+    var _a;
+    var treeId = (0,_Tree__WEBPACK_IMPORTED_MODULE_0__.useTree)().treeId;
+    var viewState = (0,_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_1__.useTreeEnvironment)().viewState;
+    return (_a = viewState[treeId]) !== null && _a !== void 0 ? _a : {};
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/types.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/types.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "InteractionMode": () => (/* binding */ InteractionMode)
+/* harmony export */ });
+var InteractionMode;
+(function (InteractionMode) {
+    InteractionMode["DoubleClickItemToExpand"] = "double-click-item-to-expand";
+    InteractionMode["ClickItemToExpand"] = "click-item-to-expand";
+    InteractionMode["ClickArrowToExpand"] = "click-arrow-to-expand";
+})(InteractionMode || (InteractionMode = {}));
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/CompleteTreeDataProvider.js":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/CompleteTreeDataProvider.js ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CompleteTreeDataProvider": () => (/* binding */ CompleteTreeDataProvider)
+/* harmony export */ });
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var CompleteTreeDataProvider = /** @class */ (function () {
+    function CompleteTreeDataProvider(provider) {
+        this.provider = provider;
+    }
+    CompleteTreeDataProvider.prototype.getTreeItem = function (itemId) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.provider.getTreeItem(itemId)];
+            });
+        });
+    };
+    CompleteTreeDataProvider.prototype.getTreeItems = function (itemIds) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.provider.getTreeItems
+                        ? this.provider.getTreeItems(itemIds)
+                        : Promise.all(itemIds.map(function (id) { return _this.provider.getTreeItem(id); }))];
+            });
+        });
+    };
+    CompleteTreeDataProvider.prototype.onChangeItemChildren = function (itemId, newChildren) {
+        var _a, _b;
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_c) {
+                return [2 /*return*/, (_b = (_a = this.provider).onChangeItemChildren) === null || _b === void 0 ? void 0 : _b.call(_a, itemId, newChildren)];
+            });
+        });
+    };
+    CompleteTreeDataProvider.prototype.onDidChangeTreeData = function (listener) {
+        return this.provider.onDidChangeTreeData ? this.provider.onDidChangeTreeData(listener) : { dispose: function () { } };
+    };
+    CompleteTreeDataProvider.prototype.onRenameItem = function (item, name) {
+        var _a, _b;
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_c) {
+                return [2 /*return*/, (_b = (_a = this.provider).onRenameItem) === null || _b === void 0 ? void 0 : _b.call(_a, item, name)];
+            });
+        });
+    };
+    return CompleteTreeDataProvider;
+}());
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/StaticTreeDataProvider.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/StaticTreeDataProvider.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StaticTreeDataProvider": () => (/* binding */ StaticTreeDataProvider)
+/* harmony export */ });
+/* harmony import */ var _EventEmitter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../EventEmitter */ "./node_modules/react-complex-tree/lib/esm/EventEmitter.js");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+var StaticTreeDataProvider = /** @class */ (function () {
+    function StaticTreeDataProvider(items, setItemName
+    // private implicitItemOrdering?: (itemA: TreeItem<T>, itemB: TreeItem<T>) => number,
+    ) {
+        this.onDidChangeTreeDataEmitter = new _EventEmitter__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+        this.data = { items: items };
+        this.setItemName = setItemName;
+    }
+    StaticTreeDataProvider.prototype.getTreeItem = function (itemId) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.data.items[itemId]];
+            });
+        });
+    };
+    StaticTreeDataProvider.prototype.onChangeItemChildren = function (itemId, newChildren) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                this.data.items[itemId].children = newChildren;
+                this.onDidChangeTreeDataEmitter.emit([itemId]);
+                return [2 /*return*/];
+            });
+        });
+    };
+    StaticTreeDataProvider.prototype.onDidChangeTreeData = function (listener) {
+        var _this = this;
+        var handlerId = this.onDidChangeTreeDataEmitter.on(function (payload) { return listener(payload); });
+        return { dispose: function () { return _this.onDidChangeTreeDataEmitter.off(handlerId); } };
+    };
+    StaticTreeDataProvider.prototype.onRenameItem = function (item, name) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                if (this.setItemName) {
+                    this.data.items[item.index] = this.setItemName(item, name);
+                    // this.onDidChangeTreeDataEmitter.emit(item.index);
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
+    return StaticTreeDataProvider;
+}());
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/UncontrolledTreeEnvironment.js":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/UncontrolledTreeEnvironment.js ***!
+  \********************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "UncontrolledTreeEnvironment": () => (/* binding */ UncontrolledTreeEnvironment)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controlledEnvironment/ControlledTreeEnvironment */ "./node_modules/react-complex-tree/lib/esm/controlledEnvironment/ControlledTreeEnvironment.js");
+/* harmony import */ var _CompleteTreeDataProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CompleteTreeDataProvider */ "./node_modules/react-complex-tree/lib/esm/uncontrolledEnvironment/CompleteTreeDataProvider.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+
+
+
+/*const createCompleteDataProvider = (provider: TreeDataProvider): CompleteTreeDataProvider => ({ // TODO Write class that internally uses provider instead
+  ...provider,
+  getTreeItem: provider.getTreeItem,
+  onDidChangeTreeData: provider.onDidChangeTreeData?.bind(provider) ?? (() => ({ dispose: () => {} })),
+  getTreeItems: provider.getTreeItems?.bind(provider) ?? (itemIds => Promise.all(itemIds.map(id => provider.getTreeItem(id)))),
+  onRenameItem: provider.onRenameItem?.bind(provider) ?? (async () => {}),
+  onChangeItemChildren: provider.onChangeItemChildren?.bind(provider) ?? (async () => {}),
+});*/
+var UncontrolledTreeEnvironment = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
+    var _a = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}), currentItems = _a[0], setCurrentItems = _a[1];
+    var _b = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.viewState), viewState = _b[0], setViewState = _b[1];
+    var missingItemIds = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)([]);
+    var dataProvider = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return new _CompleteTreeDataProvider__WEBPACK_IMPORTED_MODULE_1__.CompleteTreeDataProvider(props.dataProvider); }, [props.dataProvider]);
+    var writeItems = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () { return function (newItems) {
+        setCurrentItems(function (oldItems) { return (__assign(__assign({}, oldItems), newItems)); });
+    }; }, []);
+    var amendViewState = function (treeId, constructNewState) {
+        setViewState(function (oldState) {
+            var _a;
+            var _b;
+            return (__assign(__assign({}, oldState), (_a = {}, _a[treeId] = __assign(__assign({}, oldState[treeId]), constructNewState((_b = oldState[treeId]) !== null && _b !== void 0 ? _b : {})), _a)));
+        });
+    };
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        var dispose = dataProvider.onDidChangeTreeData(function (changedItemIds) {
+            dataProvider.getTreeItems(changedItemIds).then(function (items) {
+                writeItems(items.map(function (item) {
+                    var _a;
+                    return (_a = {}, _a[item.index] = item, _a);
+                }).reduce(function (a, b) { return (__assign(__assign({}, a), b)); }, {}));
+            });
+        }).dispose;
+        return dispose;
+    }, [dataProvider]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_controlledEnvironment_ControlledTreeEnvironment__WEBPACK_IMPORTED_MODULE_2__.ControlledTreeEnvironment, __assign({}, props, { ref: ref, viewState: viewState, items: currentItems, onExpandItem: function (item, treeId) {
+            var _a;
+            amendViewState(treeId, function (old) { var _a; return (__assign(__assign({}, old), { expandedItems: __spreadArray(__spreadArray([], ((_a = old.expandedItems) !== null && _a !== void 0 ? _a : [])), [item.index]) })); });
+            (_a = props.onExpandItem) === null || _a === void 0 ? void 0 : _a.call(props, item, treeId);
+            //const itemsToLoad = item.children?.filter(itemId => currentItems[itemId] === undefined) ?? [];
+            //dataProvider.getTreeItems(itemsToLoad).then(items => {
+            //  writeItems(items.map(item => ({ [item.index]: item })).reduce((a, b) => ({...a, ...b}), {}));
+            //  setViewState(viewState => ({ ...viewState, expandedItems: [...viewState.expandedItems ?? [], item.index] }));
+            //});
+        }, onCollapseItem: function (item, treeId) {
+            var _a;
+            amendViewState(treeId, function (old) {
+                var _a;
+                return (__assign(__assign({}, old), { expandedItems: (_a = old.expandedItems) === null || _a === void 0 ? void 0 : _a.filter(function (id) { return id !== item.index; }) }));
+            });
+            (_a = props.onCollapseItem) === null || _a === void 0 ? void 0 : _a.call(props, item, treeId);
+        }, onSelectItems: function (items, treeId) {
+            var _a;
+            amendViewState(treeId, function (old) { return (__assign(__assign({}, old), { selectedItems: items })); });
+            (_a = props.onSelectItems) === null || _a === void 0 ? void 0 : _a.call(props, items, treeId);
+        }, onFocusItem: function (item, treeId) {
+            var _a;
+            amendViewState(treeId, function (old) { return (__assign(__assign({}, old), { focusedItem: item.index })); });
+            (_a = props.onFocusItem) === null || _a === void 0 ? void 0 : _a.call(props, item, treeId);
+        }, onStartRenamingItem: function (item, treeId) {
+            var _a;
+            amendViewState(treeId, function (old) { return (__assign(__assign({}, old), { renamingItem: item.index })); });
+            (_a = props.onStartRenamingItem) === null || _a === void 0 ? void 0 : _a.call(props, item, treeId);
+        }, onAbortRenamingItem: function (item, treeId) {
+            var _a;
+            amendViewState(treeId, function (old) { return (__assign(__assign({}, old), { renamingItem: undefined })); });
+            (_a = props.onAbortRenamingItem) === null || _a === void 0 ? void 0 : _a.call(props, item, treeId);
+        }, onRenameItem: function (item, name, treeId) { return __awaiter(void 0, void 0, void 0, function () {
+            var newItem;
+            var _a;
+            var _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
+                    case 0: return [4 /*yield*/, dataProvider.onRenameItem(item, name)];
+                    case 1:
+                        _c.sent();
+                        amendViewState(treeId, function (old) { return (__assign(__assign({}, old), { renamingItem: undefined })); });
+                        return [4 /*yield*/, dataProvider.getTreeItem(item.index)];
+                    case 2:
+                        newItem = _c.sent();
+                        writeItems((_a = {}, _a[item.index] = newItem, _a));
+                        (_b = props.onRenameItem) === null || _b === void 0 ? void 0 : _b.call(props, item, name, treeId);
+                        return [2 /*return*/];
+                }
+            });
+        }); }, onDrop: function (items, target) { return __awaiter(void 0, void 0, void 0, function () {
+            var _loop_1, _i, items_1, item;
+            var _a, _b, _c, _d, _e;
+            return __generator(this, function (_f) {
+                switch (_f.label) {
+                    case 0:
+                        _loop_1 = function (item) {
+                            var parent_1, newParent, newParentChildren, isOldItemPriorToNewItem;
+                            return __generator(this, function (_g) {
+                                switch (_g.label) {
+                                    case 0:
+                                        parent_1 = Object.values(currentItems).find(function (potentialParent) { var _a; return (_a = potentialParent.children) === null || _a === void 0 ? void 0 : _a.includes(item.index); });
+                                        newParent = currentItems[target.parentItem];
+                                        if (!parent_1) {
+                                            throw Error("Could not find parent of item \"" + item.index + "\"");
+                                        }
+                                        if (!parent_1.children) {
+                                            throw Error("Parent \"" + parent_1.index + "\" of item \"" + item.index + "\" did not have any children");
+                                        }
+                                        if (!(target.targetType === 'item')) return [3 /*break*/, 5];
+                                        if (!(target.targetItem === parent_1.index)) return [3 /*break*/, 1];
+                                        return [3 /*break*/, 4];
+                                    case 1: return [4 /*yield*/, dataProvider.onChangeItemChildren(parent_1.index, parent_1.children.filter(function (child) { return child !== item.index; }))];
+                                    case 2:
+                                        _g.sent();
+                                        return [4 /*yield*/, dataProvider.onChangeItemChildren(target.targetItem, __spreadArray(__spreadArray([], ((_a = currentItems[target.targetItem].children) !== null && _a !== void 0 ? _a : [])), [
+                                                item.index,
+                                            ]))];
+                                    case 3:
+                                        _g.sent();
+                                        _g.label = 4;
+                                    case 4: return [3 /*break*/, 10];
+                                    case 5:
+                                        newParentChildren = __spreadArray([], ((_b = newParent.children) !== null && _b !== void 0 ? _b : [])).filter(function (child) { return child !== item.index; });
+                                        if (!(target.parentItem === parent_1.index)) return [3 /*break*/, 7];
+                                        isOldItemPriorToNewItem = ((_d = ((_c = newParent.children) !== null && _c !== void 0 ? _c : []).findIndex(function (child) { return child === item.index; })) !== null && _d !== void 0 ? _d : Infinity) < target.childIndex;
+                                        newParentChildren.splice(target.childIndex - (isOldItemPriorToNewItem ? 1 : 0), 0, item.index);
+                                        return [4 /*yield*/, dataProvider.onChangeItemChildren(target.parentItem, newParentChildren)];
+                                    case 6:
+                                        _g.sent();
+                                        return [3 /*break*/, 10];
+                                    case 7:
+                                        newParentChildren.splice(target.childIndex, 0, item.index);
+                                        return [4 /*yield*/, dataProvider.onChangeItemChildren(parent_1.index, parent_1.children.filter(function (child) { return child !== item.index; }))];
+                                    case 8:
+                                        _g.sent();
+                                        return [4 /*yield*/, dataProvider.onChangeItemChildren(target.parentItem, newParentChildren)];
+                                    case 9:
+                                        _g.sent();
+                                        _g.label = 10;
+                                    case 10: return [2 /*return*/];
+                                }
+                            });
+                        };
+                        _i = 0, items_1 = items;
+                        _f.label = 1;
+                    case 1:
+                        if (!(_i < items_1.length)) return [3 /*break*/, 4];
+                        item = items_1[_i];
+                        return [5 /*yield**/, _loop_1(item)];
+                    case 2:
+                        _f.sent();
+                        _f.label = 3;
+                    case 3:
+                        _i++;
+                        return [3 /*break*/, 1];
+                    case 4:
+                        (_e = props.onDrop) === null || _e === void 0 ? void 0 : _e.call(props, items, target);
+                        return [2 /*return*/];
+                }
+            });
+        }); }, onMissingItems: function (itemIds) {
+            var _a;
+            var _b;
+            // Batch individual fetch-item-calls together
+            if (missingItemIds.current.length === 0) {
+                setTimeout(function () {
+                    dataProvider.getTreeItems(missingItemIds.current).then(function (items) {
+                        writeItems(items.map(function (item) {
+                            var _a;
+                            return (_a = {}, _a[item.index] = item, _a);
+                        }).reduce(function (a, b) { return (__assign(__assign({}, a), b)); }, {}));
+                    });
+                    missingItemIds.current = [];
+                });
+            }
+            (_a = missingItemIds.current).push.apply(_a, itemIds);
+            (_b = props.onMissingItems) === null || _b === void 0 ? void 0 : _b.call(props, itemIds);
+        } }), props.children));
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/esm/useHtmlElementEventListener.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/esm/useHtmlElementEventListener.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useHtmlElementEventListener": () => (/* binding */ useHtmlElementEventListener)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var __spreadArray = (undefined && undefined.__spreadArray) || function (to, from) {
+    for (var i = 0, il = from.length, j = to.length; i < il; i++, j++)
+        to[j] = from[i];
+    return to;
+};
+
+var useHtmlElementEventListener = function (element, type, listener, deps) {
+    if (deps === void 0) { deps = []; }
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        if (element) {
+            element.addEventListener(type, listener);
+            return function () { return element.removeEventListener(type, listener); };
+        }
+    }, __spreadArray([element, listener, type], deps));
+};
 
 
 /***/ }),
@@ -101060,6 +103373,36 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
+
+/***/ }),
+
+/***/ "./node_modules/react-complex-tree/lib/style.css":
+/*!*******************************************************!*\
+  !*** ./node_modules/react-complex-tree/lib/style.css ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./style.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./node_modules/react-complex-tree/lib/style.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

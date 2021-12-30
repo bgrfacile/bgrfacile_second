@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CoursController;
+use App\Models\Cours;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::prefix('v1')->group(function () { {
         Route::apiResource('cours', CoursController::class);
+
+        Route::get('/items', function () {
+            return Cours::all();
+        });
     }
 });

@@ -5,15 +5,15 @@ import {
 import ListManager from "../../components/ListManager";
 
 export default function CoursRoute() {
-    return <>
-        <div className="flex rounded-box">
-            <div className="mr-2 p-2 w-64 h-full rounded-box">
-                <ListManager/>
+    return <div className="h-screen overflow-hidden">
+        <div className="flex flex-col md:flex-row items-stretch h-full">
+            <div className="w-full md:w-80 pr-0 md:pr-7">
+                <ListManager />
             </div>
-            <div className="flex-1 h-full rounded-box">
+            <div className="flex-1 overflow-y-auto">
                 <Outlet />
             </div>
         </div>
-    </>
+    </div>
 }
 
