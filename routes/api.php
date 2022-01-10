@@ -25,5 +25,10 @@ Route::prefix('v1')->group(function () { {
         Route::get('/items', function () {
             return Cours::all();
         });
+
+        Route::post("/contact", function (Request $request) {
+            $data = $request->all();
+            dd($data);
+        });
     }
 });

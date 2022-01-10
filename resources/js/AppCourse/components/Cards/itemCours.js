@@ -8,6 +8,7 @@ import OndemandVideoOutlinedIcon from '@mui/icons-material/OndemandVideoOutlined
 import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
 import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import { Link } from 'react-router-dom';
 
 export default function itemCours({ cour }) {
     const handleClick = () => {
@@ -74,9 +75,11 @@ export default function itemCours({ cour }) {
                 <Button disabled variant="outlined" size="medium" color="primary" startIcon={<MusicNoteOutlinedIcon />}>
                     audio
                 </Button> */}
+                <Link to={`/cours/scolaire`}>
                 <Button className='w-full' variant="outlined" size="medium" color="primary" startIcon={<RemoveRedEyeIcon />}>
                     Lecture
                 </Button>
+                </Link>
             </CardActions>
         </Card>
     )
