@@ -9,29 +9,7 @@ export const getCoursAsync = createAsyncThunk(
         const res = await base.get("/cours");
         return {cours: res.data};
     });
-const initState = [
-    {
-        id: 1,
-        name: "Cours 1",
-        description: "Description du cours 1",
-        image: "https://picsum.photos/200/300",
-        typeCours: "Scolaire",
-    },
-    {
-        id: 2,
-        name: "Cours 2",
-        description: "Description du cours 2",
-        image: "https://picsum.photos/200/300",
-        typeCours: "Scolaire",
-    },
-    {
-        id: 3,
-        name: "Cours 3",
-        description: "Description du cours 3",
-        image: "https://picsum.photos/200/300",
-        typeCours: "Scolaire",
-    },
-];
+
 const coursSlices = createSlice({
     name: "cours",
     initialState: [],

@@ -22,6 +22,10 @@ use Spatie\Permission\Models\Role;
 use Inertia\Inertia;
 
 
+/*
+    App React route
+*/
+
 Route::get('/demo', function () {
     return view('demo');
 });
@@ -37,25 +41,34 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact.page'
 /*
     App React route
 */
-Route::view('/cours/{path?}', 'site.contenus.appCours')
-    ->where('path', '.*')
-    ->name('cours.page');
-Route::view('/exercices/{path?}', 'site.contenus.appCours')
-    ->where('path', '.*')
-    ->name('exercices.page');
-Route::view('/formations/{path?}', 'site.contenus.appCours')
-    ->where('path', '.*')
-    ->name('formation.page');
-Route::view('/bonus/{path?}', 'site.contenus.appCours')
-    ->where('path', '.*')
-    ->name('bonus.page');
-Route::view('/search/{path?}', 'site.contenus.appCours')
-    ->where('path', '.*')
-    ->name('search.page');
+// Route::middleware(['auth'])->group(function () {
+    Route::view('/cours/{path?}', 'site.contenus.appCours')
+        ->where('path', '.*')
+        ->name('cours.page');
+    Route::view('/exercices/{path?}', 'site.contenus.appCours')
+        ->where('path', '.*')
+        ->name('exercices.page');
+    Route::view('/formations/{path?}', 'site.contenus.appCours')
+        ->where('path', '.*')
+        ->name('formation.page');
+    Route::view('/bonus/{path?}', 'site.contenus.appCours')
+        ->where('path', '.*')
+        ->name('bonus.page');
+    Route::view('/search/{path?}', 'site.contenus.appCours')
+        ->where('path', '.*')
+        ->name('search.page');
+    Route::view('/profile/{path?}', 'site.contenus.appCours')
+        ->where('path', '.*')
+        ->name('profil.index');
+// });
 
+Route::view('/login/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('login.page');
 
-
-
+/*
+    App Backend
+*/
 Route::middleware(['auth'])->group(function () {
 
     Route::prefix('dashboard')->group(function () {
@@ -100,11 +113,6 @@ Route::middleware(['auth'])->group(function () {
             ]);
         });
     });
-
-
-    Route::view('/profile/{path?}', 'site.contenus.appCours')
-        ->where('path', '.*')
-        ->name('profil.index');
     // Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
 });
 

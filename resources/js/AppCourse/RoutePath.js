@@ -30,6 +30,8 @@ import FavorisFormation from './pages/profile/FavorisFormation';
 import EcoleEnLigne from './pages/profile/EcoleEnLigne';
 import QuizzIndex from './pages/bonus/quiz/QuizzIndex';
 import PodcastIndex from './pages/bonus/podcast/PodcastIndex';
+import Guest from './Layouts/guest';
+import Login from './auth/login';
 
 
 
@@ -37,38 +39,41 @@ export default function RoutePath() {
 
     return (<>
         <Routes>
-            <Route element={<LayoutCourse />} >
-                <Route path="/cours" element={<CoursRoute />} >
-                    <Route path='/cours/random/*' element={<RandomCours />} />
-                    <Route path='/cours/scolaire/*' element={<ScolaireCours />} />
-                    <Route path='/cours/others/*' element={<OthersCours />} />
+            <Route element={<Guest />}>
+                <Route element={<LayoutCourse />} >
+                    <Route path="/cours" element={<CoursRoute />} >
+                        <Route path='/cours/random/*' element={<RandomCours />} />
+                        <Route path='/cours/scolaire/*' element={<ScolaireCours />} />
+                        <Route path='/cours/others/*' element={<OthersCours />} />
+                    </Route>
+                    <Route path="/exercices/*" element={<ExerciceIndex />} />
+                    <Route path="/formations/*" element={<FormationIndex />} />
+                    <Route path="/bonus/*" element={<BonusIndex />} />
+                    <Route path='/bonus/quizz' element={<QuizzIndex />} />
+                    <Route path='/bonus/podcast' element={<PodcastIndex />} />
+                    <Route path="/search" element={<Search />} >
+                        <Route path=':q' element={<Search />} />
+                    </Route>
+                    <Route element={<Profile />} >
+                        <Route index path="/profile/*" element={<Infos />} />
+                        {/* <Route path="/profile/infos" element={<Infos />} /> */}
+                        <Route path="/profile/ecole-en-ligne" element={<EcoleEnLigne />} />
+                        <Route path="/profile/my-cours" element={<MyCours />} />
+                        <Route path="/profile/my-cours/create" element={<CreateCours />} />
+                        <Route path="/profile/my-exos" element={<MyExos />} />
+                        <Route path="/profile/my-exos/create" element={<CreateExos />} />
+                        <Route path="/profile/favoris" element={<Favoris />} />
+                        <Route path="/profile/favoris/cours" element={<FavorisCours />} />
+                        <Route path="/profile/favoris/exercices-solutions" element={<FavorisExcerciceSolution />} />
+                        <Route path="/profile/favoris/formations" element={<FavorisFormation />} />
+                        <Route path="/profile/edit" element={<EditProfile />} />
+                        <Route path='/profile/followers' element={<Followers />} />
+                        <Route path='/profile/devenir-formateur' element={<DevenirFormateur />} />
+                        <Route path='/profile/devenir-promoteur' element={<DevenirPromoteur />} />
+                    </Route>
+                    <Route path="*" element={<NotFound />} />
                 </Route>
-                <Route path="/exercices/*" element={<ExerciceIndex />} />
-                <Route path="/formations/*" element={<FormationIndex />} />
-                <Route path="/bonus/*" element={<BonusIndex />} />
-                <Route path='/bonus/quizz' element={<QuizzIndex />} />
-                <Route path='/bonus/podcast' element={<PodcastIndex />} />
-                <Route path="/search" element={<Search />} >
-                    <Route path=':q' element={<Search />} />
-                </Route>
-                <Route element={<Profile />} >
-                    <Route index path="/profile/*" element={<Infos />} />
-                    {/* <Route path="/profile/infos" element={<Infos />} /> */}
-                    <Route path="/profile/ecole-en-ligne" element={<EcoleEnLigne />} />
-                    <Route path="/profile/my-cours" element={<MyCours />} />
-                    <Route path="/profile/my-cours/create" element={<CreateCours />} />
-                    <Route path="/profile/my-exos" element={<MyExos />} />
-                    <Route path="/profile/my-exos/create" element={<CreateExos />} />
-                    <Route path="/profile/favoris" element={<Favoris />} />
-                    <Route path="/profile/favoris/cours" element={<FavorisCours />} />
-                    <Route path="/profile/favoris/exercices-solutions" element={<FavorisExcerciceSolution />} />
-                    <Route path="/profile/favoris/formations" element={<FavorisFormation />} />
-                    <Route path="/profile/edit" element={<EditProfile />} />
-                    <Route path='/profile/followers' element={<Followers />} />
-                    <Route path='/profile/devenir-formateur' element={<DevenirFormateur />} />
-                    <Route path='/profile/devenir-promoteur' element={<DevenirPromoteur />} />
-                </Route>
-                <Route path="*" element={<NotFound />} />
+                <Route path="/login/*" element={<Login />} />
             </Route>
         </Routes>
     </>);

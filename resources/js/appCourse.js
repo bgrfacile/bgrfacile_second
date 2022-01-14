@@ -9,7 +9,7 @@ import {
 } from 'react-redux'
 import {store} from './redux/store'
 
-
+console.log('okok');
 const rootElement = document.getElementById('root')
 ReactDOM.render(
     <Provider store={store}>

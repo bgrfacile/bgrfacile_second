@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\APi\AuthController;
 use App\Http\Controllers\Api\CoursController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Cours;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,16 +21,23 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::prefix('v1')->group(function () { {
+
+Route::prefix('v1')->group(function () {
+
+    Route::group([
+        'middleware' => ['cors', 'auth:sanctum'],
+    ], function ($router) {
         Route::apiResource('cours', CoursController::class);
 
-        Route::get('/items', function () {
-            return Cours::all();
-        });
-
         Route::post("/contact", function (Request $request) {
-            $data = $request->all();
-            dd($data);
+            dd($request->all());
         });
-    }
+    });
+
+    Route::group([
+        'middleware' => ['cors'],
+    ], function ($router) {
+        Route::post('/login', [AuthController::class, 'login']);
+        Route::post('/register', [AuthController::class, 'register']);
+    });
 });

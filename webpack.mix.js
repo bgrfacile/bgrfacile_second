@@ -43,8 +43,8 @@ mix.js('resources/js/appCourse.js', 'public/js')
 //         require('tailwindcss'),
 //         require('autoprefixer'),
 //     ])
-    // .options({
-    //     hmrOptions: hmrOptions
+//     .options({
+        /* hmrOptions: hmrOptions */
     //   })
     // .webpackConfig(require('./webpack.config'));
 

@@ -126,43 +126,41 @@
                         </label> --}}
                     </button>
                 </div>
-                @if (Route::has('login'))
-                    @auth
-                        <x-dropdown class="ml-4" align="right" width="48">
-                            <x-slot name="trigger">
-                                <button
-                                    class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                    <div>{{ Auth::user()->name }}</div>
-                                    <x-svg-chevron class="ml-1" />
-                                </button>
-                            </x-slot>
+                @auth
+                    <x-dropdown class="ml-4" align="right" width="48">
+                        <x-slot name="trigger">
+                            <button
+                                class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                <div>{{ Auth::user()->name }}</div>
+                                <x-svg-chevron class="ml-1" />
+                            </button>
+                        </x-slot>
 
-                            <x-slot name="content">
-                                <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
-                                    <!-- Authentication -->
-                                    <x-dropdown-link :href="route('profil.index')">
-                                        {{ __('profil') }}
+                        <x-slot name="content">
+                            <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
+                                <!-- Authentication -->
+                                <x-dropdown-link :href="route('profil.index')">
+                                    {{ __('profil') }}
+                                </x-dropdown-link>
+                                @role('super-admin')
+                                    <x-dropdown-link :href="route('dashboard')">
+                                        {{ __('Administration') }}
                                     </x-dropdown-link>
-                                    @role('super-admin')
-                                        <x-dropdown-link :href="route('dashboard')">
-                                            {{ __('Administration') }}
-                                        </x-dropdown-link>
-                                    @endrole
-                                    <div class="border-b"></div>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <x-dropdown-link :href="route('logout')"
-                                            onclick="event.preventDefault();this.closest('form').submit();">
-                                            {{ __('Déconnexion') }}
-                                        </x-dropdown-link>
-                                    </form>
-                                </div>
-                            </x-slot>
-                        </x-dropdown>
-                    @else
-                        <a href="{{ route('login') }}" class="btn btn-primary rounded-full ml-4">connexion</a>
-                    @endauth
-                @endif
+                                @endrole
+                                <div class="border-b"></div>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();this.closest('form').submit();">
+                                        {{ __('Déconnexion') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </div>
+                        </x-slot>
+                    </x-dropdown>
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-primary rounded-full ml-4">connexion</a>
+                @endauth
             </div>
 
             <!-- Hamburger -->
