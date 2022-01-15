@@ -62,9 +62,12 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact.page'
         ->name('profil.index');
 // });
 
-Route::view('/login/{path?}', 'site.contenus.appCours')
+Route::view('/signin/{path?}', 'site.contenus.appCours')
     ->where('path', '.*')
-    ->name('login.page');
+    ->name('singin.page');
+Route::view('/signup/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('signup.page');
 
 /*
     App Backend

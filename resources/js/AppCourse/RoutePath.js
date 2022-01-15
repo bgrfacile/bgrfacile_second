@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import LayoutCourse from './Layouts/LayoutCourse';
 import BonusIndex from './pages/bonus/BonusIndex';
 import CoursIndex from './pages/Cours/CoursIndex';
@@ -32,8 +32,18 @@ import QuizzIndex from './pages/bonus/quiz/QuizzIndex';
 import PodcastIndex from './pages/bonus/podcast/PodcastIndex';
 import Guest from './Layouts/guest';
 import Login from './auth/login';
+import Register from './auth/register';
 
 
+const RequireAuth = ({ children }) => {
+    let auth = localStorage.getItem('user') ? true : false;
+    let location = useLocation();
+
+    if (!auth) {
+        return <Navigate to="/signin" state={{ from: location }} replace />;
+    }
+    return children;
+}
 
 export default function RoutePath() {
 
@@ -43,7 +53,7 @@ export default function RoutePath() {
                 <Route element={<LayoutCourse />} >
                     <Route path="/cours" element={<CoursRoute />} >
                         <Route path='/cours/random/*' element={<RandomCours />} />
-                        <Route path='/cours/scolaire/*' element={<ScolaireCours />} />
+                        <Route path='/cours/scolaire/*' element={<RequireAuth><ScolaireCours /></RequireAuth>} />
                         <Route path='/cours/others/*' element={<OthersCours />} />
                     </Route>
                     <Route path="/exercices/*" element={<ExerciceIndex />} />
@@ -73,7 +83,8 @@ export default function RoutePath() {
                     </Route>
                     <Route path="*" element={<NotFound />} />
                 </Route>
-                <Route path="/login/*" element={<Login />} />
+                <Route path="/signin/*" element={<Login />} />
+                <Route path="/signup/*" element={<Register />} />
             </Route>
         </Routes>
     </>);

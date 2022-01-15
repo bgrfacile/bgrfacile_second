@@ -6,8 +6,12 @@ import React, { useEffect, useState } from "react";
 export const getCoursAsync = createAsyncThunk(
     'cours/getCours',
     async () => {
-        const res = await base.get("/cours");
-        return {cours: res.data};
+        const res = await base.get("/cours"/* , {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        } */);
+        return { cours: res.data };
     });
 
 const coursSlices = createSlice({

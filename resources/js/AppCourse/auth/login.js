@@ -3,7 +3,7 @@ import LogoShortBgrfacile from '../components/LogoShortbgrfacile'
 import base from '../../api/base';
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -18,23 +18,28 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true)
-        base.post('/login', {
+        base.post('/signin', {
             email: email,
             password: password
         }).then(response => {
             setError(false)
             setSuccess(true)
             setSuccessMessage(response.data.message)
+            if (response.data.access_token) {
+                localStorage.setItem("token", JSON.stringify(response.data.access_token));
+                const user = {
+                    email: response.data.user.email,
+                    name: response.data.user.name,
+                    id: response.data.user.id,
+                    url_image: response.data.user.url_image,
+                }
+                localStorage.setItem("user", JSON.stringify(user));
+            }
             setTimeout(() => {
-                // window.location.href = "/"
                 navigate('/cours/scolaire', {
                     replace: true,
-                    // state: {
-                    //     user: response.data.user
-                    // }
                 })
             }, 2000)
-
             setLoading(false)
             console.log(response.data)
         }).catch(error => {
@@ -75,16 +80,14 @@ export default function Login() {
                         <input
                             className="pl-2 outline-none border-none w-full"
                             type="email"
-                            name="password"
+                            name="email"
                             required
                             autoFocus
                             placeholder="Adresse e-mail"
                             value={email}
                             onChange={e => setEmail(e.target.value)} />
                     </div>
-                    {
-                        error && <p className="text-red-500 text-xs italic">{errors.email}</p>
-                    }
+                    {error && <p className="text-red-500 text-xs italic">{errors.email}</p>}
 
                     <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -115,14 +118,14 @@ export default function Login() {
                         <button className="block w-full bg-indigo-600 my-4 py-2 rounded-2xl text-white font-semibold" type="submit" disabled>Chargement...</button> :
                         <button type="submit" className="block w-full bg-indigo-600 my-4 py-2 rounded-2xl text-white font-semibold">Connexion</button>}
 
-                    <a href="/register" target="_blank" className="w-full flex justify-center items-center font-bold bg-blue-100 py-2 rounded-2xl text-blue-500 hover:text-blue-700 text-xs text-center">
+                    <Link to="/signup" className="w-full flex justify-center items-center font-bold bg-blue-100 py-2 rounded-2xl text-blue-500 hover:text-blue-700 text-xs text-center">
                         <span>
                             <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                             </svg>
                         </span>
                         <span className="ml-2">Vous n'avez pas de compte ?</span>
-                    </a>
+                    </Link>
                 </form>
             </div >
         </div >

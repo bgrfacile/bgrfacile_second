@@ -159,7 +159,7 @@
                         </x-slot>
                     </x-dropdown>
                 @else
-                    <a href="{{ route('login') }}" class="btn btn-primary rounded-full ml-4">connexion</a>
+                    <a href="{{ route('singin.page') }}" class="btn btn-primary rounded-full ml-4">connexion</a>
                 @endauth
             </div>
 

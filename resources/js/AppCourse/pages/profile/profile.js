@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Outlet } from 'react-router';
 import {
     Link,
+    useNavigate
 } from 'react-router-dom';
 import 'react-tabs/style/react-tabs.css';
 import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
@@ -13,7 +14,10 @@ export default function Profile({ children, to, ...props }) {
     const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
     const classDefault = 'p-2 my-2 flex items-center text-gray-700 bg-gray-50 rounded-md hover:text-blue-600 hover:bg-gray-300 hover:font-semibold';
     const breadcrumbs = useReactRouterBreadcrumbs()
+    let navigate = useNavigate();
+    const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
+    console.log(user);
     return (
         <div className="max-w-7xl mx-auto">
             <div className="relative flex flex-col md:flex-row no-wrap md:-mx-2 ">
@@ -31,7 +35,7 @@ export default function Profile({ children, to, ...props }) {
                             </div>
                         </Link>
                         <div className="flex justify-between items-center">
-                            <h2 className="text-center text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h2>
+                            <h2 className="text-center text-gray-900 font-bold text-xl leading-8 my-1">{user.name}</h2>
                             <Link to="/profile/edit">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -41,11 +45,21 @@ export default function Profile({ children, to, ...props }) {
 
                         <hr className="text-gray-700" />
 
+                        <button
+                            onClick={() => {
+                                localStorage.removeItem('token');
+                                localStorage.removeItem('user');
+                                navigate('/signin', { replace: true });
+                            }}
+                            className="block px-4 py-2 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                            Déconnexion
+                        </button>
+
                         <CustomLink classActive={classActive} to='/profile' className={classDefault}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
-                            <span>information personnelle</span>
+                            <span> Détails du compte</span>
                         </CustomLink>
                         <CustomLink classActive={classActive} to='/profile/favoris' className={classDefault}>
                             <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -147,7 +161,7 @@ const BreadcrumbItem = ({ breadcrumb, match }) => {
         <li>
             <div className="flex items-center">
                 <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd"></path></svg>
-                <Link className="px-2" to={match.pathname} className="text-gray-700 hover:text-gray-900 ml-1 md:ml-2 text-sm font-medium dark:text-gray-400 dark:hover:text-white">{breadcrumb}</Link>
+                <Link to={match.pathname} className="px-2 text-gray-700 hover:text-gray-900 ml-1 md:ml-2 text-sm font-medium dark:text-gray-400 dark:hover:text-white">{breadcrumb}</Link>
             </div>
         </li>
     )
