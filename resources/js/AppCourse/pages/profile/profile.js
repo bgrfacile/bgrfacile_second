@@ -12,7 +12,7 @@ import CustomLink from '../../hooks/CustomLink';
 
 export default function Profile({ children, to, ...props }) {
     const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
-    const classDefault = 'p-2 my-2 flex items-center text-gray-700 bg-gray-50 rounded-md hover:text-blue-600 hover:bg-gray-300 hover:font-semibold';
+    const classDefault = 'w-full p-2 my-2 flex items-center text-gray-700 bg-gray-50 rounded-md hover:text-blue-600 hover:bg-gray-300 hover:font-semibold';
     const breadcrumbs = useReactRouterBreadcrumbs()
     let navigate = useNavigate();
     const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
@@ -51,7 +51,10 @@ export default function Profile({ children, to, ...props }) {
                                 localStorage.removeItem('user');
                                 navigate('/signin', { replace: true });
                             }}
-                            className="block px-4 py-2 text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                            className={classDefault}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                            </svg>
                             Déconnexion
                         </button>
 

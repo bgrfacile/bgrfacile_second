@@ -53,7 +53,7 @@ export default function RoutePath() {
                 <Route element={<LayoutCourse />} >
                     <Route path="/cours" element={<CoursRoute />} >
                         <Route path='/cours/random/*' element={<RandomCours />} />
-                        <Route path='/cours/scolaire/*' element={<RequireAuth><ScolaireCours /></RequireAuth>} />
+                        <Route path='/cours/scolaire/*' element={<ScolaireCours />} />
                         <Route path='/cours/others/*' element={<OthersCours />} />
                     </Route>
                     <Route path="/exercices/*" element={<ExerciceIndex />} />
@@ -64,22 +64,23 @@ export default function RoutePath() {
                     <Route path="/search" element={<Search />} >
                         <Route path=':q' element={<Search />} />
                     </Route>
-                    <Route element={<Profile />} >
-                        <Route index path="/profile/*" element={<Infos />} />
+
+                    <Route element={<RequireAuth><Profile /></RequireAuth>} >
+                        <Route index path="/profile/*" element={<RequireAuth><Infos /></RequireAuth>} />
                         {/* <Route path="/profile/infos" element={<Infos />} /> */}
-                        <Route path="/profile/ecole-en-ligne" element={<EcoleEnLigne />} />
-                        <Route path="/profile/my-cours" element={<MyCours />} />
-                        <Route path="/profile/my-cours/create" element={<CreateCours />} />
-                        <Route path="/profile/my-exos" element={<MyExos />} />
-                        <Route path="/profile/my-exos/create" element={<CreateExos />} />
-                        <Route path="/profile/favoris" element={<Favoris />} />
-                        <Route path="/profile/favoris/cours" element={<FavorisCours />} />
-                        <Route path="/profile/favoris/exercices-solutions" element={<FavorisExcerciceSolution />} />
-                        <Route path="/profile/favoris/formations" element={<FavorisFormation />} />
-                        <Route path="/profile/edit" element={<EditProfile />} />
-                        <Route path='/profile/followers' element={<Followers />} />
-                        <Route path='/profile/devenir-formateur' element={<DevenirFormateur />} />
-                        <Route path='/profile/devenir-promoteur' element={<DevenirPromoteur />} />
+                        <Route path="/profile/ecole-en-ligne" element={<RequireAuth><EcoleEnLigne /></RequireAuth>} />
+                        <Route path="/profile/my-cours" element={<RequireAuth><MyCours /></RequireAuth>} />
+                        <Route path="/profile/my-cours/create" element={<RequireAuth><CreateCours /></RequireAuth>} />
+                        <Route path="/profile/my-exos" element={<RequireAuth><MyExos /></RequireAuth>} />
+                        <Route path="/profile/my-exos/create" element={<RequireAuth><CreateExos /></RequireAuth>} />
+                        <Route path="/profile/favoris" element={<RequireAuth><Favoris /></RequireAuth>} />
+                        <Route path="/profile/favoris/cours" element={<RequireAuth><FavorisCours /></RequireAuth>} />
+                        <Route path="/profile/favoris/exercices-solutions" element={<RequireAuth><FavorisExcerciceSolution /></RequireAuth>} />
+                        <Route path="/profile/favoris/formations" element={<RequireAuth><FavorisFormation /></RequireAuth>} />
+                        <Route path="/profile/edit" element={<RequireAuth><EditProfile /></RequireAuth>} />
+                        <Route path='/profile/followers' element={<RequireAuth><Followers /></RequireAuth>} />
+                        <Route path='/profile/devenir-formateur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />
+                        <Route path='/profile/devenir-promoteur' element={<RequireAuth><DevenirPromoteur /></RequireAuth>} />
                     </Route>
                     <Route path="*" element={<NotFound />} />
                 </Route>

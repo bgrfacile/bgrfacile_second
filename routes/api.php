@@ -27,11 +27,7 @@ Route::prefix('v1')->group(function () {
     Route::group([
         'middleware' => ['cors', 'auth:sanctum'],
     ], function () {
-        Route::apiResource('cours', CoursController::class);
 
-        Route::post("/contact", function (Request $request) {
-            dd($request->all());
-        });
     });
 
     Route::group([
@@ -39,5 +35,11 @@ Route::prefix('v1')->group(function () {
     ], function () {
         Route::post('/signin', [AuthController::class, 'login']);
         Route::post('/signup', [AuthController::class, 'register']);
+
+        Route::apiResource('cours', CoursController::class);
+
+        Route::post("/contact", function (Request $request) {
+            dd($request->all());
+        });
     });
 });
