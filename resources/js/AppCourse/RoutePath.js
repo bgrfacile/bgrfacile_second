@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import LayoutCourse from './Layouts/LayoutCourse';
 import BonusIndex from './pages/bonus/BonusIndex';
-import CoursIndex from './pages/Cours/CoursIndex';
 import ExerciceIndex from './pages/Exercices/ExerciceIndex';
 import FormationIndex from './pages/formations/FormationIndex';
 import NotFound from './pages/notFound/NotFound';
@@ -13,7 +12,6 @@ import ScolaireCours from './pages/Cours/ScolaireCours';
 import OthersCours from './pages/Cours/OthersCours';
 import FavorisCours from './pages/profile/FavorisCours';
 import Search from './pages/search/search';
-import NaviguationProfile from './pages/profile/naviguationProfile';
 import Followers from './pages/profile/followers';
 import EditProfile from './pages/profile/EditProfile';
 import Infos from './pages/profile/Infos';
@@ -22,7 +20,6 @@ import MyExos from './pages/profile/MyExos';
 import Favoris from './pages/profile/Favoris';
 import CreateCours from './pages/profile/CreateCours';
 import CreateExos from './pages/profile/CreateExos';
-import NewApp from './pages/profile/NewApp';
 import DevenirFormateur from './pages/Formateur/DevenirFormateur';
 import DevenirPromoteur from './pages/Promoteur/DevenirPromoteur';
 import FavorisExcerciceSolution from './pages/profile/FavorisExcerciceSolution';
@@ -33,6 +30,7 @@ import PodcastIndex from './pages/bonus/podcast/PodcastIndex';
 import Guest from './Layouts/guest';
 import Login from './auth/login';
 import Register from './auth/register';
+import ViewCours from './pages/Cours/ViewCours';
 
 
 const RequireAuth = ({ children }) => {
@@ -56,6 +54,7 @@ export default function RoutePath() {
                         <Route path='/cours/scolaire/*' element={<ScolaireCours />} />
                         <Route path='/cours/others/*' element={<OthersCours />} />
                     </Route>
+                    <Route path='/cours/:id' element={<ViewCours />} />
                     <Route path="/exercices/*" element={<ExerciceIndex />} />
                     <Route path="/formations/*" element={<FormationIndex />} />
                     <Route path="/bonus/*" element={<BonusIndex />} />
@@ -82,10 +81,10 @@ export default function RoutePath() {
                         <Route path='/profile/devenir-formateur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />
                         <Route path='/profile/devenir-promoteur' element={<RequireAuth><DevenirPromoteur /></RequireAuth>} />
                     </Route>
-                    <Route path="*" element={<NotFound />} />
                 </Route>
                 <Route path="/signin/*" element={<Login />} />
                 <Route path="/signup/*" element={<Register />} />
+                <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>
     </>);
