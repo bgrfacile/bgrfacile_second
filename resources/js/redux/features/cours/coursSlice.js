@@ -1,16 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import base from "../../../api/base";
-import React, { useEffect, useState } from "react";
+import client from "../../../api/client";
 
 export const getCoursAsync = createAsyncThunk(
     'cours/getCours',
     async () => {
-        const res = await base.get("/cours"/* , {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem("token")}`
-            }
-        } */);
+        const res = await client.get("/cours");
         return { cours: res.data };
     });
 

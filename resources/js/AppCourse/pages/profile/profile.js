@@ -17,7 +17,6 @@ export default function Profile({ children, to, ...props }) {
     let navigate = useNavigate();
     const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
-    console.log(user);
     return (
         <div className="max-w-7xl mx-auto">
             <div className="relative flex flex-col md:flex-row no-wrap md:-mx-2 ">

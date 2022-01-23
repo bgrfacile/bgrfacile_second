@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import LogoShortBgrfacile from '../components/LogoShortbgrfacile'
-import base from '../../api/base';
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import client from '../../api/client';
 
 export default function Register() {
     const [name, setName] = useState("");
@@ -20,7 +20,7 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true)
-        base.post('/signup', {
+        client.post('/signup', {
             name: name,
             email: email,
             password: password

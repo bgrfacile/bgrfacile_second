@@ -7,9 +7,10 @@ const RangeValue = ({ value, color }) => {
 }
 
 const Civilites = () => {
+    const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
     return (<>
         <h2 className='w-full text-3xl font-bold uppercase mb-3'>
-            Name User
+            {user.name}
         </h2>
         <hr className="text-gray-700 mb-3" />
         <div className='block md:flex flex-wrap justify-between mb-6'>
@@ -47,7 +48,6 @@ const Civilites = () => {
                             <LogoLinkedin className='h-10 w-10 mr-2' />
                         </a>
                     </div>
-
                 </div>
             </div>
         </div>

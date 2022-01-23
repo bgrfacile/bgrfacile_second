@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import LogoShortBgrfacile from '../components/LogoShortbgrfacile'
-import base from '../../api/base';
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import client from '../../api/client';
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ export default function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true)
-        base.post('/signin', {
+        client.post('/signin', {
             email: email,
             password: password
         }).then(response => {
@@ -31,7 +31,7 @@ export default function Login() {
                     email: response.data.user.email,
                     name: response.data.user.name,
                     id: response.data.user.id,
-                    url_image: response.data.user.url_image,
+                    profileImage: response.data.user.url_image,
                 }
                 localStorage.setItem("user", JSON.stringify(user));
             }

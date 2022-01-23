@@ -19,7 +19,7 @@ class UserResource extends JsonResource
                 'id'=>$this->id,
                 'name'=>$this->name,
                 'lastname'=>$this->lastname,
-                'profileImage'=>$this->profileImage,
+                'profileImage'=>url($this->url_image),
                 'birthday'=>$this->birthday,
                 'email'=>$this->email,
                 'roles'=>RoleResource::collection($this->roles),
