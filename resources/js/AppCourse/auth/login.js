@@ -34,13 +34,13 @@ export default function Login() {
                     profileImage: response.data.user.url_image,
                 }
                 localStorage.setItem("user", JSON.stringify(user));
-            }
-            setTimeout(() => {
+                // setTimeout(() => {
                 navigate('/cours/scolaire', {
                     replace: true,
                 })
-            }, 2000)
-            setLoading(false)
+                // }, 2000)
+                setLoading(false)
+            }
             console.log(response.data)
         }).catch(error => {
             setError(true);

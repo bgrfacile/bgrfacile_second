@@ -1,16 +1,24 @@
+import { update } from 'lodash';
 import React, { useState } from 'react'
+import ReactDatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch, useSelector } from 'react-redux';
 import client from '../../../api/client';
+import { updateProfileImage } from '../../../redux/features/user/userSlice';
 
 
 export default function EditProfile() {
-
-    const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
-    const [userData, setUserData] = useState(user);
-    const [isActif, setIsActif] = useState(false);
+    const dispatch = useDispatch();
+    const userStore = useSelector(state => state.user.profile);
+    console.log(userStore);
+    const [startDate, setStartDate] = useState(new Date());
+    const [email, setEmail] = useState(userStore.email || '');
+    const [name, setName] = useState(userStore.name || '');
+    const [imagePreviewUrl, setImagePreviewUrl] = useState(userStore.profileImage);
     const [file, setFile] = useState(null);
-    const [email, setEmail] = useState(user.email || '');
-    const [name, setName] = useState(user.name || '');
-    const [imagePreviewUrl, setImagePreviewUrl] = useState("https://via.placeholder.com/150");
+    const [isActif, setIsActif] = useState(false);
+    const [loading, setLoading] = useState(false);
+
     const handleChange = (e) => {
         let reader = new FileReader();
         let file = e.target.files[0];
@@ -23,7 +31,7 @@ export default function EditProfile() {
     }
     const handleSubmitInfo = (e) => {
         e.preventDefault();
-        client.put('/user/update', { name, email, user_id: userData.id })
+        client.put('/user/update', { name, email, user_id: userStore.user_id })
             .then(response => {
                 console.log(response.data.message);
                 const user = {
@@ -34,7 +42,6 @@ export default function EditProfile() {
                 }
                 localStorage.removeItem('user');
                 localStorage.setItem("user", JSON.stringify(user));
-                setUserData(user);
             }
             ).catch(error => {
                 console.log(error);
@@ -45,24 +52,24 @@ export default function EditProfile() {
         e.preventDefault();
         const formData = new FormData();
         formData.append('file', file);
-        formData.append('user_id', userData.id);
+        formData.append('user_id', userStore.user_id);
         client.post('/user/image/update', formData, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'multipart/form-data'
             }
         }).then(response => {
-            console.log('réponse');
-            // console.log(response.data);
-            // const user = {
-            //     email: response.data.user.email,
-            //     name: response.data.user.name,
-            //     id: response.data.user.id,
-            //     profileImage: response.data.user.url_image,
-            // }
-            // localStorage.removeItem('user');
-            // localStorage.setItem("user", JSON.stringify(user));
-            // setUserData(user);
+            console.log(response.data.user);
+            const user = {
+                email: response.data.user.email,
+                name: response.data.user.name,
+                id: response.data.user.id,
+                profileImage: response.data.user.profileImage,
+            }
+            localStorage.removeItem('user');
+            localStorage.setItem("user", JSON.stringify(user));
+            dispatch(updateProfileImage(response.data.user.profileImage));
+            setIsActif(false);
         }
         ).catch(error => {
             console.log(error);
@@ -124,7 +131,7 @@ export default function EditProfile() {
                         </div>
                         <div className='w-full px-2'>
                             <label htmlFor="age" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Date de naissance</label>
-                            <input type="number" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
+                            <ReactDatePicker className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white' selected={startDate} onChange={(date) => setStartDate(date)} />
                         </div>
                     </div>
                     <div className='w-full mt-3'>
