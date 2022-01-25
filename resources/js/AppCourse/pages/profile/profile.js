@@ -116,7 +116,7 @@ export default function Profile({ children, to, ...props }) {
                         </CustomLink>
                     </div>
                 </div>
-                <div className="w-full md:w-9/12 md:mx-2">
+                <div className="w-full flex flex-col md:w-9/12 md:mx-2">
                     <nav className="flex bg-gray-50 text-gray-700 border border-gray-200 py-3 px-5 mb-3 rounded-lg dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
                         <ol className="inline-flex items-center space-x-1 md:space-x-3">
                             {breadcrumbs.map(({
@@ -130,7 +130,9 @@ export default function Profile({ children, to, ...props }) {
                             )}
                         </ol>
                     </nav>
-                    <Outlet />
+                    <div className="flex-1 flex flex-col">
+                        <Outlet />
+                    </div>
                 </div>
             </div>
         </div>
