@@ -4,6 +4,7 @@ import ReactDatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from 'react-redux';
 import client from '../../../api/client';
+import Spinner from 'react-spinner-material';
 import { updateProfileImage } from '../../../redux/features/user/userSlice';
 
 
@@ -12,8 +13,8 @@ export default function EditProfile() {
     const userStore = useSelector(state => state.user.profile);
     console.log(userStore);
     const [startDate, setStartDate] = useState(new Date());
-    const [email, setEmail] = useState(userStore.email || '');
-    const [name, setName] = useState(userStore.name || '');
+    const [email, setEmail] = useState(userStore.email);
+    const [name, setName] = useState(userStore.firstName);
     const [imagePreviewUrl, setImagePreviewUrl] = useState(userStore.profileImage);
     const [file, setFile] = useState(null);
     const [isActif, setIsActif] = useState(false);
@@ -31,6 +32,7 @@ export default function EditProfile() {
     }
     const handleSubmitInfo = (e) => {
         e.preventDefault();
+        setLoading(true);
         client.put('/user/update', { name, email, user_id: userStore.user_id })
             .then(response => {
                 console.log(response.data.message);
@@ -42,14 +44,17 @@ export default function EditProfile() {
                 }
                 localStorage.removeItem('user');
                 localStorage.setItem("user", JSON.stringify(user));
+                setLoading(false)
             }
             ).catch(error => {
                 console.log(error);
+                setLoading(false)
             }
             );
     }
     const handleUpdateImage = (e) => {
         e.preventDefault();
+        setLoading(true);
         const formData = new FormData();
         formData.append('file', file);
         formData.append('user_id', userStore.user_id);
@@ -69,6 +74,7 @@ export default function EditProfile() {
             localStorage.removeItem('user');
             localStorage.setItem("user", JSON.stringify(user));
             dispatch(updateProfileImage(response.data.user.profileImage));
+            setLoading(false);
             setIsActif(false);
         }
         ).catch(error => {
@@ -76,6 +82,17 @@ export default function EditProfile() {
         }
         );
     }
+    const ButtonSubmit = () => {
+        return (
+            isActif &&
+            <button type="submit" className="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-md  tracking-wide flex justify-center items-center" onClick={handleUpdateImage}>
+                {loading ?
+                <Spinner size={120} spinnerColor={"#ffffff"} spinnerWidth={2} visible={true} /> :
+                'Update'}
+            </button>
+        )
+    }
+
 
     return (
         <div>
@@ -95,7 +112,7 @@ export default function EditProfile() {
                             </div>
                         </div>
                     </div>
-                    {isActif && <button type='submit' className="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-md  tracking-wide">Mettre à jour l'image</button>}
+                    <ButtonSubmit />
                 </form>
             </div>
 
@@ -119,6 +136,7 @@ export default function EditProfile() {
                                 disabled
                                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 required />
+                            {/* <span className="text-red-500 text-xs italic">ce champs ne peut pas être modifier</span> */}
                         </div>
                         <div className='w-full px-2'>
                             <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Nom d'utilisateur</label>

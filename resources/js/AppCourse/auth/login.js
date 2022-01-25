@@ -31,7 +31,7 @@ export default function Login() {
                     email: response.data.user.email,
                     name: response.data.user.name,
                     id: response.data.user.id,
-                    profileImage: response.data.user.url_image,
+                    profileImage: response.data.user.profileImage,
                 }
                 localStorage.setItem("user", JSON.stringify(user));
                 // setTimeout(() => {
@@ -41,7 +41,7 @@ export default function Login() {
                 // }, 2000)
                 setLoading(false)
             }
-            console.log(response.data)
+            console.log("donner de connexion ",response.data)
         }).catch(error => {
             setError(true);
             error.response.data.errors ? setErrors(error.response.data.errors) : setErrors({})

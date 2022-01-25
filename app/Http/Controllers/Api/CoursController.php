@@ -26,7 +26,13 @@ class CoursController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
+        $cours = Cours::create(
+            $request->only(['name'])
+        );
+        return response([
+            'message' => 'cours created successfully',
+        ], 200);
     }
 
     /**
@@ -37,7 +43,6 @@ class CoursController extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**

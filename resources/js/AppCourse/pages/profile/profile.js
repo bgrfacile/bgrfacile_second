@@ -18,6 +18,14 @@ export default function Profile({ children, to, ...props }) {
     let navigate = useNavigate();
     // const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
     const user = useSelector(state => state.user.profile);
+    const handleLogout = (e) => {
+        e.preventDefault();
+        if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            navigate('/signin', { replace: true });
+        }
+    }
     return (
         <div className="max-w-7xl mx-auto">
             <div className="relative flex flex-col md:flex-row no-wrap md:-mx-2 ">
@@ -46,14 +54,7 @@ export default function Profile({ children, to, ...props }) {
                                 </svg>
                             </CustomLink>
                             <button
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
-                                        localStorage.removeItem('token');
-                                        localStorage.removeItem('user');
-                                        navigate('/signin', { replace: true });
-                                    }
-                                }}
+                                onClick={handleLogout}
                                 className="py-2 px-3 rounded-md hover:bg-gray-100">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />

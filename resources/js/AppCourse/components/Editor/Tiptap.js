@@ -2,6 +2,7 @@ import React from 'react';
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import './Tiptap.css'
+import client from '../../../api/client';
 
 
 
@@ -173,8 +174,17 @@ const Tiptap = () => {
     `,
     })
 
-    const getData = ()=>{
-        console.log(editor.getHTML());
+    const getData = (e) => {
+        e.preventDefault();
+        const htmlData = editor.getHTML()
+        client.post('/cours', { name: 'cours1 miem 5', htmlData })
+            .then(response => {
+                console.log(response.data);
+            }
+            ).catch(error => {
+                console.log(error);
+            }
+            );
     }
 
     return (

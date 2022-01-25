@@ -1,18 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+console.log("user dans local", user);
 const initialValue = {
     user_id: user ? user.id : null,
     firstName: user ? user.name : '',
     lastName: '',
     telephone: '',
     age: 28,
-    email: '',
+    email: user ? user.email : '',
     country: '',
     address: 'Home',
     profileImage: user ? user.profileImage : 'https://picsum.photos/seed/picsum/200',
     subscribenewsletter: false,
-    roles:[
+    roles: [
         {
             id: 1,
             name: 'etudiant',
@@ -34,7 +35,7 @@ export const userSlice = createSlice({
         // logout: (state, action) => {
         //     state.profile = action.payload
         // },
-        updateProfileImage: (state,action) => {
+        updateProfileImage: (state, action) => {
             state.profile.profileImage = action.payload
         }
     },

@@ -31,8 +31,8 @@ class LoginApiRequest extends FormRequest
     public function messages() {
 
         return [
-            'email.required'=> 'The :attribute est requis',
-            'email.email'=> 'The :attribute is not valid email',
+            'email.required'=> 'le :attribute est requis',
+            'email.email'=> 'le :attribute is not valid email',
             'password.required'=> 'The :attribute est requis',
             'password.string'=> 'The :attribute n\'est pas une chaîne',
             'password.min'=> 'Le :attribute doit possèder min 6 caratere',

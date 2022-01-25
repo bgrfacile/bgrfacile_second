@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\LoginApiRequest;
 use App\Http\Requests\Api\RegisterRequest;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,7 @@ class AuthController extends Controller
         $slug_user = $user->slugUser()->create(['slug' => Str::slug($user->name)]);
         return response([
             'message' => 'user create successfully',
-            'user' => $user,
+            'user' => new UserResource($user),
             'access_token' => $token
         ], 201);
     }
@@ -42,9 +43,10 @@ class AuthController extends Controller
     {
         if (!Auth::attempt($request->only(['email', 'password']))) {
             return  response([
-                'message' => 'Aucun utilisateur trouvé avec ces identifiants',
+                'message' => 'Aucun utilisateurs trouvé avec ces identifiants',
             ], 404);
         } else {
+            $request->session()->regenerate();
             $user = User::where('email', $request->email)->first();
             $token = $user->createToken('myappToken')->plainTextToken;
             $respon = [
@@ -53,7 +55,7 @@ class AuthController extends Controller
                 'status_code' => 200,
                 'access_token' => $token,
                 'token_type' => 'Bearer',
-                'user' => $user,
+                'user' => new UserResource($user),
             ];
             return response($respon, 200);
         }
@@ -62,6 +64,8 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->token()->revoke();
+        Auth::logout();
+        Session::flush();
         return response([
             'message' => 'Successfully logged out'
         ], 200);
