@@ -12,7 +12,7 @@ class Cours extends Model
     protected $guarded = [];
 
     public function users(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'cours_users', 'cour_id', 'user_id');
     }
 
     public function cycles()
@@ -26,30 +26,5 @@ class Cours extends Model
     public function matieres()
     {
         return $this->belongsToMany(Matiere::class,'cours_matieres');
-    }
-
-    public function contentAudios()
-    {
-        return $this->morphMany(ContentAudio::class, 'contentable');
-    }
-
-    public function contentImages()
-    {
-        return $this->morphMany(ContentImage::class, 'contentable');
-    }
-
-    public function contentPdfs()
-    {
-        return $this->morphMany(ContentPdf::class, 'contentable');
-    }
-
-    public function contentTextes()
-    {
-        return $this->morphMany(ContentTexte::class, 'contentable');
-    }
-
-    public function contentVideos()
-    {
-        return $this->morphMany(ContentVideo::class, 'contentable');
     }
 }

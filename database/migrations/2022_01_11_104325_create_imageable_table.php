@@ -8,6 +8,7 @@ class CreateImageableTable extends Migration
 {
     /**
      * Run the migrations.
+     * Cette table est utilisée pour les images des formations et des cours
      *
      * @return void
      */

@@ -1,33 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import Tiptap from '../../../components/Editor/Tiptap'
-import Svgbook from '../../../components/svg/SvgBook';
+import HeaderCreateCours from '../../../components/HeaderCreateCours';
+import { useEditor, EditorContent } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
+import client from '../../../../api/client';
+import { useSelector } from 'react-redux';
 
 export default function CreateCoursTexte() {
+    const [title, settitle] = useState('');
+    const [description, setDescription] = useState('');
+    const userStrore = useSelector(state => state.user.profile);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // const htmlData = editor.getHTML()
+        client.post('/cours', { title,description, user_id: userStrore.user_id })
+            .then(response => {
+                console.log(response.data);
+            }
+            ).catch(error => {
+                console.log(error);
+            }
+            );
+    }
     return (
-        <div className="min-h-full flex flex-col ">
-            <div className="flex flex-wrap justify-between items-end pb-2 border-b mb-4">
-                <div>
-                    <h2 className="text-2xl font-bold text-gray-800">Créer votre cours</h2>
+        <form onSubmit={handleSubmit} className="min-h-full flex flex-col ">
+            <HeaderCreateCours
+                title={"Création d'un cours TEXTE"}
+                linkSave={'/profile/my-cours/create'}
+                linkPublish={'/profile/my-cours/create'}
+            />
+            <div className='w-full flex flex-col md:flex-row'>
+                <div className='w-1/3 pr-4'>
+                    <h3 className='text-center text-2xl font-bold text-gray-500 mb-2'>Information du cours</h3>
+                    <div className='mb-2'>
+                        <input
+                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            type="text"
+                            placeholder='Nom du cours'
+                            onChange={e => settitle(e.target.value)}
+                        />
+                    </div>
+                    <div className='mb-2'>
+                        <label htmlFor="description" className="block mb-1 text-lg">Description:</label>
+                        <textarea onChange={e => setDescription(e.target.value)} id="description" cols="30" rows="10" placeholder="la description ici ..." className="w-full font-serif  p-4 text-gray-600 bg-indigo-50 outline-none rounded-md"></textarea>
+                    </div>
+                    <button type='submit' className=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-gray-100 bg-blue-600  ">Enrgistrer votre cours</button>
                 </div>
-                <div className="flex items-center">
-                    <div className="flex items-center">
-                        <Link to="/profile/my-cours/create" className="flex items-center px-2 py-1 bg-green-500 text-gray-100 hover:bg-green-800 border rounded-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                            </svg>
-                            <span className="w-full ml-2">Enregistré</span>
-                        </Link>
-                    </div>
-                    <div className="flex items-center ml-2">
-                        <Link to="/profile/my-cours/create" className="px-2 py-1 bg-gray-200 border rounded-md">
-                            Publier
-                        </Link>
-                    </div>
+                <div className='w-2/3 overflow-hidden'>
+                    <Tiptap />
                 </div>
             </div>
-        <Tiptap/>
-        </div>
+        </form>
     )
 }
+

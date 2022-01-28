@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 class UserResource extends JsonResource
 {
@@ -14,15 +15,15 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-            return [
-                'id'=>$this->id,
-                'name'=>$this->name,
-                'lastname'=>$this->lastname,
-                'profileImage'=>url($this->url_image),
-                'birthday'=>$this->birthday,
-                'email'=>$this->email,
-                'roles'=>RoleResource::collection($this->roles),
-            ];
-
+        $slug = Str::slug($this->name, '-');
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'lastname' => $this->lastname,
+            'profileImage' => $this->url_image == null ? "https://ui-avatars.com/api/?name=$slug&background=0D8ABC&color=fff" : url($this->url_image),
+            'birthday' => $this->birthday,
+            'email' => $this->email,
+            'roles' => RoleResource::collection($this->roles),
+        ];
     }
 }

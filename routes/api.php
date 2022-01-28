@@ -25,7 +25,7 @@ Route::prefix('v1')->group(function () {
     ], function () {
         Route::put('/user/update', [UserController::class, 'updateUser']);
         Route::post('/user/image/update', [UserController::class, 'updateImage']);
-
+        Route::apiResource('/cours', CoursController::class)->except(['index']);
     });
 
     Route::group([
@@ -33,9 +33,7 @@ Route::prefix('v1')->group(function () {
     ], function () {
         Route::post('/signin', [AuthController::class, 'login']);
         Route::post('/signup', [AuthController::class, 'register']);
-
-        Route::apiResource('cours', CoursController::class);
-
+        Route::get('/cours', [CoursController::class, 'index']);
         Route::post("/contact", function (Request $request) {
             dd($request->all());
         });

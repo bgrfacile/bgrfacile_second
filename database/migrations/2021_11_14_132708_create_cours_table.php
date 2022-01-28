@@ -15,9 +15,9 @@ class CreateCoursTable extends Migration
     {
         Schema::create('cours', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('coverImage')->nullable();
-            $table->enum('typeCours',['scolaire','other'])->default('scolaire');
+            $table->string('description')->nullable();
             $table->enum('isActif',['0','1'])->default('1');
             $table->timestamps();
         });

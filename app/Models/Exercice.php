@@ -34,34 +34,4 @@ class Exercice extends Model
     {
         return $this->hasMany(Solution::class);
     }
-
-    public function contentAudios()
-    {
-        return $this->morphMany(ContentAudio::class, 'contentable');
-    }
-
-    public function contentImages()
-    {
-        return $this->morphMany(ContentImage::class, 'contentable');
-    }
-
-    public function contentPdfs()
-    {
-        return $this->morphMany(ContentPdf::class, 'contentable');
-    }
-
-    public function contentTextes()
-    {
-        return $this->morphMany(ContentTexte::class, 'contentable');
-    }
-
-    public function contentVideos()
-    {
-        return $this->morphMany(ContentVideo::class, 'contentable');
-    }
-
-    public function typeExos()
-    {
-        return $this->belongsToMany(TypeExo::class,'exercices_type_exos');
-    }
 }

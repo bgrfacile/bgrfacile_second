@@ -87,7 +87,7 @@ export default function EditProfile() {
             isActif &&
             <button type="submit" className="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-md  tracking-wide flex justify-center items-center" onClick={handleUpdateImage}>
                 {loading ?
-                <Spinner size={120} spinnerColor={"#ffffff"} spinnerWidth={2} visible={true} /> :
+                <Spinner size={120} spinnerColor={"#333"} spinnerWidth={2} visible={true} /> :
                 'Update'}
             </button>
         )

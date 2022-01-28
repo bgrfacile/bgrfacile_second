@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CoursResource;
+use App\Http\Resources\UserResource;
 use App\Models\Cours;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CoursController extends Controller
@@ -15,7 +18,7 @@ class CoursController extends Controller
      */
     public function index()
     {
-        return Cours::all();
+        return CoursResource::collection(Cours::all());
     }
 
     /**
@@ -27,11 +30,14 @@ class CoursController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $cours = Cours::create(
-            $request->only(['name'])
-        );
+        $user = User::find($request->user_id);
+        $cours = $user->cours()->create([
+                'title' => $request->title,
+                'description' => $request->description,
+            ]);
         return response([
             'message' => 'cours created successfully',
+            'cours' => new CoursResource($cours),
         ], 200);
     }
 

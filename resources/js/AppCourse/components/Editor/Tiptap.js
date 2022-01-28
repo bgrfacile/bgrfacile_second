@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import './Tiptap.css'
+// import './Tiptap.css'
 import client from '../../../api/client';
 
 
@@ -14,7 +14,7 @@ const MenuBar = ({ editor }) => {
     }
 
     return (
-        <>
+        <div className='w-full flex border-b border-gray-200 text-xl text-gray-600'>
             <button
                 onClick={() => editor.chain().focus().toggleBold().run()}
                 className={editor.isActive('bold') ? styleActive : styleDefault}
@@ -128,7 +128,7 @@ const MenuBar = ({ editor }) => {
             <button className={styleDefault} onClick={() => editor.chain().focus().redo().run()}>
                 redo
             </button>
-        </>
+        </div>
     )
 }
 
@@ -174,26 +174,26 @@ const Tiptap = () => {
     `,
     })
 
-    const getData = (e) => {
-        e.preventDefault();
-        const htmlData = editor.getHTML()
-        client.post('/cours', { name: 'cours1 miem 5', htmlData })
-            .then(response => {
-                console.log(response.data);
-            }
-            ).catch(error => {
-                console.log(error);
-            }
-            );
-    }
+    // const getData = (e) => {
+    //     e.preventDefault();
+    //     const htmlData = editor.getHTML()
+    //     client.post('/cours', { name: 'cours1 miem 5', htmlData })
+    //         .then(response => {
+    //             console.log(response.data);
+    //         }
+    //         ).catch(error => {
+    //             console.log(error);
+    //         }
+    //         );
+    // }
 
     return (
         <div>
-            <button className="px-2 py-1 bg-green-400" onClick={getData}> get </button>
+            {/* <button className="px-2 py-1 bg-green-400" onClick={getData}> get </button> */}
             <div className="mb-2">
                 <MenuBar editor={editor} />
             </div>
-            <EditorContent editor={editor} className="mb-2 p-2 border" />
+            <EditorContent editor={editor} />
         </div>
     )
 }

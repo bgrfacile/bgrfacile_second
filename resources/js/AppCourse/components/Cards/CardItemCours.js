@@ -42,11 +42,10 @@ export default function CardItemCours({ cour }) {
                     </div>
                 </div>
                 <Typography gutterBottom variant="h5" component="div">
-                    {cour.name}
+                    {cour.title}
                 </Typography>
                 <Typography style={{ overflowWrap: 'break-word' }} className="break-words max-h-20 h-20 overflow-y-hidden" variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
+                    {cour.description}
                 </Typography>
                 {/* <div className="pt-4 pb-2 border-b flex justify-between items-center">
                     <div className="p-2">
