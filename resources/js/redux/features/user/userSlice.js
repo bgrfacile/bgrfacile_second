@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
-console.log("user dans local", user);
+console.log("user in redux", user);
+
 const initialValue = {
     user_id: user ? user.id : null,
     firstName: user ? user.name : '',
@@ -20,7 +21,6 @@ const initialValue = {
         }
     ],
 };
-// const initialState =
 
 
 export const userSlice = createSlice({
@@ -37,10 +37,13 @@ export const userSlice = createSlice({
         // },
         updateProfileImage: (state, action) => {
             state.profile.profileImage = action.payload
+        },
+        logout: (state) => {
+            state.profile = initialValue
         }
     },
 })
 
-export const { updateProfileImage } = userSlice.actions
+export const { updateProfileImage, logout } = userSlice.actions
 
 export default userSlice.reducer

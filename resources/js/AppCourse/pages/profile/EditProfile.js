@@ -11,7 +11,7 @@ import { updateProfileImage } from '../../../redux/features/user/userSlice';
 export default function EditProfile() {
     const dispatch = useDispatch();
     const userStore = useSelector(state => state.user.profile);
-    console.log(userStore);
+    console.info("user a modifier", userStore);
     const [startDate, setStartDate] = useState(new Date());
     const [email, setEmail] = useState(userStore.email);
     const [name, setName] = useState(userStore.firstName);

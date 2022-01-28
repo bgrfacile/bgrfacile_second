@@ -9,3 +9,5 @@
 
 bgrfacile est une application web: le backend est gérer par Laravel et le front end par reactJs.
 
+<!-- max-w-7xl mx-auto -->
+

@@ -1,23 +1,98 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from "react-router-dom";
 import CustomLink from "../hooks/CustomLink";
 import LogoShortBgrfacile from "./LogoShortbgrfacile";
 import SvgBonus from "./svg/Svgbonus";
 import Svgbook from "./svg/SvgBook";
 import SvgExo from "./svg/SvgExo";
 import SvgFormation from "./svg/SvgFormation";
+import { logout } from '../../redux/features/user/userSlice';
+
+const className = "flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700";
+const classNameLinkActive = "text-blue-600 bg-gray-200 dark:text-gray-200 dark:bg-gray-700";
+const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
+const classDefault = 'w-full p-2 my-2 flex items-center text-gray-700 bg-gray-50 rounded-md hover:text-blue-600 hover:bg-gray-300 hover:font-semibold';
 
 
-const NavBar = () => {
+
+export default function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpenDropDown, setIsOpenDropDown] = React.useState(false);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const user = useSelector(state => state.user);
+    const handleLogout = (e) => {
+        e.preventDefault();
+        if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            dispatch(logout());
+            navigate('/signin', { replace: true });
+        }
+    }
+    const DropDownMenu = () => {
+        return (
+            <div className="bg-white p-3 border-t-4 border-blue-600 absolute z-10 mt-2 right-3">
+                <CustomLink classActive={classActive} to='/profile' className={classDefault}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span>Profil</span>
+                </CustomLink>
+                <CustomLink classActive={classActive} to='/profile' className={classDefault}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span>Profil</span>
+                </CustomLink>
+                <div className="flex justify-evenly items-center">
+                    <CustomLink classActive={classActive} to="/profile/edit" className={classDefault}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                    </CustomLink>
 
-    const className = "flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700";
-    const classNameLinkActive = "text-blue-600 bg-gray-200 dark:text-gray-200 dark:bg-gray-700";
+                    <CustomLink classActive={classActive} to='/profile/favoris' className={classDefault}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                        </svg>
+                    </CustomLink>
+                    <button
+                        onClick={handleLogout}
+                        className="py-2 px-3 rounded-md hover:bg-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        )
+    }
+    const ItemMenu = () => {
+        return (<>
+            <CustomLink classActive={classNameLinkActive} to='/cours' className={className}>
+                <Svgbook className='block h-10 w-auto' />
+                <span>Cours</span>
+            </CustomLink>
+            <CustomLink classActive={classNameLinkActive} to='/exercices' className={className}>
+                <SvgExo className='block h-10 w-auto' />
+                <span>Exercices</span>
+            </CustomLink>
+            <CustomLink classActive={classNameLinkActive} to='/formations' className={className}>
+                <SvgFormation className='block h-10 w-auto' />
+                <span>Formations</span>
+            </CustomLink>
+            <CustomLink classActive={classNameLinkActive} to='/bonus' className={className}>
+                <SvgBonus className='block h-10 w-auto' />
+                <span>Bonus</span>
+            </CustomLink>
+        </>)
+    }
+
     return <>
-        <nav className=" bg-white w-full">
-            <div className="border-b flex flex-wrap sm:flex-nowrap relative justify-between items-center max-w-7xl mx-auto px-8 py-2 dark:bg-gray-800">
+        <nav className=" bg-white w-full relative">
+            <div className="border-b flex flex-wrap sm:flex-nowrap  justify-between items-center w-full px-8 py-2 dark:bg-gray-800">
                 <div className="inline-flex">
                     <a href="/" className="flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700">
                         <div className="hidden md:flex md:justify-center md:items-center">
@@ -33,26 +108,11 @@ const NavBar = () => {
                     </a>
                 </div>
                 <div className="hidden md:flex justify-evenly items-center rounded-md flex-1 ">
-                    <CustomLink classActive={classNameLinkActive} to='/cours' className={className}>
-                        <Svgbook className='block h-10 w-auto' />
-                        <span>Cours</span>
-                    </CustomLink>
-                    <CustomLink classActive={classNameLinkActive} to='/exercices' className={className}>
-                        <SvgExo className='block h-10 w-auto' />
-                        <span>Exercices</span>
-                    </CustomLink>
-                    <CustomLink classActive={classNameLinkActive} to='/formations' className={className}>
-                        <SvgFormation className='block h-10 w-auto' />
-                        <span>Formations</span>
-                    </CustomLink>
-                    <CustomLink classActive={classNameLinkActive} to='/bonus' className={className}>
-                        <SvgBonus className='block h-10 w-auto' />
-                        <span>Bonus</span>
-                    </CustomLink>
+                    <ItemMenu />
                 </div>
 
                 <div className="flex-initial">
-                    <div className="flex justify-end items-center relative">
+                    <div className="flex justify-end items-center">
                         <div className="flex mr-4 items-center">
                             <div className="block relative">
                                 <Link to='/search'
@@ -67,26 +127,17 @@ const NavBar = () => {
                         </div>
 
                         <div className="block">
-                            <div className="inline relative">
-                                {
-                                    localStorage.getItem("user") ?
-                                        <Link to="/profile"
-                                            className="inline-flex items-center p-1 text-gray-500 bg-gray-50 transition duration-150 ease-in-out border border-transparent rounded-full hover:shadow">
-                                            {/* <div className="w-10 h-10 rounded-full border-4 border-gray-400 shadow-md">
-                                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                                    role="presentation" focusable="false"
-                                                    className="fill-current h-full w-full block">
-                                                    <path
-                                                        d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z">
-                                                    </path>
-                                                </svg>
-                                            </div> */}
-                                            <img alt="avatar" style={{ minHeight:"40px" }} className="w-10 h-10  rounded-full border-4 border-blue-400 bg-white" src={user.profile.profileImage} />
-                                        </Link> :
-                                        <Link to="/signup">Inscription</Link>
-                                }
+                            <div className="inline">
+                                {localStorage.getItem("user") ?
+                                    <button onClick={() => setIsOpenDropDown(!isOpenDropDown)}
+                                        className="inline-flex items-center p-1 text-gray-500 bg-gray-50 transition duration-150 ease-in-out border border-transparent rounded-full hover:shadow">
+                                        <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10  rounded-full border-4 border-blue-400 bg-white" src={user.profile.profileImage} />
+                                    </button>
+                                    :
+                                    <Link to="/signup">Inscription</Link>}
                             </div>
                         </div>
+
                         <div className="block md:hidden">
                             <button onClick={() => setIsOpen(!isOpen)}
                                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -101,32 +152,14 @@ const NavBar = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
-            {isOpen && (
-                <div className="md:hidden max-w-full overflow-x-hidden mx-0 md:mx-4 py-2">
+            {isOpenDropDown && <DropDownMenu />}
+            {isOpen &&
+                (<div className="md:hidden max-w-full overflow-x-hidden mx-0 md:mx-4 py-2">
                     <div className="w-full overflow-x-scroll sm:overflow-x-auto flex justify-evenly items-center">
-                        <CustomLink classActive={classNameLinkActive} to='/cours' className={className}>
-                            <Svgbook className='block h-10 w-auto' />
-                            <span>Cours</span>
-                        </CustomLink>
-                        <CustomLink classActive={classNameLinkActive} to='/exercices' className={className}>
-                            <SvgExo className='block h-10 w-auto' />
-                            <span>Exercices</span>
-                        </CustomLink>
-                        <CustomLink classActive={classNameLinkActive} to='/formations' className={className}>
-                            <SvgFormation className='block h-10 w-auto' />
-                            <span>Formations</span>
-                        </CustomLink>
-                        <CustomLink classActive={classNameLinkActive} to='/bonus' className={className}>
-                            <SvgBonus className='block h-10 w-auto' />
-                            <span>Bonus</span>
-                        </CustomLink>
+                        <ItemMenu />
                     </div>
                 </div>)}
-
         </nav>
     </>
 };
-
-export default NavBar;

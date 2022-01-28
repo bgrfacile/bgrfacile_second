@@ -18,7 +18,6 @@ import Infos from './pages/profile/Infos';
 import MyCours from './pages/profile/MyCours';
 import MyExos from './pages/profile/MyExos';
 import Favoris from './pages/profile/Favoris';
-import CreateCours from './pages/profile/createCours/CreateCours';
 import CreateExos from './pages/profile/CreateExos';
 import DevenirFormateur from './pages/Formateur/DevenirFormateur';
 import DevenirPromoteur from './pages/Promoteur/DevenirPromoteur';
@@ -32,6 +31,11 @@ import Login from './auth/login';
 import Register from './auth/register';
 import ViewCours from './pages/Cours/ViewCours';
 import CreateCoursIndex from './pages/profile/createCours/CreateCoursIndex';
+import CreateCoursTexte from './pages/profile/createCours/CreateCoursTexte';
+import CreateCoursPdf from './pages/profile/createCours/CreateCoursPdf';
+import CreateCoursImage from './pages/profile/createCours/CreateCoursImage';
+import CreateCoursVideo from './pages/profile/createCours/CreateCoursVideo';
+import CreateCoursAudio from './pages/profile/createCours/CreateCoursAudio';
 
 
 const RequireAuth = ({ children }) => {
@@ -71,11 +75,11 @@ export default function RoutePath() {
                         <Route path="/profile/ecole-en-ligne" element={<RequireAuth><EcoleEnLigne /></RequireAuth>} />
                         <Route path="/profile/my-cours" element={<RequireAuth><MyCours /></RequireAuth>} />
                         <Route path="/profile/my-cours/create" element={<RequireAuth><CreateCoursIndex /></RequireAuth>} />
-                        <Route path="/profile/my-cours/create/pdf" element={<RequireAuth><CreateCours /></RequireAuth>} />
-                        <Route path="/profile/my-cours/create/texte" element={<RequireAuth><CreateCours /></RequireAuth>} />
-                        <Route path="/profile/my-cours/create/image" element={<RequireAuth><CreateCours /></RequireAuth>} />
-                        <Route path="/profile/my-cours/create/video" element={<RequireAuth><CreateCours /></RequireAuth>} />
-                        <Route path="/profile/my-cours/create/audio" element={<RequireAuth><CreateCours /></RequireAuth>} />
+                        <Route path="/profile/my-cours/create/pdf" element={<RequireAuth><CreateCoursPdf /></RequireAuth>} />
+                        <Route path="/profile/my-cours/create/texte" element={<RequireAuth><CreateCoursTexte /></RequireAuth>} />
+                        <Route path="/profile/my-cours/create/image" element={<RequireAuth><CreateCoursImage /></RequireAuth>} />
+                        <Route path="/profile/my-cours/create/video" element={<RequireAuth><CreateCoursVideo /></RequireAuth>} />
+                        <Route path="/profile/my-cours/create/audio" element={<RequireAuth><CreateCoursAudio /></RequireAuth>} />
                         <Route path="/profile/my-exos" element={<RequireAuth><MyExos /></RequireAuth>} />
                         <Route path="/profile/my-exos/create" element={<RequireAuth><CreateExos /></RequireAuth>} />
                         <Route path="/profile/favoris" element={<RequireAuth><Favoris /></RequireAuth>} />
