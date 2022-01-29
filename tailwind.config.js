@@ -1,21 +1,14 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors')
 
 module.exports = {
-    purge: {
-        content: [
+    content:  [
             './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
             './storage/framework/views/*.php',
             './resources/views/**/*.blade.php',
             './resources/js/**/*.js',
             './resources/js/**/*.jsx',
         ],
-        options: {
-            safelist: [
-                /data-theme$/,
-            ]
-        },
-    },
-
     darkMode: "class",
 
     theme: {
@@ -23,6 +16,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                gray: colors.neutral,
+            }
         },
     },
 
@@ -34,26 +30,28 @@ module.exports = {
     },
 
     plugins: [
+        require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
-        require('daisyui'),
+        // require('daisyui'),
+        require('@tailwindcss/typography'),
     ],
-    daisyui: {
-        styled: true,
-        themes: true,
-        base: false,
-        utils: true,
-        logs: true,
-        rtl: false,
-        themes: [
-            {
-                'mytheme': {
-                    'primary': '#2196F3',
-                    'primary-focus': '#1e88e5',
-                    'primary-content': '#ffffff',
-                },
+    // daisyui: {
+    //     styled: true,
+    //     themes: true,
+    //     base: false,
+    //     utils: true,
+    //     logs: true,
+    //     rtl: false,
+    //     themes: [
+    //         {
+    //             'mytheme': {
+    //                 'primary': '#2196F3',
+    //                 'primary-focus': '#1e88e5',
+    //                 'primary-content': '#ffffff',
+    //             },
 
-            },
-        ],
-    },
+    //         },
+    //     ],
+    // },
 
 };

@@ -14,15 +14,16 @@ export default function CreateCoursTexte() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log("formulaire soumis");
         // const htmlData = editor.getHTML()
-        client.post('/cours', { title,description, user_id: userStrore.user_id })
-            .then(response => {
-                console.log(response.data);
-            }
-            ).catch(error => {
-                console.log(error);
-            }
-            );
+        // client.post('/cours', { title,description, user_id: userStrore.user_id })
+        //     .then(response => {
+        //         console.log(response.data);
+        //     }
+        //     ).catch(error => {
+        //         console.log(error);
+        //     }
+        //     );
     }
     return (
         <form onSubmit={handleSubmit} className="min-h-full flex flex-col ">
@@ -48,7 +49,7 @@ export default function CreateCoursTexte() {
                     </div>
                     <button type='submit' className=" px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-gray-100 bg-blue-600  ">Enrgistrer votre cours</button>
                 </div>
-                <div className='w-2/3 overflow-hidden'>
+                <div style={{ height: '650px' }}>
                     <Tiptap />
                 </div>
             </div>
