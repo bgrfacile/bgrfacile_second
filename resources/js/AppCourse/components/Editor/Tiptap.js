@@ -140,7 +140,7 @@ export default () => {
         editorProps: {
             attributes: {
                 spellcheck: 'false',
-                class: 'prose prose-slate lg:prose-lg prose-sm sm:prose xl:prose-xl focus:outline-none mx-auto px-2 h-24 min-h-0 hover:min-h-full',
+                class: 'prose prose-slate lg:prose-lg prose-sm sm:prose xl:prose-xl focus:outline-none mx-auto mt-3 px-2 h-24 min-h-0 hover:min-h-full',
             },
         },
     })

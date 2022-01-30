@@ -31,9 +31,16 @@ class CoursController extends Controller
     {
         // dd($request->all());
         $user = User::find($request->user_id);
+        $coverImage = null;
+        if ($request->hasFile('coverImage')) {
+            $imageName = time() . '_' . $request->file('coverImage')->getClientOriginalName();
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('coverImage', $imageName, 'public');
+        }
         $cours = $user->cours()->create([
                 'title' => $request->title,
                 'description' => $request->description,
+                'coverImage' => $coverImage,
+                'isActif' => $request->isActif,
             ]);
         return response([
             'message' => 'cours created successfully',
