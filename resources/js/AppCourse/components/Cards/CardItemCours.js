@@ -21,9 +21,9 @@ export default function CardItemCours({ cour }) {
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    height="140"
-                    image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
-                    alt="green iguana"
+                    image={cour.coverImage}
+                    alt={cour.title}
+                    className="object-cover h-48 w-96"
                 />
             </CardActionArea>
             <CardContent>
@@ -34,7 +34,7 @@ export default function CardItemCours({ cour }) {
                         <Chip className='mr-1' size="small" label="audio" color='info' />
                     </div>
                     <div>
-                        <Tooltip title="user">
+                        <Tooltip title={cour.users[0].name}>
                             <IconButton aria-label="add to favorites">
                                 <PersonIcon />
                             </IconButton>

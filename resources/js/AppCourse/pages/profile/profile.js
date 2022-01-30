@@ -12,7 +12,7 @@ import CustomLink from '../../hooks/CustomLink';
 
 
 export default function Profile({ children, to, ...props }) {
-    const [isOpenMenu, setIsOpenMenu] = useState(false);
+    const [isOpenMenu, setIsOpenMenu] = useState(true);
     const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
     const classDefault = 'w-full p-2 my-2 flex items-center text-gray-700 bg-gray-50 rounded-md hover:text-blue-600 hover:bg-gray-300 hover:font-semibold';
     const breadcrumbs = useReactRouterBreadcrumbs()

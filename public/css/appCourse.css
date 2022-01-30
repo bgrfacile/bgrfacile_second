@@ -2096,6 +2096,9 @@ select {
 .h-32 {
   height: 8rem;
 }
+.h-48 {
+  height: 12rem;
+}
 .max-h-full {
   max-height: 100%;
 }

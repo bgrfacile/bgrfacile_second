@@ -18,7 +18,7 @@ class CoursController extends Controller
      */
     public function index()
     {
-        return CoursResource::collection(Cours::all());
+        return CoursResource::collection(Cours::all()->reverse());
     }
 
     /**

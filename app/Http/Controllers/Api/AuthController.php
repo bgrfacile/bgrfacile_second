@@ -29,7 +29,7 @@ class AuthController extends Controller
         // event(new Registered($user));
         User::count() <= 1 ?
             $user->assignRole('super-admin') :
-            $user->assignRole('viewer');
+            $user->assignRole('etudiant');
 
         $slug_user = $user->slugUser()->create(['slug' => Str::slug($user->name)]);
         return response([
