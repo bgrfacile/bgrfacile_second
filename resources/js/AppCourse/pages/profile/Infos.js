@@ -120,9 +120,9 @@ export default function Infos() {
             <div className='flex flex-col w-full rounded-sm shadow bg-white p-3'>
                 <div className='flex flex-col items-stretch'>
                     <Civilites />
-                    <Competences />
+                   {/*  <Competences />
                     <Loisirs />
-                    <Language />
+                    <Language /> */}
                 </div>
             </div>
         </div>
