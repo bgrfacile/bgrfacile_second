@@ -15,14 +15,19 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-        $slug = Str::slug($this->name, '-');
+         $slug = Str::slug($this->name, '-');
         return [
-            'id' => $this->id,
-            'name' => $this->name,
+            'user_id' => $this->id,
+            'user_name' => $this->name,
+            'firstname' => $this->firstname,
             'lastname' => $this->lastname,
-            'profileImage' => $this->url_image == null ? "https://ui-avatars.com/api/?name=$slug&background=0D8ABC&color=fff" : url($this->url_image),
-            'birthday' => $this->birthday,
+            'telephone' => "",
+            'age' => "",
+            'gender' => "",
             'email' => $this->email,
+            'country' => "",
+            'url_image' => $this->url_image == null ? "https://ui-avatars.com/api/?name=$slug&background=0D8ABC&color=fff" : url($this->url_image),
+            'birthday' => $this->birthday,
             'roles' => RoleResource::collection($this->roles),
         ];
     }

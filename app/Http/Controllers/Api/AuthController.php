@@ -32,7 +32,9 @@ class AuthController extends Controller
             $user->assignRole('etudiant');
 
         $slug_user = $user->slugUser()->create(['slug' => Str::slug($user->name)]);
+        Auth::login($user);
         return response([
+            'status' => 'success',
             'message' => 'user create successfully',
             'user' => new UserResource($user),
             'access_token' => $token
@@ -46,28 +48,33 @@ class AuthController extends Controller
                 'message' => 'Aucun utilisateurs trouvé avec ces identifiants',
             ], 404);
         } else {
-            $request->session()->regenerate();
             $user = User::where('email', $request->email)->first();
+            Auth::login($user);
+            // $request->session()->regenerate();
             $token = $user->createToken('myappToken')->plainTextToken;
-            $respon = [
+            return response([
                 'status' => 'success',
                 'message' => 'Authentification réussie',
-                'status_code' => 200,
                 'access_token' => $token,
-                'token_type' => 'Bearer',
                 'user' => new UserResource($user),
-            ];
-            return response($respon, 200);
+            ], 200);
         }
     }
+    public function me()
+    {
+        return response([
+            'user' => new UserResource(Auth::user()),
+        ]);
+    }
+
 
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();
+        // $request->user()->token()->revoke();
         Auth::logout();
-        Session::flush();
+        // Session::flush();
         return response([
-            'message' => 'Successfully logged out'
+            'message' => 'Vous êtes déconnecté'
         ], 200);
     }
 }

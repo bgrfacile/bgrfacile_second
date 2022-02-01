@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import LogoFacebook from '../../components/svg/LogoFacebook'
 import LogoLinkedin from '../../components/svg/LogoLinkedin'
 
@@ -7,36 +8,37 @@ const RangeValue = ({ value, color }) => {
 }
 
 const Civilites = () => {
-    const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+    // const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+    const user = useSelector(state => state.user.profile)
     return (<>
         <h2 className='w-full text-3xl font-bold uppercase mb-3'>
-            {user.name}
+            {user.user_name}
         </h2>
         <hr className="text-gray-700 mb-3" />
         <div className='block md:flex flex-wrap justify-between mb-6'>
             <div className='w-full md:w-1/2 flex flex-col items-stretch justify-start'>
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
                     <span className='font-semibold text-black mr-1'>Nationnalité</span>
-                    <h4>Congolaise</h4>
+                    <h4>{user.country}</h4>
                 </div>
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
                     <span className='font-semibold text-black mr-1'>Age</span>
-                    <h4>18 ans</h4>
+                    <h4>{user.age} ans</h4>
                 </div>
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
                     <span className='font-semibold text-black mr-1'>Genre</span>
-                    <h4>Fille</h4>
+                    <h4>{user.gender}</h4>
                 </div>
             </div>
             <hr className="text-gray-700" />
             <div className='w-full md:w-1/2 flex flex-col items-stretch justify-start'>
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
                     <span className='font-semibold text-black mr-1'>email public</span>
-                    <h4>monEmail@mail.com</h4>
+                    <h4>{user.email}</h4>
                 </div>
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
                     <span className='font-semibold text-black mr-1'>numéro de téléphone</span>
-                    <h4>+242 066443279</h4>
+                    <h4>{user.telephone}</h4>
                 </div>
                 <div className='text-base flex items-center mb-1'>
                     <span className='font-semibold text-black mr-1'>reseaux sociaux</span>

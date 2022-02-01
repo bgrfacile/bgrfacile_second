@@ -36,8 +36,6 @@ class UserController extends Controller
 
     public function updateImage(Request $request)
     {
-        // dd($request->all());
-
         $request->validate(
             [
                 'user_id' => 'required|exists:users,id',
@@ -47,7 +45,7 @@ class UserController extends Controller
         $user = User::find($request->user_id);
         if ($request->hasFile('file')) {
             $imageName = time() . '_' . $request->file('file')->getClientOriginalName();
-            $user->url_image = "/storage/" . $request->file('file')->storeAs('uploads', $imageName, 'public');
+            $user->url_image = "/storage/" . $request->file('file')->storeAs('profile_images', $imageName, 'public');
         }
         $user->save();
         return response([

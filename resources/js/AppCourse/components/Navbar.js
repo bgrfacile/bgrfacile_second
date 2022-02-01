@@ -21,7 +21,7 @@ export default function Navbar() {
     const [isOpenDropDown, setIsOpenDropDown] = React.useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(state => state.user);
+    const user = useSelector(state => state.user.profile);
     const handleLogout = (e) => {
         e.preventDefault();
         if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
@@ -125,10 +125,10 @@ export default function Navbar() {
                                 {localStorage.getItem("user") ?
                                     <button onClick={() => setIsOpenDropDown(!isOpenDropDown)}
                                         className="inline-flex items-center p-1 text-gray-500 bg-gray-50 transition duration-150 ease-in-out border border-transparent rounded-full hover:shadow">
-                                        <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10  rounded-full border-4 border-blue-400 bg-white" src={user.profile.profileImage} />
+                                        <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10  rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
                                     </button>
                                     :
-                                    <Link to="/signup">Inscription</Link>}
+                                    <Link to="/signup" className="px-2 py-1 bg-sky-600 text-white">Inscription</Link>}
                             </div>
                         </div>
 

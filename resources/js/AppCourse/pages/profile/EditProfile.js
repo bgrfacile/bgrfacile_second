@@ -11,14 +11,15 @@ import { updateProfileImage } from '../../../redux/features/user/userSlice';
 export default function EditProfile() {
     const dispatch = useDispatch();
     const userStore = useSelector(state => state.user.profile);
-    console.info("user a modifier", userStore);
     const [startDate, setStartDate] = useState(new Date());
     const [email, setEmail] = useState(userStore.email);
-    const [name, setName] = useState(userStore.firstName);
-    const [imagePreviewUrl, setImagePreviewUrl] = useState(userStore.profileImage);
+    const [name, setName] = useState(userStore.user_name);
+    const [imagePreviewUrl, setImagePreviewUrl] = useState(userStore.url_image);
     const [file, setFile] = useState(null);
     const [isActif, setIsActif] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const handleChange = (e) => {
         let reader = new FileReader();
@@ -64,21 +65,15 @@ export default function EditProfile() {
                 'Content-Type': 'multipart/form-data'
             }
         }).then(response => {
-            console.log(response.data.user);
-            const user = {
-                email: response.data.user.email,
-                name: response.data.user.name,
-                id: response.data.user.id,
-                profileImage: response.data.user.profileImage,
-            }
-            localStorage.removeItem('user');
-            localStorage.setItem("user", JSON.stringify(user));
-            dispatch(updateProfileImage(response.data.user.profileImage));
+            localStorage.setItem("user", JSON.stringify(response.data.user));
+            dispatch(updateProfileImage(response.data.user.url_image));
             setLoading(false);
             setIsActif(false);
         }
         ).catch(error => {
             console.log(error);
+            setLoading(false);
+            setError(true);
         }
         );
     }
@@ -97,6 +92,8 @@ export default function EditProfile() {
     return (
         <div>
             <div className='mb-4 md:mb-8'>
+                {success && <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">Mise à jour avec success</div>}
+                {error && <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">Echec de l'opération</div>}
                 <form encType='multipart/form-data' onSubmit={handleUpdateImage}>
                     <div className="relative w-32 mx-auto">
                         <div className="absolute bottom-0 right-0 z-10">

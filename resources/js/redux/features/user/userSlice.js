@@ -4,22 +4,18 @@ const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('use
 console.log("user in redux", user);
 
 const initialValue = {
-    user_id: user ? user.id : null,
-    firstName: user ? user.name : '',
-    lastName: '',
-    telephone: '',
-    age: 28,
+    user_id: user ? user.user_id : null,
+    user_name: user ? user.user_name : '',
+    firstName: user ? user.firstName : '',
+    lastName: user ? user.firstName : '',
+    birthday: user ? user.birthday : '',
+    telephone: user ? user.telephone : '',
+    age: user ? user.age : '',
+    gender: user ? user.gender : '',
     email: user ? user.email : '',
-    country: '',
-    address: 'Home',
-    profileImage: user ? user.profileImage : 'https://picsum.photos/seed/picsum/200',
-    subscribenewsletter: false,
-    roles: [
-        {
-            id: 1,
-            name: 'etudiant',
-        }
-    ],
+    country: user ? user.country : '',
+    url_image: user ? user.url_image : 'https://picsum.photos/seed/picsum/200',
+    roles: user ? user.roles : [],
 };
 
 
@@ -27,16 +23,14 @@ export const userSlice = createSlice({
     name: 'user',
     initialState: {
         profile: initialValue,
+        isLoading: false,
     },
     reducers: {
-        // login: (state, action) => {
-        //     state.profile = action.payload
-        // },
-        // logout: (state, action) => {
-        //     state.profile = action.payload
-        // },
+        login: (state, action) => {
+            state.profile = action.payload
+        },
         updateProfileImage: (state, action) => {
-            state.profile.profileImage = action.payload
+            state.profile.url_image = action.payload
         },
         logout: (state) => {
             state.profile = initialValue
@@ -44,6 +38,6 @@ export const userSlice = createSlice({
     },
 })
 
-export const { updateProfileImage, logout } = userSlice.actions
+export const { updateProfileImage, logout,login } = userSlice.actions
 
 export default userSlice.reducer

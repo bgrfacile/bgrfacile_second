@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function () {
 
     Route::group([
-        'middleware' => ['cors', 'auth:sanctum'],
+        'middleware' => ['cors','auth'],
     ], function () {
         Route::put('/user/update', [UserController::class, 'updateUser']);
         Route::post('/user/image/update', [UserController::class, 'updateImage']);
@@ -31,8 +31,10 @@ Route::prefix('v1')->group(function () {
     Route::group([
         'middleware' => ['cors'],
     ], function () {
+        Route::get('/auth/me', [AuthController::class, 'me']);
         Route::post('/signin', [AuthController::class, 'login']);
         Route::post('/signup', [AuthController::class, 'register']);
+        Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/cours', [CoursController::class, 'index']);
         Route::post("/contact", function (Request $request) {
             dd($request->all());

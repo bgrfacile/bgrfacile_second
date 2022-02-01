@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import 'react-tabs/style/react-tabs.css';
 import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
+import client from '../../../api/client';
 import { toggle } from '../../../redux/features/toggleAside/toggleAsideSlice';
 import CustomLink from '../../hooks/CustomLink';
 
@@ -15,31 +16,36 @@ import CustomLink from '../../hooks/CustomLink';
 export default function Profile({ children, to, ...props }) {
     const dispatch = useDispatch();
     const isOpenMenu = useSelector(state => state.toggleAside);
-    // const [isOpenMenu, setIsOpenMenu] = useState(true);
     const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
     const classDefault = 'w-full p-2 my-2 flex items-center text-gray-700 bg-gray-50 rounded-md hover:text-blue-600 hover:bg-gray-300 hover:font-semibold';
     const breadcrumbs = useReactRouterBreadcrumbs()
     let navigate = useNavigate();
-    // const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
     const user = useSelector(state => state.user.profile);
     const handleLogout = (e) => {
         e.preventDefault();
         if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
-            localStorage.removeItem('token');
+            logoutfetch();
+        }
+    }
+    const logoutfetch = async () => {
+        client.post('/logout').then(res => {
             localStorage.removeItem('user');
             navigate('/signin', { replace: true });
-        }
+        })
+
     }
 
     const DropDownMenu = () => {
         return (<>
             <div className="bg-white p-3 border-t-4 border-blue-600">
                 <div className="flex justify-between items-center rounded-md p-2 mb-2">
-                    <img alt="avatar" style={{ minHeight: "56px" }} className="w-14 rounded-full border-4 border-blue-400 bg-white" src={user.profileImage} />
+                    <img alt={user.user_name} style={{ minHeight: "56px" }} className="w-14 rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
                     <div className="leading-5">
-                        <h4 className="text-xl font-semibold">{user.firstName}</h4>
+                        <h4 className="text-xl font-semibold">{user.user_name}</h4>
                         <h5 className="font-semibold text-blue-600 flex justify-end">
-                            <span className='ml-1'>etudiant</span>
+                            {user.roles.map(role => {
+                                return <span key={role.id} className="mr-2">{role.name}</span>
+                            })}
                         </h5>
                     </div>
                 </div>
@@ -145,7 +151,7 @@ export default function Profile({ children, to, ...props }) {
                             <input onChange={handleChangeMenu} type="checkbox" className="hidden" checked={isOpenMenu} />
                             {
                                 isOpenMenu ? <svg className='h-5 w-5' viewBox="0 0 24 24"><path d="M11.83 9L15 12.16V12a3 3 0 0 0-3-3h-.17m-4.3.8l1.55 1.55c-.05.21-.08.42-.08.65a3 3 0 0 0 3 3c.22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53a5 5 0 0 1-5-5c0-.79.2-1.53.53-2.2M2 4.27l2.28 2.28l.45.45C3.08 8.3 1.78 10 1 12c1.73 4.39 6 7.5 11 7.5c1.55 0 3.03-.3 4.38-.84l.43.42L19.73 22L21 20.73L3.27 3M12 7a5 5 0 0 1 5 5c0 .64-.13 1.26-.36 1.82l2.93 2.93c1.5-1.25 2.7-2.89 3.43-4.75c-1.73-4.39-6-7.5-11-7.5c-1.4 0-2.74.25-4 .7l2.17 2.15C10.74 7.13 11.35 7 12 7z" fill="currentColor"></path></svg> :
-                                <svg className='h-5 w-5' viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="currentColor"></path></svg>
+                                    <svg className='h-5 w-5' viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0-4.5c5 0 9.27 3.11 11 7.5c-1.73 4.39-6 7.5-11 7.5S2.73 16.39 1 12c1.73-4.39 6-7.5 11-7.5M3.18 12a9.821 9.821 0 0 0 17.64 0a9.821 9.821 0 0 0-17.64 0z" fill="currentColor"></path></svg>
 
                             }
                         </label>

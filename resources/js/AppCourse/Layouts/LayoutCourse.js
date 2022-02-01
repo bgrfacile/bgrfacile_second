@@ -18,8 +18,7 @@ export default function LayoutCourse() {
                     classNames="alert"
                     unmountOnExit
                     onEnter={() => setShowNav(false)}
-                    onExited={() => setShowNav(true)}
-                >
+                    onExited={() => setShowNav(true)}>
                     <Outlet />
                 </CSSTransition>
             </main>

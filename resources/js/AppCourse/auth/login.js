@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import LogoShortBgrfacile from '../components/LogoShortbgrfacile'
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import client from '../../api/client';
+import { login } from '../../redux/features/user/userSlice';
 
 export default function Login() {
+    const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     const [error, setError] = useState(false)
@@ -25,33 +28,25 @@ export default function Login() {
             setError(false)
             setSuccess(true)
             setSuccessMessage(response.data.message)
-            if (response.data.access_token) {
-                localStorage.setItem("token", JSON.stringify(response.data.access_token));
-                const user = {
-                    email: response.data.user.email,
-                    name: response.data.user.name,
-                    id: response.data.user.id,
-                    profileImage: response.data.user.profileImage,
-                }
-                localStorage.setItem("user", JSON.stringify(user));
-                // setTimeout(() => {
+            if (response.data.user) {
+                // localStorage.setItem("token", JSON.stringify(response.data.access_token));
+                localStorage.setItem("user", JSON.stringify(response.data.user));
+                dispatch(login(response.data.user));
+                setTimeout(() => {
                 navigate('/cours/scolaire', {
                     replace: true,
                 })
-                // }, 2000)
+                }, 2000)
                 setLoading(false)
             }
-            console.log("donner de connexion ",response.data)
         }).catch(error => {
             setError(true);
             error.response.data.errors ? setErrors(error.response.data.errors) : setErrors({})
             error.response.data.message ? setErrorMessage(error.response.data.message) : setErrorMessage({})
             setLoading(false)
-            // console.log(error.response.data)
         });
 
     }
-
     return (
         <div className="h-screen flex">
             <div className="flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center">

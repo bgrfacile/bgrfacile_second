@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import LayoutCourse from './Layouts/LayoutCourse';
 import BonusIndex from './pages/bonus/BonusIndex';
@@ -36,35 +36,54 @@ import CreateCoursPdf from './pages/profile/createCours/CreateCoursPdf';
 import CreateCoursImage from './pages/profile/createCours/CreateCoursImage';
 import CreateCoursVideo from './pages/profile/createCours/CreateCoursVideo';
 import CreateCoursAudio from './pages/profile/createCours/CreateCoursAudio';
+import client from '../api/client';
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/features/user/userSlice';
 
 
-const RequireAuth = ({ children }) => {
-    let auth = localStorage.getItem('user') ? true : false;
-    let location = useLocation();
 
-    if (!auth) {
-        return <Navigate to="/signin" state={{ from: location }} replace />;
-    }
-    return children;
-}
 
 export default function RoutePath() {
+    const dispatch = useDispatch();
+    const RequireAuth = ({ children }) => {
+        let auth = localStorage.getItem('user') ? true : false;
+        let location = useLocation();
+
+        if (!auth) {
+            return <Navigate to="/signin" state={{ from: location }} replace />;
+        }
+        return children;
+    }
+
+    // useEffect(() => {
+    //     client.get('/auth/me').then(res => {
+    //         console.log("request me", res.data.user);
+    //         if (res.data.user) {
+    //             localStorage.setItem('user', JSON.stringify(res.data.user));
+    //             dispatch(login(res.data.user));
+    //         }
+    //     }
+    //     )
+    // }, []);
 
     return (<>
         <Routes>
             <Route element={<Guest />}>
                 <Route element={<LayoutCourse />} >
+
                     <Route path="/cours" element={<CoursRoute />} >
                         <Route path='/cours/random/*' element={<RandomCours />} />
                         <Route path='/cours/scolaire/*' element={<ScolaireCours />} />
                         <Route path='/cours/others/*' element={<OthersCours />} />
                     </Route>
+
                     <Route path='/cours/:id' element={<ViewCours />} />
                     <Route path="/exercices/*" element={<ExerciceIndex />} />
                     <Route path="/formations/*" element={<FormationIndex />} />
                     <Route path="/bonus/*" element={<BonusIndex />} />
                     <Route path='/bonus/quizz' element={<QuizzIndex />} />
                     <Route path='/bonus/podcast' element={<PodcastIndex />} />
+
                     <Route path="/search" element={<Search />} >
                         <Route path=':q' element={<Search />} />
                     </Route>
