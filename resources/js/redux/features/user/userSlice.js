@@ -38,6 +38,6 @@ export const userSlice = createSlice({
     },
 })
 
-export const { updateProfileImage, logout,login } = userSlice.actions
+export const { updateProfileImage, logout, login } = userSlice.actions
 
 export default userSlice.reducer

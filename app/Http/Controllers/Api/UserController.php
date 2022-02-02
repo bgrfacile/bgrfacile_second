@@ -7,6 +7,7 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -44,7 +45,7 @@ class UserController extends Controller
         );
         $user = User::find($request->user_id);
         if ($request->hasFile('file')) {
-            $imageName = time() . '_' . $request->file('file')->getClientOriginalName();
+            $imageName = time() . '_' . Str::slug($request->file('file')->getClientOriginalName(), '-');
             $user->url_image = "/storage/" . $request->file('file')->storeAs('profile_images', $imageName, 'public');
         }
         $user->save();

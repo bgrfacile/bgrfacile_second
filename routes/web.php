@@ -74,7 +74,7 @@ Route::view('/signup/{path?}', 'site.contenus.appCours')
 */
 Route::middleware(['auth'])->group(function () {
 
-    Route::prefix('dashboard')->group(function () {
+    Route::prefix('backend')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::get('/preference', function () {

@@ -55,16 +55,16 @@ export default function RoutePath() {
         return children;
     }
 
-    // useEffect(() => {
-    //     client.get('/auth/me').then(res => {
-    //         console.log("request me", res.data.user);
-    //         if (res.data.user) {
-    //             localStorage.setItem('user', JSON.stringify(res.data.user));
-    //             dispatch(login(res.data.user));
-    //         }
-    //     }
-    //     )
-    // }, []);
+    useEffect(() => {
+        client.get('/auth/me').then(res => {
+            console.log("request me", res.data);
+            if (res.data) {
+                localStorage.setItem('user', JSON.stringify(res.data.user));
+                dispatch(login(res.data.user));
+            }
+        }
+        )
+    }, []);
 
     return (<>
         <Routes>
