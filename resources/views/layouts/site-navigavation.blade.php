@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" id="navbar"
+<nav x-data="{ open: false }"
     class="fixed top-0 z-50 w-full bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 shadow">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

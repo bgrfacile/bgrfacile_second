@@ -34,7 +34,7 @@ export default function CardItemCours({ cour }) {
                         <Chip className='mr-1' size="small" label="audio" color='info' />
                     </div>
                     <div>
-                        <Tooltip title={cour.users[0].name}>
+                        <Tooltip title={cour.users[0].user_name}>
                             <IconButton aria-label="add to favorites">
                                 <PersonIcon />
                             </IconButton>

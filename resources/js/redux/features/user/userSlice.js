@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 // const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
-// console.log("user in redux", user);
-
-// const initialValue1 = {
+// const initialValue = {
 //     user_id: user ? user.user_id : null,
 //     user_name: user ? user.user_name : '',
 //     firstName: user ? user.firstName : '',

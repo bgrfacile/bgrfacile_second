@@ -26,9 +26,6 @@ use Inertia\Inertia;
     App React route
 */
 
-Route::get('/demo', function () {
-    return view('demo');
-});
 Route::get('/', HomeController::class)->name('home.page');
 Route::get('/ecole-en-ligne', [EcoleEnLigneController::class, 'index'])->name('ecoleEnLigne.page');
 Route::get('/ecole-en-ligne/create', [EcoleEnLigneController::class, 'create'])->name('ecoleEnLigne.create');
@@ -116,7 +113,8 @@ Route::middleware(['auth'])->group(function () {
             ]);
         });
     });
-    // Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
+    //  Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
+     Route::get('/demo/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
 });
 
 require __DIR__ . '/auth.php';
