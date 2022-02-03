@@ -28,28 +28,28 @@ export default function Register() {
             email: email,
             password: password
         })
-        .then(response => {
-            setError(false)
-            setSuccess(true)
-            setSuccessMessage(response.data.message)
-            // localStorage.setItem("token", JSON.stringify(response.data.access_token));
-            localStorage.setItem("user", JSON.stringify(response.data.user));
-            dispatch(login(response.data.user));
-            setTimeout(() => {
-                console.log("navigate")
-                navigate('/cours/scolaire', {
-                    replace: true,
-                })
-            }, 2000)
-            setLoading(false)
+            .then(response => {
+                setError(false)
+                setSuccess(true)
+                setSuccessMessage(response.data.message)
+                // localStorage.setItem("token", JSON.stringify(response.data.access_token));
+                localStorage.setItem("user", JSON.stringify(response.data.user));
+                dispatch(login(response.data.user));
+                setTimeout(() => {
+                    console.log("navigate")
+                    navigate('/cours/scolaire', {
+                        replace: true,
+                    })
+                }, 2000)
+                setLoading(false)
 
-        })
-        .catch(error => {
-            setError(true);
-            error.response.data.errors ? setErrors(error.response.data.errors) : setErrors({})
-            error.response.data.message ? setErrorMessage(error.response.data.message) : setErrorMessage({})
-            setLoading(false)
-        });
+            })
+            .catch(error => {
+                setError(true);
+                error.response.data.errors ? setErrors(error.response.data.errors) : setErrors({})
+                error.response.data.message ? setErrorMessage(error.response.data.message) : setErrorMessage({})
+                setLoading(false)
+            });
 
     }
     return (
@@ -67,8 +67,26 @@ export default function Register() {
                     {success && <Success message={successMessage} />}
                     {error && <Error message={errorMessage} />}
 
-                    <h2 className="text-gray-800 font-bold text-2xl mb-1">Bonjour à toi !</h2>
-                    <p className="text-sm font-normal text-gray-600 mb-7"> Bienvenue chez nous!</p>
+                    <h1 className="text-gray-800 font-bold text-2xl mb-1">Inscrivez-vous à votre site</h1>
+                    <p className="text-sm font-normal text-gray-600 mb-7">
+                        Vous avez déjà un compte ?
+                        <Link to="/signin" className="font-bold px-2 py-0 rounded-2xl text-blue-500 hover:text-blue-700 text-xs text-center">
+                            <span>Connectez-vous ici</span>
+                        </Link>
+                    </p>
+                    <button aria-label="Continue with google" role="button" className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-400 py-3.5 px-4 border rounded-lg border-gray-400 flex items-center w-full mt-10">
+                        <svg width="19" height="20" viewBox="0 0 24 24">
+                            <path fill="#EA4335" d="M5.266 9.765A7.077 7.077 0 0 1 12 4.909c1.69 0 3.218.6 4.418 1.582L19.91 3C17.782 1.145 15.055 0 12 0C7.27 0 3.198 2.698 1.24 6.65l4.026 3.115z"></path><path fill="#34A853" d="M16.04 18.013c-1.09.703-2.474 1.078-4.04 1.078a7.077 7.077 0 0 1-6.723-4.823l-4.04 3.067A11.965 11.965 0 0 0 12 24c2.933 0 5.735-1.043 7.834-3l-3.793-2.987z"></path><path fill="#4A90E2" d="M19.834 21c2.195-2.048 3.62-5.096 3.62-9c0-.71-.109-1.473-.272-2.182H12v4.637h6.436c-.317 1.559-1.17 2.766-2.395 3.558L19.834 21z"></path><path fill="#FBBC05" d="M5.277 14.268A7.12 7.12 0 0 1 4.909 12c0-.782.125-1.533.357-2.235L1.24 6.65A11.934 11.934 0 0 0 0 12c0 1.92.445 3.73 1.237 5.335l4.04-3.067z">
+                            </path>
+                        </svg>
+                        <p className="text-base font-medium ml-4 text-gray-700">Continuer avec Google</p>
+                    </button>
+
+                    <div className="w-full flex items-center justify-between py-5">
+                        <hr className="w-full bg-gray-400" />
+                        <p className="text-base font-medium leading-4 px-2.5 text-gray-400">OU</p>
+                        <hr className="w-full bg-gray-400  " />
+                    </div>
 
                     <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -144,15 +162,6 @@ export default function Register() {
                     {loading ?
                         <button className="block w-full bg-indigo-600 my-4 py-2 rounded-2xl text-white font-semibold" type="submit" disabled>Chargement...</button> :
                         <button type="submit" className="block w-full bg-indigo-600 my-4 py-2 rounded-2xl text-white font-semibold">Connexion</button>}
-
-                    <Link to="/signin" className="w-full flex justify-center items-center font-bold bg-blue-100 py-2 rounded-2xl text-blue-500 hover:text-blue-700 text-xs text-center">
-                        <span>
-                            <svg className="h-6 w-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                            </svg>
-                        </span>
-                        <span className="ml-2">J'ai un compte !</span>
-                    </Link>
                 </form>
             </div >
         </div >

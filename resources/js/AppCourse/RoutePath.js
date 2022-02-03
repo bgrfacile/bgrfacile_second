@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
 import LayoutCourse from './Layouts/LayoutCourse';
 import BonusIndex from './pages/bonus/BonusIndex';
@@ -36,35 +36,19 @@ import CreateCoursPdf from './pages/profile/createCours/CreateCoursPdf';
 import CreateCoursImage from './pages/profile/createCours/CreateCoursImage';
 import CreateCoursVideo from './pages/profile/createCours/CreateCoursVideo';
 import CreateCoursAudio from './pages/profile/createCours/CreateCoursAudio';
-import client from '../api/client';
-import { useDispatch } from 'react-redux';
-import { login } from '../redux/features/user/userSlice';
 
 
 
 
 export default function RoutePath() {
-    const dispatch = useDispatch();
     const RequireAuth = ({ children }) => {
         let auth = localStorage.getItem('user') ? true : false;
         let location = useLocation();
-
         if (!auth) {
             return <Navigate to="/signin" state={{ from: location }} replace />;
         }
         return children;
     }
-
-    useEffect(() => {
-        client.get('/auth/me').then(res => {
-            console.log("request me", res.data);
-            if (res.data) {
-                localStorage.setItem('user', JSON.stringify(res.data.user));
-                dispatch(login(res.data.user));
-            }
-        }
-        )
-    }, []);
 
     return (<>
         <Routes>

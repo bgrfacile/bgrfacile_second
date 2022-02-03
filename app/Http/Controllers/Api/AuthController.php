@@ -32,7 +32,7 @@ class AuthController extends Controller
             $user->assignRole('etudiant');
 
         $slug_user = $user->slugUser()->create(['slug' => Str::slug($user->name)]);
-        Auth::login($user);
+        Auth::login($user, true);
         return response([
             'status' => 'success',
             'message' => 'user create successfully',
@@ -49,7 +49,7 @@ class AuthController extends Controller
             ], 404);
         } else {
             $user = User::where('email', $request->email)->first();
-            Auth::login($user);
+            Auth::login($user,$request->rememberMe ? true : false);
             // $request->session()->regenerate();
             $token = $user->createToken('myappToken')->plainTextToken;
             return response([

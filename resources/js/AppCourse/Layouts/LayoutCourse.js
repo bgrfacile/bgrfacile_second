@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Outlet, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
+import client from '../../api/client';
+import { login } from '../../redux/features/user/userSlice';
 import NavBar from '../components/Navbar';
 import "../style.css";
 
 export default function LayoutCourse() {
     const location = useLocation();
+    const dispatch = useDispatch();
     const [showNav, setShowNav] = useState(true);
+    useEffect(() => {
+        client.get('/auth/me').then(res => {
+            console.log("request me", res.data);
+            if (res.data) {
+                localStorage.setItem('user', JSON.stringify(res.data.user));
+                dispatch(login(res.data.user));
+            }
+        }
+        )
+    }, []);
     return (<>
         <div className="min-h-screen flex flex-col bg-gray-100 text-gray-700">
             <NavBar />
