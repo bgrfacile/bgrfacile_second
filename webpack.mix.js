@@ -14,11 +14,11 @@ const mix = require('laravel-mix');
     Asset du site
 */
 
-// mix.js('resources/js/app.js', 'public/js').postCss('resources/css/appCss/app.css', 'public/css', [
-//     require('postcss-import'),
-//     require('tailwindcss'),
-//     require('autoprefixer'),
-// ]);
+mix.js('resources/js/app.js', 'public/js').postCss('resources/css/appCss/app.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]);
 
 /*
     Asset de appCourse

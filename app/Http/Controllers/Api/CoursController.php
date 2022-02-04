@@ -37,11 +37,15 @@ class CoursController extends Controller
             $coverImage = "/storage/" . $request->file('coverImage')->storeAs('coverImage', $imageName, 'public');
         }
         $cours = $user->cours()->create([
-                'title' => $request->title,
-                'description' => $request->description,
-                'coverImage' => $coverImage,
-                'isActif' => $request->isActif,
-            ]);
+            'title' => $request->title,
+            'description' => $request->description,
+            'coverImage' => $coverImage,
+            'isActif' => $request->isActif,
+        ]);
+        $cours->contents()->create([
+            'content'=>$request->content,
+            'type_content'=> $request->type_content,
+        ]);
         return response([
             'message' => 'cours created successfully',
             'cours' => new CoursResource($cours),

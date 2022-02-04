@@ -8,17 +8,13 @@ use App\Http\Controllers\Admin\MatiereController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\ContactController;
-use App\Http\Controllers\Site\CoursController;
 use App\Http\Controllers\Site\DonationController;
 use App\Http\Controllers\Site\EcoleEnLigneController;
 use App\Http\Controllers\Site\HomeController;
-use App\Http\Controllers\Site\ProfilController;
 use App\Models\Cycle;
 use App\Models\Level;
 use App\Models\Matiere;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use Spatie\Permission\Models\Role;
 use Inertia\Inertia;
 
 
@@ -39,24 +35,24 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact.page'
     App React route
 */
 // Route::middleware(['auth'])->group(function () {
-    Route::view('/cours/{path?}', 'site.contenus.appCours')
-        ->where('path', '.*')
-        ->name('cours.page');
-    Route::view('/exercices/{path?}', 'site.contenus.appCours')
-        ->where('path', '.*')
-        ->name('exercices.page');
-    Route::view('/formations/{path?}', 'site.contenus.appCours')
-        ->where('path', '.*')
-        ->name('formation.page');
-    Route::view('/bonus/{path?}', 'site.contenus.appCours')
-        ->where('path', '.*')
-        ->name('bonus.page');
-    Route::view('/search/{path?}', 'site.contenus.appCours')
-        ->where('path', '.*')
-        ->name('search.page');
-    Route::view('/profile/{path?}', 'site.contenus.appCours')
-        ->where('path', '.*')
-        ->name('profil.index');
+Route::view('/cours/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('cours.page');
+Route::view('/exercices/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('exercices.page');
+Route::view('/formations/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('formation.page');
+Route::view('/bonus/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('bonus.page');
+Route::view('/search/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('search.page');
+Route::view('/profile/{path?}', 'site.contenus.appCours')
+    ->where('path', '.*')
+    ->name('profil.index');
 // });
 
 Route::view('/signin/{path?}', 'site.contenus.appCours')
@@ -65,7 +61,7 @@ Route::view('/signin/{path?}', 'site.contenus.appCours')
 Route::view('/signup/{path?}', 'site.contenus.appCours')
     ->where('path', '.*')
     ->name('signup.page');
-
+// Route::view('/reset-password/{path?}', 'site.contenus.appCours');
 /*
     App Backend
 */
@@ -114,7 +110,6 @@ Route::middleware(['auth'])->group(function () {
         });
     });
     //  Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
-     Route::get('/demo/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
 });
 
 require __DIR__ . '/auth.php';

@@ -15,6 +15,11 @@ class Cours extends Model
         return $this->belongsToMany(User::class, 'cours_users', 'cour_id', 'user_id');
     }
 
+    public function contents()
+    {
+        return $this->morphMany(Content::class, 'contentable');
+    }
+
     public function cycles()
     {
         return $this->belongsToMany(Cycle::class,'cours_cycles');

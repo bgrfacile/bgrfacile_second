@@ -4,7 +4,7 @@ import StarterKit from '@tiptap/starter-kit'
 import { content } from './content.js'
 import './styles.css'
 
-const MenuBar = ({ editor }) => {
+const MenuBar = ({ editor, setContent }) => {
     if (!editor) {
         return null
     }
@@ -13,7 +13,8 @@ const MenuBar = ({ editor }) => {
     const isNotActiveStyle = "w-full flex justify-center items-center p-1 mr-1 bg-white text-gray-800 hover:bg-gray-800 hover:text-gray-100 rounded-sm cursor-pointer ease-in-out duration-200"
 
 
-    return (
+    return (<>
+        <button onClick={setContent(editor.getHTML())}></button>
         <div className="flex items-center bg-white border-b pt-1 pb-2 px-2 w-full h-auto rounded-t-lg shadow">
             <button
                 onClick={() => editor.chain().focus().toggleBold().run()}
@@ -126,10 +127,11 @@ const MenuBar = ({ editor }) => {
                 </button>
             </div>
         </div>
+    </>
     )
 }
 
-export default () => {
+export default ({ setContent }) => {
     const [contents, setContents] = useState("saisie ton contenu ici ...");
 
     const editor = useEditor({
@@ -143,11 +145,15 @@ export default () => {
                 class: 'prose prose-slate lg:prose-lg prose-sm sm:prose xl:prose-xl focus:outline-none mx-auto mt-3 px-2 h-24 min-h-0 hover:min-h-full',
             },
         },
+        // onUpdate: ({ value }) => {
+        //     // setContents(value.toJSON());
+        //     setContent(value);
+        // }
     })
 
 
     return (<div className="w-full h-full flex flex-col border-2 border-gray-900 rounded-lg py-2 pt-0">
-        <MenuBar editor={editor} />
+        <MenuBar setContent={setContent} editor={editor} />
         <div className="flex-1 overflow-y-scroll">
             <EditorContent editor={editor} />
         </div>

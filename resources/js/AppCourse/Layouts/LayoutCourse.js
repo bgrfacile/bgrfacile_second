@@ -24,18 +24,19 @@ export default function LayoutCourse() {
     return (<>
         <div className="min-h-screen flex flex-col bg-gray-100 text-gray-700">
             <NavBar />
-            <main className="max-w-full w-full mx-auto flex-1 py-6 px-1 sm:px-6 lg:px-8">
-                <CSSTransition
+            <main className="w-full h-full mx-auto flex-1 py-6 px-1 sm:px-6 lg:px-8">
+                {/* <CSSTransition
                     key={location.key}
                     in={showNav != null}
                     timeout={300}
                     classNames="alert"
                     unmountOnExit
                     onEnter={() => setShowNav(false)}
-                    onExited={() => setShowNav(true)}>
+                    onExited={() => setShowNav(true)}> */}
                     <Outlet />
-                </CSSTransition>
+                {/* </CSSTransition> */}
             </main>
+            <div className='h-6 w-full bg-neutral-800'></div>
         </div>
     </>);
 }

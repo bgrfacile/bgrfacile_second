@@ -46,6 +46,7 @@
         "@tiptap/starter-kit": "^2.0.0-beta.156",
         "daisyui": "^1.14.5",
         "howler": "^2.2.3",
+        "html-react-parser": "^1.4.6",
         "pdfjs-dist": "^2.12.313",
         "prop-types": "^15.7.2",
         "react-accessible-dropdown-menu-hook": "^3.2.0",

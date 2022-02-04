@@ -18,6 +18,7 @@ class CoursResource extends JsonResource
             'id'=>$this->id,
             'title'=>$this->title,
             'description'=>$this->description,
+            'contents'=>ContentResource::collection($this->contents),
             'coverImage'=>$this->coverImage == null ? "https://mui.com/static/images/cards/contemplative-reptile.jpg" : url($this->coverImage),
             'isActif'=>$this->isActif,
             'created_at'=>$this->created_at,

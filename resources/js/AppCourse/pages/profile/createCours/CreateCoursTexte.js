@@ -41,6 +41,7 @@ const img = {
 
 export default function CreateCoursTexte() {
     const [images, setImages] = useState([]);
+    const [content, setContent] = useState('');
     const [coverImage, setCoverImage] = useState(null);
     const [loading, setLoading] = useState(false);
     const [title, settitle] = useState('');
@@ -80,6 +81,7 @@ export default function CreateCoursTexte() {
         formData.append('user_id', userStrore.user_id);
         formData.append('title', title);
         formData.append('description', description);
+        formData.append('content', content);
         formData.append('isActif', value);
         formData.append('type_content', "texte");
         client.post('/cours', formData, {
@@ -144,7 +146,7 @@ export default function CreateCoursTexte() {
                     </div>
                 </div>
                 <form onSubmit={handleUpdate} style={{ height: '650px' }} className="w-full">
-                    <Tiptap />
+                    <Tiptap setContent={setContent} />
                 </form>
             </div>
         </div>

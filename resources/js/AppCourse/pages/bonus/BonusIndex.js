@@ -1,46 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CardBonus = ({ label,link }) => {
-    return (<Link to={link} className="flex flex-col justify-center items-center w-full h-80 bg-white rounded-sm shadow">
-        <div className="cursor-pointer">
-            <img src="img/folder.png" className="w-24 h-24 object-cover mb-3 transform transition duration-500 hover:scale-110" />
-            <div className="text-xl font-bold text-center">
-                {label}
+const CardBonus = ({ label, link, description }) => {
+    return (
+        <Link to={link} className="xl:w-1/3 md:w-1/2 p-4">
+            <div className="bg-white p-6 rounded-lg">
+                <img className="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6"
+                    src="https://images.immediate.co.uk/production/volatile/sites/7/2019/07/33-GettyImages-154260931-216706f.jpg?quality=90&resize=768%2C574"
+                    alt="Image Size 720x400" />
+                {/* <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3> */}
+                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">{label}</h2>
+                <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat.
+                    Distillery
+                    hexagon disrupt edison bulbche.</p>
             </div>
-        </div>
-    </Link>);
+        </Link>
+    )
 }
 
 export default function BonusIndex() {
-
-    const styleGrid = {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gridGap: '1rem',
-        gridAutoRows: 'minmax(200px, auto)',
-        gridAutoColumns: 'minmax(300px, auto)',
-        gridAutoFlow: 'dense',
-        justifyContent: 'center',
-        alignItems: 'center',
-        alignContent: 'center',
-        justifyItems: 'center',
-        alignSelf: 'center',
-        maxWidth: '1300px',
-    }
-
-    return <>
-        <div className="w-full mb-8 border-b text-gray-900">
-            <h2 className="text-2xl font-extrabold pb-2">Bonus</h2>
-            <p className="font-medium mb-2">
-                Des modules complémentaires qu'offre le site pour vous aider à réussir.
-            </p>
+    return <section className="text-gray-600 body-font">
+        <div className="container px-5 mx-auto max-w-7x1">
+            <div className="flex flex-wrap w-full mb-4 p-4">
+                <div className="w-full mb-6 lg:mb-0">
+                    <h1 className="sm:text-4xl text-5xl font-semibold mb-2 text-gray-900">Bonus</h1>
+                    <div className="h-1 w-20 bg-blue-500 rounded"></div>
+                </div>
+            </div>
+            <div className="flex flex-wrap -m-4">
+                <CardBonus link="/bonus/quizz" label="Podcast" />
+                <CardBonus link="/bonus/quizz" label="Quizz" />
+                <CardBonus link="/bonus/quizz" label="Jeux" />
+            </div>
         </div>
-
-        <div style={styleGrid}>
-            <CardBonus link="/bonus/quizz" label="Podcast" />
-            <CardBonus link="/bonus/quizz" label="Quizz" />
-            <CardBonus link="/bonus/quizz" label="Jeux" />
-        </div>
-    </>
+    </section>
 }

@@ -13,7 +13,7 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function CardItemCours({ cour }) {
     let navigate = useNavigate();
     const handleClickCard = () => {
-        navigate(`/cours/${cour.id}`);
+        navigate(`/cours/${cour.id}`, { state: { cour: cour } });
     };
     // sx={{ maxWidth: 345 }}
     return (

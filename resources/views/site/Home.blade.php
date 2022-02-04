@@ -14,11 +14,12 @@
                         adipisicing elit.
                     </p>
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start mt-6">
-                        <a class="btn btn-primary px-4 py-3 font-semibold" href="#">Lire son premier cours</a>
+                        <a class="bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold"
+                            href="#">Lire son premier cours</a>
                         <div class="relative mt-2 sm:mt-0" x-data="{ open: false }" @click.away="open = false"
                             @close.stop="open = false">
                             <a @click="open =! open"
-                                class="btn btn-outline w-full sm:w-max sm:mx-4 px-4 py-3 font-semibold text-black border-0"
+                                class="bg-gray-400 text-gray-700 w-full flex items-center rounded-2xl sm:w-max sm:mx-4 px-4 py-3 font-semibold  border-0"
                                 style="background-color: #ebecf0" href="#">
                                 Explorer
                                 <x-svg-chevron class="ml-1" />
@@ -81,7 +82,7 @@
         </header>
     </x-slot>
 
-    <div class="py-12 headline">
+    <section class="py-12 headline">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white dark:bg-gray-800">
@@ -110,11 +111,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 
-    <div class="py-12 headline">
+    <section class="py-12 headline">
 
         <div class="max-w-7xl flex flex-col mx-auto sm:px-6 lg:px-8 relative">
             <h3 class="text-4xl font-bold dark:text-gray-200 px-4 sm:px-0">Acteurs du site</h3>
@@ -160,7 +161,9 @@
                             s’enregistrer et de profiter des
                             fonctionnalités intéressante pour eux.
                         </p>
-                        <button class="btn btn-primary mt-10">En savoir plus</button>
+                        <button
+                            class="bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 mt-10">En
+                            savoir plus</button>
                     </div>
                 </div>
             </div>
@@ -168,9 +171,41 @@
             {{-- <x-svg-dots class="block h-80 w-80 absolute bottom-0 right-0" /> --}}
         </div>
 
-    </div>
+    </section>
 
-    <div class="py-12 headline">
+    <section class="py-12 headline">
+        <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
+            <div class="p-6 flex items-center flex-col gap-5 md:flex-row relative">
+                <div class="h-auto w-full lg:w-1/3">
+                    <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white">Contenues proposés</h1>
+                    <p class="w-4/5 text-base leading-6 mt-4 text-gray-600 dark:text-gray-100">
+                        Bgrfacile propose divers style de contenue dont les cours, les exercices, les formations,
+                        retrouver un ensemble struturé de cours scolaire alant du primaire collège au cours
+                        donné en
+                        étude supérieur, mais aussi vous retrouver des cours non classé mais tout aussi
+                        indispensable comme l'apprentisage des languages de programmation (Ex: html,css, etc.)</p>
+                </div>
+                <div class="h-auto w-full flex flex-col justify-center items-center">
+                    <div class="w-1/2 h-1/2 bg-red-transparent">
+                        <img src="{{ asset('img/image_donation.jpg') }}" alt="apartment design"
+                            class="w-full sm:block hidden object-cover rounded-md" />
+                        <img src="{{ asset('img/image_donation.jpg') }}" alt="apartment design"
+                            class="sm:hidden block w-full object-cover rounded-md" />
+                    </div>
+                    <div
+                        class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-8 gap-6 lg:mt-8 md:mt-6 mt-4">
+                        <img src="{{ asset('img/image_donation.jpg') }}" class="w-full object-cover rounded-md"
+                            alt="kitchen" />
+                        <img src="{{ asset('img/image_donation.jpg') }}" class="w-full object-cover rounded-md"
+                            alt="sitting room" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-12 headline">
         <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
             <div class="p-6 flex flex-col md:flex-row relative">
                 <div class="h-auto w-full">
@@ -196,7 +231,7 @@
                 </div>
                 <div class="h-96 w-full flex flex-col justify-center items-center">
                     <div class="p-4 mt-3 md:mt-0">
-                        <h4 class="text-2xl font-semibold mt-2 dark:text-gray-200">Le contenue proposé</h4>
+                        <h4 class="text-2xl font-semibold mt-2 dark:text-gray-200">Les Bonus</h4>
                         <p class="mt-2 text-gray-800 dark:text-gray-400">
                             Retrouver un ensemble struturé de cours scolaire alant du primaire collège au cours
                             donné en
@@ -211,23 +246,23 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
-    <div class="pt-12 headline">
+    <section class="pt-12 headline">
         <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
             <div class="p-6 flex flex-col md:flex-row relative">
                 <div class="h-96 w-full flex justify-center items-center">
                     <div>
-                        <h4 class="text-2xl font-semibold mt-2 dark:text-gray-200">Podcast de bgrfacile</h4>
+                        <h4 class="text-2xl font-semibold mt-2 dark:text-gray-200">Extrait de Podcast</h4>
                         <p class="mt-2 text-gray-800 dark:text-gray-400">
                             Ils et elles ont donné leur voix pour la lecture des oeuvres populaires africaines.
-                            Retrouvez ici un ensemble de piste audios entierement gratuit relatant l’ensemble des
-                            livres
-                            de notre collèction.
+                            Retrouvez ici un ensemble de piste audios entierement gratuit de vos oeuvres populaires.
                         </p>
                         <div class="mt-2">
-                            <button class="btn btn-primary font-semibold dark:bg-gray-900">Je veux
+                            <button
+                                class="bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold dark:bg-gray-900">Je
+                                veux
                                 contribuer</button>
                         </div>
                     </div>
@@ -261,9 +296,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="py-12 headline">
+    <section class="py-12 headline">
         <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
             <div class="p-6 flex flex-col md:flex-row">
                 <div class="h-96 w-full flex justify-center items-center">
@@ -300,9 +335,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="py-12 headline">
+    <section class="py-12 headline">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white dark:bg-gray-800 ">
@@ -333,6 +368,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 </x-site-layout>
