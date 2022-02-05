@@ -15,15 +15,16 @@ class CoursResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
-            'title'=>$this->title,
-            'description'=>$this->description,
-            'contents'=>ContentResource::collection($this->contents),
-            'coverImage'=>$this->coverImage == null ? "https://mui.com/static/images/cards/contemplative-reptile.jpg" : url($this->coverImage),
-            'isActif'=>$this->isActif,
-            'created_at'=>$this->created_at,
-            'updated_at'=>$this->updated_at,
-            'users'=>$this->users ? UserResource::collection($this->users) : null,
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'coverImage' => $this->coverImage == null ? "https://mui.com/static/images/cards/contemplative-reptile.jpg" : url($this->coverImage),
+            'isActif' => $this->isActif,
+            'created_at' => formaterDate($this->created_at),
+            'updated_at' => formaterDate($this->updated_at),
+            'contents' => ContentResource::collection($this->contents),
+            'comments' => CommentResource::collection($this->comments->reverse()),
+            'users' => $this->users ? UserResource::collection($this->users) : null,
         ];
     }
 }

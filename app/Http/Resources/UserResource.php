@@ -28,6 +28,7 @@ class UserResource extends JsonResource
             'country' => "",
             'url_image' => $this->url_image == null ? "https://ui-avatars.com/api/?name=$slug&background=0D8ABC&color=fff" : url($this->url_image),
             'birthday' => $this->birthday,
+            'createdAt' => formaterDate($this->created_at),
             'roles' => RoleResource::collection($this->roles),
         ];
     }

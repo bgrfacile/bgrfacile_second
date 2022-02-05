@@ -19,6 +19,10 @@ class Cours extends Model
     {
         return $this->morphMany(Content::class, 'contentable');
     }
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 
     public function cycles()
     {

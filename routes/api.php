@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\APi\AuthController;
+use App\Http\Controllers\Api\CommentsController;
 use App\Http\Controllers\Api\CoursController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -26,6 +27,7 @@ Route::prefix('v1')->group(function () {
         Route::put('/user/update', [UserController::class, 'updateUser']);
         Route::post('/user/image/update', [UserController::class, 'updateImage']);
         Route::apiResource('/cours', CoursController::class)->except(['index']);
+        Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['show']);
     });
 
     Route::group([

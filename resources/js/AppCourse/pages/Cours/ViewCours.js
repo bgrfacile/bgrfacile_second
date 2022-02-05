@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import parse from 'html-react-parser';
+import client from '../../../api/client';
+
+
 
 export default function ViewCours() {
+    useEffect(() => {
+        getAllComments();
+    }, [])
     const navigate = useNavigate();
     const { state } = useLocation();
     const { cour } = state;
@@ -12,6 +18,46 @@ export default function ViewCours() {
     const [adduser, setAdduser] = useState(false);
     const [liked, setLiked] = useState(false);
     const [bookMark, setBookMark] = useState(false);
+    const [addComment, setAddComment] = useState(false);
+    const [comment, setComment] = useState('');
+    const [comments, setComments] = useState(cour.comments);
+    console.log("cour", cour);
+    console.log("comments", comments);
+
+    const deleteComment = async (comment_id) => {
+        if (window.confirm('Are you sure you want to delete this comment?')) {
+            client.delete(`/cours/${id}/comments/${comment_id}`).then(res => {
+                console.log("request delete comment", res.data);
+                setComments(comments.filter(comment => comment.id !== comment_id));
+            }).catch(err => {
+                console.log(err);
+            })
+        }
+    }
+
+    const addCommentToCours = async (e) => {
+        e.preventDefault();
+        client.post(`/cours/${id}/comments`, {
+            content: comment,
+            user_id: user.user_id
+        }).then(res => {
+            console.log("request add comment", res.data);
+            setAddComment(false);
+            setComment('');
+            setComments([res.data.comment, ...comments]);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+    const getAllComments = async () => {
+        client.get(`/cours/${id}/comments`).then(res => {
+            setComments(res.data.comments);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
 
     return (<div className='flex h-screen'>
         <div className="w-1/3 transition duration-300 transform overflow-x-hidden overflow-y-auto">
@@ -72,13 +118,13 @@ export default function ViewCours() {
                 </div>
 
                 <div className="h-16 border-b  flex items-center justify-around">
-                    <button className="flex items-center gap-1 p-2 rounded-md text-slate-800 hover:text-gray-200 hover:bg-gray-600 transition-all ease-in-out">
+                    <div className="flex items-center gap-1 p-2 rounded-md text-slate-800 hover:text-gray-200 hover:bg-gray-600 transition-all ease-in-out">
                         <svg className='h-6 w-6' viewBox="0 0 24 24">
                             <path d="M20 2H4c-1.103 0-2 .897-2 2v18l4-4h14c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2z" fill="currentColor">
                             </path>
                         </svg>
-                        <div className="text-sm	">10 Comments</div>
-                    </button>
+                        <div className="text-sm	">{`${comments.length} Commentaire${comments.length > 1 ? 's' : ''}`}</div>
+                    </div>
                     <button
                         onClick={() => setLiked(!liked)}
                         className="flex items-center gap-1 p-2 rounded-md text-slate-800 hover:text-gray-200 hover:bg-gray-600 transition-all ease-in-out">
@@ -113,17 +159,47 @@ export default function ViewCours() {
                 <div className="flex items-center justify-between mt-4">
                     <img src={user.url_image} alt="avatar"
                         className="bg-yellow-500 rounded-full w-10 h-10 object-cover border" />
-                    <div
+                    <form onSubmit={addCommentToCours}
                         className="flex items-center justify-between selection:bg-gray-50 h-11 w-11/12 border rounded-2xl overflow-hidden px-4">
-                        <input type="text" className="h-full w-full bg-gray-50 outline-none border-none focus:outline-none"
-                            placeholder="Écrivez votre commentaire..." name="comment" />
-                    </div>
+                        <input onChange={(e) => setComment(e.target.value)} type="text" className="h-full w-full bg-gray-50 outline-none border-none focus:outline-none"
+                            placeholder="Écrivez votre commentaire..." name="comment" value={comment} />
+                    </form>
                 </div>
 
-                <div className="flex flex-col mt-4 border rounded-2xl overflow-hidden min-h-min p-1">
-                    <div className="text-center text-gray-600 text-sm">
-                        aucun commentaires ...
-                    </div>
+                <div className="space-y-4 mt-4 border rounded-2xl overflow-hidden min-h-min  p-1">
+                    {comments.length > 0 ? comments.map((comment, index) => (
+                        <div key={index} className="flex">
+                            <div className="flex-shrink-0 mr-3">
+                                <img
+                                    className="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"
+                                    src={comment.comment_user_url_image} alt={`avatar ${comment.comment_user_name}`} />
+                            </div>
+                            <div className="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
+                                <strong>{comment.comment_user_name}</strong> <span className="text-xs text-gray-400">{comment.createdAt}</span>
+                                <p className="text-sm">{comment.content}</p>
+                                {
+                                    comment.comment_user_id === user.user_id ?
+                                        <div className="mt-4 flex items-center space-x-4">
+                                            <button type="button" className="flex items-center px-2 py-1 font-medium text-black capitalize rounded-md  hover:bg-gray-300  focus:outline-none  transition duration-300 transform ease-in-out">
+                                                <svg className='h-4 w-4' viewBox="0 0 24 24">
+                                                    <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8a8 8 0 0 1-8-8a8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21l2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38l-2.5-2.5z" fill="currentColor">
+                                                    </path>
+                                                </svg>
+                                                <span className="pl-2 mx-1 text-black">Edit</span>
+                                            </button>
+                                            <button
+                                                onClick={() => deleteComment(comment.id)}
+                                                type="button"
+                                                className="flex items-center px-2 py-1 font-medium tracking-wide text-black capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600  focus:outline-none  transition duration-300 transform ease-in-out">
+                                                <svg className='h-4 w-4' viewBox="0 0 32 32"><path d="M12 12h2v12h-2z" fill="currentColor"></path><path d="M18 12h2v12h-2z" fill="currentColor"></path><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" fill="currentColor"></path><path d="M12 2h8v2h-8z" fill="currentColor"></path></svg>
+                                                <span className="pl-2 mx-1 text-black">Supprimer</span>
+                                            </button>
+                                        </div> :
+                                        null
+                                }
+                            </div>
+                        </div>
+                    )) : <div className="text-center text-gray-600 text-sm">Aucun commentaire pour le moment</div>}
                 </div>
             </div>
         </div>
