@@ -57,6 +57,18 @@ export default function ViewCours() {
             console.log(err);
         })
     }
+    const updateComment = async (comment_id, content) => {
+        client.put(`/cours/${id}/comments/${comment_id}`, {
+            content: content
+        }).then(res => {
+            console.log("request update comment", res.data);
+            setEditComment(false);
+            setComment('');
+            setComments(comments.map(comment => comment.id === comment_id ? res.data.comment : comment));
+        }).catch(err => {
+            console.log(err);
+        })
+    }
 
 
     return (<div className='flex h-screen'>
@@ -187,6 +199,7 @@ export default function ViewCours() {
                                                 </svg>
                                                 <span className="pl-2 mx-1 text-black">Edit</span>
                                             </button>
+
                                             <button
                                                 onClick={() => deleteComment(comment.id)}
                                                 type="button"
