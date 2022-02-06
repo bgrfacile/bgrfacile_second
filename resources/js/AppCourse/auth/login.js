@@ -5,7 +5,7 @@ import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import client from '../../api/client';
-import { login } from '../../redux/features/user/userSlice';
+import { login } from '../redux/features/user/userSlice';
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -20,7 +20,6 @@ export default function Login() {
     const [successMessage, setSuccessMessage] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
 
-    console.log(rememberMe)
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true)

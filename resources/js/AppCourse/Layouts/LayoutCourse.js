@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Outlet, useLocation } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import client from '../../api/client';
-import { login } from '../../redux/features/user/userSlice';
+import { login } from '../redux/features/user/userSlice';
 import NavBar from '../components/Navbar';
 import "../style.css";
 

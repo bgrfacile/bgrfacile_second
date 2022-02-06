@@ -24,6 +24,10 @@ use Laravel\Socialite\Facades\Socialite;
     App React route
 */
 
+Route::get('/demo', function () {
+    return view('site.demoPageSchool');
+});
+
 Route::get('/', HomeController::class)->name('home.page');
 Route::get('/ecole-en-ligne', [EcoleEnLigneController::class, 'index'])->name('ecoleEnLigne.page');
 Route::get('/ecole-en-ligne/create', [EcoleEnLigneController::class, 'create'])->name('ecoleEnLigne.create');

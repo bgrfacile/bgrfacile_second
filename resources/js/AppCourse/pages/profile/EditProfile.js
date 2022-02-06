@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from 'react-redux';
 import client from '../../../api/client';
 import Spinner from 'react-spinner-material';
-import { updateProfileImage } from '../../../redux/features/user/userSlice';
+import { updateProfileImage } from '../../redux/features/user/userSlice';
 
 
 export default function EditProfile() {
@@ -122,8 +122,8 @@ export default function EditProfile() {
                 </div>
 
                 <form onSubmit={handleSubmitInfo} className='flex flex-col w-full rounded-sm shadow bg-white p-3'>
-                    <div className='flex items-center justify-evenly'>
-                        <div className='w-full px-2'>
+                    <div className='flex flex-wrap items-center'>
+                        <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
                             <label htmlFor="email" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">email</label>
                             <input
                                 onChange={(e) => setEmail(e.target.value)}
@@ -135,7 +135,7 @@ export default function EditProfile() {
                                 required />
                             {/* <span className="text-red-500 text-xs italic">ce champs ne peut pas être modifier</span> */}
                         </div>
-                        <div className='w-full px-2'>
+                        <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
                             <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Nom d'utilisateur</label>
                             <input
                                 name='name'
@@ -144,9 +144,45 @@ export default function EditProfile() {
                                 type="text"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
                         </div>
-                        <div className='w-full px-2'>
+                        <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
                             <label htmlFor="age" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Date de naissance</label>
                             <ReactDatePicker className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white' selected={startDate} onChange={(date) => setStartDate(date)} />
+                        </div>
+                        <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
+                            <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Nationnalité</label>
+                            <input
+                                name='name'
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                                type="text"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                        </div>
+                        <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
+                            <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Age</label>
+                            <input
+                                name='name'
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                                type="text"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                        </div>
+                        <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
+                            <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Genre</label>
+                            <input
+                                name='name'
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                                type="text"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                        </div>
+                        <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
+                            <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Numéro de téléphone</label>
+                            <input
+                                name='name'
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                                type="text"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
                         </div>
                     </div>
                     <div className='w-full mt-3'>

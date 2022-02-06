@@ -12,11 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ mix('/css/appDashboard.css') }}" rel="stylesheet" />
+    <link href="{{ mix('/css/backend/app.css') }}" rel="stylesheet" />
 
     <!-- Scripts -->
     @routes
-    <script src="{{ mix('/js/appDashboard.js') }}" defer></script>
+    <script src="{{ mix('js/backend/app.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased text-gray-800">

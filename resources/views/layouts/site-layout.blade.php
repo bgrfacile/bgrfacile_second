@@ -20,7 +20,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/appSite/app.css') }}">
     <style>
         * {
             font-family: 'Poppins', sans-serif;
@@ -30,7 +30,7 @@
     <link rel="stylesheet"
         href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- script -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/appSite/app.js') }}" defer></script>
 
 </head>
 

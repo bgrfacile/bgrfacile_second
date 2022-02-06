@@ -5,7 +5,7 @@ import Success from '../components/Alert/Success';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import client from '../../api/client';
 import { useDispatch } from 'react-redux';
-import { login } from '../../redux/features/user/userSlice';
+import { login } from '../redux/features/user/userSlice';
 
 export default function Register() {
     const dispatch = useDispatch();

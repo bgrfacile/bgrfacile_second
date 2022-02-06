@@ -1,6 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/js/appCourse.js": "/js/appCourse.js",
-    "/css/appCourse.css": "/css/appCourse.css",
-    "/css/app.css": "/css/app.css"
+    "/js/appSite/app.js": "/js/appSite/app.js",
+    "/js/appCourse/app.js": "/js/appCourse/app.js",
+    "/js/backend/app.js": "/js/backend/app.js",
+    "/css/backend/app.css": "/css/backend/app.css",
+    "/css/appCourse/app.css": "/css/appCourse/app.css",
+    "/css/appSite/app.css": "/css/appSite/app.css"
 }
