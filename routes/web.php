@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CoursController as CoursControllerAdmin;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\MatiereController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\APi\AuthController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\ContactController;
 use App\Http\Controllers\Site\DonationController;
@@ -16,6 +17,7 @@ use App\Models\Level;
 use App\Models\Matiere;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Laravel\Socialite\Facades\Socialite;
 
 
 /*
@@ -30,6 +32,8 @@ Route::get('/qui-sommes-nous', [AboutController::class, 'who'])->name('who.page'
 Route::get('/about', [AboutController::class, 'about'])->name('about.page');
 Route::get('/politique-de-confidentialite', [AboutController::class, 'politiqueDeConfidentialite'])->name('politique.page');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.page');
+Route::get('/auth/google', [AuthController::class, 'oauthGoogle'])->name('auth.google');
+Route::get('/auth/google/callback', [AuthController::class, 'oauthGoogleCallback'])->name('auth.google.callback');
 
 /*
     App React route

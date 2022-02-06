@@ -8,12 +8,14 @@ use App\Http\Requests\Api\RegisterRequest;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
@@ -49,13 +51,11 @@ class AuthController extends Controller
             ], 404);
         } else {
             $user = User::where('email', $request->email)->first();
-            Auth::login($user,$request->rememberMe ? true : false);
+            Auth::login($user, $request->rememberMe ? true : false);
             // $request->session()->regenerate();
-            $token = $user->createToken('myappToken')->plainTextToken;
+            // $token = $user->createToken('myappToken')->plainTextToken;
             return response([
-                'status' => 'success',
                 'message' => 'Authentification réussie',
-                'access_token' => $token,
                 'user' => new UserResource($user),
             ], 200);
         }
@@ -67,12 +67,37 @@ class AuthController extends Controller
         ]);
     }
 
+    public function oauthGoogle()
+    {
+        return Socialite::driver('google')->redirect();
+    }
+    public function oauthGoogleCallback()
+    {
+        $user = Socialite::driver('google')->user();
+        $authUser = User::where('email', $user->email)->first();
+        if ($authUser) {
+            Auth::login($authUser, true);
+            return redirect()->route('cours.page');
+        } else {
+            $newUser = User::create([
+                'name' => $user->name,
+                'email' => $user->email,
+                'url_image' => $user->avatar,
+                'password' => Hash::make($user->email),
+                'email_verified_at' => Carbon::now(),
+            ]);
+            User::count() <= 1 ?
+                $newUser->assignRole('super-admin') :
+                $newUser->assignRole('etudiant');
+            Auth::login($newUser, true);
+            return redirect()->route('cours.page');
+        }
+    }
+
 
     public function logout(Request $request)
     {
-        // $request->user()->token()->revoke();
         Auth::logout();
-        // Session::flush();
         return response([
             'message' => 'Vous êtes déconnecté'
         ], 200);
