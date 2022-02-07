@@ -3,54 +3,49 @@
 
     </x-slot>
     <div class="max-w-7xl py-6 mx-auto px-1 sm:px-6 lg:px-8">
+        <div class="bg-gray-100">
+            <div class="container mx-auto flex flex-col items-center py-12 sm:py-24">
+                <div class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
+                    <h1
+                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
+                        Metter votre école
+                        <span class="text-indigo-700">en ligne </span>
+                        avec bgrfacile
+                    </h1>
+                    <p class="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-center text-sm sm:text-lg">
+                        Les établissements scolaire peuvent s'enregistrer et accéder à un espace dédier.</p>
+                </div>
+                <div class="flex justify-center items-center">
+                    <button
+                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-indigo-700 transition duration-150 ease-in-out hover:bg-indigo-600 lg:text-xl lg:font-bold  rounded text-white px-4 sm:px-10 border border-indigo-700 py-2 sm:py-4 text-sm">
+                        s'enregister</button>
+                    <button
+                        class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-transparent transition duration-150 ease-in-out hover:border-indigo-600 lg:text-xl lg:font-bold  hover:text-indigo-600 rounded border border-indigo-700 text-indigo-700 px-4 sm:px-10 py-2 sm:py-4 text-sm">
+                        Connexion</button>
+                </div>
+            </div>
+        </div>
+
         <section>
-            <div class="container mx-auto px-4">
-                <div class="flex flex-wrap">
-                    <div class="w-full md:w-4/12 px-4 text-center">
-                        <div
-                            class="relative flex flex-col min-w-0 break-words bg-white w-full mb-1 shadow-lg rounded-lg">
-                            <div class="px-4 flex-auto">
-                            </div>
+            <div class=" lg:py-12 lg:flex lg:justify-center">
+                <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+                    <div class="lg:w-1/2">
+                        <div class="h-64 bg-cover lg:rounded-lg lg:h-full"
+                            style="background-image:url('https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80')">
                         </div>
                     </div>
-                </div>
-                <div class="flex flex-wrap items-center mt-16">
-                    <div class="w-full md:w-5/12 px-4 mr-auto ml-auto">
-
-                        <h3 class="text-3xl mb-2 font-semibold leading-normal">
-                            L'école en ligne sur bgrfacile
-                        </h3>
-                        <p class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
-                            Acteurs indispensables pour la communication avec les étudiants,
-                            Les établissements scolaire peuvent s'enregistrer sur le site et accéder à un espace dédier.
+                    <div class="py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
+                        <h2 class="text-3xl text-gray-800 font-bold">
+                            retrouver une <span class="text-indigo-600">école</span>
+                            sur bgrfacile</h2>
+                        <p class="mt-4 text-gray-600">
+                            Il est très simple pour un utilisateur de bgrfacile de retrouver une école dans le
+                            réseau de l'établissement scolaire.<br>
+                            il suffit de saisir le nom de l'école dans le champ de recherche et de cliquer sur
+                            le bouton rechercher. <br>
+                            Vous pouvez aussi rechercher par ville ou par type d'école.
                         </p>
 
-                        <a href="{{ route('ecoleEnLigne.create') }}" class="font-bold text-blueGray-700 mt-8">cree un
-                            école
-                            en ligne</a>
-                    </div>
-                    <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                        <div
-                            class="relative flex flex-col min-w-0 break-words bg-white w-full mb-2 shadow-lg rounded-lg">
-                            <img alt="..."
-                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1051&amp;q=80"
-                                class="w-full align-middle rounded-t-lg">
-                            <blockquote class="relative p-8 mb-4">
-                                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
-                                    class="absolute left-0 w-full block h-95-px -top-94-px">
-                                    <polygon points="-30,95 583,95 583,65" class="text-pink-500 fill-current"></polygon>
-                                </svg>
-
-                                <h4 class="text-xl font-bold text-white">
-                                    Top Notch Services
-                                </h4>
-                                <p class="text-md font-light mt-2 text-white">
-                                    The Arctic Ocean freezes every winter and much of the
-                                    sea-ice then thaws every summer, and that process will
-                                    continue whatever happens.
-                                </p>
-                            </blockquote>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -593,29 +588,24 @@
             </div>
         </section>
 
-        <section>
-            <div class=" lg:py-12 lg:flex lg:justify-center">
-                <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
-                    <div class="lg:w-1/2">
-                        <div class="h-64 bg-cover lg:rounded-lg lg:h-full"
-                            style="background-image:url('https://images.unsplash.com/photo-1497493292307-31c376b6e479?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80')">
-                        </div>
-                    </div>
-                    <div class="py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
-                        <h2 class="text-3xl text-gray-800 font-bold">recherchez une <span
-                                class="text-indigo-600">école en
-                                ligne</span></h2>
-                        <p class="mt-4 text-gray-600">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
-                            modi
-                            reprehenderit vitae exercitationem aliquid dolores ullam temporibus enim expedita aperiam
-                            mollitia iure consectetur dicta tenetur, porro consequuntur saepe accusantium consequatur.
-                        </p>
-                        <div class="mt-8">
-                            <a href="#" class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded">Voir</a>
-                        </div>
+
+
+        <div class="w-full min-h-screen flex items-center justify-center bg-black">
+            <div class="md:w-2/3 w-full px-4 text-white flex flex-col">
+                <div class="w-full text-7xl font-bold">
+                    <h1 class="w-full md:w-2/3">How can we help you. get
+                        in touch</h1>
+                </div>
+                <div class="flex mt-8 flex-col md:flex-row md:justify-between">
+                    <p class="w-full md:w-2/3 text-gray-400">To ensure that all Wikipedia content is verifiable, anyone
+                        may question an uncited claim. If your work has been tagged</p>
+                    <div class="w-44 pt-6 md:pt-0">
+                        <a
+                            class="bg-red-500 justify-center text-center rounded-lg shadow px-10 py-3 flex items-center">Contact
+                            US</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </x-site-layout>

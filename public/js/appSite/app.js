@@ -4040,54 +4040,46 @@ __webpack_require__(/*! ../plugins/player */ "./resources/js/plugins/player.js")
 // }
 
 
-var c = document.querySelector("#c"),
-    d = c.getContext("2d"),
-    M = Math,
-    P = M.PI,
-    T = 2 * P,
-    D = P / 180,
-    Z = M.random,
-    a = w = 640,
-    h = 140,
-    b = "#311",
-    r = 100,
-    v = O = i = j = 0,
-    R = requestAnimationFrame;
+var c = document.querySelector("#c");
 
-for (c.width = w, c.height = 140, B = []; 9 > j++;) {
-  B[j] = {
-    j: 2 * Z(),
-    y: Z() * w / 3
-  };
-}
+if (c) {
+  d = c.getContext("2d"), M = Math, P = M.PI, T = 2 * P, D = P / 180, Z = M.random, a = w = 640, h = 140, b = "#311", r = 100, v = O = i = j = 0, R = requestAnimationFrame;
 
-for (V = []; 25 > v++;) {
-  V[v] = Z() * w;
-}
-
-F = function F(a) {
-  return d.fillStyle = a;
-}, A = function A() {
-  return d.beginPath();
-}, U = function (_U) {
-  function U() {
-    return _U.apply(this, arguments);
+  for (c.width = w, c.height = 140, B = []; 9 > j++;) {
+    B[j] = {
+      j: 2 * Z(),
+      y: Z() * w / 3
+    };
   }
 
-  U.toString = function () {
-    return _U.toString();
-  };
+  for (V = []; 25 > v++;) {
+    V[v] = Z() * w;
+  }
 
-  return U;
-}(function () {
-  c.width = w, O += -.3, v = O * D, v < -P && (O = 0, i++), x = -2 * (r * M.cos(v)), y = r * M.sin(v), s = "".concat(30 + -1.2 * y, "%,").concat(20 + -.3 * y, "%)"), m = "".concat(30 + -.1 * y, "%,").concat(20 + -.1 * y, "%)"), n = "".concat(-.5 * y, "%,").concat(50 + -.5 * y, "%)"), F("hsl(240,".concat(i % 2 ? m : s)), d.fillRect(0, 0, w, h), F("hsl(40,".concat(i % 2 ? n : s)), d.arc(w / 2 + x, h + y, 20, 0, T), d.fill(), A(), B.map(function (a) {
-    e = 9 * M.sin(a.j), a.j += .02, g = a.y, A(), d.arc(g, 50 + e, 20, 280 * D, 310 * D), d.arc(g + 26, 49 + e, 20, 230 * D, 260 * D), d.stroke(), g < w ? a.y += .3 : a.y = 0;
-  }), F("#060"), A(), d.arc(520, 125, 30, 0, T), d.arc(560, 130, 21, 0, T), d.fill(), F("#050"), d.fillRect(0, 130, w, 10), A(), F(b), d.fillRect(128, 47, 10, 85), F("#060"), d.ellipse(133, 30, 30, 25, 0, 0, T), d.fill(), A(), F(b), d.fillRect(a, 128, 10, 3), 0 < a ? a -= i % 2 ? .3 : 0 : a = w, F("#f369"), V.map(function (a) {
-    for (q = 0; 3 > q++;) {
-      A(), d.ellipse(a, 129, 5, 1, q, 0, T), d.fill();
+  F = function F(a) {
+    return d.fillStyle = a;
+  }, A = function A() {
+    return d.beginPath();
+  }, U = function (_U) {
+    function U() {
+      return _U.apply(this, arguments);
     }
-  }), R(U);
-}), U();
+
+    U.toString = function () {
+      return _U.toString();
+    };
+
+    return U;
+  }(function () {
+    c.width = w, O += -.3, v = O * D, v < -P && (O = 0, i++), x = -2 * (r * M.cos(v)), y = r * M.sin(v), s = "".concat(30 + -1.2 * y, "%,").concat(20 + -.3 * y, "%)"), m = "".concat(30 + -.1 * y, "%,").concat(20 + -.1 * y, "%)"), n = "".concat(-.5 * y, "%,").concat(50 + -.5 * y, "%)"), F("hsl(240,".concat(i % 2 ? m : s)), d.fillRect(0, 0, w, h), F("hsl(40,".concat(i % 2 ? n : s)), d.arc(w / 2 + x, h + y, 20, 0, T), d.fill(), A(), B.map(function (a) {
+      e = 9 * M.sin(a.j), a.j += .02, g = a.y, A(), d.arc(g, 50 + e, 20, 280 * D, 310 * D), d.arc(g + 26, 49 + e, 20, 230 * D, 260 * D), d.stroke(), g < w ? a.y += .3 : a.y = 0;
+    }), F("#060"), A(), d.arc(520, 125, 30, 0, T), d.arc(560, 130, 21, 0, T), d.fill(), F("#050"), d.fillRect(0, 130, w, 10), A(), F(b), d.fillRect(128, 47, 10, 85), F("#060"), d.ellipse(133, 30, 30, 25, 0, 0, T), d.fill(), A(), F(b), d.fillRect(a, 128, 10, 3), 0 < a ? a -= i % 2 ? .3 : 0 : a = w, F("#f369"), V.map(function (a) {
+      for (q = 0; 3 > q++;) {
+        A(), d.ellipse(a, 129, 5, 1, q, 0, T), d.fill();
+      }
+    }), R(U);
+  }), U();
+}
 
 /***/ }),
 
@@ -4171,7 +4163,7 @@ var musicPlayer = /*#__PURE__*/function () {
 
     this.play = this.play.bind(this);
     this.playBtn = document.getElementById('play');
-    this.playBtn.addEventListener('click', this.play);
+    this.playBtn && this.playBtn.addEventListener('click', this.play);
     this.controlPanel = document.getElementById('control-panel');
     this.infoBar = document.getElementById('info');
   }
@@ -4209,16 +4201,19 @@ var sound = new Howl({
   src: ['/assets/audios/piste_for_home.mp3']
 });
 var info = document.getElementById('play');
-var classes = info.classList;
-info.addEventListener('click', function () {
-  var result = classes.toggle("active");
 
-  if (result) {
-    sound.play();
-  } else {
-    sound.pause();
-  }
-});
+if (info) {
+  var classes = info.classList;
+  info.addEventListener('click', function () {
+    var result = classes.toggle("active");
+
+    if (result) {
+      sound.play();
+    } else {
+      sound.pause();
+    }
+  });
+}
 
 /***/ }),
 

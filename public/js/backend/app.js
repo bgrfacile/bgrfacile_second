@@ -55575,6 +55575,16 @@ var map = {
 		9,
 		"resources_js_backend_pages_dashboard-sidebar_js"
 	],
+	"./layouts/app": [
+		"./resources/js/backend/pages/layouts/app.js",
+		9,
+		"resources_js_backend_pages_layouts_app_js"
+	],
+	"./layouts/app.js": [
+		"./resources/js/backend/pages/layouts/app.js",
+		9,
+		"resources_js_backend_pages_layouts_app_js"
+	],
 	"./preference/AllParametre": [
 		"./resources/js/backend/pages/preference/AllParametre.js",
 		7,
@@ -55732,7 +55742,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"a4c87415dc1f3992","resources_js_backend_pages_Cours_create_js":"ac038d15fd2fd800","resources_js_backend_pages_Cours_edit_js":"974b0f226e46663e","resources_js_backend_pages_Cours_preference_js":"97c124ef0a4fa6da","resources_js_backend_pages_Cours_show_js":"53ee332cf30b6ec5","resources_js_backend_pages_Cycle_index_js":"5d63d16e242ad4ab","resources_js_backend_pages_Cycle_create_js":"13101150b0b8ce35","resources_js_backend_pages_Cycle_edit_js":"416d9ec92b120e7a","resources_js_backend_pages_Cycle_show_js":"13767032af7e0c91","resources_js_backend_pages_Dashboard_Index_js":"19a73258a36313b1","resources_js_backend_pages_Level_IndexLevel_js":"86b412678a9d54a6","resources_js_backend_pages_Level_create_js":"161d9411d193eb29","resources_js_backend_pages_Level_edit_js":"77eca7e0abdcce93","resources_js_backend_pages_Level_show_js":"f51a6cfad411f2a4","resources_js_backend_pages_Matiere_index_js":"82dbde15a9ca6eb6","resources_js_backend_pages_Matiere_create_js":"b28c1d66fb84e74c","resources_js_backend_pages_Matiere_edit_js":"a9c06a2481bcc56d","resources_js_backend_pages_Matiere_show_js":"66b0327f8e4070c7","resources_js_backend_pages_Users_Index_js":"e6dfddbe69375725","resources_js_backend_pages_Users_Professor_js":"5dd8c6a08b560d50","resources_js_backend_pages_Users_Student_js":"311bfe67412c66af","resources_js_backend_pages_Users_create_js":"f072dc01aac8eaab","resources_js_backend_pages_Users_edit_js":"1cda48db1a913f50","resources_js_backend_pages_Users_show_js":"75db7aec92889a2c","resources_js_backend_pages_Users_userSchool_js":"d00783c98b9c2524","resources_js_backend_pages_dashboard-layout_js":"db744ad93e725e44","resources_js_backend_pages_dashboard-navbar_js":"7f5f758206360b2f","resources_js_backend_pages_dashboard-sidebar_js":"fee98beaee3c98b2","resources_js_backend_pages_preference_AllParametre_js":"97e8e4b526d62678"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"a4c87415dc1f3992","resources_js_backend_pages_Cours_create_js":"ac038d15fd2fd800","resources_js_backend_pages_Cours_edit_js":"974b0f226e46663e","resources_js_backend_pages_Cours_preference_js":"97c124ef0a4fa6da","resources_js_backend_pages_Cours_show_js":"53ee332cf30b6ec5","resources_js_backend_pages_Cycle_index_js":"5d63d16e242ad4ab","resources_js_backend_pages_Cycle_create_js":"13101150b0b8ce35","resources_js_backend_pages_Cycle_edit_js":"416d9ec92b120e7a","resources_js_backend_pages_Cycle_show_js":"13767032af7e0c91","resources_js_backend_pages_Dashboard_Index_js":"c349923d77bdb180","resources_js_backend_pages_Level_IndexLevel_js":"86b412678a9d54a6","resources_js_backend_pages_Level_create_js":"161d9411d193eb29","resources_js_backend_pages_Level_edit_js":"77eca7e0abdcce93","resources_js_backend_pages_Level_show_js":"f51a6cfad411f2a4","resources_js_backend_pages_Matiere_index_js":"82dbde15a9ca6eb6","resources_js_backend_pages_Matiere_create_js":"b28c1d66fb84e74c","resources_js_backend_pages_Matiere_edit_js":"a9c06a2481bcc56d","resources_js_backend_pages_Matiere_show_js":"66b0327f8e4070c7","resources_js_backend_pages_Users_Index_js":"e6dfddbe69375725","resources_js_backend_pages_Users_Professor_js":"5dd8c6a08b560d50","resources_js_backend_pages_Users_Student_js":"311bfe67412c66af","resources_js_backend_pages_Users_create_js":"f072dc01aac8eaab","resources_js_backend_pages_Users_edit_js":"1cda48db1a913f50","resources_js_backend_pages_Users_show_js":"75db7aec92889a2c","resources_js_backend_pages_Users_userSchool_js":"d00783c98b9c2524","resources_js_backend_pages_dashboard-layout_js":"db744ad93e725e44","resources_js_backend_pages_dashboard-navbar_js":"7f5f758206360b2f","resources_js_backend_pages_dashboard-sidebar_js":"fee98beaee3c98b2","resources_js_backend_pages_layouts_app_js":"6e537c7d5189fe0c","resources_js_backend_pages_preference_AllParametre_js":"97e8e4b526d62678"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

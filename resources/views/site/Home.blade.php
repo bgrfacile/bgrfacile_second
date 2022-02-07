@@ -174,96 +174,90 @@
     </section>
 
     <section class="py-12 headline">
-        <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
-            <div class="p-6 flex items-center flex-col gap-5 md:flex-row relative">
-                <div class="h-auto w-full lg:w-1/3">
-                    <h1 class="text-4xl font-semibold leading-9 text-gray-800 dark:text-white">Contenues proposés</h1>
-                    <p class="w-4/5 text-base leading-6 mt-4 text-gray-600 dark:text-gray-100">
-                        Bgrfacile propose divers style de contenue dont les cours, les exercices, les formations,
-                        retrouver un ensemble struturé de cours scolaire alant du primaire collège au cours
-                        donné en
-                        étude supérieur, mais aussi vous retrouver des cours non classé mais tout aussi
-                        indispensable comme l'apprentisage des languages de programmation (Ex: html,css, etc.)</p>
-                </div>
-                <div class="h-auto w-full flex flex-col justify-center items-center">
-                    <div class="w-1/2 h-1/2 bg-red-transparent">
-                        <img src="{{ asset('img/image_donation.jpg') }}" alt="apartment design"
-                            class="w-full sm:block hidden object-cover rounded-md" />
-                        <img src="{{ asset('img/image_donation.jpg') }}" alt="apartment design"
-                            class="sm:hidden block w-full object-cover rounded-md" />
-                    </div>
-                    <div
-                        class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 lg:gap-8 gap-6 lg:mt-8 md:mt-6 mt-4">
-                        <img src="{{ asset('img/image_donation.jpg') }}" class="w-full object-cover rounded-md"
-                            alt="kitchen" />
-                        <img src="{{ asset('img/image_donation.jpg') }}" class="w-full object-cover rounded-md"
-                            alt="sitting room" />
+        <div class="container max-w-7xl px-6 py-10 mx-auto md:py-16">
+            <div class="flex flex-col space-y-6 md:flex-row md:items-center md:space-x-6">
+                <div class="swiper flex items-center justify-center w-full md:w-1/2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class="w-full h-full max-w-2xl rounded object-cover"
+                                src="{{ asset('img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
+                        </div>
+                        <div class="swiper-slide">
+                            <x-svg-school class="w-full h-full max-w-2xl rounded object-cover" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="w-full max-h-full max-w-2xl rounded object-cover"
+                                src="{{ asset('img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="py-12 headline">
-        <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
-            <div class="p-6 flex flex-col md:flex-row relative">
-                <div class="h-auto w-full">
-                    <div class="swiper w-full h-80 md:max-w-lg overflow-hidden rounded-lg bg-transparent">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img class="w-full h-full object-cover" src="{{ asset('img/étudiant_revise.webp') }}"
-                                    alt="étudiant entrain lire">
+                <div class="w-full md:w-1/2">
+                    <div class="max-w-md mx-auto">
+                        <h2 class="text-2xl font-medium tracking-wide text-gray-800 md:text-4xl">
+                            Contenues proposés
+                        </h2>
+                        <p class="mt-5 leading-7 text-gray-600">
+                            Retrouver un ensemble struturé de cours scolaire alant du primaire collège au cours
+                            donné en étude supérieur. <br />
+                            Mais aussi vous retrouver des cours non classé mais tout aussi
+                            indispensable comme l'apprentisage des languages de programmation (Ex: html,css, etc.)
+                        </p>
+                        <div class="grid gap-6 mt-8 sm:grid-cols-2">
+                            <div class="flex items-center space-x-6 text-gray-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Cours</span>
                             </div>
-                            <div class="swiper-slide">
-                                <x-svg-school class="w-full h-full object-cover" />
+                            <div class="flex items-center space-x-6 text-gray-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Exercices</span>
                             </div>
-                            <div class="swiper-slide">
-                                <img class="w-full max-h-full object-cover"
-                                    src="{{ asset('img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
+                            <div class="flex items-center space-x-6 text-gray-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Solution</span>
+                            </div>
+                            <div class="flex items-center space-x-6 text-gray-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Formations</span>
                             </div>
                         </div>
-                        {{-- <div class="swiper-pagination"></div> --}}
-                        {{-- <div id="button-prev" class="swiper-button-prev"></div> --}}
-                        {{-- <div id="button-next" class="swiper-button-next"></div> --}}
-                        {{-- <div class="swiper-scrollbar"></div> --}}
                     </div>
-                </div>
-                <div class="h-96 w-full flex flex-col justify-center items-center">
-                    <div class="p-4 mt-3 md:mt-0">
-                        <h4 class="text-2xl font-semibold mt-2 dark:text-gray-200">Les Bonus</h4>
-                        <p class="mt-2 text-gray-800 dark:text-gray-400">
-                            Retrouver un ensemble struturé de cours scolaire alant du primaire collège au cours
-                            donné en
-                            étude supérieur, mais pas que vous retrouver aussi des cours non classé mais tout aussi
-                            utile comme les languages de programmation (Ex: html,css, etc.)
-                            Des formations aussi sont proposé
-                        </p>
-                    </div>
-                </div>
-                <div class="h-80 w-80 absolute" style="top: -91px;left: -88px;">
-                    <x-svg-dots class="h-full w-full" />
                 </div>
             </div>
         </div>
     </section>
-
 
     <section class="pt-12 headline">
         <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
             <div class="p-6 flex flex-col md:flex-row relative">
                 <div class="h-96 w-full flex justify-center items-center">
                     <div>
-                        <h4 class="text-2xl font-semibold mt-2 dark:text-gray-200">Extrait de Podcast</h4>
+                        <h4 class="text-2xl font-semibold mt-2 dark:text-gray-200">Bonus bgrfacile</h4>
                         <p class="mt-2 text-gray-800 dark:text-gray-400">
-                            Ils et elles ont donné leur voix pour la lecture des oeuvres populaires africaines.
-                            Retrouvez ici un ensemble de piste audios entierement gratuit de vos oeuvres populaires.
+                            Des Quizzs, des podcasts et plein d'autres choses pour vous aider à mieux comprendre les
+                            cours et vous divertire,
+                            les bonus sont disponible sur le site bgrfacile.com
+
                         </p>
                         <div class="mt-2">
                             <button
                                 class="bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold dark:bg-gray-900">Je
-                                veux
-                                contribuer</button>
+                                Voir tous les bonus</button>
                         </div>
                     </div>
                 </div>
