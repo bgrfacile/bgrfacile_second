@@ -135,9 +135,9 @@ background-size: 10px 10px;">
             <div class="flex flex-wrap items-center md:justify-between justify-center">
                 <div class="w-full md:w-4/12 px-4 mx-auto text-center">
                     <div class="text-sm text-blueGray-500 dark:text-gray-200 font-semibold py-1">
-                        Copyright © <span id="get-current-year">2021</span><a href="https://bgrfacile.com/"
-                            class="text-blueGray-500 hover:text-gray-800" target="_blank"> Bgrfacile by
-                            <a href="#" class="text-blueGray-500 hover:text-blueGray-800">Bénaja Bendo M.</a>
+                        Copyright © <span id="get-current-year">2022</span><a href="https://bgrfacile.com/"
+                            class="text-blueGray-500 hover:text-gray-800" target="_blank"> Bgrfacile
+                            {{-- <a href="#" class="text-blueGray-500 hover:text-blueGray-800">Bénaja Bendo M.</a> --}}
                     </div>
                 </div>
             </div>

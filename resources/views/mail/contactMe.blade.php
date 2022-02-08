@@ -17,18 +17,10 @@
 
 <body>
     <div class="w-6/12 mx-auto p-4 flex flex-col bg-white rounded-r-3xl">
-        <h1 class="font-bold text-2xl">Ce mail vient de bgrfacile</h1>
+        <h1 class="font-bold text-2xl">Ce mail vient d'un donateur de l'application bgrfacile</h1>
         <ul class="flex flex-col mt-8 text-gray-500 leading-7 tracking-wider">
             <li class="mb-2 border-b-2">
-                <span class="font-bold">Pseudo : </span>
-                <span class="ml-2 italic">{{ $data['pseudo'] }}</span>
-            </li>
-            <li class="mb-2 border-b-2">
-                <span class="font-bold">Email : </span>
-                <span class="ml-2 italic">{{ $data['email'] }}</span>
-            </li>
-            <li class="mb-2 border-b-2">
-                <span class="font-bold">Télephone : </span>
+                <span class="font-bold">Numero de téléphone : </span>
                 <span class="ml-2 italic">{{ $data['telephone'] }}</span>
             </li>
             <li class="mb-2 border-b-2">

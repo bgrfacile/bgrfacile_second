@@ -37,6 +37,7 @@ Route::get('/qui-sommes-nous', [AboutController::class, 'who'])->name('who.page'
 Route::get('/about', [AboutController::class, 'about'])->name('about.page');
 Route::get('/politique-de-confidentialite', [AboutController::class, 'politiqueDeConfidentialite'])->name('politique.page');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.page');
+Route::post('/contact', [ContactController::class, 'postMail'])->name('contact.page.post');
 Route::get('/auth/google', [AuthController::class, 'oauthGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [AuthController::class, 'oauthGoogleCallback'])->name('auth.google.callback');
 
