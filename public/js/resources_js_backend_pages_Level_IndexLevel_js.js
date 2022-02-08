@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_backend_pages_Level_IndexLevel_js"],{
+(globalThis["webpackChunk"] = globalThis["webpackChunk"] || []).push([["resources_js_backend_pages_Level_IndexLevel_js"],{
 
 /***/ "./node_modules/@emotion/cache/dist/emotion-cache.browser.esm.js":
 /*!***********************************************************************!*\

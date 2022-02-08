@@ -2090,6 +2090,50 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/backend/app.js":
+/*!*************************************!*\
+  !*** ./resources/js/backend/app.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+__webpack_require__(/*! ../bootstrap */ "./resources/js/bootstrap.js");
+
+
+
+
+
+
+_inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__.InertiaProgress.init({
+  color: '#ED8936',
+  showSpinner: true
+});
+(0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.createInertiaApp)({
+  resolve: function resolve(name) {
+    return __webpack_require__("./resources/js/backend/pages lazy recursive ^\\.\\/.*$")("./".concat(name));
+  },
+  setup: function setup(_ref) {
+    var el = _ref.el,
+        App = _ref.App,
+        props = _ref.props;
+    (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(App, _objectSpread({}, props)), el);
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -21929,6 +21973,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
   // Check for `exports` after `define` in case a build optimizer adds it.
   else {}
 }.call(this));
+
+
+/***/ }),
+
+/***/ "./resources/js/backend/app.css":
+/*!**************************************!*\
+  !*** ./resources/js/backend/app.css ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
 
 
 /***/ }),
@@ -55670,6 +55727,38 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -55742,7 +55831,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"a4c87415dc1f3992","resources_js_backend_pages_Cours_create_js":"ac038d15fd2fd800","resources_js_backend_pages_Cours_edit_js":"974b0f226e46663e","resources_js_backend_pages_Cours_preference_js":"97c124ef0a4fa6da","resources_js_backend_pages_Cours_show_js":"53ee332cf30b6ec5","resources_js_backend_pages_Cycle_index_js":"5d63d16e242ad4ab","resources_js_backend_pages_Cycle_create_js":"13101150b0b8ce35","resources_js_backend_pages_Cycle_edit_js":"416d9ec92b120e7a","resources_js_backend_pages_Cycle_show_js":"13767032af7e0c91","resources_js_backend_pages_Dashboard_Index_js":"c349923d77bdb180","resources_js_backend_pages_Level_IndexLevel_js":"86b412678a9d54a6","resources_js_backend_pages_Level_create_js":"161d9411d193eb29","resources_js_backend_pages_Level_edit_js":"77eca7e0abdcce93","resources_js_backend_pages_Level_show_js":"f51a6cfad411f2a4","resources_js_backend_pages_Matiere_index_js":"82dbde15a9ca6eb6","resources_js_backend_pages_Matiere_create_js":"b28c1d66fb84e74c","resources_js_backend_pages_Matiere_edit_js":"a9c06a2481bcc56d","resources_js_backend_pages_Matiere_show_js":"66b0327f8e4070c7","resources_js_backend_pages_Users_Index_js":"e6dfddbe69375725","resources_js_backend_pages_Users_Professor_js":"5dd8c6a08b560d50","resources_js_backend_pages_Users_Student_js":"311bfe67412c66af","resources_js_backend_pages_Users_create_js":"f072dc01aac8eaab","resources_js_backend_pages_Users_edit_js":"1cda48db1a913f50","resources_js_backend_pages_Users_show_js":"75db7aec92889a2c","resources_js_backend_pages_Users_userSchool_js":"d00783c98b9c2524","resources_js_backend_pages_dashboard-layout_js":"db744ad93e725e44","resources_js_backend_pages_dashboard-navbar_js":"7f5f758206360b2f","resources_js_backend_pages_dashboard-sidebar_js":"fee98beaee3c98b2","resources_js_backend_pages_layouts_app_js":"6e537c7d5189fe0c","resources_js_backend_pages_preference_AllParametre_js":"97e8e4b526d62678"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"ac665f760a586ff8","resources_js_backend_pages_Cours_create_js":"147760f6dcc9d051","resources_js_backend_pages_Cours_edit_js":"46fddd39f19cdb9a","resources_js_backend_pages_Cours_preference_js":"49e9081db2b69753","resources_js_backend_pages_Cours_show_js":"a19bbb1487f53191","resources_js_backend_pages_Cycle_index_js":"5cd9669c89cd3ed0","resources_js_backend_pages_Cycle_create_js":"f5af3bca156b6383","resources_js_backend_pages_Cycle_edit_js":"5e84c37d99d804d7","resources_js_backend_pages_Cycle_show_js":"fe45cbdd6a42466d","resources_js_backend_pages_Dashboard_Index_js":"b7acc1007deda31c","resources_js_backend_pages_Level_IndexLevel_js":"4368db6771827c0c","resources_js_backend_pages_Level_create_js":"9721260ab350c999","resources_js_backend_pages_Level_edit_js":"addbd3189c772f67","resources_js_backend_pages_Level_show_js":"4d329e6808f8b6dd","resources_js_backend_pages_Matiere_index_js":"774cb74f60ce52f2","resources_js_backend_pages_Matiere_create_js":"e5c0c2e1327ed9f9","resources_js_backend_pages_Matiere_edit_js":"157630bcba47ded5","resources_js_backend_pages_Matiere_show_js":"a926fe7b7bf0d0db","resources_js_backend_pages_Users_Index_js":"70a23c5ef3cc64b4","resources_js_backend_pages_Users_Professor_js":"61c26d17f53ccdf7","resources_js_backend_pages_Users_Student_js":"93e8ea7098cdbd08","resources_js_backend_pages_Users_create_js":"8afefdee1322bad5","resources_js_backend_pages_Users_edit_js":"2f8eaf2a0ecff4a7","resources_js_backend_pages_Users_show_js":"7c16fa0f39f64645","resources_js_backend_pages_Users_userSchool_js":"a6c8a62ff8766e06","resources_js_backend_pages_dashboard-layout_js":"3dd08f79e7b5bd50","resources_js_backend_pages_dashboard-navbar_js":"2fc3a410bd54d77c","resources_js_backend_pages_dashboard-sidebar_js":"b9310b85d89d2433","resources_js_backend_pages_layouts_app_js":"8e5c6772203ab22c","resources_js_backend_pages_preference_AllParametre_js":"ae46a9c0eb5478b8"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -55751,7 +55840,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.miniCssF = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return undefined;
+/******/ 			return "" + chunkId + ".css";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -55851,7 +55940,8 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/backend/app": 0
+/******/ 			"/js/backend/app": 0,
+/******/ 			"css/backend/app": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -55863,7 +55953,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(true) { // all chunks have JS
+/******/ 						if("css/backend/app" != chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -55901,7 +55991,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		// no on chunks loaded
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
@@ -55925,57 +56015,22 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 				}
 /******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 		
+/******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		var chunkLoadingGlobal = globalThis["webpackChunk"] = globalThis["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-/*!*************************************!*\
-  !*** ./resources/js/backend/app.js ***!
-  \*************************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-__webpack_require__(/*! ../bootstrap */ "./resources/js/bootstrap.js");
-
-
-
-
-
-
-_inertiajs_progress__WEBPACK_IMPORTED_MODULE_3__.InertiaProgress.init({
-  color: '#ED8936',
-  showSpinner: true
-});
-(0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_2__.createInertiaApp)({
-  resolve: function resolve(name) {
-    return __webpack_require__("./resources/js/backend/pages lazy recursive ^\\.\\/.*$")("./".concat(name));
-  },
-  setup: function setup(_ref) {
-    var el = _ref.el,
-        App = _ref.App,
-        props = _ref.props;
-    (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(App, _objectSpread({}, props)), el);
-  }
-});
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/backend/app"], () => (__webpack_require__("./resources/js/backend/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/backend/app"], () => (__webpack_require__("./resources/js/backend/app.css")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
 /******/ })()
 ;

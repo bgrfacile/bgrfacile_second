@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_backend_pages_preference_AllParametre_js"],{
+(globalThis["webpackChunk"] = globalThis["webpackChunk"] || []).push([["resources_js_backend_pages_preference_AllParametre_js"],{
 
 /***/ "./resources/js/backend/pages/preference/AllParametre.js":
 /*!***************************************************************!*\

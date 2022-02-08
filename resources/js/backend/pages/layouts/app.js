@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from '@inertiajs/inertia-react'
 
 export default function App({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -18,10 +19,14 @@ export default function App({ children }) {
                 </div>
 
                 <nav className="flex flex-col mt-10 px-4 text-center">
-                    <a href="#"
-                        className="py-2 text-sm text-gray-700 dark:text-gray-100 bg-gray-200 dark:bg-gray-800 rounded">Overview</a>
-                    <a href="#"
-                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Tickets</a>
+                    <Link href={route('dashboard')}
+                        className="py-2 text-sm text-gray-700 dark:text-gray-100 bg-gray-200 dark:bg-gray-800 rounded">
+                        Dashboard
+                    </Link>
+                    <Link href={route('users.index')}
+                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
+                        users
+                    </Link>
                     <a href="#"
                         className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Ideas</a>
                     <a href="#"
@@ -97,13 +102,9 @@ export default function App({ children }) {
                 </header>
 
                 <main className="flex-1 overflow-x-hidden overflow-y-auto">
-                    {/* <div className="container mx-auto px-6 py-8">
-                        <div
-                            className="grid place-items-center h-96 text-gray-500 dark:text-gray-300 text-xl border-4 border-gray-300 border-dashed">
-                            Content
-                        </div>
-                    </div> */}
-                    {children}
+                    <div className="container mx-auto px-6 py-8">
+                        {children}
+                    </div>
                 </main>
             </div>
         </div>
