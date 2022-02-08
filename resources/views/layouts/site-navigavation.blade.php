@@ -94,7 +94,7 @@
                     <x-nav-link :href="route('ecoleEnLigne.page')" :active="request()->routeIs('dashboard')">
                         {{ __('écoles en ligne') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('who.page')" :active="request()->routeIs('about.page')">
+                    <x-nav-link :href="route('who.page')" :active="request()->routeIs('who.page')">
                         {{ __('Qui sommes nous?') }}
                     </x-nav-link>
                     <x-nav-link :href="route('donation.page')" :active="request()->routeIs('donation.page')">

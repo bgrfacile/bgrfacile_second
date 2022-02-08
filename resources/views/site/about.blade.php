@@ -6,16 +6,15 @@
         <div class="text-gray-700 py-8">
             <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
                 <div class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8">
-                    <p class="ml-2 text-blue-700 uppercase tracking-loose">Working Process</p>
-                    <p class="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">Working Process of Fest</p>
+                    {{-- <p class="ml-2 text-blue-700 uppercase tracking-loose">Working Process</p> --}}
+                    <p class="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">Pourquoi bgrfacile?</p>
                     <p class="text-sm md:text-base text-gray-700 mb-4">
-                        Here’s your guide to the tech fest 2021 process. Go through all the steps to know the exact
-                        process of the
-                        fest.
+                        Nous avons décidé de créer ce site web pour vous permettre de trouver facilement du contenue
+                        scolaire et éducatif propre aux contextes africain.
                     </p>
-                    <a href="#"
+                    {{-- <a href="#"
                         class="bg-transparent mr-auto hover:bg-blue-300 text-blue-700 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent">
-                        Explore Now</a>
+                        Explore Now</a> --}}
                 </div>
                 <div class="ml-0 md:ml-12 lg:w-2/3 sticky">
                     <div class="container mx-auto w-full h-full">

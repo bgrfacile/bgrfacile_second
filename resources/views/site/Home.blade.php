@@ -19,7 +19,7 @@
                         <div class="relative mt-2 sm:mt-0" x-data="{ open: false }" @click.away="open = false"
                             @close.stop="open = false">
                             <a @click="open =! open"
-                                class="bg-gray-400 text-gray-700 w-full flex items-center rounded-2xl sm:w-max sm:mx-4 px-4 py-3 font-semibold  border-0"
+                                class="bg-gray-400 text-gray-700 w-full flex justify-between items-center rounded-2xl sm:w-max sm:mx-4 px-4 py-3 font-semibold  border-0"
                                 style="background-color: #ebecf0" href="#">
                                 Explorer
                                 <x-svg-chevron class="ml-1" />
@@ -62,15 +62,15 @@
                     <div class="swiper w-full h-80 md:max-w-lg overflow-hidden rounded-lg bg-transparent">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img class="w-full h-full object-cover" src="{{ asset('img/étudiant_revise.webp') }}"
-                                    alt="étudiant entrain lire">
+                                <img class="w-full h-full object-cover"
+                                    src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
 
                             </div>
                             <div class="swiper-slide">
                                 <x-svg-school class="w-full h-full object-cover" />
                             </div>
                             <div class="swiper-slide"> <img class="w-full max-h-full object-cover"
-                                    src="{{ asset('img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
+                                    src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
                             </div>
                         </div>
                         {{-- <div class="swiper-pagination"></div> --}}
@@ -124,8 +124,8 @@
                     <div
                         class="flex flex-col justify-center items-center w-full h-full bg-white dark:bg-gray-900 dark:text-gray-400 p-9 overflow-hidden shadow-sm sm:rounded-lg text-center">
                         <div class="h-28 w-28 rounded-full bg-transparent">
-                            <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/student.webp') }}"
-                                alt="">
+                            <img class="w-full h-full object-cover rounded-full"
+                                src="{{ asset('assets/img/student.webp') }}" alt="">
                         </div>
                         <h4 class="text-2xl font-semibold mt-2">Apprenants</h4>
                         <p class="flex-1 mt-2">
@@ -139,7 +139,7 @@
                         class="flex flex-col justify-center items-center w-full h-full bg-white dark:bg-gray-900 dark:text-gray-400 p-9 overflow-hidden shadow-sm sm:rounded-lg text-center">
                         <div class="h-28 w-28 rounded-full bg-transparent">
                             <img class="w-full h-full object-cover rounded-full"
-                                src="{{ asset('img/professor.webp') }}" alt="">
+                                src="{{ asset('assets/img/professor.webp') }}" alt="">
                         </div>
                         <h4 class="text-2xl font-semibold mt-2">Formateurs</h4>
                         <p class="flex-1 mt-2">
@@ -152,8 +152,8 @@
                     <div
                         class="flex flex-col justify-center items-center w-full h-full bg-white dark:bg-gray-900 dark:text-gray-400 p-9 overflow-hidden shadow-sm sm:rounded-lg text-center">
                         <div class="h-28 w-28 rounded-full bg-transparent">
-                            <img class="w-full h-full object-cover rounded-full" src="{{ asset('img/school.webp') }}"
-                                alt="">
+                            <img class="w-full h-full object-cover rounded-full"
+                                src="{{ asset('assets/img/school.webp') }}" alt="">
                         </div>
                         <h4 class="text-2xl font-semibold mt-2">écoles en ligne</h4>
                         <p class="flex-1 mt-2">
@@ -161,9 +161,6 @@
                             s’enregistrer et de profiter des
                             fonctionnalités intéressante pour eux.
                         </p>
-                        <button
-                            class="bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 mt-10">En
-                            savoir plus</button>
                     </div>
                 </div>
             </div>
@@ -180,14 +177,14 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img class="w-full h-full max-w-2xl rounded object-cover"
-                                src="{{ asset('img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
+                                src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
                         </div>
                         <div class="swiper-slide">
                             <x-svg-school class="w-full h-full max-w-2xl rounded object-cover" />
                         </div>
                         <div class="swiper-slide">
                             <img class="w-full max-h-full max-w-2xl rounded object-cover"
-                                src="{{ asset('img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
+                                src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
                         </div>
                     </div>
                 </div>
@@ -256,7 +253,7 @@
                         </p>
                         <div class="mt-2">
                             <button
-                                class="bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold dark:bg-gray-900">Je
+                                class="uppercase bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold dark:bg-gray-900">
                                 Voir tous les bonus</button>
                         </div>
                     </div>
@@ -307,7 +304,7 @@
                             <strong class="text-6xl text-blue-600">Apprenants</strong>
                         </h4>
                         <p class="mt-2 text-gray-800 dark:text-gray-400">
-                            Bgfacile met à disposition des apprenants une application mobile idéal pour visiter
+                            Bgfacile met à disposition des apprenants une application mobile android idéal pour visiter
                             l'ensemble des contenus du site avec des interfaces simples et intuitives. <br>
                             L'application est disponible sur le PlayStore.
                         <div class="mt-2 flex">

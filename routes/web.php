@@ -31,7 +31,8 @@ Route::get('/demo', function () {
 Route::get('/', HomeController::class)->name('home.page');
 Route::get('/ecole-en-ligne', [EcoleEnLigneController::class, 'index'])->name('ecoleEnLigne.page');
 Route::get('/ecole-en-ligne/create', [EcoleEnLigneController::class, 'create'])->name('ecoleEnLigne.create');
-Route::get('/donation', DonationController::class)->name('donation.page');
+Route::get('/donation', [DonationController::class,'index'])->name('donation.page');
+Route::post('/donation', [DonationController::class,'postDonation'])->name('donation.page.post');
 Route::get('/qui-sommes-nous', [AboutController::class, 'who'])->name('who.page');
 Route::get('/about', [AboutController::class, 'about'])->name('about.page');
 Route::get('/politique-de-confidentialite', [AboutController::class, 'politiqueDeConfidentialite'])->name('politique.page');

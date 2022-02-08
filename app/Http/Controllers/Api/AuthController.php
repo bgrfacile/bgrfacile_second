@@ -9,6 +9,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -28,7 +29,7 @@ class AuthController extends Controller
             'password' => Hash::make($fields['password']),
         ]);
         $token = $user->createToken("myappToken")->plainTextToken;
-        // event(new Registered($user));
+        event(new Registered($user));
         User::count() <= 1 ?
             $user->assignRole('super-admin') :
             $user->assignRole('etudiant');
