@@ -1,13 +1,14 @@
 import { Button, TextField, Typography } from "@mui/material";
 import React from "react";
 import { Link } from '@inertiajs/inertia-react'
+import App from "../layouts/app";
 
 const IndexMatiere = ({ matieres }) => {
 
     const ondelete = () => {
         return confirm("cet element sera supprimer!")
     }
-    return <div>
+    return <>
         <div className="bg-gray-200 p-4 mb-4 flex justify-between">
             <h3 className="text-2xl">Liste des matieres</h3>
             <Link href={route('matiere.create')}>
@@ -30,13 +31,13 @@ const IndexMatiere = ({ matieres }) => {
                 </Link>
             </div>
         </div>)}
-    </div>
+    </>
 }
 
-// Index.layout = (page) => (
-//     <DashboardLayout>
-//         {page}
-//     </DashboardLayout>
-// );
+IndexMatiere.layout = (page) => (
+    <App>
+        {page}
+    </App>
+);
 
 export default IndexMatiere;

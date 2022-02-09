@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router';
 import {
@@ -7,7 +6,6 @@ import {
 } from 'react-router-dom';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
-import 'react-tabs/style/react-tabs.css';
 import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 import client from '../../../api/client';
 import { toggle } from '../../redux/features/toggleAside/toggleAsideSlice';

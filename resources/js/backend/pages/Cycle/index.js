@@ -1,15 +1,11 @@
-import { Button, TextField, Typography } from "@mui/material";
-import react from "react";
+import { Button } from "@mui/material";
 import { Link } from '@inertiajs/inertia-react'
-import BasicModal from "../../components/Modal";
-import { DashboardLayout } from "../dashboard-layout";
-import { useForm } from '@inertiajs/inertia-react'
+import App from "../layouts/app";
 
 const IndexCycle = ({ cycles }) => {
 
-
     const ondelete = () => {
-       return confirm("cet element sera supprimer!")
+        return confirm("cet element sera supprimer!")
     }
     return (<>
         <div className="bg-gray-200 p-4 mb-4 flex justify-between">
@@ -36,10 +32,10 @@ const IndexCycle = ({ cycles }) => {
     </>);
 }
 
-// Index.layout = (page) => (
-//     <DashboardLayout>
-//         {page}
-//     </DashboardLayout>
-// );
+IndexCycle.layout = (page) => (
+    <App>
+        {page}
+    </App>
+);
 
 export default IndexCycle;

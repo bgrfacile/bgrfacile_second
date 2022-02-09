@@ -1,7 +1,6 @@
 import { useForm } from "@inertiajs/inertia-react";
 import { Button } from "@mui/material";
-import React from "react";
-import { DashboardLayout } from "../dashboard-layout";
+import App from "../layouts/app";
 
 const create = () => {
     const { data, setData, post, processing, errors } = useForm({
@@ -12,7 +11,7 @@ const create = () => {
         post(route('level.store'))
     }
 
-    return <div className="min-h-screen w-full flex justify-center items-center">
+    return <div className=" w-full flex justify-center items-center">
         <form onSubmit={submit}>
             <div className="mb-2">
                 <input type="text" onChange={e => setData('name', e.target.value)} placeholder="nom du nivieau" />
@@ -23,9 +22,9 @@ const create = () => {
 }
 
 create.layout = (page) => (
-    <DashboardLayout>
+    <App>
         {page}
-    </DashboardLayout>
+    </App>
 );
 
 export default create;

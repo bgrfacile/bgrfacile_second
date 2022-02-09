@@ -17,7 +17,7 @@ class CycleController extends Controller
      */
     public function index()
     {
-        $cycles = Cycle::all();
+        $cycles = Cycle::all()->reverse();
         return Inertia::render('Cycle/index', [
             'cycles' => $cycles
         ]);

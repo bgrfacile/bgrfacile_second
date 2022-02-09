@@ -1,6 +1,7 @@
 import { Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from '@inertiajs/inertia-react'
+import App from "../layouts/app";
 
 const IndexLevel = ({ levels }) => {
 
@@ -31,4 +32,10 @@ const IndexLevel = ({ levels }) => {
         </div>)}
     </div>
 }
+IndexLevel.layout = (page) => (
+    <App>
+        {page}
+    </App>
+);
+
 export default IndexLevel;

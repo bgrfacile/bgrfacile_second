@@ -25,14 +25,20 @@ export default function App({ children }) {
                     </Link>
                     <Link href={route('users.index')}
                         className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
-                        users
+                        utilisateurs
                     </Link>
-                    <a href="#"
-                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Ideas</a>
-                    <a href="#"
-                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Contacts</a>
-                    <a href="#"
-                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Settings</a>
+                    <Link href={route('cycle.index')}
+                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
+                        Cycle
+                    </Link>
+                    <Link href={route('level.index')}
+                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
+                        level
+                    </Link>
+                    <Link href={route('matiere.index')}
+                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
+                        Matiere
+                    </Link>
                 </nav>
             </div>
 
@@ -89,20 +95,20 @@ export default function App({ children }) {
                                     alt="Your avatar" />
                             </button>
 
-                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10">
+                            {/* <div className="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10">
                                 <a href="#"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white">Profile</a>
                                 <a href="#"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white">Tickets</a>
                                 <a href="/login"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white">Logout</a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </header>
 
                 <main className="flex-1 overflow-x-hidden overflow-y-auto">
-                    <div className="container mx-auto px-6 py-8">
+                    <div className="mx-auto px-6 py-8">
                         {children}
                     </div>
                 </main>

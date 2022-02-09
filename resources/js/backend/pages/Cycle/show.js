@@ -1,12 +1,11 @@
 import { Link, useForm } from "@inertiajs/inertia-react";
 import { Button } from "@mui/material";
-import React from "react";
-import { DashboardLayout } from "../dashboard-layout";
+import App from "../layouts/app";
 
 const show = ({ cycle }) => {
 
 
-    return <div className="">
+    return <>
         <div className="flex justify-between px-3 pt-3  text-2xl font-semibold mb-4">
             <h2 className="text-blue-500">{cycle.name}</h2>
             <div>
@@ -37,13 +36,13 @@ const show = ({ cycle }) => {
                 La liste ici
             </div>
         </div>
-    </div>
+    </>
 }
 
 show.layout = (page) => (
-    <DashboardLayout>
+    <App>
         {page}
-    </DashboardLayout>
+    </App>
 );
 
 export default show;

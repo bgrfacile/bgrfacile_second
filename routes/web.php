@@ -31,8 +31,8 @@ Route::get('/demo', function () {
 Route::get('/', HomeController::class)->name('home.page');
 Route::get('/ecole-en-ligne', [EcoleEnLigneController::class, 'index'])->name('ecoleEnLigne.page');
 Route::get('/ecole-en-ligne/create', [EcoleEnLigneController::class, 'create'])->name('ecoleEnLigne.create');
-Route::get('/donation', [DonationController::class,'index'])->name('donation.page');
-Route::post('/donation', [DonationController::class,'postDonation'])->name('donation.page.post');
+Route::get('/donation', [DonationController::class, 'index'])->name('donation.page');
+Route::post('/donation', [DonationController::class, 'postDonation'])->name('donation.page.post');
 Route::get('/qui-sommes-nous', [AboutController::class, 'who'])->name('who.page');
 Route::get('/about', [AboutController::class, 'about'])->name('about.page');
 Route::get('/politique-de-confidentialite', [AboutController::class, 'politiqueDeConfidentialite'])->name('politique.page');
@@ -80,17 +80,6 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('backend')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::get('/preference', function () {
-            $cycles = Cycle::all();
-            $levels = Level::all();
-            $matieres = Matiere::all();
-            return Inertia::render('Cours/preference', [
-                'cycles' => $cycles,
-                'levels' => $levels,
-                'matieres' => $matieres,
-            ]);
-        })->name('preference.cours');
-
         Route::resource('/cycle', CycleController::class);
         Route::resource('/level', LevelController::class);
         Route::resource('/matiere', MatiereController::class);
@@ -103,23 +92,15 @@ Route::middleware(['auth'])->group(function () {
             // Route::get('/user-scholl', [UserController::class, 'userSchool']);
             // Route::get('/preference', [UserController::class, 'preference']);
 
-            Route::get('/create', [UserController::class, 'create'])->name('users.create');
-            Route::post('/', [UserController::class, 'store'])->name('users.store');
-            Route::get('/{users}', [UserController::class, 'show'])->name('users.show');
-            Route::get('/{users}/edit', [UserController::class, 'edit'])->name('users.edit');
-            Route::put('/{users}/edit', [UserController::class, 'update'])->name('users.update');
+            // Route::get('/create', [UserController::class, 'create'])->name('users.create');
+            // Route::post('/', [UserController::class, 'store'])->name('users.store');
+            Route::get('/{user}', [UserController::class, 'show'])->name('users.show');
+            Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+            Route::put('/{user}/edit', [UserController::class, 'update'])->name('users.update');
             Route::delete('/{users}', [UserController::class, 'destroy'])->name('users.destroy');
         });
-
-
-        Route::get('parametres', function () {
-            $CycleController = new CycleController;
-            return Inertia::render('preference/AllParametre', [
-                'cycles' => $CycleController->index()
-            ]);
-        });
     });
-    //  Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
 });
 
 require __DIR__ . '/auth.php';
+//  Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');

@@ -2,6 +2,7 @@ import { useForm } from "@inertiajs/inertia-react";
 import { Button } from "@mui/material";
 import React from "react";
 import { DashboardLayout } from "../dashboard-layout";
+import App from "../layouts/app";
 
 const edit = ({ level }) => {
     const { data, setData, put, processing, errors } = useForm({
@@ -12,7 +13,7 @@ const edit = ({ level }) => {
         put(route('level.update', { level: level }))
     }
 
-    return <div className="min-h-screen w-full flex justify-center items-center">
+    return <div className="w-full flex justify-center items-center">
         <form onSubmit={submit}>
             <div className="mb-2">
                 <input
@@ -26,9 +27,9 @@ const edit = ({ level }) => {
 }
 
 edit.layout = (page) => (
-    <DashboardLayout>
+    <App>
         {page}
-    </DashboardLayout>
+    </App>
 );
 
 export default edit;

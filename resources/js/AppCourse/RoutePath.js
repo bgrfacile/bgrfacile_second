@@ -11,7 +11,7 @@ import RandomCours from './pages/Cours/RandomCours';
 import ScolaireCours from './pages/Cours/ScolaireCours';
 import OthersCours from './pages/Cours/OthersCours';
 import FavorisCours from './pages/profile/FavorisCours';
-import Search from './pages/search/search';
+// import Search from './pages/search/search';
 import Followers from './pages/profile/followers';
 import EditProfile from './pages/profile/EditProfile';
 import Infos from './pages/profile/Infos';
@@ -36,6 +36,7 @@ import CreateCoursPdf from './pages/profile/createCours/CreateCoursPdf';
 import CreateCoursImage from './pages/profile/createCours/CreateCoursImage';
 import CreateCoursVideo from './pages/profile/createCours/CreateCoursVideo';
 import CreateCoursAudio from './pages/profile/createCours/CreateCoursAudio';
+import Search from './pages/search/Search';
 
 
 
@@ -57,7 +58,7 @@ export default function RoutePath() {
 
                     <Route path="/cours" element={<CoursRoute />} >
                         <Route path='/cours/random/*' element={<RandomCours />} />
-                        <Route path='/cours/scolaire/*' element={<ScolaireCours />} />
+                        <Route index path='/cours/scolaire/*' element={<ScolaireCours />} />
                         <Route path='/cours/others/*' element={<OthersCours />} />
                     </Route>
 
