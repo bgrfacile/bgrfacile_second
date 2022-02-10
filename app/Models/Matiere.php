@@ -19,4 +19,8 @@ class Matiere extends Model
     {
         return $this->belongsToMany(Exercice::class,'exercices_matieres');
     }
+    public function levels()
+    {
+        return $this->belongsToMany(Level::class,'level_matiere','level_id','matiere_id');
+    }
 }

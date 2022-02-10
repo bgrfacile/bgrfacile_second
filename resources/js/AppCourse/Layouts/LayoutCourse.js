@@ -8,9 +8,9 @@ import NavBar from '../components/Navbar';
 import "../style.css";
 
 export default function LayoutCourse() {
-    const location = useLocation();
+    // const location = useLocation();
     const dispatch = useDispatch();
-    const [showNav, setShowNav] = useState(true);
+    // const [showNav, setShowNav] = useState(true);
     useEffect(() => {
         client.get('/auth/me').then(res => {
             console.log("request me", res.data);

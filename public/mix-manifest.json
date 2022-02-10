@@ -1,8 +1,8 @@
 {
-    "/js/appSite/app.js": "/js/appSite/app.js?id=8236addefca86ab67a32",
-    "/js/appCourse/app.js": "/js/appCourse/app.js?id=404e762772da3b375566",
-    "/js/backend/app.js": "/js/backend/app.js?id=a6791c3c5dcd8ddcbeb2",
-    "/css/backend/app.css": "/css/backend/app.css?id=ebea4ce2ba3f572c942d",
-    "/css/appCourse/app.css": "/css/appCourse/app.css?id=ebea4ce2ba3f572c942d",
-    "/css/appSite/app.css": "/css/appSite/app.css?id=5bbb44730046f6468326"
+    "/js/appSite/app.js": "/js/appSite/app.js",
+    "/js/appCourse/app.js": "/js/appCourse/app.js",
+    "/js/backend/app.js": "/js/backend/app.js",
+    "/css/backend/app.css": "/css/backend/app.css",
+    "/css/appCourse/app.css": "/css/appCourse/app.css",
+    "/css/appSite/app.css": "/css/appSite/app.css"
 }

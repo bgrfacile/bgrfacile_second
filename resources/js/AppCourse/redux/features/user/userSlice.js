@@ -17,16 +17,16 @@ import { createSlice } from '@reduxjs/toolkit'
 // };
 const initialValue = {
     user_id: null,
-    user_name:  '',
-    firstName:  '',
-    lastName:  '',
-    birthday:  '',
-    telephone:  '',
-    age:  '',
-    gender:  '',
-    email:  '',
-    country:  '',
-    url_image:  '',
+    user_name: '',
+    firstName: '',
+    lastName: '',
+    birthday: '',
+    telephone: '',
+    age: '',
+    gender: '',
+    email: '',
+    country: '',
+    url_image: '',
     roles: [],
 };
 
@@ -39,12 +39,14 @@ export const userSlice = createSlice({
     },
     reducers: {
         login: (state, action) => {
+            state.isLoading = true;
             state.profile = action.payload
         },
         updateProfileImage: (state, action) => {
             state.profile.url_image = action.payload
         },
         logout: (state) => {
+            state.isLoading = false;
             state.profile = initialValue
         }
     },

@@ -9,7 +9,6 @@ import CoursRoute from './pages/Cours/CoursRoute';
 import Profile from './pages/profile/profile';
 import RandomCours from './pages/Cours/RandomCours';
 import ScolaireCours from './pages/Cours/ScolaireCours';
-import OthersCours from './pages/Cours/OthersCours';
 import FavorisCours from './pages/profile/FavorisCours';
 // import Search from './pages/search/search';
 import Followers from './pages/profile/followers';
@@ -56,10 +55,9 @@ export default function RoutePath() {
             <Route element={<Guest />}>
                 <Route element={<LayoutCourse />} >
 
-                    <Route path="/cours" element={<CoursRoute />} >
-                        <Route path='/cours/random/*' element={<RandomCours />} />
-                        <Route index path='/cours/scolaire/*' element={<ScolaireCours />} />
-                        <Route path='/cours/others/*' element={<OthersCours />} />
+                    <Route path="cours" element={<CoursRoute />} >
+                        <Route path='matiere/:matiere' element={<ScolaireCours />} />
+                        <Route path='random' element={<RandomCours />} />
                     </Route>
 
                     <Route path='/cours/:id' element={<ViewCours />} />

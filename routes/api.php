@@ -3,6 +3,9 @@
 use App\Http\Controllers\APi\AuthController;
 use App\Http\Controllers\Api\CommentsController;
 use App\Http\Controllers\Api\CoursController;
+use App\Http\Controllers\Api\CycleController;
+use App\Http\Controllers\Api\LevelController;
+use App\Http\Controllers\Api\MatiereController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Cours;
@@ -22,12 +25,12 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('v1')->group(function () {
 
     Route::group([
-        'middleware' => ['cors','auth'],
+        'middleware' => ['cors', 'auth'],
     ], function () {
         Route::put('/user/update', [UserController::class, 'updateUser']);
         Route::post('/user/image/update', [UserController::class, 'updateImage']);
-        Route::apiResource('/cours', CoursController::class)->except(['index']);
-        Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['show']);
+        Route::apiResource('/cours', CoursController::class)->except(['index', 'show']);
+        Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['index', 'show']);
     });
 
     Route::group([
@@ -38,8 +41,11 @@ Route::prefix('v1')->group(function () {
         Route::post('/signup', [AuthController::class, 'register']);
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/cours', [CoursController::class, 'index']);
-        Route::post("/contact", function (Request $request) {
-            dd($request->all());
-        });
+        Route::get('/cours/{cours}', [CoursController::class, 'show']);
+        Route::get('/cours/{cours}/comments', [CommentsController::class, 'index']);
+
+        Route::get('cycles', CycleController::class);
+        Route::get('levels', LevelController::class);
+        Route::get('matieres', MatiereController::class);
     });
 });

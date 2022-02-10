@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from "react-router-dom";
 import CustomLink from "../hooks/CustomLink";
 import LogoShortBgrfacile from "./LogoShortbgrfacile";
-import SvgBonus from "./svg/Svgbonus";
 import Svgbook from "./svg/SvgBook";
 import SvgExo from "./svg/SvgExo";
 import SvgFormation from "./svg/SvgFormation";
 import { logout } from '../redux/features/user/userSlice';
+import SvgBonus from "./svg/SvgBonus";
 
 const className = "flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700";
 const classNameLinkActive = "text-blue-600 bg-gray-200 dark:text-gray-200 dark:bg-gray-700";
@@ -22,6 +22,7 @@ export default function Navbar() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const user = useSelector(state => state.user.profile);
+    const isLoading = useSelector(state => state.user.isLoading);
     const handleLogout = (e) => {
         e.preventDefault();
         if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
@@ -122,13 +123,13 @@ export default function Navbar() {
 
                         <div className="block">
                             <div className="inline">
-                                {localStorage.getItem("user") ?
+                                {isLoading ?
                                     <button onClick={() => setIsOpenDropDown(!isOpenDropDown)}
                                         className="inline-flex items-center p-1 text-gray-500 bg-gray-50 transition duration-150 ease-in-out border border-transparent rounded-full hover:shadow">
                                         <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10  rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
                                     </button>
                                     :
-                                    <Link to="/signup" className="px-2 py-1 bg-sky-600 text-white">Inscription</Link>}
+                                    <Link to="/signup" className="rounded-md px-2 py-1 bg-sky-600 text-white">Inscription</Link>}
                             </div>
                         </div>
 
