@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -13,15 +14,29 @@ class UserController extends Controller
 {
     public function updateUser(Request $request)
     {
-        $user = User::findOrFail($request->user_id);
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:users',
             'name' => 'required|string|max:255',
+            'user_id' => 'required',
+            'birthday' => 'date',
+            'country' => 'string',
+            'gender' => 'string',
+            'numberPhone' => 'string',
         ]);
-        // dd($validator->validate());
+        $user = User::findOrFail($request->user_id);
         if ($validator->fails()) {
-            $user->email = $request->email;
-            $user->name = $request->name;
+            $user->update([
+                'email' => $request->email,
+                'name' => $request->name,
+                'birthday' => $request->birthday,
+                'country' => $request->country,
+                'gender' => $request->gender['value']
+            ]);
+            if ($request->has('numberPhone') && $request->numberPhone != null) {
+                $user->phone()->create([
+                    'number_phone' => $request->numberPhone
+                ]);
+            }
             $user->save();
         } else {
             return response([

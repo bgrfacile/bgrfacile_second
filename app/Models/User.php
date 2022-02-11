@@ -19,14 +19,14 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var string[]
      */
-//    protected $fillable = [
-//        'name',
-//        'lastname',
-//        'profileImage',
-//        'birthday',
-//        'email',
-//        'password',
-//    ];
+    //    protected $fillable = [
+    //        'name',
+    //        'lastname',
+    //        'profileImage',
+    //        'birthday',
+    //        'email',
+    //        'password',
+    //    ];
     protected $guarded = [];
 
 
@@ -49,6 +49,11 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    public function phone()
+    {
+        return $this->morphOne(Phone::class, 'phoneable');
+    }
+
     /**
      * Get the slug user.
      */
@@ -69,5 +74,4 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsToMany(Exercice::class);
     }
-
 }

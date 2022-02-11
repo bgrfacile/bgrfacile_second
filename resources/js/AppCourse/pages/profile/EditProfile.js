@@ -1,11 +1,14 @@
-import { update } from 'lodash';
 import React, { useState } from 'react'
 import ReactDatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from 'react-redux';
 import client from '../../../api/client';
 import Spinner from 'react-spinner-material';
-import { updateProfileImage } from '../../redux/features/user/userSlice';
+import Select from 'react-select';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+import { login, updateProfileImage } from '../../redux/features/user/userSlice';
+
 
 
 export default function EditProfile() {
@@ -14,6 +17,9 @@ export default function EditProfile() {
     const [startDate, setStartDate] = useState(new Date());
     const [email, setEmail] = useState(userStore.email);
     const [name, setName] = useState(userStore.user_name);
+    const [country, setCountry] = useState(userStore.country);
+    const [gender, setGender] = useState(userStore.gender);
+    const [numberPhone, setNumberPhone] = useState(userStore.telephone);
     const [imagePreviewUrl, setImagePreviewUrl] = useState(userStore.url_image);
     const [file, setFile] = useState(null);
     const [isActif, setIsActif] = useState(false);
@@ -21,30 +27,24 @@ export default function EditProfile() {
     const [error, setError] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const handleChange = (e) => {
-        let reader = new FileReader();
-        let file = e.target.files[0];
-        reader.onloadend = () => {
-            setFile(file);
-            setImagePreviewUrl(reader.result);
-            setIsActif(true);
-        }
-        reader.readAsDataURL(file);
-    }
+    const options = [
+        { value: 'M', label: 'homme' },
+        { value: 'F', label: 'femme' }
+    ]
     const handleSubmitInfo = (e) => {
         e.preventDefault();
         setLoading(true);
-        client.put('/user/update', { name, email, user_id: userStore.user_id })
+        client.put('/user/update', {
+            name,
+            email,
+            user_id: userStore.user_id,
+            birthday: new Date(startDate).toISOString().substring(0, 10),
+            country,
+            gender,
+            numberPhone
+        })
             .then(response => {
-                console.log(response.data.message);
-                const user = {
-                    email: response.data.user.email,
-                    name: response.data.user.name,
-                    id: response.data.user.id,
-                    profileImage: response.data.user.url_image,
-                }
-                localStorage.removeItem('user');
-                localStorage.setItem("user", JSON.stringify(user));
+                dispatch(login(response.data.user));
                 setLoading(false)
             }
             ).catch(error => {
@@ -82,8 +82,8 @@ export default function EditProfile() {
             isActif &&
             <button type="submit" className="mt-4 w-full bg-blue-500 text-white font-semibold py-2 rounded-md  tracking-wide flex justify-center items-center" onClick={handleUpdateImage}>
                 {loading ?
-                <Spinner size={120} spinnerColor={"#333"} spinnerWidth={2} visible={true} /> :
-                'Update'}
+                    <Spinner size={120} spinnerColor={"#333"} spinnerWidth={2} visible={true} /> :
+                    'Update'}
             </button>
         )
     }
@@ -97,7 +97,21 @@ export default function EditProfile() {
                 <form encType='multipart/form-data' onSubmit={handleUpdateImage}>
                     <div className="relative w-32 mx-auto">
                         <div className="absolute bottom-0 right-0 z-10">
-                            <input name='file' className='hidden' type='file' onChange={handleChange} id="imageUpload" accept=".png, .jpg, .jpeg, .gif" />
+                            <input
+                                name='file'
+                                className='hidden'
+                                type='file'
+                                onChange={(e) => {
+                                    let reader = new FileReader();
+                                    let file = e.target.files[0];
+                                    reader.onloadend = () => {
+                                        setFile(file);
+                                        setImagePreviewUrl(reader.result);
+                                        setIsActif(true);
+                                    }
+                                    reader.readAsDataURL(file);
+                                }}
+                                accept=".png, .jpg, .jpeg, .gif" />
                             <label className='cursor-pointer flex justify-center items-center p-2 mb-0 rounded-full bg-white border-2 border-transparent shadow-md duration-100 hover:border-gray-700' htmlFor="imageUpload">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="r  ound" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
@@ -135,6 +149,7 @@ export default function EditProfile() {
                                 required />
                             {/* <span className="text-red-500 text-xs italic">ce champs ne peut pas être modifier</span> */}
                         </div>
+
                         <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
                             <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Nom d'utilisateur</label>
                             <input
@@ -144,51 +159,60 @@ export default function EditProfile() {
                                 type="text"
                                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
                         </div>
+
                         <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
                             <label htmlFor="age" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Date de naissance</label>
-                            <ReactDatePicker className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white' selected={startDate} onChange={(date) => setStartDate(date)} />
+                            <ReactDatePicker
+                                className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
+                                selected={startDate}
+                                onChange={(date) => setStartDate(date)} />
                         </div>
+
                         <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                            <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Nationnalité</label>
+                            <label htmlFor="country" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Nationnalité</label>
                             <input
-                                name='name'
-                                onChange={(e) => setName(e.target.value)}
-                                value={name}
+                                id='country'
+                                name='country'
+                                onChange={(e) => setCountry(e.target.value)}
+                                value={country}
                                 type="text"
-                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
                         </div>
+
                         <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                            <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Age</label>
-                            <input
-                                name='name'
-                                onChange={(e) => setName(e.target.value)}
-                                value={name}
-                                type="text"
-                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                            <label htmlFor="genre" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Genre</label>
+                            <Select
+                                value={gender}
+                                onChange={(e) => setGender(e)}
+                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                options={options} />
                         </div>
+
                         <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                            <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Genre</label>
-                            <input
-                                name='name'
-                                onChange={(e) => setName(e.target.value)}
-                                value={name}
-                                type="text"
-                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-                        </div>
-                        <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                            <label htmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Numéro de téléphone</label>
-                            <input
-                                name='name'
-                                onChange={(e) => setName(e.target.value)}
-                                value={name}
-                                type="text"
-                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                            <label htmlFor="phone" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Numéro de téléphone</label>
+                            <PhoneInput
+                                defaultCountry='CG'
+                                placeholder="Enter phone number"
+                                value={numberPhone}
+                                onChange={(e) => setNumberPhone(e)}
+                                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
                         </div>
                     </div>
                     <div className='w-full mt-3'>
-                        <button
-                            type="submit"
-                            className="ml-auto block bg-blue-600 rounded-lg px-4 py-2 text-lg text-gray-100 tracking-wide font-semibold font-sans">Modifier mon profil</button>
+                        {loading ?
+                            <button
+                                type="submit"
+                                disabled
+                                className="flex items-center ml-auto block bg-blue-600 rounded-lg px-4 py-2 text-lg text-gray-100 tracking-wide font-semibold font-sans">
+                                <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24"><path d="M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10S2 17.5 2 12S6.5 2 12 2m0 2c-4.42 0-8 3.58-8 8s3.58 8 8 8s8-3.58 8-8s-3.58-8-8-8m0 1c1.93 0 3.68.78 4.95 2.05L12 12V5z" fill="currentColor"></path></svg>
+                                Modifier
+                            </button> :
+                            <button
+                                type="submit"
+                                className="ml-auto block bg-blue-600 rounded-lg px-4 py-2 text-lg text-gray-100 tracking-wide font-semibold font-sans">
+                                Modifier
+                            </button>}
+
                     </div>
                 </form>
             </div>

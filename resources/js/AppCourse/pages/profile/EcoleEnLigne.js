@@ -9,7 +9,7 @@ const CardEcoleEnLigne = () => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
             }}>
-                <img className='border-2 border-white w-14 h-14 rounded-full object-cover shadow-xl mb-2' src="/img/bg_school.jpg" alt="" />
+                <img className='border-2 border-white w-14 h-14 rounded-full object-cover shadow-xl mb-2' src="/assets/img/bg_school.jpg" alt="" />
                 <a href='#' className='text-center font-semibold text-gray-100'>Nom de l'école Nom de l'école Nom de l'école</a>
             </div>
             <div className='py-4 px-2 flex justify-center items-center bg-blue-500'>

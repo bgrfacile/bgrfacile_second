@@ -8,7 +8,6 @@ const RangeValue = ({ value, color }) => {
 }
 
 const Civilites = () => {
-    // const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
     const user = useSelector(state => state.user.profile)
     return (<>
         <h2 className='w-full text-3xl font-bold uppercase mb-3'>
@@ -21,24 +20,24 @@ const Civilites = () => {
                     <span className='font-semibold text-black mr-1'>Nationnalité</span>
                     <h4>{user.country}</h4>
                 </div>
+                {/* <div className='text-base flex items-center justify-between md:justify-start mb-1'>
+                    <span className='font-semibold text-black mr-2'>Age</span>
+                    <h4>{`${user.age} ${user.age ?'ans':''}`} </h4>
+                </div> */}
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
-                    <span className='font-semibold text-black mr-1'>Age</span>
-                    <h4>{user.age} ans</h4>
-                </div>
-                <div className='text-base flex items-center justify-between md:justify-start mb-1'>
-                    <span className='font-semibold text-black mr-1'>Genre</span>
-                    <h4>{user.gender}</h4>
+                    <span className='font-semibold text-black mr-2'>Genre</span>
+                    <h4>{`${user.gender.label}`}</h4>
                 </div>
             </div>
             <hr className="text-gray-700" />
             <div className='w-full md:w-1/2 flex flex-col items-stretch justify-start'>
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
-                    <span className='font-semibold text-black mr-1'>email public</span>
+                    <span className='font-semibold text-black mr-2'>email public</span>
                     <h4>{user.email}</h4>
                 </div>
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
-                    <span className='font-semibold text-black mr-1'>numéro de téléphone</span>
-                    <h4>{user.telephone}</h4>
+                    <span className='font-semibold text-black mr-2'>numéro de téléphone</span>
+                    <h4>{`${user.telephone}`}</h4>
                 </div>
                 <div className='text-base flex items-center mb-1'>
                     <span className='font-semibold text-black mr-1'>reseaux sociaux</span>
@@ -122,7 +121,7 @@ export default function Infos() {
             <div className='flex flex-col w-full rounded-sm shadow bg-white p-3'>
                 <div className='flex flex-col items-stretch'>
                     <Civilites />
-                   {/*  <Competences />
+                    {/*  <Competences />
                     <Loisirs />
                     <Language /> */}
                 </div>

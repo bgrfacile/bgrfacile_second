@@ -23,7 +23,7 @@ const initialValue = {
     birthday: '',
     telephone: '',
     age: '',
-    gender: '',
+    gender: {},
     email: '',
     country: '',
     url_image: '',

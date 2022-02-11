@@ -2256,6 +2256,9 @@ select {
 .table-auto {
   table-layout: auto;
 }
+.border-collapse {
+  border-collapse: collapse;
+}
 .origin-top-left {
   transform-origin: top left;
 }
@@ -2342,6 +2345,15 @@ select {
 }
 .animate-pulse {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 .cursor-default {
   cursor: default;
@@ -2679,6 +2691,12 @@ select {
 }
 .border-r {
   border-right-width: 1px;
+}
+.border-t-0 {
+  border-top-width: 0px;
+}
+.border-l-0 {
+  border-left-width: 0px;
 }
 .border-solid {
   border-style: solid;
@@ -4024,6 +4042,10 @@ select {
 .active\:bg-pink-600:active {
   --tw-bg-opacity: 1;
   background-color: rgb(219 39 119 / var(--tw-bg-opacity));
+}
+.active\:bg-blue-600:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 .active\:text-gray-700:active {
   --tw-text-opacity: 1;
@@ -6449,6 +6471,10 @@ select {
 
   .xl\:mt-0 {
     margin-top: 0px;
+  }
+
+  .xl\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .xl\:inline {

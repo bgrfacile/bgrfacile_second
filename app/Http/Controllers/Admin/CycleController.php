@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CycleResource;
 use App\Models\Cycle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -19,7 +20,7 @@ class CycleController extends Controller
     {
         $cycles = Cycle::all()->reverse();
         return Inertia::render('Cycle/index', [
-            'cycles' => $cycles
+            'cycles' => CycleResource::collection($cycles)
         ]);
     }
 
