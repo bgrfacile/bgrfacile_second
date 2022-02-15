@@ -1,7 +1,5 @@
 import { useForm } from "@inertiajs/inertia-react";
 import { Button } from "@mui/material";
-import React from "react";
-import { DashboardLayout } from "../dashboard-layout";
 import App from "../layouts/app";
 
 const edit = ({ matiere }) => {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\MatiereResource;
 use App\Models\Matiere;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -18,7 +19,7 @@ class MatiereController extends Controller
     {
         $matieres = Matiere::all();
         return Inertia::render('Matiere/index', [
-            'matieres' => $matieres
+            'matieres' => MatiereResource::collection($matieres)
         ]);
     }
 

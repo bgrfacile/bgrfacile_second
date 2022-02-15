@@ -155,7 +155,7 @@ export default function Profile({ children, to, ...props }) {
         </>)
     }
     const handleChangeMenu = () => {
-        notyf.success('Address updated', {
+        notyf.success('', {
             duration: 2000,
             position: 'top-right',
             closeBtn: true,

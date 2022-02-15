@@ -84,6 +84,8 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/cycle/{cycle}/levels', [CycleController::class, 'setLevels'])->name('cycle.update.levels');
         Route::post('/cycle/{cycle}/levels/create', [CycleController::class, 'addLevelForCycle'])->name('cycle.create.levels');
         Route::resource('/level', LevelController::class);
+        Route::post('/level/{level}/matieres', [LevelController::class, 'syncToMatieres'])->name('level.update.matieres');
+        Route::post('/level/{level}/matieres/create', [LevelController::class, 'attachToMatiere'])->name('level.create.matieres');
         Route::resource('/matiere', MatiereController::class);
         Route::resource('/cours', CoursControllerAdmin::class);
 
