@@ -6,7 +6,7 @@ use Carbon\Carbon;
  * @param $date
  * @return string
  */
-function formaterDate(string $date)
+function formaterDate($date)
 {
     return Carbon::parse($date)->format('d M. Y');
 }

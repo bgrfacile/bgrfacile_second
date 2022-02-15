@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\Level\LevelSimpleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CycleResource extends JsonResource
@@ -21,7 +22,8 @@ class CycleResource extends JsonResource
             'isActif'=>$this->isActif,
             // 'created_at'=>formaterDate($this->created_at),
             // 'updated_at'=>formaterDate($this->updated_at),
-            'levels'=>LevelResource::collection($this->levels),
+            // 'levels'=>LevelSimpleResource::collection($this->levels),
+            'levels'=>LevelSimpleResource::collection($this->levels),
         ];
     }
 }

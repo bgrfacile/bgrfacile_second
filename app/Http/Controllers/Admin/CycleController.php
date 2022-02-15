@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CycleResource;
+use App\Http\Resources\Level\LevelSimpleResource;
 use App\Models\Cycle;
+use App\Models\Level;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
@@ -19,8 +21,10 @@ class CycleController extends Controller
     public function index()
     {
         $cycles = Cycle::all()->reverse();
+        $levels = Level::all()->reverse();
         return Inertia::render('Cycle/index', [
-            'cycles' => CycleResource::collection($cycles)
+            'cycles' => CycleResource::collection($cycles),
+            'levels' => LevelSimpleResource::collection($levels),
         ]);
     }
 
@@ -114,6 +118,23 @@ class CycleController extends Controller
     {
         $cycle = Cycle::findOrFail($id);
         $cycle->delete();
+        return back();
+    }
+
+    public function setLevels($id, Request $request)
+    {
+        $cycle = Cycle::findOrFail($id);
+        $cycle->levels()->sync(array_values($request->newCheckLevel));
+        return back();
+    }
+    public function addLevelForCycle($id, Request $request)
+    {
+        // dd($request->all());
+        $level = Level::create([
+            'name' => $request->name,
+            'isActif' => '1',
+        ]);
+        $level->cycles()->attach($id);
         return back();
     }
 }

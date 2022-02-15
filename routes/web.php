@@ -81,6 +81,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::resource('/cycle', CycleController::class);
+        Route::post('/cycle/{cycle}/levels', [CycleController::class, 'setLevels'])->name('cycle.update.levels');
+        Route::post('/cycle/{cycle}/levels/create', [CycleController::class, 'addLevelForCycle'])->name('cycle.create.levels');
         Route::resource('/level', LevelController::class);
         Route::resource('/matiere', MatiereController::class);
         Route::resource('/cours', CoursControllerAdmin::class);

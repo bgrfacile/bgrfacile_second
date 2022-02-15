@@ -36,8 +36,7 @@ export default function Register() {
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 dispatch(login(response.data.user));
                 setTimeout(() => {
-                    console.log("navigate")
-                    navigate('/cours/scolaire', {
+                    navigate('/cours', {
                         replace: true,
                     })
                 }, 2000)

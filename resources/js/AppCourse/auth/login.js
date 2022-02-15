@@ -36,7 +36,7 @@ export default function Login() {
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 dispatch(login(response.data.user));
                 setTimeout(() => {
-                    navigate('/cours/scolaire', {
+                    navigate('/cours', {
                         replace: true,
                     })
                 }, 2000)
