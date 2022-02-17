@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -17,8 +18,10 @@ class UserController extends Controller
     public function all()
     {
         $users = UserResource::collection(User::all());
+        $roles = Role::all();
         return Inertia::render('Users/Index', [
-            'users' => $users
+            'users' => $users,
+            'roles' => $roles
         ]);
     }
     public function student()
@@ -121,7 +124,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user =User::find($id);
+        $user = User::find($id);
         // $user->assignRole('super-admin');
         $user = new UserResource($user);
         return Inertia::render('Users/show', [
@@ -178,6 +181,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
+        $user->cours()->detach();
         $user->delete();
         return back();
     }
