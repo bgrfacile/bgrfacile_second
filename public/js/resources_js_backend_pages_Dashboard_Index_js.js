@@ -11,23 +11,76 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _layouts_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layouts/app */ "./resources/js/backend/pages/layouts/app.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _layouts_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layouts/app */ "./resources/js/backend/pages/layouts/app.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
 var Index = function Index(_ref) {
-  var users = _ref.users;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: "Tableau de bord"
+  var countusers = _ref.countusers,
+      countCours = _ref.countCours;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "grid grid-cols-1 gap-5 mt-6 sm:grid-cols-2 lg:grid-cols-4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "bg-white p-4 transition-shadow ease-in-out border rounded-lg shadow-sm hover:shadow-lg",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "flex items-start justify-between",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "flex flex-col space-y-2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "text-gray-400",
+              children: "Total des utilisateurs "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "text-lg font-semibold",
+              children: countusers
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "p-10 bg-gray-200 rounded-md"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "inline-block px-2 py-1 text-sm text-white bg-green-300 rounded",
+            children: "Dernier ajout"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "mr-1",
+            children: "-----"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "bg-white p-4 transition-shadow ease-in-out border rounded-lg shadow-sm hover:shadow-lg",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "flex items-start justify-between",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "flex flex-col space-y-2",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "text-gray-400",
+              children: "Total de cours "
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+              className: "text-lg font-semibold",
+              children: countCours
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "p-10 bg-gray-200 rounded-md"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "inline-block px-2 py-1 text-sm text-white bg-green-300 rounded",
+            children: "Dernier ajout"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "mr-1",
+            children: "------"
+          })]
+        })]
+      })]
+    })
   });
 };
 
 Index.layout = function (page) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_layouts_app__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_layouts_app__WEBPACK_IMPORTED_MODULE_0__["default"], {
     children: page
   });
 };
@@ -114,6 +167,7 @@ function _arrayWithHoles(arr) {
 
 
 
+
 function App(_ref) {
   var children = _ref.children;
 
@@ -132,6 +186,7 @@ function App(_ref) {
       dropdownOpen = _useState6[0],
       setDropdownOpen = _useState6[1];
 
+  var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "flex h-screen bg-gray-100 dark:bg-gray-800 font-roboto",
@@ -148,7 +203,7 @@ function App(_ref) {
             className: "flex items-center",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
               className: "text-gray-800 dark:text-white text-2xl font-semibold",
-              children: "Dashboard"
+              children: "bgrfacile"
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("nav", {
@@ -202,7 +257,7 @@ function App(_ref) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
                 className: "text-2xl font-medium text-gray-800 dark:text-white",
-                children: "Overview"
+                children: "Dashboard"
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -270,11 +325,11 @@ function App(_ref) {
                 className: "flex items-center space-x-2 relative focus:outline-none",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
                   className: "text-gray-700 dark:text-gray-300 text-sm hidden sm:block",
-                  children: "Jones Ferdinand"
+                  children: auth.user.user_name
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                   className: "h-9 w-9 rounded-full border-2 border-purple-500 object-cover",
-                  src: "https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-                  alt: "Your avatar"
+                  src: auth.user.url_image,
+                  alt: "avatar"
                 })]
               })
             })]

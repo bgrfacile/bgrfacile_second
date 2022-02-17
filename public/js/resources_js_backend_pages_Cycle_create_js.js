@@ -8098,6 +8098,7 @@ function _arrayWithHoles(arr) {
 
 
 
+
 function App(_ref) {
   var children = _ref.children;
 
@@ -8116,6 +8117,7 @@ function App(_ref) {
       dropdownOpen = _useState6[0],
       setDropdownOpen = _useState6[1];
 
+  var auth = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.auth;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "flex h-screen bg-gray-100 dark:bg-gray-800 font-roboto",
@@ -8132,7 +8134,7 @@ function App(_ref) {
             className: "flex items-center",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
               className: "text-gray-800 dark:text-white text-2xl font-semibold",
-              children: "Dashboard"
+              children: "bgrfacile"
             })
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("nav", {
@@ -8186,7 +8188,7 @@ function App(_ref) {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
                 className: "text-2xl font-medium text-gray-800 dark:text-white",
-                children: "Overview"
+                children: "Dashboard"
               })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -8254,11 +8256,11 @@ function App(_ref) {
                 className: "flex items-center space-x-2 relative focus:outline-none",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
                   className: "text-gray-700 dark:text-gray-300 text-sm hidden sm:block",
-                  children: "Jones Ferdinand"
+                  children: auth.user.user_name
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                   className: "h-9 w-9 rounded-full border-2 border-purple-500 object-cover",
-                  src: "https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
-                  alt: "Your avatar"
+                  src: auth.user.url_image,
+                  alt: "avatar"
                 })]
               })
             })]

@@ -19,7 +19,7 @@ class CreateCoursTable extends Migration
             $table->string('coverImage')->nullable();
             $table->string('description')->nullable();
             $table->enum('isActif',['0','1'])->default('1');
-            $table->boolean('is_active')->default(true);
+            // $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

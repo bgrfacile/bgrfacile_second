@@ -15,7 +15,7 @@ class CreateMatieresTable extends Migration
     {
         Schema::create('matieres', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->enum('isActif',['0','1'])->default('1');
             $table->timestamps();
         });

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from '@inertiajs/inertia-react'
+import { usePage } from '@inertiajs/inertia-react'
 
 export default function App({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const { auth }= usePage().props
     return (<div>
         <div className="flex h-screen bg-gray-100 dark:bg-gray-800 font-roboto">
             <div onClick={() => setSidebarOpen(false)}
@@ -14,7 +16,7 @@ export default function App({ children }) {
                 className={`${sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'} fixed z-30 inset-y-0 left-0 w-60 transition duration-300 transform bg-white dark:bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0`}>
                 <div className="flex items-center justify-center mt-8">
                     <div className="flex items-center">
-                        <span className="text-gray-800 dark:text-white text-2xl font-semibold">Dashboard</span>
+                        <span className="text-gray-800 dark:text-white text-2xl font-semibold">bgrfacile</span>
                     </div>
                 </div>
 
@@ -54,7 +56,7 @@ export default function App({ children }) {
                         </button>
 
                         <div>
-                            <h1 className="text-2xl font-medium text-gray-800 dark:text-white">Overview</h1>
+                            <h1 className="text-2xl font-medium text-gray-800 dark:text-white">Dashboard</h1>
                         </div>
                     </div>
 
@@ -89,10 +91,10 @@ export default function App({ children }) {
                         <div className="relative">
                             <button onClick={() => setDropdownOpen(!dropdownOpen)}
                                 className="flex items-center space-x-2 relative focus:outline-none">
-                                <h2 className="text-gray-700 dark:text-gray-300 text-sm hidden sm:block">Jones Ferdinand</h2>
+                                <h2 className="text-gray-700 dark:text-gray-300 text-sm hidden sm:block">{auth.user.user_name}</h2>
                                 <img className="h-9 w-9 rounded-full border-2 border-purple-500 object-cover"
-                                    src="https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                                    alt="Your avatar" />
+                                    src={auth.user.url_image}
+                                    alt="avatar" />
                             </button>
 
                             {/* <div className="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10">
