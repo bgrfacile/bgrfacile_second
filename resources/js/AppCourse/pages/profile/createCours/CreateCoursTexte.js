@@ -67,8 +67,7 @@ export default function CreateCoursTexte() {
                             style={img}
                         />
                     </div>
-                </div> :
-                <></>}
+                </div>:<p></p>}
         </>)
     }
     useEffect(() => {
@@ -112,6 +111,7 @@ export default function CreateCoursTexte() {
                 linkPublish={'/profile/my-cours/create'}
                 onSubmit={handleSubmit}
             />
+            {loading ?? <div className='font-thin bg-black text-gray-100 text-center py-2 w-full'> chargement ...</div>}
             <div className='w-full flex flex-col md:flex-row'>
                 <div className='w-1/3 pr-4'>
                     <h3 className='text-2xl font-bold text-gray-500 mb-2'>Information sur le contenue</h3>

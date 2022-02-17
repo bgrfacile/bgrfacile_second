@@ -26,6 +26,8 @@ Route::prefix('v1')->group(function () {
         Route::put('/user/update', [UserController::class, 'updateUser']);
         Route::post('/user/image/update', [UserController::class, 'updateImage']);
         Route::apiResource('/cours', CoursController::class)->except(['index', 'show']);
+        Route::get('/cours/user/{userId}', [CoursController::class, 'CoursToUser']);
+        Route::put('/cours/{courId}/isactif', [CoursController::class, 'updateVisibilityCours']);
         Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['index', 'show']);
     });
 

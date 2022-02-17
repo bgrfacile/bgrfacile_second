@@ -11,10 +11,10 @@ const MenuBar = ({ editor, setContent }) => {
 
     const isActiveStyle = "w-full flex justify-center items-center p-1 mr-1 bg-gray-800 text-gray-100 rounded-sm cursor-pointer ease-in-out duration-200"
     const isNotActiveStyle = "w-full flex justify-center items-center p-1 mr-1 bg-white text-gray-800 hover:bg-gray-800 hover:text-gray-100 rounded-sm cursor-pointer ease-in-out duration-200"
-
+    setContent(editor.getHTML())
 
     return (<>
-        <button onClick={setContent(editor.getHTML())}></button>
+        {/* <button onClick={}></button> */}
         <div className="flex items-center bg-white border-b pt-1 pb-2 px-2 w-full h-auto rounded-t-lg shadow">
             <button
                 onClick={() => editor.chain().focus().toggleBold().run()}

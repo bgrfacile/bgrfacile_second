@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
+use App\Models\Cours;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -69,4 +71,22 @@ class UserController extends Controller
             'user' => new UserResource($user),
         ], 200);
     }
+
+    public function updatePassword(Request $request)
+    {
+        $request->validate(
+            [
+                'user_id' => 'required|exists:users,id',
+                'password' => 'required|string|min:6|confirmed',
+            ]
+        );
+        $user = User::find($request->user_id);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return response([
+            'message' => 'user updated successfully',
+            'user' => new UserResource($user),
+        ], 200);
+    }
+
 }

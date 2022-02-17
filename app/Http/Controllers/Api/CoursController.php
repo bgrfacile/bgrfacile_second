@@ -18,7 +18,8 @@ class CoursController extends Controller
      */
     public function index()
     {
-        return CoursResource::collection(Cours::all()->reverse());
+        $cours = Cours::where('isActif', "1")->get()->reverse();
+        return CoursResource::collection($cours);
     }
 
     /**
@@ -43,8 +44,8 @@ class CoursController extends Controller
             'isActif' => $request->isActif,
         ]);
         $cours->contents()->create([
-            'content'=>$request->content,
-            'type_content'=> $request->type_content,
+            'content' => $request->content,
+            'type_content' => $request->type_content,
         ]);
         return response([
             'message' => 'cours created successfully',
@@ -60,6 +61,11 @@ class CoursController extends Controller
      */
     public function show($id)
     {
+        $cours = Cours::find($id);
+        return response([
+            'message' => 'cours found successfully',
+            'cours' => new CoursResource($cours),
+        ], 200);
     }
 
     /**
@@ -71,7 +77,12 @@ class CoursController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cours = Cours::findOrFail($id);
+        $cours->update([]);
+        return response([
+            'message' => 'cours updated successfully',
+            'cours' => new CoursResource($cours),
+        ], 200);
     }
 
     /**
@@ -82,6 +93,34 @@ class CoursController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cours = Cours::findOrFail($id);
+        $cours->delete();
+        return response([
+            'message' => 'cours deleted successfully',
+        ], 200);
+    }
+
+    public function CoursToUser($userId)
+    {
+        $user = User::find($userId);
+        return CoursResource::collection($user->cours->reverse());
+    }
+
+
+    public function updateVisibilityCours($courId, Request $request)
+    {
+        $request->validate(
+            [
+                'isActif' => 'required|boolean',
+            ]
+        );
+        // $user = User::find($request->user_id);
+        // $cours = $user->cours()->find($courId);
+        $cours = Cours::find($courId);
+        $cours->isActif = $request->isActif;
+        $cours->save();
+        return response([
+            'message' => 'cours updated successfully',
+        ], 200);
     }
 }

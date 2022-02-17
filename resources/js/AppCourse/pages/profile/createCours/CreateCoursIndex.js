@@ -18,15 +18,15 @@ export default function CreateCoursIndex() {
             </div>
         )
     }
-const gridStyle = {
-    display: 'inline-grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320, 1fr))',
-    gridGap: '1rem',
-    justifyItems: 'center',
-    alignItems: 'center',
-    alignContent: 'center',
-    justifyContent: 'center',
-}
+// const gridStyle = {
+//     display: 'inline-grid',
+//     gridTemplateColumns: 'repeat(auto-fit, minmax(320, 1fr))',
+//     gridGap: '1rem',
+//     justifyItems: 'center',
+//     alignItems: 'center',
+//     alignContent: 'center',
+//     justifyContent: 'center',
+// }
     return (<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         <CardCreate
             title={'PDF'.toUpperCase()}
