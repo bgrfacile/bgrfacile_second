@@ -17,6 +17,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-modal */ "./node_modules/react-modal/lib/index.js");
 /* harmony import */ var react_modal__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_modal__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+
 function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
@@ -157,7 +173,59 @@ var Index = function Index(_ref) {
   };
 
   var ContentViewRole = function ContentViewRole() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    // const [roleCheck, setRoleCheck] = useState([])
+    var _useForm2 = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.useForm)({
+      role_ids: []
+    }),
+        data = _useForm2.data,
+        setData = _useForm2.setData,
+        put = _useForm2.put,
+        errors = _useForm2.errors;
+
+    var isChecked = function isChecked(role_id) {
+      var check = function check() {
+        if (onDeleteData.roles.find(function (role) {
+          return role.id === role_id;
+        })) return true;
+      };
+
+      return check();
+    };
+
+    var handleChange = function handleChange(e) {
+      var _e$target = e.target,
+          value = _e$target.value,
+          checked = _e$target.checked;
+
+      if (checked) {
+        // setRoleCheck([...roleCheck, { id: parseInt(value) }])
+        onDeleteData.roles = [].concat(_toConsumableArray(onDeleteData.roles), [{
+          id: parseInt(value)
+        }]);
+      } else {
+        // setRoleCheck([roleCheck.filter(role => role.id !== parseInt(value))])
+        onDeleteData.roles = onDeleteData.roles.filter(function (role) {
+          return role.id !== parseInt(value);
+        });
+      }
+
+      setData('role_ids', _toConsumableArray(onDeleteData.roles));
+    };
+
+    var onSubmit = function onSubmit(e) {
+      e.preventDefault();
+      var ids = data.role_ids.map(function (role) {
+        return role.id;
+      });
+      data.role_ids = ids;
+      put(route('users.update.role', {
+        user: onDeleteData.user_id
+      }), data);
+      setOpenRole(false); // setOnDeleteData({})
+    };
+
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+      onSubmit: onSubmit,
       className: "w-80 bg-white rounded-md flex flex-col",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "flex items-center",
@@ -166,7 +234,7 @@ var Index = function Index(_ref) {
           children: "Tout les roles"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           onClick: function onClick() {
-            return setOpenRole(false);
+            setOpenRole(false);
           },
           className: "p-2",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
@@ -185,11 +253,26 @@ var Index = function Index(_ref) {
         },
         className: "w-full flex flex-col my-4 overflow-y-auto",
         children: roles.map(function (role, key) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "py-3",
-            children: role.name
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "py-3 px-2 flex items-center justify-between",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+              htmlFor: "role_".concat(role.id),
+              className: "flex-1 text-gray-800",
+              children: role.name
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+              id: "role_".concat(role.id),
+              value: role.id,
+              checked: isChecked(role.id),
+              type: "checkbox",
+              className: "form-checkbox",
+              onChange: handleChange
+            })]
           }, key);
         })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        type: "submit",
+        className: "w-full mt-4 py-2 bg-blue-600 text-gray-100",
+        children: "confirmer"
       })]
     });
   };
@@ -233,6 +316,7 @@ var Index = function Index(_ref) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
           onClick: function onClick() {
             setOpenRole(true);
+            setOnDeleteData(user);
           },
           className: "inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2",
           children: "voir les roles"

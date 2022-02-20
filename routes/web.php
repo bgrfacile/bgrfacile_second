@@ -103,6 +103,7 @@ Route::middleware(['auth'])->group(function () {
             Route::put('/{user}/edit', [UserController::class, 'update'])->name('users.update');
             Route::delete('/{users}', [UserController::class, 'destroy'])->name('users.destroy');
         });
+        Route::put('/users/{user}/roles', [UserController::class, 'updateRole'])->name('users.update.role');
     });
 });
 

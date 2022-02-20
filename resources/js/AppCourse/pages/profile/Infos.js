@@ -37,7 +37,7 @@ const Civilites = () => {
                 </div>
                 <div className='text-base flex items-center justify-between md:justify-start mb-1'>
                     <span className='font-semibold text-black mr-2'>numéro de téléphone</span>
-                    <h4>{`${user.telephone}`}</h4>
+                    <h4>{`${user.telephone != null ? user.telephone : ""}`}</h4>
                 </div>
                 <div className='text-base flex items-center mb-1'>
                     <span className='font-semibold text-black mr-1'>reseaux sociaux</span>

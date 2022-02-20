@@ -29,7 +29,7 @@ class AuthController extends Controller
             'password' => Hash::make($fields['password']),
         ]);
         $token = $user->createToken("myappToken")->plainTextToken;
-        event(new Registered($user));
+        // event(new Registered($user));
         User::count() <= 1 ?
             $user->assignRole('super-admin') :
             $user->assignRole('etudiant');

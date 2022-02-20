@@ -8092,7 +8092,13 @@ var IndexCycle = function IndexCycle(_ref) {
 
     var isChecked = function isChecked(id) {
       return newCheckLevel.includes(id.toString());
-    };
+    }; // const isChecked = (id) => {
+    //     const check = () => {
+    //         if (newCheckLevel.find(level => level.id === id)) return true
+    //     }
+    //     return check()
+    // }
+
 
     var handleChange = function handleChange(e) {
       e.preventDefault();
@@ -8263,6 +8269,7 @@ var IndexCycle = function IndexCycle(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
         className: "w-full p-2 mb-2 border-2 border-blue-600",
         type: "text",
+        autoFocus: true,
         value: data.name,
         onChange: function onChange(e) {
           return setData('name', e.target.value);

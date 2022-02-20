@@ -20,6 +20,7 @@ const Index = ({ users, roles }) => {
     const [onDelete, setOnDelete] = useState(false)
     const [onDeleteData, setOnDeleteData] = useState({})
 
+
     const ContentDelete = () => {
         const { delete: destroy } = useForm({})
         const handleDelete = (user_id) => {
@@ -43,22 +44,65 @@ const Index = ({ users, roles }) => {
     }
 
     const ContentViewRole = () => {
+        // const [roleCheck, setRoleCheck] = useState([])
+        let { data, setData, put, errors } = useForm({
+            role_ids: [],
+        })
+
+
+        const isChecked = (role_id) => {
+            const check = () => {
+                if (onDeleteData.roles.find(role => role.id === role_id)) return true
+            }
+            return check()
+        }
+        const handleChange = (e) => {
+
+            const { value, checked } = e.target
+            if (checked) {
+                // setRoleCheck([...roleCheck, { id: parseInt(value) }])
+                onDeleteData.roles = [...onDeleteData.roles, { id: parseInt(value) }]
+            } else {
+                // setRoleCheck([roleCheck.filter(role => role.id !== parseInt(value))])
+                onDeleteData.roles = onDeleteData.roles.filter(role => role.id !== parseInt(value))
+            }
+            setData('role_ids', [...onDeleteData.roles])
+        }
+        const onSubmit = (e) => {
+            e.preventDefault()
+            const ids = data.role_ids.map(role => role.id)
+            data.role_ids = ids
+            put(route('users.update.role', { user: onDeleteData.user_id }), data)
+            setOpenRole(false)
+            // setOnDeleteData({})
+        }
         return (
-            <div className="w-80 bg-white rounded-md flex flex-col">
+            <form onSubmit={onSubmit} className="w-80 bg-white rounded-md flex flex-col">
                 <div className="flex items-center">
                     <h4 className="flex-1 text-lg font-thin text-center text-gray-800">Tout les roles</h4>
-                    <button onClick={() => setOpenRole(false)} className="p-2">
+                    <button onClick={() => { setOpenRole(false); }} className="p-2">
                         <svg width="1em" height="1em" viewBox="0 0 24 24"><path d="M20 2H8c-1.1 0-2 .9-2 2v12a2 2 0 0 0 2 2h12c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m0 14H8V4h12v12M4 6v14h14v2H4a2 2 0 0 1-2-2V6h2m5.77 6.84L12.6 10L9.77 7.15l1.4-1.4L14 8.6l2.84-2.83l1.4 1.4L15.4 10l2.83 2.84l-1.4 1.4L14 11.4l-2.83 2.84l-1.4-1.4z" fill="currentColor"></path></svg>
                     </button>
                 </div>
                 <div style={{ maxHeight: "250px" }} className="w-full flex flex-col my-4 overflow-y-auto">
                     {
-                        roles.map((role, key) => <div className="py-3" key={key}>{role.name}</div>)
+                        roles.map((role, key) => <div className="py-3 px-2 flex items-center justify-between" key={key}>
+                            <label htmlFor={`role_${role.id}`} className="flex-1 text-gray-800">{role.name}</label>
+                            <input
+                                id={`role_${role.id}`}
+                                value={role.id}
+                                checked={isChecked(role.id)}
+                                type="checkbox"
+                                className="form-checkbox"
+                                onChange={handleChange} />
+                        </div>)
                     }
                 </div>
-            </div>
+                <button type="submit" className="w-full mt-4 py-2 bg-blue-600 text-gray-100">confirmer</button>
+            </form>
         )
     }
+
 
     const Ligne = ({ user }) => (<tr className="border-b border-gray-200 hover:bg-gray-100">
         <td className="py-3 px-6 text-left whitespace-nowrap">
@@ -80,7 +124,13 @@ const Index = ({ users, roles }) => {
             </div>
         </td>
         <td className="py-3 px-6 text-center">
-            <button onClick={() => { setOpenRole(true) }} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">voir les roles</button>
+            <button onClick={() => {
+                setOpenRole(true);
+                setOnDeleteData(user)
+            }}
+                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+                voir les roles
+            </button>
             {/* {user.roles.map((role, key) => <span key={key} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{role.name}</span>)} */}
         </td>
         <td className="py-3 px-6 text-center">
@@ -107,6 +157,7 @@ const Index = ({ users, roles }) => {
             </div>
         </td>
     </tr>)
+
     return (<>
         <Modal
             // onRequestClose={() => setModalIsOpen(false)}
@@ -139,8 +190,10 @@ const Index = ({ users, roles }) => {
                     </tbody>
                 </table>
             </div>
-        </div></>)
+        </div>
+    </>)
 }
+
 Index.layout = (page) => (
     <App>
         {page}

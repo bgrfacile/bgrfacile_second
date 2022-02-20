@@ -155,7 +155,6 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->all(),$id);
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
@@ -170,6 +169,19 @@ class UserController extends Controller
         // }
         $user->save();
         return redirect()->route('users.index');
+    }
+
+    public function updateRole(Request $request, $id)
+    {
+        // $request->validate([
+        //     'role_ids' => ['required', 'array'],
+        // ]);
+        $user = User::findOrFail($id);
+        $user->syncRoles($request->role_ids);
+        // return response([
+        //     'message' => 'Successfully updated roles'
+        // ]);
+        return back();
     }
 
     /**

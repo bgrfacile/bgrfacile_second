@@ -98,6 +98,7 @@ export default function EditProfile() {
                     <div className="relative w-32 mx-auto">
                         <div className="absolute bottom-0 right-0 z-10">
                             <input
+                                id='imageUpload'
                                 name='file'
                                 className='hidden'
                                 type='file'
@@ -114,7 +115,7 @@ export default function EditProfile() {
                                 accept=".png, .jpg, .jpeg, .gif" />
                             <label className='cursor-pointer flex justify-center items-center p-2 mb-0 rounded-full bg-white border-2 border-transparent shadow-md duration-100 hover:border-gray-700' htmlFor="imageUpload">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="r  ound" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                 </svg>
                             </label>
                         </div>

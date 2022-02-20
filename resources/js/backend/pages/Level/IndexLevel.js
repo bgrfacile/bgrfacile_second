@@ -4,7 +4,6 @@ import { Link, useForm } from '@inertiajs/inertia-react'
 import { Inertia } from "@inertiajs/inertia";
 import App from "../layouts/app";
 import Modal from 'react-modal';
-import { customStyleModal } from "../../theme/exportStyle";
 Modal.setAppElement('#app');
 const customStyles = {
     content: {
@@ -25,10 +24,14 @@ const IndexLevel = ({ levels, matieres }) => {
     const ContentModalSyncMatiere = () => {
         const [newCheckMatiere, setNewCheckMatiere] = useState([...modalDataSync.matieres.map(matiere => matiere.id.toString())])
         const isChecked = (id) => {
+            // const check = () => {
+            //     if (onDeleteData.roles.find(role => role.id === role_id)) return true
+            // }
             return newCheckMatiere.includes(id.toString())
         }
         const handleChange = (e) => {
             e.preventDefault();
+            // const { value, checked } = e.target
             let checkMatiere = e.target.value;
             let data = [...newCheckMatiere]
             if (e.target.checked) {
@@ -99,6 +102,7 @@ const IndexLevel = ({ levels, matieres }) => {
                 <input
                     className="w-full p-2 mb-2 border-2 border-blue-600"
                     type="text"
+                    autoFocus={true}
                     value={data.name}
                     onChange={e => setData('name', e.target.value)} />
                 <button type="submit" className="w-full text-center bg-blue-600 text-gray-100 p-2 rounded-sm shadow-sm">
@@ -214,29 +218,6 @@ const IndexLevel = ({ levels, matieres }) => {
         </div>
     </>);
 
-    /*   return <div>
-          <div className="bg-gray-200 p-4 mb-4 flex justify-between">
-              <h3 className="text-2xl">Liste des Niveaux</h3>
-              <Link href={route('level.create')}>
-                  <Button variant="outlined">Creation</Button>
-              </Link>
-          </div>
-          {levels.map((level, key) => <div key={key} className="flex justify-between p-3 border-b">
-              <div>
-                  <Link href={route('level.show', { level: level })}>
-                      {level.name}
-                  </Link>
-              </div>
-              <div>
-                  <Link href={route('level.edit', { level: level })}>
-                      <Button>Modifier</Button>
-                  </Link>
-                  <Link className="px-3 py-2 text-white border-red-500 bg-red-500" href={route('level.destroy', { level: level })} method="delete" as="button" type="button" onClick={ondelete}>
-                      Supprimer
-                  </Link>
-              </div>
-          </div>)}
-      </div> */
 }
 IndexLevel.layout = (page) => (
     <App>

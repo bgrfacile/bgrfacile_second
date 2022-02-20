@@ -28,6 +28,12 @@ const IndexCycle = ({ cycles, levels }) => {
         const isChecked = (id) => {
             return newCheckLevel.includes(id.toString())
         }
+        // const isChecked = (id) => {
+        //     const check = () => {
+        //         if (newCheckLevel.find(level => level.id === id)) return true
+        //     }
+        //     return check()
+        // }
         const handleChange = (e) => {
             e.preventDefault();
             let checkLevel = e.target.value;
@@ -144,6 +150,7 @@ const IndexCycle = ({ cycles, levels }) => {
                 <input
                     className="w-full p-2 mb-2 border-2 border-blue-600"
                     type="text"
+                    autoFocus={true}
                     value={data.name}
                     onChange={e => setData('name', e.target.value)} />
                 <button type="submit" className="w-full text-center bg-blue-600 text-gray-100 p-2 rounded-sm shadow-sm">
