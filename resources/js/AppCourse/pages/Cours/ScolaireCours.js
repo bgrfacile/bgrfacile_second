@@ -12,12 +12,14 @@ export default function ScolaireCours() {
     }, [dispatch])
     const cours = useSelector(state => state.cours);
     console.log("cours", cours);
-    return (<>
-        <BreadCrumb title="Scolaires" result={cours.length} />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    return (<div className="flex flex-col relative">
+        <div className="sticky top-0 z-10 bg-white">
+            <BreadCrumb title="Scolaires" result={cours.length} />
+        </div>
+        <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
             {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
         </div>
-    </>);
+    </div>);
 }
 
     // useEffect(() => {

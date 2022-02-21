@@ -24,7 +24,7 @@ export default function LayoutCourse() {
     return (<>
         <div className="min-h-screen flex flex-col bg-gray-100 text-gray-700">
             <NavBar />
-            <main className="w-full h-full mx-auto flex-1 py-6 px-1 sm:px-6 lg:px-8">
+            <main className="flex-1 w-full h-full mx-auto  py-6 px-1 sm:px-6 lg:px-8">
                 {/* <CSSTransition
                     key={location.key}
                     in={showNav != null}
@@ -33,10 +33,10 @@ export default function LayoutCourse() {
                     unmountOnExit
                     onEnter={() => setShowNav(false)}
                     onExited={() => setShowNav(true)}> */}
-                    <Outlet />
+                <Outlet />
                 {/* </CSSTransition> */}
             </main>
-            <div className='h-6 w-full bg-neutral-800'></div>
+            <div className='h-6 w-full bg-neutral-800 z-10'></div>
         </div>
     </>);
 }
