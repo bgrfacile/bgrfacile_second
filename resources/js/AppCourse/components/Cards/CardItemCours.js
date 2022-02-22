@@ -23,7 +23,7 @@ export default function CardItemCours({ cour }) {
                     component="img"
                     image={cour.coverImage}
                     alt={cour.title}
-                    className="object-cover h-48 w-96"
+                    className="object-cover h-48 w-full sm:w-80"
                 />
             </CardActionArea>
             <CardContent>
