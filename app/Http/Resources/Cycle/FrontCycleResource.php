@@ -4,6 +4,7 @@ namespace App\Http\Resources\Cycle;
 
 use App\Http\Resources\LevelResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 class FrontCycleResource extends JsonResource
 {
@@ -16,11 +17,12 @@ class FrontCycleResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
-            'name'=>$this->name,
-            'diplome'=>$this->diplome,
-            'isActif'=>$this->isActif,
-            'levels'=>LevelResource::collection($this->levels),
+            'id' => $this->id,
+            'name' => $this->name,
+            'slugName' => Str::slug($this->name),
+            'diplome' => $this->diplome,
+            'isActif' => $this->isActif,
+            'levels' => LevelResource::collection($this->levels),
         ];
     }
 }

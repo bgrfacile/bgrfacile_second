@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="APP_URL" content="{{ env('APP_URL') }}">
 
-    <title inertia>{{ config('app.name', 'bgrfacile') }}</title>
+    <title>{{ config('app.name', 'bgrfacile') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,12 +25,13 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/appCourse/app.css') }}">
 
-    <!-- Scripts -->
-    <script src="{{ mix('js/appCourse/app.js') }}" defer></script>
+
 </head>
 
 <body class="font-sans antialiased">
     <div id="root"></div>
+    <!-- Scripts -->
+    <script type="text/javascript" src="{{ mix('js/appCourse/app.js') }}" defer></script>
 </body>
 
 </html>

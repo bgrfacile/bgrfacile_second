@@ -10,7 +10,7 @@ import 'react-complex-tree/lib/style.css';
 import client from "../../api/client";
 
 
-export default function ListManager({showSidebar}) {
+export default function ListManager({ showSidebar }) {
     const [cycles, setCycles] = useState([]);
     useEffect(() => {
         getCycle();
@@ -21,7 +21,7 @@ export default function ListManager({showSidebar}) {
             setCycles(res.data);
         }).catch(err => console.log(err));
     }
-    return <div className={`w-80 rounded-sm bg-white h-full fixed p-2 md:pr-7 overflow-x-hidden ease-in-out duration-300 z-20 ${showSidebar ? "translate-x-0 " : ""}`}>
+    return <div className={`w-full rounded-sm bg-white h-full sticky p-2 md:pr-7 overflow-x-hidden ease-in-out duration-300 z-20 ${showSidebar ? "translate-x-0 " : ""}`}>
         <div className="flex justify-between items-center pb-2 mb-2 border-b-2">
             <h4 className="text-2xl font-semibold">Explorateur</h4>
             <svg className="h-5 w-5" viewBox="0 0 1025 1024"><path d="M896.428 1024h-768q-53 0-90.5-37.5T.428 896V128q0-53 37.5-90.5t90.5-37.5h768q53 0 90.5 37.5t37.5 90.5v768q0 53-37.5 90.5t-90.5 37.5zm-448-832h-256q-26 0-45 19t-19 45v576q0 27 18.5 45.5t45.5 18.5h256V192zm448 64q0-26-19-45t-45-19h-320v704h320q26 0 45-18.5t19-45.5V256zm-672 512h128q13 0 22.5 9.5t9.5 22.5t-9.5 22.5t-22.5 9.5h-128q-13 0-22.5-9.5t-9.5-22.5t9.5-22.5t22.5-9.5zm128-64h-128q-13 0-22.5-9.5t-9.5-22.5t9.5-22.5t22.5-9.5h128q13 0 22.5 9.5t9.5 22.5t-9.5 22.5t-22.5 9.5zm0-128h-128q-13 0-22.5-9.5t-9.5-22.5t9.5-22.5t22.5-9.5h128q13 0 22.5 9.5t9.5 22.5t-9.5 22.5t-22.5 9.5zm0-128h-128q-13 0-22.5-9.5t-9.5-22.5t9.5-22.5t22.5-9.5h128q13 0 22.5 9.5t9.5 22.5t-9.5 22.5t-22.5 9.5zm0-128h-128q-13 0-22.5-9.5t-9.5-22.5t9.5-22.5t22.5-9.5h128q13 0 22.5 9.5t9.5 22.5t-9.5 22.5t-22.5 9.5z" fill="currentColor"></path></svg>
@@ -39,17 +39,21 @@ export default function ListManager({showSidebar}) {
                 sx={{ flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
             >
                 {cycles.map((cycle, key1) => {
-                    return <TreeItem key={key1} nodeId={uuidv4()} label={cycle.name}>
-                        {cycle.levels.map((level, key2) => {
-                            return <TreeItem key={key2} nodeId={uuidv4()} label={level.name}>
-                                {level.matieres.map((matiere, key3) => {
-                                    return <Link key={key3} to={`/cours/matiere/${matiere.name}`} state={{ state: matiere.name }}>
-                                        <TreeItem nodeId={uuidv4()} label={matiere.name} />
-                                    </Link>
-                                })}
-                            </TreeItem>
-                        })}
-                    </TreeItem>
+                    return <Link key={key1} to={`/cours/${cycle.slugName}`} state={{ levels: cycle.levels }}>
+                        <TreeItem nodeId={uuidv4()} label={cycle.name}>
+                            {cycle.levels.map((level, key2) => {
+                                return <Link key={key2} to={`/cours/${cycle.slugName}/${level.slugName}`} state={{ matieres: level.matieres }}>
+                                    <TreeItem nodeId={uuidv4()} label={level.slugName}>
+                                        {level.matieres.map((matiere, key3) => {
+                                            return <Link key={key3} to={`/cours/${cycle.slugName}/${level.slugName}/${matiere.slugName}`} state={{ matiere: matiere }}>
+                                                <TreeItem nodeId={uuidv4()} label={matiere.name} />
+                                            </Link>
+                                        })}
+                                    </TreeItem>
+                                </Link>
+                            })}
+                        </TreeItem>
+                    </Link>
                 })}
             </TreeView>
         </div>

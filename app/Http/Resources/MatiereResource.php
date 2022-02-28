@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 class MatiereResource extends JsonResource
 {
@@ -15,9 +16,10 @@ class MatiereResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
-            'name'=>$this->name,
-            'isActif'=>$this->isActif,
+            'id' => $this->id,
+            'name' => $this->name,
+            'slugName' => Str::slug($this->name),
+            'isActif' => $this->isActif,
             // 'created_at'=>formaterDate($this->created_at),
         ];
     }

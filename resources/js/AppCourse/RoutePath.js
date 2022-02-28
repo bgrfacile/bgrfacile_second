@@ -36,6 +36,9 @@ import CreateCoursImage from './pages/profile/createCours/CreateCoursImage';
 import CreateCoursVideo from './pages/profile/createCours/CreateCoursVideo';
 import CreateCoursAudio from './pages/profile/createCours/CreateCoursAudio';
 import Search from './pages/search/Search';
+import IndexCours from './pages/Cours/indexCours';
+import LevelCours from './pages/Cours/levelCours';
+import MatiereCours from './pages/Cours/matiereCours';
 
 
 
@@ -56,7 +59,10 @@ export default function RoutePath() {
                 <Route element={<LayoutCourse />} >
 
                     <Route path="cours" element={<CoursRoute />} >
-                        <Route path='matiere/:matiere' element={<ScolaireCours />} />
+                        <Route index element={<IndexCours />} />
+                        <Route path=':cycle/:level/:matiere' element={<ScolaireCours />} />
+                        <Route path=':cycle/:level' element={<ScolaireCours />} />
+                        <Route path=':cycle' element={<ScolaireCours />} />
                         <Route path='random' element={<RandomCours />} />
                     </Route>
 

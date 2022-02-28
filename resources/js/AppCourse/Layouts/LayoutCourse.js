@@ -24,7 +24,7 @@ export default function LayoutCourse() {
     return (<>
         <div className="min-h-screen flex flex-col bg-gray-100 text-gray-700">
             <NavBar />
-            <main className="flex-1 w-full h-full mx-auto  p-1 md:p-5">
+            <main className="relative flex-1 m-1 md:m-5">
                 {/* <CSSTransition
                     key={location.key}
                     in={showNav != null}

@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 class LevelResource extends JsonResource
 {
@@ -17,6 +18,7 @@ class LevelResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'slugName' => Str::slug($this->name),
             'isActif' => $this->isActif,
             'matieres' => MatiereResource::collection($this->matieres),
         ];
