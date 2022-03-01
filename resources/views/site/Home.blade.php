@@ -1,8 +1,10 @@
+{{-- style="background-image: url(https://demo.gethugothemes.com/northendlab-light/images/banner/banner-bg.svg)"> --}}
 <x-site-layout>
 
     <x-slot name="header">
-        <header class="bg-transparent dark:bg-gray-900 bg-cover bg-center bg-no-repeat headline"
-            style="background-image: url(https://demo.gethugothemes.com/northendlab-light/images/banner/banner-bg.svg)">
+        <header
+            class="h-[calc(100vh-70px)] flex items-center bg-transparent dark:bg-gray-900 bg-cover bg-center bg-no-repeat headline"
+            style="background-color: #f5fcff;background-image: url({{ asset('assets/img/bg-header-homePage.svg') }})">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row ">
                 <div class="flex flex-col justify-center px-4 mb-4 md:mb-0">
                     <h2 class="font-semibold text-4xl text-gray-800 leading-normal">
@@ -73,12 +75,22 @@
                                     src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
                             </div>
                         </div>
-                        {{-- <div class="swiper-pagination"></div> --}}
-                        {{-- <div id="button-prev" class="swiper-button-prev"></div> --}}
-                        {{-- <div id="button-next" class="swiper-button-next"></div> --}}
-                        {{-- <div class="swiper-scrollbar"></div> --}}
                     </div>
                 </div>
+            </div>
+            {{-- <div class="w-10/12 h-fit m-auto py-9 grid grid-cols-5 grid-rows-1 gap-10 items-center">
+                <div class="col-span-2">
+                    <h1 class="text-4xl text-neutral-700 font-bold font-Nunito">Lorem ipsum dolor sit amet consectetur.
+                    </h1>
+                    <p class="text-xl text-neutral-700 py-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Natus in alias eius maiores ab ipsam, consequatur dicta vero!</p>
+                    <button class="text-white font-medium px-8 py-2 bg-green-600 rounded-md"><a href=""
+                            class="">Lorem ipsum dolor sit.</a></button>
+                </div>
+                <div class="col-span-3">
+                    <img src="{{ asset('assets/img/main-heade-image.svg') }}" alt="" class="object-contain">
+                </div>
+            </div> --}}
         </header>
     </x-slot>
 
@@ -112,8 +124,6 @@
             </div>
         </div>
     </section>
-
-
 
     <section class="py-12 headline">
 
@@ -348,7 +358,8 @@
                                     Chaque don fait au site aider à le maintenir et l'améliorer
                                 </p>
                                 <div class="donate-link">
-                                    <a href="#" class="btn-paypal" target="_blank" style="margin-bottom: 10px">
+                                    <a href="{{ route('donation.page') }}" class="btn-paypal" target="_blank"
+                                        style="margin-bottom: 10px">
                                         <i class="fa fa-lock donate-padlock-icon"></i> <span>Faire un don</span>
                                     </a>
                                     <img src="{{ asset('assets/donation.webp') }}" class="donate-image" />

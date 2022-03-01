@@ -159,7 +159,16 @@
                         </x-slot>
                     </x-dropdown>
                 @else
-                    <a href="{{ route('singin.page') }}" class="btn btn-primary rounded-full ml-4">connexion</a>
+                    <div class="ml-1">
+                        <button
+                            class="shadow left-8 text-neutral-700 pl-4 pr-8 py-1 bg-blue-50 rounded-full relative  cursor-pointer border border-blue-600"><a
+                                href="" class="">Inscription</a></button>
+                        <button
+                            class="shadow-lg text-white px-4 py-1 bg-blue-600 border border-blue-600 rounded-full relative cursor-pointer">
+                            <a href="" class="">Connexion</a>
+                        </button>
+                    </div>
+                    {{-- <a href="{{ route('singin.page') }}" class="btn btn-primary rounded-full ml-4">connexion</a> --}}
                 @endauth
             </div>
 
@@ -214,6 +223,3 @@
         </div>
     </div>
 </nav>
-<script>
-
-</script>
