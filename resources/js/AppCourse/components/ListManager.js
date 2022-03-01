@@ -39,13 +39,13 @@ export default function ListManager({ showSidebar }) {
                 sx={{ flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
             >
                 {cycles.map((cycle, key1) => {
-                    return <Link key={key1} to={`/cours/${cycle.slugName}`} state={{ levels: cycle.levels }}>
+                    return <Link key={key1} to={`/cours/${cycle.slugName}-${cycle.id}`} state={{ levels: cycle.levels }}>
                         <TreeItem nodeId={uuidv4()} label={cycle.name}>
                             {cycle.levels.map((level, key2) => {
-                                return <Link key={key2} to={`/cours/${cycle.slugName}/${level.slugName}`} state={{ matieres: level.matieres }}>
+                                return <Link key={key2} to={`/cours/${cycle.slugName}-${cycle.id}/${level.slugName}-${level.id}`} state={{ matieres: level.matieres }}>
                                     <TreeItem nodeId={uuidv4()} label={level.slugName}>
                                         {level.matieres.map((matiere, key3) => {
-                                            return <Link key={key3} to={`/cours/${cycle.slugName}/${level.slugName}/${matiere.slugName}`} state={{ matiere: matiere }}>
+                                            return <Link key={key3} to={`/cours/${cycle.slugName}-${cycle.id}/${level.slugName}-${level.id}/${matiere.slugName}-${matiere.id}`} state={{ matiere: matiere }}>
                                                 <TreeItem nodeId={uuidv4()} label={matiere.name} />
                                             </Link>
                                         })}

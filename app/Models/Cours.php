@@ -26,14 +26,14 @@ class Cours extends Model
 
     public function cycles()
     {
-        return $this->belongsToMany(Cycle::class,'cours_cycles');
+        return $this->belongsToMany(Cycle::class,'cours_cycles', 'cour_id', 'cycle_id');
     }
     public function levels()
     {
-        return $this->belongsToMany(Level::class,'cours_levels');
+        return $this->belongsToMany(Level::class,'cours_levels','cour_id','level_id');
     }
     public function matieres()
     {
-        return $this->belongsToMany(Matiere::class,'cours_matieres');
+        return $this->belongsToMany(Matiere::class,'cours_matieres','cour_id','matiere_id');
     }
 }

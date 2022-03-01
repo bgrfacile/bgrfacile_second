@@ -11,6 +11,9 @@ export default function ScolaireCours() {
     let params = useParams();
     const { state } = useLocation()
     const levels = state.levels;
+    const idCycle = params.idCycle;
+    const idLevel = params.idLevel;
+    const idMatiere = params.idMatiere;
     const matieres = state.matieres;
     const matiere = state.matiere;
     const dispatch = useDispatch();

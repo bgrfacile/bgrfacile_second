@@ -6,6 +6,12 @@ const user = localStorage.getItem('user');
 export const getCoursAsync = createAsyncThunk(
     'cours/getCours',
     async () => {
+        console.log('idCycle', idCycle);
+        // console.log('idLevel', idLevel);
+        // console.log('idMatiere', idMatiere);
+        // const response = await client.get(`/cours/getCours/${idCycle}/${idLevel}/${idMatiere}`);
+        // const response = await client.get(`/cours/getCours/${idCycle}/${idLevel}`);
+        // const response = await client.get(`/cours/getCours/${idCycle}`);
         const res = await client.get("/cours");
         return { cours: res.data };
     });

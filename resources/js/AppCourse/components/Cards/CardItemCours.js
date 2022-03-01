@@ -9,6 +9,7 @@ import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
 import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { Link, useNavigate } from 'react-router-dom';
+import slugify from 'slugify';
 
 export default function CardItemCours({ cour }) {
     let navigate = useNavigate();
@@ -63,60 +64,50 @@ export default function CardItemCours({ cour }) {
     return (<article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
         <header>
             <Tooltip title="lire le cour">
-                <a href='#' className='block h-48 w-full mb-4'>
+                <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className='block h-48 w-full mb-4'>
                     <img
                         src={cour.coverImage}
                         alt={cour.title}
                         className="object-cover h-full w-full rounded-t-lg transition duration-500 ease-in-out"
                     />
-                </a>
+                </Link>
             </Tooltip>
             <div className='mb-3 px-2'>
-                <ul className='snap-x flex flex-wrap text-xs font-medium -m-1'>
+                <ul className='snap-x flex flex-wrap text-xs font-semibold -m-1'>
                     <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-200 py-1 px-3 rounded-full bg-blue-700 transition-colors duration-75 ease-in-out" href="#0">
+                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-cyan-700 hover:bg-cyan-800 transition-colors duration-75 ease-in-out" href="#">
                             cycle
                         </a>
                     </li>
                     <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-200 py-1 px-3 rounded-full bg-blue-700 transition-colors duration-75 ease-in-out" href="#0">
+                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-blue-700 hover:bg-blue-900 transition-colors duration-75 ease-in-out" href="#0">
                             level
                         </a>
                     </li>
                     <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-200 py-1 px-3 rounded-full bg-blue-700 transition-colors duration-75 ease-in-out" href="#0">
+                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-emerald-800 hover:bg-emerald-900 transition-colors duration-75 ease-in-out" href="#0">
                             matière
-                        </a>
-                    </li>
-                    <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-200 py-1 px-3 rounded-full bg-blue-700 transition-colors duration-75 ease-in-out" href="#0">
-                            vidéo
-                        </a>
-                    </li>
-                    <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-200 py-1 px-3 rounded-full bg-blue-700 transition-colors duration-75 ease-in-out" href="#0">
-                            pdf
                         </a>
                     </li>
                 </ul>
             </div>
-            <h3 className='mb-2 px-2 text-2xl font-medium tracking-widest'>
-                <a href='#' className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
+            <h3 className='mb-2 px-2 text-2xl font-medium tracking-wide'>
+                <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
                     {cour.title}
-                </a>
+                </Link>
             </h3>
         </header>
         <p className='text-base text-gray-600 grow px-2'>{cour.description}</p>
         <footer className='flex items-center mt-4 px-2 pb-2'>
             <div className="flex -space-x-1 overflow-hidden mr-1">
                 <Tooltip title={cour.users[0].user_name}>
-                    <a href='#'>
+                    <Link to={`/profile/user/${slugify(cour.users[0].user_name)}-${cour.users[0].user_id}`}>
                         <img
                             className="inline-block h-8 w-8 object-cover rounded-full ring-2 ring-white"
                             src={cour.users[0].url_image} alt={cour.users[0].user_name} />
-                    </a>
+                    </Link>
                 </Tooltip>
-                {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
+                <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
                 {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" alt="" /> */}
                 {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
             </div>

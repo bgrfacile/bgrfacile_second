@@ -47,6 +47,9 @@ class CoursController extends Controller
             'content' => $request->content,
             'type_content' => $request->type_content,
         ]);
+        $cours->matieres()->attach($request->matiereId);
+        $cours->cycles()->attach($request->cycleId);
+        $cours->levels()->attach($request->levelId);
         return response([
             'message' => 'cours created successfully',
             'cours' => new CoursResource($cours),

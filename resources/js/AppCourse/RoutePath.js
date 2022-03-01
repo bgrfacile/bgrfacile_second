@@ -60,13 +60,13 @@ export default function RoutePath() {
 
                     <Route path="cours" element={<CoursRoute />} >
                         <Route index element={<IndexCours />} />
-                        <Route path=':cycle/:level/:matiere' element={<ScolaireCours />} />
-                        <Route path=':cycle/:level' element={<ScolaireCours />} />
-                        <Route path=':cycle' element={<ScolaireCours />} />
+                        <Route path=':cycle-:idCycle/:level-:idLevel/:matiere-:idMatiere' element={<ScolaireCours />} />
+                        <Route path=':cycle-:idCycle/:level-:idLevel' element={<ScolaireCours />} />
+                        <Route path=':cycle-:idCycle' element={<ScolaireCours />} />
                         <Route path='random' element={<RandomCours />} />
                     </Route>
+                    <Route path='/cours/read/:name-:id' element={<ViewCours />} />
 
-                    <Route path='/cours/:id' element={<ViewCours />} />
                     <Route path="/exercices/*" element={<ExerciceIndex />} />
                     <Route path="/formations/*" element={<FormationIndex />} />
                     <Route path="/bonus/*" element={<BonusIndex />} />
@@ -99,6 +99,7 @@ export default function RoutePath() {
                         <Route path='/profile/devenir-formateur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />
                         <Route path='/profile/devenir-promoteur' element={<RequireAuth><DevenirPromoteur /></RequireAuth>} />
                     </Route>
+                    <Route path="/profile/user/:user-:id" element={<p>visite du profil d'un utilisateur</p>} />
                 </Route>
                 <Route path="/signin/*" element={<Login />} />
                 <Route path="/signup/*" element={<Register />} />
