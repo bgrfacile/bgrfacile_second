@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import client from '../../../api/client';
 import { getMyCours } from '../../redux/features/cours/coursSlice';
 import Empty from '../notFound/Empty';
+import Loading from '../notFound/Loading';
 
 
 const changeVisibilitieApi = (courId, isActif) => {
@@ -68,8 +69,11 @@ export default function MyCours() {
     useEffect(() => {
         dispatch(getMyCours());
     }, [dispatch]);
+
     const mycours = useSelector(state => state.cours.cours);
+    let loading = useSelector(state => state.cours.loading);
     console.log("mycours", mycours);
+
     return (
         <div className="min-h-full flex flex-col ">
             <div className="flex flex-wrap justify-between items-end pb-2 border-b mb-2">
@@ -88,7 +92,10 @@ export default function MyCours() {
                     </div>
                 </div>
             </div>
-            {mycours.length === 0 ? <Empty /> : <ListeMyCours cours={mycours} />}
+            {loading ? <Loading /> :
+                mycours.length === 0 ? <Empty /> : <ListeMyCours cours={mycours} />
+            }
+
         </div>
     )
 }

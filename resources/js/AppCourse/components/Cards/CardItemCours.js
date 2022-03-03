@@ -13,54 +13,12 @@ import slugify from 'slugify';
 
 export default function CardItemCours({ cour }) {
     let navigate = useNavigate();
-    const handleClickCard = () => {
-        navigate(`/cours/${cour.id}`, { state: { cour: cour } });
-    };
-    const truncate = (str) => {
-        return str.length > 10 ? str.substring(0, 7) + "..." : str;
-    }
-    // sx={{ maxWidth: 345 }}
-    /* return (
-        <Card>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    image={cour.coverImage}
-                    alt={cour.title}
-                    className="object-cover h-48 w-full sm:w-80"
-                />
-            </CardActionArea>
-            <CardContent>
-                <div className="flex justify-between items-center">
-                    <div className="flex-1 overflow-hidden">
-                        <Chip className='mr-1' size="small" label="text" color='default' />
-                        <Chip className='mr-1' size="small" label="video" color='info' />
-                        <Chip className='mr-1' size="small" label="audio" color='info' />
-                    </div>
-                    <div>
-                        <Tooltip title={cour.users[0].user_name}>
-                            <IconButton aria-label="add to favorites">
-                                <PersonIcon />
-                            </IconButton>
-                        </Tooltip>
-                    </div>
-                </div>
-                <Typography gutterBottom variant="h5" component="div">
-                    {cour.title}
-                </Typography>
-                <Typography style={{ overflowWrap: 'break-word' }} className="break-words max-h-20 h-20 overflow-y-hidden" variant="body2" color="text.secondary">
-                    {cour.description}
-                </Typography>
-
-            </CardContent>
-
-            <CardActions className="pt-0" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-                <Button onClick={handleClickCard} className='w-full' variant="outlined" size="medium" color="primary" startIcon={<RemoveRedEyeIcon />}>
-                    Lecture
-                </Button>
-            </CardActions>
-        </Card>
-    ) */
+    // const handleClickCard = () => {
+    //     navigate(`/cours/${cour.id}`, { state: { cour: cour } });
+    // };
+    // const truncate = (str) => {
+    //     return str.length > 10 ? str.substring(0, 7) + "..." : str;
+    // }
     return (<article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
         <header>
             <Tooltip title="lire le cour">
@@ -81,17 +39,17 @@ export default function CardItemCours({ cour }) {
                     </li>
                     <li className="scroll-ml-6 snap-start m-1">
                         <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-blue-700 hover:bg-blue-900 transition-colors duration-75 ease-in-out" href="">
-                        {cour.level.name}
+                            {cour.level.name}
                         </a>
                     </li>
                     <li className="scroll-ml-6 snap-start m-1">
                         <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-emerald-800 hover:bg-emerald-900 transition-colors duration-75 ease-in-out" href="">
-                        {cour.matiere.name}
+                            {cour.matiere.name}
                         </a>
                     </li>
                 </ul>
             </div>
-            <h3 className='mb-2 px-2 text-2xl font-medium tracking-wide'>
+            <h3 className='mb-2 px-2 text-2xl font-medium hover:underline tracking-wide'>
                 <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
                     {cour.title}
                 </Link>

@@ -6,6 +6,8 @@ import BreadCrumb from "../../components/BreadCrumb";
 import CardItemCours from "../../components/Cards/CardItemCours";
 import ListManager from "../../components/ListManager";
 import { Link, useLocation, useParams } from "react-router-dom";
+import Loading from "../notFound/Loading";
+import Empty from "../notFound/Empty";
 
 export default function ScolaireCours() {
     let params = useParams();
@@ -34,12 +36,16 @@ export default function ScolaireCours() {
 
 
     if (loading) {
-        return <div>Loading...</div>
+        return <Loading />
     } else {
         if (params.cycle && params.level && params.matiere) {
-            return (<div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
-                {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
-            </div>);
+            return (<>
+                {cours.length === 0 ? <Empty /> :
+                    <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
+                        {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
+                    </div>
+                }
+            </>);
         }
         else if (params.cycle && params.level) {
             return (<div className="mb-28 flex-1 overflow-y-auto">
@@ -51,9 +57,11 @@ export default function ScolaireCours() {
                             </Link>
                         </div>)}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
-                </div>
+                {cours.length === 0 ? <Empty /> :
+                    <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
+                        {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
+                    </div>
+                }
             </div>);
         }
         else if (params.cycle) {
@@ -66,9 +74,12 @@ export default function ScolaireCours() {
                             </Link>
                         </div>)}
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
-                </div>
+
+                {cours.length === 0 ? <Empty /> :
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
+                    </div>}
+
             </div>);
         }
     }

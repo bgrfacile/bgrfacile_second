@@ -56,9 +56,13 @@ class CoursController extends Controller
         return CoursResource::collection($cours);
     }
 
+    /**
+     *  Get the cours by cycle and level and matiere
+     *  @param int $idCycle, int $idLevel, int $idMatiere
+     *  @return App\Http\Resources\CoursResource
+     */
     public function getCoursByMatiere($idCycle, $idLevel, $idMatiere)
     {
-
         $cours = Cours::where('isActif', "1")
             ->whereHas('cycles', function ($query) use ($idCycle) {
                 $query->where('cycles.id', $idCycle);
@@ -70,6 +74,7 @@ class CoursController extends Controller
                 $query->where('matieres.id', $idMatiere);
             })
             ->get()->reverse();
+
         return CoursResource::collection($cours);
     }
 
