@@ -76,17 +76,17 @@ export default function CardItemCours({ cour }) {
                 <ul className='snap-x flex flex-wrap text-xs font-semibold -m-1'>
                     <li className="scroll-ml-6 snap-start m-1">
                         <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-cyan-700 hover:bg-cyan-800 transition-colors duration-75 ease-in-out" href="#">
-                            cycle
+                            {cour.cycle.name}
                         </a>
                     </li>
                     <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-blue-700 hover:bg-blue-900 transition-colors duration-75 ease-in-out" href="#0">
-                            level
+                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-blue-700 hover:bg-blue-900 transition-colors duration-75 ease-in-out" href="">
+                        {cour.level.name}
                         </a>
                     </li>
                     <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-emerald-800 hover:bg-emerald-900 transition-colors duration-75 ease-in-out" href="#0">
-                            matière
+                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-emerald-800 hover:bg-emerald-900 transition-colors duration-75 ease-in-out" href="">
+                        {cour.matiere.name}
                         </a>
                     </li>
                 </ul>
@@ -107,7 +107,7 @@ export default function CardItemCours({ cour }) {
                             src={cour.users[0].url_image} alt={cour.users[0].user_name} />
                     </Link>
                 </Tooltip>
-                <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
+                {/* <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
                 {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" alt="" /> */}
                 {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
             </div>

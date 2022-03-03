@@ -13,7 +13,7 @@ class Cycle extends Model
 
     public function cours()
     {
-        return $this->belongsToMany(Cours::class,'cours_cycles');
+        return $this->belongsToMany(Cours::class,'cours_cycles','cycle_id','cour_id');
     }
     public function exercices()
     {

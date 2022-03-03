@@ -1,22 +1,47 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useDispatch, useSelector } from "react-redux";
 import client from "../../../../api/client";
 
 const user = localStorage.getItem('user');
+
+// export const getCours = createAsyncThunk(
+//     "cours/getCours",
+//     async ({ idCycle, idLevel, idMatiere, userId }) => {
+//         try {
+//             const response = await client.get(`/cours/${id}`);
+//             return response.data;
+//         } catch (error) {
+//             // return rejectWithValue(error);
+//         }
+//     }
+// );
+
+
 export const getCoursAsync = createAsyncThunk(
     'cours/getCours',
     async () => {
-        console.log('idCycle', idCycle);
-        // console.log('idLevel', idLevel);
-        // console.log('idMatiere', idMatiere);
-        // const response = await client.get(`/cours/getCours/${idCycle}/${idLevel}/${idMatiere}`);
-        // const response = await client.get(`/cours/getCours/${idCycle}/${idLevel}`);
-        // const response = await client.get(`/cours/getCours/${idCycle}`);
         const res = await client.get("/cours");
         return { cours: res.data };
     });
+export const getCoursByCycle = createAsyncThunk(
+    'cours/getCoursByCycle',
+    async ({ idCycle }) => {
+        const res = await client.get(`/cours/getCours/${idCycle}`);
+        return { cours: res.data };
+    });
+export const getCoursByLevel = createAsyncThunk(
+    'cours/getCoursByLevel',
+    async ({ idCycle, idLevel }) => {
+        const res = await client.get(`/cours/getCours/${idCycle}/${idLevel}`);
+        return { cours: res.data };
+    });
+export const getCoursByMatiere = createAsyncThunk(
+    'cours/getCoursByLevel',
+    async ({ idCycle, idLevel, idMatiere }) => {
+        const res = await client.get(`/cours/getCours/${idCycle}/${idLevel}/${idMatiere}`);
+        return { cours: res.data };
+    });
 
-export const getMyCoursAsync = createAsyncThunk(
+export const getMyCours = createAsyncThunk(
     'cours/getMyCours',
     async () => {
         let userId = JSON.parse(user).user_id;
@@ -26,7 +51,11 @@ export const getMyCoursAsync = createAsyncThunk(
 
 const coursSlices = createSlice({
     name: "cours",
-    initialState: [],
+    initialState: {
+        cours: [],
+        isLoading: false,
+        error: null,
+    },
     reducers: {
         allCours: (state, action) => {
             state = action.payload.cours;
@@ -70,25 +99,56 @@ const coursSlices = createSlice({
         }
     },
     extraReducers: {
-        [getCoursAsync.fulfilled]: (state, action) => {
-            state = action.payload.cours;
-            return state;
-        },
-        [getMyCoursAsync.fulfilled]: (state, action) => {
-            state = action.payload.cours;
-            return state;
-        },
         [getCoursAsync.pending]: (state, action) => {
-            console.log('pending ...');
+            state.isLoading = true;
+        },
+        [getCoursByCycle.pending]: (state, action) => {
+            state.isLoading = true;
+        },
+        [getCoursByLevel.pending]: (state, action) => {
+            state.isLoading = true;
+        },
+        [getCoursByMatiere.pending]: (state, action) => {
+            state.isLoading = true;
+        },
+        [getCoursByLevel.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.cours = [];
+            state.cours = action.payload.cours;
+        },
+        [getCoursByMatiere.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.cours = [];
+            state.cours = action.payload.cours;
         },
         [getCoursAsync.fulfilled]: (state, action) => {
-            return action.payload.cours;
+            state.isLoading = false;
+            state.cours = [];
+            state.cours = action.payload.cours;
         },
-        [getMyCoursAsync.pending]: (state, action) => {
-            console.log('pending ...');
+        [getCoursByCycle.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.cours = [];
+            state.cours = action.payload.cours;
         },
-        [getMyCoursAsync.fulfilled]: (state, action) => {
-            return action.payload.cours;
+        [getCoursAsync.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.error = action.error.message;
+        },
+        [getMyCours.pending]: (state, action) => {
+            state.isLoading = true;
+        },
+        [getMyCours.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.cours = action.payload.cours;
+        },
+        [getMyCours.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.error = action.error.message;
+        },
+        [getCoursByCycle.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.error = action.error.message;
         }
 
     },

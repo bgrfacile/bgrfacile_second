@@ -40,6 +40,9 @@ Route::prefix('v1')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
         Route::get('/cours', [CoursController::class, 'index']);
         Route::get('/cours/{cours}', [CoursController::class, 'show']);
+        Route::get('/cours/getCours/{idCycle}', [CoursController::class, 'getCoursByCycle']);
+        Route::get('/cours/getCours/{idCycle}/{idLevel}', [CoursController::class, 'getCoursByLevel']);
+        Route::get('/cours/getCours/{idCycle}/{idLevel}/{idMatiere}', [CoursController::class, 'getCoursByMatiere']);
         Route::get('/cours/{cours}/comments', [CommentsController::class, 'index']);
 
         Route::get('cycles', CycleController::class);

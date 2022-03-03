@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\CoursResource;
 use App\Http\Resources\UserResource;
 use App\Models\Cours;
+use App\Models\Cycle;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CoursController extends Controller
 {
@@ -21,6 +23,56 @@ class CoursController extends Controller
         $cours = Cours::where('isActif', "1")->get()->reverse();
         return CoursResource::collection($cours);
     }
+    public function getCoursByCycle($idCycle)
+    {
+        $cours = Cours::where('isActif', "1")
+            ->whereHas('cycles', function ($query) use ($idCycle) {
+                $query->where('cycles.id', $idCycle);
+            })
+            ->get()->reverse();
+        // $cycle = Cycle::findOrFail($idCycle);
+        // $cours = $cycle->cours->where('isActif', "1")->reverse();
+        return CoursResource::collection($cours);
+    }
+    public function getCoursByLevel($idCycle, $idLevel)
+    {
+        // $cours = DB::table('cours')
+        //     ->join('cours_cycles', 'cours.id', '=', 'cours_cycles.cour_id')
+        //     ->join('cycles', 'cours_cycles.cycle_id', '=', 'cycles.id')
+        //     ->join('cours_levels', 'cours.id', '=', 'cours_levels.cour_id')
+        //     ->join('levels', 'cours_levels.level_id', '=', 'levels.id')
+        //     ->where('cycles.id', $idCycle)
+        //     ->where('levels.id', $idLevel)
+        //     ->where('cours.isActif', "1")
+        //     ->get()->reverse();
+        $cours = Cours::where('isActif', "1")
+            ->whereHas('levels', function ($query) use ($idLevel) {
+                $query->where('levels.id', $idLevel);
+            })
+            ->whereHas('cycles', function ($query) use ($idCycle) {
+                $query->where('cycles.id', $idCycle);
+            })
+            ->get()->reverse();
+        return CoursResource::collection($cours);
+    }
+
+    public function getCoursByMatiere($idCycle, $idLevel, $idMatiere)
+    {
+
+        $cours = Cours::where('isActif', "1")
+            ->whereHas('cycles', function ($query) use ($idCycle) {
+                $query->where('cycles.id', $idCycle);
+            })
+            ->whereHas('levels', function ($query) use ($idLevel) {
+                $query->where('levels.id', $idLevel);
+            })
+            ->whereHas('matieres', function ($query) use ($idMatiere) {
+                $query->where('matieres.id', $idMatiere);
+            })
+            ->get()->reverse();
+        return CoursResource::collection($cours);
+    }
+
 
     /**
      * Store a newly created resource in storage.

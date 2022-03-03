@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import client from '../../../api/client';
-import { changeVisibilitie, getMyCoursAsync } from '../../redux/features/cours/coursSlice';
+import { getMyCours } from '../../redux/features/cours/coursSlice';
 import Empty from '../notFound/Empty';
 
 
@@ -66,9 +66,9 @@ const ListeMyCours = ({ cours }) => <div className="grid grid-cols-1 md:grid-col
 export default function MyCours() {
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getMyCoursAsync());
+        dispatch(getMyCours());
     }, [dispatch]);
-    const mycours = useSelector(state => state.cours);
+    const mycours = useSelector(state => state.cours.cours);
     console.log("mycours", mycours);
     return (
         <div className="min-h-full flex flex-col ">
