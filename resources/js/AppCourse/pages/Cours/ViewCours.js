@@ -186,26 +186,28 @@ export default function ViewCours() {
                                     className="mt-2 rounded-full w-8 h-8 sm:w-10 sm:h-10"
                                     src={comment.comment_user_url_image} alt={`avatar ${comment.comment_user_name}`} />
                             </div>
-                            <div className="flex-1 border rounded-lg px-4 py-2 sm:px-6 sm:py-4 leading-relaxed">
-                                <strong>{comment.comment_user_name}</strong> <span className="text-xs text-gray-400">{comment.createdAt}</span>
-                                <p className="text-sm">{comment.content}</p>
+                            <div className="flex-1 border rounded-lg  py-2 sm:px-6 sm:py-4 leading-relaxed">
+                                <div className='px-2 pb-2 mb-1 border-b'>
+                                    <strong>{comment.comment_user_name}</strong> <span className="text-xs text-gray-400">{comment.createdAt}</span>
+                                    <p className="text-sm">{comment.content}</p>
+                                </div>
                                 {
                                     comment.comment_user_id === user.user_id ?
-                                        <div className="mt-4 flex items-center space-x-4">
-                                            <button type="button" className="flex items-center px-2 py-1 font-medium text-black capitalize rounded-md  hover:bg-gray-300  focus:outline-none  transition duration-300 transform ease-in-out">
+                                        <div className="flex items-center space-x-4">
+                                            {/* <button type="button" className="flex items-center px-2 py-1 font-medium text-black capitalize rounded-md  hover:bg-gray-300  focus:outline-none  transition duration-300 transform ease-in-out">
                                                 <svg className='h-4 w-4' viewBox="0 0 24 24">
                                                     <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8a8 8 0 0 1-8-8a8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21l2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38l-2.5-2.5z" fill="currentColor">
                                                     </path>
                                                 </svg>
                                                 <span className="pl-2 mx-1 text-black">Edit</span>
-                                            </button>
+                                            </button> */}
 
                                             <button
                                                 onClick={() => deleteComment(comment.id)}
                                                 type="button"
-                                                className="flex items-center px-2 py-1 font-medium tracking-wide text-black capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600  focus:outline-none  transition duration-300 transform ease-in-out">
+                                                className="flex items-center px-2 py-1 font-medium tracking-wide text-gray-600 text-xs capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600  focus:outline-none  transition duration-300 transform ease-in-out">
                                                 <svg className='h-4 w-4' viewBox="0 0 32 32"><path d="M12 12h2v12h-2z" fill="currentColor"></path><path d="M18 12h2v12h-2z" fill="currentColor"></path><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" fill="currentColor"></path><path d="M12 2h8v2h-8z" fill="currentColor"></path></svg>
-                                                <span className="pl-2 mx-1 text-black">Supprimer</span>
+                                                <span className="pl-1">Supprimer</span>
                                             </button>
                                         </div> :
                                         null

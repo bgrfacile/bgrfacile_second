@@ -16,8 +16,8 @@ const user = localStorage.getItem('user');
 // );
 
 
-export const getCoursAsync = createAsyncThunk(
-    'cours/getCours',
+export const getLastCours = createAsyncThunk(
+    'cours/getLastCours',
     async () => {
         const res = await client.get("/cours");
         return { cours: res.data };
@@ -99,7 +99,7 @@ const coursSlices = createSlice({
         }
     },
     extraReducers: {
-        [getCoursAsync.pending]: (state, action) => {
+        [getLastCours.pending]: (state, action) => {
             state.isLoading = true;
         },
         [getCoursByCycle.pending]: (state, action) => {
@@ -121,7 +121,7 @@ const coursSlices = createSlice({
             state.cours = [];
             state.cours = action.payload.cours;
         },
-        [getCoursAsync.fulfilled]: (state, action) => {
+        [getLastCours.fulfilled]: (state, action) => {
             state.isLoading = false;
             state.cours = [];
             state.cours = action.payload.cours;
@@ -131,7 +131,7 @@ const coursSlices = createSlice({
             state.cours = [];
             state.cours = action.payload.cours;
         },
-        [getCoursAsync.rejected]: (state, action) => {
+        [getLastCours.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.error.message;
         },
