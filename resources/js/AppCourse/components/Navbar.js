@@ -8,8 +8,9 @@ import SvgExo from "./svg/SvgExo";
 import SvgFormation from "./svg/SvgFormation";
 import { logout } from '../redux/features/user/userSlice';
 import SvgBonus from "./svg/SvgBonus";
+import Tooltip from "react-simple-tooltip";
 
-const className = "flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700";
+const className = "inline-flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700";
 const classNameLinkActive = "text-blue-600 bg-gray-200 dark:text-gray-200 dark:bg-gray-700";
 const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
 const classDefault = 'w-full p-2 my-2 flex items-center text-gray-700 bg-gray-50 rounded-md hover:text-blue-600 hover:bg-gray-300 hover:font-semibold';
@@ -84,23 +85,28 @@ export default function Navbar() {
             </CustomLink>
         </>)
     }
-
+    const handleGoBack = (e) => {
+        e.preventDefault();
+        if (confirm('Voulez-vous vraiment quitter l\'application ?')) {
+            window.location.href = '/';
+        }
+    }
     return <>
         <nav className=" bg-white w-full relative">
             <div className="border-b flex flex-wrap sm:flex-nowrap  justify-between items-center w-full px-0 md:px-8 py-2 dark:bg-gray-800">
                 <div className="inline-flex">
-                    <a href="/" className="flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700">
+                    <button onClick={handleGoBack} className="flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700">
                         <div className="hidden md:flex md:justify-center md:items-center">
                             <LogoShortBgrfacile />
                             <p
                                 className="hidden lg:block text-sm text-gray-500 font-normal xl:border-l xl:border-gray-200 ml-3 pl-3">
-                                <span className="hidden xl:inline">Home</span>
+                                <span className="hidden xl:inline">bgrfacile</span>
                             </p>
                         </div>
                         <div className="block md:hidden">
                             <LogoShortBgrfacile />
                         </div>
-                    </a>
+                    </button>
                 </div>
                 <div className="hidden md:flex justify-evenly items-center rounded-md flex-1 ">
                     <ItemMenu />
@@ -124,10 +130,12 @@ export default function Navbar() {
                         <div className="block">
                             <div className="inline">
                                 {isLoading ?
-                                    <button onClick={() => setIsOpenDropDown(!isOpenDropDown)}
+                                    // <Tooltip placement="bottom" content="votre profile utilisateur">
+                                    <button onClick={() => { navigate('/profile') }}
                                         className="inline-flex items-center p-1 text-gray-500 bg-gray-50 transition duration-150 ease-in-out border border-transparent rounded-full hover:shadow">
                                         <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10  rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
                                     </button>
+                                    // </Tooltip>
                                     :
                                     <Link to="/signup" className="rounded-md px-2 py-1 bg-sky-600 text-white">Inscription</Link>}
                             </div>
@@ -148,10 +156,10 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-            {isOpenDropDown && <DropDownMenu />}
+            {/* {isOpenDropDown && <DropDownMenu />} */}
             {isOpen &&
-                (<div className="md:hidden max-w-full overflow-x-hidden mx-0 md:mx-4 py-2">
-                    <div className="w-full overflow-x-scroll sm:overflow-x-auto flex justify-evenly items-center">
+                (<div className="md:hidden w-screen mx-0 mb-2 py-2 overflow-x-scroll">
+                    <div className="flex">
                         <ItemMenu />
                     </div>
                 </div>)}

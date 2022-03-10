@@ -1,6 +1,5 @@
-<svg class="gridItem__media" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1600" height="1200" viewBox="0 0 1600 1200"
-    style="enable-background:new 0 0 1600 1200;" xml:space="preserve" fill="none">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" viewBox="0 0 1600 1200" style="enable-background:new 0 0 1600 1200;" xml:space="preserve" fill="none">
     <path
         d="M310.25 1020.42L226 584.33C224.979 578.299 225.206 572.123 226.668 566.183C228.13 560.244 230.796 554.668 234.5 549.8L503.71 195.66C507.882 190.17 513.267 185.72 519.445 182.656C525.622 179.593 532.424 177.999 539.32 178H1055.88C1062.11 177.994 1068.28 179.29 1073.98 181.806C1079.69 184.322 1084.8 188.002 1089 192.61L1401 535.16C1405.1 539.656 1408.23 544.941 1410.22 550.691C1412.2 556.44 1412.99 562.534 1412.54 568.6L1347.32 1020.24L310.25 1020.42Z"
         fill="#F4F4F4" />

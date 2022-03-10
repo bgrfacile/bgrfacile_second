@@ -12,8 +12,8 @@ export default function IndexCours() {
     }, [dispatch]);
     return (
         <div className="absolute inset-0 h-full w-full flex flex-col overflow-y-auto">
-            <div className="sticky top-0 bg-white rounded-sm w-full flex justify-between items-center p-2">
-                <h4 className="text-2xl font-extrabold text-gray-900">Derniers contenue pubiers</h4>
+            <div className="sticky top-0 bg-white rounded-sm w-full flex justify-between items-center p-2 mb-4">
+                <h4 className="text-2xl font-extrabold text-gray-900">Derniers contenus publiés</h4>
             </div>
             <div className="flex-1 w-full">
                 <div className="mb-28 flex-1 overflow-y-auto">

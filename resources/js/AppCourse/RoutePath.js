@@ -1,5 +1,4 @@
-import React from 'react';
-import { Routes, Route, Link, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import LayoutCourse from './Layouts/LayoutCourse';
 import BonusIndex from './pages/bonus/BonusIndex';
 import ExerciceIndex from './pages/Exercices/ExerciceIndex';
@@ -10,7 +9,6 @@ import Profile from './pages/profile/profile';
 import RandomCours from './pages/Cours/RandomCours';
 import ScolaireCours from './pages/Cours/ScolaireCours';
 import FavorisCours from './pages/profile/FavorisCours';
-// import Search from './pages/search/search';
 import Followers from './pages/profile/followers';
 import EditProfile from './pages/profile/EditProfile';
 import Infos from './pages/profile/Infos';
@@ -37,8 +35,6 @@ import CreateCoursVideo from './pages/profile/createCours/CreateCoursVideo';
 import CreateCoursAudio from './pages/profile/createCours/CreateCoursAudio';
 import Search from './pages/search/Search';
 import IndexCours from './pages/Cours/indexCours';
-import LevelCours from './pages/Cours/levelCours';
-import MatiereCours from './pages/Cours/matiereCours';
 
 
 

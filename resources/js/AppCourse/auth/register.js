@@ -52,16 +52,15 @@ export default function Register() {
 
     }
     return (
-        <div className="h-screen flex">
-            <div className="flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 justify-around items-center">
-                <div>
+        <div className="h-screen w-full flex flex-col md:flex-row">
+            <div className="mb-4 md:mb-0 flex w-full bg-gradient-to-tr from-blue-800 to-purple-700 items-center justify-center">
+                <div className='p-10'>
                     <h1 className="text-white font-bold text-4xl font-sans">Bgrfacile</h1>
                     <p className="text-white mt-1">" Se former tout au long de la vie "</p>
                     <a href='/' type="submit" className="block text-center w-28 bg-white text-indigo-800 mt-4 py-2 rounded-2xl font-bold mb-2">Visiter</a>
                 </div>
             </div>
-            <div className="flex w-1/2 justify-center items-center bg-white">
-
+            <div className="flex w-full justify-center items-center bg-white px-4">
                 <form onSubmit={handleSubmit} className="bg-white w-96">
                     {success && <Success message={successMessage} />}
                     {error && <Error message={errorMessage} />}
