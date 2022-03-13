@@ -56,9 +56,10 @@
 
   .btn-paypal {
     background: transparent;
-    border: 2px solid #2196F3;
+    /* border: 2px solid #2196F3; */
+    border: 2px solid #f9fcff;
     border-radius: 3px;
-    color: #2196F3;
+    color: #f9fcff;
     font-weight: bold;
     padding: 0.3m 0em;
     margin: auto;
@@ -72,8 +73,8 @@
   }
 
   .btn-paypal:hover {
-    background-color: #2196F3;
-    color: white;
+    background-color: #f9fcff;
+    color: #505050;
     text-decoration: none;
   }
 

@@ -9,7 +9,10 @@ class EcoleEnLigneController extends Controller
 {
     public function index()
     {
-        return view("site.ecole-en-ligne.index");
+        return view("site.ecole-en-ligne.index", [
+            "title" => "Ecole en ligne",
+            "countSchools" => 1000, //\App\School::count()
+        ]);
     }
 
     public function create()

@@ -41,7 +41,7 @@
                                                 Cours
                                             </p>
                                             <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                                                Des cours de differents niveau regroupé en un seul endroit
+                                                Des cours de differents niveaux regroupés en un seul et même endroit.
                                             </p>
                                         </div>
                                     </a>
@@ -54,7 +54,7 @@
                                                 Exercices
                                             </p>
                                             <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                                                Entrainer vous avec une incroyable bibliothèque d'exercice.
+                                                Entrainez-vous avec une incroyable bibliothèque d'exercice.
                                             </p>
                                         </div>
                                     </a>
@@ -67,7 +67,7 @@
                                                 Formations
                                             </p>
                                             <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                                                Formez-vous en un domaine précis avec nos foramtions.
+                                                Formez-vous dans le domaine de votre choix.
                                             </p>
                                         </div>
                                     </a>
@@ -80,8 +80,8 @@
                                                 Bonus
                                             </p>
                                             <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                                                Des Podcasts, des jeux et bien d'autres astuces que bgrfacile met à
-                                                votre disposition.
+                                                Des Podcasts, des jeux et bien d'autres astuces sont mises à votre
+                                                disposition.
                                             </p>
                                         </div>
                                     </a>
@@ -139,7 +139,7 @@
                             <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white">
                                 <!-- Authentication -->
                                 <x-dropdown-link :href="route('profil.index')">
-                                    {{ __('profil') }}
+                                    {{ __('Profil') }}
                                 </x-dropdown-link>
                                 @role('super-admin')
                                     <x-dropdown-link :href="route('dashboard')">
@@ -159,13 +159,14 @@
                     </x-dropdown>
                 @else
                     <div class="ml-1">
-                        <button
-                            class="shadow left-8 text-neutral-700 pl-4 pr-8 py-1 bg-blue-50 rounded-full relative  cursor-pointer border border-blue-600"><a
-                                href="" class="">Inscription</a></button>
-                        <button
+                        <a href="{{ route('signup.page') }}"
+                            class="shadow left-8 text-neutral-700 pl-4 pr-8 py-1 bg-blue-50 rounded-full relative  cursor-pointer border border-blue-600">
+                            Inscription
+                        </a>
+                        <a href="{{ route('singin.page') }}"
                             class="shadow-lg text-white px-4 py-1 bg-blue-600 border border-blue-600 rounded-full relative cursor-pointer">
-                            <a href="" class="">Connexion</a>
-                        </button>
+                            Connexion
+                        </a>
                     </div>
                     {{-- <a href="{{ route('singin.page') }}" class="btn btn-primary rounded-full ml-4">connexion</a> --}}
                 @endauth

@@ -13,11 +13,11 @@
                 </h2>
 
                 <p class="mt-2 text-sm text-gray-500 md:text-base">
-                    Plus de 1000 cours certifiés répartis en 50 matières a votre disposition.
+                    Plus de 1000 cours certifiés répartis en plus de 50 matières à votre disposition.
                 </p>
                 <div class="flex flex-col md:flex-row justify-start mt-6">
                     <a class="w-full md:w-max bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold"
-                        href="#">Lire son premier cours</a>
+                        href="/cours/random">Lire son premier cours</a>
                     <div class="relative mt-2 sm:mt-0" x-data="{ open: false }" @click.away="open = false"
                         @close.stop="open = false">
                         <a @click="open =! open"
@@ -61,11 +61,11 @@
                 </div>
             </div>
             <div class="flex flex-col w-full h-full justify-center items-center">
-                <div class="swiper w-full h-80 md:max-w-lg overflow-hidden rounded-lg bg-transparent">
+                {{-- <div class="swiper w-full h-80 md:max-w-lg overflow-hidden rounded-lg bg-transparent">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <img class="w-full h-full object-cover overflow-hidden"
-                                src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
+                                src="{{ asset('assets/img/01') }}" alt="étudiant entrain lire">
 
                         </div>
                         <div class="swiper-slide">
@@ -75,26 +75,15 @@
                                 src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
                         </div>
                     </div>
-                </div>
+                </div> --}}
+                <img class="w-full h-full object-cover overflow-hidden" src="{{ asset('assets/img/H01.png') }}"
+                    alt="étudiant entrain lire">
             </div>
         </div>
-        {{-- <div class="w-10/12 h-fit m-auto py-9 grid grid-cols-5 grid-rows-1 gap-10 items-center">
-                <div class="col-span-2">
-                    <h1 class="text-4xl text-neutral-700 font-bold font-Nunito">Lorem ipsum dolor sit amet consectetur.
-                    </h1>
-                    <p class="text-xl text-neutral-700 py-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                        Natus in alias eius maiores ab ipsam, consequatur dicta vero!</p>
-                    <button class="text-white font-medium px-8 py-2 bg-green-600 rounded-md"><a href=""
-                            class="">Lorem ipsum dolor sit.</a></button>
-                </div>
-                <div class="col-span-3">
-                    <img src="{{ asset('assets/img/main-heade-image.svg') }}" alt="" class="object-contain">
-                </div>
-            </div> --}}
     </header>
 
 
-    <section class="py-12 headline">
+    {{-- <section class="py-12 headline">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white dark:bg-gray-800">
@@ -120,6 +109,37 @@
                         </x-count-model>
 
                     </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+
+    <section class="h-80 bg-blue-300 flex items-center">
+        <div class="w-10/12 mx-auto py-8 flex items-center">
+            <img src="public/images/Graph.svg" alt="" class="object-contain">
+            <div
+                class="w-full h-min py-6 md:py-0 px-2 sm:px-0 md:h-32 flex flex-col justify-center items-center bg-white rounded-3xl shadow-lg">
+                <div class="grid grid-rows-3 md:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+
+                    <x-count-model name="Cours" count="7000">
+                        <x-slot name="svg">
+                            <x-svg-book-open class="block h-8 w-auto text-gray-600" />
+                        </x-slot>
+                    </x-count-model>
+
+                    <x-count-model name="Exercices" count="5000">
+                        <x-slot name="svg">
+                            <x-svg-exo class="block h-8 w-auto text-gray-600" />
+                        </x-slot>
+                    </x-count-model>
+
+
+                    <x-count-model name="Formations" count="200">
+                        <x-slot name="svg">
+                            <x-svg-formation class="block h-8 w-auto text-gray-600" />
+                        </x-slot>
+                    </x-count-model>
+
                 </div>
             </div>
         </div>
@@ -169,126 +189,142 @@
         </div>
     </section>
 
-    <section class="py-12 headline">
-        <div class="container max-w-7xl px-6 py-10 mx-auto md:py-16">
-            <div class="flex flex-col space-y-6 md:flex-row md:items-center md:space-x-6">
-                <div class="swiper flex items-center justify-center w-full md:w-1/2">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="w-full h-full max-w-2xl rounded object-cover"
-                                src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
-                        </div>
-                        <div class="swiper-slide">
-                            <x-svg-school class="w-full h-full max-w-2xl rounded object-cover" />
-                        </div>
-                        <div class="swiper-slide">
-                            <img class="w-full max-h-full max-w-2xl rounded object-cover"
-                                src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
-                        </div>
-                    </div>
+
+    <div class="relative bg-transparent overflow-hidden">
+        <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
+                <div class="sm:max-w-lg">
+                    <h4
+                        class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
+                        A propos du contenu
+                    </h4>
+                    <p class="mt-4 text-xl text-gray-500">
+                        Retrouver un ensemble struturé de cours de differents niveaux scolaire, disponible en differents
+                        format
+                        dont <strong>pdf</strong>, <strong>video</strong>, <strong>audio</strong> et
+                        <strong>image</strong>.<br>
+                        Mais aussi vous retrouver des cours non classé mais tout aussi indispensable comme
+                        l'apprentisage des
+                        languages de programmation (Ex: html,css, etc.) dans une interface simple et intuitive.
+                    </p>
                 </div>
-                <div class="w-full md:w-1/2">
-                    <div class="max-w-md mx-auto">
-                        <h2 class="text-2xl font-medium tracking-wide text-gray-800 md:text-4xl">
-                            Contenues proposés
-                        </h2>
-                        <p class="mt-5 leading-7 text-gray-600">
-                            Retrouver un ensemble struturé de cours scolaire alant du primaire collège au cours
-                            donné en étude supérieur. <br />
-                            Mais aussi vous retrouver des cours non classé mais tout aussi
-                            indispensable comme l'apprentisage des languages de programmation (Ex: html,css, etc.)
-                        </p>
-                        <div class="grid gap-6 mt-8 sm:grid-cols-2">
-                            <div class="flex items-center space-x-6 text-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Cours</span>
-                            </div>
-                            <div class="flex items-center space-x-6 text-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Exercices</span>
-                            </div>
-                            <div class="flex items-center space-x-6 text-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Solution</span>
-                            </div>
-                            <div class="flex items-center space-x-6 text-gray-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" class="w-5 h-5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span>Formations</span>
+                <div>
+                    <div class="mt-10">
+                        <!-- Decorative image grid -->
+                        <div aria-hidden="true"
+                            class="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
+                            <div
+                                class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                                <div class="flex items-center space-x-6 lg:space-x-8">
+                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
+                                            <img src="{{ asset('assets/img/undraw_online_learning_re_qw08.svg') }}"
+                                                alt="" class="w-full h-full object-center object-cover">
+                                        </div>
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
+                                                alt="" class="w-full h-full object-center object-cover">
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
+                                                alt="" class="w-full h-full object-center object-cover">
+                                        </div>
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
+                                                alt="" class="w-full h-full object-center object-cover">
+                                        </div>
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
+                                                alt="" class="w-full h-full object-center object-cover">
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
+                                                alt="" class="w-full h-full object-center object-cover">
+                                        </div>
+                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
+                                                alt="" class="w-full h-full object-center object-cover">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        {{-- <a href="#"
+                            class="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">
+                            En savoir plus
+                        </a> --}}
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <section class="pt-12 headline">
         <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
-            <div class="p-6 flex flex-col md:flex-row relative">
-                <div class="h-96 w-full flex justify-center items-center">
+            <div class="p-6 h-auto md:h-96 flex flex-col md:flex-row relative">
+                <div class="h-auto w-full flex justify-center items-center mb-6 md:mb-0">
                     <div>
-                        <h4 class="text-2xl font-semibold mt-2 dark:text-gray-200">Bonus bgrfacile</h4>
-                        <p class="mt-2 text-gray-800 dark:text-gray-400">
-                            Des Quizzs, des podcasts et plein d'autres choses pour vous aider à mieux comprendre les
-                            cours et vous divertire,
-                            les bonus sont disponible sur le site bgrfacile.com
-
+                        <h4
+                            class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
+                            Bonus bgrfacile</h4>
+                        <p class="mt-3 text-gray-800 dark:text-gray-400">
+                            Des Quizs, des podcasts et des jeux pour vous aidez à mieux comprendre les
+                            cours et vous divertire.
                         </p>
-                        <div class="mt-2">
-                            <button
-                                class="uppercase bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold dark:bg-gray-900">
-                                Voir tous les bonus</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:py-2 h-auto md:h-96 w-full overflow-hidden flex justify-center items-center">
-                    <div
-                        class="w-full h-80 flex justify-center items-center md:max-w-lg overflow-hidden rounded-lg bg-transparent">
-                        <div id="player_home">
-                            <div class="player">
-                                <div id="info" class="info">
-                                    <span class="artist"> </span>
-                                    <span class="name">l'étranger de Albert Camus</span>
-                                    <div class="progress-bar">
-                                        <div class="bar"></div>
+                        <div class="mt-4 mx-auto">
+                            <div id="player_home">
+                                <div class="player">
+                                    <div id="info" class="info">
+                                        <span class="artist"> </span>
+                                        <span class="name">l'étranger de Albert Camus</span>
+                                        <div class="progress-bar">
+                                            <div class="bar"></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div id="control-panel" class="control-panel">
-                                    <div class="album-art"></div>
-                                    <div class="controls">
-                                        <div class="prev"></div>
-                                        <div id="play" class="play"></div>
-                                        <div class="next"></div>
+                                    <div id="control-panel" class="control-panel">
+                                        <div class="album-art"></div>
+                                        <div class="controls">
+                                            <div class="prev"></div>
+                                            <div id="play" class="play"></div>
+                                            <div class="next"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="h-80 w-80 absolute" style="top: -91px;left: -88px;">
+                <div class="h-full md:h-auto w-full overflow-hidden flex justify-center items-center">
+                    <div class="swiper flex items-center justify-center w-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="w-full h-full rounded object-cover"
+                                    src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
+                            </div>
+                            <div class="swiper-slide">
+                                <x-svg-school class="w-full h-full rounded object-cover" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="w-full max-h-full rounded object-cover"
+                                    src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <iframe src="https://embed.lottiefiles.com/animation/68889"></iframe> --}}
+                </div>
+                <div class="h-8 md:80 w-8 md:w-80 absolute -z-10" style="top: -91px;left: -88px;">
                     <x-svg-dots class="h-full w-full" />
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-12 headline">
+    <section class="pt-1 pb-12 md:py-12 headline">
         <div class="w-full md:max-w-7xl mx-auto px-4 lg:px-8">
             <div class="flex items-center flex-col md:flex-row">
                 <div class="w-full h-full flex justify-center items-center overflow-hidden bg-transparent">
@@ -299,9 +335,8 @@
                         <strong class="text-2xl md:text-6xl text-blue-600">Apprenants</strong>
                     </h4>
                     <p class="mt-2 text-gray-800 dark:text-gray-400">
-                        Bgfacile met à disposition des apprenants une application mobile android idéal pour visiter
+                        Bgrfacile met à disposition des apprenants une application android idéale pour visiter
                         l'ensemble des contenus du site avec des interfaces simples et intuitives. <br>
-                        L'application est disponible sur le PlayStore.
                     <div class="mt-2 flex">
                         <a href="https://play.google.com/store/apps/details?id=com.bgrfacile.bgrfacile&hl=fr&gl=US"
                             target="_blank">
@@ -322,7 +357,7 @@
         </div>
     </section>
 
-    <section class="py-12 headline">
+    {{-- <section class="py-12 headline">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white dark:bg-gray-800 ">
@@ -352,6 +387,24 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section> --}}
+
+    <section class="bg-gradient-to-r from-cyan-500 to-blue-500 mt-10 headline">
+        <div class="w-11/12 md:w-4/6 m-auto h-fit flex flex-col-reverse md:flex-row items-center">
+            <img src="{{ asset('assets/img/undraw_transfer_money_rywa.svg') }}" alt="" srcset="">
+            <div class="max-w-max h-fit pb-3">
+                <h2 class="text-3xl md:text-6xl font-bold text-white text-center py-5">Faite une Donation</h2>
+                <p class="text-gray-50 mb-2 md:mb-4">
+                    Bgrfacile est un projet concus pour les apprenants. Nous sommes une association qui a pour but de
+                    promouvoir le développement de l'informatique et de la culture numérique.
+                    Le don est l'un des moyens de soutenir, maintenir et l'améliorer le site.
+                </p>
+                <a href="{{ route('donation.page') }}" class="btn-paypal my-2" target="_blank"
+                    style="margin-bottom: 10px">
+                    <i class="fa fa-lock donate-padlock-icon"></i> <span>Faire un don</span>
+                </a>
             </div>
         </div>
     </section>
