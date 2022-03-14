@@ -149,40 +149,50 @@
 
     <section class="py-10 text-gray-700">
         <div class="w-10/12 m-auto h-fit">
-            <h2 class="text-3xl md:text-4xl font-bold text-center my-8 text-gray-700">Acteurs</h2>
-            <div class="grid grid-rows-3 md:grid-rows-1 md:grid-cols-3 items-center gap-5">
+            <h2 class="text-4xl sm:text-6xl font-bold text-center my-8 text-gray-700">Acteurs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5">
                 <div class="bg-white rounded-md p-5 shadow-xl">
                     <img src="{{ asset('assets/img/undraw_online_learning_re_qw08.svg') }}"
                         alt="illustration de d'un apprenant qui lit un cours" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Apprenants</h2>
                     <p class="">
-                        élèves, étudiants ou autodidactes, <strong class="font-semibold">bgrfacile</strong>
+                        Elèves, étudiants ou autodidactes, <strong class="font-semibold">bgrfacile</strong>
                         vous
                         offre la possibilité
-                        de vous former et de vous exercer dans le domaine de votre choix</p>
+                        de vous former et de vous exercer dans le domaine de votre choix.</p>
                 </div>
                 <div class="bg-neutral-700 text-gray-200  rounded-md p-5 shadow-xl">
                     <img src="{{ asset('assets/img/undraw_podcast_re_wr88.svg') }}"
                         alt="illustration de formateur qui enregistre un cour" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Formateurs</h2>
                     <p class="">
-                        Tout utilisateur ayant le besion de partager ses connaissances, <strong
-                            class="font-semibold">bgrfacile</strong> vous offres
-                        la possibilité de créer du contenu.
-                        <br>
-                        En tant que formateur vous pourrez créer et publier vos cours sur notre site contre
-                        rémunération.
-                    </p>
+                        Toute personne compétente et capable de partager ses connaissances,via le site. Bgrfacile vous
+                        offre donc la
+                        possibilité de créer et de publier des cours.
+                        Les formateurs pourront bénécifier d'une rémunération.</p>
+
+
+                    {{-- Tout utilisateur ayant le besion de partager ses connaissances, <strong
+                        class="font-semibold">bgrfacile</strong> vous offres
+                    la possibilité de créer du contenu.
+                    <br>
+                    En tant que formateur vous pouvez créer et publier vos cours sur notre site contre
+                    rémunération.
+                    </p> --}}
                 </div>
                 <div class="bg-white rounded-md p-5 shadow-xl" shadow-lg>
                     <img src="{{ asset('assets/img/undraw_preferences_popup_re_4qk0.svg') }}"
                         alt="illustration de personne qui enregister une école" class="h-fit w-fit object-cover">
-                    <h2 class="my-8 font-bold text-lg md:text-2xl">écoles en ligne</h2>
+                    <h2 class="my-8 font-bold text-lg md:text-2xl">Ecoles en ligne</h2>
                     <p class="">
-                        <strong class="font-semibold">bgrfacile</strong> offre la possibilité aux écoles de
-                        s’enregistrer en ligne et de profiter des
-                        avantage d'une école héberger.
-                        <br>
+                        Vous êtes un établisement, un institut, un groupe scolaire, ou école supérieure ?
+                        <strong class="font-semibold">bgrfacile</strong> vous
+                        offre la possibilité d'être
+                        plus visible et d'exixter sur internet.<br>
+                        Vous aurez à votre disposition un espace numérique permettant
+                        à chaque établissement d'échanger du contenue avec leurs élèves.<br>
+                        Il suffit juste de vous faire enregistrer afin de profiter des avantages et des differentes
+                        fonctionnalités de nos services.
                     </p>
                 </div>
             </div>
@@ -195,7 +205,7 @@
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
                 <div class="sm:max-w-lg">
                     <h4
-                        class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
+                        class="text-4xl sm:text-6xl font font-extrabold tracking-tight text-gray-900  dark:text-gray-200">
                         A propos du contenu
                     </h4>
                     <p class="mt-4 text-xl text-gray-500">
@@ -274,7 +284,7 @@
                             Bonus bgrfacile</h4>
                         <p class="mt-3 text-gray-800 dark:text-gray-400">
                             Des Quizs, des podcasts et des jeux pour vous aidez à mieux comprendre les
-                            cours et vous divertire.
+                            cours et vous divertir.
                         </p>
                         <div class="mt-4 mx-auto">
                             <div id="player_home">
@@ -397,7 +407,7 @@
             <div class="max-w-max h-fit pb-3">
                 <h2 class="text-3xl md:text-6xl font-bold text-white text-center py-5">Faite une Donation</h2>
                 <p class="text-gray-50 mb-2 md:mb-4">
-                    Bgrfacile est un projet concus pour les apprenants. Nous sommes une association qui a pour but de
+                    Bgrfacile est un projet conçu pour les apprenants. Nous sommes une association qui a pour but de
                     promouvoir le développement de l'informatique et de la culture numérique.
                     Le don est l'un des moyens de soutenir, maintenir et l'améliorer le site.
                 </p>

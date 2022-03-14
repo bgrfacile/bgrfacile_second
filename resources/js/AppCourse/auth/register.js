@@ -65,7 +65,7 @@ export default function Register() {
                     {success && <Success message={successMessage} />}
                     {error && <Error message={errorMessage} />}
 
-                    <h1 className="text-gray-800 font-bold text-2xl mb-1">Inscrivez-vous à votre site</h1>
+                    <h1 className="text-gray-800 font-bold text-2xl mb-1">Inscrivez-vous</h1>
                     <p className="text-sm font-normal text-gray-600 mb-7">
                         Vous avez déjà un compte ?
                         <Link to="/signin" className="font-bold px-2 py-0 rounded-2xl text-blue-500 hover:text-blue-700 text-xs text-center">

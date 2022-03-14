@@ -11,7 +11,6 @@ export default function ScolaireCours() {
     const params = useParams();
     const dispatch = useDispatch();
     const { cycle, idCycle, level, idLevel, matiere, idMatiere } = params
-    console.log("allCycles", useSelector(state => state.cycles.cycles));
     // const listeCycle = allCycles.find(item => item.id == idCycle)
     // const listeLevel = listeCycle ? listeCycle.levels.find(el => el.id == idLevel) : null
     let loading = useSelector(state => state.cours.isLoading);
@@ -64,43 +63,29 @@ export default function ScolaireCours() {
     } else {
         if (idCycle && idLevel && idMatiere) {
             return (<>
-                <div className="absolute inset-0 h-full w-full flex flex-col overflow-y-auto">
-                    <div className="flex-1 w-full">
-                        <div className="mb-28 flex-1 overflow-y-auto">
-                            {cours.length === 0 ? <Empty /> :
-                                <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
-                                    {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
-                                </div>
-                            }
-                        </div>
+                {cours.length === 0 ? <Empty /> :
+                    <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
+                        {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
                     </div>
-                </div>
+                }
             </>);
         }
         else if (idCycle && idLevel) {
-            return (<div className="absolute inset-0 h-full w-full flex flex-col overflow-y-auto">
-                <div className="flex-1 w-full">
-                    <div className="mb-28 flex-1 overflow-y-auto">
-                        {cours.length === 0 ? <Empty /> :
-                            <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
-                                {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
-                            </div>
-                        }
+            return (<>
+                {cours.length === 0 ? <Empty /> :
+                    <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28">
+                        {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
                     </div>
-                </div>
-            </div>);
+                }
+            </>);
         }
         else if (idCycle) {
-            return (<div className="absolute inset-0 h-full w-full flex flex-col overflow-y-auto">
-                <div className="flex-1 w-full">
-                    <div className="mb-28 flex-1 overflow-y-auto">
-                        {cours.length === 0 ? <Empty /> :
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
-                            </div>}
-                    </div>
-                </div>
-            </div>);
+            return (<>
+                {cours.length === 0 ? <Empty /> :
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {cours.map((cour, key) => <CardItemCours key={key} cour={cour} />)}
+                    </div>}
+            </>);
         }
     }
 }
