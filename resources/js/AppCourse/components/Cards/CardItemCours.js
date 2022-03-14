@@ -21,15 +21,13 @@ export default function CardItemCours({ cour }) {
     // }
     return (<article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
         <header>
-            <Tooltip title="lire le cour">
-                <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className='block h-48 w-full mb-4'>
-                    <img
-                        src={cour.coverImage}
-                        alt={cour.title}
-                        className="object-cover h-full w-full rounded-t-lg transition duration-500 ease-in-out"
-                    />
-                </Link>
-            </Tooltip>
+            <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className='block h-48 w-full mb-4'>
+                <img
+                    src={cour.coverImage}
+                    alt={cour.title}
+                    className="object-cover h-full w-full rounded-t-lg transition duration-500 ease-in-out"
+                />
+            </Link>
             <div className='mb-3 px-2'>
                 <ul className='snap-x flex flex-wrap text-xs font-semibold -m-1'>
                     <li className="scroll-ml-6 snap-start m-1">
