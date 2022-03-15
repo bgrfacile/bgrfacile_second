@@ -6,7 +6,8 @@
     <header
         class="h-full md:h-[calc(100vh-80px)] w-full flex flex-col md:flex-row items-center justify-center bg-transparent dark:bg-gray-900 bg-cover bg-center bg-no-repeat"
         style="background-color: #f5fcff;background-image: url({{ asset('assets/img/bg-header-homePage.svg') }})">
-        <div class="w-full md:max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
+        <div style="height: inherit"
+            class="relative w-full md:max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
             <div class="flex flex-col w-full h-full justify-center pt-10 md:pt-0 px-4 mb-4 md:mb-0">
                 <h2 class="font-semibold text-3xl md:text-4xl text-gray-800 leading-normal">
                     {{ __('Un apprentissage de marque et un pont vers la connaissance.') }}
@@ -61,58 +62,11 @@
                 </div>
             </div>
             <div class="flex flex-col w-full h-full justify-center items-center">
-                {{-- <div class="swiper w-full h-80 md:max-w-lg overflow-hidden rounded-lg bg-transparent">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="w-full h-full object-cover overflow-hidden"
-                                src="{{ asset('assets/img/01') }}" alt="étudiant entrain lire">
-
-                        </div>
-                        <div class="swiper-slide">
-                            <x-svg-school class="w-full h-full object-cover overflow-hidden" />
-                        </div>
-                        <div class="swiper-slide"> <img class="w-full h-full object-cover overflow-hidden"
-                                src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
-                        </div>
-                    </div>
-                </div> --}}
                 <img class="w-full h-full object-cover overflow-hidden" src="{{ asset('assets/img/H01.png') }}"
                     alt="étudiant entrain lire">
             </div>
         </div>
     </header>
-
-
-    {{-- <section class="py-12 headline">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white dark:bg-gray-800">
-                    <div class="grid grid-rows-3 md:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
-
-                        <x-count-model name="Cours" count="7000">
-                            <x-slot name="svg">
-                                <x-svg-book-open class="block h-8 w-auto text-gray-600" />
-                            </x-slot>
-                        </x-count-model>
-
-                        <x-count-model name="Exercices" count="5000">
-                            <x-slot name="svg">
-                                <x-svg-exo class="block h-8 w-auto text-gray-600" />
-                            </x-slot>
-                        </x-count-model>
-
-
-                        <x-count-model name="Formations" count="200">
-                            <x-slot name="svg">
-                                <x-svg-formation class="block h-8 w-auto text-gray-600" />
-                            </x-slot>
-                        </x-count-model>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <section class="h-80 bg-blue-300 flex items-center">
         <div class="w-10/12 mx-auto py-8 flex items-center">
@@ -149,9 +103,10 @@
 
     <section class="py-10 text-gray-700">
         <div class="w-10/12 m-auto h-fit">
-            <h2 class="text-4xl sm:text-6xl font-bold text-center my-8 text-gray-700">Acteurs</h2>
+            <h2 class="text-4xl sm:text-6xl font-bold text-center my-8 text-gray-700 uppercase">à qui s'addresse le
+                site?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5">
-                <div class="bg-white rounded-md p-5 shadow-xl">
+                <div class="h-full bg-white rounded-md p-5 shadow-xl">
                     <img src="{{ asset('assets/img/undraw_online_learning_re_qw08.svg') }}"
                         alt="illustration de d'un apprenant qui lit un cours" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Apprenants</h2>
@@ -161,26 +116,18 @@
                         offre la possibilité
                         de vous former et de vous exercer dans le domaine de votre choix.</p>
                 </div>
-                <div class="bg-neutral-700 text-gray-200  rounded-md p-5 shadow-xl">
+                <div class="h-full bg-neutral-700 text-gray-200  rounded-md p-5 shadow-xl">
                     <img src="{{ asset('assets/img/undraw_podcast_re_wr88.svg') }}"
                         alt="illustration de formateur qui enregistre un cour" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Formateurs</h2>
                     <p class="">
-                        Toute personne compétente et capable de partager ses connaissances,via le site. Bgrfacile vous
-                        offre donc la
-                        possibilité de créer et de publier des cours.
-                        Les formateurs pourront bénécifier d'une rémunération.</p>
-
-
-                    {{-- Tout utilisateur ayant le besion de partager ses connaissances, <strong
-                        class="font-semibold">bgrfacile</strong> vous offres
-                    la possibilité de créer du contenu.
-                    <br>
-                    En tant que formateur vous pouvez créer et publier vos cours sur notre site contre
-                    rémunération.
-                    </p> --}}
+                        Toute personne compétente et capable de partager ses connaissances, via le site.<br>
+                        <strong class="font-semibold">Bgrfacile</strong> vous
+                        offre donc la possibilité de créer et de publier des cours.<br>
+                        Les formateurs pourront bénécifier d'une rémunération.
+                    </p>
                 </div>
-                <div class="bg-white rounded-md p-5 shadow-xl" shadow-lg>
+                <div class="h-full bg-white rounded-md p-5 shadow-xl" shadow-lg>
                     <img src="{{ asset('assets/img/undraw_preferences_popup_re_4qk0.svg') }}"
                         alt="illustration de personne qui enregister une école" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Ecoles en ligne</h2>
@@ -281,7 +228,7 @@
                     <div>
                         <h4
                             class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
-                            Bonus bgrfacile</h4>
+                            Bonus de bgrfacile</h4>
                         <p class="mt-3 text-gray-800 dark:text-gray-400">
                             Des Quizs, des podcasts et des jeux pour vous aidez à mieux comprendre les
                             cours et vous divertir.

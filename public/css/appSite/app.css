@@ -2676,6 +2676,10 @@ select {
   width: 2.25rem;
 }
 
+.w-0 {
+  width: 0px;
+}
+
 .w-72 {
   width: 18rem;
 }
@@ -3142,6 +3146,11 @@ select {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(229 229 229 / var(--tw-divide-opacity));
 }
 
 .self-start {
@@ -6436,6 +6445,10 @@ select {
     grid-column: span 6 / span 6;
   }
 
+  .sm\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .sm\:-my-px {
     margin-top: -1px;
     margin-bottom: -1px;
@@ -6471,6 +6484,10 @@ select {
 
   .sm\:flex {
     display: flex;
+  }
+
+  .sm\:grid {
+    display: grid;
   }
 
   .sm\:hidden {
@@ -6538,6 +6555,10 @@ select {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -6568,6 +6589,10 @@ select {
 
   .sm\:gap-8 {
     gap: 2rem;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem;
   }
 
   .sm\:space-x-6 > :not([hidden]) ~ :not([hidden]) {
@@ -6855,10 +6880,6 @@ select {
 
   .md\:max-w-7xl {
     max-width: 80rem;
-  }
-
-  .md\:max-w-lg {
-    max-width: 32rem;
   }
 
   .md\:max-w-fit {

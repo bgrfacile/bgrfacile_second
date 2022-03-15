@@ -35,6 +35,7 @@ import CreateCoursVideo from './pages/profile/createCours/CreateCoursVideo';
 import CreateCoursAudio from './pages/profile/createCours/CreateCoursAudio';
 import Search from './pages/search/Search';
 import IndexCours from './pages/Cours/indexCours';
+import Nuser from './pages/profile/nUser/Nuser';
 
 
 
@@ -95,7 +96,7 @@ export default function RoutePath() {
                         <Route path='/profile/devenir-formateur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />
                         <Route path='/profile/devenir-promoteur' element={<RequireAuth><DevenirPromoteur /></RequireAuth>} />
                     </Route>
-                    <Route path="/profile/user/:user-:id" element={<p>visite du profil d'un utilisateur</p>} />
+                    <Route path="/profile/user/:user-:id" element={<Nuser/>} />
                 </Route>
                 <Route path="/signin/*" element={<Login />} />
                 <Route path="/signup/*" element={<Register />} />
