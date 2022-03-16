@@ -35,6 +35,7 @@ Route::prefix('v1')->group(function () {
         'middleware' => ['cors'],
     ], function () {
         Route::get('/auth/me', [AuthController::class, 'me']);
+        Route::get('users/{user}', [UserController::class, 'show']);
         Route::post('/signin', [AuthController::class, 'login']);
         Route::post('/signup', [AuthController::class, 'register']);
         Route::post('/logout', [AuthController::class, 'logout']);

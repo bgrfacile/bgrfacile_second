@@ -40,7 +40,7 @@ export default function Profile({ children, to, ...props }) {
         return (<>
             <div className="bg-white p-3 border-t-4 border-blue-600">
                 <div className="flex justify-between items-center rounded-md p-2 mb-2">
-                    <img alt={user.user_name} style={{ minHeight: "56px" }} className="w-14 rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
+                    <img alt={user.user_name} style={{ minHeight: "56px" }} className="w-14 h-14 object-cover rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
                     <div className="leading-5">
                         <h4 className="text-xl font-semibold">{user.user_name}</h4>
                         <h5 className="font-semibold text-blue-600 flex justify-end">

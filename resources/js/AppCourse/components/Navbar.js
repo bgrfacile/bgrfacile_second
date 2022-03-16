@@ -133,7 +133,7 @@ export default function Navbar() {
                                     // <Tooltip placement="bottom" content="votre profile utilisateur">
                                     <button onClick={() => { navigate('/profile') }}
                                         className="inline-flex items-center p-1 text-gray-500 bg-gray-50 transition duration-150 ease-in-out border border-transparent rounded-full hover:shadow">
-                                        <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10  rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
+                                        <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10 object-cover rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
                                     </button>
                                     // </Tooltip>
                                     :

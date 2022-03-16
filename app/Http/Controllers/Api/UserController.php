@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\User\UserShowResource;
 use App\Http\Resources\UserResource;
 use App\Models\Cours;
 use App\Models\User;
@@ -87,6 +88,12 @@ class UserController extends Controller
             'message' => 'user updated successfully',
             'user' => new UserResource($user),
         ], 200);
+    }
+
+    public function show($user)
+    {
+        $user = User::find($user);
+        return new UserShowResource($user);
     }
 
 }
