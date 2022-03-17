@@ -5,13 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User\UserShowResource;
 use App\Http\Resources\UserResource;
-use App\Models\Cours;
 use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -62,8 +59,11 @@ class UserController extends Controller
             ]
         );
         $user = User::find($request->user_id);
+
         if ($request->hasFile('file')) {
-            $imageName = time() . '_' . Str::slug($request->file('file')->getClientOriginalName(), '-');
+            unlink(public_path($user->url_image));
+            $imageName = time() . '_' . uniqid() . '.' . $request->file('file')->getClientOriginalExtension();
+            // $imageName = time() . '_' . Hash::make($request->file('file')->getClientOriginalName()).'.'.$request->file('file')->getClientOriginalExtension();
             $user->url_image = "/storage/" . $request->file('file')->storeAs('profile_images', $imageName, 'public');
         }
         $user->save();
@@ -96,5 +96,4 @@ class UserController extends Controller
         $userFind = User::findOrFail($user);
         return new UserShowResource($userFind);
     }
-
 }
