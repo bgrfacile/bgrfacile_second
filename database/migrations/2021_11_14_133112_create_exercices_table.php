@@ -15,10 +15,11 @@ class CreateExercicesTable extends Migration
     {
         Schema::create('exercices', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('coverImage')->nullable();
-            // $table->enum('typeExo',['simple','bgr'])->default('scolaire');
-            $table->enum('isActif',['0','1'])->default('1');
+            $table->string('description')->nullable();
+            $table->enum('isActif', ['0', '1'])->default('1');
+            $table->boolean('is_handout')->default(false);
             $table->timestamps();
         });
     }

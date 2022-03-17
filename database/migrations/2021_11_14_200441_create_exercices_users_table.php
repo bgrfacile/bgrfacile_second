@@ -15,6 +15,8 @@ class CreateExercicesUsersTable extends Migration
     {
         Schema::create('exercices_users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('exercice_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

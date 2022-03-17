@@ -15,8 +15,7 @@ class CreateSolutionsTable extends Migration
     {
         Schema::create('solutions', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('comment')->nullable();
+            $table->text('resume')->nullable();
             $table->foreignId('exercice_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });
