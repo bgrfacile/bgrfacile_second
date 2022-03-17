@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Http\Resources\User\UserLambdaResource;
 use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
@@ -34,6 +35,10 @@ class UserResource extends JsonResource
             'birthday' => formaterDate($this->birthday),
             'createdAt' => formaterDate($this->created_at),
             'roles' => RoleResource::collection($this->roles),
+            'followers' => $this->followers->count(),
+            'following' => $this->following->count(),
+            'user_followers' => UserLambdaResource::collection($this->followers),
+            'user_following' => UserLambdaResource::collection($this->following),
         ];
     }
 }

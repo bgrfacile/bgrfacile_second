@@ -92,8 +92,9 @@ class UserController extends Controller
 
     public function show($user)
     {
-        $user = User::find($user);
-        return new UserShowResource($user);
+
+        $userFind = User::findOrFail($user);
+        return new UserShowResource($userFind);
     }
 
 }

@@ -13,6 +13,7 @@ export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     // const [passwordConfirmation, setPasswordConfirmation] = useState(false)
+
     const [error, setError] = useState(false)
     const [errors, setErrors] = useState({})
     const [loading, setLoading] = useState(false)
@@ -32,7 +33,6 @@ export default function Register() {
                 setError(false)
                 setSuccess(true)
                 setSuccessMessage(response.data.message)
-                // localStorage.setItem("token", JSON.stringify(response.data.access_token));
                 localStorage.setItem("user", JSON.stringify(response.data.user));
                 dispatch(login(response.data.user));
                 setTimeout(() => {
@@ -41,7 +41,6 @@ export default function Register() {
                     })
                 }, 2000)
                 setLoading(false)
-
             })
             .catch(error => {
                 setError(true);

@@ -22,13 +22,11 @@ export default function Navbar() {
     const [isOpenDropDown, setIsOpenDropDown] = React.useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const user = useSelector(state => state.user.profile);
-    const isLoading = useSelector(state => state.user.isLoading);
+    const url_image = useSelector(state => state.user.profile.url_image);
+    const isconnect = useSelector(state => state.user.isconnect);
     const handleLogout = (e) => {
         e.preventDefault();
         if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
             dispatch(logout());
             navigate('/signin', { replace: true });
         }
@@ -85,7 +83,7 @@ export default function Navbar() {
             </CustomLink>
         </>)
     }
-    const handleGoBack = (e) => {
+    const handleToGoBack = (e) => {
         e.preventDefault();
         if (confirm('Voulez-vous vraiment quitter l\'application ?')) {
             window.location.href = '/';
@@ -95,7 +93,7 @@ export default function Navbar() {
         <nav className=" bg-white w-full relative">
             <div className="border-b flex flex-wrap sm:flex-nowrap  justify-between items-center w-full px-0 md:px-8 py-2 dark:bg-gray-800">
                 <div className="inline-flex">
-                    <button onClick={handleGoBack} className="flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700">
+                    <button onClick={handleToGoBack} className="flex justify-center items-center px-2 py-1 mx-2 text-gray-500 hover:bg-gray-200 hover:text-gray-700 transition duration-150 ease-in-out border-transparent rounded-md dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700">
                         <div className="hidden md:flex md:justify-center md:items-center">
                             <LogoShortBgrfacile />
                             <p
@@ -129,11 +127,11 @@ export default function Navbar() {
 
                         <div className="block">
                             <div className="inline">
-                                {isLoading ?
+                                {isconnect ?
                                     // <Tooltip placement="bottom" content="votre profile utilisateur">
                                     <button onClick={() => { navigate('/profile') }}
                                         className="inline-flex items-center p-1 text-gray-500 bg-gray-50 transition duration-150 ease-in-out border border-transparent rounded-full hover:shadow">
-                                        <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10 object-cover rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
+                                        <img alt="avatar" style={{ minHeight: "40px" }} className="w-10 h-10 object-cover rounded-full border-4 border-blue-400 bg-white" src={url_image} />
                                     </button>
                                     // </Tooltip>
                                     :

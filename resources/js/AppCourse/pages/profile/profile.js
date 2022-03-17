@@ -132,7 +132,7 @@ export default function Profile({ children, to, ...props }) {
                                 <svg xmlns="http://www.w3.org/2000/svg" className=" mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                                <span>Devenir Promoteur</span>
+                                <span>Crée un école en ligne</span>
                             </CustomLink>)
                     }
                 })}
@@ -145,7 +145,7 @@ export default function Profile({ children, to, ...props }) {
                 </CustomLink>
 
                 <hr className="text-gray-700 h-1 rounded-2xl bg-gray-200 my-2" />
-                <CustomLink classActive={classActive} to='/profile/devenir-formateur' className={classDefault}>
+                <CustomLink classActive={classActive} to='/profile/followers' className={classDefault}>
                     <svg className=" mr-2 h-6 w-6" viewBox="0 0 256 256">
                         <path d="M28.4 124.8a6 6 0 0 0 8.4-1.2a54 54 0 0 1 86.3-.1l.5.6l.4.4h.1l.3.2l.7.5h.3l.7.3h.2l.6.2h3.1l.6-.3h.2l.4-.2l.2-.2h.3c.1 0 .1-.1.2-.2l.3-.3h.2l.4-.5a54 54 0 0 1 86.4 0a6 6 0 0 0 8.4 1.2a6 6 0 0 0 1.2-8.4a66.4 66.4 0 0 0-29.7-22.3A37.6 37.6 0 0 0 214 64a38 38 0 0 0-76 0a37.6 37.6 0 0 0 14.9 30.1a64.9 64.9 0 0 0-24.9 16.6a64.9 64.9 0 0 0-24.9-16.6A37.6 37.6 0 0 0 118 64a38 38 0 0 0-76 0a37.6 37.6 0 0 0 14.9 30.1a66.4 66.4 0 0 0-29.7 22.3a6 6 0 0 0 1.2 8.4zM150 64a26 26 0 1 1 26 26a26.1 26.1 0 0 1-26-26zm-96 0a26 26 0 1 1 26 26a26.1 26.1 0 0 1-26-26zm145.1 134.1A37.6 37.6 0 0 0 214 168a38 38 0 0 0-76 0a37.6 37.6 0 0 0 14.9 30.1a64.9 64.9 0 0 0-24.9 16.6a64.9 64.9 0 0 0-24.9-16.6A37.6 37.6 0 0 0 118 168a38 38 0 0 0-76 0a37.6 37.6 0 0 0 14.9 30.1a66.4 66.4 0 0 0-29.7 22.3a6 6 0 1 0 9.6 7.2a54 54 0 0 1 86.3-.1l.5.6l.4.4h.1l.3.2l.7.5h.3l.7.3h.2l.6.2h3.1l.6-.3h.2l.4-.2l.2-.2h.3c.1 0 .1-.1.2-.2l.3-.3h.2l.4-.5a54 54 0 0 1 86.4 0a6 6 0 0 0 8.4 1.2a6 6 0 0 0 1.2-8.4a66.4 66.4 0 0 0-29.7-22.7zM54 168a26 26 0 1 1 26 26a26.1 26.1 0 0 1-26-26zm96 0a26 26 0 1 1 26 26a26.1 26.1 0 0 1-26-26z" fill="currentColor"></path>
                     </svg>

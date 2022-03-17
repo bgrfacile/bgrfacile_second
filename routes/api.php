@@ -4,6 +4,7 @@ use App\Http\Controllers\APi\AuthController;
 use App\Http\Controllers\Api\CommentsController;
 use App\Http\Controllers\Api\CoursController;
 use App\Http\Controllers\Api\CycleController;
+use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\MatiereController;
 use App\Http\Controllers\Api\UserController;
@@ -25,10 +26,14 @@ Route::prefix('v1')->group(function () {
     ], function () {
         Route::put('/user/update', [UserController::class, 'updateUser']);
         Route::post('/user/image/update', [UserController::class, 'updateImage']);
+        Route::post("/users/{user_id}/follow", [FollowController::class, 'follow']);
+        Route::post("/users/{user_id}/unfollow", [FollowController::class, 'unfollow']);
         Route::apiResource('/cours', CoursController::class)->except(['index', 'show']);
         Route::get('/cours/user/{userId}', [CoursController::class, 'CoursToUser']);
         Route::put('/cours/{courId}/isactif', [CoursController::class, 'updateVisibilityCours']);
         Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['index', 'show']);
+
+
     });
 
     Route::group([

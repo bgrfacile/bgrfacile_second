@@ -3,6 +3,7 @@
 namespace App\Http\Resources\User;
 
 use App\Http\Resources\CoursResource;
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
 
@@ -35,6 +36,7 @@ class UserShowResource extends JsonResource
                 'birthday' => formaterDate($this->birthday),
                 'createdAt' => formaterDate($this->created_at),
             ],
+            'is_following' => auth()->check() ? !$this->isFollowing(User::findOrFail($this->id)) : false,
             'cours' => CoursResource::collection($this->cours->where('isActif', '=', '1')->reverse()),
         ];
     }

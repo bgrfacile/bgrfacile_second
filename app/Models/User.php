@@ -62,6 +62,37 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(SlugUser::class);
     }
 
+    public function follow(User $user)
+    {
+        if (!$this->isFollowing($user)) {
+            Follow::create([
+                'user_id' => auth()->id(),
+                'following_id' => $user->id
+            ]);
+        }
+    }
+
+    public function unfollow(User $user)
+    {
+        Follow::where('user_id', auth()->id())->where('following_id', $user->id)->delete();
+    }
+
+    public function isFollowing(User $user)
+    {
+        return $this->following()->where('users.id', $user->id)->exists();
+    }
+
+    public function following()
+    {
+        return $this->hasManyThrough(User::class, Follow::class, 'user_id', 'id', 'id', 'following_id');
+        // return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_id');
+    }
+
+    public function followers()
+    {
+        return $this->hasManyThrough(User::class, Follow::class, 'following_id', 'id', 'id', 'user_id');
+    }
+
     public function cours()
     {
         return $this->belongsToMany(Cours::class, 'cours_users', 'user_id', 'cour_id');

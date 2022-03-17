@@ -63,8 +63,11 @@ class AuthController extends Controller
     }
     public function me()
     {
+        auth()->check() ?
+            $user = User::findOrFail(auth()->user()->id) :
+            $user = null;
         return response([
-            'user' => new UserResource(Auth::user()),
+            'user' => new UserResource($user),
         ]);
     }
 

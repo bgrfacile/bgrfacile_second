@@ -2,9 +2,29 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
 
 export const getInfoUser = createAsyncThunk(
-    "user/getInfoUser",
+    "userProfile/getInfoUser",
     async (user_id) => {
-        const res = await client.get(`/users/${user_id}`);
+        const resultat = await client.get(`/users/${user_id}`)
+            .then(res => {
+                return res.data;
+            })
+            .catch(err => {
+                return err.data;
+            });
+        return resultat;
+    }
+);
+export const followUser = createAsyncThunk(
+    "userProfile/followUser",
+    async (user_id) => {
+        const res = await client.post(`/users/${user_id}/follow`, { user_id });
+        return { user: res.data };
+    }
+);
+export const unfollowUser = createAsyncThunk(
+    "userProfile/unfollowUser",
+    async (user_id) => {
+        const res = await client.post(`/users/${user_id}/unfollow`, { user_id });
         return { user: res.data };
     }
 );
@@ -26,6 +46,7 @@ const userProfileSlice = createSlice({
         },
         isLoading: false,
         cours: [],
+        is_following: false,
         errors: null,
     },
     reducers: {
@@ -35,9 +56,9 @@ const userProfileSlice = createSlice({
             state.isLoading = true;
         },
         [getInfoUser.fulfilled]: (state, action) => {
-            state.profile = action.payload.user.profile;
-            state.cours = action.payload.user.cours;
-            console.log('action', action);
+            state.profile = action.payload.profile;
+            state.cours = action.payload.cours;
+            state.is_following = action.payload.is_following;
             state.isLoading = false;
         },
         [getInfoUser.rejected]: (state, action) => {

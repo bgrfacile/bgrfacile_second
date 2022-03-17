@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import LogoShortBgrfacile from '../components/LogoShortbgrfacile'
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import client from '../../api/client';
-import { login } from '../redux/features/user/userSlice';
+import { checkLogin, login } from '../redux/features/user/userSlice';
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -15,40 +15,54 @@ export default function Login() {
     const [rememberMe, setRememberMe] = useState(false)
     const [error, setError] = useState(false)
     const [errors, setErrors] = useState({})
-    const [loading, setLoading] = useState(false)
-    const [success, setSuccess] = useState(false)
-    const [successMessage, setSuccessMessage] = useState("")
     const [errorMessage, setErrorMessage] = useState("")
+
+    const loading = useSelector(state => state.user.isLoading);
+    const success = useSelector(state => state.user.success);
+    const isconnect = useSelector(state => state.user.isconnect);
+    const successMessage = useSelector(state => state.user.successMessage);
+
+    useEffect(() => {
+        if (isconnect) {
+            setTimeout(() => {
+                navigate('/cours', {
+                    replace: true,
+                })
+            }, 2000)
+        }
+    }, [isconnect])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        dispatch(checkLogin({ email, password, rememberMe }))
+        /*
         setLoading(true)
-        client.post('/signin', {
-            email: email,
-            password: password,
-            rememberMe: rememberMe
-        }).then(response => {
-            setError(false)
-            setSuccess(true)
-            setSuccessMessage(response.data.message)
-            if (response.data.user) {
-                // localStorage.setItem("token", JSON.stringify(response.data.access_token));
-                localStorage.setItem("user", JSON.stringify(response.data.user));
-                dispatch(login(response.data.user));
-                setTimeout(() => {
-                    navigate('/cours', {
-                        replace: true,
-                    })
-                }, 2000)
-                setLoading(false)
-            }
-        }).catch(error => {
-            setError(true);
-            error.response.data.errors ? setErrors(error.response.data.errors) : setErrors({})
-            error.response.data.message ? setErrorMessage(error.response.data.message) : setErrorMessage({})
-            setLoading(false)
-        });
-
+             client.post('/signin', {
+                 email: email,
+                 password: password,
+                 rememberMe: rememberMe
+             }).then(response => {
+                 setError(false)
+                 setSuccess(true)
+                 setSuccessMessage(response.data.message)
+                 if (response.data.user) {
+                     // localStorage.setItem("token", JSON.stringify(response.data.access_token));
+                     localStorage.setItem("user", JSON.stringify(response.data.user));
+                     dispatch(login(response.data.user));
+                     setTimeout(() => {
+                         navigate('/cours', {
+                             replace: true,
+                         })
+                     }, 2000)
+                     setLoading(false)
+                 }
+             }).catch(error => {
+                 setError(true);
+                 error.response.data.errors ? setErrors(error.response.data.errors) : setErrors({})
+                 error.response.data.message ? setErrorMessage(error.response.data.message) : setErrorMessage({})
+                 setLoading(false)
+             });
+             */
     }
     return (
         <div className="h-screen w-full flex flex-col md:flex-row">

@@ -1,20 +1,26 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
+import client from '../../../../api/client';
 import CardItemCours from '../../../components/Cards/CardItemCours';
-import { getInfoUser } from '../../../redux/features/user/userProfileSlice';
+import { followUser, getInfoUser, unfollowUser } from '../../../redux/features/user/userProfileSlice';
 import Empty from '../../notFound/Empty';
 import Loading from '../../notFound/Loading';
 
 export default function Nuser() {
     const params = useParams();
-    const { id, user } = params;
+    const { id } = params;
     const dispatch = useDispatch();
+    const { profile, isLoading, cours, errors, is_following } = useSelector(state => state.userProfile);
     useEffect(() => {
         dispatch(getInfoUser(id));
     }, [dispatch, id]);
-    const { profile, isLoading, cours, errors } = useSelector(state => state.userProfile);
-    console.log('profile', profile);
+    const handleFollow = async (user_id) => {
+        dispatch(followUser(user_id));
+    }
+    const handleUnFollow = async (user_id) => {
+        dispatch(unfollowUser(user_id));
+    }
     return (<>
         {
             isLoading ? <div className='w-full h-screen flex justify-center items-center'><Loading /></div> :
@@ -23,10 +29,18 @@ export default function Nuser() {
                     <div className="flex flex-wrap justify-between items-center">
                         <div className="min-w-max px-4 py-5 sm:px-6">
                             <h3 className="text-lg leading-6 font-medium text-gray-900">{profile.user_name}</h3>
-                            <button className="min-w-max bg-gray-200 font-bold text-md rounded-full py-1 px-4 mt-1 max-w-2xl text-sm text-gray-500 flex justify-center items-center">
-                                <span>Suivre</span>
-                                <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
-                            </button>
+                            {
+                                is_following ?
+                                    <button onClick={() => { handleUnFollow(profile.user_id) }} className="min-w-max bg-gray-200 font-bold text-md rounded-full py-1 px-4 mt-1 max-w-2xl text-sm text-gray-500 flex justify-center items-center">
+                                        <span>Arreter de suivre</span>
+                                        <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
+                                    </button> :
+                                    <button onClick={() => { handleFollow(profile.user_id) }} className="min-w-max bg-gray-200 font-bold text-md rounded-full py-1 px-4 mt-1 max-w-2xl text-sm text-gray-500 flex justify-center items-center">
+                                        <span>Suivre</span>
+                                        <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path></svg>
+                                    </button>
+                            }
+
                         </div>
                         <div className='min-w-max px-4 py-5 sm:px-6' >
                             <img className="h-20 w-20 object-cover rounded-full"
