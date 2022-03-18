@@ -32,8 +32,6 @@ Route::prefix('v1')->group(function () {
         Route::get('/cours/user/{userId}', [CoursController::class, 'CoursToUser']);
         Route::put('/cours/{courId}/isactif', [CoursController::class, 'updateVisibilityCours']);
         Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['index', 'show']);
-
-
     });
 
     Route::group([
@@ -52,7 +50,10 @@ Route::prefix('v1')->group(function () {
         Route::get('/cours/{cours}/comments', [CommentsController::class, 'index']);
 
         Route::get('cycles', CycleController::class);
-        Route::get('levels', LevelController::class);
-        Route::get('matieres', MatiereController::class);
+        Route::get('levels', [LevelController::class, 'custums']);
+        Route::get('levels/simple', [LevelController::class, 'nonCustums']);
+        Route::get('matieres', [MatiereController::class, 'customs']);
+        Route::get('matieres/simple', [MatiereController::class, 'nonCustoms']);
+
     });
 });

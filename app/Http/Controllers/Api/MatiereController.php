@@ -3,15 +3,21 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Matiere\BasicMatiereResource;
 use App\Http\Resources\MatiereResource;
 use App\Models\Matiere;
 use Illuminate\Http\Request;
 
 class MatiereController extends Controller
 {
-    public function __invoke()
+    public function customs()
     {
-        $matieres = Matiere::all();
+        $matieres = Matiere::where('isActif', '1')->get();
         return MatiereResource::collection($matieres);
+    }
+    public function nonCustoms()
+    {
+        $matieres = Matiere::where('isActif', '1')->get();
+        return BasicMatiereResource::collection($matieres);
     }
 }
