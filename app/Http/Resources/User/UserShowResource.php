@@ -36,7 +36,8 @@ class UserShowResource extends JsonResource
                 'birthday' => formaterDate($this->birthday),
                 'createdAt' => formaterDate($this->created_at),
             ],
-            'is_following' => auth()->check() ? !$this->isFollowing(User::findOrFail($this->id)) : false,
+            'is_following' => auth()->check() ? $this->isFollowing(User::findOrFail($this->id)) : false,
+            'is_followers' => auth()->check() ? $this->isFollowers(User::findOrFail($this->id)) : false,
             'cours' => CoursResource::collection($this->cours->where('isActif', '=', '1')->reverse()),
         ];
     }

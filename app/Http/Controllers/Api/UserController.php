@@ -92,7 +92,6 @@ class UserController extends Controller
 
     public function show($user)
     {
-
         $userFind = User::findOrFail($user);
         return new UserShowResource($userFind);
     }
