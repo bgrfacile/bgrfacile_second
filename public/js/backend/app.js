@@ -55267,12 +55267,12 @@ module.exports = function getSideChannel() {
 var map = {
 	"./Cours": [
 		"./resources/js/backend/pages/Cours/index.js",
-		7,
+		9,
 		"resources_js_backend_pages_Cours_index_js"
 	],
 	"./Cours/": [
 		"./resources/js/backend/pages/Cours/index.js",
-		7,
+		9,
 		"resources_js_backend_pages_Cours_index_js"
 	],
 	"./Cours/create": [
@@ -55297,12 +55297,12 @@ var map = {
 	],
 	"./Cours/index": [
 		"./resources/js/backend/pages/Cours/index.js",
-		7,
+		9,
 		"resources_js_backend_pages_Cours_index_js"
 	],
 	"./Cours/index.js": [
 		"./resources/js/backend/pages/Cours/index.js",
-		7,
+		9,
 		"resources_js_backend_pages_Cours_index_js"
 	],
 	"./Cours/show": [
@@ -55622,7 +55622,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"ac665f760a586ff8","resources_js_backend_pages_Cours_create_js":"147760f6dcc9d051","resources_js_backend_pages_Cours_edit_js":"46fddd39f19cdb9a","resources_js_backend_pages_Cours_show_js":"a19bbb1487f53191","resources_js_backend_pages_Cycle_index_js":"415038d2b71c1e5e","resources_js_backend_pages_Cycle_create_js":"11e98cc2baeb4936","resources_js_backend_pages_Cycle_edit_js":"338aa1e26e1dcefe","resources_js_backend_pages_Cycle_show_js":"576fb62744ce5078","resources_js_backend_pages_Dashboard_Index_js":"7730ee0dd22ca236","resources_js_backend_pages_Level_IndexLevel_js":"028aea8dd67af537","resources_js_backend_pages_Level_create_js":"3da5b3f741276921","resources_js_backend_pages_Level_edit_js":"1e0faf7a5c9c5de7","resources_js_backend_pages_Matiere_index_js":"eb8748d2337c0a88","resources_js_backend_pages_Matiere_create_js":"1c0da590bd2a46e8","resources_js_backend_pages_Matiere_edit_js":"2c6828fd8fed7dc1","resources_js_backend_pages_Matiere_show_js":"3babdbe1774639c1","resources_js_backend_pages_Users_Index_js":"af592bf6f1738c55","resources_js_backend_pages_layouts_app_js":"ce3ea671fd5505cf"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"bf7812ec20cdbe83","resources_js_backend_pages_Cours_create_js":"147760f6dcc9d051","resources_js_backend_pages_Cours_edit_js":"46fddd39f19cdb9a","resources_js_backend_pages_Cours_show_js":"a19bbb1487f53191","resources_js_backend_pages_Cycle_index_js":"1e5fdb7c1bd5c676","resources_js_backend_pages_Cycle_create_js":"5d258c4f02358440","resources_js_backend_pages_Cycle_edit_js":"441d3000d1d9bfb0","resources_js_backend_pages_Cycle_show_js":"9407b45471e76eb6","resources_js_backend_pages_Dashboard_Index_js":"6702a9c395363de3","resources_js_backend_pages_Level_IndexLevel_js":"b110c52a68da890b","resources_js_backend_pages_Level_create_js":"6a90e3c9fe448702","resources_js_backend_pages_Level_edit_js":"9cccc4a07f414f1a","resources_js_backend_pages_Matiere_index_js":"a6c459a76bd8fc6c","resources_js_backend_pages_Matiere_create_js":"0e2817ec30a75f40","resources_js_backend_pages_Matiere_edit_js":"7937a130bfae60f7","resources_js_backend_pages_Matiere_show_js":"31a0e2d1afa36245","resources_js_backend_pages_Users_Index_js":"4fc85a85a6d7ba2b","resources_js_backend_pages_layouts_app_js":"30a355694dcdfe65"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

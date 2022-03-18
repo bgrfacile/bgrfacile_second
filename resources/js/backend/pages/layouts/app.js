@@ -41,6 +41,10 @@ export default function App({ children }) {
                         className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
                         Matiere
                     </Link>
+                    <Link href={route('cours.index')}
+                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
+                        Cours
+                    </Link>
                 </nav>
             </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CoursResource;
 use App\Models\Cours;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -16,9 +17,9 @@ class CoursController extends Controller
      */
     public function index()
     {
-        $cours = Cours::all();
-        return Inertia::render('Cours/index',[
-            'cours'=>$cours
+        $cours = Cours::all()->reverse();
+        return Inertia::render('Cours/index', [
+            'cours' => CoursResource::collection($cours)
         ]);
     }
 
@@ -41,12 +42,12 @@ class CoursController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name"=>"required|string|min:3",
-            "coverImage"=>"image"
+            "name" => "required|string|min:3",
+            "coverImage" => "image"
         ]);
         $cours = Cours::create([
-            "name"=>$request->name,
-            "coverImage0"=>null,
+            "name" => $request->name,
+            "coverImage0" => null,
         ]);
         return redirect()->route('cours.index');
     }
@@ -83,8 +84,8 @@ class CoursController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            "name"=>"required|string|min:3",
-            "coverImage"=>"image"
+            "name" => "required|string|min:3",
+            "coverImage" => "image"
         ]);
         $cours = Cours::findOrFail($id);
         $cours->name = $request->name;
