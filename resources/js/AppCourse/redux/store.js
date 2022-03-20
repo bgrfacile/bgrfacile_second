@@ -6,10 +6,12 @@ import cyclesSlice from './features/cycle/cyclesSlice'
 import userProfileSlice from './features/user/userProfileSlice'
 import levelsSlice from './features/level/levelsSlice'
 import matieresSlice from './features/matiere/matieresSlice'
+import ExerciceSlice from './features/Exercices/ExerciceSlice'
 
 export const store = configureStore({
     reducer: {
         cours: coursSlice,
+        exercise: ExerciceSlice,
         cycles: cyclesSlice,
         levels: levelsSlice,
         matieres:matieresSlice,

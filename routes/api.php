@@ -4,6 +4,7 @@ use App\Http\Controllers\APi\AuthController;
 use App\Http\Controllers\Api\CommentsController;
 use App\Http\Controllers\Api\CoursController;
 use App\Http\Controllers\Api\CycleController;
+use App\Http\Controllers\Api\ExercicesController;
 use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\MatiereController;
@@ -42,12 +43,15 @@ Route::prefix('v1')->group(function () {
         Route::post('/signin', [AuthController::class, 'login']);
         Route::post('/signup', [AuthController::class, 'register']);
         Route::post('/logout', [AuthController::class, 'logout']);
+
         Route::get('/cours', [CoursController::class, 'index']);
         Route::get('/cours/{cours}', [CoursController::class, 'show']);
         Route::get('/cours/getCours/{idCycle}', [CoursController::class, 'getCoursByCycle']);
         Route::get('/cours/getCours/{idCycle}/{idLevel}', [CoursController::class, 'getCoursByLevel']);
         Route::get('/cours/getCours/{idCycle}/{idLevel}/{idMatiere}', [CoursController::class, 'getCoursByMatiere']);
         Route::get('/cours/{cours}/comments', [CommentsController::class, 'index']);
+
+        Route::get('/last-exercices', [ExercicesController::class, 'lastExercices']);
 
         Route::get('cycles', CycleController::class);
         Route::get('levels', [LevelController::class, 'custums']);
