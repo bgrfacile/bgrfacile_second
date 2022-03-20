@@ -15,9 +15,18 @@ class Exercice extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function cours()
+    {
+        return $this->belongsToMany(Cours::class, 'cours_exercices', 'exercice_id', 'cour_id');
+    }
     public function cycles()
     {
-        return $this->belongsToMany(Cycle::class, 'exercices_cycles');
+        return $this->belongsToMany(Cycle::class, 'exercices_cycles', 'exercice_id', 'cycle_id');
+    }
+
+    public function contents()
+    {
+        return $this->morphMany(Content::class, 'contentable');
     }
 
     public function levels()

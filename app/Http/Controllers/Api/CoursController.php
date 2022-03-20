@@ -87,7 +87,6 @@ class CoursController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $user = User::find($request->user_id);
         $coverImage = null;
         if ($request->hasFile('coverImage')) {

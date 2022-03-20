@@ -29,7 +29,10 @@ Route::prefix('v1')->group(function () {
         Route::post('/user/image/update', [UserController::class, 'updateImage']);
         Route::post("/users/{user_id}/follow", [FollowController::class, 'follow']);
         Route::post("/users/{user_id}/unfollow", [FollowController::class, 'unfollow']);
+
         Route::apiResource('/cours', CoursController::class)->except(['index', 'show']);
+        Route::apiResource('/exercices', ExercicesController::class)->except(['index', 'show']);
+
         Route::get('/cours/user/{userId}', [CoursController::class, 'CoursToUser']);
         Route::put('/cours/{courId}/isactif', [CoursController::class, 'updateVisibilityCours']);
         Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['index', 'show']);
@@ -51,7 +54,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/cours/getCours/{idCycle}/{idLevel}/{idMatiere}', [CoursController::class, 'getCoursByMatiere']);
         Route::get('/cours/{cours}/comments', [CommentsController::class, 'index']);
 
-        Route::get('/last-exercices', [ExercicesController::class, 'lastExercices']);
+        Route::get('/exercices', [ExercicesController::class, 'index']);
 
         Route::get('cycles', CycleController::class);
         Route::get('levels', [LevelController::class, 'custums']);

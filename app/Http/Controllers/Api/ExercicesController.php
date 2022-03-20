@@ -3,18 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Exercice\ExerciceSimpleResource;
 use App\Models\Exercice;
 use Illuminate\Http\Request;
 
 class ExercicesController extends Controller
 {
-
-    public function lastExercices()
-    {
-        $exercices = Exercice::with('cours')->orderBy('created_at', 'desc')->take(5)->get();
-        return response()->json($exercices);
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,17 +16,8 @@ class ExercicesController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $exercices = Exercice::with('cours')->orderBy('created_at', 'desc')->take(5)->get();
+        return response()->json($exercices);
     }
 
     /**
@@ -43,7 +28,29 @@ class ExercicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'string|min:5',
+            'isActif' => 'required',
+            'isHandout' => 'required',
+        ]);
+        $exercice = Exercice::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'isActif' => $request->isActif,
+            'is_handout' => $request->isHandout,
+        ]);
+        $exercice->contents()->create([
+            // 'contentable_id' => $exercice->id,
+            // 'contentable_type' => 'App\Models\Exercice',
+            'content' => $request->content,
+            'type_content' => $request->type_content,
+        ]);
+        $exercice->cours()->attach($request->cours_id);
+        return response([
+            'message' => 'exercice created successfully',
+            'exercice' => new ExerciceSimpleResource($exercice),
+        ], 200);
     }
 
     /**
@@ -53,17 +60,6 @@ class ExercicesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         //
     }
