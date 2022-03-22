@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Exercice\CustumExerciceResource;
 use App\Http\Resources\Exercice\ExerciceSimpleResource;
 use App\Models\Exercice;
 use Illuminate\Http\Request;
@@ -16,8 +17,86 @@ class ExercicesController extends Controller
      */
     public function index()
     {
-        $exercices = Exercice::with('cours')->orderBy('created_at', 'desc')->take(5)->get();
-        return response()->json($exercices);
+        // $exercices = Exercice::with('cours')->orderBy('created_at', 'desc')->take(5)->get();
+        // return response()->json($exercices);
+        $exercices = Exercice::where('isActif', '1')->orderBy('created_at', 'desc')->get();
+        return CustumExerciceResource::collection($exercices);
+    }
+    public function getExosByCycle($idCycle)
+    {
+        $exercices = Exercice::where('isActif', "1")
+            ->whereHas('cycles', function ($query) use ($idCycle) {
+                $query->where('cycles.id', $idCycle);
+            })
+            ->get()->reverse();
+        return CustumExerciceResource::collection($exercices);
+    }
+    public function getExosByLevel($idCycle, $idLevel)
+    {
+        if ($idCycle != "undefined") {
+            $exercices = Exercice::where('isActif', "1")
+                ->whereHas('levels', function ($query) use ($idLevel) {
+                    $query->where('levels.id', $idLevel);
+                })
+                ->whereHas('cycles', function ($query) use ($idCycle) {
+                    $query->where('cycles.id', $idCycle);
+                })
+                ->get()->reverse();
+            return CustumExerciceResource::collection($exercices);
+        } else {
+            $exercices = Exercice::where('isActif', "1")
+                ->whereHas('levels', function ($query) use ($idLevel) {
+                    $query->where('levels.id', $idLevel);
+                })
+                // ->whereHas('cycles', function ($query) use ($idCycle) {
+                //     $query->where('cycles.id', $idCycle);
+                // })
+                ->get()->reverse();
+            return CustumExerciceResource::collection($exercices);
+        }
+    }
+
+    public function getExosByMatiere($idCycle, $idLevel, $idMatiere)
+    {
+        $exercices = null;
+        if ($idLevel == "undefined" && $idCycle == "undefined") {
+            $exercices = Exercice::where('isActif', "1")
+                ->whereHas('matieres', function ($query) use ($idMatiere) {
+                    $query->where('matieres.id', $idMatiere);
+                })
+                ->get()->reverse();
+        } elseif ($idCycle == "undefined") {
+            $exercices = Exercice::where('isActif', "1")
+                ->whereHas('levels', function ($query) use ($idLevel) {
+                    $query->where('levels.id', $idLevel);
+                })
+                ->whereHas('matieres', function ($query) use ($idMatiere) {
+                    $query->where('matieres.id', $idMatiere);
+                })
+                ->get()->reverse();
+        } elseif ($idLevel == "undefined") {
+            $exercices = Exercice::where('isActif', "1")
+                ->whereHas('cycles', function ($query) use ($idCycle) {
+                    $query->where('cycles.id', $idCycle);
+                })
+                ->whereHas('matieres', function ($query) use ($idMatiere) {
+                    $query->where('matieres.id', $idMatiere);
+                })
+                ->get()->reverse();
+        } else {
+            $exercices = Exercice::where('isActif', "1")
+                ->whereHas('cycles', function ($query) use ($idCycle) {
+                    $query->where('cycles.id', $idCycle);
+                })
+                ->whereHas('levels', function ($query) use ($idLevel) {
+                    $query->where('levels.id', $idLevel);
+                })
+                ->whereHas('matieres', function ($query) use ($idMatiere) {
+                    $query->where('matieres.id', $idMatiere);
+                })
+                ->get()->reverse();
+        }
+        return CustumExerciceResource::collection($exercices);
     }
 
     /**
@@ -28,6 +107,7 @@ class ExercicesController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'title' => 'required',
             'description' => 'string|min:5',
@@ -47,6 +127,10 @@ class ExercicesController extends Controller
             'type_content' => $request->type_content,
         ]);
         $exercice->cours()->attach($request->cours_id);
+        $exercice->cycles()->attach($request->cycle_id);
+        $exercice->levels()->attach($request->level_id);
+        $exercice->matieres()->attach($request->matiere_id);
+        $exercice->users()->attach($request->user_id);
         return response([
             'message' => 'exercice created successfully',
             'exercice' => new ExerciceSimpleResource($exercice),

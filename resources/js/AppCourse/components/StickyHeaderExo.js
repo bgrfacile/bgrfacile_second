@@ -1,19 +1,23 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 export default function StickyHeaderExo() {
+    const levelSelected = useSelector(state => state.exercises.levelSelected);
+    const matiereSelected = useSelector(state => state.exercises.matiereSelected);
+    const exercices = useSelector(state => state.exercises.exercices);
     return (<div className="sticky top-0 bg-white rounded-sm w-full flex flex-col p-2 mb-4">
         <div className="w-full flex justify-between items-center py-1">
             <div className=" w-full flex flex-wrap items-center justify-start">
                 <span className="min-w-fit text-sm leading-5 text-gray-600">
-                    <strong className='font-bold'>Niveaux</strong> actuellement selectionné
+                    <strong className='font-bold'>Niveaux</strong> {levelSelected}
                 </span>
                 <span className='px-1'>/</span>
                 <span className="min-w-fit text-sm leading-5 text-gray-600">
-                    <strong className='font-bold'>matiere</strong> actuellement selectionné
+                    <strong className='font-bold'>matiere</strong> {matiereSelected}
                 </span>
             </div>
             <span className="min-w-fit text-sm leading-5 font-semibold text-gray-600">
-                10  disponible(s)
+                {exercices.length}  disponible(s)
             </span>
         </div>
         {/*

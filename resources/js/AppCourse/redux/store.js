@@ -7,14 +7,16 @@ import userProfileSlice from './features/user/userProfileSlice'
 import levelsSlice from './features/level/levelsSlice'
 import matieresSlice from './features/matiere/matieresSlice'
 import ExerciceSlice from './features/Exercices/ExerciceSlice'
+import BasicCycleSlice from './features/cycle/BasicCycleSlice'
 
 export const store = configureStore({
     reducer: {
         cours: coursSlice,
-        exercise: ExerciceSlice,
+        exercises: ExerciceSlice,
         cycles: cyclesSlice,
+        basicCycle: BasicCycleSlice,
         levels: levelsSlice,
-        matieres:matieresSlice,
+        matieres: matieresSlice,
         user: userSlice,
         userProfile: userProfileSlice,
         toggleAside: toggleAsideSlice,

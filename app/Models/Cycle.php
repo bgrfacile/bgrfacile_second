@@ -17,7 +17,7 @@ class Cycle extends Model
     }
     public function exercices()
     {
-        return $this->belongsToMany(Exercice::class,'exercices_cycles');
+        return $this->belongsToMany(Exercice::class,'cycles_exercices','cycle_id','exercice_id');
     }
     public function levels()
     {

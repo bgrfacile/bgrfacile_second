@@ -55,8 +55,12 @@ Route::prefix('v1')->group(function () {
         Route::get('/cours/{cours}/comments', [CommentsController::class, 'index']);
 
         Route::get('/exercices', [ExercicesController::class, 'index']);
+        Route::get('/exercices/getExos/{idCycle}', [ExercicesController::class, 'getExosByCycle']);
+        Route::get('/exercices/getExos/{idCycle}/{idLevel}', [ExercicesController::class, 'getExosByLevel']);
+        Route::get('/exercices/getExos/{idCycle}/{idLevel}/{idMatiere}', [ExercicesController::class, 'getExosByMatiere']);
 
-        Route::get('cycles', CycleController::class);
+        Route::get('cycles', [CycleController::class, 'custums']);
+        Route::get('cycles/simple', [CycleController::class, 'nonCustums']);
         Route::get('levels', [LevelController::class, 'custums']);
         Route::get('levels/simple', [LevelController::class, 'nonCustums']);
         Route::get('matieres', [MatiereController::class, 'customs']);

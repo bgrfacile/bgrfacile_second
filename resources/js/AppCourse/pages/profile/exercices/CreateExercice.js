@@ -16,10 +16,14 @@ export default function CreateExercice() {
             title,
             description,
             content,
-            isActif: true,
+            isActif: 1,
             isHandout,
             type_content: 'texte',
             cours_id: 1,
+            cycle_id: 1,
+            matiere_id: 1,
+            level_id: 1,
+            user_id: 1,
         });
         console.log(res);
 

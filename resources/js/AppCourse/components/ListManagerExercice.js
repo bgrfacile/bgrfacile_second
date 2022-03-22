@@ -1,16 +1,40 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { getExosByCycle, getExosByLevel, getExosByMatiere, setLevelSelected, setMatiereSelected } from '../redux/features/Exercices/ExerciceSlice';
 
 export default function ListManagerExercice() {
+    const dispatch = useDispatch();
+    const [cycleState, setCycleState] = useState({});
+    const [levelState, setLevelState] = useState({});
+    const [matiereState, setMatiereState] = useState({});
+    const [polycopieChecked, setPolycopieChecked] = useState(false);
+    const [exerciceChecked, setExerciceChecked] = useState(true);
+    const [solutionChecked, setSolutionChecked] = useState(true);
     const levels = useSelector(state => state.levels.levels);
     const matieres = useSelector(state => state.matieres.matieres);
-    const handleChangeValueRadio = (e) => {
-        console.log(e.target.value);
+    const basicCycles = useSelector(state => state.basicCycle.cycles);
+
+    const handleChangeCycleValue = (e) => {
+        const cycle = basicCycles.find(c => c.id === parseInt(e.target.value));
+        setCycleState(cycle);
+        dispatch(getExosByCycle({ idCycle: cycle.id }));
+    }
+    const handleChangeLevelValue = (e) => {
+        const level = levels.find(level => level.id === parseInt(e.target.value));
+        setLevelState(level);
+        dispatch(setLevelSelected(level));
+        dispatch(getExosByLevel({ idCycle: cycleState.id, idLevel: level.id }));
+    }
+    const handleChangeMatiereValue = (e) => {
+        const matiere = matieres.find(matiere => matiere.id === parseInt(e.target.value));
+        setMatiereState(matiere);
+        dispatch(setMatiereSelected(matiere));
+        dispatch(getExosByMatiere({ idCycle: cycleState.id, idLevel: levelState.id, idMatiere: matiere.id }));
     }
     return (<>
         <div className={`w-full rounded-sm bg-white h-full sticky p-2 md:pr-7 overflow-x-hidden ease-in-out duration-300 z-20`}>
@@ -21,16 +45,28 @@ export default function ListManagerExercice() {
             <div className="overflow-x-auto">
                 <div className="py-2 border-b border-gray-500">
                     <div className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                        <input type="checkbox" value="5eme" id="level" name="gender" />
-                        <label htmlFor="level">Les polycopies</label>
+                        <input type="checkbox" value="polycopie" id="polycopie" checked={polycopieChecked} onChange={
+                            (e) => {
+                                setPolycopieChecked(e.target.checked);
+                            }
+                        } />
+                        <label className='flex-1' htmlFor="polycopie">Les polycopies</label>
                     </div>
                     <div className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                        <input type="checkbox" value="5eme" id="exercice" name="gender" />
-                        <label htmlFor="exercice">Exercices</label>
+                        <input type="checkbox" value="exercice" id="exercice" checked={exerciceChecked} onChange={
+                            (e) => {
+                                setExerciceChecked(e.target.checked);
+                            }
+                        } />
+                        <label className='flex-1' htmlFor="exercice">Exercices</label>
                     </div>
                     <div className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                        <input type="checkbox" value="5eme" id="solution" name="gender" />
-                        <label htmlFor="solution">Solutions</label>
+                        <input type="checkbox" value="solution" id="solution" checked={solutionChecked} onChange={
+                            (e) => {
+                                setSolutionChecked(e.target.checked);
+                            }
+                        } />
+                        <label className='flex-1' htmlFor="solution">Solutions</label>
                     </div>
                 </div>
                 <div>
@@ -38,13 +74,30 @@ export default function ListManagerExercice() {
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
+                            id="cycles disponibles">
+                            <Typography>Cycle Disponibles</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails onChange={handleChangeCycleValue}>
+                            {
+                                basicCycles.map((cycle, index) => (<div key={index} className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
+                                    <input type="radio" value={cycle.id} id={`${cycle.name}-${cycle.id}`} name="cycle" />
+                                    <label className='flex-1' htmlFor={`${cycle.name}-${cycle.id}`}>{cycle.name}</label>
+                                </div>))
+                            }
+                        </AccordionDetails>
+                    </Accordion>
+
+                    <Accordion>
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
                             id="niveaux disponibles">
                             <Typography>Niveaux Disponibles</Typography>
                         </AccordionSummary>
-                        <AccordionDetails onChange={handleChangeValueRadio}>
+                        <AccordionDetails onChange={handleChangeLevelValue}>
                             {
                                 levels.map((level, index) => (<div key={index} className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                                    <input type="radio" value={level.id} id={`${level.name}-${level.id}`} name="level" />
+                                    <input type="radio" data-name={level.name} value={level.id} id={`${level.name}-${level.id}`} name="level" />
                                     <label className='flex-1' htmlFor={`${level.name}-${level.id}`}>{level.name}</label>
                                 </div>))
                             }
@@ -59,7 +112,7 @@ export default function ListManagerExercice() {
                         >
                             <Typography>Matières Disponible</Typography>
                         </AccordionSummary>
-                        <AccordionDetails>
+                        <AccordionDetails onChange={handleChangeMatiereValue}>
                             {
                                 matieres.map((matiere, index) => (<div key={index} className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
                                     <input type="radio" value={matiere.id} id={`${matiere.name}-${matiere.id}`} name="matiere" />
@@ -69,34 +122,6 @@ export default function ListManagerExercice() {
                         </AccordionDetails>
                     </Accordion>
                 </div>
-
-
-
-
-
-                {/* <div className="py-2 border-b border-gray-500">
-                    <h5>Liste des niveaux disponibles</h5>
-                    <div onChange={handleChangeValueRadio} className="grid grid-cols-1 gap-4">
-                        {
-                            levels.map((level, index) => (<div key={index} className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                                <input type="radio" value="5eme" id="level" name="gender" />
-                                <label htmlFor="level">{level.name}</label>
-                            </div>))
-                        }
-                    </div>
-                </div> */}
-
-                {/* <div className="py-2 border-b border-gray-500">
-                    <h5>Liste des matières disponible</h5>
-                    <div onChange={handleChangeValueRadio} className="grid grid-cols-1 gap-4">
-                        {
-                            matieres.map((matiere, index) => (<div key={index} className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                                <input type="radio" value="5eme" id="level" name="gender" />
-                                <label htmlFor="level">{matiere.name}</label>
-                            </div>))
-                        }
-                    </div>
-                </div> */}
             </div>
         </div>
     </>)

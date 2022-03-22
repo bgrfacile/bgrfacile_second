@@ -12,7 +12,7 @@ export default function LayoutCourse() {
     const isLoading = useSelector(state => state.user.isLoading);
     useEffect(() => {
         dispatch(checkConnect())
-    }, []);
+    }, [dispatch]);
     return (<>
         {
             isLoading ? <div className="min-h-screen w-full flex justify-center items-center"><Loading /></div> :

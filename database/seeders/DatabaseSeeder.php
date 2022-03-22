@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cycle;
+use App\Models\Level;
+use App\Models\Matiere;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 
@@ -28,5 +31,13 @@ class DatabaseSeeder extends Seeder
             Role::create(['name' => 'professeur']);
             Role::create(['name' => 'promoteur']);
         }
+
+        Cycle::factory(5)->create()
+            ->each(function ($cycle) {
+                $cycle->levels()->saveMany(Level::factory(5)->make())
+                    ->each(function ($level) {
+                        $level->matieres()->saveMany(Matiere::factory(5)->make());
+                    });
+            });
     }
 }
