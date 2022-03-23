@@ -21,7 +21,7 @@ class CustumExerciceResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'coverImage' => $this->coverImage,
+            'coverImage' => $this->coverImage ? $this->coverImage : $this->cours()->first()->coverImage,
             'description' => $this->description,
             'isActif' => (int) $this->isActif,
             'isHandout' => $this->is_handout,

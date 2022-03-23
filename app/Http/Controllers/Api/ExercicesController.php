@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class ExercicesController extends Controller
 {
+    public function myExercices(Request $request)
+    {
+        $user = $request->user();
+        $exercices = $user->exercices;
+        return CustumExerciceResource::collection($exercices);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -55,7 +61,6 @@ class ExercicesController extends Controller
             return CustumExerciceResource::collection($exercices);
         }
     }
-
     public function getExosByMatiere($idCycle, $idLevel, $idMatiere)
     {
         $exercices = null;

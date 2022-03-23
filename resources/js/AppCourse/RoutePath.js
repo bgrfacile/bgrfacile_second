@@ -36,6 +36,8 @@ import Search from './pages/search/Search';
 import IndexCours from './pages/Cours/indexCours';
 import Nuser from './pages/profile/nUser/Nuser';
 import CreateExercice from "./pages/profile/exercices/CreateExercice";
+import EditMyExercice from "./pages/profile/exercices/EditMyExercice";
+import CreateSolution from "./pages/profile/exercices/CreateSolution";
 
 
 
@@ -86,7 +88,9 @@ export default function RoutePath() {
                         <Route path="/profile/my-cours/create/video" element={<RequireAuth><CreateCoursVideo /></RequireAuth>} />
                         <Route path="/profile/my-cours/create/audio" element={<RequireAuth><CreateCoursAudio /></RequireAuth>} />
                         <Route path="/profile/my-exos" element={<RequireAuth><MyExos /></RequireAuth>} />
+                        <Route path="/profile/my-exos/Edit" element={<RequireAuth><EditMyExercice /></RequireAuth>} />
                         <Route path="/profile/my-exos/create" element={<RequireAuth><CreateExercice /></RequireAuth>} />
+                        <Route path="/profile/my-exos/add/solution" element={<RequireAuth><CreateSolution /></RequireAuth>} />
                         <Route path="/profile/favoris" element={<RequireAuth><Favoris /></RequireAuth>} />
                         <Route path="/profile/favoris/cours" element={<RequireAuth><FavorisCours /></RequireAuth>} />
                         <Route path="/profile/favoris/exercices-solutions" element={<RequireAuth><FavorisExcerciceSolution /></RequireAuth>} />

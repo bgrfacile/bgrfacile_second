@@ -1,6 +1,12 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
 
+export const getMyExercice = createAsyncThunk(
+    'exercices/getMyExercice',
+    async () => {
+        const res = await client.get("/my-exercices");
+        return { exercices: res.data };
+    });
 
 export const getLastExercice = createAsyncThunk(
     'exercices/getLastExercice',
@@ -35,6 +41,7 @@ const ExerciceSlice = createSlice({
     initialState: {
         exercices: [],
         exercicesUse: [],
+        myExercicesCreate: [],
         isLoading: false,
         error: null,
         levelSelected: "valeur par défaut",
@@ -98,6 +105,16 @@ const ExerciceSlice = createSlice({
             state.exercicesUse = action.payload.exercices;
         },
         [getExosByMatiere.rejected]: (state, action) => {
+            state.error = action.error.message;
+        },
+
+        [getMyExercice.pending]: (state, action) => {
+            state.isLoading = true;
+        },
+        [getMyExercice.fulfilled]: (state, action) => {
+            state.myExercicesCreate = action.payload.exercices;
+        },
+        [getMyExercice.rejected]: (state, action) => {
             state.error = action.error.message;
         },
     },

@@ -106,6 +106,6 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     public function exercices()
     {
-        return $this->belongsToMany(Exercice::class);
+        return $this->belongsToMany(Exercice::class, 'exercices_users', 'user_id', 'exercice_id');
     }
 }
