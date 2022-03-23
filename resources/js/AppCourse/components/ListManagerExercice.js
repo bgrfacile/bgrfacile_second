@@ -5,7 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { getExosByCycle, getExosByLevel, getExosByMatiere, setLevelSelected, setMatiereSelected } from '../redux/features/Exercices/ExerciceSlice';
+import { getExosByCycle, getExosByLevel, getExosByMatiere, hiddenIsHandout, setLevelSelected, setMatiereSelected, showIsHandout } from '../redux/features/Exercices/ExerciceSlice';
 
 export default function ListManagerExercice() {
     const dispatch = useDispatch();
@@ -36,6 +36,32 @@ export default function ListManagerExercice() {
         dispatch(setMatiereSelected(matiere));
         dispatch(getExosByMatiere({ idCycle: cycleState.id, idLevel: levelState.id, idMatiere: matiere.id }));
     }
+    const handleChangePolycopie = (e) => {
+        if (e.target.checked) {
+            dispatch(showIsHandout());
+        } else {
+            dispatch(hiddenIsHandout());
+        }
+        setPolycopieChecked(e.target.checked);
+    }
+
+    const handleChangeExercice = (e) => {
+        if (e.target.checked) {
+            dispatch(showIsHandout());
+        } else {
+            dispatch(hiddenIsHandout());
+        }
+        setExerciceChecked(e.target.checked);
+    }
+
+    const handleChangeSolution = (e) => {
+        if (e.target.checked) {
+            dispatch(showIsHandout());
+        } else {
+            dispatch(hiddenIsHandout());
+        }
+        setSolutionChecked(e.target.checked);
+    }
     return (<>
         <div className={`w-full rounded-sm bg-white h-full sticky p-2 md:pr-7 overflow-x-hidden ease-in-out duration-300 z-20`}>
             <div className="flex justify-between items-center pb-2 mb-2 border-b-2">
@@ -45,27 +71,15 @@ export default function ListManagerExercice() {
             <div className="overflow-x-auto">
                 <div className="py-2 border-b border-gray-500">
                     <div className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                        <input type="checkbox" value="polycopie" id="polycopie" checked={polycopieChecked} onChange={
-                            (e) => {
-                                setPolycopieChecked(e.target.checked);
-                            }
-                        } />
+                        <input type="checkbox" value="polycopie" id="polycopie" checked={polycopieChecked} onChange={handleChangePolycopie} />
                         <label className='flex-1' htmlFor="polycopie">Les polycopies</label>
                     </div>
                     <div className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                        <input type="checkbox" value="exercice" id="exercice" checked={exerciceChecked} onChange={
-                            (e) => {
-                                setExerciceChecked(e.target.checked);
-                            }
-                        } />
+                        <input type="checkbox" value="exercice" id="exercice" checked={exerciceChecked} onChange={handleChangeExercice} />
                         <label className='flex-1' htmlFor="exercice">Exercices</label>
                     </div>
                     <div className="flex gap-1 items-center w-full px-2 mb-2 py-1 rounded-md font-medium hover:bg-gray-200 hover:text-gray-900 ease-in-out">
-                        <input type="checkbox" value="solution" id="solution" checked={solutionChecked} onChange={
-                            (e) => {
-                                setSolutionChecked(e.target.checked);
-                            }
-                        } />
+                        <input type="checkbox" value="solution" id="solution" checked={solutionChecked} onChange={handleChangeSolution} />
                         <label className='flex-1' htmlFor="solution">Solutions</label>
                     </div>
                 </div>

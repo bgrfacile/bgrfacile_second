@@ -11,7 +11,8 @@ import { getListMatiere } from "../../redux/features/matiere/matieresSlice";
 
 export default function ExerciceIndex() {
     const dispatch = useDispatch();
-    const exercices = useSelector(state => state.exercises.exercices);
+    const exercices = useSelector(state => state.exercises.exercicesUse);
+    console.log('exercices', exercices);
     useEffect(() => {
         dispatch(getListLevels());
         dispatch(getListMatiere());

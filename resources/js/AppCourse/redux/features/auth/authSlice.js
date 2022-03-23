@@ -44,7 +44,7 @@ export const authSlice = createSlice({
         [loginAsync.rejected]: (state, action) => {
             return {
                 ...state,
-                error: action.payload,
+                error: action.error.message,
             };
         }
     }

@@ -34,6 +34,7 @@ const ExerciceSlice = createSlice({
     name: "exercices",
     initialState: {
         exercices: [],
+        exercicesUse: [],
         isLoading: false,
         error: null,
         levelSelected: "valeur par défaut",
@@ -47,6 +48,12 @@ const ExerciceSlice = createSlice({
         },
         setMatiereSelected: (state, action) => {
             state.matiereSelected = action.payload.name;
+        },
+        showIsHandout: (state, action) => {
+            state.exercicesUse = state.exercices.filter(exercice => exercice.isHandout);
+        },
+        hiddenIsHandout: (state, action) => {
+            state.exercicesUse = state.exercices;
         }
     },
     extraReducers: {
@@ -55,6 +62,7 @@ const ExerciceSlice = createSlice({
         },
         [getLastExercice.fulfilled]: (state, action) => {
             state.exercices = action.payload.exercices;
+            state.exercicesUse = action.payload.exercices;
         },
         [getLastExercice.rejected]: (state, action) => {
             state.error = action.error.message;
@@ -65,6 +73,7 @@ const ExerciceSlice = createSlice({
         },
         [getExosByCycle.fulfilled]: (state, action) => {
             state.exercices = action.payload.exercices;
+            state.exercicesUse = action.payload.exercices;
         },
         [getExosByCycle.rejected]: (state, action) => {
             state.error = action.error.message;
@@ -75,6 +84,7 @@ const ExerciceSlice = createSlice({
         },
         [getExosByLevel.fulfilled]: (state, action) => {
             state.exercices = action.payload.exercices;
+            state.exercicesUse = action.payload.exercices;
         },
         [getExosByLevel.rejected]: (state, action) => {
             state.error = action.error.message;
@@ -85,6 +95,7 @@ const ExerciceSlice = createSlice({
         },
         [getExosByMatiere.fulfilled]: (state, action) => {
             state.exercices = action.payload.exercices;
+            state.exercicesUse = action.payload.exercices;
         },
         [getExosByMatiere.rejected]: (state, action) => {
             state.error = action.error.message;
@@ -93,7 +104,9 @@ const ExerciceSlice = createSlice({
 });
 export const {
     setLevelSelected,
-    setMatiereSelected
+    setMatiereSelected,
+    showIsHandout,
+    hiddenIsHandout,
 } = ExerciceSlice.actions;
 
 export default ExerciceSlice.reducer;
