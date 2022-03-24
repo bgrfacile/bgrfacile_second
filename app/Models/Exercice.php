@@ -39,6 +39,6 @@ class Exercice extends Model
 
     public function solutions()
     {
-        return $this->hasMany(Solution::class);
+        return $this->hasMany(Solution::class, 'exercice_id');
     }
 }

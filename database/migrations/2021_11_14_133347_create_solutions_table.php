@@ -16,6 +16,7 @@ class CreateSolutionsTable extends Migration
         Schema::create('solutions', function (Blueprint $table) {
             $table->id();
             $table->text('resume')->nullable();
+            $table->enum('isActif', ['0', '1'])->default('1');
             $table->foreignId('exercice_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamps();
         });

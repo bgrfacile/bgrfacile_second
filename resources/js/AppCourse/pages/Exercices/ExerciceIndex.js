@@ -7,13 +7,19 @@ import { getBasicCycle } from "../../redux/features/cycle/BasicCycleSlice";
 import { getLastExercice } from "../../redux/features/Exercices/ExerciceSlice";
 import { getListLevels } from "../../redux/features/level/levelsSlice";
 import { getListMatiere } from "../../redux/features/matiere/matieresSlice";
+import { getLastSolution } from "../../redux/features/solutions/solutionSlice";
 
 
 export default function ExerciceIndex() {
     const dispatch = useDispatch();
     const exercices = useSelector(state => state.exercises.exercicesUse);
-    console.log('exercices', exercices);
+    const solutions = useSelector(state => state.solutions.solutions);
+    let allDatas = [exercices, solutions];
+    // allDatas = exercices.concat(solutions)
+    allDatas = allDatas.flat();
+    console.log('allDatas', allDatas);
     useEffect(() => {
+        dispatch(getLastSolution());
         dispatch(getListLevels());
         dispatch(getListMatiere());
         dispatch(getBasicCycle());

@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\ExercicesController;
 use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\MatiereController;
+use App\Http\Controllers\Api\SolutionController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Cours;
@@ -31,7 +32,10 @@ Route::prefix('v1')->group(function () {
         Route::post("/users/{user_id}/unfollow", [FollowController::class, 'unfollow']);
 
         Route::apiResource('/cours', CoursController::class)->except(['index', 'show']);
+        Route::get('/my-exercices', [ExercicesController::class, 'myExercices']);
         Route::apiResource('/exercices', ExercicesController::class)->except(['index', 'show']);
+        Route::get('/my-solutions', [SolutionController::class, 'mySolution']);
+        Route::apiResource('/solutions', SolutionController::class)->except(['index', 'show']);
 
         Route::get('/cours/user/{userId}', [CoursController::class, 'CoursToUser']);
         Route::put('/cours/{courId}/isactif', [CoursController::class, 'updateVisibilityCours']);
@@ -55,7 +59,8 @@ Route::prefix('v1')->group(function () {
         Route::get('/cours/{cours}/comments', [CommentsController::class, 'index']);
 
         Route::get('/exercices', [ExercicesController::class, 'index']);
-        Route::get('/my-exercices', [ExercicesController::class, 'myExercices']);
+        Route::get('/solutions', [SolutionController::class, 'index']);
+
         Route::get('/exercices/getExos/{idCycle}', [ExercicesController::class, 'getExosByCycle']);
         Route::get('/exercices/getExos/{idCycle}/{idLevel}', [ExercicesController::class, 'getExosByLevel']);
         Route::get('/exercices/getExos/{idCycle}/{idLevel}/{idMatiere}', [ExercicesController::class, 'getExosByMatiere']);
@@ -66,6 +71,5 @@ Route::prefix('v1')->group(function () {
         Route::get('levels/simple', [LevelController::class, 'nonCustums']);
         Route::get('matieres', [MatiereController::class, 'customs']);
         Route::get('matieres/simple', [MatiereController::class, 'nonCustoms']);
-
     });
 });

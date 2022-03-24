@@ -1,29 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import client from '../../../../api/client';
 
 export default function CreateSolution() {
     const { state } = useLocation()
     const { exercice } = state
-    const handleSubmit = (e) => {
+    const [resumer, setResumer] = useState('')
+    const [content, setContent] = useState('')
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('submit');
-        // const formData = new FormData(e.target)
-        // const data = {}
-        // for (let [key, value] of formData.entries()) {
-        //     data[key] = value
-        // }
-        // data.exercice = exercice._id
-        // fetch('http://localhost:5000/api/solutions/create', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(res => {
-        //         console.log(res)
-        //     })
+        const formData = new FormData()
+        formData.append('exercice_id', exercice.id)
+        formData.append('resumer', resumer)
+        formData.append('content', content)
+        const resultat = await client.post('/solutions', formData)
+        if (resultat.status === 200) {
+            setContent('')
+            setResumer('')
+        }else{
+            console.log('erreur')
+            console.error(resultat)
+        }
     }
 
     return (
@@ -32,17 +29,12 @@ export default function CreateSolution() {
                 <h1 className='text-2xl font-bold'>{exercice.title}</h1>
                 <div className='flex-1'>
                     <div className='flex justify-end'>
-                        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
-                            Enregistrer la solution
-                        </button>
                     </div>
                 </div>
             </div>
             <form onSubmit={handleSubmit} className='flex flex-col'>
-                <input type='text' className='w-full p-2 border rounded' placeholder='Titre de la solution' />
-                <textarea className='w-full p-2 border rounded' placeholder='Description de la solution' />
-                <input type='text' className='w-full p-2 border rounded' placeholder='URL de la solution' />
-                <textarea className='w-full p-2 border rounded' placeholder='contenue de la solution' />
+                <textarea value={resumer} onChange={(e) => setResumer(e.target.value)} className='w-full p-2 border rounded' placeholder='resumer de la solution' />
+                <textarea value={content} onChange={(e) => setContent(e.target.value)} className='w-full p-2 border rounded' placeholder='content de la solution' />
                 <button type='submit' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
                     Enregistrer la solution
                 </button>
