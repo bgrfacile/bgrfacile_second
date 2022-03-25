@@ -76,7 +76,6 @@ export default function MyCours() {
 
     const mycours = useSelector(state => state.cours.cours);
     let loading = useSelector(state => state.cours.loading);
-    console.log("mycours", mycours);
 
     return (
         <div className="min-h-full flex flex-col ">

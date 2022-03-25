@@ -1,34 +1,48 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import Tiptap from '../../../components/Editor/Tiptap'
-import Svgbook from '../../../components/svg/SvgBook';
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import CardItemChoixContent from '../../../components/Cards/CardItemChoixContent';
+import HearderCreateCours from '../../../components/form/HearderCreateCours';
+import { getBasicCycle } from '../../../redux/features/cycle/BasicCycleSlice';
+import { getListLevels } from '../../../redux/features/level/levelsSlice';
+import { getListMatiere } from '../../../redux/features/matiere/matieresSlice';
 
 export default function CreateCoursIndex() {
-
-    const CardCreate = ({ svg, title, description, link }) => {
-        return (
-            <div className="w-full bg-white font-semibold text-center rounded-3xl border shadow-lg p-10">
-                {svg && svg}
-                <h2 className="text-lg text-gray-700"> {title && title} </h2>
-                <p className="text-xs text-gray-400 my-4"> {description && description}  </p>
-                {link &&
-                <Link to={link} className="bg-blue-600 px-8 py-2 mt-8 rounded-3xl text-gray-100 font-semibold uppercase tracking-wide">cree</Link>
-                }
-
-            </div>
-        )
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getListLevels());
+        dispatch(getListMatiere());
+        dispatch(getBasicCycle());
+    }, [dispatch]);
+    const [title, setTitle] = useState('');
+    const [cycle, setCycle] = useState({});
+    const [level, setLevel] = useState({});
+    const [matiere, setMatiere] = useState({});
+    const [isActif, setIsActif] = useState(false);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = {
+            title: title,
+            cycle: cycle,
+            level: level,
+            matiere: matiere,
+            isActif: isActif
+        }
+        console.log('submit', data);
     }
-// const gridStyle = {
-//     display: 'inline-grid',
-//     gridTemplateColumns: 'repeat(auto-fit, minmax(320, 1fr))',
-//     gridGap: '1rem',
-//     justifyItems: 'center',
-//     alignItems: 'center',
-//     alignContent: 'center',
-//     justifyContent: 'center',
-// }
+    return <form onSubmit={handleSubmit} className="w-full h-full flex flex-col">
+        <HearderCreateCours
+            getTitle={(title) => setTitle(title)}
+            getCycle={(cycle) => setCycle(cycle)}
+            getLevel={(level) => setLevel(level)}
+            getMatiere={(matiere) => setMatiere(matiere)}
+            getIsActif={(isActif) => setIsActif(isActif)} />
+    </form>
+}
+
+
+const OldLayout = () => {
     return (<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-        <CardCreate
+        <CardItemChoixContent
             title={'PDF'.toUpperCase()}
             description={'Créer un cours en PDF'}
             svg={<svg className='mb-3 w-32 h-32 text-blue-200 mx-auto' viewBox="0 0 24 24">
@@ -37,7 +51,7 @@ export default function CreateCoursIndex() {
             </svg>}
             link={'/profile/my-cours/create/pdf'}
         />
-        <CardCreate
+        <CardItemChoixContent
             title={'TEXTE'.toUpperCase()}
             description={'Créer un cours en texte'}
             svg={<svg className='mb-3 w-32 h-32 text-blue-200 mx-auto' viewBox="0 0 24 24">
@@ -46,7 +60,7 @@ export default function CreateCoursIndex() {
             </svg>}
             link={'/profile/my-cours/create/texte'}
         />
-        <CardCreate
+        <CardItemChoixContent
             title={'IMAGE'.toUpperCase()}
             description={'Créer un cours en image'}
             svg={<svg className='mb-3 w-32 h-32 text-blue-200 mx-auto' viewBox="0 0 24 24">
@@ -54,7 +68,7 @@ export default function CreateCoursIndex() {
             </svg>}
             link={'/profile/my-cours/create/image'}
         />
-        <CardCreate
+        <CardItemChoixContent
             title={'video'.toUpperCase()}
             description={'Créer un cours en video'}
             svg={<svg className='mb-3 w-32 h-32 text-blue-200 mx-auto' viewBox="0 0 24 24">
@@ -62,11 +76,11 @@ export default function CreateCoursIndex() {
             </svg>}
             link={'/profile/my-cours/create/video'}
         />
-        <CardCreate
+        <CardItemChoixContent
             title={'audio'.toUpperCase()}
             description={'Créer un cours en audio'}
             svg={<svg className='mb-3 w-32 h-32 text-blue-200 mx-auto' viewBox="0 0 24 24">
-               <path d="M14 2H4v20h16V8l-6-6zm2 11h-3v3.75c0 1.24-1.01 2.25-2.25 2.25S8.5 17.99 8.5 16.75s1.01-2.25 2.25-2.25c.46 0 .89.14 1.25.38V11h4v2zm-3-4V3.5L18.5 9H13z" fill="currentColor"></path>
+                <path d="M14 2H4v20h16V8l-6-6zm2 11h-3v3.75c0 1.24-1.01 2.25-2.25 2.25S8.5 17.99 8.5 16.75s1.01-2.25 2.25-2.25c.46 0 .89.14 1.25.38V11h4v2zm-3-4V3.5L18.5 9H13z" fill="currentColor"></path>
             </svg>}
             link={'/profile/my-cours/create/audio'}
         />
