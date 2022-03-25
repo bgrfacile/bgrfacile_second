@@ -131,7 +131,7 @@ const MenuBar = ({ editor, setContent }) => {
     )
 }
 
-export default ({ setContent }) => {
+export default function Tiptap({ setContent }) {
     const [contents, setContents] = useState("saisie ton contenu ici ...");
 
     const editor = useEditor({

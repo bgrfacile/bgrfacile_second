@@ -17,6 +17,7 @@ class SolutionResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'type' => "solution",
             'exercice_id' => $this->exercice_id,
             'exercice' => $this->exercice->title,
             'resumer' => $this->resumer,

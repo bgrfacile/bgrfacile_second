@@ -19,10 +19,10 @@ class Tab extends Component {
             props: { activeTab, label },
         } = this;
 
-        let className = "cursor-pointer text-2xl font-bold text-gray-800 pb-2 pr-2";
+        let className = "cursor-pointer text-2xl font-bold pb-2 pr-2";
 
         if (activeTab === label) {
-            className += " border-b-2 border-red-600 text-red-600";
+            className += " border-b-2 border-red-600 text-red-500";
         }
 
         return (

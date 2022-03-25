@@ -72,11 +72,8 @@ const ItemSolution = ({ solution }) => {
                 }
 
             </div>
-            <h3 className="text-xl font-thin py-4">{solution.resumer}</h3>
+            <h3 className="text-xl font-thin py-4">{solution.exercice}</h3>
             <div className='flex flex-col rounded-md'>
-                <span className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mb-2 transition ease-in-out">
-                    {solution.exercice}
-                </span>
                 <Link to={`/profile/my-exos/Edit`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mb-2 transition ease-in-out">
                     modifier la solution
                 </Link>

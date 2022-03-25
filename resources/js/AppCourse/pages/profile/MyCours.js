@@ -52,6 +52,10 @@ const ItemCours = ({ cour }) => {
                     </button>
                 }
 
+                <Link to={`/profile/my-exos/create`} state={{ cour }} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mb-2 transition ease-in-out">
+                    Ajouter un exercice
+                </Link>
+
                 <button onClick={() => deleteCours(cour.id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md mb-2 transition ease-in-out">
                     supprimer
                 </button>
