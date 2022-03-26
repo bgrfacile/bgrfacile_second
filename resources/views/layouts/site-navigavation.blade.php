@@ -8,11 +8,12 @@
                 <x-nav-link :href="route('home.page')" :active="request()->routeIs('home.page')"
                     class="flex-shrink-0 flex justify-center items-center">
                     {{-- <x-application-logo class="block h-10 w-auto fill-current text-gray-600" /> --}}
-                    <img class="w-3/4" src="{{ asset('assets/logo_bgrfacile.webp') }}" alt="" srcset="">
+                    <img class="w-3/4" src="{{ asset('assets/logo_bgrfacile.webp') }}"
+                        alt="petit logo de bgrfacile" srcset="">
                 </x-nav-link>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 md:-my-px md:ml-10 md:flex overflow-x-auto">
+                <div class="hidden space-x-8 md:-my-px md:ml-10 md:flex overflow-x-auto px-2">
                     <div class="min-w-max flex items-center justify-center" x-data="{ open: false }"
                         @click.away="open = false" @close.stop="open = false"
                         class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
@@ -92,7 +93,7 @@
                     </div>
 
                     <x-nav-link class="min-w-max" :href="route('ecoleEnLigne.page')"
-                        :active="request()->routeIs('dashboard')">
+                        :active="request()->routeIs('ecoleEnLigne.page')">
                         {{ __('écoles en ligne') }}
                     </x-nav-link>
                     <x-nav-link class="min-w-max" :href="route('who.page')"
@@ -114,8 +115,7 @@
                         <x-svg-search class="block h-6 w-6 text-gray-600" fill="none" stroke="currentColor" />
                     </a>
                 </div>
-                <div class="flex-shrink-0 flex items-center ml-4" x-data="{ open: false }"
-                    x-init="$watch('open', value => value?document.querySelector('html').classList.add('dark'):document.querySelector('html').classList.remove('dark'))">
+                <div class="flex-shrink-0 flex items-center ml-4" x-data="{ open: false }" x-init="$watch('open', value => value ? document.querySelector('html').classList.add('dark') : document.querySelector('html').classList.remove('dark'))">
                     <button type="button" x-on:click="open = ! open"
                         class="flex justify-center p-2 text-gray-500 transition duration-150 ease-in-out bg-gray-100 border border-transparent rounded-md lg:bg-white lg:dark:bg-gray-900 dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50">
                         <x-svg-sun x-show="open" class="block h-6 w-6 text-gray-600 transform -rotate-90 sun"
@@ -133,8 +133,12 @@
                     <x-dropdown class="ml-4" align="right" width="48">
                         <x-slot name="trigger">
                             <button
-                                class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                <div>{{ Auth::user()->name }}</div>
+                                class="h-full flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                                <img alt="avatar" style="width: 40px;height: 40px;object-fit: cover;border-radius: 9999px;"
+                                    className="w-10 h-4 object-cover rounded-full bg-white" @php
+                                        $slug = Str::slug(Auth::user()->name, '-');
+                                    @endphp
+                                    src="{{ Auth::user()->url_image == null? "https://ui-avatars.com/api/?name=$slug&background=0D8ABC&color=fff": url(Auth::user()->url_image) }}" />
                                 <x-svg-chevron class="ml-1" />
                             </button>
                         </x-slot>
@@ -276,7 +280,7 @@
                 </div>
             </div>
 
-            <x-responsive-nav-link :href="route('ecoleEnLigne.page')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('ecoleEnLigne.page')" :active="request()->routeIs('ecoleEnLigne.page')">
                 {{ __('écoles en ligne') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('who.page')" :active="request()->routeIs('who.page')">
