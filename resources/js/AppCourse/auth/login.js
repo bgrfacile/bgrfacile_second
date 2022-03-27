@@ -13,10 +13,10 @@ export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     const [rememberMe, setRememberMe] = useState(false)
-    const [error, setError] = useState(false)
-    const [errors, setErrors] = useState({})
-    const [errorMessage, setErrorMessage] = useState("")
 
+    let error = useSelector(state => state.user.error)
+    const errors = useSelector(state => state.user.errors)
+    let errorMessage = useSelector(state => state.user.errorMessage)
     const loading = useSelector(state => state.user.isLoading);
     const success = useSelector(state => state.user.success);
     const isconnect = useSelector(state => state.user.isconnect);
@@ -31,38 +31,17 @@ export default function Login() {
             }, 2000)
         }
     }, [isconnect])
+    useEffect(() => {
+        error = false;
+        errorMessage = '';
+        setEmail("")
+        setPassword("")
+        setRememberMe(false)
+    }, [loading])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(checkLogin({ email, password, rememberMe }))
-        /*
-        setLoading(true)
-             client.post('/signin', {
-                 email: email,
-                 password: password,
-                 rememberMe: rememberMe
-             }).then(response => {
-                 setError(false)
-                 setSuccess(true)
-                 setSuccessMessage(response.data.message)
-                 if (response.data.user) {
-                     // localStorage.setItem("token", JSON.stringify(response.data.access_token));
-                     localStorage.setItem("user", JSON.stringify(response.data.user));
-                     dispatch(login(response.data.user));
-                     setTimeout(() => {
-                         navigate('/cours', {
-                             replace: true,
-                         })
-                     }, 2000)
-                     setLoading(false)
-                 }
-             }).catch(error => {
-                 setError(true);
-                 error.response.data.errors ? setErrors(error.response.data.errors) : setErrors({})
-                 error.response.data.message ? setErrorMessage(error.response.data.message) : setErrorMessage({})
-                 setLoading(false)
-             });
-             */
     }
     return (
         <div className="h-screen w-full flex flex-col md:flex-row">
@@ -118,7 +97,7 @@ export default function Login() {
                             value={email}
                             onChange={e => setEmail(e.target.value)} />
                     </div>
-                    {error && <p className="text-red-500 text-xs italic">{errors.email}</p>}
+                    {errors && <p className="text-red-500 text-xs italic">{errors.email}</p>}
 
                     <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -135,7 +114,7 @@ export default function Login() {
                             autoComplete="current-password" />
                     </div>
                     {
-                        error && <p className="text-red-500 text-xs italic">{errors.password}</p>
+                        errors && <p className="text-red-500 text-xs italic">{errors.password}</p>
                     }
                     <div className='flex justify-between py-2 text-sm'>
                         <label htmlFor="remember_me" className="flex items-center">

@@ -7,7 +7,7 @@ import Spinner from 'react-spinner-material';
 import Select from 'react-select';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import { login, updateProfileImage } from '../../redux/features/user/userSlice';
+import { updateProfileImage } from '../../redux/features/user/userSlice';
 
 
 
@@ -44,7 +44,6 @@ export default function EditProfile() {
             numberPhone
         })
             .then(response => {
-                dispatch(login(response.data.user));
                 setLoading(false)
             }
             ).catch(error => {
@@ -65,7 +64,7 @@ export default function EditProfile() {
                 'Content-Type': 'multipart/form-data'
             }
         }).then(response => {
-            localStorage.setItem("user", JSON.stringify(response.data.user));
+            // localStorage.setItem("user", JSON.stringify(response.data.user));
             dispatch(updateProfileImage(response.data.user.url_image));
             setLoading(false);
             setIsActif(false);
@@ -93,7 +92,7 @@ export default function EditProfile() {
         <div>
             <div className='mb-4 md:mb-8'>
                 {success && <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">Mise à jour avec success</div>}
-                {error && <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">Echec de l'opération</div>}
+                {error && <div className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">Echec de l'opération</div>}
                 <form encType='multipart/form-data' onSubmit={handleUpdateImage}>
                     <div className="relative w-32 mx-auto">
                         <div className="absolute bottom-0 right-0 z-10">
@@ -112,7 +111,8 @@ export default function EditProfile() {
                                     }
                                     reader.readAsDataURL(file);
                                 }}
-                                accept=".png, .jpg, .jpeg, .gif" />
+                                // accept=".png, .jpg, .jpeg, .gif" />
+                                accept="image/*" />
                             <label className='cursor-pointer flex justify-center items-center p-2 mb-0 rounded-full bg-white border-2 border-transparent shadow-md duration-100 hover:border-gray-700' htmlFor="imageUpload">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />

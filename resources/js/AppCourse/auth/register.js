@@ -1,54 +1,40 @@
-import React, { useState } from 'react'
-import LogoShortBgrfacile from '../components/LogoShortbgrfacile'
+import React, { useEffect, useState } from 'react'
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-import client from '../../api/client';
-import { useDispatch } from 'react-redux';
-import { login } from '../redux/features/user/userSlice';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { checkRegister } from '../redux/features/user/userSlice';
 
 export default function Register() {
     const dispatch = useDispatch();
+    let navigate = useNavigate();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
-    // const [passwordConfirmation, setPasswordConfirmation] = useState(false)
 
-    const [error, setError] = useState(false)
-    const [errors, setErrors] = useState({})
-    const [loading, setLoading] = useState(false)
-    const [success, setSuccess] = useState(false)
-    const [successMessage, setSuccessMessage] = useState("")
-    const [errorMessage, setErrorMessage] = useState("")
-    let navigate = useNavigate();
+
+    let error = useSelector(state => state.user.error)
+    const errors = useSelector(state => state.user.errors)
+    const loading = useSelector(state => state.user.isLoading);
+    const success = useSelector(state => state.user.success);
+    const isconnect = useSelector(state => state.user.isconnect);
+    const successMessage = useSelector(state => state.user.successMessage);
+    let errorMessage = useSelector(state => state.user.errorMessage)
+
+
+    useEffect(() => {
+        if (isconnect) {
+            setTimeout(() => {
+                navigate('/cours', {
+                    replace: true,
+                })
+            }, 2000)
+        }
+    }, [isconnect])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true)
-        client.post('/signup', {
-            name: name,
-            email: email,
-            password: password
-        })
-            .then(response => {
-                setError(false)
-                setSuccess(true)
-                setSuccessMessage(response.data.message)
-                localStorage.setItem("user", JSON.stringify(response.data.user));
-                dispatch(login(response.data.user));
-                setTimeout(() => {
-                    navigate('/cours', {
-                        replace: true,
-                    })
-                }, 2000)
-                setLoading(false)
-            })
-            .catch(error => {
-                setError(true);
-                error.response.data.errors ? setErrors(error.response.data.errors) : setErrors({})
-                error.response.data.message ? setErrorMessage(error.response.data.message) : setErrorMessage({})
-                setLoading(false)
-            });
-
+        dispatch(checkRegister({ name, email, password }))
     }
     return (
         <div className="h-screen w-full flex flex-col md:flex-row">
@@ -100,7 +86,7 @@ export default function Register() {
                             onChange={e => setName(e.target.value)} />
                     </div>
                     {
-                        error && <p className="text-red-500 text-xs italic">{errors.name}</p>
+                        errors && <p className="text-red-500 text-xs italic">{errors.name}</p>
                     }
 
                     <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -118,7 +104,7 @@ export default function Register() {
                             onChange={e => setEmail(e.target.value)} />
                     </div>
                     {
-                        error && <p className="text-red-500 text-xs italic">{errors.email}</p>
+                        errors && <p className="text-red-500 text-xs italic">{errors.email}</p>
                     }
 
                     <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -136,26 +122,8 @@ export default function Register() {
                             autoComplete="current-password" />
                     </div>
                     {
-                        error && <p className="text-red-500 text-xs italic">{errors.password}</p>
+                        errors && <p className="text-red-500 text-xs italic">{errors.password}</p>
                     }
-                    {/*  <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                        </svg>
-                        <input
-                            className="pl-2 outline-none border-none w-full"
-                            required
-                            placeholder="Confirmez le mot de passe"
-                            name="password_confirmation"
-                            type="password"
-                            value={passwordConfirmation}
-                            onChange={e => setPasswordConfirmation(e.target.value)}
-                            autoComplete="current-password" />
-                    </div>
-                    {
-                        passwordConfirmation == password ? <p className="text-green-500 text-xs italic">Ne correspand pas</p> : <p className="text-red-500 text-xs italic">Super!</p>
-                    } */}
-
                     {loading ?
                         <button className="block w-full bg-indigo-600 my-4 py-2 rounded-2xl text-white font-semibold" type="submit" disabled>Chargement...</button> :
                         <button type="submit" className="block w-full bg-indigo-600 my-4 py-2 rounded-2xl text-white font-semibold">Connexion</button>}

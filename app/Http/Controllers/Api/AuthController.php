@@ -67,6 +67,7 @@ class AuthController extends Controller
             $user = User::findOrFail(auth()->user()->id) :
             $user = null;
         return response([
+            'message' => 'Authentification réussie',
             'user' => new UserResource($user),
         ]);
     }

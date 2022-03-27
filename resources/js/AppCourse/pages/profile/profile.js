@@ -10,6 +10,8 @@ import useReactRouterBreadcrumbs from 'use-react-router-breadcrumbs';
 import client from '../../../api/client';
 import { toggle } from '../../redux/features/toggleAside/toggleAsideSlice';
 import CustomLink from '../../hooks/CustomLink';
+import { logout } from '../../redux/features/user/userSlice';
+import { logoutfetch } from '../../utils/Function';
 
 
 
@@ -20,20 +22,13 @@ export default function Profile({ children, to, ...props }) {
     const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
     const classDefault = 'w-full p-2 my-2 flex items-center text-gray-700 bg-gray-50 rounded-md hover:text-blue-600 hover:bg-gray-300 hover:font-semibold';
     const breadcrumbs = useReactRouterBreadcrumbs()
-    let navigate = useNavigate();
+
     const user = useSelector(state => state.user.profile);
+    console.log('user', user);
     const handleLogout = (e) => {
         e.preventDefault();
-        if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
-            logoutfetch();
-        }
-    }
-    const logoutfetch = async () => {
-        client.post('/logout').then(res => {
-            localStorage.removeItem('user');
-            navigate('/signin', { replace: true });
-        })
-
+        if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) logoutfetch();
+        return
     }
 
     const DropDownMenu = () => {
@@ -155,13 +150,13 @@ export default function Profile({ children, to, ...props }) {
         </>)
     }
     const handleChangeMenu = () => {
-        notyf.success('', {
-            duration: 2000,
-            position: 'top-right',
-            closeBtn: true,
-            progressBar: true,
-            theme: 'mint',
-            });
+        // notyf.success('', {
+        //     duration: 2000,
+        //     position: 'top-right',
+        //     closeBtn: true,
+        //     progressBar: true,
+        //     theme: 'mint',
+        // });
         dispatch(toggle())
     }
     return (

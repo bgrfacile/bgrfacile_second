@@ -80,7 +80,7 @@ const HeaderCourse = () => {
             return (<>
                 <StickyHeader>
                     <h4 className="text-2xl font-extrabold text-gray-900">Derniers contenus publiés</h4>
-                    <div className="flex items-center justify-between py-2">
+                    {/* <div className="flex items-center justify-between py-2">
                         <div className="w-full flex-1 flex items-center overflow-x-auto">
                             {cycles.map((cycle, index) =>
                                 <Link
@@ -94,7 +94,7 @@ const HeaderCourse = () => {
                         <button className="w-max h-full px-2 shadow">
                             <svg width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5.83L15.17 9l1.41-1.41L12 3L7.41 7.59L8.83 9L12 5.83zm0 12.34L8.83 15l-1.41 1.41L12 21l4.59-4.59L15.17 15L12 18.17z"></path></svg>
                         </button>
-                    </div>
+                    </div> */}
                 </StickyHeader>
             </>)
         }
