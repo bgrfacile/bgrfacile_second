@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\DB;
 
 class CoursController extends Controller
 {
+
+    public function randomCours()
+    {
+        $cours = Cours::inRandomOrder()->first();
+        return new CoursResource($cours);
+    }
     /**
      * Display a listing of the resource.
      *

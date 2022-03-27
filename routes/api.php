@@ -52,6 +52,7 @@ Route::prefix('v1')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
 
         Route::get('/cours', [CoursController::class, 'index']);
+        Route::get('/cours/random', [CoursController::class, 'randomCours']);
         Route::get('/cours/{cours}', [CoursController::class, 'show']);
         Route::get('/cours/getCours/{idCycle}', [CoursController::class, 'getCoursByCycle']);
         Route::get('/cours/getCours/{idCycle}/{idLevel}', [CoursController::class, 'getCoursByLevel']);

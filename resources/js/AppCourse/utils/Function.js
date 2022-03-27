@@ -6,6 +6,7 @@ import { logout } from "../redux/features/user/userSlice";
 
 
 export const logoutfetch = async () => {
+    console.log("deconexion");
     const dispatch = useDispatch();
     const navigate = useNavigate();
     client.post('/logout').then(res => {

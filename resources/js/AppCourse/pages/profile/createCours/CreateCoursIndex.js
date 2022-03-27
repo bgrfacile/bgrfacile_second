@@ -29,14 +29,15 @@ export default function CreateCoursIndex() {
         }
         console.log('submit', data);
     }
-    return <form onSubmit={handleSubmit} className="w-full h-full flex flex-col">
-        <HearderCreateCours
-            getTitle={(title) => setTitle(title)}
-            getCycle={(cycle) => setCycle(cycle)}
-            getLevel={(level) => setLevel(level)}
-            getMatiere={(matiere) => setMatiere(matiere)}
-            getIsActif={(isActif) => setIsActif(isActif)} />
-    </form>
+    // return <form onSubmit={handleSubmit} className="w-full h-full flex flex-col">
+    //     <HearderCreateCours
+    //         getTitle={(title) => setTitle(title)}
+    //         getCycle={(cycle) => setCycle(cycle)}
+    //         getLevel={(level) => setLevel(level)}
+    //         getMatiere={(matiere) => setMatiere(matiere)}
+    //         getIsActif={(isActif) => setIsActif(isActif)} />
+    // </form>
+    return <OldLayout />
 }
 
 

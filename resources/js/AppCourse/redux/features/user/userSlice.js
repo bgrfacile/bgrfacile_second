@@ -78,7 +78,6 @@ export const userSlice = createSlice({
     initialState: initialValue,
     reducers: {
         updateProfileImage: (state, action) => {
-            console.log('action.payload', action.payload)
             state.profile.url_image = action.payload
         },
         logout: (state) => {
@@ -90,7 +89,6 @@ export const userSlice = createSlice({
             state.isLoading = true;
         },
         [checkConnect.fulfilled]: (state, action) => {
-            console.log('checkConnect.fulfilled', action.payload)
             state.isLoading = false;
             state.isconnect = true;
             state.profile = action.payload.data.user;
@@ -115,7 +113,6 @@ export const userSlice = createSlice({
             state.isconnect = true;
         },
         [checkLogin.rejected]: (state, action) => {
-            console.log('action', action)
             state.isLoading = false;
             state.isconnect = false;
             state.error = true;
@@ -134,7 +131,6 @@ export const userSlice = createSlice({
             state.isconnect = true;
         },
         [checkRegister.rejected]: (state, action) => {
-            console.log('action', action)
             state.isLoading = false;
             state.isconnect = false;
             state.error = true;

@@ -15,6 +15,7 @@ export default function ScolaireCours() {
     // const listeLevel = listeCycle ? listeCycle.levels.find(el => el.id == idLevel) : null
     let loading = useSelector(state => state.cours.isLoading);
     const cours = useSelector(state => state.cours.cours);
+    console.log('cours', cours)
 
 
     useEffect(() => {

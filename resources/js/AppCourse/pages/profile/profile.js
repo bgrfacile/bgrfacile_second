@@ -17,6 +17,7 @@ import { logoutfetch } from '../../utils/Function';
 
 export default function Profile({ children, to, ...props }) {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const notyf = new Notyf();
     const isOpenMenu = useSelector(state => state.toggleAside);
     const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
@@ -24,10 +25,15 @@ export default function Profile({ children, to, ...props }) {
     const breadcrumbs = useReactRouterBreadcrumbs()
 
     const user = useSelector(state => state.user.profile);
-    console.log('user', user);
-    const handleLogout = (e) => {
+    const handleLogout = async (e) => {
         e.preventDefault();
-        if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) logoutfetch();
+        if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
+            dispatch(logout());
+            client.post('/logout').then(res => {
+                window.location.href = '/cours';
+                // navigate('/cours', { replace: true });
+            })
+        }
         return
     }
 

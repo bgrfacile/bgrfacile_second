@@ -135,7 +135,7 @@ export default function Navbar() {
                                     </button>
                                     // </Tooltip>
                                     :
-                                    <Link to="/signup" className="rounded-md px-2 py-1 bg-sky-600 text-white">Inscription</Link>}
+                                    <Link to="/signin" className="rounded-md px-2 py-1 bg-sky-600 text-white">Connexion</Link>}
                             </div>
                         </div>
 

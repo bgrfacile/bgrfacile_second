@@ -33,9 +33,9 @@ export default function Login() {
     }, [isconnect])
     useEffect(() => {
         error = false;
-        errorMessage = '';
-        setEmail("")
-        setPassword("")
+        // errorMessage = '';
+        // setEmail("")
+        // setPassword("")
         setRememberMe(false)
     }, [loading])
 
