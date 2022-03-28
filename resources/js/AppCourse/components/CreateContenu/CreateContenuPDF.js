@@ -61,7 +61,6 @@ export default function CreateContenuPDF({ getContent }) {
 
     });
     const [url, setUrl] = useState('');
-    // const [pdf, setPdf] = useState(null);
     const [isError, setIsError] = useState(false);
     const [messageError, setMessageError] = useState('');
     return (

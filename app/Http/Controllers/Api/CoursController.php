@@ -95,7 +95,7 @@ class CoursController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        sleep(1);
         $request->validate([
             'title' => 'required|string',
             'description' => 'string',
@@ -106,7 +106,7 @@ class CoursController extends Controller
         ]);
         switch ($request->type_content) {
             case 'PDF':
-                $this->sauveCoursPDF($request, Auth::user());
+                $cours = $this->sauveCoursPDF($request, Auth::user());
                 break;
             case 'TEXTE':
                 # code...
@@ -124,6 +124,10 @@ class CoursController extends Controller
                 throw new Exception("Une Erreur dans la request", 1);
                 break;
         }
+        return response([
+            'message' => 'le cours a été créé avec succès',
+            'cours' => new CoursResource($cours),
+        ], 200);
     }
 
     private function sauveCoursPDF(Request $request, User $user)
@@ -150,10 +154,7 @@ class CoursController extends Controller
         $cours->cycles()->attach($request->cycle_id);
         $cours->levels()->attach($request->level_id);
         $cours->matieres()->attach($request->matiere_id);
-        return response([
-            'message' => 'cours created successfully',
-            'cours' => new CoursResource($cours),
-        ], 200);
+        return $cours;
     }
 
     /**
