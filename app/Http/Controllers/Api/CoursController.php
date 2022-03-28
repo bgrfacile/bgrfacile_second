@@ -8,7 +8,9 @@ use App\Http\Resources\UserResource;
 use App\Models\Cours;
 use App\Models\Cycle;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CoursController extends Controller
@@ -93,25 +95,61 @@ class CoursController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::find($request->user_id);
+        // dd($request->all());
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'string',
+            'cycle_id' => 'required',
+            'level_id' => 'required',
+            'matiere_id' => 'required',
+            'content' => 'required',
+        ]);
+        switch ($request->type_content) {
+            case 'PDF':
+                $this->sauveCoursPDF($request, Auth::user());
+                break;
+            case 'TEXTE':
+                # code...
+                break;
+            case 'IMAGE':
+                # code...
+                break;
+            case 'VIDEO':
+                # code...
+                break;
+            case 'AUDIO':
+                # code...
+                break;
+            default:
+                throw new Exception("Une Erreur dans la request", 1);
+                break;
+        }
+    }
+
+    private function sauveCoursPDF(Request $request, User $user)
+    {
         $coverImage = null;
         if ($request->hasFile('coverImage')) {
             $imageName = time() . '_' . $request->file('coverImage')->getClientOriginalName();
-            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('coverImage', $imageName, 'public');
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('cover_cours', $imageName, 'public');
         }
         $cours = $user->cours()->create([
             'title' => $request->title,
             'description' => $request->description,
             'coverImage' => $coverImage,
-            'isActif' => $request->isActif,
+            'isActif' => $request->isActif ? "1" : "0",
         ]);
+        $content = null;
+        if ($request->hasFile('content')) {
+            $content = "/storage/" . $request->file('content')->storeAs('content_pdf_cours', $request->file('content')->getClientOriginalName(), 'public');
+        }
         $cours->contents()->create([
-            'content' => $request->content,
+            'content' => $content,
             'type_content' => $request->type_content,
         ]);
-        $cours->matieres()->attach($request->matiereId);
-        $cours->cycles()->attach($request->cycleId);
-        $cours->levels()->attach($request->levelId);
+        $cours->cycles()->attach($request->cycle_id);
+        $cours->levels()->attach($request->level_id);
+        $cours->matieres()->attach($request->matiere_id);
         return response([
             'message' => 'cours created successfully',
             'cours' => new CoursResource($cours),
