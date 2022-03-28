@@ -17,7 +17,6 @@ class CreateExercicesMatieresTable extends Migration
             $table->id();
             $table->foreignId('exercice_id')->constrained()->onDelete('cascade');
             $table->foreignId('matiere_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

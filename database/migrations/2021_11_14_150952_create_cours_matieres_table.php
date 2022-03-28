@@ -17,7 +17,6 @@ class CreateCoursMatieresTable extends Migration
             $table->id();
             $table->foreignId('cour_id')->constrained()->onDelete('cascade');
             $table->foreignId('matiere_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

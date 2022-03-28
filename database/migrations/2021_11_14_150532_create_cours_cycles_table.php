@@ -17,7 +17,6 @@ class CreateCoursCyclesTable extends Migration
             $table->id();
             $table->foreignId('cour_id')->constrained()->onDelete('cascade');
             $table->foreignId('cycle_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

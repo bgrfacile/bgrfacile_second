@@ -17,7 +17,6 @@ class CreateExercicesLevelsTable extends Migration
             $table->id();
             $table->foreignId('exercice_id')->constrained()->onDelete('cascade');
             $table->foreignId('level_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
         });
     }
 

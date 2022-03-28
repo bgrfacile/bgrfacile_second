@@ -17,7 +17,6 @@ class CreateCoursUsersTable extends Migration
             $table->id();
             $table->foreignId('cour_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
