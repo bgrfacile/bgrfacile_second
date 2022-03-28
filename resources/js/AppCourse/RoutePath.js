@@ -33,11 +33,11 @@ import CreateCoursImage from './pages/profile/createCours/CreateCoursImage';
 import CreateCoursVideo from './pages/profile/createCours/CreateCoursVideo';
 import CreateCoursAudio from './pages/profile/createCours/CreateCoursAudio';
 import Search from './pages/search/Search';
-import IndexCours from './pages/Cours/indexCours';
 import Nuser from './pages/profile/nUser/Nuser';
 import CreateExercice from "./pages/profile/exercices/CreateExercice";
 import EditMyExercice from "./pages/profile/exercices/EditMyExercice";
 import CreateSolution from "./pages/profile/exercices/CreateSolution";
+import LastCours from "./pages/Cours/LastCours";
 
 
 
@@ -58,7 +58,7 @@ export default function RoutePath() {
                 <Route element={<LayoutCourse />} >
 
                     <Route path="cours" element={<CoursRoute />} >
-                        <Route index element={<IndexCours />} />
+                        <Route index element={<LastCours />} />
                         <Route path=':cycle-:idCycle/:level-:idLevel/:matiere-:idMatiere' element={<ScolaireCours />} />
                         <Route path=':cycle-:idCycle/:level-:idLevel' element={<ScolaireCours />} />
                         <Route path=':cycle-:idCycle' element={<ScolaireCours />} />

@@ -1,56 +1,57 @@
 import { Autocomplete, TextField } from '@mui/material';
 import React from 'react'
 import { useSelector } from 'react-redux';
+import StickyHeaderMobile from './StickyHeaderMobile';
 
-const StickyHeaderMobile = () => {
-    const levels = useSelector(state => state.levels.levels);
-    const matieres = useSelector(state => state.matieres.matieres);
-    const basicCycles = useSelector(state => state.basicCycle.cycles);
-    const exercices = useSelector(state => state.exercises.exercices);
-    return (<div className='md:hidden block'>
-        <div className=" w-full grid grid-cols-1 grid-rows-1 sm:grid-cols-3 gap-4 justify-between items-center py-1">
-            <Autocomplete
-                disablePortal
-                id="basicCycles"
-                options={basicCycles.map(cycle => {
-                    return {
-                        value: cycle.id,
-                        label: cycle.name,
-                    }
-                })}
-                className="w-full"
-                renderInput={(params) => <TextField {...params} label="basicCycles" />}
-            />
-            <Autocomplete
-                disablePortal
-                id="levels"
-                options={levels.map(level => {
-                    return {
-                        value: level.id,
-                        label: level.name
-                    }
-                })}
-                className="w-full"
-                renderInput={(params) => <TextField {...params} label="levels" />}
-            />
-            <Autocomplete
-                disablePortal
-                id="matieres"
-                options={matieres.map(matiere => {
-                    return {
-                        value: matiere.id,
-                        label: matiere.name
-                    }
-                })
-                }
-                className="w-full"
-                renderInput={(params) => <TextField {...params} label="matieres" />}
-            />
-        </div>
-        <div className="w-full text-center text-sm leading-5 font-semibold text-gray-600">
-            {exercices.length}  disponible(s)
-        </div></div>)
-}
+// const StickyHeaderMobile = () => {
+//     const levels = useSelector(state => state.levels.levels);
+//     const matieres = useSelector(state => state.matieres.matieres);
+//     const basicCycles = useSelector(state => state.basicCycle.cycles);
+//     const exercices = useSelector(state => state.exercises.exercices);
+//     return (<div className='md:hidden block'>
+//         <div className=" w-full grid grid-cols-1 grid-rows-1 sm:grid-cols-3 gap-4 justify-between items-center py-1">
+//             <Autocomplete
+//                 disablePortal
+//                 id="basicCycles"
+//                 options={basicCycles.map(cycle => {
+//                     return {
+//                         value: cycle.id,
+//                         label: cycle.name,
+//                     }
+//                 })}
+//                 className="w-full"
+//                 renderInput={(params) => <TextField {...params} label="basicCycles" />}
+//             />
+//             <Autocomplete
+//                 disablePortal
+//                 id="levels"
+//                 options={levels.map(level => {
+//                     return {
+//                         value: level.id,
+//                         label: level.name
+//                     }
+//                 })}
+//                 className="w-full"
+//                 renderInput={(params) => <TextField {...params} label="levels" />}
+//             />
+//             <Autocomplete
+//                 disablePortal
+//                 id="matieres"
+//                 options={matieres.map(matiere => {
+//                     return {
+//                         value: matiere.id,
+//                         label: matiere.name
+//                     }
+//                 })
+//                 }
+//                 className="w-full"
+//                 renderInput={(params) => <TextField {...params} label="matieres" />}
+//             />
+//         </div>
+//         <div className="w-full text-center text-sm leading-5 font-semibold text-gray-600">
+//             {exercices.length}  disponible(s)
+//         </div></div>)
+// }
 
 export default function StickyHeaderExo() {
     const levelSelected = useSelector(state => state.exercises.levelSelected);
@@ -73,6 +74,9 @@ export default function StickyHeaderExo() {
             </span>
         </div>
         <StickyHeaderMobile />
+        <div className="md:hidden block w-full text-center text-sm leading-5 font-semibold text-gray-600">
+            {exercices.length}  disponible(s)
+        </div>
     </div>)
 
 }

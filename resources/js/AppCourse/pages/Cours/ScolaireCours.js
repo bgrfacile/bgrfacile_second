@@ -2,22 +2,20 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCoursByCycle, getCoursByLevel, getCoursByMatiere } from "../../redux/features/cours/coursSlice";
 import CardItemCours from "../../components/Cards/CardItemCours";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loading from "../notFound/Loading";
 import Empty from "../notFound/Empty";
-import { getAllcycles } from "../../redux/features/cycle/cyclesSlice";
 
 export default function ScolaireCours() {
     const params = useParams();
     const dispatch = useDispatch();
     const { cycle, idCycle, level, idLevel, matiere, idMatiere } = params
-    // const listeCycle = allCycles.find(item => item.id == idCycle)
-    // const listeLevel = listeCycle ? listeCycle.levels.find(el => el.id == idLevel) : null
     let loading = useSelector(state => state.cours.isLoading);
     const cours = useSelector(state => state.cours.cours);
-    console.log('cours', cours)
 
-
+    useEffect(() => {
+        document.title = "Cours scolaire";
+    }, []);
     useEffect(() => {
         if (params.cycle && params.level && params.matiere) {
             dispatch(getCoursByMatiere({ idCycle, idLevel, idMatiere }));
@@ -28,36 +26,6 @@ export default function ScolaireCours() {
             dispatch(getCoursByCycle({ idCycle }))
         }
     }, [dispatch, idCycle, idLevel, idMatiere]);
-
-    const Header = ({ items, type }) => {
-        if (type == 'levels') {
-            return (<div className="sticky top-0 bg-white rounded-md flex items-center shadow mb-2 h-14 overflow-x-auto">
-                {items.map((item, index) =>
-                    <Link
-                        to={`/cours/${cycle}-${idCycle}/${item.slugName}-${item.id}`}
-                        key={index}
-                        className="mr-2 px-4 py-2 first:ml-2 select-none rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease">
-                        {item.name}
-                    </Link>)
-                }
-            </div>)
-        } else if (type == 'matieres') {
-            return (<div className="sticky top-0 bg-white rounded-md flex items-center shadow mb-2 h-14 overflow-x-auto">
-                {items.map((item, index) =>
-                    <Link
-                        to={`/cours/${cycle}-${idCycle}/${level}-${idLevel}/${item.slugName}-${item.id}`}
-                        key={index}
-                        className="mr-2 px-4 py-2 first:ml-2 select-none rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease">
-                        {item.name}
-                    </Link>)
-                }
-            </div>)
-        } else {
-            return (<div className="sticky top-0 bg-white rounded-md flex items-center shadow mb-2 h-14 overflow-x-auto">
-            </div>)
-        }
-
-    }
 
     if (loading) {
         return <Loading />

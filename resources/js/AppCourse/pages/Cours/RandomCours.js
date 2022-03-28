@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import client from "../../../api/client";
 
-
-
 export default function RandomCours() {
     const [cours, setCours] = useState({});
     const [loading, setLoading] = useState(true);
