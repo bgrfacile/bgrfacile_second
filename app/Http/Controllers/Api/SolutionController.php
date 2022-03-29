@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Solution\SolutionResource;
 use App\Models\Exercice;
 use App\Models\Solution;
+use Exception;
 use Illuminate\Http\Request;
 
 class SolutionController extends Controller
@@ -49,16 +50,43 @@ class SolutionController extends Controller
         $request->validate([
             'exercice_id' => 'required',
             'resumer' => 'string|min:5',
+            'content' => 'required',
+            'typeContent' => 'required',
+            'isActif' => 'required',
         ]);
         $exercice = Exercice::find($request->exercice_id);
         $solution = $exercice->solutions()->create([
             'resume' => $request->resumer,
         ]);
-        $solution->contents()->create([
-            'content' => $request->content,
-        ]);
+        switch ($request->typeContent) {
+            case 'PDF':
+                $content = null;
+                if ($request->hasFile('content')) {
+                    $content = "/storage/" . $request->file('content')->storeAs('/contenu/PDF/Solutions', $request->file('content')->getClientOriginalName(), 'public');
+                }
+                $solution->contents()->create([
+                    'content' => $content,
+                ]);
+                break;
+            case 'TEXTE':
+                $solution->contents()->create([
+                    'content' => $request->content,
+                ]);
+                break;
+            case 'IMAGE':
+                # code...
+                break;
+            case 'VIDEO':
+                # code...
+                break;
+            case 'AUDIO':
+                # code...
+                break;
+            default:
+                throw new Exception("Une Erreur sur le contenue", 1);
+                break;
+        }
         $solution->users()->attach(auth()->user()->id);
-
         return response([
             'message' => 'solution created successfully',
             'solution' => new SolutionResource($solution),

@@ -19,7 +19,7 @@ class CreateExercicesTable extends Migration
             $table->string('coverImage')->nullable();
             $table->string('description')->nullable();
             $table->enum('isActif', ['0', '1'])->default('1');
-            $table->boolean('is_handout')->default(false);
+            $table->boolean('is_SubjectExam')->default(false);
             $table->timestamps();
         });
     }

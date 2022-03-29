@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\DB;
 
 class CoursController extends Controller
 {
-
     public function randomCours()
     {
         $cours = Cours::inRandomOrder()->first();
@@ -38,21 +37,10 @@ class CoursController extends Controller
                 $query->where('cycles.id', $idCycle);
             })
             ->get()->reverse();
-        // $cycle = Cycle::findOrFail($idCycle);
-        // $cours = $cycle->cours->where('isActif', "1")->reverse();
         return CoursResource::collection($cours);
     }
     public function getCoursByLevel($idCycle, $idLevel)
     {
-        // $cours = DB::table('cours')
-        //     ->join('cours_cycles', 'cours.id', '=', 'cours_cycles.cour_id')
-        //     ->join('cycles', 'cours_cycles.cycle_id', '=', 'cycles.id')
-        //     ->join('cours_levels', 'cours.id', '=', 'cours_levels.cour_id')
-        //     ->join('levels', 'cours_levels.level_id', '=', 'levels.id')
-        //     ->where('cycles.id', $idCycle)
-        //     ->where('levels.id', $idLevel)
-        //     ->where('cours.isActif', "1")
-        //     ->get()->reverse();
         $cours = Cours::where('isActif', "1")
             ->whereHas('levels', function ($query) use ($idLevel) {
                 $query->where('levels.id', $idLevel);
@@ -97,7 +85,7 @@ class CoursController extends Controller
     {
         $request->validate([
             'title' => 'required|string',
-            'description' => 'string',
+            'description' => 'string|min:5',
             'cycle_id' => 'required',
             'level_id' => 'required',
             'matiere_id' => 'required',

@@ -31,6 +31,8 @@ class CustumExerciceResource extends JsonResource
             'cycle' => new BasicCycleResource($this->cycles->first()),
             'level' => new BasicLevelResource($this->levels->first()),
             'matiere' => new BasicMatiereResource($this->matieres->first()),
+            'createdAt' => formaterDate($this->created_at),
+            'updatedAt' => formaterDate($this->updated_at),
         ];
     }
 }

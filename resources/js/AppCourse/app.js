@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import { Worker } from '@react-pdf-viewer/core';
 
+// console.log('process.env.NODE_ENV', process.env.MIX_SENTRY_DSN_PUBLIC);
 const rootElement = document.getElementById('root')
 ReactDOM.render(
     <Provider store={store}>

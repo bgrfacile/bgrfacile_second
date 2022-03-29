@@ -37,6 +37,7 @@ export default function CreateCoursIndex() {
     const [image, setImage] = useState('');
     const [typeContent, setTypeContent] = useState('');
     const [content, setContent] = useState(null);
+
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -81,7 +82,8 @@ export default function CreateCoursIndex() {
             setErrorMessage(error.response.data.message);
         }
     }
-    return <form onSubmit={handleSubmit} className="w-full h-full flex flex-col">
+    return <form onSubmit={handleSubmit}
+    className="w-full h-full flex flex-col">
         {isError && <Alert variant="outlined" onClose={() => { setIsError(false) }} className='h-fit w-full m-1' severity="error">
             {errorMessage && <span>{errorMessage}</span>}
         </Alert>}

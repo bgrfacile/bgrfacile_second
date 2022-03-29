@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Exercice\CustumExerciceResource;
 use App\Http\Resources\Exercice\ExerciceSimpleResource;
 use App\Models\Exercice;
+use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ExercicesController extends Controller
 {
@@ -112,32 +115,72 @@ class ExercicesController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
             'title' => 'required',
             'description' => 'string|min:5',
             'isActif' => 'required',
-            'isHandout' => 'required',
+            'isSubjectExam' => 'required',
+            'typeContent' => 'required',
+            'content' => 'required',
+            'coverImage' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-        $exercice = Exercice::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'isActif' => $request->isActif,
-            'is_handout' => $request->isHandout,
-        ]);
-        $exercice->contents()->create([
-            // 'contentable_id' => $exercice->id,
-            // 'contentable_type' => 'App\Models\Exercice',
-            'content' => $request->content,
-            'type_content' => $request->type_content,
-        ]);
-        $exercice->cours()->attach($request->cours_id);
+        $coverImage = null;
+        if ($request->hasFile('coverImage')) {
+            $imageName = time() . '_' . $request->file('coverImage')->getClientOriginalName();
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('cover_exercice', $imageName, 'public');
+        }
+        $user = User::findorFail($request->user_id);
+        switch ($request->typeContent) {
+            case 'PDF':
+                $content = null;
+                if ($request->hasFile('content')) {
+                    $content = "/storage/" . $request->file('content')->storeAs('/contenu/PDF/Exercices', $request->file('content')->getClientOriginalName(), 'public');
+                }
+                $exercice = $user->exercices()->create([
+                    'title' => $request->title,
+                    'coverImage' => $coverImage,
+                    'description' => $request->description,
+                    'isActif' => $request->isActif ? "1" : "0",
+                    'is_SubjectExam' => $request->isSubjectExam ? 1 : 0,
+                ]);
+                $exercice->contents()->create([
+                    'content' => $content,
+                    'type_content' => $request->typeContent,
+                ]);
+                break;
+            case 'TEXTE':
+                $exercice = $user->exercices()->create([
+                    'title' => $request->title,
+                    'coverImage' => $coverImage,
+                    'description' => $request->description,
+                    'isActif' => $request->isActif ? "1" : "0",
+                    'is_SubjectExam' => $request->isSubjectExam ? 1 : 0,
+                ]);
+                $exercice->contents()->create([
+                    'content' => $request->content,
+                    'type_content' => $request->typeContent,
+                ]);
+                break;
+            case 'IMAGE':
+                # code...
+                break;
+            case 'VIDEO':
+                # code...
+                break;
+            case 'AUDIO':
+                # code...
+                break;
+            default:
+                throw new Exception("Une Erreur dans la request", 1);
+                break;
+        }
+
+        // $exercice->cours()->attach($request->cours_id);
         $exercice->cycles()->attach($request->cycle_id);
         $exercice->levels()->attach($request->level_id);
         $exercice->matieres()->attach($request->matiere_id);
-        $exercice->users()->attach($request->user_id);
         return response([
-            'message' => 'exercice created successfully',
+            'message' => $request->isActif ? 'Exercice poster avec succès' : 'Exercice mis en brouillon avec succès',
             'exercice' => new ExerciceSimpleResource($exercice),
         ], 200);
     }
