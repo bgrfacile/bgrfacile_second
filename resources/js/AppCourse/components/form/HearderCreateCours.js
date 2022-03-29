@@ -9,9 +9,9 @@ export default function HearderCreateCours({ isloading, getTitle, getCycle, getL
     const PubishedSvg = () => <svg width="1em" height="1em" viewBox="0 0 20 20"><path fill="currentColor" d="M9.967 8.193L5 13h3v6h4v-6h3L9.967 8.193zM18 1H2C.9 1 0 1.9 0 3v12c0 1.1.9 2 2 2h4v-2H2V6h16v9h-4v2h4c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zM2.5 4.25a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5zm2 0a.75.75 0 1 1 0-1.5a.75.75 0 0 1 0 1.5zM18 4H6V3h12.019L18 4z"></path></svg>
     return (
         <div className="w-full grid grid-cols-4 bg-white border rounded-md mb-2">
-            <div className="col-span-3 grid grid-rows-1 gap-2 p-2">
+            <div className="col-span-3 grid grid-rows-1 gap-2 p-3">
                 <div className='flex flex-col'>
-                    <TextField onChange={(e) => { getTitle(e.target.value) }} label="titre de l'exercice" variant="outlined" fullWidth />
+                    <TextField className='py-1' onChange={(e) => { getTitle(e.target.value) }} label="titre du cours" variant="outlined" fullWidth />
                 </div>
                 <FilterClassement
                     getCycle={getCycle}
@@ -26,7 +26,7 @@ export default function HearderCreateCours({ isloading, getTitle, getCycle, getL
                         startIcon={<ArchiveSvg />}
                         type="submit"
                         onClick={() => { getIsActif(false) }}
-                        variant="outlined">Achiver
+                        variant="outlined">Brouillon
                     </LoadingButton>
                     <LoadingButton
                         loading={isloading}

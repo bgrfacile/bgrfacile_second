@@ -11,6 +11,7 @@ import { getBasicCycle } from '../../../redux/features/cycle/BasicCycleSlice';
 import { getListLevels } from '../../../redux/features/level/levelsSlice';
 import { getListMatiere } from '../../../redux/features/matiere/matieresSlice';
 import AsideCreateCours from '../../../components/AsideCreateCours';
+import LoadingTypeContent from '../../../components/LoadingTypeContent';
 
 const OptionsContenue = [
     'PDF',
@@ -36,7 +37,6 @@ export default function CreateCoursIndex() {
     const [image, setImage] = useState('');
     const [typeContent, setTypeContent] = useState('');
     const [content, setContent] = useState(null);
-
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
@@ -113,23 +113,5 @@ export default function CreateCoursIndex() {
             </div>
         </div>
     </form>
-}
-const LoadingTypeContent = ({ typeContent, getContent }) => {
-    switch (typeContent) {
-        case 'PDF':
-            return <CreateContenuPDF getContent={getContent} />
-        case 'TEXTE':
-            return <div className='w-full h-full flex flex-col justify-center items-center'>
-                <p>Chargement du lecteur texte</p>
-            </div>
-        case 'IMAGE':
-            return <p>Chargement de l'image</p>
-        case 'VIDEO':
-            return <p>Chargement de la video</p>
-        case 'AUDIO':
-            return <p>Chargement de l'audio</p>
-        default:
-            return <p>Chargement du lecteur pdf</p>
-    }
 }
 

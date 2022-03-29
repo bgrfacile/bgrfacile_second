@@ -95,7 +95,6 @@ class CoursController extends Controller
      */
     public function store(Request $request)
     {
-        sleep(1);
         $request->validate([
             'title' => 'required|string',
             'description' => 'string',
@@ -109,7 +108,7 @@ class CoursController extends Controller
                 $cours = $this->sauveCoursPDF($request, Auth::user());
                 break;
             case 'TEXTE':
-                # code...
+                $cours = $this->sauveCoursTEXTE($request, Auth::user());
                 break;
             case 'IMAGE':
                 # code...
@@ -149,6 +148,28 @@ class CoursController extends Controller
         }
         $cours->contents()->create([
             'content' => $content,
+            'type_content' => $request->type_content,
+        ]);
+        $cours->cycles()->attach($request->cycle_id);
+        $cours->levels()->attach($request->level_id);
+        $cours->matieres()->attach($request->matiere_id);
+        return $cours;
+    }
+    private function sauveCoursTEXTE(Request $request, User $user)
+    {
+        $coverImage = null;
+        if ($request->hasFile('coverImage')) {
+            $imageName = time() . '_' . $request->file('coverImage')->getClientOriginalName();
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('cover_cours', $imageName, 'public');
+        }
+        $cours = $user->cours()->create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'coverImage' => $coverImage,
+            'isActif' => $request->isActif ? "1" : "0",
+        ]);
+        $cours->contents()->create([
+            'content' => $request->content,
             'type_content' => $request->type_content,
         ]);
         $cours->cycles()->attach($request->cycle_id);
