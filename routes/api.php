@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\ExercicesController;
 use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\MatiereController;
+use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\SolutionController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -50,6 +51,8 @@ Route::prefix('v1')->group(function () {
         Route::post('/signin', [AuthController::class, 'login']);
         Route::post('/signup', [AuthController::class, 'register']);
         Route::post('/logout', [AuthController::class, 'logout']);
+
+        Route::get('/search/{query}', [SearchController::class, 'search']);
 
         Route::get('/cours', [CoursController::class, 'index']);
         Route::get('/cours/random', [CoursController::class, 'randomCours']);
