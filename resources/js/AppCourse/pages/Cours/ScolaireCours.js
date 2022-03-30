@@ -12,7 +12,6 @@ export default function ScolaireCours() {
     const { cycle, idCycle, level, idLevel, matiere, idMatiere } = params
     let loading = useSelector(state => state.cours.isLoading);
     const cours = useSelector(state => state.cours.cours);
-
     useEffect(() => {
         document.title = "Cours scolaire";
     }, []);
@@ -28,7 +27,7 @@ export default function ScolaireCours() {
     }, [dispatch, idCycle, idLevel, idMatiere]);
 
     if (loading) {
-        return <Loading />
+        return <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-28"> <Loading /> </div>
     } else {
         if (idCycle && idLevel && idMatiere) {
             return (<>

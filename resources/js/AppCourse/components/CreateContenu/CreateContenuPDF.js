@@ -10,8 +10,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/bookmark/lib/styles/index.css';
 import '@react-pdf-viewer/full-screen/lib/styles/index.css';
 import '@react-pdf-viewer/attachment/lib/styles/index.css';
-import { Alert, AlertTitle } from '@mui/material';
-import { formatBytes } from '../../utils/Function';
+import { Alert } from '@mui/material';
 
 export default function CreateContenuPDF({ getContent }) {
     const toolbarPluginInstance = toolbarPlugin();

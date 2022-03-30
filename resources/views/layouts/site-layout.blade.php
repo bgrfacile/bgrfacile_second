@@ -63,7 +63,7 @@
                         Un apprentissage de marque et un pont vers la connaissance.
                     </h5>
                     <div class="mt-6 lg:mb-0 mb-6">
-                        <a href="#" target="_blank"
+                        <a href="https://www.facebook.com/bgrfacile" target="_blank"
                             class="bg-blue-500 mx-0.5 px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
                             <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24">
@@ -72,14 +72,14 @@
                             </svg>
                             <span>Facebook</span>
                             </button>
-                            <a href="#" target="_blank"
+                            <a href="https://www.linkedin.com/company/bgrfacile/about" target="_blank"
                                 class="bg-blue-300 mx-0.5 px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
-                                <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                                <svg width="0.88em" height="1em" viewBox="0 0 448 512">
+                                    <path fill="currentColor"
+                                        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5c0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7c-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5c67.2 0 79.7 44.3 79.7 101.9V416z">
+                                    </path>
                                 </svg>
-                                <span>Twitter</span>
+                                <span>linkedin</span>
                             </a>
                     </div>
                 </div>

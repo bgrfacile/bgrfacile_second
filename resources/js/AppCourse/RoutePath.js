@@ -97,7 +97,7 @@ export default function RoutePath() {
                         <Route path="/profile/favoris/formations" element={<RequireAuth><FavorisFormation /></RequireAuth>} />
                         <Route path="/profile/edit" element={<RequireAuth><EditProfile /></RequireAuth>} />
                         <Route path='/profile/followers' element={<RequireAuth><Followers /></RequireAuth>} />
-                        <Route path='/profile/devenir-formateur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />
+                        <Route path='/profile/devenir-professeur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />
                         <Route path='/profile/devenir-promoteur' element={<RequireAuth><DevenirPromoteur /></RequireAuth>} />
                     </Route>
                     <Route path="/profile/user/:user-:id" element={<Nuser />} />

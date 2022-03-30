@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import parse from 'html-react-parser';
 import client from '../../../api/client';
+import ShowByTypeContent from '../../components/view/ShowTypeContent';
 
 
 
@@ -57,18 +57,18 @@ export default function ViewCours() {
             console.log(err);
         })
     }
-    const updateComment = async (comment_id, content) => {
-        client.put(`/cours/${id}/comments/${comment_id}`, {
-            content: content
-        }).then(res => {
-            console.log("request update comment", res.data);
-            setEditComment(false);
-            setComment('');
-            setComments(comments.map(comment => comment.id === comment_id ? res.data.comment : comment));
-        }).catch(err => {
-            console.log(err);
-        })
-    }
+    // const updateComment = async (comment_id, content) => {
+    //     client.put(`/cours/${id}/comments/${comment_id}`, {
+    //         content: content
+    //     }).then(res => {
+    //         console.log("request update comment", res.data);
+    //         setEditComment(false);
+    //         setComment('');
+    //         setComments(comments.map(comment => comment.id === comment_id ? res.data.comment : comment));
+    //     }).catch(err => {
+    //         console.log(err);
+    //     })
+    // }
 
 
     return (<div className='flex h-screen'>
@@ -221,17 +221,10 @@ export default function ViewCours() {
 
         <div className='flex-1 ml-auto grow'>
             <div className='ml-4 h-full border bg-white rounded-2xl p-4'>
-                <div className="prose prose-slate lg:prose-lg prose-sm sm:prose xl:prose-xl focus:outline-none mx-auto mt-3 px-2 h-24 min-h-0 hover:min-h-full">
-                    {cour.contents.map((content, index) => {
-                        return (
-                            <div key={index}>
-                                {parse(content.content)}
-                            </div>
-                            //  <div key={index} dangerouslySetInnerHTML={{ __html: content.content }} />
-                        )
-                    })}
-                </div>
+                <ShowByTypeContent content={cour.contents[0]} />
             </div>
         </div>
     </div>)
 }
+
+

@@ -53,6 +53,7 @@ export default function CreateSolution() {
             setSuccessMessage(response.data.message)
             setTimeout(() => {
                 setSuccessMessage('')
+                setIsSuccess(false)
             }, 3000)
         } catch (error) {
             setIsLoading(false)
@@ -60,6 +61,7 @@ export default function CreateSolution() {
             setErrorMessage(error.response.data.message)
             setTimeout(() => {
                 setErrorMessage('')
+                setIsError(false)
             }, 3000)
         }
     }
@@ -80,26 +82,24 @@ export default function CreateSolution() {
                 />
             </div>
             <div className='col-span-3 bg-white rounded-md w-full h-full flex flex-col p-2'>
-                <div className='rounded-md w-full h-full flex flex-col p-2'>
-                    <ButtonGroup orientation="horizontal" variant="contained" aria-label="outlined primary button group">
-                        <LoadingButton
-                            loading={isLoading}
-                            loadingPosition="start"
-                            startIcon={<ArchiveSvg />}
-                            type="submit"
-                            onClick={() => { setIsActif(false) }}
-                            variant="outlined">Brouillon
-                        </LoadingButton>
-                        <LoadingButton
-                            loading={isLoading}
-                            loadingPosition="start"
-                            startIcon={<PubishedSvg />}
-                            type="submit"
-                            onClick={() => { setIsActif(true) }}
-                            variant="contained">Publier
-                        </LoadingButton>
-                    </ButtonGroup>
-                </div>
+                <ButtonGroup className='justify-center items-center p-2' orientation="horizontal" variant="contained" aria-label="outlined primary button group">
+                    <LoadingButton
+                        loading={isLoading}
+                        loadingPosition="start"
+                        startIcon={<ArchiveSvg />}
+                        type="submit"
+                        onClick={() => { setIsActif(false) }}
+                        variant="outlined">Brouillon
+                    </LoadingButton>
+                    <LoadingButton
+                        loading={isLoading}
+                        loadingPosition="start"
+                        startIcon={<PubishedSvg />}
+                        type="submit"
+                        onClick={() => { setIsActif(true) }}
+                        variant="contained">Publier
+                    </LoadingButton>
+                </ButtonGroup>
                 <div className="w-full m-2">
                     <TextField
                         id="description"
@@ -121,23 +121,3 @@ export default function CreateSolution() {
     </form >)
 }
 
-const OldLayout = () => {
-    return (
-        <div className='w-full h-full flex flex-col'>
-            <div className='flex  items-center'>
-                <h1 className='text-2xl font-bold'>{exercice.title}</h1>
-                <div className='flex-1'>
-                    <div className='flex justify-end'>
-                    </div>
-                </div>
-            </div>
-            <form onSubmit={handleSubmit} className='flex flex-col'>
-                <textarea value={resumer} onChange={(e) => setResumer(e.target.value)} className='w-full p-2 border rounded' placeholder='resumer de la solution' />
-                <textarea value={content} onChange={(e) => setContent(e.target.value)} className='w-full p-2 border rounded' placeholder='content de la solution' />
-                <button type='submit' className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
-                    Enregistrer la solution
-                </button>
-            </form>
-        </div>
-    )
-}
