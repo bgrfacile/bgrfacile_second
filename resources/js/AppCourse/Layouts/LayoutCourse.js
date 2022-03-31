@@ -18,7 +18,7 @@ export default function LayoutCourse() {
             isLoading ? <div className="min-h-screen w-full flex justify-center items-center"><Loading /></div> :
                 <div className="min-h-screen flex flex-col bg-gray-100 text-gray-700">
                     <NavBar />
-                    <main className="relative flex-1 m-1 md:m-5">
+                    <main className="relative flex-1 m-1 md:m-2">
                         <Outlet />
                     </main>
                     <div className='h-6 w-full bg-neutral-800 z-30'></div>

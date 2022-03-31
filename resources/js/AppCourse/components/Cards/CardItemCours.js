@@ -1,24 +1,10 @@
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Button, IconButton, Tooltip } from '@mui/material'
-import React from 'react'
-import Chip from '@mui/material/Chip';
-import PersonIcon from '@mui/icons-material/Person';
-import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
-import ClearAllOutlinedIcon from '@mui/icons-material/ClearAllOutlined';
-import OndemandVideoOutlinedIcon from '@mui/icons-material/OndemandVideoOutlined';
-import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
-import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import { Tooltip } from '@mui/material'
 import { Link, useNavigate } from 'react-router-dom';
 import slugify from 'slugify';
+import StarSvg from '../svg/StarSvg';
 
 export default function CardItemCours({ cour }) {
-    let navigate = useNavigate();
-    // const handleClickCard = () => {
-    //     navigate(`/cours/${cour.id}`, { state: { cour: cour } });
-    // };
-    // const truncate = (str) => {
-    //     return str.length > 10 ? str.substring(0, 7) + "..." : str;
-    // }
+
     return (<article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
         <header>
             <div className='group relative'>
@@ -41,7 +27,7 @@ export default function CardItemCours({ cour }) {
                         <span className='text-white font-semibold'>4.5</span>
                     </button>
 
-                    <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                    <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cours: cour }} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
                         {switchIconsTypeCour(cour.contents[0].type_content, 'w-10 h-10')}
                     </Link>
 
@@ -50,7 +36,7 @@ export default function CardItemCours({ cour }) {
                             console.log('note cours');
                         }}
                         className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
-                        <svg className='w-5 h-5' viewBox="0 0 24 24"><path fill="currentColor" d="M17.562 21.56a1 1 0 0 1-.465-.116L12 18.764l-5.097 2.68a1 1 0 0 1-1.45-1.053l.973-5.676l-4.124-4.02a1 1 0 0 1 .554-1.705l5.699-.828l2.549-5.164a1.04 1.04 0 0 1 1.793 0l2.548 5.164l5.699.828a1 1 0 0 1 .554 1.705l-4.124 4.02l.974 5.676a1 1 0 0 1-.985 1.169Z"></path></svg>
+                        <StarSvg className='w-5 h-5' />
                         <span className='text-white font-semibold'>4.5</span>
                     </button>
                 </div>

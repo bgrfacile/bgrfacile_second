@@ -28,3 +28,7 @@ export function formatBytes(bytes, decimals = 2) {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
     // return parseFloat((bytes / Math.pow(k, i)).toFixed(dm));
 }
+
+export const truncate = (str) => {
+    return str.length > 10 ? str.substring(0, 7) + "..." : str;
+}
