@@ -3,6 +3,8 @@
 namespace App\Http\Resources;
 
 use App\Http\Resources\Cycle\BasicCycleResource;
+use App\Http\Resources\Exercice\CustumExerciceResource;
+use App\Http\Resources\Exercice\ExerciceSimpleResource;
 use App\Http\Resources\Level\BasicLevelResource;
 use App\Http\Resources\Matiere\BasicMatiereResource;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -21,13 +23,15 @@ class CoursResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'coverImage' => $this->coverImage == null ? "https://mui.com/static/images/cards/contemplative-reptile.jpg" : url($this->coverImage),
+            'coverImage' => $this->coverImage == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($this->coverImage),
+            // 'coverImage' => $this->coverImage == null ? "https://mui.com/static/images/cards/contemplative-reptile.jpg" : url($this->coverImage),
             'isActif' => $this->isActif,
             'cycle' => new BasicCycleResource($this->cycles->first()),
             'level' => new BasicLevelResource($this->levels->first()),
             'matiere' => new BasicMatiereResource($this->matieres->first()),
             'contents' => ContentResource::collection($this->contents),
             'comments' => CommentResource::collection($this->comments->reverse()),
+            'exercices' => ExerciceSimpleResource::collection($this->exercices),
             'users' => $this->users ? UserResource::collection($this->users) : null,
             'created_at' => formaterDate($this->created_at),
             'updated_at' => formaterDate($this->updated_at),

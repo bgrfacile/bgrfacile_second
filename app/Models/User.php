@@ -102,7 +102,8 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        // return $this->hasMany(Comment::class);
+        return $this->morphMany(Comment::class, 'commentable');
     }
     public function exercices()
     {
@@ -111,5 +112,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function solutions()
     {
         return $this->belongsToMany(Solution::class, 'solutions_users', 'user_id', 'solution_id');
+    }
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
     }
 }

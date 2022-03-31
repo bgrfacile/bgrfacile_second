@@ -44,7 +44,7 @@ export default function HeaderCourseView() {
     return (<StickyContent>
         <div className="hidden pl-2 py-2 md:flex  items-center justify-between overflow-x-auto">
             <h5 className=" font-semibold text-gray-600 ml-2">
-                Vous visité actuellement :
+                Vous visitez actuellement :
             </h5>
             <div className="flex-1 flex justify-end items-center">
                 <SpanContentVisiblity name='cycle' content={<HasCycleParam />} />

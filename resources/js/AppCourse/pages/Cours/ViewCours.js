@@ -27,7 +27,6 @@ export default function ViewCours() {
         }
     }, []);
     let liked = true;
-
     if (loading) {
         return <p>Chargement ...</p>
     } else {
@@ -58,7 +57,7 @@ export default function ViewCours() {
                         />
                     </div>
                     <div className={`flex-1 w-full h-full overflow-y-scroll scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 bg-cover shadow-lg`}
-                        style={{ backgroundImage: `url(${cours.coverImage})`, backgroundPosition: 'center -80px' }}>
+                        style={{ backgroundImage: `url("${cours.coverImage}")`, backgroundPosition: 'center -80px' }}>
                         <div className="mt-40 bg-white h-full w-full">
                             <ShowByTypeContent content={cours.contents[0]} />
                         </div>

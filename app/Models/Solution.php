@@ -37,4 +37,8 @@ class Solution extends Model
     {
         return $this->morphMany(Content::class, 'contentable');
     }
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
+    }
 }

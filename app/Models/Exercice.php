@@ -11,7 +11,8 @@ class Exercice extends Model
 
     protected $guarded = [];
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsToMany(User::class, 'exercices_users', 'exercice_id', 'user_id');
     }
 
@@ -40,5 +41,9 @@ class Exercice extends Model
     public function solutions()
     {
         return $this->hasMany(Solution::class, 'exercice_id');
+    }
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
     }
 }

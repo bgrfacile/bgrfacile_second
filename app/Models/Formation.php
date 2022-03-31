@@ -9,5 +9,9 @@ class Formation extends Model
 {
     use HasFactory;
 
-    protected $guarded =[];
+    protected $guarded = [];
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
+    }
 }

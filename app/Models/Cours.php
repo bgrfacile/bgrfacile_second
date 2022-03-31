@@ -11,10 +11,14 @@ class Cours extends Model
 
     protected $guarded = [];
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsToMany(User::class, 'cours_users', 'cour_id', 'user_id');
     }
-
+    public function exercices()
+    {
+        return $this->belongsToMany(Exercice::class, 'cours_exercices', 'exercice_id', 'cour_id');
+    }
     public function contents()
     {
         return $this->morphMany(Content::class, 'contentable');
@@ -26,14 +30,18 @@ class Cours extends Model
 
     public function cycles()
     {
-        return $this->belongsToMany(Cycle::class,'cours_cycles', 'cour_id', 'cycle_id');
+        return $this->belongsToMany(Cycle::class, 'cours_cycles', 'cour_id', 'cycle_id');
     }
     public function levels()
     {
-        return $this->belongsToMany(Level::class,'cours_levels','cour_id','level_id');
+        return $this->belongsToMany(Level::class, 'cours_levels', 'cour_id', 'level_id');
     }
     public function matieres()
     {
-        return $this->belongsToMany(Matiere::class,'cours_matieres','cour_id','matiere_id');
+        return $this->belongsToMany(Matiere::class, 'cours_matieres', 'cour_id', 'matiere_id');
+    }
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
     }
 }
