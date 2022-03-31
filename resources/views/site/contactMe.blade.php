@@ -23,7 +23,7 @@
                 <form action="{{ route('contact.page.post') }}" method="POST">
                     @csrf
                     <div class="md:flex items-center mt-12">
-                        <div class="w-full md:w-1/2 flex flex-col">
+                        <div class="w-full {{-- md:w-1/2 --}} flex flex-col">
                             <label for="name" class="font-semibold leading-none">Nom *</label>
                             <input id="name" type="text" name="name" value="{{ old('name') }}"
                                 class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200" />
@@ -31,14 +31,14 @@
                                 <div class="text-red-600 text-sm mt-2">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
+                        {{-- <div class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
                             <label for="telephone" class="font-semibold leading-none">Téléphone</label>
                             <input id="telephone" type="text" name="telephone" value="{{ old('telephone') }}"
                                 class="leading-none text-gray-900 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-100 border rounded border-gray-200" />
                             @error('telephone')
                                 <div class="text-red-600 text-sm mt-2">{{ $message }}</div>
                             @enderror
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="md:flex items-center mt-8">
                         <div class="w-full flex flex-col">

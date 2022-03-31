@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use App\Models\Cours;
+use App\Models\Solution;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -21,8 +23,15 @@ class HomeController extends Controller
             Role::create(['name' => 'professeur']);
             Role::create(['name' => 'promoteur']);
         }
+        $countCours = Cours::count();
+        $countExercices = Cours::count();
+        $countSolutions = Solution::count();
 
-
-        return view('site.Home');
+        return view('site.Home', [
+            'countCours' => $countCours,
+            'countExercices' => $countExercices,
+            'countSolutions' => $countSolutions,
+            'countFormation' => 0,
+        ]);
     }
 }

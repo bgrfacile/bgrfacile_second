@@ -75,20 +75,20 @@
                 class="w-full h-min py-6 md:py-0 px-2 sm:px-0 md:h-32 flex flex-col justify-center items-center bg-white rounded-3xl shadow-lg">
                 <div class="grid grid-rows-3 md:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
 
-                    <x-count-model name="Cours" count="7000">
+                    <x-count-model name="Cours" count="{{ $countCours }}">
                         <x-slot name="svg">
                             <x-svg-book-open class="block h-8 w-auto text-gray-600" />
                         </x-slot>
                     </x-count-model>
 
-                    <x-count-model name="Exercices" count="5000">
+                    <x-count-model name="Exercices" count="{{ $countExercices }}">
                         <x-slot name="svg">
                             <x-svg-exo class="block h-8 w-auto text-gray-600" />
                         </x-slot>
                     </x-count-model>
 
 
-                    <x-count-model name="Formations" count="200">
+                    <x-count-model name="Formations" count="{{ $countSolutions }}">
                         <x-slot name="svg">
                             <x-svg-formation class="block h-8 w-auto text-gray-600" />
                         </x-slot>
@@ -103,7 +103,7 @@
 
     <section class="py-10 text-gray-700">
         <div class="w-10/12 m-auto h-fit">
-            <h2 class="text-4xl sm:text-6xl font-bold text-center my-8 text-gray-700 uppercase">à qui s'addresse le
+            <h2 class="text-4xl sm:text-6xl font-bold text-center my-8 text-gray-700 uppercase">à qui s'addresse ce
                 site?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5">
                 <div class="h-full bg-white rounded-md p-5 shadow-xl">
@@ -111,10 +111,14 @@
                         alt="illustration de d'un apprenant qui lit un cours" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Apprenants</h2>
                     <p class="">
-                        Elèves, étudiants ou autodidactes, <strong class="font-semibold">bgrfacile</strong>
+                        Les élèves,les étudiants et les autodidactes, <strong class="font-semibold">bgrfacile</strong>
                         vous
                         offre la possibilité
                         de vous former et de vous exercer dans le domaine de votre choix.</p>
+                    {{-- <a href="{{ route('donation.page') }}" class="btn-paypal my-2" target="_blank"
+                        style="margin-bottom: 10px">
+                        <i class="fa fa-lock donate-padlock-icon"></i> <span>Comment ça marche ?</span>
+                    </a> --}}
                 </div>
                 <div class="h-full bg-neutral-700 text-gray-200  rounded-md p-5 shadow-xl">
                     <img src="{{ asset('assets/img/undraw_podcast_re_wr88.svg') }}"
@@ -179,32 +183,32 @@
                                                 alt="" class="w-full h-full object-center object-cover">
                                         </div>
                                         <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-02.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
+                                            <img src="{{ asset('assets/img/music.svg') }}" alt=""
+                                                class="w-full h-full object-center object-cover">
                                         </div>
                                     </div>
                                     <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                         <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-03.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
+                                            <img src="{{ asset('assets/img/videographe.svg') }}" alt=""
+                                                class="w-full h-full object-center object-cover">
                                         </div>
                                         <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-04.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
+                                            <img src="{{ asset('assets/img/recording.svg') }}" alt=""
+                                                class="w-full h-full object-center object-cover">
                                         </div>
                                         <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-05.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
+                                            <img src="{{ asset('assets/img/optimize_image.svg') }}" alt=""
+                                                class="w-full h-full object-center object-cover">
                                         </div>
                                     </div>
                                     <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                         <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-06.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
+                                            <img src="{{ asset('assets/img/video_files.svg') }}" alt=""
+                                                class="w-full h-full object-center object-cover">
                                         </div>
                                         <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/home-page-03-hero-image-tile-07.jpg"
-                                                alt="" class="w-full h-full object-center object-cover">
+                                            <img src="{{ asset('assets/img/questions.svg') }}" alt=""
+                                                class="w-full h-full object-center object-cover">
                                         </div>
                                     </div>
                                 </div>
@@ -233,7 +237,7 @@
                             Des Quizs, des podcasts et des jeux pour vous aidez à mieux comprendre les
                             cours et vous divertir.
                         </p>
-                        <div class="mt-4 mx-auto">
+                        {{-- <div class="mt-4 mx-auto">
                             <div id="player_home">
                                 <div class="player">
                                     <div id="info" class="info">
@@ -253,7 +257,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="h-full md:h-auto w-full overflow-hidden flex justify-center items-center">

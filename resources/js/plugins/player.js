@@ -46,19 +46,19 @@ const newMusicplayer = new musicPlayer();
 let sound = new Howl({
     src: ['/assets/audios/piste_for_home.mp3'],
 });
-let info = document.getElementById('play');
-if (info) {
-    let classes = info.classList;
+// let info = document.getElementById('play');
+// if (info) {
+//     let classes = info.classList;
 
-    info.addEventListener('click', function () {
-        let result = classes.toggle("active");
+//     info.addEventListener('click', function () {
+//         let result = classes.toggle("active");
 
-        if (result) {
-            sound.play()
-        } else {
-            sound.pause()
-        }
-    })
-}
+//         if (result) {
+//             sound.play()
+//         } else {
+//             sound.pause()
+//         }
+//     })
+// }
 
 

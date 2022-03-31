@@ -4318,21 +4318,18 @@ var musicPlayer = /*#__PURE__*/function () {
 var newMusicplayer = new musicPlayer();
 var sound = new Howl({
   src: ['/assets/audios/piste_for_home.mp3']
-});
-var info = document.getElementById('play');
-
-if (info) {
-  var classes = info.classList;
-  info.addEventListener('click', function () {
-    var result = classes.toggle("active");
-
-    if (result) {
-      sound.play();
-    } else {
-      sound.pause();
-    }
-  });
-}
+}); // let info = document.getElementById('play');
+// if (info) {
+//     let classes = info.classList;
+//     info.addEventListener('click', function () {
+//         let result = classes.toggle("active");
+//         if (result) {
+//             sound.play()
+//         } else {
+//             sound.pause()
+//         }
+//     })
+// }
 
 /***/ }),
 

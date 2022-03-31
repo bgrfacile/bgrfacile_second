@@ -44,7 +44,7 @@ Route::get('/auth/google/callback', [AuthController::class, 'oauthGoogleCallback
 /*
     App React route
 */
-// Route::middleware(['auth'])->group(function () {
+
 Route::view('/cours/{path?}', 'site.contenus.appCours')
     ->where('path', '.*')
     ->name('cours.page');
@@ -63,7 +63,7 @@ Route::view('/search/{path?}', 'site.contenus.appCours')
 Route::view('/profile/{path?}', 'site.contenus.appCours')
     ->where('path', '.*')
     ->name('profil.index');
-// });
+
 
 Route::view('/signin/{path?}', 'site.contenus.appCours')
     ->where('path', '.*')
@@ -91,13 +91,7 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('/users')->group(function () {
             Route::get('/', [UserController::class, 'all'])->name('users.index');
-            // Route::get('/student', [UserController::class, 'student']);
-            // Route::get('/professor', [UserController::class, 'professor']);
-            // Route::get('/user-scholl', [UserController::class, 'userSchool']);
-            // Route::get('/preference', [UserController::class, 'preference']);
 
-            // Route::get('/create', [UserController::class, 'create'])->name('users.create');
-            // Route::post('/', [UserController::class, 'store'])->name('users.store');
             Route::get('/{user}', [UserController::class, 'show'])->name('users.show');
             Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
             Route::put('/{user}/edit', [UserController::class, 'update'])->name('users.update');
@@ -108,4 +102,3 @@ Route::middleware(['auth'])->group(function () {
 });
 
 require __DIR__ . '/auth.php';
-//  Route::get('/profile/{slugUser?}', [ProfilController::class, 'index'])->name('profil.index');
