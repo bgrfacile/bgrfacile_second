@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\CycleController;
 use App\Http\Controllers\Api\ExercicesController;
 use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\LevelController;
+use App\Http\Controllers\Api\LikeController;
 use App\Http\Controllers\Api\MatiereController;
 use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\SolutionController;
@@ -41,6 +42,8 @@ Route::prefix('v1')->group(function () {
         Route::get('/cours/user/{userId}', [CoursController::class, 'CoursToUser']);
         Route::put('/cours/{courId}/isactif', [CoursController::class, 'updateVisibilityCours']);
         Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['index', 'show']);
+
+        Route::apiResource('like', LikeController::class)->only(['store', 'destroy']);
     });
 
     Route::group([

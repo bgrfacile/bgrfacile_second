@@ -21,7 +21,7 @@ export default function ViewCours() {
         } else {
             client.get(`/cours/${id}`)
                 .then(res => {
-                    setCours(res.data.cours);
+                    setCours(res.data);
                     setLoading(false)
                 })
         }

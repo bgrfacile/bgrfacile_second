@@ -26,6 +26,7 @@ class CoursResource extends JsonResource
             'coverImage' => $this->coverImage == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($this->coverImage),
             // 'coverImage' => $this->coverImage == null ? "https://mui.com/static/images/cards/contemplative-reptile.jpg" : url($this->coverImage),
             'isActif' => $this->isActif,
+            'likes' => $this->likes->count(),
             'cycle' => new BasicCycleResource($this->cycles->first()),
             'level' => new BasicLevelResource($this->levels->first()),
             'matiere' => new BasicMatiereResource($this->matieres->first()),

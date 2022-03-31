@@ -174,11 +174,8 @@ class CoursController extends Controller
      */
     public function show($id)
     {
-        $cours = Cours::find($id);
-        return response([
-            'message' => 'cours found successfully',
-            'cours' => new CoursResource($cours),
-        ], 200);
+        $cours = Cours::findOrFail($id);
+        return new CoursResource($cours);
     }
 
     /**
