@@ -21,7 +21,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 
 /*
-    App React route
+    App Site route
 */
 
 Route::get('/demo', function () {

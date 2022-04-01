@@ -1,75 +1,102 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import client from '../../../api/client';
 import AsideViewCours, { Title } from '../../components/AsideViewCours';
-import ButtonDirection from '../../components/Button/ButtonDirection';
 import BackSvg from '../../components/svg/BackSvg';
-import NextSvg from '../../components/svg/NextSvg';
-import PreviousSvg from '../../components/svg/PreviousSvg';
 import ShowByTypeContent from '../../components/view/ShowTypeContent';
+import Modal from 'react-modal';
+import RaitingView from '../../components/RaitingView';
+import { customStyles } from '../../utils/Function';
+import { useSelector } from 'react-redux';
 
+Modal.setAppElement('#root');
 export default function ViewCours() {
     const { state } = useLocation();
     const { id } = useParams();
+    const coursLiked = useSelector(state => state.user.profile.likes_cours);
     const [cours, setCours] = useState({});
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [likes, setLikes] = useState(null);
+    const [isLike, setIsLike] = useState(false);
+    const [onRaiting, setOnRaiting] = useState(false);
+    console.log('cours', cours)
     useEffect(() => {
         if (state !== null && state.cours !== undefined) {
             setCours(state.cours);
+            setLikes(state.cours.likes);
+            setIsLike(coursLiked.find(el => el.likeable_id === state.cours.id))
             setLoading(false)
         } else {
             client.get(`/cours/${id}`)
                 .then(res => {
                     setCours(res.data);
+                    setLikes(state.cours.likes);
+                    setIsLike(coursLiked.find(el => el.likeable_id === state.cours.id))
                     setLoading(false)
                 })
         }
     }, []);
-    let liked = true;
     if (loading) {
         return <p>Chargement ...</p>
     } else {
-        return (<div className='absolute inset-0 mx-auto h-full w-full grid grid-cols-10 gap-2'>
+        return (<>
+            <Modal
+                isOpen={onRaiting}
+                style={customStyles}
+                contentLabel="raiting cours">
+                <RaitingView onClose={() => { setOnRaiting(false) }} />
+            </Modal>
+            <div className='absolute inset-0 mx-auto h-full w-full grid grid-cols-10 gap-2'>
 
-            <div className='col-span-3 hidden md:flex flex-col h-full w-full bg-white rounded-lg p-2 overflow-y-auto'>
-                <AsideViewCours
-                    title={cours.title ?? ''}
-                    description={cours.description ?? ''}
-                    cycleName={cours.cycle.name ?? ''}
-                    levelName={cours.level.name ?? ''}
-                    matiereName={cours.matiere.name ?? ''}
-                    updated_at={cours.updated_at ?? ''}
-                    comments={cours.comments ?? []} />
-            </div>
+                <div className='col-span-3 hidden md:flex flex-col h-full w-full bg-white rounded-lg p-2 overflow-y-auto'>
+                    <AsideViewCours
+                        id={cours.id ?? ''}
+                        title={cours.title ?? ''}
+                        description={cours.description ?? ''}
+                        cycleName={cours.cycle.name ?? ''}
+                        levelName={cours.level.name ?? ''}
+                        matiereName={cours.matiere.name ?? ''}
+                        updated_at={cours.updated_at ?? ''}
+                        likes={likes}
+                        isLike={isLike}
+                        setLikes={(number) => { setLikes(number) }}
+                        setIsLike={(number) => { setIsLike(number) }}
+                        comments={cours.comments ?? []} />
+                </div>
 
-            <div className='col-span-10 md:col-span-7 relative h-full w-full'>
-                <div className='absolute inset-0 h-full w-full flex flex-col overflow-y-auto'>
-                    <div className="block md:hidden sticky top-0 p-2 bg-white rounded-sm w-full shadow">
-                        <Title
-                            title={cours.title ?? ''}
-                            updated_at={cours.updated_at ?? ''}
-                            cycleName={cours.cycle.name ?? ''}
-                            levelName={cours.level.name ?? ''}
-                            matiereName={cours.matiere.name ?? ''}
-                            liked={liked}
-                            comments={cours.comments ?? []}
-                        />
-                    </div>
-                    <div className={`flex-1 w-full h-full overflow-y-scroll scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 bg-cover shadow-lg`}
-                        style={{ backgroundImage: `url("${cours.coverImage}")`, backgroundPosition: 'center -80px' }}>
-                        <div className="mt-40 bg-white h-full w-full">
-                            <ShowByTypeContent content={cours.contents[0]} />
+                <div className='col-span-10 md:col-span-7 relative h-full w-full'>
+                    <div className='absolute inset-0 h-full w-full flex flex-col overflow-y-auto'>
+                        <div className="block md:hidden sticky top-0 p-2 bg-white rounded-sm w-full shadow">
+                            <Title
+                                id={cours.id ?? ''}
+                                title={cours.title ?? ''}
+                                updated_at={cours.updated_at ?? ''}
+                                cycleName={cours.cycle.name ?? ''}
+                                levelName={cours.level.name ?? ''}
+                                matiereName={cours.matiere.name ?? ''}
+                                likes={likes}
+                                isLike={isLike}
+                                setLikes={(number) => { setLikes(number) }}
+                                setIsLike={(number) => { setIsLike(number) }}
+                                comments={cours.comments ?? []}
+                            />
+                        </div>
+                        <div className={`flex-1 w-full h-full overflow-y-scroll scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 bg-cover shadow-lg`}
+                            style={{ backgroundImage: `url("${cours.coverImage}")`, backgroundPosition: 'center -80px' }}>
+                            <div className="mt-40 bg-white h-full w-full">
+                                <ShowByTypeContent content={cours.contents[0]} />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>)
+            </div>
+        </>)
     }
 }
 
-const OldLayout = () => {
+/*
+ const OldLayout = () => {
     useEffect(() => {
         getAllComments();
     }, [])
@@ -250,31 +277,32 @@ const OldLayout = () => {
                                                     </path>
                                                 </svg>
                                                 <span className="pl-2 mx-1 text-black">Edit</span>
-                                            </button> */}
+                                            </button>
 
-                                                <button
-                                                    onClick={() => deleteComment(comment.id)}
-                                                    type="button"
-                                                    className="flex items-center px-2 py-1 font-medium tracking-wide text-gray-600 text-xs capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600  focus:outline-none  transition duration-300 transform ease-in-out">
-                                                    <svg className='h-4 w-4' viewBox="0 0 32 32"><path d="M12 12h2v12h-2z" fill="currentColor"></path><path d="M18 12h2v12h-2z" fill="currentColor"></path><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" fill="currentColor"></path><path d="M12 2h8v2h-8z" fill="currentColor"></path></svg>
-                                                    <span className="pl-1">Supprimer</span>
-                                                </button>
-                                            </div> :
-                                            null
+<button
+    onClick={() => deleteComment(comment.id)}
+    type="button"
+    className="flex items-center px-2 py-1 font-medium tracking-wide text-gray-600 text-xs capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600  focus:outline-none  transition duration-300 transform ease-in-out">
+    <svg className='h-4 w-4' viewBox="0 0 32 32"><path d="M12 12h2v12h-2z" fill="currentColor"></path><path d="M18 12h2v12h-2z" fill="currentColor"></path><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" fill="currentColor"></path><path d="M12 2h8v2h-8z" fill="currentColor"></path></svg>
+    <span className="pl-1">Supprimer</span>
+</button>
+                                            </div > :
+null
                                     }
-                                </div>
-                            </div>
+                                </div >
+                            </div >
                         )) : <div className="text-center text-gray-600 text-sm">Aucun commentaire pour le moment</div>}
-                    </div>
-                </div>
-            </div>
+                    </div >
+                </div >
+            </div >
 
-            <div className='flex-1 ml-auto grow'>
-                <div className='ml-4 h-full border bg-white rounded-2xl p-4'>
-                    <ShowByTypeContent content={cour.contents[0]} />
-                </div>
-            </div>
+    <div className='flex-1 ml-auto grow'>
+        <div className='ml-4 h-full border bg-white rounded-2xl p-4'>
+            <ShowByTypeContent content={cour.contents[0]} />
         </div>
+    </div>
+        </div >
     </>)
 }
 
+ */

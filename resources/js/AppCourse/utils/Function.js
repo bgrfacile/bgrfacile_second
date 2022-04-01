@@ -32,3 +32,14 @@ export function formatBytes(bytes, decimals = 2) {
 export const truncate = (str) => {
     return str.length > 10 ? str.substring(0, 7) + "..." : str;
 }
+
+export const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+};

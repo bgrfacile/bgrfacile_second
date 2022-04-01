@@ -7,6 +7,10 @@ import client from '../../../api/client';
 import LikeEmpty from '../svg/LikeEmpty';
 import LikeFullSvg from '../svg/LikeFullSvg';
 import StarSvg from '../svg/StarSvg';
+import Modal from 'react-modal';
+import { customStyles } from '../../utils/Function';
+import RaitingView from '../RaitingView';
+Modal.setAppElement('#root');
 
 export default function CardItemCours({ cour }) {
     const userId = useSelector(state => state.user.profile.user_id);
@@ -14,6 +18,7 @@ export default function CardItemCours({ cour }) {
     const coursIsLike = coursLiked.find(cours => cours.likeable_id === cour.id);
     const [like, setLike] = useState(cour.likes);
     const [isLike, setIsLike] = useState(coursIsLike === undefined ? false : coursIsLike.likeable_id === cour.id);
+    const [onRaiting, setOnRaiting] = useState(false);
 
     const handleLike = async () => {
         const { id } = cour;
@@ -44,90 +49,98 @@ export default function CardItemCours({ cour }) {
     }
 
 
-    return (<article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
-        <header>
-            <div className='group relative'>
-                <div className='block h-48 w-full mb-4'>
-                    <img
-                        src={cour.coverImage}
-                        alt={cour.title}
-                        className="object-cover h-full w-full rounded-t-lg transition duration-500 ease-in-out"
-                    />
-                </div>
-                <div className="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly">
-                    <button
-                        onClick={handleLike}
-                        className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
-                        {isLike ? <LikeFullSvg className={"w-5 h-5"} /> : <LikeEmpty className={"w-5 h-5"} />}
-                        <span className='text-white font-semibold'>{like}</span>
-                    </button>
-
-                    <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cours: cour }} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
-                        {switchIconsTypeCour(cour.contents[0].type_content, 'w-10 h-10')}
-                    </Link>
-
-                    <button
-                        onClick={() => {
-                            console.log('note cours');
-                        }}
-                        className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
-                        <StarSvg className='w-5 h-5' />
-                        <span className='text-white font-semibold'>4.5</span>
-                    </button>
-                </div>
-            </div>
-            <div className='mb-3 px-2'>
-                <ul className='snap-x flex flex-wrap text-xs font-semibold -m-1'>
-                    <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-cyan-700 hover:bg-cyan-800 transition-colors duration-75 ease-in-out" href="#">
-                            {cour.cycle.name}
-                        </a>
-                    </li>
-                    <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-blue-700 hover:bg-blue-900 transition-colors duration-75 ease-in-out" href="">
-                            {cour.level.name}
-                        </a>
-                    </li>
-                    <li className="scroll-ml-6 snap-start m-1">
-                        <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-emerald-800 hover:bg-emerald-900 transition-colors duration-75 ease-in-out" href="">
-                            {cour.matiere.name}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <h3 className='mb-2 px-2 text-2xl font-medium hover:underline tracking-wide'>
-                <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
-                    {cour.title}
-                </Link>
-            </h3>
-        </header>
-        <p className='text-base text-gray-600 grow px-2'>{cour.description}</p>
-        <footer className='flex items-center mt-4 px-2 pb-2'>
-            <div className="flex -space-x-1 overflow-hidden mr-1">
-                <Tooltip title={cour.users[0].user_name}>
-                    <Link to={`/profile/user/${slugify(cour.users[0].user_name)}-${cour.users[0].user_id}`}>
+    return (<>
+        <Modal
+            isOpen={onRaiting}
+            style={customStyles}
+            contentLabel="raiting cours">
+            <RaitingView onClose={() => { setOnRaiting(false) }} />
+        </Modal>
+        <article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
+            <header>
+                <div className='group relative'>
+                    <div className='block h-48 w-full mb-4'>
                         <img
-                            className="inline-block h-8 w-8 object-cover rounded-full ring-2 ring-white"
-                            src={cour.users[0].url_image} alt={cour.users[0].user_name} />
+                            src={cour.coverImage}
+                            alt={cour.title}
+                            className="object-cover h-full w-full rounded-t-lg transition duration-500 ease-in-out"
+                        />
+                    </div>
+                    <div className="absolute bg-black rounded bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition justify-evenly">
+                        <button
+                            onClick={handleLike}
+                            className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                            {isLike ? <LikeFullSvg className={"w-5 h-5"} /> : <LikeEmpty className={"w-5 h-5"} />}
+                            <span className='text-white font-semibold'>{like}</span>
+                        </button>
+
+                        <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cours: cour }} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                            {switchIconsTypeCour(cour.contents[0].type_content, 'w-10 h-10')}
+                        </Link>
+
+                        <button
+                            onClick={() => {
+                                setOnRaiting(true)
+                            }}
+                            className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                            <StarSvg className='w-5 h-5' />
+                            <span className='text-white font-semibold'>4.5</span>
+                        </button>
+                    </div>
+                </div>
+                <div className='mb-3 px-2'>
+                    <ul className='snap-x flex flex-wrap text-xs font-semibold -m-1'>
+                        <li className="scroll-ml-6 snap-start m-1">
+                            <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-cyan-700 hover:bg-cyan-800 transition-colors duration-75 ease-in-out" href="#">
+                                {cour.cycle.name}
+                            </a>
+                        </li>
+                        <li className="scroll-ml-6 snap-start m-1">
+                            <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-blue-700 hover:bg-blue-900 transition-colors duration-75 ease-in-out" href="">
+                                {cour.level.name}
+                            </a>
+                        </li>
+                        <li className="scroll-ml-6 snap-start m-1">
+                            <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-emerald-800 hover:bg-emerald-900 transition-colors duration-75 ease-in-out" href="">
+                                {cour.matiere.name}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <h3 className='mb-2 px-2 text-2xl font-medium hover:underline tracking-wide'>
+                    <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
+                        {cour.title}
                     </Link>
-                </Tooltip>
-                {/* <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
-                {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" alt="" /> */}
-                {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
-            </div>
-            <div className="flex items-center font-medium text-xs text-ellipsis">
-                {/* <Tooltip title="voir le profil">
+                </h3>
+            </header>
+            <p className='text-base text-gray-600 grow px-2'>{cour.description}</p>
+            <footer className='flex items-center mt-4 px-2 pb-2'>
+                <div className="flex -space-x-1 overflow-hidden mr-1">
+                    <Tooltip title={cour.users[0].user_name}>
+                        <Link to={`/profile/user/${slugify(cour.users[0].user_name)}-${cour.users[0].user_id}`}>
+                            <img
+                                className="inline-block h-8 w-8 object-cover rounded-full ring-2 ring-white"
+                                src={cour.users[0].url_image} alt={cour.users[0].user_name} />
+                        </Link>
+                    </Tooltip>
+                    {/* <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
+                    {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80" alt="" /> */}
+                    {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
+                </div>
+                <div className="flex items-center font-medium text-xs text-ellipsis">
+                    {/* <Tooltip title="voir le profil">
                     <a href='#' className='flex-1 text-gray-600 hover:text-gray-900'>
                         {cour.users[0].user_name}
                     </a>
                 </Tooltip> */}
-                <span className='text-gray-600'>&nbsp;-&nbsp;</span>
-                <span className='text-gray-500'>{cour.updated_at}</span>
-                <span className='text-gray-600'>&nbsp;</span>
-                {switchIconsTypeCour(cour.contents[0].type_content, 'w-4 h-4')}
-            </div>
-        </footer>
-    </article>)
+                    <span className='text-gray-600'>&nbsp;-&nbsp;</span>
+                    <span className='text-gray-500'>{cour.updated_at}</span>
+                    <span className='text-gray-600'>&nbsp;</span>
+                    {switchIconsTypeCour(cour.contents[0].type_content, 'w-4 h-4')}
+                </div>
+            </footer>
+        </article>
+    </>)
 }
 
 const switchIconsTypeCour = (type, size) => {
@@ -148,3 +161,5 @@ const switchIconsTypeCour = (type, size) => {
             return <svg className={`${size}`} viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"></path></svg>
     }
 }
+
+

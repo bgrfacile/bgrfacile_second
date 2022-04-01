@@ -1,13 +1,17 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import client from '../../api/client';
 import ButtonDirection from './Button/ButtonDirection';
 import BackSvg from './svg/BackSvg';
 import CommentSvg from './svg/CommentSvg';
+import LikeEmpty from './svg/LikeEmpty';
+import LikeFullSvg from './svg/LikeFullSvg';
 import NextSvg from './svg/NextSvg';
 import PreviousSvg from './svg/PreviousSvg';
 import StarSvg from './svg/StarSvg';
 
 export default function AsideViewCours({
+    id,
     title,
     updated_at,
     description,
@@ -15,9 +19,12 @@ export default function AsideViewCours({
     levelName,
     matiereName,
     comments,
+    likes,
+    isLike,
+    setLikes,
+    setIsLike,
 }) {
     const navigate = useNavigate();
-    const liked = true;
     return (<>
         <div className='flex flex-wrap justify-between items-center border-b pb-2 mb-2'>
             <ButtonDirection onClick={() => navigate(-1)}>
@@ -36,12 +43,16 @@ export default function AsideViewCours({
             </div>
         </div>
         <Title
+            id={id}
             title={title}
             updated_at={updated_at}
             cycleName={cycleName}
             levelName={levelName}
             matiereName={matiereName}
-            liked={liked}
+            likes={likes}
+            isLike={isLike}
+            setLikes={(number) => { setLikes(number) }}
+            setIsLike={(number) => { setIsLike(number) }}
             comments={comments}
         />
 
@@ -91,14 +102,44 @@ export default function AsideViewCours({
 }
 
 export const Title = ({
+    id,
     title,
     cycleName,
     levelName,
     matiereName,
-    liked,
+    likes,
+    isLike,
+    setLikes,
+    setIsLike,
     comments,
     updated_at
 }) => {
+    const handleLike = async () => {
+        if (isLike) {
+            try {
+                await client.delete(`/like/cours/${id}`);
+                setLikes(likes - 1);
+                setIsLike(false);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        else {
+            try {
+                await client.post(`/like`, {
+                    likeable_type: 'cours',
+                    likeable_id: id,
+                });
+                setLikes(likes + 1);
+                setIsLike(true);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+
+    }
+    console.log('likes', likes);
     return (<>
 
         <div className='border-b pb-2 mb-2'>
@@ -122,18 +163,15 @@ export const Title = ({
                 <span className="text-sm">{comments.length}</span>
             </button>
             <button
-                onClick={() => { console.log('like') }}
+                onClick={handleLike}
                 className="flex items-center p-2 rounded-md text-slate-400 hover:text-gray-200 hover:bg-gray-600  ease-in-out">
-                {liked ? <svg className="h-6 w-6" viewBox="0 0 48 48"><path fill="#F44336" d="M34 9c-4.2 0-7.9 2.1-10 5.4C21.9 11.1 18.2 9 14 9C7.4 9 2 14.4 2 21c0 11.9 22 24 22 24s22-12 22-24c0-6.6-5.4-12-12-12z"></path></svg> :
-                    <svg className="h-6 w-6" viewBox="0 0 48 48">
-                        <path fill="#FFCDD2" d="M34 9c-4.2 0-7.9 2.1-10 5.4C21.9 11.1 18.2 9 14 9C7.4 9 2 14.4 2 21c0 11.9 22 24 22 24s22-12 22-24c0-6.6-5.4-12-12-12z">
-                        </path>
-                    </svg>}
-                <div className="text-sm"> 5 </div>
+                {isLike ? <LikeFullSvg className={"w-6 h-6"} /> :
+                    <LikeEmpty className={"w-6 h-6"} />}
+                <div className="text-sm"> {likes} </div>
             </button>
             <button
                 onClick={() => { console.log('raitings') }}
-                className="flex items-center p-2 rounded-md text-yellow-300 hover:text-gray-200 bg-transparent hover:bg-yellow-600  ease-in-out">
+                className="flex items-center p-2 rounded-md text-yellow-300 hover:text-gray-200 bg-transparent hover:bg-yellow-400  ease-in-out">
                 <StarSvg className='w-6 h-6' />
                 <div className="text-sm">4.5</div>
             </button>

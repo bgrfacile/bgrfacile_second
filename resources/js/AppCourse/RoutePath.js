@@ -64,6 +64,7 @@ export default function RoutePath() {
                         <Route path=':cycle-:idCycle' element={<ScolaireCours />} />
                         <Route path='random' element={<RandomCours />} />
                     </Route>
+
                     <Route path='/cours/read/:name-:id' element={<ViewCours />} />
 
                     <Route path="/exercices/*" element={<ExerciceIndex />} />
@@ -100,6 +101,7 @@ export default function RoutePath() {
                         <Route path='/profile/devenir-professeur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />
                         <Route path='/profile/devenir-promoteur' element={<RequireAuth><DevenirPromoteur /></RequireAuth>} />
                     </Route>
+
                     <Route path="/profile/user/:user-:id" element={<Nuser />} />
                 </Route>
                 <Route path="/signin/*" element={<Login />} />

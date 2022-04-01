@@ -13,9 +13,8 @@ class LikeController extends Controller
 {
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
-            'user_id' => 'required|exists:users,id',
+            // 'user_id' => 'required|exists:users,id',
             'likeable_id' => 'required|exists:cours,id',
             'likeable_type' => 'required|string',
         ]);
