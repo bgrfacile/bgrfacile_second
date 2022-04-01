@@ -11,6 +11,14 @@ class Cours extends Model
 
     protected $guarded = [];
 
+    public function islike($user)
+    {
+        if ($user) {
+            return $this->likes->where('user_id', $user->id)->count() > 0;
+        }
+        return false;
+    }
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'cours_users', 'cour_id', 'user_id');

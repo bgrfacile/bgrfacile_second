@@ -1,6 +1,6 @@
 import { Tooltip } from '@mui/material'
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import slugify from 'slugify';
 import client from '../../../api/client';
@@ -10,44 +10,29 @@ import StarSvg from '../svg/StarSvg';
 import Modal from 'react-modal';
 import { customStyles } from '../../utils/Function';
 import RaitingView from '../RaitingView';
+import { addLike, removeLike } from '../../redux/features/cours/functions';
+import { decrementLike, incrementLike } from '../../redux/features/cours/coursSlice';
 Modal.setAppElement('#root');
 
 export default function CardItemCours({ cour }) {
-    const userId = useSelector(state => state.user.profile.user_id);
-    const coursLiked = useSelector(state => state.user.profile.likes_cours);
-    const coursIsLike = coursLiked.find(cours => cours.likeable_id === cour.id);
-    const [like, setLike] = useState(cour.likes);
-    const [isLike, setIsLike] = useState(coursIsLike === undefined ? false : coursIsLike.likeable_id === cour.id);
+    const dispatch = useDispatch();
+    const like = useSelector(state => state.cours.cours.find(cours => cours.id === cour.id).likes);
+    const isLike = useSelector(state => state.cours.cours.find(cours => cours.id === cour.id).isLike);
     const [onRaiting, setOnRaiting] = useState(false);
-
     const handleLike = async () => {
         const { id } = cour;
         if (isLike) {
-            try {
-                await client.delete(`/like/cours/${id}`);
-                setLike(like - 1);
-                setIsLike(false);
-            } catch (err) {
-                console.log(err);
-            }
+            dispatch(removeLike({ courId: id }));
+            dispatch(decrementLike({ id }));
         }
         else {
-            try {
-                await client.post(`/like`, {
-                    likeable_type: 'cours',
-                    likeable_id: id,
-                    user_id: userId
-                });
-                setLike(like + 1);
-                setIsLike(true);
-            } catch (err) {
-                console.log(err);
-            }
+            dispatch(addLike({
+                likeable_type: 'cours',
+                likeable_id: id
+            }));
+            dispatch(incrementLike({ id }));
         }
-
-
     }
-
 
     return (<>
         <Modal

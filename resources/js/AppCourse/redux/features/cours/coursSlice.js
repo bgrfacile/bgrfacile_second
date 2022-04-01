@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
+import { addLike, removeLike } from "./functions";
 
 const user = localStorage.getItem('user');
 
@@ -57,6 +58,28 @@ const coursSlices = createSlice({
         error: null,
     },
     reducers: {
+        incrementLike: (state, action) => {
+            const { id } = action.payload;
+            const cours = state.cours.map((cours) => {
+                if (cours.id === id) {
+                    cours.likes++;
+                    cours.isLike = true;
+                }
+                return cours;
+            });
+            state.cours = cours;
+        },
+        decrementLike: (state, action) => {
+            const { id } = action.payload;
+            const cours = state.cours.map((cours) => {
+                if (cours.id === id) {
+                    cours.likes--;
+                    cours.isLike = false;
+                }
+                return cours;
+            });
+            state.cours = cours;
+        },
         allCours: (state, action) => {
             state = action.payload.cours;
             console.log("state", state);
@@ -149,12 +172,26 @@ const coursSlices = createSlice({
         [getCoursByCycle.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.error.message;
-        }
+        },
+        [addLike.pending]: (state, action) => { },
+        [addLike.fulfilled]: (state, action) => { },
+        [addLike.rejected]: (state, action) => { },
+        [removeLike.rejected]: (state, action) => { },
 
     },
 });
 
-export const { allCours, changeVisibilitie, addCours, deleteCours, updateCours, myCours, myCoursOnligne } = coursSlices.actions;
+export const {
+    incrementLike,
+    decrementLike,
+    allCours,
+    changeVisibilitie,
+    addCours,
+    deleteCours,
+    updateCours,
+    myCours,
+    myCoursOnligne
+} = coursSlices.actions;
 
 export default coursSlices.reducer;
 
