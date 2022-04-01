@@ -43,7 +43,8 @@ Route::prefix('v1')->group(function () {
         Route::put('/cours/{courId}/isactif', [CoursController::class, 'updateVisibilityCours']);
         Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['index', 'show']);
 
-        Route::apiResource('like', LikeController::class)->only(['store', 'destroy']);
+        Route::post('like', [LikeController::class, 'store']);
+        Route::delete('like/{cours}/{id}', [LikeController::class, 'destroy']);
     });
 
     Route::group([

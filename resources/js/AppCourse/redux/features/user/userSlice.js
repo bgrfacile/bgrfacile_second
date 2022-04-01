@@ -63,6 +63,7 @@ const initialValue = {
         country: '',
         url_image: '',
         roles: [],
+        likes_cours: [],
     },
     isLoading: false,
     isconnect: false,

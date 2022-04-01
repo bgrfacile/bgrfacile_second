@@ -3,6 +3,7 @@
 namespace App\Http\Resources\User;
 
 use App\Http\Resources\CoursResource;
+use App\Http\Resources\Exercice\ExerciceSimpleResource;
 use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
@@ -35,10 +36,13 @@ class UserShowResource extends JsonResource
                 'url_image' => $this->url_image == null ? "https://ui-avatars.com/api/?name=$slug&background=0D8ABC&color=fff" : url($this->url_image),
                 'birthday' => formaterDate($this->birthday),
                 'createdAt' => formaterDate($this->created_at),
+                'likes_cours' => $this->likes->where('likeable_type', 'App\Models\Cours')->toArray(),
             ],
             'is_following' => auth()->check() ? $this->isFollowing(User::findOrFail($this->id)) : false,
             'is_followers' => auth()->check() ? $this->isFollowers(User::findOrFail($this->id)) : false,
             'cours' => CoursResource::collection($this->cours->where('isActif', '=', '1')->reverse()),
+            'exercices' => ExerciceSimpleResource::collection($this->exercices->where('isActif', '=', '1')->reverse()),
+
         ];
     }
 }

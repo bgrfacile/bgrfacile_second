@@ -37,6 +37,7 @@ class UserResource extends JsonResource
             'roles' => RoleResource::collection($this->roles),
             'followers' => $this->followers->count(),
             'following' => $this->following->count(),
+            'likes_cours' => $this->likes->where('likeable_type', 'App\Models\Cours')->toArray(),
             'user_followers' => UserLambdaResource::collection($this->followers),
             'user_following' => UserLambdaResource::collection($this->following),
         ];
