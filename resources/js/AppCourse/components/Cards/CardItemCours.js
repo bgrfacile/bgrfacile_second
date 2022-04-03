@@ -1,9 +1,8 @@
 import { Tooltip } from '@mui/material'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import slugify from 'slugify';
-import client from '../../../api/client';
 import LikeEmpty from '../svg/LikeEmpty';
 import LikeFullSvg from '../svg/LikeFullSvg';
 import StarSvg from '../svg/StarSvg';
@@ -59,7 +58,7 @@ export default function CardItemCours({ cour }) {
                             <span className='text-white font-semibold'>{like}</span>
                         </button>
 
-                        <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cours: cour }} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                        <Link to={`/cours/read/${cour.title}-${cour.id}`} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
                             {switchIconsTypeCour(cour.contents[0].type_content, 'w-10 h-10')}
                         </Link>
 
@@ -76,19 +75,19 @@ export default function CardItemCours({ cour }) {
                 <div className='mb-3 px-2'>
                     <ul className='snap-x flex flex-wrap text-xs font-semibold -m-1'>
                         <li className="scroll-ml-6 snap-start m-1">
-                            <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-cyan-700 hover:bg-cyan-800 transition-colors duration-75 ease-in-out" href="#">
+                            <span className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-cyan-700 hover:bg-cyan-800 transition-colors duration-75 ease-in-out" >
                                 {cour.cycle.name}
-                            </a>
+                            </span>
                         </li>
                         <li className="scroll-ml-6 snap-start m-1">
-                            <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-blue-700 hover:bg-blue-900 transition-colors duration-75 ease-in-out" href="">
+                            <span className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-blue-700 hover:bg-blue-900 transition-colors duration-75 ease-in-out" >
                                 {cour.level.name}
-                            </a>
+                            </span>
                         </li>
                         <li className="scroll-ml-6 snap-start m-1">
-                            <a className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-emerald-800 hover:bg-emerald-900 transition-colors duration-75 ease-in-out" href="">
+                            <span className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-emerald-800 hover:bg-emerald-900 transition-colors duration-75 ease-in-out" >
                                 {cour.matiere.name}
-                            </a>
+                            </span>
                         </li>
                     </ul>
                 </div>

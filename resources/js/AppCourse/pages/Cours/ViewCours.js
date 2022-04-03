@@ -1,41 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import client from '../../../api/client';
-import AsideViewCours, { Title } from '../../components/AsideViewCours';
+import AsideViewCours, { HeaderAsideCours } from '../../components/AsideViewCours';
 import BackSvg from '../../components/svg/BackSvg';
 import ShowByTypeContent from '../../components/view/ShowTypeContent';
 import Modal from 'react-modal';
 import RaitingView from '../../components/RaitingView';
 import { customStyles } from '../../utils/Function';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { showCours } from '../../redux/features/cours/functions';
 
 Modal.setAppElement('#root');
 export default function ViewCours() {
-    const { state } = useLocation();
     const { id } = useParams();
-    const coursLiked = useSelector(state => state.user.profile.likes_cours);
-    const [cours, setCours] = useState({});
-    const [loading, setLoading] = useState(true);
-    const [likes, setLikes] = useState(null);
-    const [isLike, setIsLike] = useState(false);
+    const dispatch = useDispatch();
+    const cours = useSelector(state => state.cours.cours.length > 0 ? state.cours.cours.find(cours => cours.id === parseInt(id)) : {});
+    const [loading, setLoading] = useState(useSelector(state => state.cours.isLoadingShow));
     const [onRaiting, setOnRaiting] = useState(false);
-    console.log('cours', cours)
     useEffect(() => {
-        if (state !== null && state.cours !== undefined) {
-            setCours(state.cours);
-            setLikes(state.cours.likes);
-            setIsLike(coursLiked.find(el => el.likeable_id === state.cours.id))
-            setLoading(false)
+        if (Object.keys(cours).length === 0) {
+            dispatch(showCours({ id: parseInt(id) }));
         } else {
-            client.get(`/cours/${id}`)
-                .then(res => {
-                    setCours(res.data);
-                    setLikes(state.cours.likes);
-                    setIsLike(coursLiked.find(el => el.likeable_id === state.cours.id))
-                    setLoading(false)
-                })
+            setLoading(false);
         }
     }, []);
+
+
     if (loading) {
         return <p>Chargement ...</p>
     } else {
@@ -49,37 +39,13 @@ export default function ViewCours() {
             <div className='absolute inset-0 mx-auto h-full w-full grid grid-cols-10 gap-2'>
 
                 <div className='col-span-3 hidden md:flex flex-col h-full w-full bg-white rounded-lg p-2 overflow-y-auto'>
-                    <AsideViewCours
-                        id={cours.id ?? ''}
-                        title={cours.title ?? ''}
-                        description={cours.description ?? ''}
-                        cycleName={cours.cycle.name ?? ''}
-                        levelName={cours.level.name ?? ''}
-                        matiereName={cours.matiere.name ?? ''}
-                        updated_at={cours.updated_at ?? ''}
-                        likes={likes}
-                        isLike={isLike}
-                        setLikes={(number) => { setLikes(number) }}
-                        setIsLike={(number) => { setIsLike(number) }}
-                        comments={cours.comments ?? []} />
+                    <AsideViewCours cours={cours} />
                 </div>
 
                 <div className='col-span-10 md:col-span-7 relative h-full w-full'>
                     <div className='absolute inset-0 h-full w-full flex flex-col overflow-y-auto'>
                         <div className="block md:hidden sticky top-0 p-2 bg-white rounded-sm w-full shadow">
-                            <Title
-                                id={cours.id ?? ''}
-                                title={cours.title ?? ''}
-                                updated_at={cours.updated_at ?? ''}
-                                cycleName={cours.cycle.name ?? ''}
-                                levelName={cours.level.name ?? ''}
-                                matiereName={cours.matiere.name ?? ''}
-                                likes={likes}
-                                isLike={isLike}
-                                setLikes={(number) => { setLikes(number) }}
-                                setIsLike={(number) => { setIsLike(number) }}
-                                comments={cours.comments ?? []}
-                            />
+                            <HeaderAsideCours cours={cours} />
                         </div>
                         <div className={`flex-1 w-full h-full overflow-y-scroll scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 bg-cover shadow-lg`}
                             style={{ backgroundImage: `url("${cours.coverImage}")`, backgroundPosition: 'center -80px' }}>

@@ -8,7 +8,7 @@
                     <h1
                         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
                         Retrouvez plus de {{ $countSchools }}
-                        <span class="text-indigo-700">école en ligne </span>
+                        <span class="text-indigo-700"> école en ligne </span>
                         avec bgrfacile
                     </h1>
                     <p class="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-center text-sm sm:text-lg">
@@ -74,7 +74,7 @@
                     Une fois connecté, vous pouvez consulter: les informations de votre école, les évènements, les
                     supports de cours et examens, l'emploi du temps, les dates d'évaluations, les evaluations,les
                     relévés
-                    de notes, les mails...
+                    de notes, les emails...
                 </p>
             </div>
         </div>
@@ -437,7 +437,7 @@
                             </g>
                         </svg>
                         <div class="relative flex flex-col items-start">
-                            <h3 class="text-xl font-bold">Tarif par essentiel</h3>
+                            <h3 class="text-xl font-bold">Tarif essentiel</h3>
                             <p class="tracking-tight text-gray-500">
                                 <span class="text-sm transform inline-block -translate-y-2.5 relative">$</span>
                                 <span class="text-3xl font-bold text-gray-800">167,47</span>
@@ -529,7 +529,7 @@
                             </g>
                         </svg>
                         <div class="relative flex flex-col items-start">
-                            <h3 class="text-xl font-bold">Tarif par complet</h3>
+                            <h3 class="text-xl font-bold">Tarif complet</h3>
                             <p class="tracking-tight text-gray-500">
                                 <span class="text-sm transform inline-block -translate-y-2.5 relative">$</span>
                                 <span class="text-3xl font-bold text-gray-800">334,93</span>

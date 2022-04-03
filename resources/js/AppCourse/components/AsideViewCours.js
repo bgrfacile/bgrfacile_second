@@ -1,6 +1,9 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import client from '../../api/client';
+import { decrementLike, incrementLike } from '../redux/features/cours/coursSlice';
+import { addLike, removeLike } from '../redux/features/cours/functions';
 import ButtonDirection from './Button/ButtonDirection';
 import BackSvg from './svg/BackSvg';
 import CommentSvg from './svg/CommentSvg';
@@ -10,20 +13,7 @@ import NextSvg from './svg/NextSvg';
 import PreviousSvg from './svg/PreviousSvg';
 import StarSvg from './svg/StarSvg';
 
-export default function AsideViewCours({
-    id,
-    title,
-    updated_at,
-    description,
-    cycleName,
-    levelName,
-    matiereName,
-    comments,
-    likes,
-    isLike,
-    setLikes,
-    setIsLike,
-}) {
+export default function AsideViewCours({ cours }) {
     const navigate = useNavigate();
     return (<>
         <div className='flex flex-wrap justify-between items-center border-b pb-2 mb-2'>
@@ -42,23 +32,11 @@ export default function AsideViewCours({
                 </ButtonDirection>
             </div>
         </div>
-        <Title
-            id={id}
-            title={title}
-            updated_at={updated_at}
-            cycleName={cycleName}
-            levelName={levelName}
-            matiereName={matiereName}
-            likes={likes}
-            isLike={isLike}
-            setLikes={(number) => { setLikes(number) }}
-            setIsLike={(number) => { setIsLike(number) }}
-            comments={comments}
-        />
+        <HeaderAsideCours cours={cours} />
 
         <div className='flex flex-col border-b pb-2 mb-2'>
             <h5 className='font-medium text-base text-gray-800'>A propos du cours</h5>
-            <p className='mt-1 text-sm text-gray-600'>{description}</p>
+            <p className='mt-1 text-sm text-gray-600'>{cours.description}</p>
         </div>
 
         <div className='border-b pb-2 mb-2'>
@@ -101,77 +79,55 @@ export default function AsideViewCours({
     </>)
 }
 
-export const Title = ({
-    id,
-    title,
-    cycleName,
-    levelName,
-    matiereName,
-    likes,
-    isLike,
-    setLikes,
-    setIsLike,
-    comments,
-    updated_at
-}) => {
-    const handleLike = async () => {
+export const HeaderAsideCours = ({ cours }) => {
+    const dispatch = useDispatch();
+    const isLike = useSelector(state => state.cours.cours.find(el => el.id === cours.id).isLike);
+    console.log('isLike', isLike);
+    const handleLike = () => {
         if (isLike) {
-            try {
-                await client.delete(`/like/cours/${id}`);
-                setLikes(likes - 1);
-                setIsLike(false);
-            } catch (err) {
-                console.log(err);
-            }
+            dispatch(removeLike({ courId: cours.id }));
+            dispatch(decrementLike({ id: cours.id }));
         }
         else {
-            try {
-                await client.post(`/like`, {
-                    likeable_type: 'cours',
-                    likeable_id: id,
-                });
-                setLikes(likes + 1);
-                setIsLike(true);
-            } catch (err) {
-                console.log(err);
-            }
+            dispatch(addLike({
+                likeable_type: 'cours',
+                likeable_id: cours.id
+            }));
+            dispatch(incrementLike({ id: cours.id }));
         }
-
-
     }
-    console.log('likes', likes);
     return (<>
 
         <div className='border-b pb-2 mb-2'>
-            <h3 className='font-inter font-extrabold text-2xl text-black tracking-tight'>{title}</h3>
+            <h3 className='font-inter font-extrabold text-2xl text-black tracking-tight'>{cours.title}</h3>
             <span className='mt-1 font-medium text-sm text-gray-500'>
-                {updated_at} ·
+                {cours.updated_at} ·
                 {/* {updated_at} · 4 min de lecture */}
             </span>
             <div className="focus:outline-none flex flex-wrap py-4 w-full overflow-x-auto">
-                <div className="min-w-max py-2 mb-1 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{cycleName}</div>
-                <div className="min-w-max py-2 mb-1 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{levelName}</div>
-                <div className="min-w-max py-2 mb-1 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{matiereName}</div>
+                <div className="min-w-max py-2 mb-1 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{cours.cycle.name}</div>
+                <div className="min-w-max py-2 mb-1 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{cours.level.name}</div>
+                <div className="min-w-max py-2 mb-1 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{cours.matiere.name}</div>
             </div>
         </div>
 
         <div className="py-2 mb-2 flex items-center justify-center space-x-4">
             <button
                 onClick={() => { console.log('get comment') }}
-                className="flex items-center p-2 rounded-md text-slate-400 hover:text-slate-200 hover:bg-slate-600 ease-in-out">
+                className="hover:scale-110 transform  group-hover:translate-y-0 transition flex items-center p-2 rounded-md text-gray-600 hover:bg-gray-200 ease-linear">
                 <CommentSvg className={'h-6 w-6'} />
-                <span className="text-sm">{comments.length}</span>
+                <span className="text-base ml-1">{cours.comments.length}</span>
             </button>
             <button
                 onClick={handleLike}
-                className="flex items-center p-2 rounded-md text-slate-400 hover:text-gray-200 hover:bg-gray-600  ease-in-out">
+                className="hover:scale-110 transform  group-hover:translate-y-0 transition flex items-center p-2 rounded-md text-gray-600 hover:bg-gray-200 ease-linear">
                 {isLike ? <LikeFullSvg className={"w-6 h-6"} /> :
                     <LikeEmpty className={"w-6 h-6"} />}
-                <div className="text-sm"> {likes} </div>
+                <div className="text-base ml-1"> {cours.likes} </div>
             </button>
             <button
                 onClick={() => { console.log('raitings') }}
-                className="flex items-center p-2 rounded-md text-yellow-300 hover:text-gray-200 bg-transparent hover:bg-yellow-400  ease-in-out">
+                className="hover:scale-110 transform  group-hover:translate-y-0 transition flex items-center p-2 rounded-md text-yellow-300 hover:text-gray-100 hover:bg-yellow-400 ease-linear">
                 <StarSvg className='w-6 h-6' />
                 <div className="text-sm">4.5</div>
             </button>

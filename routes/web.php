@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\APi\AuthController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\ContactController;
+use App\Http\Controllers\Site\CoursController;
 use App\Http\Controllers\Site\DonationController;
 use App\Http\Controllers\Site\EcoleEnLigneController;
 use App\Http\Controllers\Site\HomeController;
@@ -29,6 +30,7 @@ Route::get('/demo', function () {
 });
 
 Route::get('/', HomeController::class)->name('home.page');
+Route::get('/cours/random', [CoursController::class,'randomCours'])->name('randomCours.page');
 Route::get('/ecole-en-ligne', [EcoleEnLigneController::class, 'index'])->name('ecoleEnLigne.page');
 Route::get('/ecole-en-ligne/create', [EcoleEnLigneController::class, 'create'])->name('ecoleEnLigne.create');
 Route::get('/donation', [DonationController::class, 'index'])->name('donation.page');

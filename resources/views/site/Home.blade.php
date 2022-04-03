@@ -18,7 +18,7 @@
                 </p>
                 <div class="flex flex-col md:flex-row justify-start mt-6">
                     <a class="w-full md:w-max bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold"
-                        href="/cours/random">Lire son premier cours</a>
+                        href="{{ route('randomCours.page') }}">Lire son premier cours</a>
                     <div class="relative mt-2 sm:mt-0" x-data="{ open: false }" @click.away="open = false"
                         @close.stop="open = false">
                         <a @click="open =! open"

@@ -1,21 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
-import { addLike, removeLike } from "./functions";
-
-const user = localStorage.getItem('user');
-
-// export const getCours = createAsyncThunk(
-//     "cours/getCours",
-//     async ({ idCycle, idLevel, idMatiere, userId }) => {
-//         try {
-//             const response = await client.get(`/cours/${id}`);
-//             return response.data;
-//         } catch (error) {
-//             // return rejectWithValue(error);
-//         }
-//     }
-// );
-
+import { addLike, removeLike, showCours } from "./functions";
 
 export const getLastCours = createAsyncThunk(
     'cours/getLastCours',
@@ -55,6 +40,7 @@ const coursSlices = createSlice({
     initialState: {
         cours: [],
         isLoading: false,
+        isLoadingShow: true,
         error: null,
     },
     reducers: {
@@ -178,6 +164,20 @@ const coursSlices = createSlice({
         [addLike.rejected]: (state, action) => { },
         [removeLike.rejected]: (state, action) => { },
 
+
+        [showCours.pending]: (state, action) => {
+            state.isLoadingShow = true;
+        },
+        [showCours.fulfilled]: (state, action) => {
+            state.isLoadingShow = false;
+            state.cours = [
+                ...state.cours,
+                action.payload.data
+            ];
+        },
+        [showCours.rejected]: (state, action) => {
+            state.error = action.error.message;
+        }
     },
 });
 

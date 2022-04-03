@@ -10,16 +10,17 @@ use App\Models\Cycle;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class CoursController extends Controller
 {
-    public function randomCours()
+    public function randomCours():JsonResource
     {
         $cours = Cours::inRandomOrder()->first();
         return new CoursResource($cours);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -51,12 +52,6 @@ class CoursController extends Controller
             ->get()->reverse();
         return CoursResource::collection($cours);
     }
-
-    /**
-     *  Get the cours by cycle and level and matiere
-     *  @param int $idCycle, int $idLevel, int $idMatiere
-     *  @return App\Http\Resources\CoursResource
-     */
     public function getCoursByMatiere($idCycle, $idLevel, $idMatiere)
     {
         $cours = Cours::where('isActif', "1")
@@ -74,13 +69,6 @@ class CoursController extends Controller
         return CoursResource::collection($cours);
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
