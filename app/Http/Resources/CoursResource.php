@@ -27,6 +27,7 @@ class CoursResource extends JsonResource
             'isActif' => $this->isActif,
             'likes' => $this->likes->count(),
             'isLike' => $this->islike($request->user()),
+            'rating' => round($this->raitings->avg('rating'), 1),
             'cycle' => new BasicCycleResource($this->cycles->first()),
             'level' => new BasicLevelResource($this->levels->first()),
             'matiere' => new BasicMatiereResource($this->matieres->first()),

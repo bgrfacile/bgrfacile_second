@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\ExercicesController;
 use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\LikeController;
+use App\Http\Controllers\Api\RaitingController;
 use App\Http\Controllers\Api\MatiereController;
 use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\SolutionController;
@@ -45,6 +46,10 @@ Route::prefix('v1')->group(function () {
 
         Route::post('like', [LikeController::class, 'store']);
         Route::delete('like/{cours}/{id}', [LikeController::class, 'destroy']);
+
+        Route::post('/rating', [RaitingController::class, 'store']);
+        // Route::get('/rating/{cours}', [RaitingController::class, 'getRating']);
+        Route::delete('/rating/{cours}/{id}', [RaitingController::class, 'destroy']);
     });
 
     Route::group([

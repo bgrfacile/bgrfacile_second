@@ -38,7 +38,7 @@ export default function CardItemCours({ cour }) {
             isOpen={onRaiting}
             style={customStyles}
             contentLabel="raiting cours">
-            <RaitingView onClose={() => { setOnRaiting(false) }} />
+            <RaitingView courId={cour.id} onClose={() => { setOnRaiting(false) }} />
         </Modal>
         <article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
             <header>
@@ -63,12 +63,10 @@ export default function CardItemCours({ cour }) {
                         </Link>
 
                         <button
-                            onClick={() => {
-                                setOnRaiting(true)
-                            }}
+                            onClick={() => { setOnRaiting(true) }}
                             className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
                             <StarSvg className='w-5 h-5' />
-                            <span className='text-white font-semibold'>4.5</span>
+                            <span className='text-white font-semibold'>{cour.rating}</span>
                         </button>
                     </div>
                 </div>

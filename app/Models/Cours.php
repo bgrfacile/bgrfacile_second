@@ -50,6 +50,10 @@ class Cours extends Model
     }
     public function likes()
     {
-        return $this->morphMany(Like::class, 'likeable');
+        return $this->morphMany(Like::class, 'likeable', 'likeable_type', 'likeable_id');
+    }
+    public function raitings()
+    {
+        return $this->morphMany(Rating::class, 'raiteable', 'ratingable_type', 'ratingable_id');
     }
 }

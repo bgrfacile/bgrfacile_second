@@ -49,6 +49,8 @@
         "@tiptap/starter-kit": "^2.0.0-beta.156",
         "howler": "^2.2.3",
         "html-react-parser": "^1.4.6",
+        "lottie-react": "^2.2.1",
+        "lottie-web": "^5.9.1",
         "notyf": "^3.10.0",
         "pdfjs-dist": "^2.12.313",
         "prop-types": "^15.8.1",
