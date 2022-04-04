@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
-import { addLike, removeLike, showCours, addRatingCourse } from "./functions";
+import { addLike, removeLike, showCours, addRatingCourse, fetchComments, postComment, deleteComment } from "./functions";
 
 export const getLastCours = createAsyncThunk(
     'cours/getLastCours',
@@ -42,9 +42,29 @@ const coursSlices = createSlice({
         isLoading: false,
         isLoadingShow: true,
         isLoadingAddRating: false,
+        isLoadingComments: false,
+        isLoadingDeleteComment: false,
         error: null,
+        coursShow: {},
     },
     reducers: {
+        deleteCommentCours: (state, action) => {
+            // state.coursShow.comments = state.coursShow.comments.filter(comment => comment.id !== action.payload.comment_id);
+            state.cours.find(cours => cours.id === action.payload.id).comments = state.cours.find(cours => cours.id === action.payload.id).comments.filter(comment => comment.id !== action.payload.comment_id);
+        },
+        addComment: (state, action) => {
+            state.cours.forEach(cours => {
+                if (cours.id === action.payload.id) {
+                    cours.comments.unshift({
+                        comment_user_id: action.payload.datas.user_id,
+                        content: action.payload.datas.content,
+                        comment_user_name: action.payload.datas.user_name,
+                        comment_user_url_image: action.payload.datas.user_url_image,
+                        createdAt: action.payload.datas.createdAt,
+                    });
+                }
+            });
+        },
         incrementLike: (state, action) => {
             const { id } = action.payload;
             const cours = state.cours.map((cours) => {
@@ -194,11 +214,63 @@ const coursSlices = createSlice({
         },
         [addRatingCourse.rejected]: (state, action) => {
             state.isLoadingAddRating = false;
+        },
+        [fetchComments.pending]: (state, action) => {
+            state.isLoadingComments = true;
+        },
+        [fetchComments.fulfilled]: (state, action) => {
+            state.isLoadingComments = false;
+            const cours = state.cours.map((cours) => {
+                if (cours.id === action.payload.data.cours_id) {
+                    cours.comments = action.payload.data.comments;
+                }
+                return cours;
+            });
+            state.cours = cours;
+        },
+        [fetchComments.rejected]: (state, action) => {
+            state.isLoadingComments = false;
+        },
+
+        [postComment.pending]: (state, action) => {
+            state.isLoadingPostComment = true;
+        },
+        [postComment.fulfilled]: (state, action) => {
+            state.isLoadingComments = false;
+            const cours = state.cours.map((cours) => {
+                if (cours.id === action.payload.data.cours_id) {
+                    cours.comments.find(comment => comment.id === undefined).id = action.payload.data.comment.id;
+                }
+                return cours;
+
+            });
+            state.cours = cours;
+        },
+        [postComment.rejected]: (state, action) => {
+            state.isLoadingPostComment = false;
+        },
+        [deleteComment.pending]: (state, action) => {
+            state.isLoadingDeleteComment = true;
+        },
+        [deleteComment.fulfilled]: (state, action) => {
+            state.isLoadingDeleteComment = false;
+            const cours = state.cours.map((cours) => {
+                if (cours.id === action.payload.data.cours_id) {
+                    cours.comments = cours.comments.filter(comment => comment.id !== action.payload.data.comment_id);
+                }
+                return cours;
+            });
+            state.cours = cours;
+        },
+        [deleteComment.rejected]: (state, action) => {
+            state.isLoadingDeleteComment = false;
         }
     },
 });
 
 export const {
+    deleteCommentCours,
+    addComment,
     incrementLike,
     decrementLike,
     allCours,

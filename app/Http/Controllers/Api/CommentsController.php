@@ -19,6 +19,7 @@ class CommentsController extends Controller
     {
         return response([
             'message' => 'comments retrieved successfully',
+            'cours_id' => $cours->id,
             'comments' => CommentResource::collection($cours->comments->reverse()),
         ], 200);
     }
@@ -29,16 +30,20 @@ class CommentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,Cours $cours)
+    public function store(Request $request, Cours $cours)
     {
-        $cours->comments()->create([
+        $request->validate([
+            'content' => 'required|string|max:255|min:1',
+        ]);
+        $comment = $cours->comments()->create([
+            'user_id' => $request->user()->id,
             'content' => $request->content,
-            'user_id' => $request->user_id,
         ]);
         return response([
-            'message' => 'comment created successfully',
-            'comment' => new CommentResource($cours->comments->last()),
-        ], 200);
+            'message' => 'commentaire créé avec succès',
+            'cours_id' => $cours->id,
+            'comment' => new CommentResource($comment),
+        ], 201);
     }
 
     /**
@@ -59,7 +64,7 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Cours $cours, $id)
+    public function update(Request $request, Cours $cours, $id)
     {
         $comment = $cours->comments()->findOrFail($id);
         $comment->update([
@@ -78,12 +83,13 @@ class CommentsController extends Controller
      * @param  Cours  $cours
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cours $cours,$id)
+    public function destroy(Cours $cours, $id)
     {
         $comment = $cours->comments()->findOrFail($id);
         $comment->delete();
         return response([
             'message' => 'comment deleted successfully',
+            'comment_id' => $comment->id,
         ], 200);
     }
 }

@@ -38,11 +38,11 @@ export default function Register() {
     }
     return (
         <div className="h-screen w-full flex flex-col md:flex-row">
-            <div className="mb-4 md:mb-0 flex w-full bg-gradient-to-tr from-blue-800 to-purple-700 items-center justify-center">
+            <div className="mb-4 md:mb-0 flex w-full bg-gradient-to-tr from-blue-800 to-cyan-900 items-center justify-center">
                 <div className='p-10'>
                     <h1 className="text-white font-bold text-4xl font-sans">Bgrfacile</h1>
                     <p className="text-white mt-1">" Se former tout au long de la vie "</p>
-                    <a href='/' type="submit" className="block text-center w-28 bg-white text-indigo-800 mt-4 py-2 rounded-2xl font-bold mb-2">Visiter</a>
+                    <a href='/' type="submit" className="block text-center w-28 bg-white text-blue-800 mt-4 py-2 rounded-2xl font-bold mb-2">Visiter</a>
                 </div>
             </div>
             <div className="flex w-full justify-center items-center bg-white px-4">
@@ -124,9 +124,18 @@ export default function Register() {
                     {
                         errors && <p className="text-red-500 text-xs italic">{errors.password}</p>
                     }
-                    {loading ?
-                        <button className="block w-full bg-indigo-600 my-4 py-2 rounded-2xl text-white font-semibold" type="submit" disabled>Chargement...</button> :
-                        <button type="submit" className="block w-full bg-indigo-600 my-4 py-2 rounded-2xl text-white font-semibold">Connexion</button>}
+
+                    <button disabled={loading} type="submit" className="w-full flex items-center justify-center bg-blue-600 my-4 py-2 rounded-2xl text-white font-semibold">
+                        {loading ?
+                            <div className="flex items-center text-center gap-2 mx-auto text-white">
+                                <span className="h-6 w-6 block rounded-full border-4 border-t-white animate-spin"></span>
+                                loading...
+                            </div> :
+                            <span>
+                                S'inscrire
+                            </span>
+                        }
+                    </button>
                 </form>
             </div >
         </div >

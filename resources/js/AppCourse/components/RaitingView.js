@@ -37,7 +37,6 @@ export default function RaitingView({ onClose, courId }) {
         }
         dispatch(addRatingCourse(datas))
             .then(() => {
-                console.log('rating added');
                 onClose();
             })
     }

@@ -9,10 +9,9 @@ export default function LineLoading() {
     // };
     // const { View } = useLottie(options);
     // return View;
-    return <div className='h-full flex flex-1 items-center justify-center'>
-        <Lottie animationData={lineLoading} />
-    </div>
+    return <Lottie className="w-96 h-96" animationData={lineLoading} />
 }
+
 
 // ou
 

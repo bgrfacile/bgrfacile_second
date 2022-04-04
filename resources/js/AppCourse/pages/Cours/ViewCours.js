@@ -1,22 +1,17 @@
 import { useEffect, useState } from 'react'
-import { useParams, useNavigate, useLocation } from "react-router-dom";
-import client from '../../../api/client';
+import { useParams } from "react-router-dom";
 import AsideViewCours, { HeaderAsideCours } from '../../components/AsideViewCours';
 import BackSvg from '../../components/svg/BackSvg';
 import ShowByTypeContent from '../../components/view/ShowTypeContent';
-import Modal from 'react-modal';
-import RaitingView from '../../components/RaitingView';
-import { customStyles } from '../../utils/Function';
 import { useDispatch, useSelector } from 'react-redux';
 import { showCours } from '../../redux/features/cours/functions';
 
-Modal.setAppElement('#root');
+
 export default function ViewCours() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const cours = useSelector(state => state.cours.cours.length > 0 ? state.cours.cours.find(cours => cours.id === parseInt(id)) : {});
     const [loading, setLoading] = useState(useSelector(state => state.cours.isLoadingShow));
-    const [onRaiting, setOnRaiting] = useState(false);
     useEffect(() => {
         if (Object.keys(cours).length === 0) {
             dispatch(showCours({ id: parseInt(id) }));
@@ -27,15 +22,14 @@ export default function ViewCours() {
 
 
     if (loading) {
-        return <p>Chargement ...</p>
+        return <div className='absolute inset-0 mx-auto h-full w-full grid place-content-center'>
+            <div className="flex items-center gap-2 text-gray-500">
+                <span className="h-6 w-6 block rounded-full border-4 border-t-blue-300 animate-spin"></span>
+                loading...
+            </div>
+        </div>
     } else {
         return (<>
-            <Modal
-                isOpen={onRaiting}
-                style={customStyles}
-                contentLabel="raiting cours">
-                <RaitingView onClose={() => { setOnRaiting(false) }} />
-            </Modal>
             <div className='absolute inset-0 mx-auto h-full w-full grid grid-cols-10 gap-2'>
 
                 <div className='col-span-3 hidden md:flex flex-col h-full w-full bg-white rounded-lg p-2 overflow-y-auto'>
@@ -62,7 +56,7 @@ export default function ViewCours() {
 }
 
 /*
- const OldLayout = () => {
+const OldLayout = () => {
     useEffect(() => {
         getAllComments();
     }, [])
@@ -237,23 +231,23 @@ export default function ViewCours() {
                                     {
                                         comment.comment_user_id === user.user_id ?
                                             <div className="flex items-center space-x-4">
-                                                {/* <button type="button" className="flex items-center px-2 py-1 font-medium text-black capitalize rounded-md  hover:bg-gray-300  focus:outline-none  transition duration-300 transform ease-in-out">
-                                                <svg className='h-4 w-4' viewBox="0 0 24 24">
-                                                    <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8a8 8 0 0 1-8-8a8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21l2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38l-2.5-2.5z" fill="currentColor">
-                                                    </path>
-                                                </svg>
-                                                <span className="pl-2 mx-1 text-black">Edit</span>
-                                            </button>
+                                                <button type="button" className="flex items-center px-2 py-1 font-medium text-black capitalize rounded-md  hover:bg-gray-300  focus:outline-none  transition duration-300 transform ease-in-out">
+                                                    <svg className='h-4 w-4' viewBox="0 0 24 24">
+                                                        <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8a8 8 0 0 1-8-8a8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21l2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38l-2.5-2.5z" fill="currentColor">
+                                                        </path>
+                                                    </svg>
+                                                    <span className="pl-2 mx-1 text-black">Edit</span>
+                                                </button>
 
-<button
-    onClick={() => deleteComment(comment.id)}
-    type="button"
-    className="flex items-center px-2 py-1 font-medium tracking-wide text-gray-600 text-xs capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600  focus:outline-none  transition duration-300 transform ease-in-out">
-    <svg className='h-4 w-4' viewBox="0 0 32 32"><path d="M12 12h2v12h-2z" fill="currentColor"></path><path d="M18 12h2v12h-2z" fill="currentColor"></path><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" fill="currentColor"></path><path d="M12 2h8v2h-8z" fill="currentColor"></path></svg>
-    <span className="pl-1">Supprimer</span>
-</button>
+                                                <button
+                                                    onClick={() => deleteComment(comment.id)}
+                                                    type="button"
+                                                    className="flex items-center px-2 py-1 font-medium tracking-wide text-gray-600 text-xs capitalize rounded-md  hover:bg-red-200 hover:fill-current hover:text-red-600  focus:outline-none  transition duration-300 transform ease-in-out">
+                                                    <svg className='h-4 w-4' viewBox="0 0 32 32"><path d="M12 12h2v12h-2z" fill="currentColor"></path><path d="M18 12h2v12h-2z" fill="currentColor"></path><path d="M4 6v2h2v20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8h2V6zm4 22V8h16v20z" fill="currentColor"></path><path d="M12 2h8v2h-8z" fill="currentColor"></path></svg>
+                                                    <span className="pl-1">Supprimer</span>
+                                                </button>
                                             </div > :
-null
+                                            null
                                     }
                                 </div >
                             </div >
@@ -262,13 +256,14 @@ null
                 </div >
             </div >
 
-    <div className='flex-1 ml-auto grow'>
-        <div className='ml-4 h-full border bg-white rounded-2xl p-4'>
-            <ShowByTypeContent content={cour.contents[0]} />
-        </div>
-    </div>
+            <div className='flex-1 ml-auto grow'>
+                <div className='ml-4 h-full border bg-white rounded-2xl p-4'>
+                    <ShowByTypeContent content={cour.contents[0]} />
+                </div>
+            </div>
         </div >
     </>)
 }
 
  */
+
