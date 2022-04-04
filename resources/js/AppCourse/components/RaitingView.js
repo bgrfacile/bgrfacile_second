@@ -1,9 +1,10 @@
 import { Box, Rating, Typography } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { addRatingCourse } from '../redux/features/cours/functions';
 import { LoadingButton } from '@mui/lab';
 import React, { useState } from 'react'
 import CloseSvg from './svg/CloseSvg';
 import StarIcon from '@mui/icons-material/Star';
-import client from "../../api/client";
 
 const labels = {
     0.5: 'Inutile',
@@ -22,26 +23,23 @@ function getLabelText(value) {
     return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 }
 export default function RaitingView({ onClose, courId }) {
+    const dispatch = useDispatch();
     // const [comment, setComment] = useState('');
     const [starValue, setStarValue] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
+    const isLoading = useSelector(state => state.cours.isLoadingAddRating);
     const [hover, setHover] = useState(-1);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsLoading(true);
         const datas = {
             starValue,
             ratingable_id: courId,
             ratingable_type: 'cours',
         }
-        const response = await client.post('/rating', datas);
-        if (response.status === 201 || response.status === 200) {
-            console.log('response', response.data);
-            setIsLoading(false);
-            onClose();
-        } else {
-            setIsLoading(false);
-        }
+        dispatch(addRatingCourse(datas))
+            .then(() => {
+                console.log('rating added');
+                onClose();
+            })
     }
 
     return (<>

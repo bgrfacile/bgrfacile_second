@@ -18,7 +18,7 @@ class CreateRatingsTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('ratingable_id');
             $table->string('ratingable_type');
-            $table->integer('rating');
+            $table->float('rating');
             $table->enum('isActif', ['0', '1'])->default('1');
             $table->timestamps();
         });

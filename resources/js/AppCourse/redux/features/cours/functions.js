@@ -1,6 +1,19 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
 
+export const addRatingCourse = createAsyncThunk(
+    "ratingCourse/addRatingCourse",
+    async (data, { rejectWithValue }) => {
+        console.log("data", data);
+        const response = await client.post("/rating", data);
+        if (response.status === 201 || response.status === 200) {
+            return { data: response.data };
+        } else {
+            return rejectWithValue(response.data);
+        }
+    }
+);
+
 export const showCours = createAsyncThunk(
     "cours/showCours",
     async (payload, { rejectWithValue }) => {

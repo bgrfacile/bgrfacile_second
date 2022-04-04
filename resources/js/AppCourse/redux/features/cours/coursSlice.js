@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
-import { addLike, removeLike, showCours } from "./functions";
+import { addLike, removeLike, showCours, addRatingCourse } from "./functions";
 
 export const getLastCours = createAsyncThunk(
     'cours/getLastCours',
@@ -41,6 +41,7 @@ const coursSlices = createSlice({
         cours: [],
         isLoading: false,
         isLoadingShow: true,
+        isLoadingAddRating: false,
         error: null,
     },
     reducers: {
@@ -177,6 +178,22 @@ const coursSlices = createSlice({
         },
         [showCours.rejected]: (state, action) => {
             state.error = action.error.message;
+        },
+        [addRatingCourse.pending]: (state, action) => {
+            state.isLoadingAddRating = true;
+        },
+        [addRatingCourse.fulfilled]: (state, action) => {
+            state.isLoadingAddRating = false;
+            const cours = state.cours.map((cours) => {
+                if (cours.id === action.payload.data.cours_id) {
+                    cours.rating = action.payload.data.rating;
+                }
+                return cours;
+            });
+            state.cours = cours;
+        },
+        [addRatingCourse.rejected]: (state, action) => {
+            state.isLoadingAddRating = false;
         }
     },
 });

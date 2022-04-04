@@ -33,7 +33,11 @@ class RaitingController extends Controller
             'user_id' => $user->id,
             'rating' => $request->starValue,
         ]);
-        return response()->json(['message' => 'raited'], 200);
+        return response()->json([
+            'message' => 'raited',
+            'rating' => round($raiteable->raitings->avg('rating'), 1),
+            'cours_id' => $request->ratingable_id,
+        ], 200);
     }
     public function destroy($cours, $id)
     {
