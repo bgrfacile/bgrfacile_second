@@ -56,4 +56,14 @@ class Cours extends Model
     {
         return $this->morphMany(Rating::class, 'raiteable', 'ratingable_type', 'ratingable_id');
     }
+
+    public function getCoverImageAttribute($value)
+    {
+        return $value == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($value);
+    }
+
+    public function quizzes()
+    {
+        return $this->belongsToMany(Quiz::class, 'cours_quizzes', 'cour_id', 'quiz_id');
+    }
 }

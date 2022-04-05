@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import client from '../../api/client';
 import { decrementLike, incrementLike } from '../redux/features/cours/coursSlice';
 import { addLike, removeLike } from '../redux/features/cours/functions';
@@ -26,11 +26,11 @@ export default function AsideViewCours({ cours }) {
             </ButtonDirection>
 
             <div className='flex flex-wrap items-center gap-2'>
-                <ButtonDirection>
+                <ButtonDirection onClick={() => alert('non disponible')}>
                     <PreviousSvg className={'h-5 w-5'} />
                     <span>Précédent</span>
                 </ButtonDirection>
-                <ButtonDirection>
+                <ButtonDirection onClick={() => alert('non disponible')}>
                     <span>Suivant</span>
                     <NextSvg className={'h-5 w-5'} />
                 </ButtonDirection>
@@ -44,18 +44,19 @@ export default function AsideViewCours({ cours }) {
         </div>
 
         <div className='border-b pb-2 mb-2'>
-            <h5 className='font-medium text-base text-gray-800'>Exercices</h5>
+            <h5 className='font-medium text-base text-blue-800'>Exercices</h5>
             <div className='mt-1 flex flex-col'>
                 {
-                    cours.exercices.map((exercice, index) => <div key={index} className='p-1 mb-1 flex items-center border rounded-md'>
-                        <div className='h-16 w-16 bg-slate-500 rounded-md'>
-                        </div>
-                        <div className='flex-1 h-auto ml-1'>
-                            <span className='font-medium text-sm text-gray-800 mr-1'>{exercice.title}</span>
-                            <span className='mt-1 text-sm text-gray-600 mr-1'>{exercice.description}</span>
-                            <span className='font-medium text-sm text-gray-600'> 2 min read</span>
-                        </div>
-                    </div>)
+                    cours.exercices.map((exercice, index) =>
+                        <Link to={`/exercices/read/${exercice.title}-${exercice.id}`} key={index} className='p-1 mb-1 flex items-center border rounded-md hover:shadow-lg ease-in-out'>
+                            <div className='h-16 w-16 bg-slate-500 rounded-md'>
+                            </div>
+                            <div className='flex-1 h-auto ml-1'>
+                                <span className='font-medium text-sm text-gray-800 mr-1'>{exercice.title}</span>
+                                <span className='mt-1 text-sm text-gray-600 mr-1'>{exercice.description}</span>
+                                <span className='font-medium text-sm text-gray-600'> 2 min read</span>
+                            </div>
+                        </Link>)
                 }
 
 
@@ -63,21 +64,22 @@ export default function AsideViewCours({ cours }) {
         </div>
 
         <div className='border-b pb-2 mb-2'>
-            <h5 className='font-medium text-base text-gray-800'>Quizz sur le cours </h5>
+            <h5 className='font-medium text-base text-blue-800'>Quizz sur le cours </h5>
             <div className='mt-1 flex flex-col'>
-                <div className='p-1 mb-1 flex items-center border rounded-md'>
-                    <div className='h-16 w-16 bg-slate-500 rounded-md'>
-                    </div>
-                    <div className='flex-1 h-auto ml-1'>
-                        <span className='font-medium text-sm text-gray-800 mr-1'>Quizz 1</span>
-                        {/* <span className='mt-1 text-sm text-gray-600 mr-1'>
+                {cours.quizzes.map((quiz, index) =>
+                    <div key={index} className='p-1 mb-1 flex items-center border rounded-md'>
+                        <div className='h-16 w-16 bg-slate-500 rounded-md'>
+                        </div>
+                        <div className='flex-1 h-auto ml-1'>
+                            <span className='font-medium text-sm text-gray-800 mr-1'>Quizz 1</span>
+                            {/* <span className='mt-1 text-sm text-gray-600 mr-1'>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
                         </span> */}
-                        <span className='font-medium text-sm text-gray-600'> 2 min read</span>
+                            <span className='font-medium text-sm text-gray-600'> 2 min read</span>
+                        </div>
                     </div>
-                </div>
-
+                )}
             </div>
         </div>
     </>)

@@ -7,6 +7,7 @@ use App\Http\Resources\Exercice\CustumExerciceResource;
 use App\Http\Resources\Exercice\ExerciceSimpleResource;
 use App\Http\Resources\Level\BasicLevelResource;
 use App\Http\Resources\Matiere\BasicMatiereResource;
+use App\Http\Resources\Quiz\QuizResource;
 use App\Http\Resources\User\UserLambdaResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -35,6 +36,7 @@ class CoursResource extends JsonResource
             'contents' => ContentResource::collection($this->contents),
             'comments' => CommentResource::collection($this->comments->reverse()),
             'exercices' => ExerciceSimpleResource::collection($this->exercices),
+            'quizzes' => QuizResource::collection($this->quizzes),
             'users' => $this->users ? UserResource::collection($this->users) : null,
             // 'users' => $this->users ? UserLambdaResource::collection($this->users) : null,
             'created_at' => formaterDate($this->created_at),

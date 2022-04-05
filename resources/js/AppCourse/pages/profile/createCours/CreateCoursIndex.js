@@ -2,9 +2,6 @@ import { Alert, Button, FormControl, InputLabel, MenuItem, Select, TextField } f
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import client from '../../../../api/client';
-import CardItemChoixContent from '../../../components/Cards/CardItemChoixContent';
-import ItemTypeContent from '../../../components/Cards/ItemTypeContent';
-import CreateContenuPDF from '../../../components/CreateContenu/CreateContenuPDF';
 import HearderCreateCours from '../../../components/form/HearderCreateCours';
 import ListItemChoixContent from '../../../components/ListItemChoixContent';
 import { getBasicCycle } from '../../../redux/features/cycle/BasicCycleSlice';
@@ -13,13 +10,6 @@ import { getListMatiere } from '../../../redux/features/matiere/matieresSlice';
 import AsideCreateCours from '../../../components/AsideCreateCours';
 import LoadingTypeContent from '../../../components/LoadingTypeContent';
 
-const OptionsContenue = [
-    'PDF',
-    'TEXTE',
-    'IMAGE',
-    'VIDEO',
-    'AUDIO'
-]
 export default function CreateCoursIndex() {
     const dispatch = useDispatch();
     const user_id = useSelector(state => state.user.profile.user_id);
@@ -83,7 +73,7 @@ export default function CreateCoursIndex() {
         }
     }
     return <form onSubmit={handleSubmit}
-    className="w-full h-full flex flex-col">
+        className="w-full h-full flex flex-col">
         {isError && <Alert variant="outlined" onClose={() => { setIsError(false) }} className='h-fit w-full m-1' severity="error">
             {errorMessage && <span>{errorMessage}</span>}
         </Alert>}

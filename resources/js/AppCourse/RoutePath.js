@@ -2,6 +2,7 @@ import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import LayoutCourse from './Layouts/LayoutCourse';
 import BonusIndex from './pages/bonus/BonusIndex';
 import ExerciceIndex from './pages/Exercices/ExerciceIndex';
+import ViewExercice from './pages/Exercices/ViewExercice';
 import FormationIndex from './pages/formations/FormationIndex';
 import NotFound from './pages/notFound/NotFound';
 import CoursRoute from './pages/Cours/CoursRoute';
@@ -63,6 +64,8 @@ export default function RoutePath() {
                     <Route path='/cours/read/:name-:id' element={<ViewCours />} />
 
                     <Route path="/exercices/*" element={<ExerciceIndex />} />
+                    <Route path='/exercices/read/:name-:id' element={<ViewExercice />} />
+
                     <Route path="/formations/*" element={<FormationIndex />} />
                     <Route path="/bonus/*" element={<BonusIndex />} />
                     <Route path='/bonus/quizz' element={<QuizzIndex />} />

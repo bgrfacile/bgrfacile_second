@@ -47,9 +47,12 @@ export default function HeaderCourseView() {
                 Vous visitez actuellement :
             </h5>
             <div className="flex-1 flex justify-end items-center">
-                <SpanContentVisiblity name='cycle' content={<HasCycleParam />} />
-                <SpanContentVisiblity name='level' content={<HasLevelParam />} />
-                <SpanContentVisiblity name='matière' content={<HasMatiereParam />} />
+                {idCycle != undefined ? <SpanContentVisiblity name='cycle' content={<HasCycleParam />} /> : null}
+                {idLevel != undefined ? <SpanContentVisiblity name='level' content={<HasLevelParam />} /> : null}
+                {idMatiere != undefined ? <SpanContentVisiblity name='matière' content={<HasMatiereParam />} /> : null}
+                {idCycle == undefined && idLevel == undefined && idMatiere == undefined ? <span className="text-gray-600 font-bold">
+                    les derniers cours publiés
+                </span> : null}
             </div>
         </div>
         <StickyHeaderMobile />
