@@ -55307,12 +55307,12 @@ var map = {
 	],
 	"./Cours/show": [
 		"./resources/js/backend/pages/Cours/show.js",
-		7,
+		9,
 		"resources_js_backend_pages_Cours_show_js"
 	],
 	"./Cours/show.js": [
 		"./resources/js/backend/pages/Cours/show.js",
-		7,
+		9,
 		"resources_js_backend_pages_Cours_show_js"
 	],
 	"./Cycle": [
@@ -55454,6 +55454,36 @@ var map = {
 		"./resources/js/backend/pages/Matiere/show.js",
 		9,
 		"resources_js_backend_pages_Matiere_show_js"
+	],
+	"./Quiz/create": [
+		"./resources/js/backend/pages/Quiz/create.js",
+		9,
+		"resources_js_backend_pages_Quiz_create_js"
+	],
+	"./Quiz/create.js": [
+		"./resources/js/backend/pages/Quiz/create.js",
+		9,
+		"resources_js_backend_pages_Quiz_create_js"
+	],
+	"./Quiz/store/quizSlices": [
+		"./resources/js/backend/pages/Quiz/store/quizSlices.js",
+		9,
+		"resources_js_backend_pages_Quiz_store_quizSlices_js"
+	],
+	"./Quiz/store/quizSlices.js": [
+		"./resources/js/backend/pages/Quiz/store/quizSlices.js",
+		9,
+		"resources_js_backend_pages_Quiz_store_quizSlices_js"
+	],
+	"./Quiz/store/store": [
+		"./resources/js/backend/pages/Quiz/store/store.js",
+		9,
+		"resources_js_backend_pages_Quiz_store_store_js"
+	],
+	"./Quiz/store/store.js": [
+		"./resources/js/backend/pages/Quiz/store/store.js",
+		9,
+		"resources_js_backend_pages_Quiz_store_store_js"
 	],
 	"./Users/Index": [
 		"./resources/js/backend/pages/Users/Index.js",
@@ -55622,7 +55652,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"bf7812ec20cdbe83","resources_js_backend_pages_Cours_create_js":"147760f6dcc9d051","resources_js_backend_pages_Cours_edit_js":"46fddd39f19cdb9a","resources_js_backend_pages_Cours_show_js":"a19bbb1487f53191","resources_js_backend_pages_Cycle_index_js":"c0514cc6b2fce90b","resources_js_backend_pages_Cycle_create_js":"ec9c80d0daea1471","resources_js_backend_pages_Cycle_edit_js":"59618115bd798dfb","resources_js_backend_pages_Cycle_show_js":"d1e6dbd6857e8e96","resources_js_backend_pages_Dashboard_Index_js":"6702a9c395363de3","resources_js_backend_pages_Level_IndexLevel_js":"b3aaca10bef2fde1","resources_js_backend_pages_Level_create_js":"96ea1f8dab388824","resources_js_backend_pages_Level_edit_js":"4a5f275c6c93b143","resources_js_backend_pages_Matiere_index_js":"a6b9ce1b8d2c797c","resources_js_backend_pages_Matiere_create_js":"04e520c1cbfd1ae3","resources_js_backend_pages_Matiere_edit_js":"18991f87d54045ed","resources_js_backend_pages_Matiere_show_js":"4233eb041b5c02cd","resources_js_backend_pages_Users_Index_js":"761e9b53ed17027d","resources_js_backend_pages_layouts_app_js":"30a355694dcdfe65"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"5c4ec8c3a1c728f5","resources_js_backend_pages_Cours_create_js":"147760f6dcc9d051","resources_js_backend_pages_Cours_edit_js":"46fddd39f19cdb9a","resources_js_backend_pages_Cours_show_js":"e1c96cb4d2b35185","resources_js_backend_pages_Cycle_index_js":"935e43588ed997ee","resources_js_backend_pages_Cycle_create_js":"b04f7ce74809e8a7","resources_js_backend_pages_Cycle_edit_js":"0babdbc0dcb69508","resources_js_backend_pages_Cycle_show_js":"068b94c2fdc84e6b","resources_js_backend_pages_Dashboard_Index_js":"c19fefc2f291d98b","resources_js_backend_pages_Level_IndexLevel_js":"87d434605165d79a","resources_js_backend_pages_Level_create_js":"3b65c59df7946098","resources_js_backend_pages_Level_edit_js":"7da986af4359d437","resources_js_backend_pages_Matiere_index_js":"43daf0a1b2e152b0","resources_js_backend_pages_Matiere_create_js":"911b0f0c1a11ba0b","resources_js_backend_pages_Matiere_edit_js":"55e3c156effaa18e","resources_js_backend_pages_Matiere_show_js":"ee6bc12537969b1f","resources_js_backend_pages_Quiz_create_js":"3f5911ced8505f45","resources_js_backend_pages_Quiz_store_quizSlices_js":"acfaeb8bd096837d","resources_js_backend_pages_Quiz_store_store_js":"624654807acdd71b","resources_js_backend_pages_Users_Index_js":"3f23c313c067e471","resources_js_backend_pages_layouts_app_js":"c827bab1660107bc"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

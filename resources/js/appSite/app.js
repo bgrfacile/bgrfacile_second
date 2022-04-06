@@ -8,7 +8,7 @@ require('../plugins/scrollReveal');
 
 require('../plugins/darkMode');
 
-require('../plugins/player');
+// require('../plugins/player');
 import "@lottiefiles/lottie-player";
 
 // let prevScrollpos = window.pageYOffset;

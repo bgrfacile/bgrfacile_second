@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CoursController as CoursControllerAdmin;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\MatiereController;
+use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\APi\AuthController;
 use App\Http\Controllers\Site\AboutController;
@@ -30,7 +31,7 @@ Route::get('/demo', function () {
 });
 
 Route::get('/', HomeController::class)->name('home.page');
-Route::get('/cours/random', [CoursController::class,'randomCours'])->name('randomCours.page');
+Route::get('/cours/random', [CoursController::class, 'randomCours'])->name('randomCours.page');
 Route::get('/ecole-en-ligne', [EcoleEnLigneController::class, 'index'])->name('ecoleEnLigne.page');
 Route::get('/ecole-en-ligne/create', [EcoleEnLigneController::class, 'create'])->name('ecoleEnLigne.create');
 Route::get('/donation', [DonationController::class, 'index'])->name('donation.page');
@@ -90,6 +91,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/level/{level}/matieres/create', [LevelController::class, 'attachToMatiere'])->name('level.create.matieres');
         Route::resource('/matiere', MatiereController::class);
         Route::resource('/cours', CoursControllerAdmin::class);
+        Route::resource('quiz', QuizController::class)->except(['index']);
 
         Route::prefix('/users')->group(function () {
             Route::get('/', [UserController::class, 'all'])->name('users.index');

@@ -60,7 +60,10 @@ class CoursController extends Controller
      */
     public function show($id)
     {
-        return Inertia::render('Cours/show');
+        $cours = Cours::findOrFail($id);
+        return Inertia::render('Cours/show', [
+            'cours' => new CoursResource($cours)
+        ]);
     }
 
     /**
