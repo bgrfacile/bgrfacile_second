@@ -40,12 +40,18 @@ export default function ViewCours() {
                         <div className="block md:hidden sticky top-0 p-2 bg-white rounded-sm w-full shadow">
                             <HeaderAsideCours cours={cours} />
                         </div>
-                        <div className={`flex-1 w-full h-full overflow-y-scroll scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 bg-cover shadow-lg`}
+                        <div className={`flex-1 flex flex-col w-full h-full overflow-y-scroll scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 bg-cover shadow-lg`}
+                            style={{ backgroundImage: `url("${cours.coverImage}")`, backgroundPosition: 'center -80px' }}>
+                            <div className="flex-1 mt-40 bg-white w-full">
+                                <ShowByTypeContent content={cours.contents[0]} />
+                            </div>
+                        </div>
+                        {/* <div className={`flex-1 w-full h-full overflow-y-scroll scrollbar:!w-1.5 scrollbar:!h-1.5 scrollbar-track:!bg-slate-100 scrollbar-thumb:!rounded scrollbar-thumb:!bg-slate-300 bg-cover shadow-lg`}
                             style={{ backgroundImage: `url("${cours.coverImage}")`, backgroundPosition: 'center -80px' }}>
                             <div className="mt-40 bg-white h-full w-full">
                                 <ShowByTypeContent content={cours.contents[0]} />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 

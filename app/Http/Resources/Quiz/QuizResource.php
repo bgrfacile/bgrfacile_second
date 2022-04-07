@@ -18,6 +18,7 @@ class QuizResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
+            'coverImage' => url('/assets/img/quizz.webp'),
             'questions' => QuestionResource::collection($this->questions),
         ];
     }

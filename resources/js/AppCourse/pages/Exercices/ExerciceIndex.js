@@ -12,7 +12,7 @@ import { getLastSolution } from "../../redux/features/solutions/solutionSlice";
 
 export default function ExerciceIndex() {
     const dispatch = useDispatch();
-    const exercices = useSelector(state => state.exercises.exercicesUse);
+    const exercices = useSelector(state => state.exercices.exercicesUse);
     const solutions = useSelector(state => state.solutions.solutions);
     let allDatas = [exercices, solutions];
     // allDatas = exercices.concat(solutions)

@@ -193,7 +193,8 @@ class ExercicesController extends Controller
      */
     public function show($id)
     {
-        //
+        $cours = Exercice::findOrFail($id);
+        return new CustumExerciceResource($cours);
     }
 
     /**

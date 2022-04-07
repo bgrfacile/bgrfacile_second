@@ -54,9 +54,9 @@ import StickyHeaderMobile from './StickyHeaderMobile';
 // }
 
 export default function StickyHeaderExo() {
-    const levelSelected = useSelector(state => state.exercises.levelSelected);
-    const matiereSelected = useSelector(state => state.exercises.matiereSelected);
-    const exercices = useSelector(state => state.exercises.exercices);
+    const levelSelected = useSelector(state => state.exercices.levelSelected);
+    const matiereSelected = useSelector(state => state.exercices.matiereSelected);
+    const exercices = useSelector(state => state.exercices.exercices);
 
     return (<div className="sticky top-0 bg-white rounded-sm w-full flex flex-col p-2 mb-4">
         <div className="hidden md:flex w-full justify-between items-center py-1">

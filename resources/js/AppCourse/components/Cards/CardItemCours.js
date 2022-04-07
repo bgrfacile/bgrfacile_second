@@ -58,7 +58,7 @@ export default function CardItemCours({ cour }) {
                             <span className='text-white font-semibold'>{like}</span>
                         </button>
 
-                        <Link to={`/cours/read/${cour.title}-${cour.id}`} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                        <Link to={`/cours/read/${slugify(cour.title)}-${cour.id}`} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
                             {switchIconsTypeCour(cour.contents[0].type_content, 'w-10 h-10')}
                         </Link>
 
@@ -90,7 +90,7 @@ export default function CardItemCours({ cour }) {
                     </ul>
                 </div>
                 <h3 className='mb-2 px-2 text-2xl font-medium hover:underline tracking-wide'>
-                    <Link to={`/cours/read/${cour.title}-${cour.id}`} state={{ cour: cour }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
+                    <Link to={`/cours/read/${slugify(cour.title)}-${cour.id}`} state={{ cour: cour }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
                         {cour.title}
                     </Link>
                 </h3>

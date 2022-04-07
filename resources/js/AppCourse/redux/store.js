@@ -13,7 +13,7 @@ import solutionSlice from './features/solutions/solutionSlice'
 export const store = configureStore({
     reducer: {
         cours: coursSlice,
-        exercises: ExerciceSlice,
+        exercices: ExerciceSlice,
         solutions: solutionSlice,
         cycles: cyclesSlice,
         basicCycle: BasicCycleSlice,

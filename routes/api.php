@@ -72,6 +72,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/cours/{cours}/comments', [CommentsController::class, 'index']);
 
         Route::get('/exercices', [ExercicesController::class, 'index']);
+        Route::get('/exercices/{exercices}', [ExercicesController::class, 'show']);
         Route::get('/solutions', [SolutionController::class, 'index']);
 
         Route::get('/exercices/getExos/{idCycle}', [ExercicesController::class, 'getExosByCycle']);

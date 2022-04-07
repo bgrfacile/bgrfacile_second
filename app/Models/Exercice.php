@@ -46,4 +46,15 @@ class Exercice extends Model
     {
         return $this->morphMany(Like::class, 'likeable');
     }
+    public function islike($user)
+    {
+        if ($user) {
+            return $this->likes->where('user_id', $user->id)->count() > 0;
+        }
+        return false;
+    }
+    public function raitings()
+    {
+        return $this->morphMany(Rating::class, 'raiteable', 'ratingable_type', 'ratingable_id');
+    }
 }

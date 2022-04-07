@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import client from '../../api/client';
 import { decrementLike, incrementLike } from '../redux/features/cours/coursSlice';
 import { addLike, removeLike } from '../redux/features/cours/functions';
 import ButtonDirection from './Button/ButtonDirection';
@@ -16,6 +15,7 @@ import Modal from 'react-modal';
 import { customStyles } from '../utils/Function';
 import RaitingView from './RaitingView';
 import CommentView from './CommentView';
+import slugify from 'slugify';
 
 export default function AsideViewCours({ cours }) {
     const navigate = useNavigate();
@@ -49,12 +49,12 @@ export default function AsideViewCours({ cours }) {
                 {
                     cours.exercices.map((exercice, index) =>
                         <Link to={`/exercices/read/${exercice.title}-${exercice.id}`} key={index} className='p-1 mb-1 flex items-center border rounded-md hover:shadow-lg ease-in-out'>
-                            <div className='h-16 w-16 bg-slate-500 rounded-md'>
-                            </div>
+
+                            <img src={exercice.coverImage} alt={exercice.title} className='h-16 w-16 object-cover bg-slate-500 rounded-md' />
                             <div className='flex-1 h-auto ml-1'>
-                                <span className='font-medium text-sm text-gray-800 mr-1'>{exercice.title}</span>
+                                <h6 className='font-medium text-sm text-gray-800 mr-1'>{exercice.title}</h6>
                                 <span className='mt-1 text-sm text-gray-600 mr-1'>{exercice.description}</span>
-                                <span className='font-medium text-sm text-gray-600'> 2 min read</span>
+                                {/* <span className='font-medium text-sm text-gray-600'> 2 min read</span> */}
                             </div>
                         </Link>)
                 }
@@ -67,16 +67,11 @@ export default function AsideViewCours({ cours }) {
             <h5 className='font-medium text-base text-blue-800'>Quizz sur le cours </h5>
             <div className='mt-1 flex flex-col'>
                 {cours.quizzes.map((quiz, index) =>
-                    <div key={index} className='p-1 mb-1 flex items-center border rounded-md'>
-                        <div className='h-16 w-16 bg-slate-500 rounded-md'>
-                        </div>
+                    <div key={index} onClick={() => { console.log('vue quizz') }} className='cursor-pointer p-1 mb-1 flex items-center border rounded-md hover:shadow-lg ease-in-out'>
+                        <img src={quiz.coverImage} alt={quiz.title} className='h-16 w-16 object-cover bg-slate-500 rounded-md' />
                         <div className='flex-1 h-auto ml-1'>
-                            <span className='font-medium text-sm text-gray-800 mr-1'>Quizz 1</span>
-                            {/* <span className='mt-1 text-sm text-gray-600 mr-1'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
-                        </span> */}
-                            <span className='font-medium text-sm text-gray-600'> 2 min read</span>
+                            <h6 className='font-medium text-sm text-gray-800 mr-1'>{quiz.title}</h6>
+                            <span className='font-medium text-sm text-gray-600'> {quiz.questions.length} question(s)</span>
                         </div>
                     </div>
                 )}
@@ -118,10 +113,12 @@ export const HeaderAsideCours = ({ cours }) => {
             <CommentView cours={cours} onClose={() => { setOnComment(false) }} />
         </Modal>
         <div className='border-b pb-2 mb-2'>
+            <span className='font-medium text-base italic text-red-800'>COURS</span>
             <h3 className='font-inter font-extrabold text-2xl text-black tracking-tight'>{cours.title}</h3>
             <div className='mt-1 font-medium text-sm text-gray-500'>
-                {cours.updated_at} · <a className='text-blue-600' href='#'>{cours.users[0].user_name}</a>
-                {/* {updated_at} · 4 min de lecture */}
+                {cours.updated_at} · <Link className='text-blue-600' to={`/profile/user/${slugify(cours.users[0].user_name)}-${cours.users[0].user_id}`}>
+                    {cours.users[0].user_name}
+                </Link>
             </div>
             <div className="focus:outline-none flex flex-wrap py-4 w-full overflow-x-auto">
                 <div className="min-w-max py-2 mb-1 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{cours.cycle.name}</div>
