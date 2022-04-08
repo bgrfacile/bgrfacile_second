@@ -41,7 +41,7 @@ export const fetchComments = createAsyncThunk(
 export const addRatingCourse = createAsyncThunk(
     "ratingCourse/addRatingCourse",
     async (data, { rejectWithValue }) => {
-        const response = await client.post("/rating", data);
+        const response = await client.post("/raiting", data);
         if (response.status === 201 || response.status === 200) {
             return { data: response.data };
         } else {

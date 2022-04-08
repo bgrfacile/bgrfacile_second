@@ -1,6 +1,7 @@
 import { Box, Rating, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { addRatingCourse } from '../redux/features/cours/functions';
+import { addRatingExercice } from '../redux/features/Exercices/functions';
 import { LoadingButton } from '@mui/lab';
 import React, { useState } from 'react'
 import CloseSvg from './svg/CloseSvg';
@@ -22,9 +23,8 @@ const labels = {
 function getLabelText(value) {
     return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 }
-export default function RaitingView({ onClose, courId }) {
+export default function RaitingView({ onClose, courId, model }) {
     const dispatch = useDispatch();
-    // const [comment, setComment] = useState('');
     const [starValue, setStarValue] = useState(0);
     const isLoading = useSelector(state => state.cours.isLoadingAddRating);
     const [hover, setHover] = useState(-1);
@@ -33,12 +33,22 @@ export default function RaitingView({ onClose, courId }) {
         const datas = {
             starValue,
             ratingable_id: courId,
-            ratingable_type: 'cours',
+            ratingable_type: model,
         }
-        dispatch(addRatingCourse(datas))
-            .then(() => {
-                onClose();
-            })
+        if (model === 'cours') {
+            dispatch(addRatingCourse(datas))
+                .then(() => {
+                    onClose();
+                })
+        } else if (model === 'exercice') {
+            dispatch(addRatingExercice(datas))
+                .then(() => {
+                    onClose();
+                })
+        } else {
+            console.log('model is null')
+        }
+
     }
 
     return (<>
@@ -51,7 +61,7 @@ export default function RaitingView({ onClose, courId }) {
 
             <div className='w-full mb-2 mx-auto' >
                 <Typography component="legend">
-                    Donnez votre avis sur ce cours
+                    Votre avis sur {model === 'cours' ? 'ce cours' : 'cet exercice'}
                 </Typography>
                 <Box sx={
                     {

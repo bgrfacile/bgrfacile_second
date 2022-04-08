@@ -12,9 +12,9 @@ class RaitingController extends Controller
 {
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate([
-            'ratingable_id' => 'required|exists:cours,id',
+            // 'ratingable_id' => 'required|exists:cours,id',
+            'ratingable_id' => 'required',
             'ratingable_type' => 'required|string',
             'starValue' => 'required|numeric|in:0.5,1,1.5,2,2.5,3,3.5,4,4.5,5',
         ]);
@@ -36,7 +36,7 @@ class RaitingController extends Controller
         return response()->json([
             'message' => 'raited',
             'rating' => round($raiteable->raitings->avg('rating'), 1),
-            'cours_id' => $request->ratingable_id,
+            'ratingable_id' => $request->ratingable_id,
         ], 200);
     }
     public function destroy($cours, $id)

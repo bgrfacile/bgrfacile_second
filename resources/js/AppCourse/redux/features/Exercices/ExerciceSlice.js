@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
-import { getExerciceById } from "./functions";
+import { getExerciceById, addRatingExercice, addLike, removeLike } from "./functions";
 
 export const getMyExercice = createAsyncThunk(
     'exercices/getMyExercice',
@@ -46,11 +46,34 @@ const ExerciceSlice = createSlice({
         myExercicesCreate: [],
         isLoading: false,
         isLoadingShow: true,
+        isLoadingAddRating: false,
         error: null,
         levelSelected: "valeur par défaut",
         matiereSelected: "valeur par défaut",
     },
     reducers: {
+        incrementLike: (state, action) => {
+            const { id } = action.payload;
+            const exercices = state.exercices.map((exercice) => {
+                if (exercice.id === id) {
+                    exercice.likes++;
+                    exercice.isLike = true;
+                }
+                return exercice;
+            });
+            state.exercices = exercices;
+        },
+        decrementLike: (state, action) => {
+            const { id } = action.payload;
+            const exercices = state.exercices.map((exercice) => {
+                if (exercice.id === id) {
+                    exercice.likes--;
+                    exercice.isLike = false;
+                }
+                return exercice;
+            });
+            state.exercices = exercices;
+        },
         setExerciceShow: (state, action) => {
             state.exerciceShow = state.exercices.find(exercice => exercice.id === action.payload.id);
         },
@@ -140,9 +163,27 @@ const ExerciceSlice = createSlice({
             state.isLoadingShow = false;
             state.error = action.error.message;
         },
+        [addRatingExercice.pending]: (state, action) => {
+            state.isLoadingAddRating = true;
+        },
+        [addRatingExercice.fulfilled]: (state, action) => {
+            state.isLoadingAddRating = false;
+            const exercices = state.exercices.map((exercice) => {
+                if (exercice.id === action.payload.data.ratingable_id) {
+                    exercice.rating = action.payload.data.rating;
+                }
+                return exercice;
+            });
+            state.exercices = exercices;
+        },
+        [addRatingExercice.rejected]: (state, action) => {
+            state.isLoadingAddRating = false;
+        },
     },
 });
 export const {
+    decrementLike,
+    incrementLike,
     setExerciceShow,
     setLevelSelected,
     setMatiereSelected,

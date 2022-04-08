@@ -47,9 +47,9 @@ Route::prefix('v1')->group(function () {
         Route::post('like', [LikeController::class, 'store']);
         Route::delete('like/{cours}/{id}', [LikeController::class, 'destroy']);
 
-        Route::post('/rating', [RaitingController::class, 'store']);
+        Route::post('/raiting', [RaitingController::class, 'store']);
         // Route::get('/rating/{cours}', [RaitingController::class, 'getRating']);
-        Route::delete('/rating/{cours}/{id}', [RaitingController::class, 'destroy']);
+        Route::delete('/raiting/{cours}/{id}', [RaitingController::class, 'destroy']);
     });
 
     Route::group([

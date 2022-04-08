@@ -15,7 +15,7 @@ class LikeController extends Controller
     {
         $request->validate([
             // 'user_id' => 'required|exists:users,id',
-            'likeable_id' => 'required|exists:cours,id',
+            'likeable_id' => 'required',
             'likeable_type' => 'required|string',
         ]);
         $user = $request->user();

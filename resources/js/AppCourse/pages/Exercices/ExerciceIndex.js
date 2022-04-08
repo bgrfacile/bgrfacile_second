@@ -8,6 +8,7 @@ import { getLastExercice } from "../../redux/features/Exercices/ExerciceSlice";
 import { getListLevels } from "../../redux/features/level/levelsSlice";
 import { getListMatiere } from "../../redux/features/matiere/matieresSlice";
 import { getLastSolution } from "../../redux/features/solutions/solutionSlice";
+import Empty from '../notFound/Empty';
 
 
 export default function ExerciceIndex() {
@@ -17,7 +18,6 @@ export default function ExerciceIndex() {
     let allDatas = [exercices, solutions];
     // allDatas = exercices.concat(solutions)
     allDatas = allDatas.flat();
-    console.log('allDatas', allDatas);
     useEffect(() => {
         dispatch(getLastSolution());
         dispatch(getListLevels());
@@ -32,15 +32,14 @@ export default function ExerciceIndex() {
             </div>
             <div className="relative h-full w-full md:w-3/4 grow">
                 <div className="absolute inset-0 h-full w-full flex flex-col overflow-y-auto">
-
                     <StickyHeaderExo />
-
-                    <div className="flex-1 w-full">
-                        <div className="mb-28 flex-1 overflow-y-auto">
+                    <div className="flex-1 w-full h-full overflow-y-auto">
+                        {exercices.length === 0 ?
+                            <Empty /> :
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 {exercices.map((exercice, index) => <CardItemExercice key={index} exercice={exercice} />)}
                             </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

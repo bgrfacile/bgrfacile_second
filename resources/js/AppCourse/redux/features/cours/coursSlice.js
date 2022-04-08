@@ -205,7 +205,7 @@ const coursSlices = createSlice({
         [addRatingCourse.fulfilled]: (state, action) => {
             state.isLoadingAddRating = false;
             const cours = state.cours.map((cours) => {
-                if (cours.id === action.payload.data.cours_id) {
+                if (cours.id === action.payload.data.ratingable_id) {
                     cours.rating = action.payload.data.rating;
                 }
                 return cours;

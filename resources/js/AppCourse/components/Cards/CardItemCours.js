@@ -38,7 +38,7 @@ export default function CardItemCours({ cour }) {
             isOpen={onRaiting}
             style={customStyles}
             contentLabel="raiting cours">
-            <RaitingView courId={cour.id} onClose={() => { setOnRaiting(false) }} />
+            <RaitingView model={'cours'} courId={cour.id} onClose={() => { setOnRaiting(false) }} />
         </Modal>
         <article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
             <header>
