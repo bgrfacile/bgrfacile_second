@@ -17,7 +17,7 @@ class CreateExercicesTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('coverImage')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->enum('isActif', ['0', '1'])->default('1');
             $table->boolean('is_SubjectExam')->default(false);
             $table->timestamps();

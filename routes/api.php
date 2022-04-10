@@ -61,7 +61,7 @@ Route::prefix('v1')->group(function () {
         Route::post('/signup', [AuthController::class, 'register']);
         Route::post('/logout', [AuthController::class, 'logout']);
 
-        Route::get('/search/{query}', [SearchController::class, 'search']);
+        Route::get('/search/{query}', [SearchController::class, 'searchAll']);
 
         Route::get('/cours', [CoursController::class, 'index']);
         Route::get('/cours/random', [CoursController::class, 'randomCours']);

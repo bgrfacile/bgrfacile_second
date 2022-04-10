@@ -48,13 +48,13 @@ export default function CardItemExercice({ exercice }) {
                     <div className='flex items-center gap-2'>
                         <button
                             onClick={handleLike}
-                            className="hover:scale-110 flex items-center gap-1 text-gray-600 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                            className="hover:scale-110 flex items-center gap-1 text-gray-600  group-hover:translate-y-0 group-hover:opacity-100 transition">
                             {isLike ? <LikeFullSvg className={"w-5 h-5"} /> : <LikeEmpty className={"w-5 h-5"} />}
                             <span className='text-gray-600 font-semibold'>{exercice.likes}</span>
                         </button>
                         <button
                             onClick={() => { setOnRaiting(true) }}
-                            className="hover:scale-110 flex items-center gap-1 text-gray-600 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                            className="hover:scale-110 flex items-center gap-1 text-gray-600  group-hover:translate-y-0 group-hover:opacity-100 transition">
                             <StarSvg className='w-5 h-5' />
                             <span className='text-gray-600 font-semibold'>{exercice.rating}</span>
                         </button>

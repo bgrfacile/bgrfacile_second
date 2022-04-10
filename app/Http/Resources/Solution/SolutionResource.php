@@ -26,6 +26,10 @@ class SolutionResource extends JsonResource
             'users' => $this->users,
             'created_at' => formaterDate($this->created_at),
             'updated_at' => formaterDate($this->updated_at),
+            // 'cycle' => [],
+            // 'level' => [],
+            // 'matiere' => [],
+
         ];
     }
 }

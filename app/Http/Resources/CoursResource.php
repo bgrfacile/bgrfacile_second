@@ -23,6 +23,7 @@ class CoursResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'type' => "cours",
             'title' => $this->title,
             'description' => $this->description,
             'coverImage' => $this->coverImage == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($this->coverImage),

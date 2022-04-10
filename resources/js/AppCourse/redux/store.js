@@ -9,9 +9,11 @@ import matieresSlice from './features/matiere/matieresSlice'
 import ExerciceSlice from './features/Exercices/ExerciceSlice'
 import BasicCycleSlice from './features/cycle/BasicCycleSlice'
 import solutionSlice from './features/solutions/solutionSlice'
+import searchSlice from './features/search/searchSlice'
 
 export const store = configureStore({
     reducer: {
+        search: searchSlice,
         cours: coursSlice,
         exercices: ExerciceSlice,
         solutions: solutionSlice,

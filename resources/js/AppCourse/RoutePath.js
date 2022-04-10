@@ -71,9 +71,7 @@ export default function RoutePath() {
                     <Route path='/bonus/quizz' element={<QuizzIndex />} />
                     <Route path='/bonus/podcast' element={<PodcastIndex />} />
 
-                    <Route path="/search" element={<Search />} >
-                        <Route path=':q' element={<Search />} />
-                    </Route>
+                    <Route path="/search" element={<Search />} />
 
                     <Route element={<RequireAuth><Profile /></RequireAuth>} >
                         <Route index path="/profile/*" element={<RequireAuth><Infos /></RequireAuth>} />
