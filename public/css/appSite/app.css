@@ -2714,10 +2714,6 @@ select {
   width: 100vw;
 }
 
-.w-72 {
-  width: 18rem;
-}
-
 .w-1\/3 {
   width: 33.333333%;
 }
@@ -2732,6 +2728,10 @@ select {
 
 .w-0 {
   width: 0px;
+}
+
+.w-72 {
+  width: 18rem;
 }
 
 .min-w-0 {
@@ -3776,9 +3776,9 @@ select {
   background-color: rgb(6 95 70 / var(--tw-bg-opacity));
 }
 
-.bg-yellow-200 {
+.bg-orange-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
 }
 
 .bg-rose-500 {
@@ -3824,11 +3824,6 @@ select {
 .bg-green-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
-}
-
-.bg-orange-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 215 170 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-0 {
@@ -4240,10 +4235,6 @@ select {
   padding-right: 0.5rem;
 }
 
-.pl-5 {
-  padding-left: 1.25rem;
-}
-
 .pt-7 {
   padding-top: 1.75rem;
 }
@@ -4254,10 +4245,6 @@ select {
 
 .pr-6 {
   padding-right: 1.5rem;
-}
-
-.pr-1 {
-  padding-right: 0.25rem;
 }
 
 .pl-8 {
@@ -4614,6 +4601,11 @@ select {
   color: rgb(22 78 99 / var(--tw-text-opacity));
 }
 
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}
+
 .text-yellow-300 {
   --tw-text-opacity: 1;
   color: rgb(253 224 71 / var(--tw-text-opacity));
@@ -4624,19 +4616,14 @@ select {
   color: rgb(191 219 254 / var(--tw-text-opacity));
 }
 
-.text-red-800 {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
-}
-
 .text-green-800 {
   --tw-text-opacity: 1;
   color: rgb(22 101 52 / var(--tw-text-opacity));
 }
 
-.text-yellow-700 {
+.text-orange-700 {
   --tw-text-opacity: 1;
-  color: rgb(161 98 7 / var(--tw-text-opacity));
+  color: rgb(194 65 12 / var(--tw-text-opacity));
 }
 
 .text-purple-400 {
@@ -4652,11 +4639,6 @@ select {
 .text-blue-50 {
   --tw-text-opacity: 1;
   color: rgb(239 246 255 / var(--tw-text-opacity));
-}
-
-.text-orange-700 {
-  --tw-text-opacity: 1;
-  color: rgb(194 65 12 / var(--tw-text-opacity));
 }
 
 .text-opacity-100 {
