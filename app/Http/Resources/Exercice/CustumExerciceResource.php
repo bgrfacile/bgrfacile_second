@@ -22,7 +22,7 @@ class CustumExerciceResource extends JsonResource
             'id' => $this->id,
             'type' => "exercice",
             'title' => $this->title,
-            'coverImage' => $this->coverImage ? $this->coverImage : $this->cours()->first()->coverImage,
+            'coverImage' => $this->coverImage == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($this->coverImage),
             'description' => $this->description,
             'isActif' => (int) $this->isActif,
             'isHandout' => $this->is_handout,

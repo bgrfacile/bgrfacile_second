@@ -9,15 +9,12 @@ import { getListLevels } from "../../redux/features/level/levelsSlice";
 import { getListMatiere } from "../../redux/features/matiere/matieresSlice";
 import { getLastSolution } from "../../redux/features/solutions/solutionSlice";
 import Empty from '../notFound/Empty';
+import { Outlet } from "react-router-dom";
+import HeaderCourseView from './../../components/HeaderCourseView';
 
 
 export default function ExerciceIndex() {
     const dispatch = useDispatch();
-    const exercices = useSelector(state => state.exercices.exercicesUse);
-    const solutions = useSelector(state => state.solutions.solutions);
-    let allDatas = [exercices, solutions];
-    // allDatas = exercices.concat(solutions)
-    allDatas = allDatas.flat();
     useEffect(() => {
         dispatch(getLastSolution());
         dispatch(getListLevels());
@@ -32,16 +29,12 @@ export default function ExerciceIndex() {
             </div>
             <div className="relative h-full w-full md:w-3/4 grow">
                 <div className="absolute inset-0 h-full w-full flex flex-col overflow-y-auto">
-                    <StickyHeaderExo />
+                    <HeaderCourseView />
                     <div className="flex-1 w-full h-full overflow-y-auto">
-                        {exercices.length === 0 ?
-                            <Empty /> :
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                {exercices.map((exercice, index) => <CardItemExercice key={index} exercice={exercice} />)}
-                            </div>
-                        }
+                        <Outlet />
                     </div>
                 </div>
+
             </div>
         </div>
 

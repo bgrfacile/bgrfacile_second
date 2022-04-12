@@ -7,7 +7,6 @@ import FormationIndex from './pages/formations/FormationIndex';
 import NotFound from './pages/notFound/NotFound';
 import CoursRoute from './pages/Cours/CoursRoute';
 import Profile from './pages/profile/profile';
-import RandomCours from './pages/Cours/RandomCours';
 import ScolaireCours from './pages/Cours/ScolaireCours';
 import FavorisCours from './pages/profile/FavorisCours';
 import Followers from './pages/profile/followers';
@@ -34,6 +33,7 @@ import CreateExercice from "./pages/profile/exercices/CreateExercice";
 import EditMyExercice from "./pages/profile/exercices/EditMyExercice";
 import CreateSolution from "./pages/profile/exercices/CreateSolution";
 import LastCours from "./pages/Cours/LastCours";
+import ListeExercices from "./pages/Exercices/ListeExercices";
 
 
 
@@ -58,12 +58,15 @@ export default function RoutePath() {
                         <Route path=':cycle-:idCycle/:level-:idLevel/:matiere-:idMatiere' element={<ScolaireCours />} />
                         <Route path=':cycle-:idCycle/:level-:idLevel' element={<ScolaireCours />} />
                         <Route path=':cycle-:idCycle' element={<ScolaireCours />} />
-                        <Route path='random' element={<RandomCours />} />
                     </Route>
-
                     <Route path='/cours/read/:name-:id' element={<ViewCours />} />
 
-                    <Route path="/exercices/*" element={<ExerciceIndex />} />
+                    <Route path="exercices" element={<ExerciceIndex />} >
+                        <Route index element={<ListeExercices />} />
+                        <Route path=':cycle-:idCycle/:level-:idLevel/:matiere-:idMatiere' element={<ListeExercices />} />
+                        <Route path=':cycle-:idCycle/:level-:idLevel' element={<ListeExercices />} />
+                        <Route path=':cycle-:idCycle' element={<ListeExercices />} />
+                    </Route>
                     <Route path='/exercices/read/:name-:id' element={<ViewExercice />} />
 
                     <Route path="/formations/*" element={<FormationIndex />} />

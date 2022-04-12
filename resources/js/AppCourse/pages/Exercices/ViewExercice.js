@@ -10,8 +10,6 @@ export default function ViewExercice() {
     const dispatch = useDispatch();
     const exercice = useSelector(state => state.exercices.exercices.length > 0 ? state.exercices.exercices.find(exercice => exercice.id === parseInt(id)) : {});
     const [loading, setLoading] = useState(useSelector(state => state.exercices.isLoadingShow));
-    console.log('exercice', exercice)
-    console.log('loading', loading)
     useEffect(async () => {
         if (Object.keys(exercice).length === 0) {
             dispatch(getExerciceById({ id: parseInt(id) }))

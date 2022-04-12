@@ -51,7 +51,7 @@ export default function HeaderCourseView() {
                 {idLevel != undefined ? <SpanContentVisiblity name='level' content={<HasLevelParam />} /> : null}
                 {idMatiere != undefined ? <SpanContentVisiblity name='matière' content={<HasMatiereParam />} /> : null}
                 {idCycle == undefined && idLevel == undefined && idMatiere == undefined ? <span className="text-gray-600 font-bold">
-                    les derniers cours publiés
+                    les derniers contenus publiés
                 </span> : null}
             </div>
         </div>
