@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CommentsController;
 use App\Http\Controllers\Api\CoursController;
 use App\Http\Controllers\Api\CycleController;
 use App\Http\Controllers\Api\ExercicesController;
+use App\Http\Controllers\APi\FavorisController;
 use App\Http\Controllers\Api\FollowController;
 use App\Http\Controllers\Api\LevelController;
 use App\Http\Controllers\Api\LikeController;
@@ -50,6 +51,9 @@ Route::prefix('v1')->group(function () {
         Route::post('/raiting', [RaitingController::class, 'store']);
         // Route::get('/rating/{cours}', [RaitingController::class, 'getRating']);
         Route::delete('/raiting/{cours}/{id}', [RaitingController::class, 'destroy']);
+
+        Route::get('/favoris/cours', [FavorisController::class, 'getCoursFavoris']);
+        Route::get('/favoris/exercices', [FavorisController::class, 'getExerciceFavoris']);
     });
 
     Route::group([

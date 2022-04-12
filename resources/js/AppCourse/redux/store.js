@@ -10,9 +10,11 @@ import ExerciceSlice from './features/Exercices/ExerciceSlice'
 import BasicCycleSlice from './features/cycle/BasicCycleSlice'
 import solutionSlice from './features/solutions/solutionSlice'
 import searchSlice from './features/search/searchSlice'
+import favorisSlice from './features/favoris/favorisSlice'
 
 export const store = configureStore({
     reducer: {
+        favoris: favorisSlice,
         search: searchSlice,
         cours: coursSlice,
         exercices: ExerciceSlice,

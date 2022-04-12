@@ -8,17 +8,16 @@ import NotFound from './pages/notFound/NotFound';
 import CoursRoute from './pages/Cours/CoursRoute';
 import Profile from './pages/profile/profile';
 import ScolaireCours from './pages/Cours/ScolaireCours';
-import FavorisCours from './pages/profile/FavorisCours';
 import Followers from './pages/profile/followers';
 import EditProfile from './pages/profile/EditProfile';
 import Infos from './pages/profile/Infos';
 import MyCours from './pages/profile/MyCours';
 import MyExos from './pages/profile/MyExos';
-import Favoris from './pages/profile/Favoris';
+import Favoris from './pages/profile/Faroris/Favoris';
+import FavorisCours from './pages/profile/Faroris/FavorisCours';
+import FavorisExcerciceSolution from './pages/profile/Faroris/FavorisExcerciceSolution';
 import DevenirFormateur from './pages/Formateur/DevenirFormateur';
 import DevenirPromoteur from './pages/Promoteur/DevenirPromoteur';
-import FavorisExcerciceSolution from './pages/profile/FavorisExcerciceSolution';
-import FavorisFormation from './pages/profile/FavorisFormation';
 import EcoleEnLigne from './pages/profile/EcoleEnLigne';
 import QuizzIndex from './pages/bonus/quiz/QuizzIndex';
 import PodcastIndex from './pages/bonus/podcast/PodcastIndex';
@@ -82,8 +81,6 @@ export default function RoutePath() {
                         <Route path="/profile/ecole-en-ligne" element={<RequireAuth><EcoleEnLigne /></RequireAuth>} />
                         <Route path="/profile/my-cours" element={<RequireAuth><MyCours /></RequireAuth>} />
                         <Route path="/profile/my-cours/create" element={<RequireAuth><CreateCoursIndex /></RequireAuth>} />
-                        {/* <Route path="/profile/my-cours/create/pdf" element={<RequireAuth><CreateCoursPdf /></RequireAuth>} /> */}
-                        {/* <Route path="/profile/my-cours/create/texte" element={<RequireAuth><CreateCoursTexte /></RequireAuth>} /> */}
                         {/* <Route path="/profile/my-cours/create/image" element={<RequireAuth><CreateCoursImage /></RequireAuth>} /> */}
                         {/* <Route path="/profile/my-cours/create/video" element={<RequireAuth><CreateCoursVideo /></RequireAuth>} /> */}
                         {/* <Route path="/profile/my-cours/create/audio" element={<RequireAuth><CreateCoursAudio /></RequireAuth>} /> */}
@@ -91,10 +88,11 @@ export default function RoutePath() {
                         <Route path="/profile/my-exos/Edit" element={<RequireAuth><EditMyExercice /></RequireAuth>} />
                         <Route path="/profile/my-exos/create" element={<RequireAuth><CreateExercice /></RequireAuth>} />
                         <Route path="/profile/my-exos/add/solution" element={<RequireAuth><CreateSolution /></RequireAuth>} />
+
                         <Route path="/profile/favoris" element={<RequireAuth><Favoris /></RequireAuth>} />
                         <Route path="/profile/favoris/cours" element={<RequireAuth><FavorisCours /></RequireAuth>} />
                         <Route path="/profile/favoris/exercices-solutions" element={<RequireAuth><FavorisExcerciceSolution /></RequireAuth>} />
-                        <Route path="/profile/favoris/formations" element={<RequireAuth><FavorisFormation /></RequireAuth>} />
+
                         <Route path="/profile/edit" element={<RequireAuth><EditProfile /></RequireAuth>} />
                         <Route path='/profile/followers' element={<RequireAuth><Followers /></RequireAuth>} />
                         <Route path='/profile/devenir-professeur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />

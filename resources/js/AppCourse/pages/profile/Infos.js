@@ -10,9 +10,14 @@ const RangeValue = ({ value, color }) => {
 const Civilites = () => {
     const user = useSelector(state => state.user.profile)
     return (<>
-        <h2 className='w-full text-3xl font-bold uppercase mb-3'>
-            {user.user_name}
-        </h2>
+        <div className='flex justify-between items-center'>
+            <h2 className='w-full text-3xl font-bold uppercase mb-3'>
+                {user.user_name}
+            </h2>
+            <button className="min-w-auto w-10 h-10 bg-red-300 p-2 rounded-full hover:bg-red-500 text-white font-semibold ">
+                <svg className='w-full h-full transition-rotation duration-300 hover:-rotate-45 ease-in-out' viewBox="0 0 24 24"><path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83l3.75 3.75l1.83-1.83z"></path></svg>
+            </button>
+        </div>
         <hr className="text-gray-700 mb-3" />
         <div className='block md:flex flex-wrap justify-between mb-6'>
             <div className='w-full md:w-1/2 flex flex-col items-stretch justify-start'>
@@ -116,16 +121,10 @@ const Language = () => {
 }
 
 export default function Infos() {
-    return (
-        <div>
-            <div className='flex flex-col w-full rounded-sm shadow bg-white p-3'>
-                <div className='flex flex-col items-stretch'>
-                    <Civilites />
-                    {/*  <Competences />
-                    <Loisirs />
-                    <Language /> */}
-                </div>
-            </div>
-        </div>
-    )
+    return (<div className='flex-1 flex flex-col w-full h-auto rounded-sm shadow bg-white px-3 py-2'>
+        <Civilites />
+        <Competences />
+        <Loisirs />
+        <Language />
+    </div>)
 }
