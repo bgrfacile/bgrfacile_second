@@ -45,10 +45,10 @@ export default function Register() {
                     <a href='/' type="submit" className="block text-center w-28 bg-white text-blue-800 mt-4 py-2 rounded-2xl font-bold mb-2">Visiter</a>
                 </div>
             </div>
-            <div className="flex w-full justify-center items-center bg-white px-4">
+            <div className="flex w-full justify-center items-center bg-white px-4 py-5">
                 <form onSubmit={handleSubmit} className="bg-white w-96">
-                    {success && <Success message={successMessage} />}
-                    {error && <Error message={errorMessage} />}
+                    {success && <Success className='overflow-auto' message={successMessage} />}
+                    {error && <Error className='overflow-auto' message={errorMessage} />}
 
                     <h1 className="text-gray-800 font-bold text-2xl mb-1">Inscrivez-vous</h1>
                     <p className="text-sm font-normal text-gray-600 mb-7">
@@ -68,7 +68,7 @@ export default function Register() {
                     <div className="w-full flex items-center justify-between py-5">
                         <hr className="w-full bg-gray-400" />
                         <p className="text-base font-medium leading-4 px-2.5 text-gray-400">OU</p>
-                        <hr className="w-full bg-gray-400  " />
+                        <hr className="w-full bg-gray-400 " />
                     </div>
 
                     <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -88,42 +88,45 @@ export default function Register() {
                     {
                         errors && <p className="text-red-500 text-xs italic">{errors.name}</p>
                     }
-
-                    <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                        </svg>
-                        <input
-                            className="pl-2 outline-none border-none w-full"
-                            type="email"
-                            name="email"
-                            required
-                            autoFocus
-                            placeholder="Adresse e-mail"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)} />
+                    <div className="flex flex-col mb-4">
+                        <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                            </svg>
+                            <input
+                                className="pl-2 outline-none border-none w-full"
+                                type="email"
+                                name="email"
+                                required
+                                autoFocus
+                                placeholder="Adresse e-mail"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)} />
+                        </div>
+                        {
+                            errors && <p className="text-red-500 text-xs italic">{errors.email}</p>
+                        }
                     </div>
-                    {
-                        errors && <p className="text-red-500 text-xs italic">{errors.email}</p>
-                    }
 
-                    <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
-                        </svg>
-                        <input
-                            className="pl-2 outline-none border-none w-full"
-                            required
-                            placeholder="Mot de passe"
-                            name="password"
-                            type="password"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            autoComplete="current-password" />
+                    <div className="flex flex-col mb-4">
+                        <div className='flex items-center border-2 py-2 px-3 rounded-2xl'>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                            </svg>
+                            <input
+                                className="pl-2 outline-none border-none w-full"
+                                required
+                                placeholder="Mot de passe"
+                                name="password"
+                                type="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                autoComplete="current-password" />
+                        </div>
+                        {
+                            errors && <p className="text-red-500 text-xs italic">{errors.password}</p>
+                        }
                     </div>
-                    {
-                        errors && <p className="text-red-500 text-xs italic">{errors.password}</p>
-                    }
 
                     <button disabled={loading} type="submit" className="w-full flex items-center justify-center bg-blue-600 my-4 py-2 rounded-2xl text-white font-semibold">
                         {loading ?

@@ -25,21 +25,23 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:3',
-            'email' => 'required|string|email',
+            'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6',
         ];
     }
-    public function messages() {
+    public function messages()
+    {
 
         return [
-            'name.string'=> 'The :attribute doit être une chaine de caractère',
-            'name.required'=> 'The :attribute est requis',
-            'email.required'=> 'The :attribute est requis',
-            'email.email'=> 'The :attribute is not valid email',
-            'password.required'=> 'The :attribute est requis',
-            'password.string'=> 'The :attribute n\'est pas une chaîne',
-            'password.min'=> 'Le :attribute doit possèder min 6 caratere',
-            'name.min'=> 'Le :attribute doit possèder min 3 caratere',
+            'name.string' => 'The :attribute doit être une chaine de caractère',
+            'name.required' => 'The :attribute est requis',
+            'email.required' => 'The :attribute est requis',
+            'email.email' => 'The :attribute is not valid email',
+            'email.unique' => 'The :attribute est déjà pris',
+            'password.required' => 'The :attribute est requis',
+            'password.string' => 'The :attribute n\'est pas une chaîne',
+            'password.min' => 'Le :attribute doit possèder min 6 caratere',
+            'name.min' => 'Le :attribute doit possèder min 3 caratere',
         ];
     }
 }

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import LogoShortBgrfacile from '../components/LogoShortbgrfacile'
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
-import client from '../../api/client';
-import { checkLogin, login } from '../redux/features/user/userSlice';
+import { Link, useNavigate } from 'react-router-dom';
+import { checkLogin } from '../redux/features/user/userSlice';
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -33,9 +31,6 @@ export default function Login() {
     }, [isconnect])
     useEffect(() => {
         error = false;
-        // errorMessage = '';
-        // setEmail("")
-        // setPassword("")
         setRememberMe(false)
     }, [loading])
 
