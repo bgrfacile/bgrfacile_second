@@ -4,7 +4,7 @@ import client from '../../api/client';
 import { logout } from '../redux/features/user/userSlice';
 import CustomLink from './../hooks/CustomLink';
 
-export default function AsideProfile() {
+export default function AsideProfile({ onClose }) {
     const dispatch = useDispatch();
     const user = useSelector(state => state.user.profile);
     const classActive = 'p-2 my-2 flex items-center text-blue-600 bg-gray-300 rounded-md font-semibold';
@@ -22,6 +22,9 @@ export default function AsideProfile() {
     }
 
     return (<>
+        <button className='md:hidden' onClick={() => onClose()}>
+            fermer
+        </button>
         <div className="bg-white p-3 border-t-4 border-blue-600">
             <div>
                 <div className="mt-2 text-center">
@@ -66,18 +69,18 @@ export default function AsideProfile() {
                     </svg>
                     <span>Mes favoris</span>
                 </CustomLink>
-                <CustomLink classActive={classActive} to='/profile/ecole-en-ligne' className={classDefault}>
+                <CustomLink classActive={classActive} to='/profile/mon-ecole' className={classDefault}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                     </svg>
                     <span>Mon école en ligne</span>
                 </CustomLink>
-                <CustomLink classActive={classActive} to='/profile/followers' className={classDefault}>
-                    <svg className=" mr-2 h-6 w-6" viewBox="0 0 256 256">
+                {/* <CustomLink classActive={classActive} to='/profile/followers' className={classDefault}>
+                    <svg className="mr-2 h-6 w-6" viewBox="0 0 256 256">
                         <path d="M28.4 124.8a6 6 0 0 0 8.4-1.2a54 54 0 0 1 86.3-.1l.5.6l.4.4h.1l.3.2l.7.5h.3l.7.3h.2l.6.2h3.1l.6-.3h.2l.4-.2l.2-.2h.3c.1 0 .1-.1.2-.2l.3-.3h.2l.4-.5a54 54 0 0 1 86.4 0a6 6 0 0 0 8.4 1.2a6 6 0 0 0 1.2-8.4a66.4 66.4 0 0 0-29.7-22.3A37.6 37.6 0 0 0 214 64a38 38 0 0 0-76 0a37.6 37.6 0 0 0 14.9 30.1a64.9 64.9 0 0 0-24.9 16.6a64.9 64.9 0 0 0-24.9-16.6A37.6 37.6 0 0 0 118 64a38 38 0 0 0-76 0a37.6 37.6 0 0 0 14.9 30.1a66.4 66.4 0 0 0-29.7 22.3a6 6 0 0 0 1.2 8.4zM150 64a26 26 0 1 1 26 26a26.1 26.1 0 0 1-26-26zm-96 0a26 26 0 1 1 26 26a26.1 26.1 0 0 1-26-26zm145.1 134.1A37.6 37.6 0 0 0 214 168a38 38 0 0 0-76 0a37.6 37.6 0 0 0 14.9 30.1a64.9 64.9 0 0 0-24.9 16.6a64.9 64.9 0 0 0-24.9-16.6A37.6 37.6 0 0 0 118 168a38 38 0 0 0-76 0a37.6 37.6 0 0 0 14.9 30.1a66.4 66.4 0 0 0-29.7 22.3a6 6 0 1 0 9.6 7.2a54 54 0 0 1 86.3-.1l.5.6l.4.4h.1l.3.2l.7.5h.3l.7.3h.2l.6.2h3.1l.6-.3h.2l.4-.2l.2-.2h.3c.1 0 .1-.1.2-.2l.3-.3h.2l.4-.5a54 54 0 0 1 86.4 0a6 6 0 0 0 8.4 1.2a6 6 0 0 0 1.2-8.4a66.4 66.4 0 0 0-29.7-22.7zM54 168a26 26 0 1 1 26 26a26.1 26.1 0 0 1-26-26zm96 0a26 26 0 1 1 26 26a26.1 26.1 0 0 1-26-26z" fill="currentColor"></path>
                     </svg>
                     <span>Professeurs suivis</span>
-                </CustomLink>
+                </CustomLink> */}
                 <hr className="text-gray-700 h-1 rounded-2xl bg-gray-200 my-2" />
             </div>
 

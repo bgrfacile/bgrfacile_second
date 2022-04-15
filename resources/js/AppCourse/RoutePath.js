@@ -33,6 +33,7 @@ import EditMyExercice from "./pages/profile/exercices/EditMyExercice";
 import CreateSolution from "./pages/profile/exercices/CreateSolution";
 import LastCours from "./pages/Cours/LastCours";
 import ListeExercices from "./pages/Exercices/ListeExercices";
+import MonEcole from "./pages/profile/monEcole/monEcole";
 
 
 
@@ -51,7 +52,6 @@ export default function RoutePath() {
         <Routes>
             <Route element={<Guest />}>
                 <Route element={<LayoutCourse />} >
-
                     <Route path="cours" element={<CoursRoute />} >
                         <Route index element={<LastCours />} />
                         <Route path=':cycle-:idCycle/:level-:idLevel/:matiere-:idMatiere' element={<ScolaireCours />} />
@@ -88,6 +88,8 @@ export default function RoutePath() {
                         <Route path="/profile/my-exos/Edit" element={<RequireAuth><EditMyExercice /></RequireAuth>} />
                         <Route path="/profile/my-exos/create" element={<RequireAuth><CreateExercice /></RequireAuth>} />
                         <Route path="/profile/my-exos/add/solution" element={<RequireAuth><CreateSolution /></RequireAuth>} />
+
+                        <Route path="/profile/mon-ecole" element={<RequireAuth><MonEcole /></RequireAuth>} />
 
                         <Route path="/profile/favoris" element={<RequireAuth><Favoris /></RequireAuth>} />
                         <Route path="/profile/favoris/cours" element={<RequireAuth><FavorisCours /></RequireAuth>} />

@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import coursSlice from './features/cours/coursSlice'
 import userSlice from './features/user/userSlice'
-import toggleAsideSlice from './features/toggleAside/toggleAsideSlice'
 import cyclesSlice from './features/cycle/cyclesSlice'
 import userProfileSlice from './features/user/userProfileSlice'
 import levelsSlice from './features/level/levelsSlice'
@@ -14,6 +13,7 @@ import favorisSlice from './features/favoris/favorisSlice'
 
 export const store = configureStore({
     reducer: {
+        user: userSlice,
         favoris: favorisSlice,
         search: searchSlice,
         cours: coursSlice,
@@ -23,8 +23,6 @@ export const store = configureStore({
         basicCycle: BasicCycleSlice,
         levels: levelsSlice,
         matieres: matieresSlice,
-        user: userSlice,
         userProfile: userProfileSlice,
-        toggleAside: toggleAsideSlice,
     },
 })

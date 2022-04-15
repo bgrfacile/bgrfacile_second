@@ -2365,6 +2365,9 @@ select {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
+.flex-shrink {
+  flex-shrink: 1;
+}
 .flex-grow {
   flex-grow: 1;
 }
@@ -3204,6 +3207,10 @@ select {
   --tw-gradient-from: #262626;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(38 38 38 / 0));
 }
+.from-teal-400 {
+  --tw-gradient-from: #2dd4bf;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(45 212 191 / 0));
+}
 .to-green-400 {
   --tw-gradient-to: #4ade80;
 }
@@ -3218,6 +3225,9 @@ select {
 }
 .to-cyan-900 {
   --tw-gradient-to: #164e63;
+}
+.to-teal-800 {
+  --tw-gradient-to: #115e59;
 }
 .bg-cover {
   background-size: cover;
@@ -3505,6 +3515,9 @@ select {
 }
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+.pr-16 {
+  padding-right: 4rem;
 }
 .text-left {
   text-align: left;

@@ -62,7 +62,12 @@ const initialValue = {
         email: '',
         country: '',
         url_image: '',
-        roles: [],
+        roles: [
+            {
+                id: null,
+                name: ""
+            }
+        ],
         likes_cours: [],
     },
     isLoading: false,

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Outlet, useLocation } from 'react-router-dom';
-import { checkConnect, login } from '../redux/features/user/userSlice';
+import { Outlet } from 'react-router-dom';
+import { checkConnect } from '../redux/features/user/userSlice';
 import NavBar from '../components/Navbar';
 import LoadingFile from '../components/json_animations/loading02/LoadingFile';
 
