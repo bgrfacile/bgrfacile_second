@@ -8,7 +8,7 @@
                     <h1
                         class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
                         Retrouvez plus de {{ $countSchools }}
-                        <span class="text-indigo-700"> école en ligne </span>
+                        <span class="text-blue-600"> école en ligne </span>
                         avec bgrfacile
                     </h1>
                     <p class="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-center text-sm sm:text-lg">
@@ -18,10 +18,10 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <button
-                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-indigo-700 hover:bg-white text-sm lg:text-xl lg:font-bold  rounded text-white hover:text-gray-700 px-4 sm:px-10 border border-indigo-700 hover:border-gray-700 py-2 sm:py-4 transition ease-in-out">
+                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-blue-700 hover:bg-white text-sm lg:text-xl lg:font-bold  rounded text-white hover:text-gray-700 px-4 sm:px-10 border border-blue-700 hover:border-gray-700 py-2 sm:py-4 transition ease-in-out">
                         s'enregister</button>
                     <button
-                        class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 bg-white hover:bg-indigo-700 hover:border-indigo-600 text-sm lg:text-xl  lg:font-bold  hover:text-white rounded border border-indigo-700 text-indigo-700 px-4 sm:px-10 py-2 sm:py-4 transition ease-in-out">
+                        class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-white hover:bg-blue-700 hover:border-blue-600 text-sm lg:text-xl  lg:font-bold  hover:text-white rounded border border-blue-700 text-blue-700 px-4 sm:px-10 py-2 sm:py-4 transition ease-in-out">
                         se connecter</button>
                 </div>
             </div>
@@ -33,11 +33,11 @@
             Pour les apprenants
         </h2>
         <div class="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-8">
-            <div class="rounded-full bg-amber-100 w-80 shadow-xl">
-                <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_1syc3eqp.json"
-                    background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
-                </lottie-player>
-            </div>
+            {{-- <div class="rounded-full bg-amber-100 w-80 shadow-xl"> --}}
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_zjycbtqy.json" background="transparent"
+                speed="1" style="width: 320px; height: 320px;" loop autoplay>
+            </lottie-player>
+            {{-- </div> --}}
             <div class="w-11/12 md:w-8/12">
                 <h3 class="text-2xl font-bold">Retrouver son école</h3>
                 <p class="text-xl py-4">
@@ -393,6 +393,71 @@
                             </svg>
                             <span class="text-left">Assistance par e-mail prioritaire</span>
                         </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Possibilité d'interagir avec ses élèves</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Possibilité d'interagir avec les professeurs</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Access aux gestionnaire en ligne mais limités
+                            </span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Accèes à l'application de gestion complète</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Sauvegarde sur le cloud des données</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Access à une application de gestion complete et hors
+                                ligne</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Notification par sms des professeurs</span>
+                        </li>
                     </ul>
 
                     <a href="#_"
@@ -420,7 +485,7 @@
                     </div>
                     <div class="absolute inset-0 w-full h-full border-2 border-gray-900 rounded-2xl"></div>
                     <div class="relative flex pb-5 space-x-5 border-b border-gray-200 lg:space-x-3 xl:space-x-5">
-                        <svg class="w-16 h-16 text-indigo-400 rounded-2xl" viewBox="0 0 150 150"
+                        <svg class="w-16 h-16 text-blue-400 rounded-2xl" viewBox="0 0 150 150"
                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs>
                                 <rect x="0" y="0" width="150" height="150" rx="15"></rect>
@@ -454,6 +519,33 @@
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd"></path>
                             </svg>
+                            <span class="text-left">Une page public sur l'établissement</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Visibilité sur internet</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Assistance par e-mail prioritaire</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
                             <span class="text-left">Possibilité d'interagir avec ses élèves</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
@@ -475,15 +567,43 @@
                             <span class="text-left">Access aux gestionnaire en ligne mais limités
                             </span>
                         </li>
-                        {{-- <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                                     clip-rule="evenodd"></path>
                             </svg>
-                            <span>Accès </span>
-                        </li> --}}
+                            <span class="text-left">Accèes à l'application de gestion complète</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Sauvegarde sur le cloud des données</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Access à une application de gestion complete et hors
+                                ligne</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Notification par sms des professeurs</span>
+                        </li>
                     </ul>
 
                     <a href="#_"
@@ -539,6 +659,61 @@
                     </div>
 
                     <ul class="relative py-12 space-y-3">
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Une page public sur l'établissement</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Visibilité sur internet</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Assistance par e-mail prioritaire</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Possibilité d'interagir avec ses élèves</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Possibilité d'interagir avec les professeurs</span>
+                        </li>
+                        <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-left">Access aux gestionnaire en ligne mais limités
+                            </span>
+                        </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
                             <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -655,7 +830,7 @@
                         </div>
 
                         <a href="#"
-                            class="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">
+                            class="inline-block text-center bg-blue-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-blue-700">
                             Shop Collection</a>
                     </div>
                 </div>

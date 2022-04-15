@@ -87,7 +87,7 @@
                     <div class="flex flex-wrap items-top mb-6">
                         <div class="w-full lg:w-4/12 px-4 ml-auto">
                             <span class="block uppercase text-black text-lg font-bold mb-2 dark:text-gray-200">
-                                Contact
+                                Autres liens
                             </span>
                             <ul class="list-unstyled">
                                 <li>

@@ -6,7 +6,7 @@
         <div class="bg-gradient-to-b from-blue-800 to-blue-600 h-96"></div>
         <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
             <div class="bg-white w-full shadow rounded p-8 sm:p-12 -mt-72">
-                <p class="text-3xl font-bold leading-7 text-center">Contactez nous</p>
+                <p class="text-3xl font-bold leading-7 text-center">Contactez-nous</p>
                 @if (session('success'))
                     <div class="flex bg-green-100 rounded-lg p-4 my-4 text-sm text-green-700" role="alert">
                         <svg class="w-5 h-5 inline mr-3" fill="currentColor" viewBox="0 0 20 20"

@@ -14,7 +14,7 @@ class DonationController extends Controller
     public function index()
     {
         $donations = Donation::all()->reverse();
-        return view('site.donation',[
+        return view('site.donation', [
             'donations' => $donations
         ]);
     }
@@ -22,17 +22,16 @@ class DonationController extends Controller
     {
         Validator::make($request->all(), [
             'email' => 'required|email',
-            'telephone' => 'required',
-            'pseudo' => 'required|string'
+            'telephone' => 'required'
         ])->validate();
-        Donation::create([
-            'email' => $request->email,
-            'telephone' => $request->telephone,
-            'pseudo' => $request->pseudo,
-            'price' => "0",
-            'message' => $request->message
-        ]);
+        // Donation::create([
+        //     'email' => $request->email,
+        //     'telephone' => $request->telephone,
+        //     'pseudo' => $request->pseudo,
+        //     'price' => "0",
+        //     'message' => $request->message
+        // ]);
         Mail::to(env('MAIL_FROM_ADDRESS'))->send(new DonationMail($request));
-        return redirect()->back()->with('success', 'Thank you for your donation!');
+        return redirect()->back()->with('success', 'Merci pour votre don, nous serons notifiés dès que possible');
     }
 }

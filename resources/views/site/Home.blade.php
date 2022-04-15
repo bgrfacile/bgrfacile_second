@@ -61,9 +61,11 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col w-full h-full justify-center items-center">
-                <img class="w-full h-full object-cover overflow-hidden" src="{{ asset('assets/img/H01.png') }}"
-                    alt="étudiant entrain lire">
+            <div class="w-full h-full relative">
+                {{-- <div class="absolute inset-0 w-full h-full bg-white opacity-75"> --}}
+                <img class="absolute inset-0 w-full h-full object-contain overflow-hidden"
+                    src="{{ asset('assets/img/H01.png') }}" alt="étudiant entrain lire">
+                {{-- </div> --}}
             </div>
         </div>
     </header>
@@ -106,52 +108,59 @@
             <h2 class="text-4xl sm:text-6xl font-bold text-center my-8 text-gray-700 uppercase">à qui s'addresse ce
                 site?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5">
-                <div class="h-full bg-white rounded-md p-5 shadow-xl">
+                <div class="flex flex-col h-full bg-white rounded-md p-5 shadow-xl">
                     <img src="{{ asset('assets/img/undraw_online_learning_re_qw08.svg') }}"
                         alt="illustration de d'un apprenant qui lit un cours" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Apprenants</h2>
-                    <p class="">
+                    <p class="flex-1">
                         Les élèves,les étudiants et les autodidactes, <strong class="font-semibold">bgrfacile</strong>
                         vous
                         offre la possibilité
                         de vous former et de vous exercer dans le domaine de votre choix.</p>
-                    {{-- <a href="{{ route('donation.page') }}" class="btn-paypal my-2" target="_blank"
-                        style="margin-bottom: 10px">
-                        <i class="fa fa-lock donate-padlock-icon"></i> <span>Comment ça marche ?</span>
-                    </a> --}}
+                    <button
+                        class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
+                        EN SAVOIR PLUS
+                    </button>
                 </div>
-                <div class="h-full bg-neutral-700 text-gray-200  rounded-md p-5 shadow-xl">
+                <div class="flex flex-col h-full bg-neutral-700 text-gray-200  rounded-md p-5 shadow-xl">
                     <img src="{{ asset('assets/img/undraw_podcast_re_wr88.svg') }}"
                         alt="illustration de formateur qui enregistre un cour" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Formateurs</h2>
-                    <p class="">
+                    <p class="flex-1">
                         Toute personne compétente et capable de partager ses connaissances, via le site.<br>
                         <strong class="font-semibold">Bgrfacile</strong> vous
                         offre donc la possibilité de créer et de publier des cours.<br>
-                        Les formateurs pourront bénécifier d'une rémunération.
+                        Les formateurs pourront bénéficier d'une rémunération.
                     </p>
+                    <button
+                        class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
+                        comment ça marche?
+                    </button>
                 </div>
-                <div class="h-full bg-white rounded-md p-5 shadow-xl" shadow-lg>
+                <div class="flex flex-col h-full bg-white rounded-md p-5 shadow-xl" shadow-lg>
                     <img src="{{ asset('assets/img/undraw_preferences_popup_re_4qk0.svg') }}"
                         alt="illustration de personne qui enregister une école" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Ecoles en ligne</h2>
-                    <p class="">
-                        Vous êtes un établisement, un institut, un groupe scolaire, ou école supérieure ?
-                        <strong class="font-semibold">bgrfacile</strong> vous
-                        offre la possibilité d'être
-                        plus visible et d'exixter sur internet.<br>
+                    <p class="flex-1">
+                        Vous êtes un établissement, un institut, un groupe scolaire, ou École supérieure ?
+                        <strong class="font-semibold">bgrfacile</strong> vous offre la possibilité d'être plus visible
+                        et d'exister sur le internet.<br>
                         Vous aurez à votre disposition un espace numérique permettant
                         à chaque établissement d'échanger du contenue avec leurs élèves.<br>
-                        Il suffit juste de vous faire enregistrer afin de profiter des avantages et des differentes
+                        Il suffit juste de vous faire enregistrer afin de profiter des avantages et des différentes
                         fonctionnalités de nos services.
                     </p>
+                    <a href="{{ route('ecoleEnLigne.page') }}"
+                        class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
+                        comment ça marche ?
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <div class="relative bg-transparent overflow-hidden">
+    {{-- <div class="relative bg-transparent overflow-hidden">
         <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
             <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
                 <div class="sm:max-w-lg">
@@ -171,7 +180,6 @@
                 </div>
                 <div>
                     <div class="mt-10">
-                        <!-- Decorative image grid -->
                         <div aria-hidden="true"
                             class="pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full">
                             <div
@@ -214,50 +222,30 @@
                                 </div>
                             </div>
                         </div>
-
-                        {{-- <a href="#"
-                            class="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700">
-                            En savoir plus
-                        </a> --}}
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <section class="pt-12 headline">
+    <section class="md:pt-12 headline">
         <div class="max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
             <div class="p-6 h-auto md:h-96 flex flex-col md:flex-row relative">
                 <div class="h-auto w-full flex justify-center items-center mb-6 md:mb-0">
-                    <div>
+                    <div class="sm:max-w-lg">
                         <h4
-                            class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
-                            Bonus de bgrfacile</h4>
-                        <p class="mt-3 text-gray-800 dark:text-gray-400">
-                            Des Quizs, des podcasts et des jeux pour vous aidez à mieux comprendre les
-                            cours et vous divertir.
+                            class="text-4xl sm:text-6xl font font-extrabold tracking-tight text-gray-900  dark:text-gray-200">
+                            A propos du contenu
+                        </h4>
+                        <p class="mt-4 text-xl text-gray-500">
+                            Retrouver un ensemble structuré de cours de différents niveaux scolaire, disponible en
+                            différents formats
+                            dont <strong>PDF</strong>, <strong>vidéo</strong>, <strong>audio</strong> et
+                            <strong>image</strong>.<br>
+                            Mais aussi vous retrouver des cours non classé mais tout aussi indispensable comme
+                            l'apprentissage des
+                            languages de programmation (Ex: HTML,Css, etc.) dans une interface simple et intuitive.
                         </p>
-                        {{-- <div class="mt-4 mx-auto">
-                            <div id="player_home">
-                                <div class="player">
-                                    <div id="info" class="info">
-                                        <span class="artist"> </span>
-                                        <span class="name">l'étranger de Albert Camus</span>
-                                        <div class="progress-bar">
-                                            <div class="bar"></div>
-                                        </div>
-                                    </div>
-                                    <div id="control-panel" class="control-panel">
-                                        <div class="album-art"></div>
-                                        <div class="controls">
-                                            <div class="prev"></div>
-                                            <div id="play" class="play"></div>
-                                            <div class="next"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
                 <div class="h-full md:h-auto w-full overflow-hidden flex justify-center items-center">
@@ -276,8 +264,42 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <iframe src="https://embed.lottiefiles.com/animation/68889"></iframe> --}}
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="md:pt-12 headline">
+        <div class="flex flex-col justify-center items-center text-center max-w-7xl min-h-full mx-auto sm:px-6 lg:px-8">
+            <div class="w-full h-auto md:py-6 py-2 flex flex-col md:flex-row relative">
+                <div class="h-auto w-full flex justify-center items-center mb-6 md:mb-0">
+                    <div>
+                        <h4
+                            class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
+                            Bonus de bgrfacile</h4>
+                        <p class="mt-3 text-gray-800 dark:text-gray-400">
+                            Des Quizs, des podcasts et des jeux pour vous aider à mieux comprendre les
+                            cours et vous divertir.
+                        </p>
+                    </div>
+                </div>
+                {{-- <div class="h-full md:h-auto w-full overflow-hidden flex justify-center items-center">
+                    <div class="swiper flex items-center justify-center w-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="w-full h-full rounded object-cover"
+                                    src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
+                            </div>
+                            <div class="swiper-slide">
+                                <x-svg-school class="w-full h-full rounded object-cover" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="w-full max-h-full rounded object-cover"
+                                    src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
                 <div class="h-8 md:80 w-8 md:w-80 absolute -z-10" style="top: -91px;left: -88px;">
                     <x-svg-dots class="h-full w-full" />
                 </div>
@@ -301,8 +323,7 @@
                     <div class="mt-2 flex">
                         <a href="https://play.google.com/store/apps/details?id=com.bgrfacile.bgrfacile&hl=fr&gl=US"
                             target="_blank">
-                            <div
-                                class="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center">
+                            <div class="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center">
                                 <div class="mr-3">
                                     <x-svg-playstore class="w-8" />
                                 </div>
@@ -358,12 +379,10 @@
             <div class="max-w-max h-fit pb-3">
                 <h2 class="text-3xl md:text-6xl font-bold text-white text-center py-5">Faite une Donation</h2>
                 <p class="text-gray-50 mb-2 md:mb-4">
-                    Bgrfacile est un projet conçu pour les apprenants. Nous sommes une association qui a pour but de
-                    promouvoir le développement de l'informatique et de la culture numérique.
-                    Le don est l'un des moyens de soutenir, maintenir et l'améliorer le site.
+                    Bgrfacile est un projet en construction, Nous avons besoin de votre aide pour le maintenir.
+                    Faire un don est un moyen simple et efficace de soutenir le site.
                 </p>
-                <a href="{{ route('donation.page') }}" class="btn-paypal my-2" target="_blank"
-                    style="margin-bottom: 10px">
+                <a href="{{ route('donation.page') }}" class="btn-paypal my-2" style="margin-bottom: 10px">
                     <i class="fa fa-lock donate-padlock-icon"></i> <span>Faire un don</span>
                 </a>
             </div>
