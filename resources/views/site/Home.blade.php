@@ -1,6 +1,7 @@
 {{-- style="background-image: url(https://demo.gethugothemes.com/northendlab-light/images/banner/banner-bg.svg)"> --}}
 <x-site-layout>
 
+    <x-slot name="title">bgrfacile</x-slot>
     <x-slot name="description">
         Un apprentissage de marque et un pont vers la connaissance.
         Ce site web est là pour vous permettre de trouver facilement du contenue
@@ -55,7 +56,7 @@
             </div>
             <div class="w-full h-full relative">
                 {{-- <div class="absolute inset-0 w-full h-full bg-white opacity-75"> --}}
-                <img class="absolute inset-0 w-full h-full object-contain overflow-hidden" src="{{ asset('assets/img/H01.png') }}" alt="étudiant entrain lire">
+                <img class="absolute inset-0 object-contain hidden md:block overflow-hidden" src="{{ asset('assets/img/H01.webp') }}" alt="étudiant entrain lire">
                 {{-- </div> --}}
             </div>
         </div>

@@ -1,4 +1,5 @@
 <x-site-layout>
+    <x-slot name="title">qui sommes nous</x-slot>
     <x-slot name="header">
 
     </x-slot>
@@ -17,8 +18,7 @@
 
                 <div class="grid justify-end grid-cols-1 gap-8 mt-8 xl:mt-0 xl:mx-4 xl:w-1/2 md:grid-cols-2">
                     <div>
-                        <img class="object-cover rounded-xl h-64 w-full" src="{{ asset('assets/img/benji.jpg') }}"
-                            alt="">
+                        <img class="object-cover rounded-xl h-64 w-full" src="{{ asset('assets/img/benji.jpg') }}" alt="">
 
                         <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Benaja BENDO
                         </h1>
@@ -27,8 +27,7 @@
                     </div>
 
                     <div>
-                        <img class="object-cover rounded-xl h-64 w-full" src="{{ asset('assets/img/styve.jpg') }}"
-                            alt="">
+                        <img class="object-cover rounded-xl h-64 w-full" src="{{ asset('assets/img/styve.jpg') }}" alt="">
 
                         <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white">Styve LIOUMBA
                         </h1>

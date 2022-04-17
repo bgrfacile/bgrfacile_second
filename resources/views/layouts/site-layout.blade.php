@@ -20,7 +20,7 @@
     <meta name="keywords" content=" {{ $keywords ?? '' }}">
     <meta name="application-name" content="bgrfacile" />
     <meta name="robots" content="index" />
-    <title>{{ config('app.name', 'bgrfacile') }}</title>
+    <title>{{ $title ?? '' }} | bgrfacile.com</title>
 
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" sizes="16x16 32x32 64x64" href="{{ asset('assets/faviconit/favicon.ico') }}">

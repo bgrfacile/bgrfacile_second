@@ -1,4 +1,5 @@
 <x-site-layout>
+    <x-slot name="title">donation</x-slot>
     <x-slot name="header">
 
     </x-slot>

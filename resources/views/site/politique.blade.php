@@ -1,4 +1,7 @@
 <x-site-layout>
+    <x-slot name="title">
+        politique de confidentialité
+    </x-slot>
     <x-slot name="header"></x-slot>
 
     <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
@@ -608,35 +611,29 @@
                         <div class=" header">
                             <span style="line-height:18.0pt;" class="content">Politique de confidentialité
                                 d'un site web</span>
-                            <span style="line-height:18.0pt;" class="pageNumbers">Page <span
-                                    class="currentPageNum"></span> de <span class="totalPageNum"></span></span>
+                            <span style="line-height:18.0pt;" class="pageNumbers">Page <span class="currentPageNum"></span> de <span class="totalPageNum"></span></span>
                         </div>
                         <div class=" footer"></div>
                         <div class=" firstHeader"></div>
                         <div class=" firstFooter">
-                            <span style="line-height:18.0pt;" class="pageNumbers">Page <span
-                                    class="currentPageNum"></span> de <span class="totalPageNum"></span></span>
+                            <span style="line-height:18.0pt;" class="pageNumbers">Page <span class="currentPageNum"></span> de <span class="totalPageNum"></span></span>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Center;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Center;">
                                 <br><br><span style="font-style:normal;font-weight:bold;">POLITIQUE DE
-                                    CONFIDENTIALITÉ</span><br><br><br><span
-                                    style="font-style:normal;font-weight:bold;">www.bgrfacile.com</span><br>Bénaja
+                                    CONFIDENTIALITÉ</span><br><br><br><span style="font-style:normal;font-weight:bold;">www.bgrfacile.com</span><br>Bénaja
                                 Bendo<br><br>Type de site&nbsp;: un site de formation
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Le but
                                     de cette politique de confidentialité </span><br><br>Le but de cette politique
                                 de confidentialité est d'informer les utilisateurs de notre site des données
                                 personnelles que nous recueillerons ainsi que les informations suivantes, le cas
                                 échéant :
                             </p>
-                            <ol start="1"
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                            <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
                                 <li style="margin-bottom:18.0pt;" value="1"><span>Les données personnelles que nous
                                         recueillerons</span><span style="color:#000000;"><br></span>
                                 </li>
@@ -653,27 +650,23 @@
                                         site</span><span style="color:#000000;"><br></span>
                                 </li>
                             </ol>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Cette politique de confidentialité fonctionne parallèlement aux conditions générales
                                 d’utilisation de notre site.
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Lois
                                     applicables</span>
                             </p>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Conformément au <span style="font-style:italic;font-weight:normal;">Règlement
                                     général sur la protection des données</span> (RGPD), cette politique de
                                 confidentialité est conforme aux règlements suivants.<br><br>Les données à caractère
                                 personnel doivent être :
                             </p>
-                            <ol start="1"
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                            <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
                                 <li style="margin-bottom:18.0pt;" value="1"><span>traitées de manière licite, loyale
                                         et transparente au regard de la personne concernée (licéité, loyauté,
                                         transparence) ;</span><span style="color:#000000;"><br></span>
@@ -684,13 +677,11 @@
                                         fins archivistiques dans l'intérêt public, à des fins de recherche
                                         scientifique ou historique ou à des fins statistiques n'est pas considéré,
                                         conformément à l'article 89, paragraphe 1, comme incompatible avec les
-                                        finalités initiales (limitation des finalités) ;</span><span
-                                        style="color:#000000;"><br></span>
+                                        finalités initiales (limitation des finalités) ;</span><span style="color:#000000;"><br></span>
                                 </li>
                                 <li style="margin-bottom:18.0pt;" value="3"><span>adéquates, pertinentes et limitées
                                         à ce qui est nécessaire au regard des finalités pour lesquelles elles sont
-                                        traitées (minimisation des données) ;</span><span
-                                        style="color:#000000;"><br></span>
+                                        traitées (minimisation des données) ;</span><span style="color:#000000;"><br></span>
                                 </li>
                                 <li style="margin-bottom:18.0pt;" value="4"><span>exactes et, si nécessaire, tenues
                                         à jour; toutes les mesures raisonnables doivent être prises pour que les
@@ -708,8 +699,7 @@
                                         conformément à l'article 89, paragraphe 1, pour autant que soient mises en
                                         œuvre les mesures techniques et organisationnelles appropriées requises par
                                         le règlement afin de garantir les droits et libertés de la personne
-                                        concernée (limitation de la conservation) ;</span><span
-                                        style="color:#000000;"><br></span>
+                                        concernée (limitation de la conservation) ;</span><span style="color:#000000;"><br></span>
                                 </li>
                                 <li style="margin-bottom:0.0pt;" value="6"><span>traitées de façon à garantir une
                                         sécurité appropriée des données à caractère personnel, y compris la
@@ -719,13 +709,11 @@
                                         confidentialité).<br></span><span style="color:#000000;"><br></span>
                                 </li>
                             </ol>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Le traitement n'est licite que si, et dans la mesure où, au moins une des conditions
                                 suivantes est remplie :
                             </p>
-                            <ol start="1"
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                            <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
                                 <li style="margin-bottom:18.0pt;" value="1"><span>la personne concernée a consenti
                                         au traitement de ses données à caractère personnel pour une ou plusieurs
                                         finalités spécifiques ;</span><span style="color:#000000;"><br></span>
@@ -756,8 +744,7 @@
                                         un enfant.</span><span style="color:#000000;"><br></span>
                                 </li>
                             </ol>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Pour les résidents de l’État de Californie, cette politique de confidentialité vise
                                 à se conformer à la <span style="font-style:italic;font-weight:normal;">California
                                     Consumer Privacy Act (CCPA)</span>. S’il y a des incohérences entre ce document
@@ -767,85 +754,67 @@
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
-                                <span
-                                    style="font-style:normal;font-weight:bold;text-decoration:underline;">Consentement</span><br><br>Les
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Consentement</span><br><br>Les
                                 utilisateurs conviennent qu’en utilisant notre site, ils consentent à :
                             </p>
-                            <ol start="1"
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                            <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
                                 <li style="margin-bottom:18.0pt;" value="1"><span>les conditions énoncées dans la
-                                        présente politique de confidentialité et</span><span
-                                        style="color:#000000;"><br></span>
+                                        présente politique de confidentialité et</span><span style="color:#000000;"><br></span>
                                 </li>
                                 <li style="margin-bottom:0.0pt;" value="2"><span>la collecte, l’utilisation et la
-                                        conservation des données énumérées dans la présente politique.</span><span
-                                        style="color:#000000;"><br></span>
+                                        conservation des données énumérées dans la présente politique.</span><span style="color:#000000;"><br></span>
                                 </li>
                             </ol>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Données
                                     personnelles que nous collectons</span>
                             </p>
                             <div>
                                 <div>
-                                    <p
-                                        style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                    <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                         <span style="font-style:normal;font-weight:bold;">Données collectées
                                             automatiquement</span>
                                     </p>
-                                    <p
-                                        style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                    <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                         Nous ne collectons aucune donnée automatiquement sur notre site.
                                     </p>
                                 </div>
                                 <div>
-                                    <p
-                                        style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                    <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                         <span style="font-style:normal;font-weight:bold;">Données recueillies de
                                             façon non automatique</span>
                                     </p>
-                                    <p
-                                        style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                    <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                         Nous pouvons également collecter les données suivantes lorsque vous
                                         effectuez certaines fonctions sur notre site&nbsp;:
                                     </p>
-                                    <ol start="1"
-                                        style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
-                                        <li style="margin-bottom:18.0pt;" value="1"><span>Prénom et nom</span><span
-                                                style="color:#000000;"><br></span>
+                                    <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                                        <li style="margin-bottom:18.0pt;" value="1"><span>Prénom et nom</span><span style="color:#000000;"><br></span>
                                         </li>
-                                        <li style="margin-bottom:18.0pt;" value="2"><span>Âge</span><span
-                                                style="color:#000000;"><br></span>
+                                        <li style="margin-bottom:18.0pt;" value="2"><span>Âge</span><span style="color:#000000;"><br></span>
                                         </li>
                                         <li style="margin-bottom:18.0pt;" value="3"><span>Date de
                                                 naissance</span><span style="color:#000000;"><br></span>
                                         </li>
-                                        <li style="margin-bottom:18.0pt;" value="4"><span>Sexe</span><span
-                                                style="color:#000000;"><br></span>
+                                        <li style="margin-bottom:18.0pt;" value="4"><span>Sexe</span><span style="color:#000000;"><br></span>
                                         </li>
-                                        <li style="margin-bottom:18.0pt;" value="5"><span>Email</span><span
-                                                style="color:#000000;"><br></span>
+                                        <li style="margin-bottom:18.0pt;" value="5"><span>Email</span><span style="color:#000000;"><br></span>
                                         </li>
                                         <li style="margin-bottom:0.0pt;" value="6"><span>Numéro de
                                                 téléphone</span><span style="color:#000000;"><br></span>
                                         </li>
                                     </ol>
-                                    <p
-                                        style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                    <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                         Ces données peuvent être recueillies au moyen des méthodes suivantes&nbsp;:
                                     </p>
-                                    <p
-                                        style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                    <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                         Enregistrement d'un compte
                                     </p>
                                 </div>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     Veuillez noter que nous ne collectons que les données qui nous aident à
                                     atteindre l’objectif énoncé dans cette politique de confidentialité. Nous ne
                                     recueillerons pas de données supplémentaires sans vous en informer au préalable.
@@ -853,8 +822,7 @@
                             </div>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Comment
                                     nous utilisons les données personnelles</span><br><br>Les données personnelles
                                 recueillies sur notre site seront utilisées uniquement aux fins précisées dans la
@@ -862,28 +830,23 @@
                                 n’utiliserons pas vos données au-delà de ce que nous divulguerons.
                             </p>
                             <div>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     Les données que nous recueillons lorsque l’utilisateur exécute certaines
                                     fonctions peuvent être utilisées aux fins suivantes&nbsp;:
                                 </p>
-                                <ol start="1"
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
-                                    <li style="margin-bottom:0.0pt;" value="1"><span>Communication</span><span
-                                            style="color:#000000;"><br></span>
+                                <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                                    <li style="margin-bottom:0.0pt;" value="1"><span>Communication</span><span style="color:#000000;"><br></span>
                                     </li>
                                 </ol>
                             </div>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Avec qui
                                     nous partageons les données personnelles</span>
                             </p>
                             <div>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     <span style="font-style:normal;font-weight:bold;">Employés</span><br>Nous
                                     pouvons divulguer à tout membre de notre organisation les données utilisateur
                                     dont il a raisonnablement besoin pour réaliser les objectifs énoncés dans la
@@ -891,45 +854,35 @@
                                 </p>
                             </div>
                             <div>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     <span style="font-style:normal;font-weight:bold;">Tierces parties</span><br>Nous
                                     pouvons partager les données utilisateur avec les tiers suivants&nbsp;:
                                 </p>
-                                <ol start="1"
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
-                                    <li style="margin-bottom:0.0pt;" value="1"><span>__________</span><span
-                                            style="color:#000000;"><br></span>
+                                <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                                    <li style="margin-bottom:0.0pt;" value="1"><span>__________</span><span style="color:#000000;"><br></span>
                                     </li>
                                 </ol>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     Nous pouvons partager les données utilisateur avec des tiers aux fins
                                     suivantes&nbsp;:
                                 </p>
-                                <ol start="1"
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
-                                    <li style="margin-bottom:0.0pt;" value="1"><span>__________</span><span
-                                            style="color:#000000;"><br></span>
+                                <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                                    <li style="margin-bottom:0.0pt;" value="1"><span>__________</span><span style="color:#000000;"><br></span>
                                     </li>
                                 </ol>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     Les tiers ne seront pas en mesure d’accéder aux données des utilisateurs au-delà
                                     de ce qui est raisonnablement nécessaire pour atteindre l’objectif donné.
                                 </p>
                             </div>
                             <div>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     <span style="font-style:normal;font-weight:bold;">Autres
                                         divulgations</span><br>Nous nous engageons à ne pas vendre ou partager vos
                                     données avec des tiers, sauf dans les cas suivants&nbsp;:
                                 </p>
-                                <ol start="1"
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
-                                    <li style="margin-bottom:18.0pt;" value="1"><span>si la loi l'exige</span><span
-                                            style="color:#000000;"><br></span>
+                                <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                                    <li style="margin-bottom:18.0pt;" value="1"><span>si la loi l'exige</span><span style="color:#000000;"><br></span>
                                     </li>
                                     <li style="margin-bottom:18.0pt;" value="2"><span>si elle est requise pour toute
                                             procédure judiciaire</span><span style="color:#000000;"><br></span>
@@ -942,8 +895,7 @@
                                             vendre la société</span><span style="color:#000000;"><br></span>
                                     </li>
                                 </ol>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     Si vous suivez des hyperliens de notre site vers un autre site, veuillez noter
                                     que nous ne sommes pas responsables et n’avons pas de contrôle sur leurs
                                     politiques et pratiques de confidentialité.
@@ -951,8 +903,7 @@
                             </div>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Combien
                                     de temps nous stockons les données personnelles</span><br><br>Nous ne conservons
                                 pas les données des utilisateurs au-delà de ce qui est nécessaire pour atteindre les
@@ -960,8 +911,7 @@
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Comment
                                     nous protégeons vos données personnelles</span><br><br>Afin d’assurer la
                                 protection de votre sécurité, nous utilisons le protocole de sécurité de la couche
@@ -977,13 +927,10 @@
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
-                                <span
-                                    style="font-style:normal;font-weight:bold;text-decoration:underline;">Mineurs</span>
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Mineurs</span>
                             </p>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Le RGPD précise que les personnes de moins de 15 ans sont considérées comme des
                                 mineurs aux fins de la collecte de données. Les mineurs doivent avoir le
                                 consentement d’un représentant légal pour que leurs données soient recueillies,
@@ -991,21 +938,17 @@
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Vos
                                     droits en tant qu’utilisateur</span>
                             </p>
                             <div>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     En vertu du RGPD, les utilisateurs ont les droits suivants en tant que personnes
                                     concernées :
                                 </p>
-                                <ol start="1"
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
-                                    <li style="margin-bottom:18.0pt;" value="1"><span>droit d’accès</span><span
-                                            style="color:#000000;"><br></span>
+                                <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                                    <li style="margin-bottom:18.0pt;" value="1"><span>droit d’accès</span><span style="color:#000000;"><br></span>
                                     </li>
                                     <li style="margin-bottom:18.0pt;" value="2"><span>droit de
                                             rectification</span><span style="color:#000000;"><br></span>
@@ -1019,67 +962,55 @@
                                     <li style="margin-bottom:18.0pt;" value="5"><span>droit à la portabilité des
                                             données</span><span style="color:#000000;"><br></span>
                                     </li>
-                                    <li style="margin-bottom:0.0pt;" value="6"><span>droit d'objection</span><span
-                                            style="color:#000000;"><br></span>
+                                    <li style="margin-bottom:0.0pt;" value="6"><span>droit d'objection</span><span style="color:#000000;"><br></span>
                                     </li>
                                 </ol>
-                                <p
-                                    style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                     Vous trouverez de plus amples informations sur ces droits au chapitre 3 (art
                                     12-23) du RGPD.
                                 </p>
                             </div>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Comment
                                     modifier, supprimer ou contester les données recueillies</span><br><br>Si vous
                                 souhaitez que vos renseignements soient supprimés ou modifiés d’une façon ou d’une
                                 autre, veuillez communiquer avec notre agent de protection de la vie privée ici :
                             </p>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;margin-left:20.0pt;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;margin-left:20.0pt;">
                                 __________<br>benaja.bendo02@gmail.com
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Politique
                                     sur les cookies</span><br><br>Un cookie est un petit fichier, stocké sur le
                                 disque dur d’un utilisateur par le site Web. Son but est de recueillir des données
                                 relatives aux habitudes de navigation de l’utilisateur.
                             </p>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Nous utilisons les types de cookies suivants sur notre site&nbsp;:
                             </p>
-                            <ol start="1"
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
-                                <li style="margin-bottom:18.0pt;" value="1"><span
-                                        style="font-style:normal;font-weight:bold;">Cookies
+                            <ol start="1" style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;list-style:lower-alpha;">
+                                <li style="margin-bottom:18.0pt;" value="1"><span style="font-style:normal;font-weight:bold;">Cookies
                                         fonctionnels</span><br>Nous les utilisons pour mémoriser toutes les
                                     sélections que vous faites sur notre site afin qu’elles soient sauvegardées pour
                                     vos prochaines visites.<span style="color:#000000;"><br></span>
                                 </li>
 
                             </ol>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Vous pouvez choisir d’être averti chaque fois qu’un cookie est transmis. Vous pouvez
                                 également choisir de désactiver les cookies entièrement dans votre navigateur
                                 Internet, mais cela peut diminuer la qualité de votre expérience d’utilisation.
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
-                                <span
-                                    style="font-style:normal;font-weight:bold;text-decoration:underline;">Modifications</span>
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Modifications</span>
                             </p>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Cette politique de confidentialité peut être modifiée à l’occasion afin de maintenir
                                 la conformité avec la loi et de tenir compte de tout changement à notre processus de
                                 collecte de données. Nous recommandons à nos utilisateurs de vérifier notre
@@ -1089,19 +1020,15 @@
                             </p>
                         </div>
                         <div>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
-                                <span
-                                    style="font-style:normal;font-weight:bold;text-decoration:underline;">Contact</span>
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                                <span style="font-style:normal;font-weight:bold;text-decoration:underline;">Contact</span>
                             </p>
-                            <p
-                                style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                            <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                                 Si vous avez des questions à nous poser, n’hésitez pas à communiquer avec nous en
                                 utilisant ce qui suit&nbsp;:<br>benaja.bendo02@gmail.com
                             </p>
                         </div>
-                        <p
-                            style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
+                        <p style="line-height:18.0pt;font-size:12.0pt;line-height:18.0pt;font-family:Times New Roman;color:#000000;text-align:Left;">
                             <br><span style="font-style:italic;font-weight:normal;">Date d’entrée en vigueur&nbsp;:
                             </span>le 31 mars 2022
                         </p>

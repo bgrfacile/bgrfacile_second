@@ -1,12 +1,12 @@
 <x-site-layout>
+    <x-slot name="title">école en ligne</x-slot>
     <x-slot name="header"></x-slot>
 
     <div class="max-w-7xl py-6 mx-auto px-1 sm:px-6 lg:px-8">
         <div class="bg-gray-100">
             <div class="container mx-auto flex flex-col items-center py-12 sm:py-24">
                 <div class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
-                    <h1
-                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
                         Retrouvez plus de {{ $countSchools }}
                         <span class="text-blue-600"> école en ligne </span>
                         avec bgrfacile
@@ -17,11 +17,9 @@
                     </p>
                 </div>
                 <div class="flex justify-center items-center">
-                    <button
-                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-blue-700 hover:bg-white text-sm lg:text-xl lg:font-bold  rounded text-white hover:text-gray-700 px-4 sm:px-10 border border-blue-700 hover:border-gray-700 py-2 sm:py-4 transition ease-in-out">
+                    <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-blue-700 hover:bg-white text-sm lg:text-xl lg:font-bold  rounded text-white hover:text-gray-700 px-4 sm:px-10 border border-blue-700 hover:border-gray-700 py-2 sm:py-4 transition ease-in-out">
                         s'enregister</button>
-                    <button
-                        class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-white hover:bg-blue-700 hover:border-blue-600 text-sm lg:text-xl  lg:font-bold  hover:text-white rounded border border-blue-700 text-blue-700 px-4 sm:px-10 py-2 sm:py-4 transition ease-in-out">
+                    <button class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-white hover:bg-blue-700 hover:border-blue-600 text-sm lg:text-xl  lg:font-bold  hover:text-white rounded border border-blue-700 text-blue-700 px-4 sm:px-10 py-2 sm:py-4 transition ease-in-out">
                         se connecter</button>
                 </div>
             </div>
@@ -34,8 +32,7 @@
         </h2>
         <div class="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-8">
             {{-- <div class="rounded-full bg-amber-100 w-80 shadow-xl"> --}}
-            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_zjycbtqy.json" background="transparent"
-                speed="1" style="width: 320px; height: 320px;" loop autoplay>
+            <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_zjycbtqy.json" background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
             </lottie-player>
             {{-- </div> --}}
             <div class="w-11/12 md:w-8/12">
@@ -49,8 +46,7 @@
         </div>
         <div class="flex flex-col md:flex-row-reverse justify-start items-center gap-8">
             <div class="rounded-full bg-green-100 w-80 shadow-xl">
-                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_vmmezcyz.json"
-                    background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
+                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_vmmezcyz.json" background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
                 </lottie-player>
             </div>
             <div class="w-11/12 md:w-8/12">
@@ -64,8 +60,7 @@
         </div>
         <div class="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-8">
             <div class="rounded-full bg-pink-100 w-80 shadow-xl">
-                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_9zhayktd.json"
-                    background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
+                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_9zhayktd.json" background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
                 </lottie-player>
             </div>
             <div class="w-11/12 md:w-8/12">
@@ -83,8 +78,7 @@
         </h2>
         <div class="flex flex-col md:flex-row-reverse justify-start items-center gap-8">
             <div class="rounded-full bg-green-100 w-80 shadow-xl">
-                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_vmmezcyz.json"
-                    background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
+                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_vmmezcyz.json" background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
                 </lottie-player>
             </div>
             <div class="w-11/12 md:w-8/12">
@@ -98,8 +92,7 @@
         </div>
         <div class="flex flex-col md:flex-row justify-start items-center gap-2 md:gap-8">
             <div class="rounded-full bg-pink-100 w-80 shadow-xl">
-                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_9zhayktd.json"
-                    background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
+                <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_9zhayktd.json" background="transparent" speed="1" style="width: 320px; height: 320px;" loop autoplay>
                 </lottie-player>
             </div>
             <div class="w-11/12 md:w-8/12">
@@ -120,8 +113,7 @@
             </h2>
             <div class="flex flex-row">
                 <div class="hidden md:flex flex-col items-center">
-                    <div
-                        class="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
+                    <div class="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
                         <div class="text-3xl font-black text-gray-500">Etape 1</div>
                         <div class="text-gray-500 text-sm text-center">Compte utilisateur</div>
                     </div>
@@ -132,8 +124,7 @@
                 <div class="flex-auto border rounded  border-gray-300">
                     <div class="flex md:flex-row flex-col items-center">
                         <div class="flex-auto">
-                            <div class="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500"><span
-                                    class="font-black">Etape 1</span> - Compte utilisateur</div>
+                            <div class="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500"><span class="font-black">Etape 1</span> - Compte utilisateur</div>
                             <div class="p-3 text-3xl text-gray-800 font"> Créer un compte sur bgrfacile </div>
                             <div class="px-3 pb-6">
                                 Vous devez créer un compte pour pouvoir accéder à toutes les fonctionnalités de
@@ -141,8 +132,7 @@
                             </div>
                         </div>
                         <div class="md:w-96 w-full p-5">
-                            <img src="{{ asset('assets/img/undraw_create_re_57a3.svg') }}" alt="step 1"
-                                class="object-scale-down">
+                            <img src="{{ asset('assets/img/undraw_create_re_57a3.svg') }}" alt="step 1" class="object-scale-down">
                         </div>
                     </div>
                 </div>
@@ -160,8 +150,7 @@
             </div>
             <div class="flex flex-row-reverse">
                 <div class="hidden md:flex flex-col items-center">
-                    <div
-                        class="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
+                    <div class="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
                         <div class="text-3xl font-black text-gray-500">Etape 2</div>
                         <div class="text-gray-500 text-sm text-center">Informations sur l'école en ligne</div>
                     </div>
@@ -172,8 +161,7 @@
                 <div class="flex-auto border rounded  border-gray-300">
                     <div class="flex md:flex-row flex-col items-center">
                         <div class="flex-auto">
-                            <div class="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500"><span
-                                    class="font-black">Etape 2</span> - Formulaire de creation</div>
+                            <div class="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500"><span class="font-black">Etape 2</span> - Formulaire de creation</div>
                             <div class="p-3 text-3xl text-gray-800 font">Renseigner les informations de votre école
                             </div>
                             <div class="px-3 pb-6">
@@ -182,8 +170,7 @@
                                 informations nécéssaires demander
                             </div>
                         </div>
-                        <div class="md:w-96 w-full p-5"><img src="{{ asset('assets/img/undraw_create_re_57a3.svg') }}"
-                                alt="step 2" class="object-scale-down"></div>
+                        <div class="md:w-96 w-full p-5"><img src="{{ asset('assets/img/undraw_create_re_57a3.svg') }}" alt="step 2" class="object-scale-down"></div>
                     </div>
                 </div>
             </div>
@@ -200,8 +187,7 @@
             </div>
             <div class="flex flex-row">
                 <div class="hidden md:flex flex-col items-center">
-                    <div
-                        class="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
+                    <div class="w-32 py-5 border border-gray-300 rounded mr-4 uppercase flex flex-col items-center justify-center">
                         <div class="text-3xl font-black text-gray-500 text-center">Etape 3</div>
                         <div class="text-gray-500 text-sm">Validation des informations</div>
                     </div>
@@ -212,16 +198,14 @@
                 <div class="flex-auto border rounded  border-gray-300">
                     <div class="flex md:flex-row flex-col items-center">
                         <div class="flex-auto">
-                            <div class="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500"><span
-                                    class="font-black">Etape 3</span> - Validation des informations</div>
+                            <div class="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500"><span class="font-black">Etape 3</span> - Validation des informations</div>
                             <div class="p-3 text-3xl text-gray-800 font">Validation des informations</div>
                             <div class="px-3 pb-6">Les informations renseigner sont traité et validé par
                                 bgrfacile.s'ils sont valide,un mail
                                 de validation est renvoyer avec les informations nécessaires de connexion sur votre
                                 école en ligne.</div>
                         </div>
-                        <div class="md:w-96 w-full p-5"><img src="{{ asset('assets/img/undraw_create_re_57a3.svg') }}"
-                                alt="step 3" class="object-scale-down"></div>
+                        <div class="md:w-96 w-full p-5"><img src="{{ asset('assets/img/undraw_create_re_57a3.svg') }}" alt="step 3" class="object-scale-down"></div>
                     </div>
                 </div>
             </div>
@@ -238,8 +222,7 @@
             </div>
             <div class="flex flex-row-reverse">
                 <div class="hidden md:flex flex-col items-center">
-                    <div
-                        class="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
+                    <div class="w-32 py-5 border border-gray-300 rounded ml-4 uppercase flex flex-col items-center justify-center">
                         <div class="text-3xl font-black text-gray-500">Etape 4</div>
                         <div class="text-gray-500 text-sm">Connexion</div>
                     </div>
@@ -247,16 +230,13 @@
                 <div class="flex-auto border rounded  border-gray-300">
                     <div class="flex md:flex-row flex-col items-center">
                         <div class="flex-auto">
-                            <div class="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500"><span
-                                    class="font-black">Etape 4</span> - Connexion</div>
+                            <div class="md:hidden text-sm font-normal uppercase pt-3 pl-3 text-gray-500"><span class="font-black">Etape 4</span> - Connexion</div>
                             <div class="p-3 text-3xl text-gray-800 font">Choisir un tarif et se connecter</div>
                             <div class="px-3 pb-6">
                                 une fois vos informations validé et vos tarifs enregistrer, vous pouvez vous connecter.
                             </div>
                         </div>
-                        <div class="md:w-96 w-full p-5"><img
-                                src="{{ asset('assets/img/undraw_create_re_57a3.svg') }}" alt="step 4"
-                                class="object-scale-down"></div>
+                        <div class="md:w-96 w-full p-5"><img src="{{ asset('assets/img/undraw_create_re_57a3.svg') }}" alt="step 4" class="object-scale-down"></div>
                     </div>
                 </div>
             </div>
@@ -281,8 +261,7 @@
             </div>
             <div class="flex flex-wrap -mx-4">
                 <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-                    <div
-                        class="p-10 md:px-7
+                    <div class="p-10 md:px-7
                     xl:px-10
                     rounded-[20px]
                     bg-white
@@ -290,8 +269,7 @@
                     hover:shadow-lg
                     mb-8
                     ">
-                        <div
-                            class="
+                        <div class="
                        w-[70px]
                        h-[70px]
                        flex
@@ -301,12 +279,8 @@
                        rounded-2xl
                        mb-8
                        ">
-                            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
-                                class="iconify iconify--ic" width="32" height="32" preserveAspectRatio="xMidYMid meet"
-                                viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M10 13c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1m0-2c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3zm8.5-2l1.09-2.41L22 5.5l-2.41-1.09L18.5 2l-1.09 2.41L15 5.5l2.41 1.09L18.5 9zm2.78 3.72L20.5 11l-.78 1.72l-1.72.78l1.72.78l.78 1.72l.78-1.72L23 13.5l-1.72-.78zM16.25 14c0-.12 0-.25-.01-.37l1.94-1.47l-2.5-4.33l-2.24.94c-.2-.13-.42-.26-.64-.37L12.5 6h-5l-.3 2.41c-.22.11-.43.24-.64.37l-2.24-.95l-2.5 4.33l1.94 1.47c-.01.12-.01.25-.01.37s0 .25.01.37l-1.94 1.47l2.5 4.33l2.24-.94c.2.13.42.26.64.37l.3 2.4h5l.3-2.41c.22-.11.43-.23.64-.37l2.24.94l2.5-4.33l-1.94-1.47c.01-.11.01-.24.01-.36zm-1.42 3.64l-1.73-.73c-.56.6-1.3 1.04-2.13 1.23L10.73 20H9.27l-.23-1.86c-.83-.19-1.57-.63-2.13-1.23l-1.73.73l-.73-1.27l1.49-1.13c-.12-.39-.18-.8-.18-1.23c0-.43.06-.84.18-1.23l-1.49-1.13l.73-1.27l1.73.73c.56-.6 1.3-1.04 2.13-1.23L9.27 8h1.47l.23 1.86c.83.19 1.57.63 2.13 1.23l1.73-.73l.73 1.27l-1.49 1.13c.12.39.18.8.18 1.23c0 .43-.06.84-.18 1.23l1.49 1.13l-.73 1.29z">
+                            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="32" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M10 13c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1m0-2c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3zm8.5-2l1.09-2.41L22 5.5l-2.41-1.09L18.5 2l-1.09 2.41L15 5.5l2.41 1.09L18.5 9zm2.78 3.72L20.5 11l-.78 1.72l-1.72.78l1.72.78l.78 1.72l.78-1.72L23 13.5l-1.72-.78zM16.25 14c0-.12 0-.25-.01-.37l1.94-1.47l-2.5-4.33l-2.24.94c-.2-.13-.42-.26-.64-.37L12.5 6h-5l-.3 2.41c-.22.11-.43.24-.64.37l-2.24-.95l-2.5 4.33l1.94 1.47c-.01.12-.01.25-.01.37s0 .25.01.37l-1.94 1.47l2.5 4.33l2.24-.94c.2.13.42.26.64.37l.3 2.4h5l.3-2.41c.22-.11.43-.23.64-.37l2.24.94l2.5-4.33l-1.94-1.47c.01-.11.01-.24.01-.36zm-1.42 3.64l-1.73-.73c-.56.6-1.3 1.04-2.13 1.23L10.73 20H9.27l-.23-1.86c-.83-.19-1.57-.63-2.13-1.23l-1.73.73l-.73-1.27l1.49-1.13c-.12-.39-.18-.8-.18-1.23c0-.43.06-.84.18-1.23l-1.49-1.13l.73-1.27l1.73.73c.56-.6 1.3-1.04 2.13-1.23L9.27 8h1.47l.23 1.86c.83.19 1.57.63 2.13 1.23l1.73-.73l.73 1.27l-1.49 1.13c.12.39.18.8.18 1.23c0 .43-.06.84-.18 1.23l1.49 1.13l-.73 1.29z">
                                 </path>
                             </svg>
                         </div>
@@ -334,13 +308,11 @@
 
                 <div class="relative flex flex-col justify-between p-8 lg:p-6 xl:p-8 rounded-2xl">
 
-                    <div
-                        class="absolute inset-0 w-full h-full transform translate-x-2 translate-y-2 bg-green-50 rounded-2xl">
+                    <div class="absolute inset-0 w-full h-full transform translate-x-2 translate-y-2 bg-green-50 rounded-2xl">
                     </div>
                     <div class="absolute inset-0 w-full h-full border-2 border-gray-900 rounded-2xl"></div>
                     <div class="relative flex pb-5 space-x-5 border-b border-gray-200 lg:space-x-3 xl:space-x-5">
-                        <svg class="w-16 h-16 text-green-400 rounded-2xl" viewBox="0 0 150 150"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <svg class="w-16 h-16 text-green-400 rounded-2xl" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs>
                                 <rect x="0" y="0" width="150" height="150" rx="15"></rect>
                             </defs>
@@ -367,110 +339,75 @@
 
                     <ul class="relative py-12 space-y-3">
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Une page public sur l'établissement</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Visibilité sur internet</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Assistance par e-mail prioritaire</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Possibilité d'interagir avec ses élèves</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Possibilité d'interagir avec les professeurs</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Access aux gestionnaire en ligne mais limités
                             </span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Accèes à l'application de gestion complète</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Sauvegarde sur le cloud des données</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Access à une application de gestion complete et hors
                                 ligne</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Notification par sms des professeurs</span>
                         </li>
                     </ul>
 
-                    <a href="#_"
-                        class="relative flex items-center justify-center w-full px-5 py-5 text-lg font-medium text-white rounded-xl group">
-                        <span
-                            class="w-full h-full absolute inset-0 transform translate-y-1.5 translate-x-1.5 group-hover:translate-y-0 group-hover:translate-x-0 transition-all ease-out duration-200 rounded-xl bg-green-500"></span>
+                    <a href="#_" class="relative flex items-center justify-center w-full px-5 py-5 text-lg font-medium text-white rounded-xl group">
+                        <span class="w-full h-full absolute inset-0 transform translate-y-1.5 translate-x-1.5 group-hover:translate-y-0 group-hover:translate-x-0 transition-all ease-out duration-200 rounded-xl bg-green-500"></span>
                         <span class="absolute inset-0 w-full h-full border-2 border-gray-900 rounded-xl"></span>
                         <span class="relative">Choisissez ce forfait </span>
-                        <svg class="w-5 h-5 ml-2 transition-all duration-200 ease-out transform group-hover:translate-x-1"
-                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
+                        <svg class="w-5 h-5 ml-2 transition-all duration-200 ease-out transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                         </svg>
                     </a>
 
@@ -480,13 +417,11 @@
                 <!-- Start Middle Plan -->
                 <div class="relative p-8 lg:p-6 xl:p-8 rounded-2xl">
 
-                    <div
-                        class="absolute inset-0 w-full h-full transform translate-x-2 translate-y-2 bg-blue-50 rounded-2xl">
+                    <div class="absolute inset-0 w-full h-full transform translate-x-2 translate-y-2 bg-blue-50 rounded-2xl">
                     </div>
                     <div class="absolute inset-0 w-full h-full border-2 border-gray-900 rounded-2xl"></div>
                     <div class="relative flex pb-5 space-x-5 border-b border-gray-200 lg:space-x-3 xl:space-x-5">
-                        <svg class="w-16 h-16 text-blue-400 rounded-2xl" viewBox="0 0 150 150"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <svg class="w-16 h-16 text-blue-400 rounded-2xl" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs>
                                 <rect x="0" y="0" width="150" height="150" rx="15"></rect>
                             </defs>
@@ -513,110 +448,75 @@
 
                     <ul class="relative py-12 space-y-3">
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Une page public sur l'établissement</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Visibilité sur internet</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Assistance par e-mail prioritaire</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Possibilité d'interagir avec ses élèves</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Possibilité d'interagir avec les professeurs</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Access aux gestionnaire en ligne mais limités
                             </span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Accèes à l'application de gestion complète</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Sauvegarde sur le cloud des données</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Access à une application de gestion complete et hors
                                 ligne</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Notification par sms des professeurs</span>
                         </li>
                     </ul>
 
-                    <a href="#_"
-                        class="relative flex items-center justify-center w-full px-5 py-5 text-lg font-medium text-white rounded-xl group">
-                        <span
-                            class="w-full h-full absolute inset-0 transform translate-y-1.5 translate-x-1.5 group-hover:translate-y-0 group-hover:translate-x-0 transition-all ease-out duration-200 rounded-xl bg-blue-600"></span>
+                    <a href="#_" class="relative flex items-center justify-center w-full px-5 py-5 text-lg font-medium text-white rounded-xl group">
+                        <span class="w-full h-full absolute inset-0 transform translate-y-1.5 translate-x-1.5 group-hover:translate-y-0 group-hover:translate-x-0 transition-all ease-out duration-200 rounded-xl bg-blue-600"></span>
                         <span class="absolute inset-0 w-full h-full border-2 border-gray-900 rounded-xl"></span>
                         <span class="relative">Choisissez ce forfait</span>
-                        <svg class="w-5 h-5 ml-2 transition-all duration-200 ease-out transform group-hover:translate-x-1"
-                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
+                        <svg class="w-5 h-5 ml-2 transition-all duration-200 ease-out transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                         </svg>
                     </a>
 
@@ -624,16 +524,13 @@
                 <!-- End Middle Plan -->
 
                 <!-- Start Third Plan -->
-                <div
-                    class="relative flex flex-col justify-between p-8 lg:p-6 xl:p-8 rounded-2xl md:col-span-2 lg:col-span-1">
+                <div class="relative flex flex-col justify-between p-8 lg:p-6 xl:p-8 rounded-2xl md:col-span-2 lg:col-span-1">
 
-                    <div
-                        class="absolute inset-0 w-full h-full transform translate-x-2 translate-y-2 bg-red-50 rounded-2xl">
+                    <div class="absolute inset-0 w-full h-full transform translate-x-2 translate-y-2 bg-red-50 rounded-2xl">
                     </div>
                     <div class="absolute inset-0 w-full h-full border-2 border-gray-900 rounded-2xl"></div>
                     <div class="relative flex pb-5 space-x-5 border-b border-gray-200 lg:space-x-3 xl:space-x-5">
-                        <svg class="w-16 h-16 text-red-400 rounded-2xl" viewBox="0 0 150 150"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <svg class="w-16 h-16 text-red-400 rounded-2xl" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <defs>
                                 <rect x="0" y="0" width="150" height="150" rx="15"></rect>
                             </defs>
@@ -660,110 +557,75 @@
 
                     <ul class="relative py-12 space-y-3">
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Une page public sur l'établissement</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Visibilité sur internet</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Assistance par e-mail prioritaire</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Possibilité d'interagir avec ses élèves</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Possibilité d'interagir avec les professeurs</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Access aux gestionnaire en ligne mais limités
                             </span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Accèes à l'application de gestion complète</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Sauvegarde sur le cloud des données</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Access à une application de gestion complete et hors
                                 ligne</span>
                         </li>
                         <li class="flex items-center space-x-2 text-sm font-medium text-gray-500">
-                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd"></path>
+                            <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                             </svg>
                             <span class="text-left">Notification par sms des professeurs</span>
                         </li>
                     </ul>
 
-                    <a href="#_"
-                        class="relative flex items-center justify-center w-full px-5 py-5 text-lg font-medium text-white rounded-xl group">
-                        <span
-                            class="w-full h-full absolute inset-0 transform translate-y-1.5 translate-x-1.5 group-hover:translate-y-0 group-hover:translate-x-0 transition-all ease-out duration-200 rounded-xl bg-red-400"></span>
+                    <a href="#_" class="relative flex items-center justify-center w-full px-5 py-5 text-lg font-medium text-white rounded-xl group">
+                        <span class="w-full h-full absolute inset-0 transform translate-y-1.5 translate-x-1.5 group-hover:translate-y-0 group-hover:translate-x-0 transition-all ease-out duration-200 rounded-xl bg-red-400"></span>
                         <span class="absolute inset-0 w-full h-full border-2 border-gray-900 rounded-xl"></span>
                         <span class="relative">Choisissez ce forfait</span>
-                        <svg class="w-5 h-5 ml-2 transition-all duration-200 ease-out transform group-hover:translate-x-1"
-                            fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
+                        <svg class="w-5 h-5 ml-2 transition-all duration-200 ease-out transform group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                         </svg>
                     </a>
 
@@ -852,56 +714,37 @@
                     <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <span
-                                class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First
+                            <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First
                                 Slide</span>
-                            <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
-                                class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-                                alt="...">
+                            <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
-                                class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-                                alt="...">
+                            <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
                         </div>
                         <!-- Item 3 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
-                                class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
-                                alt="...">
+                            <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
                         </div>
                     </div>
                     <!-- Slider indicators -->
                     <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1"
-                            data-carousel-slide-to="0"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                            data-carousel-slide-to="1"></button>
-                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                            data-carousel-slide-to="2"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
                     </div>
                     <!-- Slider controls -->
-                    <button type="button"
-                        class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-                        data-carousel-prev>
-                        <span
-                            class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 19l-7-7 7-7"></path>
+                    <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+                        <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                             </svg>
                             <span class="hidden">Previous</span>
                         </span>
                     </button>
-                    <button type="button"
-                        class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
-                        data-carousel-next>
-                        <span
-                            class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+                        <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                                 </path>
                             </svg>
@@ -911,8 +754,7 @@
                 </div>
 
                 <p class="mt-5">
-                    Si vous voulez voir plus d'écoles et même trouver votre école, rendez-vous sur : <a
-                        class="text-blue-600 hover:underline" href="#" target="_blank">ecole.bgrfacile.com</a>.
+                    Si vous voulez voir plus d'écoles et même trouver votre école, rendez-vous sur : <a class="text-blue-600 hover:underline" href="#" target="_blank">ecole.bgrfacile.com</a>.
                 </p>
                 <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
             </div>

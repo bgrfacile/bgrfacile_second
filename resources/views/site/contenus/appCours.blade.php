@@ -26,6 +26,7 @@
     <meta name="robots" content="index" />
     <title>{{ config('app.name', 'bgrfacile') }}</title>
 
+
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="icon" sizes="16x16 32x32 64x64" href="{{ asset('assets/faviconit/favicon.ico') }}">
     <link rel="icon" type="image/png" sizes="196x196" href="{{ asset('assets/faviconit/favicon-192.png') }}">

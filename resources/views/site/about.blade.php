@@ -1,4 +1,5 @@
 <x-site-layout>
+    <x-slot name="title">à propos</x-slot>
     <x-slot name="header">
     </x-slot>
     <section class="max-w-7xl py-6 mx-auto px-1 sm:px-6 lg:px-8">
