@@ -59,11 +59,11 @@ Route::prefix('v1')->group(function () {
     Route::group([
         'middleware' => ['cors'],
     ], function () {
-        Route::get('/auth/me', [AuthController::class, 'me']);
+        Route::get('/auth/me', [App\Http\Controllers\APi\AuthController::class, 'me']);
         Route::get('users/{user}', [UserController::class, 'show']);
-        Route::post('/signin', [AuthController::class, 'login']);
-        Route::post('/signup', [AuthController::class, 'register']);
-        Route::post('/logout', [AuthController::class, 'logout']);
+        Route::post('/signin', [App\Http\Controllers\APi\AuthController::class, 'login']);
+        Route::post('/signup', [App\Http\Controllers\APi\AuthController::class, 'register']);
+        Route::post('/logout', [App\Http\Controllers\APi\AuthController::class, 'logout']);
 
         Route::get('/search/{query}', [SearchController::class, 'searchAll']);
 
