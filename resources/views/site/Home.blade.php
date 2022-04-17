@@ -1,13 +1,20 @@
 {{-- style="background-image: url(https://demo.gethugothemes.com/northendlab-light/images/banner/banner-bg.svg)"> --}}
 <x-site-layout>
 
+    <x-slot name="description">
+        Un apprentissage de marque et un pont vers la connaissance.
+        Ce site web est là pour vous permettre de trouver facilement du contenue
+        scolaire et éducatif propre aux contextes africain.
+    </x-slot>
+    <x-slot name="keywords">
+        apprentissage, un pont vers la connaissance, bgrfacile, bgrfacile.com,
+        site web, trouver facilement du contenue
+        scolaire, contenue éducatif, contextes africain, afrique, ecole,
+    </x-slot>
     <x-slot name="header">
     </x-slot>
-    <header
-        class="h-full md:h-[calc(100vh-80px)] w-full flex flex-col md:flex-row items-center justify-center bg-transparent dark:bg-gray-900 bg-cover bg-center bg-no-repeat"
-        style="background-color: #f5fcff;background-image: url({{ asset('assets/img/bg-header-homePage.svg') }})">
-        <div style="height: inherit"
-            class="relative w-full md:max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
+    <header class="h-full md:h-[calc(100vh-80px)] w-full flex flex-col md:flex-row items-center justify-center bg-transparent dark:bg-gray-900 bg-cover bg-center bg-no-repeat" style="background-color: #f5fcff;background-image: url({{ asset('assets/img/bg-header-homePage.svg') }})">
+        <div style="height: inherit" class="relative w-full md:max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center">
             <div class="flex flex-col w-full h-full justify-center pt-10 md:pt-0 px-4 mb-4 md:mb-0">
                 <h2 class="font-semibold text-3xl md:text-4xl text-gray-800 leading-normal">
                     {{ __('Un apprentissage de marque et un pont vers la connaissance.') }}
@@ -17,42 +24,27 @@
                     Plus de 1000 cours certifiés répartis en plus de 50 matières à votre disposition.
                 </p>
                 <div class="flex flex-col md:flex-row justify-start mt-6">
-                    <a class="w-full md:w-max bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold"
-                        href="{{ route('randomCours.page') }}">Lire son premier cours</a>
-                    <div class="relative mt-2 sm:mt-0" x-data="{ open: false }" @click.away="open = false"
-                        @close.stop="open = false">
-                        <a @click="open =! open"
-                            class="bg-gray-200 text-gray-700 w-full flex justify-between items-center rounded-2xl mx-0 md:mx-4 mt-2 md:mt-0 px-4 py-3 font-semibold  border-0"
-                            href="#">
+                    <a class="w-full md:w-max bg-blue-600 text-gray-100 hover:text-white hover:bg-blue-900 rounded-2xl px-4 py-3 font-semibold" href="{{ route('randomCours.page') }}">Lire son premier cours</a>
+                    <div class="relative mt-2 sm:mt-0" x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
+                        <a @click="open =! open" class="bg-gray-200 text-gray-700 w-full flex justify-between items-center rounded-2xl mx-0 md:mx-4 mt-2 md:mt-0 px-4 py-3 font-semibold  border-0" href="#">
                             Explorer
                             <x-svg-chevron class="ml-1" />
                         </a>
-                        <div x-show="open" x-transition:enter="transition ease-out duration-200"
-                            x-transition:enter-start="transform opacity-0 scale-95"
-                            x-transition:enter-end="transform opacity-100 scale-100"
-                            x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95" style="display: none;"
-                            @click="open = false" class="absolute z-10 ml-4 mt-2">
-                            <div
-                                class="bg-white p-4 text-gray-500 dark:bg-gray-700 rounded-lg grid grid-rows-4 shadow-lg overflow-hidden w-full">
-                                <a href="{{ route('cours.page') }}"
-                                    class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
+                        <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" style="display: none;" @click="open = false" class="absolute z-10 ml-4 mt-2">
+                            <div class="bg-white p-4 text-gray-500 dark:bg-gray-700 rounded-lg grid grid-rows-4 shadow-lg overflow-hidden w-full">
+                                <a href="{{ route('cours.page') }}" class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
                                     <x-svg-book-open class="mr-1 h-5 w-5" />
                                     <span class="text-base font-medium">Cours</span>
                                 </a>
-                                <a href="{{ route('exercices.page') }}"
-                                    class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
+                                <a href="{{ route('exercices.page') }}" class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
                                     <x-svg-exo class="mr-1 h-5 w-5" />
                                     <span class="text-base font-medium">Exercices</span>
                                 </a>
-                                <a href="{{ route('formation.page') }}"
-                                    class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
+                                <a href="{{ route('formation.page') }}" class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
                                     <x-svg-formation class="mr-1 h-5 w-5" />
                                     <span class="text-base font-medium">Formations</span>
                                 </a>
-                                <a href="{{ route('bonus.page') }}"
-                                    class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
+                                <a href="{{ route('bonus.page') }}" class="rounded-lg flex items-center dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 px-5 py-3">
                                     <x-svg-bonus class="mr-1 h-5 w-5" />
                                     <span class="text-base font-medium">Bonus</span>
                                 </a>
@@ -63,8 +55,7 @@
             </div>
             <div class="w-full h-full relative">
                 {{-- <div class="absolute inset-0 w-full h-full bg-white opacity-75"> --}}
-                <img class="absolute inset-0 w-full h-full object-contain overflow-hidden"
-                    src="{{ asset('assets/img/H01.png') }}" alt="étudiant entrain lire">
+                <img class="absolute inset-0 w-full h-full object-contain overflow-hidden" src="{{ asset('assets/img/H01.png') }}" alt="étudiant entrain lire">
                 {{-- </div> --}}
             </div>
         </div>
@@ -73,8 +64,7 @@
     <section class="h-80 bg-blue-300 flex items-center">
         <div class="w-10/12 mx-auto py-8 flex items-center">
             <img src="public/images/Graph.svg" alt="" class="object-contain">
-            <div
-                class="w-full h-min py-6 md:py-0 px-2 sm:px-0 md:h-32 flex flex-col justify-center items-center bg-white rounded-3xl shadow-lg">
+            <div class="w-full h-min py-6 md:py-0 px-2 sm:px-0 md:h-32 flex flex-col justify-center items-center bg-white rounded-3xl shadow-lg">
                 <div class="grid grid-rows-3 md:grid-rows-1 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
 
                     <x-count-model name="Cours" count="{{ $countCours }}">
@@ -109,22 +99,19 @@
                 site?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-5">
                 <div class="flex flex-col h-full bg-white rounded-md p-5 shadow-xl">
-                    <img src="{{ asset('assets/img/undraw_online_learning_re_qw08.svg') }}"
-                        alt="illustration de d'un apprenant qui lit un cours" class="h-fit w-fit object-cover">
+                    <img src="{{ asset('assets/img/undraw_online_learning_re_qw08.svg') }}" alt="illustration de d'un apprenant qui lit un cours" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Apprenants</h2>
                     <p class="flex-1">
                         Les élèves,les étudiants et les autodidactes, <strong class="font-semibold">bgrfacile</strong>
                         vous
                         offre la possibilité
                         de vous former et de vous exercer dans le domaine de votre choix.</p>
-                    <button
-                        class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
+                    <button class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
                         EN SAVOIR PLUS
                     </button>
                 </div>
                 <div class="flex flex-col h-full bg-neutral-700 text-gray-200  rounded-md p-5 shadow-xl">
-                    <img src="{{ asset('assets/img/undraw_podcast_re_wr88.svg') }}"
-                        alt="illustration de formateur qui enregistre un cour" class="h-fit w-fit object-cover">
+                    <img src="{{ asset('assets/img/undraw_podcast_re_wr88.svg') }}" alt="illustration de formateur qui enregistre un cour" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Formateurs</h2>
                     <p class="flex-1">
                         Toute personne compétente et capable de partager ses connaissances, via le site.<br>
@@ -132,14 +119,12 @@
                         offre donc la possibilité de créer et de publier des cours.<br>
                         Les formateurs pourront bénéficier d'une rémunération.
                     </p>
-                    <button
-                        class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
+                    <button class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
                         comment ça marche?
                     </button>
                 </div>
                 <div class="flex flex-col h-full bg-white rounded-md p-5 shadow-xl" shadow-lg>
-                    <img src="{{ asset('assets/img/undraw_preferences_popup_re_4qk0.svg') }}"
-                        alt="illustration de personne qui enregister une école" class="h-fit w-fit object-cover">
+                    <img src="{{ asset('assets/img/undraw_preferences_popup_re_4qk0.svg') }}" alt="illustration de personne qui enregister une école" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Ecoles en ligne</h2>
                     <p class="flex-1">
                         Vous êtes un établissement, un institut, un groupe scolaire, ou École supérieure ?
@@ -150,8 +135,7 @@
                         Il suffit juste de vous faire enregistrer afin de profiter des avantages et des différentes
                         fonctionnalités de nos services.
                     </p>
-                    <a href="{{ route('ecoleEnLigne.page') }}"
-                        class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
+                    <a href="{{ route('ecoleEnLigne.page') }}" class="w-full mt-8 mb-4 py-2 px-14 rounded-full bg-green-600 text-white tracking-widest hover:bg-green-500 transition duration-200">
                         comment ça marche ?
                     </a>
                 </div>
@@ -188,44 +172,38 @@
                                     <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                                         <div class="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
                                             <img src="{{ asset('assets/img/undraw_online_learning_re_qw08.svg') }}"
-                                                alt="" class="w-full h-full object-center object-cover">
-                                        </div>
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="{{ asset('assets/img/music.svg') }}" alt=""
-                                                class="w-full h-full object-center object-cover">
-                                        </div>
-                                    </div>
-                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="{{ asset('assets/img/videographe.svg') }}" alt=""
-                                                class="w-full h-full object-center object-cover">
-                                        </div>
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="{{ asset('assets/img/recording.svg') }}" alt=""
-                                                class="w-full h-full object-center object-cover">
-                                        </div>
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="{{ asset('assets/img/optimize_image.svg') }}" alt=""
-                                                class="w-full h-full object-center object-cover">
-                                        </div>
-                                    </div>
-                                    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="{{ asset('assets/img/video_files.svg') }}" alt=""
-                                                class="w-full h-full object-center object-cover">
-                                        </div>
-                                        <div class="w-44 h-64 rounded-lg overflow-hidden">
-                                            <img src="{{ asset('assets/img/questions.svg') }}" alt=""
-                                                class="w-full h-full object-center object-cover">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    alt="" class="w-full h-full object-center object-cover">
+    </div>
+    <div class="w-44 h-64 rounded-lg overflow-hidden">
+        <img src="{{ asset('assets/img/music.svg') }}" alt="" class="w-full h-full object-center object-cover">
+    </div>
+    </div>
+    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+        <div class="w-44 h-64 rounded-lg overflow-hidden">
+            <img src="{{ asset('assets/img/videographe.svg') }}" alt="" class="w-full h-full object-center object-cover">
         </div>
+        <div class="w-44 h-64 rounded-lg overflow-hidden">
+            <img src="{{ asset('assets/img/recording.svg') }}" alt="" class="w-full h-full object-center object-cover">
+        </div>
+        <div class="w-44 h-64 rounded-lg overflow-hidden">
+            <img src="{{ asset('assets/img/optimize_image.svg') }}" alt="" class="w-full h-full object-center object-cover">
+        </div>
+    </div>
+    <div class="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+        <div class="w-44 h-64 rounded-lg overflow-hidden">
+            <img src="{{ asset('assets/img/video_files.svg') }}" alt="" class="w-full h-full object-center object-cover">
+        </div>
+        <div class="w-44 h-64 rounded-lg overflow-hidden">
+            <img src="{{ asset('assets/img/questions.svg') }}" alt="" class="w-full h-full object-center object-cover">
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </div> --}}
 
     <section class="md:pt-12 headline">
@@ -233,8 +211,7 @@
             <div class="p-6 h-auto md:h-96 flex flex-col md:flex-row relative">
                 <div class="h-auto w-full flex justify-center items-center mb-6 md:mb-0">
                     <div class="sm:max-w-lg">
-                        <h4
-                            class="text-4xl sm:text-6xl font font-extrabold tracking-tight text-gray-900  dark:text-gray-200">
+                        <h4 class="text-4xl sm:text-6xl font font-extrabold tracking-tight text-gray-900  dark:text-gray-200">
                             A propos du contenu
                         </h4>
                         <p class="mt-4 text-xl text-gray-500">
@@ -252,15 +229,13 @@
                     <div class="swiper flex items-center justify-center w-full">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img class="w-full h-full rounded object-cover"
-                                    src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
+                                <img class="w-full h-full rounded object-cover" src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
                             </div>
                             <div class="swiper-slide">
                                 <x-svg-school class="w-full h-full rounded object-cover" />
                             </div>
                             <div class="swiper-slide">
-                                <img class="w-full max-h-full rounded object-cover"
-                                    src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
+                                <img class="w-full max-h-full rounded object-cover" src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
                             </div>
                         </div>
                     </div>
@@ -274,8 +249,7 @@
             <div class="w-full h-auto md:py-6 py-2 flex flex-col md:flex-row relative">
                 <div class="h-auto w-full flex justify-center items-center mb-6 md:mb-0">
                     <div>
-                        <h4
-                            class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
+                        <h4 class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
                             Bonus de bgrfacile</h4>
                         <p class="mt-3 text-gray-800 dark:text-gray-400">
                             Des Quizs, des podcasts et des jeux pour vous aider à mieux comprendre les
@@ -289,21 +263,20 @@
                             <div class="swiper-slide">
                                 <img class="w-full h-full rounded object-cover"
                                     src="{{ asset('assets/img/étudiant_revise.webp') }}" alt="étudiant entrain lire">
-                            </div>
-                            <div class="swiper-slide">
-                                <x-svg-school class="w-full h-full rounded object-cover" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="w-full max-h-full rounded object-cover"
-                                    src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-                <div class="h-8 md:80 w-8 md:w-80 absolute -z-10" style="top: -91px;left: -88px;">
-                    <x-svg-dots class="h-full w-full" />
-                </div>
             </div>
+            <div class="swiper-slide">
+                <x-svg-school class="w-full h-full rounded object-cover" />
+            </div>
+            <div class="swiper-slide">
+                <img class="w-full max-h-full rounded object-cover" src="{{ asset('assets/img/eleve_etudie.webp') }}" alt="étudiants qui étudient">
+            </div>
+        </div>
+        </div>
+        </div> --}}
+        <div class="h-8 md:80 w-8 md:w-80 absolute -z-10" style="top: -91px;left: -88px;">
+            <x-svg-dots class="h-full w-full" />
+        </div>
+        </div>
         </div>
     </section>
 
@@ -320,20 +293,19 @@
                     <p class="mt-2 text-gray-800 dark:text-gray-400">
                         Bgrfacile met à disposition des apprenants une application android idéale pour visiter
                         l'ensemble des contenus du site avec des interfaces simples et intuitives. <br>
-                    <div class="mt-2 flex">
-                        <a href="https://play.google.com/store/apps/details?id=com.bgrfacile.bgrfacile&hl=fr&gl=US"
-                            target="_blank">
-                            <div class="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center">
-                                <div class="mr-3">
-                                    <x-svg-playstore class="w-8" />
+                        <div class="mt-2 flex">
+                            <a href="https://play.google.com/store/apps/details?id=com.bgrfacile.bgrfacile&hl=fr&gl=US" target="_blank">
+                                <div class="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center">
+                                    <div class="mr-3">
+                                        <x-svg-playstore class="w-8" />
+                                    </div>
+                                    <div>
+                                        <div class="text-xs">OBTENEZ-LE SUR</div>
+                                        <div class="text-xl font-semibold font-sans -mt-1">Google Play</div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <div class="text-xs">OBTENEZ-LE SUR</div>
-                                    <div class="text-xl font-semibold font-sans -mt-1">Google Play</div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
                 </div>
             </div>
         </div>
@@ -360,17 +332,17 @@
                                 </p>
                                 <div class="donate-link">
                                     <a href="{{ route('donation.page') }}" class="btn-paypal" target="_blank"
-                                        style="margin-bottom: 10px">
-                                        <i class="fa fa-lock donate-padlock-icon"></i> <span>Faire un don</span>
-                                    </a>
-                                    <img src="{{ asset('assets/donation.webp') }}" class="donate-image" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    style="margin-bottom: 10px">
+    <i class="fa fa-lock donate-padlock-icon"></i> <span>Faire un don</span>
+    </a>
+    <img src="{{ asset('assets/donation.webp') }}" class="donate-image" />
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </section> --}}
 
     <section class="bg-gradient-to-r from-cyan-500 to-blue-500 mt-10 headline">

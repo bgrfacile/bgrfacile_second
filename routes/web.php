@@ -70,7 +70,7 @@ Route::view('/profile/{path?}', 'site.contenus.appCours')
 
 Route::view('/signin/{path?}', 'site.contenus.appCours')
     ->where('path', '.*')
-    ->name('singin.page');
+    ->name('signin.page');
 Route::view('/signup/{path?}', 'site.contenus.appCours')
     ->where('path', '.*')
     ->name('signup.page');
