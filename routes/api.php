@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\APi\AuthController;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CommentsController;
 use App\Http\Controllers\Api\CoursController;
 use App\Http\Controllers\Api\CycleController;
