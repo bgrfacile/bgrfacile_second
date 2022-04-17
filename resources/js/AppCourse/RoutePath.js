@@ -11,7 +11,7 @@ import ScolaireCours from './pages/Cours/ScolaireCours';
 import Followers from './pages/profile/followers';
 import EditProfile from './pages/profile/EditProfile';
 import Infos from './pages/profile/Infos';
-import MyCours from './pages/profile/MyCours';
+import MyCours from './pages/profile/createCours/MyCours';
 import MyExos from './pages/profile/MyExos';
 import Favoris from './pages/profile/Faroris/Favoris';
 import FavorisCours from './pages/profile/Faroris/FavorisCours';
@@ -34,6 +34,7 @@ import CreateSolution from "./pages/profile/exercices/CreateSolution";
 import LastCours from "./pages/Cours/LastCours";
 import ListeExercices from "./pages/Exercices/ListeExercices";
 import MonEcole from "./pages/profile/monEcole/monEcole";
+import EditCours from "./pages/profile/createCours/editCours";
 
 
 
@@ -78,9 +79,12 @@ export default function RoutePath() {
                     <Route element={<RequireAuth><Profile /></RequireAuth>} >
                         <Route index path="/profile/*" element={<RequireAuth><Infos /></RequireAuth>} />
                         {/* <Route path="/profile/infos" element={<Infos />} /> */}
-                        <Route path="/profile/ecole-en-ligne" element={<RequireAuth><EcoleEnLigne /></RequireAuth>} />
+                        {/* <Route path="/profile/ecole-en-ligne" element={<RequireAuth><EcoleEnLigne /></RequireAuth>} /> */}
+
                         <Route path="/profile/my-cours" element={<RequireAuth><MyCours /></RequireAuth>} />
                         <Route path="/profile/my-cours/create" element={<RequireAuth><CreateCoursIndex /></RequireAuth>} />
+
+                        <Route path="/profile/my-cours/edit-:id" element={<RequireAuth><EditCours /></RequireAuth>} />
                         {/* <Route path="/profile/my-cours/create/image" element={<RequireAuth><CreateCoursImage /></RequireAuth>} /> */}
                         {/* <Route path="/profile/my-cours/create/video" element={<RequireAuth><CreateCoursVideo /></RequireAuth>} /> */}
                         {/* <Route path="/profile/my-cours/create/audio" element={<RequireAuth><CreateCoursAudio /></RequireAuth>} /> */}
