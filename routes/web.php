@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\MatiereController;
 use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\APi\AuthController;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Site\AboutController;
 use App\Http\Controllers\Site\ContactController;
 use App\Http\Controllers\Site\CoursController;
