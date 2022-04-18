@@ -6,44 +6,38 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\User\UserShowResource;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
 
     public function updateUser(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users',
+        $request->validate([
+            'email' => 'required|email|exists:users,email',
             'name' => 'required|string|max:255',
-            'user_id' => 'required',
-            'birthday' => 'date',
-            'country' => 'string',
-            'gender' => 'string',
+            // 'birthday' => 'required',
+            'country' => 'required',
+            'gender' => 'required|string',
             'numberPhone' => 'string',
         ]);
-        $user = User::findOrFail($request->user_id);
-        if ($validator->fails()) {
-            $user->update([
-                'email' => $request->email,
-                'name' => $request->name,
-                'birthday' => $request->birthday,
-                'country' => $request->country,
-                'gender' => $request->gender['value']
+        $user = User::findOrFail(Auth::user()->id);
+        if ($request->has('numberPhone') && $request->numberPhone != null) {
+            $user->phone()->create([
+                'number_phone' => $request->numberPhone
             ]);
-            if ($request->has('numberPhone') && $request->numberPhone != null) {
-                $user->phone()->create([
-                    'number_phone' => $request->numberPhone
-                ]);
-            }
-            $user->save();
-        } else {
-            return response([
-                'message' => $validator->validate(),
-            ], 404);
         }
+        $user->update([
+            'email' => $request->email,
+            'name' => $request->name,
+            'birthday' => $request->birthday == null ? null : Carbon::parse($request->birthday)->format('Y-m-d'),
+            'country' => is_array($request->country) ? $request->country["label"] : $request->country,
+            'gender' => $request->gender == 'femme' ? 'F' : 'M'
+        ]);
+        $user->save();
 
         return response([
             'message' => 'user updated successfully',
@@ -53,19 +47,18 @@ class UserController extends Controller
 
     public function updateImage(Request $request)
     {
-        $request->validate(
-            [
-                'user_id' => 'required|exists:users,id',
-                'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]
-        );
-        $user = User::find($request->user_id);
-
+        $request->validate([
+            // 'user_id' => 'required|exists:users,id',
+            'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        $user = User::findOrFail(Auth::user()->id);
         if ($request->hasFile('file')) {
-            unlink(public_path($user->url_image));
+            if ($user->url_image != null) {
+                unlink(public_path($user->url_image));
+            }
             $imageName = time() . '_' . uniqid() . '.' . $request->file('file')->getClientOriginalExtension();
             // $imageName = time() . '_' . Hash::make($request->file('file')->getClientOriginalName()).'.'.$request->file('file')->getClientOriginalExtension();
-            $user->url_image = "/storage/" . $request->file('file')->storeAs('profile_images', $imageName, 'public');
+            $user->url_image = "/storage/" . $request->file('file')->storeAs('images_profile_utilisateurs', $imageName, 'public');
         }
         $user->save();
         return response([

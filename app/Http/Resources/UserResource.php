@@ -25,10 +25,7 @@ class UserResource extends JsonResource
             'lastname' => $this->lastname,
             'telephone' => $this->phone != null ? $this->phone->number_phone : null,
             'age' => "",
-            'gender' => [
-                'label' => $this->gender == 'M' ? 'homme' : 'femme',
-                'value' => $this->gender,
-            ],
+            'gender' => $this->gender != null ? $this->gender : null,
             'email' => $this->email,
             'country' => $this->country,
             'url_image' => $this->url_image == null ? "https://ui-avatars.com/api/?name=$slug&background=0D8ABC&color=fff" : url($this->url_image),

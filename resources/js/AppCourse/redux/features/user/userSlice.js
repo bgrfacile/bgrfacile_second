@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import client from '../../../../api/client';
+import { updateInfoUser, updateProfileImage } from './functions';
 
 
 export const checkConnect = createAsyncThunk(
@@ -58,14 +59,14 @@ const initialValue = {
         birthday: '',
         telephone: '',
         age: '',
-        gender: {},
+        gender: '',
         email: '',
         country: '',
         url_image: '',
         roles: [
             {
                 id: null,
-                name: ""
+                name: ''
             }
         ],
         likes_cours: [],
@@ -83,9 +84,9 @@ export const userSlice = createSlice({
     name: 'user',
     initialState: initialValue,
     reducers: {
-        updateProfileImage: (state, action) => {
-            state.profile.url_image = action.payload
-        },
+        // updateProfileImage: (state, action) => {
+        //     state.profile.url_image = action.payload
+        // },
         logout: (state) => {
             state = initialValue
         }
@@ -142,10 +143,22 @@ export const userSlice = createSlice({
             state.error = true;
             state.errorMessage = action.payload.message;
             state.errors = action.payload.errors;
-        }
+        },
+
+        [updateProfileImage.pending]: (state, action) => { },
+        [updateProfileImage.fulfilled]: (state, action) => {
+            state.profile.url_image = action.payload.data.user.url_image;
+        },
+        [updateProfileImage.rejected]: (state, action) => { },
+
+        [updateInfoUser.pending]: (state, action) => { },
+        [updateInfoUser.fulfilled]: (state, action) => {
+            state.profile = action.payload.data.user;
+        },
+        [updateInfoUser.rejected]: (state, action) => { }
     }
 })
 
-export const { updateProfileImage, logout } = userSlice.actions
+export const { logout } = userSlice.actions
 
 export default userSlice.reducer

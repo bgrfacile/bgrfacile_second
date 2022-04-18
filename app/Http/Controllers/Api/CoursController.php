@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CoursController extends Controller
 {
-    public function randomCours():JsonResource
+    public function randomCours(): JsonResource
     {
         $cours = Cours::inRandomOrder()->first();
         return new CoursResource($cours);
@@ -110,7 +110,7 @@ class CoursController extends Controller
         $coverImage = null;
         if ($request->hasFile('coverImage')) {
             $imageName = time() . '_' . $request->file('coverImage')->getClientOriginalName();
-            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('cover_cours', $imageName, 'public');
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('images_contenus', $imageName, 'public');
         }
         $cours = $user->cours()->create([
             'title' => $request->title,
@@ -120,7 +120,8 @@ class CoursController extends Controller
         ]);
         $content = null;
         if ($request->hasFile('content')) {
-            $content = "/storage/" . $request->file('content')->storeAs('content_pdf_cours', $request->file('content')->getClientOriginalName(), 'public');
+            $nameContent = time() . '_' . $request->file('content')->getClientOriginalName();
+            $content = "/storage/" . $request->file('content')->storeAs('contenus_pdf', $nameContent, 'public');
         }
         $cours->contents()->create([
             'content' => $content,
@@ -136,7 +137,7 @@ class CoursController extends Controller
         $coverImage = null;
         if ($request->hasFile('coverImage')) {
             $imageName = time() . '_' . $request->file('coverImage')->getClientOriginalName();
-            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('cover_cours', $imageName, 'public');
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('images_contenus', $imageName, 'public');
         }
         $cours = $user->cours()->create([
             'title' => $request->title,

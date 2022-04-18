@@ -9,8 +9,8 @@ import CoursRoute from './pages/Cours/CoursRoute';
 import Profile from './pages/profile/profile';
 import ScolaireCours from './pages/Cours/ScolaireCours';
 import Followers from './pages/profile/followers';
-import EditProfile from './pages/profile/EditProfile';
-import Infos from './pages/profile/Infos';
+import EditProfile from './pages/profile/editProfile/EditProfile';
+import Infos from './pages/profile/informationPersonnel/Infos';
 import MyCours from './pages/profile/createCours/MyCours';
 import MyExos from './pages/profile/MyExos';
 import Favoris from './pages/profile/Faroris/Favoris';
@@ -18,7 +18,6 @@ import FavorisCours from './pages/profile/Faroris/FavorisCours';
 import FavorisExcerciceSolution from './pages/profile/Faroris/FavorisExcerciceSolution';
 import DevenirFormateur from './pages/Formateur/DevenirFormateur';
 import DevenirPromoteur from './pages/Promoteur/DevenirPromoteur';
-import EcoleEnLigne from './pages/profile/EcoleEnLigne';
 import QuizzIndex from './pages/bonus/quiz/QuizzIndex';
 import PodcastIndex from './pages/bonus/podcast/PodcastIndex';
 import Guest from './Layouts/guest';
@@ -78,8 +77,6 @@ export default function RoutePath() {
 
                     <Route element={<RequireAuth><Profile /></RequireAuth>} >
                         <Route index path="/profile/*" element={<RequireAuth><Infos /></RequireAuth>} />
-                        {/* <Route path="/profile/infos" element={<Infos />} /> */}
-                        {/* <Route path="/profile/ecole-en-ligne" element={<RequireAuth><EcoleEnLigne /></RequireAuth>} /> */}
 
                         <Route path="/profile/my-cours" element={<RequireAuth><MyCours /></RequireAuth>} />
                         <Route path="/profile/my-cours/create" element={<RequireAuth><CreateCoursIndex /></RequireAuth>} />
