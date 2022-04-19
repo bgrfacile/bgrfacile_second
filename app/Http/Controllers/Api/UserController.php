@@ -19,10 +19,11 @@ class UserController extends Controller
         $request->validate([
             'email' => 'required|email|exists:users,email',
             'name' => 'required|string|max:255',
+            'bio' => 'nullable|string',
             // 'birthday' => 'required',
-            'country' => 'required',
-            'gender' => 'required|string',
-            'numberPhone' => 'string',
+            // 'country' => 'required',
+            'gender' => 'nullable|string',
+            // 'numberPhone' => 'string',
         ]);
         $user = User::findOrFail(Auth::user()->id);
         if ($request->has('numberPhone') && $request->numberPhone != null) {
@@ -33,6 +34,7 @@ class UserController extends Controller
         $user->update([
             'email' => $request->email,
             'name' => $request->name,
+            'bio' => $request->bio,
             'birthday' => $request->birthday == null ? null : Carbon::parse($request->birthday)->format('Y-m-d'),
             'country' => is_array($request->country) ? $request->country["label"] : $request->country,
             'gender' => $request->gender == 'femme' ? 'F' : 'M'
@@ -71,11 +73,10 @@ class UserController extends Controller
     {
         $request->validate(
             [
-                'user_id' => 'required|exists:users,id',
                 'password' => 'required|string|min:6|confirmed',
             ]
         );
-        $user = User::find($request->user_id);
+        $user = User::find(Auth::user()->id);
         $user->password = Hash::make($request->password);
         $user->save();
         return response([

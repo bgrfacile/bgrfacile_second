@@ -32,6 +32,7 @@ Route::prefix('v1')->group(function () {
     ], function () {
         Route::put('/user/update', [UserController::class, 'updateUser']);
         Route::post('/user/image/update', [UserController::class, 'updateImage']);
+        Route::post('/updateMotDePasse', [UserController::class, 'updatePassword']);
         Route::post("/users/{user_id}/follow", [FollowController::class, 'follow']);
         Route::post("/users/{user_id}/unfollow", [FollowController::class, 'unfollow']);
 

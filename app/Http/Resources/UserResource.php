@@ -20,11 +20,14 @@ class UserResource extends JsonResource
         $slug = Str::slug($this->name, '-');
         return [
             'user_id' => $this->id,
+            'email_verified_at' => $this->email_verified_at == null ? false : true,
+            'has_password' => $this->password == null ? false : true,
             'user_name' => $this->name,
             'firstname' => $this->firstname,
             'lastname' => $this->lastname,
             'telephone' => $this->phone != null ? $this->phone->number_phone : null,
             'age' => "",
+            'bio' => $this->bio != null ? $this->bio : null,
             'gender' => $this->gender != null ? $this->gender : null,
             'email' => $this->email,
             'country' => $this->country,

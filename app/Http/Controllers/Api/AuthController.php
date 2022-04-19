@@ -88,7 +88,7 @@ class AuthController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'url_image' => $user->avatar,
-                'password' => Hash::make($user->email),
+                // 'password' => Hash::make($user->email),
                 'email_verified_at' => Carbon::now(),
             ]);
             User::count() <= 1 ?

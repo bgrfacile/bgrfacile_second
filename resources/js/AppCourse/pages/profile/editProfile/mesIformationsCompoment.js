@@ -7,13 +7,14 @@ import { updateInfoUser } from '../../../redux/features/user/functions';
 
 export default function MesIformationsCompoment() {
     const dispatch = useDispatch();
-    const { user_name, gender, email, country, telephone } = useSelector(state => state.user.profile);
+    const { user_name, gender, email, country, telephone, bio } = useSelector(state => state.user.profile);
     const [userName, setUserName] = useState(user_name)
     const [adresseEmail, setAdresseEmail] = useState(email)
     const [pays, setPays] = useState(country)
     const [telephoneNumber, setTelephoneNumber] = useState(telephone == undefined ? '' : telephone)
     const [dateNaissance, setDateNaissance] = useState(null)
     const [sexe, setSexe] = useState(gender == null ? '' : gender)
+    const [myBio, setMyBio] = useState(bio == null ? '' : bio);
     const [isLoading, setIsLoading] = useState(false);
     const handleSubmitInfo = async (e) => {
         e.preventDefault();
@@ -24,21 +25,21 @@ export default function MesIformationsCompoment() {
             country: pays,
             numberPhone: telephoneNumber,
             gender: sexe,
+            bio: myBio
         }
         console.log('datas', datas);
         setIsLoading(true)
         dispatch(updateInfoUser(datas))
             .then((res) => {
                 setIsLoading(false)
-                console.log('res', res);
             }).catch(error => {
                 console.log('error', error);
             });
     }
     return (<>
-        <div className="md:grid md:grid-cols-3 md:gap-6">
-            <div className="md:col-span-1">
-                <div className="px-4 sm:px-0">
+        <div className="md:grid md:grid-cols-3 md:gap-6 mb-3">
+            <div className="px-4 mt-5 md:mt-0 md:col-span-3">
+                <div className="sm:px-0 mb-2">
                     <div className="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
@@ -47,12 +48,7 @@ export default function MesIformationsCompoment() {
                             Informations personnelles
                         </h3>
                     </div>
-                    <p className="mt-1 text-sm text-gray-600">
-                        Les informations personnelles que vous nous fournissez sont nécessaires pour vous connecter à votre compte et pour vous envoyer des notifications.
-                    </p>
                 </div>
-            </div>
-            <div className="mt-5 md:mt-0 md:col-span-2">
                 <form onSubmit={handleSubmitInfo}>
                     <div className="shadow overflow-hidden sm:rounded-md">
                         <div className="px-4 py-5 bg-white sm:p-6">
@@ -71,7 +67,23 @@ export default function MesIformationsCompoment() {
                                         onChange={(e) => setAdresseEmail(e.target.value)}
                                         className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
                                 </div>
-
+                                <div className="col-span-6">
+                                    <label htmlFor="about" className="block text-sm font-medium text-gray-700"> Bio </label>
+                                    <div className="mt-1">
+                                        <textarea
+                                            id="about"
+                                            value={myBio}
+                                            name="about"
+                                            rows="3"
+                                            onChange={(e) => setMyBio(e.target.value)}
+                                            className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
+                                            placeholder="parlez-nous de vous" />
+                                    </div>
+                                    <p className="mt-2 text-sm text-gray-500">
+                                        <span className="font-medium">Note:</span>
+                                        ceci sera visible par les autres utilisateurs.
+                                    </p>
+                                </div>
                                 <div className="col-span-6">
                                     <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                                         nom d'utilisateur
@@ -157,90 +169,4 @@ export default function MesIformationsCompoment() {
         </div>
     </>)
 }
-{/* <div className='mb-4 md:mb-8'>
-            <div className='flex items-center mb-3 text-gray-700'>
-                <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                </svg>
-                <h3 className='font-semibold text-xl'>Mes informations</h3>
-            </div>
-            <form onSubmit={handleSubmitInfo} className='flex flex-col w-full rounded-sm shadow bg-white p-3'>
-                <div className='flex flex-wrap items-center'>
-                    <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                        <label htmlhtmlFor="email" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">email</label>
-                        <input
-                            onChange={(e) => setEmail(e.target.value)}
-                            value={email}
-                            type="email"
-                            name='email'
-                            disabled
-                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            required />
-                    </div>
 
-                    <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                        <label htmlhtmlFor="username" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Nom d'utilisateur</label>
-                        <input
-                            name='name'
-                            onChange={(e) => setName(e.target.value)}
-                            value={name}
-                            type="text"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-                    </div>
-
-                    <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                        <label htmlhtmlFor="age" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Date de naissance</label>
-                        <ReactDatePicker
-                            className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white'
-                            selected={startDate}
-                            onChange={(date) => setStartDate(date)} />
-                    </div>
-
-                    <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                        <label htmlhtmlFor="country" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Nationnalité</label>
-                        <input
-                            id='country'
-                            name='country'
-                            onChange={(e) => setCountry(e.target.value)}
-                            value={country}
-                            type="text"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
-                    </div>
-
-                    <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                        <label htmlhtmlFor="genre" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Genre</label>
-                        <Select
-                            value={gender}
-                            onChange={(e) => setGender(e)}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            options={options} />
-                    </div>
-
-                    <div className='xl:w-1/3 md:w-1/2 px-2 mb-2'>
-                        <label htmlhtmlFor="phone" className="text-sm font-medium uppercase text-gray-900 block mb-2 dark:text-gray-300">Numéro de téléphone</label>
-                        <PhoneInput
-                            defaultCountry='CG'
-                            placeholder="Enter phone number"
-                            value={numberPhone}
-                            onChange={(e) => setNumberPhone(e)}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
-                    </div>
-                </div>
-                <div className='w-full mt-3'>
-                    {loading ?
-                        <button
-                            type="submit"
-                            disabled
-                            className="flex items-center ml-auto bg-blue-600 rounded-lg px-4 py-2 text-lg text-gray-100 tracking-wide font-semibold font-sans">
-                            <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24"><path d="M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10S2 17.5 2 12S6.5 2 12 2m0 2c-4.42 0-8 3.58-8 8s3.58 8 8 8s8-3.58 8-8s-3.58-8-8-8m0 1c1.93 0 3.68.78 4.95 2.05L12 12V5z" fill="currentColor"></path></svg>
-                            Modifier
-                        </button> :
-                        <button
-                            type="submit"
-                            className="ml-auto block bg-blue-600 rounded-lg px-4 py-2 text-lg text-gray-100 tracking-wide font-semibold font-sans">
-                            Modifier
-                        </button>}
-
-                </div>
-            </form>
-        </div> */}

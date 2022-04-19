@@ -1,6 +1,21 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import client from '../../../../api/client';
 
+export const updateMotDePasse = createAsyncThunk(
+    "user/updateMotDePasse",
+    async (payload, { rejectWithValue }) => {
+        try {
+            const res = await client.post(`/updateMotDePasse`, payload)
+            return { data: res.data };
+        } catch (err) {
+            if (!err.response) {
+                throw err
+            }
+            return rejectWithValue(err.response.data)
+        }
+    }
+);
+
 export const updateInfoUser = createAsyncThunk(
     "user/updateInfoUser",
     async (payload, { rejectWithValue }) => {

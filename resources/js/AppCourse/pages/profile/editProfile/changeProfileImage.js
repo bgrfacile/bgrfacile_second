@@ -28,8 +28,8 @@ export default function ChangeProfileImage() {
     }
 
     return (<>
-        <div className="md:grid md:grid-cols-3 md:gap-6">
-            <div className="md:col-span-1">
+        <div className="md:grid md:grid-cols-3 md:gap-6 mb-3">
+            <div className="px-4 mt-5 md:mt-0 md:col-span-3">
                 <div className="px-4 sm:px-0">
                     <div className="flex items-center">
                         <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24"><path fill="currentColor" d="m21.737 3.751l-2.42-2.42a1 1 0 0 0-1.414 0l-4.58 4.58a1 1 0 0 0-.293.707v2.42a1 1 0 0 0 1 1h2.42a1 1 0 0 0 .707-.293l4.58-4.58a1 1 0 0 0 0-1.414Zm-5.7 4.287H15.03V7.032l3.58-3.58l1.006 1.006ZM19 11a1 1 0 0 0-1 1v2.392l-1.48-1.48a2.78 2.78 0 0 0-3.929 0l-.698.697l-2.486-2.486a2.777 2.777 0 0 0-3.924 0L4 12.606V7a1.001 1.001 0 0 1 1-1h6a1 1 0 0 0 0-2H5a3.003 3.003 0 0 0-3 3v12a3.003 3.003 0 0 0 3 3h12a3.003 3.003 0 0 0 3-3v-7a1 1 0 0 0-1-1ZM5 20a1.001 1.001 0 0 1-1-1v-3.566l2.897-2.897a.8.8 0 0 1 1.096 0l3.168 3.167c.009.01.012.022.02.03L15.448 20Zm13-1a.971.971 0 0 1-.179.537l-4.514-4.514l.698-.698a.78.78 0 0 1 1.1 0L18 17.22Z"></path></svg>
@@ -37,17 +37,8 @@ export default function ChangeProfileImage() {
                             Image de profile
                         </h3>
                     </div>
-                    <p className="mt-1 text-sm text-gray-600">
-                        Changer l'image de profile
-                    </p>
                 </div>
-            </div>
-            <div className="mt-5 md:mt-0 md:col-span-2">
                 <form className='mb-4' encType='multipart/form-data' onSubmit={handleSubmitImage}>
-                    <span
-                        className="block text-sm md:text-lg lg:text-2xl font-semibold text-gray-700">
-                        Photo
-                    </span>
                     <div className="mt-1 flex items-center">
                         <span className="inline-block h-16 w-16 rounded-full overflow-hidden bg-gray-100">
                             {imagePreviewUrl === '' ?
@@ -56,7 +47,7 @@ export default function ChangeProfileImage() {
                                 <img className="h-full w-full object-cover rounded-full overflow-hidden border-2 border-separate" src={imagePreviewUrl} alt="avatar" />
                             }
                         </span>
-                        <div className='ml-5 flex items-center'>
+                        <div className='ml-5 flex flex-wrap items-center'>
                             <input
                                 id='coverImage'
                                 name='coverImage'
@@ -65,8 +56,8 @@ export default function ChangeProfileImage() {
                                 onChange={handleChangeImage}
                                 accept="image/*" />
                             <label htmlFor='coverImage'
-                                className='cursor-pointer text-gray-700 text-sm ml-2  bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm leading-4 font-medium  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
-                                charger l'image
+                                className='min-w-max cursor-pointer text-gray-700 text-sm ml-2  bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm leading-4 font-medium  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'>
+                                changer l'image
                             </label>
                             {
                                 imagePreviewUrl !== '' &&

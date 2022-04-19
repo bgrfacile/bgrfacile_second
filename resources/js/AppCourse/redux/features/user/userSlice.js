@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import client from '../../../../api/client';
-import { updateInfoUser, updateProfileImage } from './functions';
+import { updateInfoUser, updateMotDePasse, updateProfileImage } from './functions';
 
 
 export const checkConnect = createAsyncThunk(
@@ -53,6 +53,9 @@ export const checkRegister = createAsyncThunk(
 const initialValue = {
     profile: {
         user_id: null,
+        has_password: false,
+        email_verified_at: null,
+        bio: null,
         user_name: '',
         firstName: '',
         lastName: '',
@@ -155,7 +158,14 @@ export const userSlice = createSlice({
         [updateInfoUser.fulfilled]: (state, action) => {
             state.profile = action.payload.data.user;
         },
-        [updateInfoUser.rejected]: (state, action) => { }
+        [updateInfoUser.rejected]: (state, action) => { },
+
+
+        [updateMotDePasse.pending]: (state, action) => { },
+        [updateMotDePasse.fulfilled]: (state, action) => {
+            state.profile = action.payload.data.user;
+        },
+        [updateMotDePasse.rejected]: (state, action) => { }
     }
 })
 
