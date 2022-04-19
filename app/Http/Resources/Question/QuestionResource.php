@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Question;
 
+use App\Http\Resources\Answers\AnswersResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class AnswersResource extends JsonResource
+class QuestionResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +17,10 @@ class AnswersResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'answer' => $this->answer,
-            'is_correct' => $this->is_correct == 1 ? true : false,
+            'body' => $this->body,
+            'media' => $this->media,
+            'media_type' => $this->media_type,
+            'answers' => AnswersResource::collection($this->answers),
         ];
     }
 }

@@ -19,6 +19,7 @@ class CreatePhonesTable extends Migration
             $table->integer('phoneable_id');
             $table->string('phoneable_type');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -1,56 +1,34 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import client from "../../../../api/client";
-
-export const getInfoUser = createAsyncThunk(
-    "userProfile/getInfoUser",
-    async (user_id) => {
-        const resultat = await client.get(`/users/${user_id}`)
-            .then(res => {
-                return res.data;
-            })
-            .catch(err => {
-                return err.data;
-            });
-        return resultat;
-    }
-);
-export const followUser = createAsyncThunk(
-    "userProfile/followUser",
-    async (user_id) => {
-        const res = await client.post(`/users/${user_id}/follow`, { user_id });
-        return { user: res.data };
-    }
-);
-export const unfollowUser = createAsyncThunk(
-    "userProfile/unfollowUser",
-    async (user_id) => {
-        const res = await client.post(`/users/${user_id}/unfollow`, { user_id });
-        return { user: res.data };
-    }
-);
+import { createSlice } from "@reduxjs/toolkit";
+import {
+    getInfoUser,
+    unfollowUser
+} from './functions';
 
 const userProfileSlice = createSlice({
     name: 'userProfile',
     initialState: {
         profile: {
             user_id: null,
-            user_name: '',
+            pseudo: '',
             firstName: '',
             lastName: '',
-            birthday: '',
             telephone: '',
-            age: '',
+            bio: '',
             gender: '',
             email: '',
+            country: '',
             url_image: '',
+            birthday: '',
+            createdAt: '',
         },
-        isLoading: false,
-        cours: [],
         is_following: false,
+        is_followers: false,
+        cours: [],
+        exercices: [],
+        isLoading: false,
         errors: null,
     },
-    reducers: {
-    },
+    reducers: {},
     extraReducers: {
         [getInfoUser.pending]: (state, action) => {
             state.isLoading = true;
@@ -68,5 +46,5 @@ const userProfileSlice = createSlice({
     },
 });
 
-// export const {  } = cyclesSlices.actions;
+export const { } = userProfileSlice.actions;
 export default userProfileSlice.reducer;

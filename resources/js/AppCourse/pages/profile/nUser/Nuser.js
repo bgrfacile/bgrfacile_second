@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
-import client from '../../../../api/client';
 import CardItemCours from '../../../components/Cards/CardItemCours';
-import { followUser, getInfoUser, unfollowUser } from '../../../redux/features/user/userProfileSlice';
+import { followUser, getInfoUser, unfollowUser } from '../../../redux/features/user/functions';
 import Empty from '../../notFound/Empty';
 import Loading from '../../notFound/Loading';
 import ButtonDirection from '../../../components/Button/ButtonDirection';
@@ -36,7 +35,7 @@ export default function Nuser() {
                     </div>
                     <div className="flex flex-wrap justify-between items-center">
                         <div className="min-w-max px-4 py-5 sm:px-6">
-                            <h3 className="text-lg leading-6 font-medium text-gray-900">{profile.user_name}</h3>
+                            <h3 className="text-lg leading-6 font-medium text-gray-900">{profile.pseudo}</h3>
                             {
                                 is_following ?
                                     <button onClick={handleUnFollow(profile.user_id)} className="min-w-max bg-gray-200 font-bold text-md rounded-full py-1 px-4 mt-1 max-w-2xl text-sm text-gray-500 flex justify-center items-center">
@@ -53,14 +52,14 @@ export default function Nuser() {
                         <div className='min-w-max px-4 py-5 sm:px-6' >
                             <img className="h-20 w-20 object-cover rounded-full"
                                 src={profile.url_image}
-                                alt={profile.user_name} />
+                                alt={profile.pseudo} />
                         </div>
                     </div>
                     <div className="border-t border-gray-200 flex flex-col">
                         <dl>
                             <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                 <dt className="text-sm font-medium text-gray-500">Nom Complete</dt>
-                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{profile.user_name}</dd>
+                                <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">{profile.pseudo}</dd>
                             </div>
                             {/* <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                 <dt className="text-sm font-medium text-gray-500">Profession</dt>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCoursByCycle, getCoursByLevel, getCoursByMatiere } from "../../redux/features/cours/coursSlice";
+import { getCoursByCycle, getCoursByLevel, getCoursByMatiere } from "../../redux/features/cours/functions";
 import CardItemCours from "../../components/Cards/CardItemCours";
 import { useParams } from "react-router-dom";
 import Loading from "../notFound/Loading";

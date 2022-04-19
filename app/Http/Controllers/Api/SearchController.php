@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CoursResource;
-use App\Http\Resources\Exercice\CustumExerciceResource;
+use App\Http\Resources\Cours\CoursResource;
+use App\Http\Resources\Exercice\ExerciceFullResource;
 use App\Http\Resources\Solution\SolutionResource;
 use App\Models\Cours;
 use App\Models\Exercice;
@@ -41,7 +41,7 @@ class SearchController extends Controller
             ->where('title', 'like', '%' . $query . '%')
             ->orWhere('description', 'like', '%' . $query . '%')
             ->get()->reverse();
-        return CustumExerciceResource::collection($exercices);
+        return ExerciceFullResource::collection($exercices);
     }
 
     private function searchSolutions($query)

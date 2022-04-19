@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CycleResource;
+use App\Http\Resources\Cycle\CycleResource;
 use App\Http\Resources\Level\LevelSimpleResource;
 use App\Models\Cycle;
 use App\Models\Level;
@@ -54,6 +55,7 @@ class CycleController extends Controller
 
         Cycle::create([
             'name' => $request->name,
+            'slug' => Str::slug($request->name),
             'diplome' => $request->diplome
         ]);
 
@@ -103,6 +105,7 @@ class CycleController extends Controller
         ]);
         $cycle = Cycle::findOrFail($id);
         $cycle->name = $request->name;
+        $cycle->slug = Str::slug($request->name);
         $cycle->diplome = $request->diplome;
         $cycle->save();
         return redirect()->route('cycle.index');

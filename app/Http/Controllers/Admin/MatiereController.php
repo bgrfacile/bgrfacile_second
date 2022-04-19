@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\MatiereResource;
+use App\Http\Resources\Matiere\MatiereResource;
 use App\Models\Matiere;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -45,7 +46,8 @@ class MatiereController extends Controller
             "name" => "string|required"
         ]);
         Matiere::create([
-            "name" => $request->name
+            "name" => $request->name,
+            'slug' => Str::slug($request->name)
         ]);
         return redirect()->route("matiere.index");
     }
@@ -59,8 +61,8 @@ class MatiereController extends Controller
     public function show($id)
     {
         $matiere = Matiere::findOrFail($id);
-        return Inertia::render('Matiere/show',[
-            'matiere'=>$matiere
+        return Inertia::render('Matiere/show', [
+            'matiere' => $matiere
         ]);
     }
 
@@ -73,8 +75,8 @@ class MatiereController extends Controller
     public function edit($id)
     {
         $matiere = Matiere::findOrFail($id);
-        return Inertia::render('Matiere/edit',[
-            'matiere'=>$matiere
+        return Inertia::render('Matiere/edit', [
+            'matiere' => $matiere
         ]);
     }
 
@@ -92,6 +94,7 @@ class MatiereController extends Controller
         ]);
         $matiere = Matiere::findorFail($id);
         $matiere->name = $request->name;
+        $matiere->slug = Str::slug($request->name);
         $matiere->save();
         return redirect()->route('matiere.index');
     }

@@ -1,34 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { showCours } from './../../../redux/features/cours/functions';
 import client from '../../../../api/client';
 import { Alert } from '@mui/material';
 import HearderCreateCours from '../../../components/form/HearderCreateCours';
 import AsideCreateCours from '../../../components/AsideCreateCours';
 import ListItemChoixContent from './../../../components/ListItemChoixContent';
 import LoadingTypeContent from './../../../components/LoadingTypeContent';
+import { getEditCours } from '../../../redux/features/myCours/functions';
 
 export default function EditCours() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const cours = useSelector(state => state.cours.cours.length > 0 ? state.cours.cours.find(cours => cours.id === parseInt(id)) : {});
+    console.log('cours', cours);
     useEffect(() => {
         if (Object.keys(cours).length === 0) {
-            dispatch(showCours({ id: parseInt(id) }));
+            dispatch(getEditCours({ courId: parseInt(id) }));
         } else {
             // setLoading(false);
         }
     }, []);
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState(cours.title ?? '');
     const [cycle, setCycle] = useState({});
     const [level, setLevel] = useState({});
     const [matiere, setMatiere] = useState({});
     const [isActif, setIsActif] = useState(null);
-    const [description, setDescription] = useState('');
+    const [description, setDescription] = useState(cours.description ?? '');
     const [image, setImage] = useState('');
-    const [typeContent, setTypeContent] = useState('');
-    const [content, setContent] = useState(null);
+    const [typeContent, setTypeContent] = useState(cours.typeContent ?? '');
+    const [content, setContent] = useState(cours.content ?? null);
 
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
@@ -85,6 +86,7 @@ export default function EditCours() {
             </Alert>}
             <HearderCreateCours
                 isloading={isLoading}
+                title={title}
                 getTitle={(title) => setTitle(title)}
                 getCycle={(cycle) => setCycle(cycle)}
                 getLevel={(level) => setLevel(level)}
@@ -94,6 +96,7 @@ export default function EditCours() {
             <div className='w-full h-full flex-1 grid grid-cols-4 gap-3  mb-2'>
                 <div className='col-span-1 bg-white rounded-md w-full h-full flex flex-col p-2'>
                     <AsideCreateCours
+                        description={description}
                         getDescription={(description) => setDescription(description)}
                         getCoverImage={(image) => setImage(image)}
                         getTypeContent={(typeContent) => setTypeContent(typeContent)}

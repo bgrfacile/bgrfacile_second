@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
 import { Link, useNavigate } from 'react-router-dom';
-import { checkLogin } from '../redux/features/user/userSlice';
+import { checkLogin } from '../redux/features/user/functions';
 
 export default function Login() {
     const dispatch = useDispatch();

@@ -25,13 +25,13 @@ export default function TreeViewCompoment({ srcLink }) {
                 sx={{ flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
             >
                 {cycles.map((cycle, key1) => {
-                    return <Link key={key1} to={`/${srcLink}/${cycle.slugName}-${cycle.id}`} state={{ levels: cycle.levels }}>
+                    return <Link key={key1} to={`/${srcLink}/${cycle.name}-${cycle.id}`} state={{ levels: cycle.levels }}>
                         <TreeItem nodeId={uuidv4()} label={cycle.name}>
                             {cycle.levels.map((level, key2) => {
-                                return <Link key={key2} to={`/${srcLink}/${cycle.slugName}-${cycle.id}/${level.slugName}-${level.id}`} state={{ matieres: level.matieres }}>
-                                    <TreeItem nodeId={uuidv4()} label={level.slugName}>
+                                return <Link key={key2} to={`/${srcLink}/${cycle.name}-${cycle.id}/${level.name}-${level.id}`} state={{ matieres: level.matieres }}>
+                                    <TreeItem nodeId={uuidv4()} label={level.name}>
                                         {level.matieres.map((matiere, key3) => {
-                                            return <Link key={key3} to={`/${srcLink}/${cycle.slugName}-${cycle.id}/${level.slugName}-${level.id}/${matiere.slugName}-${matiere.id}`} state={{ matiere: matiere, matieres: level.matieres }}>
+                                            return <Link key={key3} to={`/${srcLink}/${cycle.name}-${cycle.id}/${level.name}-${level.id}/${matiere.name}-${matiere.id}`} state={{ matiere: matiere, matieres: level.matieres }}>
                                                 <TreeItem nodeId={uuidv4()} label={matiere.name} />
                                             </Link>
                                         })}
@@ -55,15 +55,15 @@ export default function TreeViewCompoment({ srcLink }) {
     >
         {cycles.map((cycle, key1) =>
             <TreeItem onClick={() => {
-                window.history.pushState({}, '', `/${srcLink}/${cycle.slugName}-${cycle.id}`);
+                window.history.pushState({}, '', `/${srcLink}/${cycle.name}-${cycle.id}`);
             }} key={key1} nodeId={uuidv4()} label={cycle.name}>
                 {cycle.levels.map((level, key2) =>
                     <TreeItem key={key2} onClick={() => {
-                        window.history.pushState({}, '', `/${srcLink}/${cycle.slugName}-${cycle.id}/${level.slugName}-${level.id}`);
-                    }} nodeId={uuidv4()} label={level.slugName}>
+                        window.history.pushState({}, '', `/${srcLink}/${cycle.name}-${cycle.id}/${level.name}-${level.id}`);
+                    }} nodeId={uuidv4()} label={level.name}>
                         {level.matieres.map((matiere, key3) =>
                             <TreeItem key={key3} onClick={() => {
-                                window.history.pushState({}, '', `/${srcLink}/${cycle.slugName}-${cycle.id}/${level.slugName}-${level.id}/${matiere.slugName}-${matiere.id}`);
+                                window.history.pushState({}, '', `/${srcLink}/${cycle.name}-${cycle.id}/${level.name}-${level.id}/${matiere.name}-${matiere.id}`);
                             }} nodeId={uuidv4()} label={matiere.name} />
                         )}
                     </TreeItem>

@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\CoursResource;
-use App\Http\Resources\UserResource;
-use App\Models\Cours;
-use App\Models\Cycle;
-use App\Models\User;
 use Exception;
+use App\Models\User;
+use App\Models\Cours;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\Cours\CoursResource;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class CoursController extends Controller
 {
@@ -114,6 +113,7 @@ class CoursController extends Controller
         }
         $cours = $user->cours()->create([
             'title' => $request->title,
+            'slug' => Str::slug($request->title),
             'description' => $request->description,
             'coverImage' => $coverImage,
             'isActif' => $request->isActif ? "1" : "0",
@@ -141,6 +141,7 @@ class CoursController extends Controller
         }
         $cours = $user->cours()->create([
             'title' => $request->title,
+            'slug' => Str::slug($request->title),
             'description' => $request->description,
             'coverImage' => $coverImage,
             'isActif' => $request->isActif ? "1" : "0",
@@ -196,6 +197,7 @@ class CoursController extends Controller
         $cours->delete();
         return response([
             'message' => 'cours deleted successfully',
+            'cours' => new CoursResource($cours),
         ], 200);
     }
 
@@ -208,18 +210,17 @@ class CoursController extends Controller
 
     public function updateVisibilityCours($courId, Request $request)
     {
-        $request->validate(
-            [
-                'isActif' => 'required|boolean',
-            ]
-        );
+        $request->validate([
+            'isActif' => 'required|boolean',
+        ]);
         // $user = User::find($request->user_id);
         // $cours = $user->cours()->find($courId);
-        $cours = Cours::find($courId);
+        $cours = Cours::findOrFail($courId);
         $cours->isActif = $request->isActif;
         $cours->save();
         return response([
             'message' => 'cours updated successfully',
+            'cours' => new CoursResource($cours),
         ], 200);
     }
 }

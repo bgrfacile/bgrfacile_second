@@ -15,7 +15,6 @@ import Modal from 'react-modal';
 import { customStyles } from '../utils/Function';
 import RaitingView from './RaitingView';
 import CommentView from './CommentView';
-import slugify from 'slugify';
 
 export default function AsideViewCours({ cours }) {
     const navigate = useNavigate();
@@ -104,7 +103,7 @@ export const HeaderAsideCours = ({ cours }) => {
             isOpen={onRaiting}
             style={customStyles}
             contentLabel="raiting cours">
-            <RaitingView courId={cours.id} onClose={() => { setOnRaiting(false) }} />
+            <RaitingView model={'cours'} courId={cours.id} onClose={() => { setOnRaiting(false) }} />
         </Modal>
         <Modal
             isOpen={onComment}
@@ -116,7 +115,7 @@ export const HeaderAsideCours = ({ cours }) => {
             <span className='font-medium text-base italic text-red-800'>COURS</span>
             <h3 className='font-inter font-extrabold text-2xl text-black tracking-tight'>{cours.title}</h3>
             <div className='mt-1 font-medium text-sm text-gray-500'>
-                {cours.updated_at} · <Link className='text-blue-600' to={`/profile/user/${slugify(cours.users[0].user_name)}-${cours.users[0].user_id}`}>
+                {cours.updated_at} · <Link className='text-blue-600' to={`/profile/user/${cours.users[0].slug}-${cours.users[0].user_id}`}>
                     {cours.users[0].user_name}
                 </Link>
             </div>

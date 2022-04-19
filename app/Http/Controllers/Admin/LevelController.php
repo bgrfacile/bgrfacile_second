@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\LevelResource;
-use App\Http\Resources\MatiereResource;
+use App\Http\Resources\Level\LevelResource;
+use App\Http\Resources\Matiere\MatiereResource;
 use App\Models\Level;
 use App\Models\Matiere;
 use Illuminate\Http\Request;
@@ -49,7 +50,8 @@ class LevelController extends Controller
             'name' => 'string|required'
         ]);
         Level::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'slug' => Str::slug($request->slug)
         ]);
         return redirect()->route('level.index');
     }
@@ -96,6 +98,7 @@ class LevelController extends Controller
         ]);
         $level = Level::findOrFail($id);
         $level->name = $request->name;
+        $level->slug = Str::slug($request->name);
         $level->save();
         return redirect()->route('level.index');
     }

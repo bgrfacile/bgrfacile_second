@@ -8267,7 +8267,7 @@ function App(_ref) {
                 className: "flex items-center space-x-2 relative focus:outline-none",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
                   className: "text-gray-700 dark:text-gray-300 text-sm hidden sm:block",
-                  children: auth.user.user_name
+                  children: auth.user.pseudo
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
                   className: "h-9 w-9 rounded-full border-2 border-purple-500 object-cover",
                   src: auth.user.url_image,

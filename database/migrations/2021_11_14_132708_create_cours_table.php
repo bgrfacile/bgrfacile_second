@@ -16,11 +16,12 @@ class CreateCoursTable extends Migration
         Schema::create('cours', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->nullable();
             $table->text('coverImage')->nullable();
             $table->text('description')->nullable();
-            $table->enum('isActif',['0','1'])->default('1');
-            // $table->boolean('is_active')->default(true);
+            $table->enum('isActif', ['0', '1'])->default('1');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

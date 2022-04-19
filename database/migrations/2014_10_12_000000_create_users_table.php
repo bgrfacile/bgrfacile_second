@@ -15,19 +15,14 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('lastname')->nullable();
-            $table->string('firstname')->nullable();
-            $table->string('url_image')->nullable();
-            $table->text('bio')->nullable();
-            $table->string('country')->nullable();
-            $table->enum('gender', ['M', 'F'])->nullable();
-            $table->string('birthday')->nullable();
+            $table->string('pseudo');
+            $table->text('url_image')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -39,5 +34,8 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+        Schema::table('flights', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 }

@@ -2,13 +2,13 @@
 
 namespace App\Http\Resources\Exercice;
 
-use App\Http\Resources\ContentResource;
+use App\Http\Resources\Content\ContentResource;
 use App\Http\Resources\Cycle\BasicCycleResource;
 use App\Http\Resources\Level\BasicLevelResource;
 use App\Http\Resources\Matiere\BasicMatiereResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CustumExerciceResource extends JsonResource
+class ExerciceFullResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

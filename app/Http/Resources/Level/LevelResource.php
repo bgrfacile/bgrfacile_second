@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Level;
 
+use App\Http\Resources\Matiere\MatiereResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class QuestionResource extends JsonResource
+class LevelResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,10 +17,10 @@ class QuestionResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'body' => $this->body,
-            'media' => $this->media,
-            'media_type' => $this->media_type,
-            'answers' => AnswersResource::collection($this->answers),
+            'name' => $this->name,
+            'slug' => $this->slug,
+            'isActif' => $this->isActif,
+            'matieres' => MatiereResource::collection($this->matieres),
         ];
     }
 }

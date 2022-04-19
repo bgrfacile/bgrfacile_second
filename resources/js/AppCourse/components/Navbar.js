@@ -19,50 +19,18 @@ const classDefault = 'w-full p-2 my-2 flex items-center text-gray-700 bg-gray-50
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
-    const [isOpenDropDown, setIsOpenDropDown] = React.useState(false);
+    // const [isOpenDropDown, setIsOpenDropDown] = React.useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const url_image = useSelector(state => state.user.profile.url_image);
     const isconnect = useSelector(state => state.user.isconnect);
-    const handleLogout = (e) => {
+    const handleToGoBack = (e) => {
         e.preventDefault();
-        if (window.confirm('Voulez-vous vraiment vous déconnecter ?')) {
-            dispatch(logout());
-            navigate('/signin', { replace: true });
+        if (confirm('Voulez-vous vraiment quitter l\'application ?')) {
+            window.location.href = '/';
         }
     }
-    const DropDownMenu = () => {
-        return (
-            <div className="bg-white p-3 border-t-4 border-blue-600 absolute z-10 mt-2 right-3">
-                <CustomLink classActive={classActive} to='/profile' className={classDefault}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
-                    <span>Profil</span>
-                </CustomLink>
-                <div className="flex justify-evenly items-center">
-                    <CustomLink classActive={classActive} to="/profile/edit" className={classDefault}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                        </svg>
-                    </CustomLink>
 
-                    <CustomLink classActive={classActive} to='/profile/favoris' className={classDefault}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                        </svg>
-                    </CustomLink>
-                    <button
-                        onClick={handleLogout}
-                        className="py-2 px-3 rounded-md hover:bg-gray-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        )
-    }
     const ItemMenu = () => {
         return (<>
             <CustomLink classActive={classNameLinkActive} to='/cours' className={className}>
@@ -83,12 +51,7 @@ export default function Navbar() {
             </CustomLink>
         </>)
     }
-    const handleToGoBack = (e) => {
-        e.preventDefault();
-        if (confirm('Voulez-vous vraiment quitter l\'application ?')) {
-            window.location.href = '/';
-        }
-    }
+
     return <>
         <nav className=" bg-white w-full relative">
             <div className="border-b flex flex-wrap sm:flex-nowrap  justify-between items-center w-full px-0 md:px-8 py-2 dark:bg-gray-800">
@@ -136,10 +99,10 @@ export default function Navbar() {
                                     // </Tooltip>
                                     :
                                     <Link
-                                    to="/signin"
-                                    className="min-w-max ml-2 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        to="/signin"
+                                        className="min-w-max ml-2 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         Connexion</Link>
-                                        }
+                                }
                             </div>
                         </div>
 
@@ -158,7 +121,6 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
-            {/* {isOpenDropDown && <DropDownMenu />} */}
             {isOpen &&
                 (<div className="md:hidden w-screen mx-0 mb-2 py-2 overflow-x-scroll">
                     <div className="flex">

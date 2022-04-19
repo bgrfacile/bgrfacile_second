@@ -7,7 +7,6 @@ use App\Models\Cours;
 use App\Models\Exercice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PhpParser\Node\Stmt\Switch_;
 
 class LikeController extends Controller
 {

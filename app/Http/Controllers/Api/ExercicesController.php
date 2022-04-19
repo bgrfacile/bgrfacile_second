@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Exercice\CustumExerciceResource;
-use App\Http\Resources\Exercice\ExerciceSimpleResource;
+use App\Http\Resources\Exercice\ExerciceFullResource;
 use App\Models\Exercice;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class ExercicesController extends Controller
 {
@@ -17,7 +15,7 @@ class ExercicesController extends Controller
     {
         $user = $request->user();
         $exercices = $user->exercices;
-        return CustumExerciceResource::collection($exercices);
+        return ExerciceFullResource::collection($exercices);
     }
     /**
      * Display a listing of the resource.
@@ -29,7 +27,7 @@ class ExercicesController extends Controller
         // $exercices = Exercice::with('cours')->orderBy('created_at', 'desc')->take(5)->get();
         // return response()->json($exercices);
         $exercices = Exercice::where('isActif', '1')->orderBy('created_at', 'desc')->get();
-        return CustumExerciceResource::collection($exercices);
+        return ExerciceFullResource::collection($exercices);
     }
     public function getExosByCycle($idCycle)
     {
@@ -38,7 +36,7 @@ class ExercicesController extends Controller
                 $query->where('cycles.id', $idCycle);
             })
             ->get()->reverse();
-        return CustumExerciceResource::collection($exercices);
+        return ExerciceFullResource::collection($exercices);
     }
     public function getExosByLevel($idCycle, $idLevel)
     {
@@ -51,7 +49,7 @@ class ExercicesController extends Controller
                     $query->where('cycles.id', $idCycle);
                 })
                 ->get()->reverse();
-            return CustumExerciceResource::collection($exercices);
+            return ExerciceFullResource::collection($exercices);
         } else {
             $exercices = Exercice::where('isActif', "1")
                 ->whereHas('levels', function ($query) use ($idLevel) {
@@ -61,7 +59,7 @@ class ExercicesController extends Controller
                 //     $query->where('cycles.id', $idCycle);
                 // })
                 ->get()->reverse();
-            return CustumExerciceResource::collection($exercices);
+            return ExerciceFullResource::collection($exercices);
         }
     }
     public function getExosByMatiere($idCycle, $idLevel, $idMatiere)
@@ -104,7 +102,7 @@ class ExercicesController extends Controller
                 })
                 ->get()->reverse();
         }
-        return CustumExerciceResource::collection($exercices);
+        return ExerciceFullResource::collection($exercices);
     }
 
     /**
@@ -181,7 +179,7 @@ class ExercicesController extends Controller
         $exercice->matieres()->attach($request->matiere_id);
         return response([
             'message' => $request->isActif ? 'Exercice poster avec succès' : 'Exercice mis en brouillon avec succès',
-            'exercice' => new ExerciceSimpleResource($exercice),
+            'exercice' => new ExerciceFullResource($exercice),
         ], 200);
     }
 
@@ -194,7 +192,7 @@ class ExercicesController extends Controller
     public function show($id)
     {
         $cours = Exercice::findOrFail($id);
-        return new CustumExerciceResource($cours);
+        return new ExerciceFullResource($cours);
     }
 
     /**

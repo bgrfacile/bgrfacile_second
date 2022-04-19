@@ -2,11 +2,10 @@
 
 namespace App\Http\Resources\User;
 
-use App\Http\Resources\CoursResource;
+use App\Http\Resources\Cours\CoursResource;
 use App\Http\Resources\Exercice\ExerciceSimpleResource;
 use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Str;
 
 class UserShowResource extends JsonResource
 {
@@ -18,25 +17,20 @@ class UserShowResource extends JsonResource
      */
     public function toArray($request)
     {
-        $slug = Str::slug($this->name, '-');
         return [
             'profile' => [
                 'user_id' => $this->id,
-                'user_name' => $this->name,
-                'firstname' => $this->firstname,
-                'lastname' => $this->lastname,
+                'pseudo' => $this->pseudo,
+                'firstname' => $this->infoUser->firstname,
+                'lastname' => $this->infoUser->lastname,
                 'telephone' => $this->phone != null ? $this->phone->number_phone : null,
-                'age' => "",
-                'gender' => [
-                    'label' => $this->gender == 'M' ? 'homme' : 'femme',
-                    'value' => $this->gender,
-                ],
+                'bio' => $this->infoUser->bio != null ? $this->infoUser->bio : null,
+                'gender' => $this->infoUser->gender != null ? $this->infoUser->gender : null,
                 'email' => $this->email,
-                'country' => $this->country,
-                'url_image' => $this->url_image == null ? "https://ui-avatars.com/api/?name=$slug&background=0D8ABC&color=fff" : url($this->url_image),
-                'birthday' => formaterDate($this->birthday),
+                'country' => $this->infoUser->country,
+                'url_image' => $this->url_image == null ? 'https://ui-avatars.com/api/?name=' . $this->infoUser->slug . '&background=0D8ABC&color=fff' : url($this->url_image),
+                'birthday' => formaterDate($this->infoUser->birthday),
                 'createdAt' => formaterDate($this->created_at),
-                'likes_cours' => $this->likes->where('likeable_type', 'App\Models\Cours')->toArray(),
             ],
             'is_following' => auth()->check() ? $this->isFollowing(User::findOrFail($this->id)) : false,
             'is_followers' => auth()->check() ? $this->isFollowers(User::findOrFail($this->id)) : false,

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Cours;
 
+use App\Http\Resources\Comment\CommentResource;
+use App\Http\Resources\Content\ContentResource;
 use App\Http\Resources\Cycle\BasicCycleResource;
-use App\Http\Resources\Exercice\CustumExerciceResource;
 use App\Http\Resources\Exercice\ExerciceSimpleResource;
 use App\Http\Resources\Level\BasicLevelResource;
 use App\Http\Resources\Matiere\BasicMatiereResource;
@@ -25,6 +26,7 @@ class CoursResource extends JsonResource
             'id' => $this->id,
             'type' => "cours",
             'title' => $this->title,
+            'slug' => $this->slug,
             'description' => $this->description,
             'coverImage' => $this->coverImage == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($this->coverImage),
             'isActif' => $this->isActif,
@@ -38,8 +40,8 @@ class CoursResource extends JsonResource
             'comments' => CommentResource::collection($this->comments->reverse()),
             'exercices' => ExerciceSimpleResource::collection($this->exercices),
             'quizzes' => QuizResource::collection($this->quizzes),
-            'users' => $this->users ? UserResource::collection($this->users) : null,
-            // 'users' => $this->users ? UserLambdaResource::collection($this->users) : null,
+            // 'users' => $this->users ? UserResource::collection($this->users) : null,
+            'users' => $this->users ? UserLambdaResource::collection($this->users) : null,
             'created_at' => formaterDate($this->created_at),
             'updated_at' => formaterDate($this->updated_at),
         ];

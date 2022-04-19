@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\APi;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CoursResource;
-use App\Http\Resources\Exercice\CustumExerciceResource;
-use App\Http\Resources\Exercice\ExerciceSimpleResource;
+use App\Http\Resources\Cours\CoursResource;
+use App\Http\Resources\Exercice\ExerciceFullResource;
 use App\Models\Cours;
 use App\Models\Exercice;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class FavorisController extends Controller
 {
@@ -32,6 +30,6 @@ class FavorisController extends Controller
             $exercices[] = Exercice::find($like->likeable_id);
         }
         // return ExerciceSimpleResource::collection($exercices);
-        return CustumExerciceResource::collection($exercices);
+        return ExerciceFullResource::collection($exercices);
     }
 }

@@ -95,7 +95,7 @@ export default function App({ children }) {
                         <div className="relative">
                             <button onClick={() => setDropdownOpen(!dropdownOpen)}
                                 className="flex items-center space-x-2 relative focus:outline-none">
-                                <h2 className="text-gray-700 dark:text-gray-300 text-sm hidden sm:block">{auth.user.user_name}</h2>
+                                <h2 className="text-gray-700 dark:text-gray-300 text-sm hidden sm:block">{auth.user.pseudo}</h2>
                                 <img className="h-9 w-9 rounded-full border-2 border-purple-500 object-cover"
                                     src={auth.user.url_image}
                                     alt="avatar" />

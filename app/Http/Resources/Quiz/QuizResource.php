@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\Quiz;
 
-use App\Http\Resources\QuestionResource;
+use App\Http\Resources\Question\QuestionResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class QuizResource extends JsonResource

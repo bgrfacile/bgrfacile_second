@@ -2,7 +2,6 @@ import { Tooltip } from '@mui/material'
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import slugify from 'slugify';
 import LikeEmpty from '../svg/LikeEmpty';
 import LikeFullSvg from '../svg/LikeFullSvg';
 import StarSvg from '../svg/StarSvg';
@@ -43,6 +42,9 @@ export default function CardItemCours({ cour }) {
         <article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
             <header>
                 <div className='group relative'>
+                    <div className="right-0 mt-4 rounded-l-full absolute text-center font-bold text-xs text-white px-2 py-1 bg-orange-500">
+                        {'cour scolaire'}
+                    </div>
                     <div className='block h-48 w-full mb-4'>
                         <img
                             src={cour.coverImage}
@@ -58,7 +60,7 @@ export default function CardItemCours({ cour }) {
                             <span className='text-white font-semibold'>{like}</span>
                         </button>
 
-                        <Link to={`/cours/read/${slugify(cour.title)}-${cour.id}`} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
+                        <Link to={`/cours/read/${cour.slug}-${cour.id}`} className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition">
                             {switchIconsTypeCour(cour.contents[0].type_content, 'w-10 h-10')}
                         </Link>
 
@@ -90,7 +92,7 @@ export default function CardItemCours({ cour }) {
                     </ul>
                 </div>
                 <h3 className='mb-2 px-2 text-2xl font-medium hover:underline tracking-wide'>
-                    <Link to={`/cours/read/${slugify(cour.title)}-${cour.id}`} state={{ cour: cour }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
+                    <Link to={`/cours/read/${cour.slug}-${cour.id}`} state={{ cour: cour }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>
                         {cour.title}
                     </Link>
                 </h3>
@@ -98,11 +100,11 @@ export default function CardItemCours({ cour }) {
             <p className='text-base text-gray-600 grow px-2'>{cour.description}</p>
             <footer className='flex items-center mt-4 px-2 pb-2'>
                 <div className="flex -space-x-1 overflow-hidden mr-1">
-                    <Tooltip title={cour.users[0].user_name}>
-                        <Link to={`/profile/user/${slugify(cour.users[0].user_name)}-${cour.users[0].user_id}`}>
+                    <Tooltip title={cour.users[0].pseudo}>
+                        <Link to={`/profile/user/${cour.users[0].slug}-${cour.users[0].user_id}`}>
                             <img
                                 className="inline-block h-8 w-8 object-cover rounded-full ring-2 ring-white"
-                                src={cour.users[0].url_image} alt={cour.users[0].user_name} />
+                                src={cour.users[0].url_image} alt={cour.users[0].pseudo} />
                         </Link>
                     </Tooltip>
                     {/* <img className="inline-block h-8 w-8 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
@@ -112,7 +114,7 @@ export default function CardItemCours({ cour }) {
                 <div className="flex items-center font-medium text-xs text-ellipsis">
                     {/* <Tooltip title="voir le profil">
                     <a href='#' className='flex-1 text-gray-600 hover:text-gray-900'>
-                        {cour.users[0].user_name}
+                        {cour.users[0].pseudo}
                     </a>
                 </Tooltip> */}
                     <span className='text-gray-600'>&nbsp;-&nbsp;</span>

@@ -20,6 +20,7 @@ class CreateContentsTable extends Migration
             $table->integer('contentable_id');
             $table->string('contentable_type');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSlugUsersTable extends Migration
+class CreateLocalisationEcolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSlugUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('slug_users', function (Blueprint $table) {
+        Schema::create('localisation_ecoles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('slug')->nullable();
-            $table->string('hashid')->nullable();
+            $table->foreignId('site_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateSlugUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('slug_users');
+        Schema::dropIfExists('localisation_ecoles');
     }
 }

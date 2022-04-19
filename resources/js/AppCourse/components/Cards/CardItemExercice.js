@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { decrementLike, incrementLike } from '../../redux/features/Exercices/ExerciceSlice';
 import { addLike, removeLike } from '../../redux/features/Exercices/functions';
 import { Link } from 'react-router-dom';
-import slugify from 'slugify';
 
 Modal.setAppElement('#root');
 export default function CardItemExercice({ exercice }) {
@@ -67,7 +66,7 @@ export default function CardItemExercice({ exercice }) {
                 </div>
                 <div className="p-4">
 
-                    <Link to={`/exercices/read/${slugify(exercice.title)}-${exercice.id}`} className="focus:outline-none text-lg font-semibold hover:underline">{exercice.title}</Link>
+                    <Link to={`/exercices/read/${exercice.slug}-${exercice.id}`} className="focus:outline-none text-lg font-semibold hover:underline">{exercice.title}</Link>
                     ·
                     <span className="focus:outline-none text-xs text-gray-600">{exercice.updatedAt}</span>
 

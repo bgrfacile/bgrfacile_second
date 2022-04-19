@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
-import { checkConnect } from '../redux/features/user/userSlice';
 import NavBar from '../components/Navbar';
 import LoadingFile from '../components/json_animations/loading02/LoadingFile';
+import { checkConnect } from '../redux/features/user/functions';
 
 export default function LayoutCourse() {
     const dispatch = useDispatch();

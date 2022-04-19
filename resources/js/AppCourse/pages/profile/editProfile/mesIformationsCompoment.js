@@ -7,8 +7,8 @@ import { updateInfoUser } from '../../../redux/features/user/functions';
 
 export default function MesIformationsCompoment() {
     const dispatch = useDispatch();
-    const { user_name, gender, email, country, telephone, bio } = useSelector(state => state.user.profile);
-    const [userName, setUserName] = useState(user_name)
+    const { pseudo, gender, email, country, telephone, bio } = useSelector(state => state.user.profile);
+    const [userName, setUserName] = useState(pseudo)
     const [adresseEmail, setAdresseEmail] = useState(email)
     const [pays, setPays] = useState(country)
     const [telephoneNumber, setTelephoneNumber] = useState(telephone == undefined ? '' : telephone)

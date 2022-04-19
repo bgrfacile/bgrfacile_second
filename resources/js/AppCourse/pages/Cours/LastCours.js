@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import CardItemCours from '../../components/Cards/CardItemCours';
-import { getLastCours } from '../../redux/features/cours/coursSlice';
+import { getLastCours } from '../../redux/features/cours/functions';
 import Empty from '../notFound/Empty';
 
 export default function LastCours() {

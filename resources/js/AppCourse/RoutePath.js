@@ -34,15 +34,17 @@ import LastCours from "./pages/Cours/LastCours";
 import ListeExercices from "./pages/Exercices/ListeExercices";
 import MonEcole from "./pages/profile/monEcole/monEcole";
 import EditCours from "./pages/profile/createCours/editCours";
+import { useSelector } from 'react-redux';
 
 
 
 
 export default function RoutePath() {
     const RequireAuth = ({ children }) => {
-        let auth = localStorage.getItem('user') ? true : false;
+        const { isconnect } = useSelector(state => state.user);
+        // let auth = localStorage.getItem('user') ? true : false;
         let location = useLocation();
-        if (!auth) {
+        if (!isconnect) {
             return <Navigate to="/signin" state={{ from: location }} replace />;
         }
         return children;
@@ -80,8 +82,8 @@ export default function RoutePath() {
 
                         <Route path="/profile/my-cours" element={<RequireAuth><MyCours /></RequireAuth>} />
                         <Route path="/profile/my-cours/create" element={<RequireAuth><CreateCoursIndex /></RequireAuth>} />
-
                         <Route path="/profile/my-cours/edit-:id" element={<RequireAuth><EditCours /></RequireAuth>} />
+
                         {/* <Route path="/profile/my-cours/create/image" element={<RequireAuth><CreateCoursImage /></RequireAuth>} /> */}
                         {/* <Route path="/profile/my-cours/create/video" element={<RequireAuth><CreateCoursVideo /></RequireAuth>} /> */}
                         {/* <Route path="/profile/my-cours/create/audio" element={<RequireAuth><CreateCoursAudio /></RequireAuth>} /> */}

@@ -15,10 +15,11 @@ class LevelSimpleResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
-            'name'=>$this->name,
-            'isActif'=>$this->isActif,
-            'parrent_cycle_id'=>$this->cycles->first()->id ?? null,
+            'id' => $this->id,
+            'name' => $this->name,
+            'slug' => $this->slug,
+            'isActif' => $this->isActif,
+            'parrent_cycle_id' => $this->cycles->first()->id ?? null,
         ];
     }
 }

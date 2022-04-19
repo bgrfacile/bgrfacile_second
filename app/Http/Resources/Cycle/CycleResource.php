@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Cycle;
 
+use App\Http\Resources\Level\LevelSimpleResource;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Str;
 
-class MatiereResource extends JsonResource
+class CycleResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,9 +18,10 @@ class MatiereResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'slugName' => Str::slug($this->name),
+            'slug' => $this->slug,
+            'diplome' => $this->diplome,
             'isActif' => $this->isActif,
-            // 'created_at'=>formaterDate($this->created_at),
+            'levels' => LevelSimpleResource::collection($this->levels),
         ];
     }
 }

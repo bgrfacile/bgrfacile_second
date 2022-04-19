@@ -100,3 +100,29 @@ export const removeLike = createAsyncThunk(
         }
     }
 );
+
+export const getLastCours = createAsyncThunk(
+    'cours/getLastCours',
+    async () => {
+        const res = await client.get("/cours");
+        return { cours: res.data };
+    });
+export const getCoursByCycle = createAsyncThunk(
+    'cours/getCoursByCycle',
+    async ({ idCycle }) => {
+        const res = await client.get(`/cours/getCours/${idCycle}`);
+        return { cours: res.data };
+    });
+export const getCoursByLevel = createAsyncThunk(
+    'cours/getCoursByLevel',
+    async ({ idCycle, idLevel }) => {
+        const res = await client.get(`/cours/getCours/${idCycle}/${idLevel}`);
+        return { cours: res.data };
+    });
+export const getCoursByMatiere = createAsyncThunk(
+    'cours/getCoursByLevel',
+    async ({ idCycle, idLevel, idMatiere }) => {
+        const res = await client.get(`/cours/getCours/${idCycle}/${idLevel}/${idMatiere}`);
+        return { cours: res.data };
+    });
+

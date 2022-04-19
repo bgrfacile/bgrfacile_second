@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Error from '../components/Alert/Error';
 import Success from '../components/Alert/Success';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { checkRegister } from '../redux/features/user/userSlice';
+import { checkRegister } from '../redux/features/user/functions';
 
 export default function Register() {
     const dispatch = useDispatch();

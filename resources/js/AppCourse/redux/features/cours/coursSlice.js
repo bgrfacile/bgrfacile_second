@@ -1,39 +1,19 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import client from "../../../../api/client";
-import { addLike, removeLike, showCours, addRatingCourse, fetchComments, postComment, deleteComment } from "./functions";
+import { createSlice } from "@reduxjs/toolkit";
+import {
+    getCoursByMatiere,
+    getCoursByLevel,
+    getCoursByCycle,
+    getLastCours,
+    addLike,
+    removeLike,
+    showCours,
+    addRatingCourse,
+    fetchComments,
+    postComment,
+    deleteComment
+} from "./functions";
 
-export const getLastCours = createAsyncThunk(
-    'cours/getLastCours',
-    async () => {
-        const res = await client.get("/cours");
-        return { cours: res.data };
-    });
-export const getCoursByCycle = createAsyncThunk(
-    'cours/getCoursByCycle',
-    async ({ idCycle }) => {
-        const res = await client.get(`/cours/getCours/${idCycle}`);
-        return { cours: res.data };
-    });
-export const getCoursByLevel = createAsyncThunk(
-    'cours/getCoursByLevel',
-    async ({ idCycle, idLevel }) => {
-        const res = await client.get(`/cours/getCours/${idCycle}/${idLevel}`);
-        return { cours: res.data };
-    });
-export const getCoursByMatiere = createAsyncThunk(
-    'cours/getCoursByLevel',
-    async ({ idCycle, idLevel, idMatiere }) => {
-        const res = await client.get(`/cours/getCours/${idCycle}/${idLevel}/${idMatiere}`);
-        return { cours: res.data };
-    });
 
-export const getMyCours = createAsyncThunk(
-    'cours/getMyCours',
-    async () => {
-        let userId = JSON.parse(user).user_id;
-        const res = await client.get(`/cours/user/${userId}`);
-        return { cours: res.data };
-    });
 
 const coursSlices = createSlice({
     name: "cours",
@@ -49,7 +29,6 @@ const coursSlices = createSlice({
     },
     reducers: {
         deleteCommentCours: (state, action) => {
-            // state.coursShow.comments = state.coursShow.comments.filter(comment => comment.id !== action.payload.comment_id);
             state.cours.find(cours => cours.id === action.payload.id).comments = state.cours.find(cours => cours.id === action.payload.id).comments.filter(comment => comment.id !== action.payload.comment_id);
         },
         addComment: (state, action) => {
@@ -118,14 +97,6 @@ const coursSlices = createSlice({
         changeVisibilitie: (state, action) => {
             console.log('action', action.payload);
             console.log('state', state.cours);
-            // const newState = state.find((cour) => {
-            //     if (cour.id === action.payload.id) {
-            //         cour.isActif = action.payload.isActif;
-            //     }
-            // });
-
-
-            // return state.find(cours => cours.id === action.payload.id).isActif = action.payload.isActif;
         }
     },
     extraReducers: {
@@ -165,17 +136,7 @@ const coursSlices = createSlice({
             state.isLoading = false;
             state.error = action.error.message;
         },
-        [getMyCours.pending]: (state, action) => {
-            state.isLoading = true;
-        },
-        [getMyCours.fulfilled]: (state, action) => {
-            state.isLoading = false;
-            state.cours = action.payload.cours;
-        },
-        [getMyCours.rejected]: (state, action) => {
-            state.isLoading = false;
-            state.error = action.error.message;
-        },
+
         [getCoursByCycle.rejected]: (state, action) => {
             state.isLoading = false;
             state.error = action.error.message;

@@ -10,13 +10,15 @@ import BasicCycleSlice from './features/cycle/BasicCycleSlice'
 import solutionSlice from './features/solutions/solutionSlice'
 import searchSlice from './features/search/searchSlice'
 import favorisSlice from './features/favoris/favorisSlice'
+import myCoursSlice from './features/myCours/myCoursSlice'
 
 export const store = configureStore({
     reducer: {
         user: userSlice,
+        cours: coursSlice,
+        mycours: myCoursSlice,
         favoris: favorisSlice,
         search: searchSlice,
-        cours: coursSlice,
         exercices: ExerciceSlice,
         solutions: solutionSlice,
         cycles: cyclesSlice,

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\CommentResource;
+use App\Http\Resources\Comment\CommentResource;
 use App\Models\Cours;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class CommentsController extends Controller

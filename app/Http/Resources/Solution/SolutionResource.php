@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\Solution;
 
-use App\Http\Resources\ContentResource;
+use App\Http\Resources\Content\ContentResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class SolutionResource extends JsonResource
@@ -26,10 +26,6 @@ class SolutionResource extends JsonResource
             'users' => $this->users,
             'created_at' => formaterDate($this->created_at),
             'updated_at' => formaterDate($this->updated_at),
-            // 'cycle' => [],
-            // 'level' => [],
-            // 'matiere' => [],
-
         ];
     }
 }

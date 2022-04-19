@@ -9,7 +9,7 @@ export const getAllcycles = createAsyncThunk(
         return { cycles: res.data };
     });
 
-const cyclesSlices = createSlice({
+const cyclesSlice = createSlice({
     name: "cycles",
     initialState: {
         cycles: [],
@@ -36,5 +36,5 @@ const cyclesSlices = createSlice({
     },
 });
 
-export const { allcycles } = cyclesSlices.actions;
-export default cyclesSlices.reducer;
+export const { allcycles } = cyclesSlice.actions;
+export default cyclesSlice.reducer;

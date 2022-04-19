@@ -8,7 +8,7 @@ const OptionsContenue = [
     'VIDEO',
     'AUDIO'
 ]
-export default function AsideCreateCours({ getDescription, getCoverImage, image, getTypeContent, typeContent }) {
+export default function AsideCreateCours({ getDescription, getCoverImage, image, getTypeContent, typeContent, description }) {
     return (<>
         <div className="w-full mb-2">
             <TextField
@@ -18,6 +18,7 @@ export default function AsideCreateCours({ getDescription, getCoverImage, image,
                 rows={6}
                 variant="outlined"
                 fullWidth
+                value={description}
                 onChange={(e) => { getDescription(e.target.value) }}
             />
         </div>

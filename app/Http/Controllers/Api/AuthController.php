@@ -5,16 +5,12 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\LoginApiRequest;
 use App\Http\Requests\Api\RegisterRequest;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\User\UserResource;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -24,23 +20,23 @@ class AuthController extends Controller
     {
         $fields = $request->all();
         $user = User::create([
-            'name' => $fields['name'],
+            'pseudo' => $fields['name'],
             'email' => $fields['email'],
             'password' => Hash::make($fields['password']),
         ]);
-        $token = $user->createToken("myappToken")->plainTextToken;
+        // $token = $user->createToken("myappToken")->plainTextToken;
         // event(new Registered($user));
         User::count() <= 1 ?
             $user->assignRole('super-admin') :
             $user->assignRole('etudiant');
 
-        $slug_user = $user->slugUser()->create(['slug' => Str::slug($user->name)]);
+        $user->infoUser()->create(['slug' => Str::slug($user->pseudo)]);
         Auth::login($user, true);
         return response([
             'status' => 'success',
             'message' => 'user create successfully',
             'user' => new UserResource($user),
-            'access_token' => $token
+            // 'access_token' => $token
         ], 201);
     }
 
@@ -53,11 +49,12 @@ class AuthController extends Controller
         } else {
             $user = User::where('email', $request->email)->first();
             Auth::login($user, $request->rememberMe ? true : false);
+            $token = $user->createToken('bgrfacileToken')->plainTextToken;
             // $request->session()->regenerate();
-            // $token = $user->createToken('myappToken')->plainTextToken;
             return response([
                 'message' => 'Authentification réussie',
                 'user' => new UserResource($user),
+                'access_token' => $token
             ], 200);
         }
     }
@@ -85,12 +82,12 @@ class AuthController extends Controller
             return redirect()->route('cours.page');
         } else {
             $newUser = User::create([
-                'name' => $user->name,
+                'pseudo' => $user->name,
                 'email' => $user->email,
                 'url_image' => $user->avatar,
-                // 'password' => Hash::make($user->email),
                 'email_verified_at' => Carbon::now(),
             ]);
+            $newUser->infoUser()->create(['slug' => Str::slug($user->name)]);
             User::count() <= 1 ?
                 $newUser->assignRole('super-admin') :
                 $newUser->assignRole('etudiant');

@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Role;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Str;
 
-class LevelResource extends JsonResource
+class RoleResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +15,8 @@ class LevelResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->name,
-            'slugName' => Str::slug($this->name),
-            'isActif' => $this->isActif,
-            'matieres' => MatiereResource::collection($this->matieres),
+            'id'=>$this->id,
+            'name'=>$this->name,
         ];
     }
 }
