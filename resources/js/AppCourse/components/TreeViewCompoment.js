@@ -25,13 +25,13 @@ export default function TreeViewCompoment({ srcLink }) {
                 sx={{ flexGrow: 1, maxWidth: 400, overflowY: 'auto' }}
             >
                 {cycles.map((cycle, key1) => {
-                    return <Link key={key1} to={`/${srcLink}/${cycle.name}-${cycle.id}`} state={{ levels: cycle.levels }}>
+                    return <Link key={key1} to={`/${srcLink}/${cycle.slug}-${cycle.id}`} state={{ levels: cycle.levels }}>
                         <TreeItem nodeId={uuidv4()} label={cycle.name}>
                             {cycle.levels.map((level, key2) => {
-                                return <Link key={key2} to={`/${srcLink}/${cycle.name}-${cycle.id}/${level.name}-${level.id}`} state={{ matieres: level.matieres }}>
+                                return <Link key={key2} to={`/${srcLink}/${cycle.slug}-${cycle.id}/${level.slug}-${level.id}`} state={{ matieres: level.matieres }}>
                                     <TreeItem nodeId={uuidv4()} label={level.name}>
                                         {level.matieres.map((matiere, key3) => {
-                                            return <Link key={key3} to={`/${srcLink}/${cycle.name}-${cycle.id}/${level.name}-${level.id}/${matiere.name}-${matiere.id}`} state={{ matiere: matiere, matieres: level.matieres }}>
+                                            return <Link key={key3} to={`/${srcLink}/${cycle.slug}-${cycle.id}/${level.slug}-${level.id}/${matiere.slug}-${matiere.id}`} state={{ matiere: matiere, matieres: level.matieres }}>
                                                 <TreeItem nodeId={uuidv4()} label={matiere.name} />
                                             </Link>
                                         })}

@@ -4,6 +4,13 @@ import client from "../../api/client";
 import { logout } from "../redux/features/user/userSlice";
 
 
+export const configFormData = {
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'multipart/form-data'
+    }
+}
+
 
 export const logoutfetch = async () => {
     console.log("deconexion");

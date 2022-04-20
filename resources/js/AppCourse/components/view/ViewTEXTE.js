@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 
 export default function ViewTEXTE({ content }) {
     return (
-        <div className="prose prose-slate lg:prose-xl max-w-prose">
+        <div className="prose prose-slate lg:prose-xl max-w-prose mx-auto" style={{ minWidth: '90%' }}>
             {parse(content)}
         </div>
     )
@@ -11,7 +11,7 @@ export default function ViewTEXTE({ content }) {
 
 const OldVersion = ({ contents }) => {
     return (
-        <div className="prose prose-slate lg:prose-xl max-w-prose">
+        <div className="prose prose-slate lg:prose-xl max-w-prose mx-auto w-5/6">
             {contents.map((content, index) => {
                 return (
                     <div key={index}>

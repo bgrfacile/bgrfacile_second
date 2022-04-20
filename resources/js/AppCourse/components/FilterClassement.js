@@ -1,56 +1,67 @@
 import { Autocomplete, TextField } from '@mui/material'
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
+import { getCycle, getLevel, getMatiere } from '../redux/features/createCour/createCoursSlice';
+import { chargeListLevels, chargeListMatieres, getAllcycles } from './../redux/features/cycle/cyclesSlice';
 
-export default function FilterClassement({ getCycle, getLevel, getMatiere }) {
-    const levels = useSelector(state => state.levels.levels);
-    const matieres = useSelector(state => state.matieres.matieres);
-    const basicCycles = useSelector(state => state.basicCycle.cycles);
+export default function FilterClassement() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getAllcycles());
+    }, []);
+    const { cycles, levelsCycles, matieresLevels } = useSelector(state => state.cycles);
+    const arrayCycles = cycles.map(cycle => ({
+        value: parseInt(cycle.id),
+        label: cycle.name,
+    }));
+    const arrayLevels = levelsCycles.map(level => ({
+        value: parseInt(level.id),
+        label: level.name,
+    }));
+    const arrayMatieres = matieresLevels.map(matiere => ({
+        value: parseInt(matiere.id),
+        label: matiere.name,
+    }));
     return (
         <div className='w-full grid grid-cols-1 grid-rows-1 sm:grid-cols-3 gap-4 justify-between items-center'>
             <Autocomplete
+                isOptionEqualToValue={(option, value) => option.value === value.value}
                 disablePortal
+                disabled={false}
                 id="basicCycles"
-                options={basicCycles.map(cycle => {
-                    return {
-                        value: cycle.id,
-                        label: cycle.name,
-                    }
-                })}
+                options={arrayCycles}
                 onChange={(event, newValue) => {
-                    console.log(newValue)
-                    getCycle(newValue);
+                    dispatch(getCycle({ id: newValue.value }));
+                    dispatch(chargeListLevels(
+                        { id: parseInt(newValue.value) }
+                    ));
                 }}
                 className="w-full"
-                renderInput={(params) => <TextField {...params} label="basicCycles" />}
+                renderInput={(params) => <TextField {...params} label="le cycle" />}
             />
             <Autocomplete
+                isOptionEqualToValue={(option, value) => option.value === value.value}
                 disablePortal
+                disabled={levelsCycles.length === 0}
                 id="levels"
-                options={levels.map(level => {
-                    return {
-                        value: level.id,
-                        label: level.name
-                    }
-                })}
+                options={arrayLevels}
                 onChange={(event, newValue) => {
-                    getLevel(newValue);
+                    dispatch(getLevel({ id: newValue.value }));
+                    dispatch(chargeListMatieres(
+                        { id: parseInt(newValue.value) }
+                    ));
                 }}
                 className="w-full"
                 renderInput={(params) => <TextField {...params} label="levels" />}
             />
             <Autocomplete
+                isOptionEqualToValue={(option, value) => option.value === value.value}
                 disablePortal
+                disabled={matieresLevels.length === 0}
                 id="matieres"
-                options={matieres.map(matiere => {
-                    return {
-                        value: matiere.id,
-                        label: matiere.name
-                    }
-                })
-                }
+                options={arrayMatieres}
                 onChange={(event, newValue) => {
-                    getMatiere(newValue);
+                    dispatch(getMatiere({ id: newValue.value }));
                 }}
                 className="w-full"
                 renderInput={(params) => <TextField {...params} label="matieres" />}

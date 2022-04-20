@@ -11,12 +11,14 @@ import solutionSlice from './features/solutions/solutionSlice'
 import searchSlice from './features/search/searchSlice'
 import favorisSlice from './features/favoris/favorisSlice'
 import myCoursSlice from './features/myCours/myCoursSlice'
+import createCoursSlice from './features/createCour/createCoursSlice'
 
 export const store = configureStore({
     reducer: {
         user: userSlice,
         cours: coursSlice,
         mycours: myCoursSlice,
+        createCours: createCoursSlice,
         favoris: favorisSlice,
         search: searchSlice,
         exercices: ExerciceSlice,
@@ -27,4 +29,6 @@ export const store = configureStore({
         matieres: matieresSlice,
         userProfile: userProfileSlice,
     },
+    devTools: true,
+    // devTools: process.env.NODE_ENV !== 'production',
 })

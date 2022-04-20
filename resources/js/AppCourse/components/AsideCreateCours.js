@@ -1,5 +1,8 @@
-import React from 'react'
-import { Alert, Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { useState } from 'react';
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCoverImage, getDescription, getTypeContent } from '../redux/features/createCour/createCoursSlice';
+
 
 const OptionsContenue = [
     'PDF',
@@ -8,7 +11,10 @@ const OptionsContenue = [
     'VIDEO',
     'AUDIO'
 ]
-export default function AsideCreateCours({ getDescription, getCoverImage, image, getTypeContent, typeContent, description }) {
+export default function AsideCreateCours() {
+    const dispatch = useDispatch();
+    const { description, image, typeContent } = useSelector(state => state.createCours.data);
+    // const [urlImage, setUrlImage] = useState(image);
     return (<>
         <div className="w-full mb-2">
             <TextField
@@ -19,7 +25,7 @@ export default function AsideCreateCours({ getDescription, getCoverImage, image,
                 variant="outlined"
                 fullWidth
                 value={description}
-                onChange={(e) => { getDescription(e.target.value) }}
+                onChange={(e) => { dispatch(getDescription(e.target.value)) }}
             />
         </div>
         <div className='w-full mb-2'>
@@ -32,7 +38,10 @@ export default function AsideCreateCours({ getDescription, getCoverImage, image,
                     type="file"
                     hidden
                     accept='image/*'
-                    onChange={(e) => { getCoverImage(e.target.files[0]) }}
+                    onChange={(e) => {
+                        // setUrlImage(e.target.files[0])
+                        dispatch(getCoverImage({ file: e.target.files[0] }))
+                    }}
                 />
             </Button>
             <div className='mt-2 p-1 w-full border-dashed border-2 rounded-sm border-sky-500 h' style={{ minHeight: '2rem', maxHeight: '10rem' }}>
@@ -56,7 +65,7 @@ export default function AsideCreateCours({ getDescription, getCoverImage, image,
                         label="Type de contenue"
                         onChange={(e) => {
                             if (confirm('Voulez-vous vraiment changer le type de contenue ?, toutes les informations seront perdues')) {
-                                getTypeContent(e.target.value)
+                                dispatch(getTypeContent(e.target.value))
                             }
                         }}>
                         {

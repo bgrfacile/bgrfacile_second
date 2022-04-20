@@ -13,6 +13,8 @@ const cyclesSlice = createSlice({
     name: "cycles",
     initialState: {
         cycles: [],
+        levelsCycles: [],
+        matieresLevels: [],
         isLoading: false,
         error: null,
     },
@@ -20,6 +22,12 @@ const cyclesSlice = createSlice({
         allcycles: (state, action) => {
             state.cycles = action.payload.cycles;
         },
+        chargeListLevels: (state, action) => {
+            state.levelsCycles = state.cycles.find(cycle => cycle.id === action.payload.id).levels;
+        },
+        chargeListMatieres: (state, action) => {
+            state.matieresLevels = (state.levelsCycles.find(level => level.id === action.payload.id)).matieres;
+        }
     },
     extraReducers: {
         [getAllcycles.pending]: (state, action) => {
@@ -36,5 +44,9 @@ const cyclesSlice = createSlice({
     },
 });
 
-export const { allcycles } = cyclesSlice.actions;
+export const {
+    allcycles,
+    chargeListLevels,
+    chargeListMatieres,
+} = cyclesSlice.actions;
 export default cyclesSlice.reducer;
