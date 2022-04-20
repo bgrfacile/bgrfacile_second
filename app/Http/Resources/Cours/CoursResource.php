@@ -10,6 +10,7 @@ use App\Http\Resources\Level\BasicLevelResource;
 use App\Http\Resources\Matiere\BasicMatiereResource;
 use App\Http\Resources\Quiz\QuizResource;
 use App\Http\Resources\User\UserLambdaResource;
+use App\Http\Resources\User\UserResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CoursResource extends JsonResource
@@ -40,8 +41,8 @@ class CoursResource extends JsonResource
             'comments' => CommentResource::collection($this->comments->reverse()),
             'exercices' => ExerciceSimpleResource::collection($this->exercices),
             'quizzes' => QuizResource::collection($this->quizzes),
-            // 'users' => $this->users ? UserResource::collection($this->users) : null,
-            'users' => $this->users ? UserLambdaResource::collection($this->users) : null,
+            'users' => $this->users ? UserResource::collection($this->users) : null,
+            // 'users' => $this->users ? UserLambdaResource::collection($this->users) : null,
             'created_at' => formaterDate($this->created_at),
             'updated_at' => formaterDate($this->updated_at),
         ];

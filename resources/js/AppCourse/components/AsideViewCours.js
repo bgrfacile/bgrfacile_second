@@ -115,8 +115,8 @@ export const HeaderAsideCours = ({ cours }) => {
             <span className='font-medium text-base italic text-red-800'>COURS</span>
             <h3 className='font-inter font-extrabold text-2xl text-black tracking-tight'>{cours.title}</h3>
             <div className='mt-1 font-medium text-sm text-gray-500'>
-                {cours.updated_at} · <Link className='text-blue-600' to={`/profile/user/${cours.users[0].slug}-${cours.users[0].user_id}`}>
-                    {cours.users[0].user_name}
+                {cours.updated_at} · proposé par <Link className='text-blue-600' to={`/profile/user/${cours.users[0].slug}-${cours.users[0].user_id}`}>
+                    {cours.users[0].pseudo}
                 </Link>
             </div>
             <div className="focus:outline-none flex flex-wrap py-4 w-full overflow-x-auto">
