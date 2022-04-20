@@ -33,7 +33,7 @@ class UserController extends Controller
         }
         $user->update([
             'email' => $request->email,
-            'name' => $request->name,
+            'pseudo' => $request->name,
             'bio' => $request->bio,
             'birthday' => $request->birthday == null ? null : Carbon::parse($request->birthday)->format('Y-m-d'),
             'country' => is_array($request->country) ? $request->country["label"] : $request->country,
