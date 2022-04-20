@@ -27,17 +27,19 @@ class UserController extends Controller
         ]);
         $user = User::findOrFail(Auth::user()->id);
         if ($request->has('numberPhone') && $request->numberPhone != null) {
-            $user->phone()->create([
+            $user->phone()->update([
                 'number_phone' => $request->numberPhone
             ]);
         }
         $user->update([
             'email' => $request->email,
             'pseudo' => $request->name,
+        ]);
+        $user->infoUser()->update([
             'bio' => $request->bio,
             'birthday' => $request->birthday == null ? null : Carbon::parse($request->birthday)->format('Y-m-d'),
             'country' => is_array($request->country) ? $request->country["label"] : $request->country,
-            'gender' => $request->gender == 'femme' ? 'F' : 'M'
+            'gender' => $request->gender == 'femme' ? 'F' : 'M',
         ]);
         $user->save();
 
