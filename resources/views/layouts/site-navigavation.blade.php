@@ -93,16 +93,13 @@
                         <x-svg-search class="block h-6 w-6 text-gray-600" fill="none" stroke="currentColor" />
                     </a>
                 </div>
-                <div class="flex-shrink-0 flex items-center ml-4" x-data="{ open: false }" x-init="$watch('open', value => value ? document.querySelector('html').classList.add('dark') : document.querySelector('html').classList.remove('dark'))">
+                {{-- <div class="flex-shrink-0 flex items-center ml-4" x-data="{ open: false }" x-init="$watch('open', value => value ? document.querySelector('html').classList.add('dark') : document.querySelector('html').classList.remove('dark'))">
                     <button type="button" x-on:click="open = ! open" class="flex justify-center p-2 text-gray-500 transition duration-150 ease-in-out bg-gray-100 border border-transparent rounded-md lg:bg-white lg:dark:bg-gray-900 dark:text-gray-200 dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-700 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50">
                         <x-svg-sun x-show="open" class="block h-6 w-6 text-gray-600 transform -rotate-90 sun" fill="none" stroke="currentColor" />
-                        {{-- <input type="checkbox" checked="checked" id="checkbox"> --}}
                         <x-svg-moon x-show="!open" x-transition class="block h-6 w-6 text-gray-600 transform -rotate-90 moon" fill="none" stroke="currentColor" />
-                        {{-- <label class="cursor-pointer label">
-                            <input type="checkbox" checked="checked" id="checkbox" class="toggle toggle-primary">
-                        </label> --}}
                     </button>
-                </div>
+                </div> --}}
+
                 @auth
                 <x-dropdown class="ml-4" align="right" width="48">
                     <x-slot name="trigger">
