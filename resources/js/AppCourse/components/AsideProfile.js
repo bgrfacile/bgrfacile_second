@@ -30,8 +30,8 @@ export default function AsideProfile({ onClose }) {
         <div className="bg-white p-3 border-t-4 border-blue-600">
             <div>
                 <div className="mt-2 text-center">
-                    <img alt={user.user_name} className="w-10 h-10 lg:w-28 lg:h-28 m-auto object-cover rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
-                    <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{user.user_name}</h5>
+                    <img alt={user.pseudo} className="w-10 h-10 lg:w-28 lg:h-28 m-auto object-cover rounded-full border-4 border-blue-400 bg-white" src={user.url_image} />
+                    <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{user.pseudo}</h5>
                     <span className="hidden text-gray-400 lg:block">{user.roles[0].name}</span>
                 </div>
                 <div className="flex justify-evenly items-center mb-1">
