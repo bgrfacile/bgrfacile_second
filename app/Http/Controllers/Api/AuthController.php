@@ -35,8 +35,7 @@ class AuthController extends Controller
         return response([
             'status' => 'success',
             'message' => 'user create successfully',
-            'user' => new UserResource($user),
-            // 'access_token' => $token
+            'user' => new UserResource($user)
         ], 201);
     }
 
@@ -49,12 +48,12 @@ class AuthController extends Controller
         } else {
             $user = User::where('email', $request->email)->first();
             Auth::login($user, $request->rememberMe ? true : false);
-            $token = $user->createToken('bgrfacileToken')->plainTextToken;
+            // $token = $user->createToken('bgrfacileToken')->plainTextToken;
             // $request->session()->regenerate();
             return response([
                 'message' => 'Authentification réussie',
                 'user' => new UserResource($user),
-                'access_token' => $token
+                // 'access_token' => $token
             ], 200);
         }
     }
