@@ -24,7 +24,7 @@ class ExerciceFullResource extends JsonResource
             'title' => $this->title,
             'coverImage' => $this->coverImage == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($this->coverImage),
             'description' => $this->description,
-            'isActif' => (int) $this->isActif,
+            'isActif' => $this->isActif,
             'isHandout' => $this->is_handout,
             'contents' => ContentResource::collection($this->contents),
             'cours' => [],

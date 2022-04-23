@@ -17,3 +17,21 @@ export const createCours = createAsyncThunk(
         }
     }
 );
+
+export const updateCours = createAsyncThunk(
+    "createCours/updateCours",
+    async (data, { rejectWithValue }) => {
+        try {
+            const formData = new FormData();
+            for (const [key, value] of Object.entries(data)) {
+                formData.append(key, value);
+            }
+            const response = await client.put(`/cours/${data.courId}`,
+                data.content instanceof File ? formData : data,
+                data.content instanceof File ? configFormData : {});
+            return { data: response.data };
+        } catch (error) {
+            return rejectWithValue(error.response.data);
+        }
+    }
+);

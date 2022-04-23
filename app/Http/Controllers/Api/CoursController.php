@@ -86,13 +86,13 @@ class CoursController extends Controller
                 $cours = $this->sauveCoursTEXTE($request, Auth::user());
                 break;
             case 'IMAGE':
-                # code...
+                // code...
                 break;
             case 'VIDEO':
-                # code...
+                // code...
                 break;
             case 'AUDIO':
-                # code...
+                // code...
                 break;
             default:
                 throw new Exception("Une Erreur dans la request", 1);
@@ -177,10 +177,43 @@ class CoursController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'nullable|string|min:5',
+            'cycle_id' => 'required',
+            'level_id' => 'required',
+            'matiere_id' => 'required',
+            // 'content' => 'required',
+        ]);
         $cours = Cours::findOrFail($id);
-        $cours->update([]);
+        // $user = Auth::user();
+        switch ($request->type_content) {
+            case 'PDF':
+                $cours->title = $request->title;
+                $cours->slug = Str::slug($request->title);
+                $cours->description = $request->description;
+                break;
+            case 'TEXTE':
+                $cours->title = $request->title;
+                $cours->slug = Str::slug($request->title);
+                $cours->description = $request->description;
+                break;
+            case 'IMAGE':
+                // code...
+                break;
+            case 'VIDEO':
+                // code...
+                break;
+            case 'AUDIO':
+                // code...
+                break;
+            default:
+                throw new Exception("Une Erreur dans la request", 1);
+                break;
+        }
+        $cours->save();
         return response([
-            'message' => 'cours updated successfully',
+            'message' => 'cours mis à jour avec succès',
             'cours' => new CoursResource($cours),
         ], 200);
     }
@@ -201,9 +234,13 @@ class CoursController extends Controller
         ], 200);
     }
 
-    public function CoursToUser($userId)
+    public function CoursToUser($userId = null)
     {
-        $user = User::find($userId);
+        if ($userId != null && is_int($userId)) {
+            $user = User::findOrFail($userId);
+        } else {
+            $user = User::findOrFail(Auth::user()->id);
+        }
         return CoursResource::collection($user->cours->reverse());
     }
 
@@ -219,7 +256,7 @@ class CoursController extends Controller
         $cours->isActif = $request->isActif;
         $cours->save();
         return response([
-            'message' => 'cours updated successfully',
+            'message' => 'cours mis à jour avec succès',
             'cours' => new CoursResource($cours),
         ], 200);
     }

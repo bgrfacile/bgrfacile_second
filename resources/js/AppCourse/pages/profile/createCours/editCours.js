@@ -1,79 +1,79 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import client from '../../../../api/client';
 import { Alert } from '@mui/material';
-import HearderCreateCours from '../../../components/form/HearderCreateCours';
-import AsideCreateCours from '../../../components/AsideCreateCours';
-import ListItemChoixContent from './../../../components/ListItemChoixContent';
 import LoadingTypeContent from './../../../components/LoadingTypeContent';
-import { getEditCours } from '../../../redux/features/myCours/functions';
+import { setContent, setCourCreate } from '../../../redux/features/createCour/createCoursSlice';
+import { useNavigate } from 'react-router-dom';
+import { updateCours } from '../../../redux/features/createCour/functions';
+import HeaderUpdateCours from './../../../components/form/HeaderUpdateCours';
+import AsideUpdateCours from '../../../components/AsideUpdateCours';
+import { getShowCours } from '../../../redux/features/myCours/functions';
 
 export default function EditCours() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
-    const cours = useSelector(state => state.cours.cours.length > 0 ? state.cours.cours.find(cours => cours.id === parseInt(id)) : {});
-    console.log('cours', cours);
+    const cours = useSelector(state => state.mycours.cours.length > 0 ? state.mycours.cours.find(cours => cours.id === parseInt(id)) : {});
+    const { user_id } = useSelector(state => state.user.profile);
+    const { courId, title, cycle_id, level_id, matiere_id, isActif, description, image, typeContent, content } = useSelector(state => state.createCours.data);
+    const { isError, errorMessage, isSuccess, successMessage } = useSelector(state => state.createCours);
     useEffect(() => {
         if (Object.keys(cours).length === 0) {
-            dispatch(getEditCours({ courId: parseInt(id) }));
+            dispatch(getShowCours({ courId: parseInt(id) }));
         } else {
-            // setLoading(false);
+            dispatch(setCourCreate({
+                courId: cours.id,
+                title: cours.title,
+                cycle_id: cours.cycle.id,
+                level_id: cours.level.id,
+                matiere_id: cours.matiere.id,
+                isActif: cours.isActif,
+                description: cours.description,
+                image: cours.coverImage,
+                typeContent: cours.contents[0].type_content,
+                content: cours.contents[0].content,
+            }));
         }
     }, []);
-    const [title, setTitle] = useState(cours.title ?? '');
-    const [cycle, setCycle] = useState({});
-    const [level, setLevel] = useState({});
-    const [matiere, setMatiere] = useState({});
-    const [isActif, setIsActif] = useState(null);
-    const [description, setDescription] = useState(cours.description ?? '');
-    const [image, setImage] = useState('');
-    const [typeContent, setTypeContent] = useState(cours.typeContent ?? '');
-    const [content, setContent] = useState(cours.content ?? null);
+    // const [title, setTitle] = useState(cours.title ?? '');
+    // const [cycle, setCycle] = useState({});
+    // const [level, setLevel] = useState({});
+    // const [matiere, setMatiere] = useState({});
+    // const [isActif, setIsActif] = useState(null);
+    // const [description, setDescription] = useState(cours.description ?? '');
+    // const [image, setImage] = useState('');
+    // const [typeContent, setTypeContent] = useState(cours.typeContent ?? '');
+    // const [content, setContent] = useState(cours.content ?? null);
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-    const [isSuccess, setIsSuccess] = useState(false);
-    const [successMessage, setSuccessMessage] = useState('');
+    // const [isLoading, setIsLoading] = useState(false);
+    // const [isError, setIsError] = useState(false);
+    // const [errorMessage, setErrorMessage] = useState('');
+    // const [isSuccess, setIsSuccess] = useState(false);
+    // const [successMessage, setSuccessMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const config = {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'multipart/form-data'
-            }
-        }
-
         const data = {
-            user_id: user_id,
-            title: title,
-            cycle_id: cycle.value,
-            level_id: level.value,
-            matiere_id: matiere.value,
-            isActif: isActif,
-            description: description,
+            courId,
+            user_id,
+            title,
+            cycle_id,
+            level_id,
+            matiere_id,
+            isActif,
+            description,
             coverImage: image,
-            content: content,
-            type_content: typeContent
+            content,
+            type_content: new String(typeContent).toUpperCase()
         }
-        setIsLoading(true);
-        const formData = new FormData();
-        for (const [key, value] of Object.entries(data)) {
-            formData.append(key, value);
-        }
-        try {
-            const response = await client.post('/cours', formData, config);
-            setIsLoading(false);
-            setIsSuccess(true);
-            setSuccessMessage(response.data.message);
-        } catch (error) {
-            console.error(error.response);
-            setIsLoading(false);
-            setIsError(true);
-            setErrorMessage(error.response.data.message);
-        }
+        dispatch(updateCours(data))
+            .then(res => {
+                console.log('res', res);
+                setTimeout(() => {
+                    navigate('/profile/my-cours', { state: { create: true } });
+                }, 1000);
+            })
     }
     return (<>
         <form onSubmit={handleSubmit}
@@ -84,30 +84,15 @@ export default function EditCours() {
             {isSuccess && <Alert variant="outlined" onClose={() => { setIsSuccess(false) }} className='h-fit w-full m-1' severity="success">
                 {successMessage && <span>{successMessage}</span>}
             </Alert>}
-            <HearderCreateCours
-                isloading={isLoading}
-                title={title}
-                getTitle={(title) => setTitle(title)}
-                getCycle={(cycle) => setCycle(cycle)}
-                getLevel={(level) => setLevel(level)}
-                getMatiere={(matiere) => setMatiere(matiere)}
-                getIsActif={(isActif) => setIsActif(isActif)} />
+            <HeaderUpdateCours />
 
             <div className='w-full h-full flex-1 grid grid-cols-4 gap-3  mb-2'>
                 <div className='col-span-1 bg-white rounded-md w-full h-full flex flex-col p-2'>
-                    <AsideCreateCours
-                        description={description}
-                        getDescription={(description) => setDescription(description)}
-                        getCoverImage={(image) => setImage(image)}
-                        getTypeContent={(typeContent) => setTypeContent(typeContent)}
-                        image={image}
-                        typeContent={typeContent}
+                    <AsideUpdateCours
                     />
                 </div>
                 <div className='col-span-3 bg-white rounded-md w-full h-full flex flex-col p-2'>
-                    {typeContent === '' ?
-                        <ListItemChoixContent onChange={(contenue) => setTypeContent(contenue)} /> :
-                        <LoadingTypeContent typeContent={typeContent} getContent={(data) => setContent(data)} />}
+                    <LoadingTypeContent typeContent={typeContent} getContent={(data) => dispatch(setContent(data))} setContent={content} />
                 </div>
             </div>
         </form>

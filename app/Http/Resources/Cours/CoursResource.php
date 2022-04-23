@@ -38,6 +38,7 @@ class CoursResource extends JsonResource
             'level' => new BasicLevelResource($this->levels->first()),
             'matiere' => new BasicMatiereResource($this->matieres->first()),
             'contents' => ContentResource::collection($this->contents),
+            // 'type_content' => $this->contents()->type_content,
             'comments' => CommentResource::collection($this->comments->reverse()),
             'exercices' => ExerciceSimpleResource::collection($this->exercices),
             'quizzes' => QuizResource::collection($this->quizzes),

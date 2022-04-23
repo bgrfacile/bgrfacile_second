@@ -1,10 +1,9 @@
 import { Autocomplete, TextField } from '@mui/material'
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { getCycle, getLevel, getMatiere } from '../redux/features/createCour/createCoursSlice';
 import { chargeListLevels, chargeListMatieres, getAllcycles } from './../redux/features/cycle/cyclesSlice';
 
-export default function FilterClassement() {
+export default function FilterClassement({ getLevel, getMatiere, getCycle }) {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getAllcycles());
@@ -31,7 +30,8 @@ export default function FilterClassement() {
                 id="basicCycles"
                 options={arrayCycles}
                 onChange={(event, newValue) => {
-                    dispatch(getCycle({ id: newValue.value }));
+                    getCycle(newValue);
+                    // dispatch(getCycle({ id: newValue.value }));
                     dispatch(chargeListLevels(
                         { id: parseInt(newValue.value) }
                     ));
@@ -46,7 +46,8 @@ export default function FilterClassement() {
                 id="levels"
                 options={arrayLevels}
                 onChange={(event, newValue) => {
-                    dispatch(getLevel({ id: newValue.value }));
+                    getLevel(newValue);
+                    // dispatch(getLevel({ id: newValue.value }));
                     dispatch(chargeListMatieres(
                         { id: parseInt(newValue.value) }
                     ));
@@ -61,7 +62,8 @@ export default function FilterClassement() {
                 id="matieres"
                 options={arrayMatieres}
                 onChange={(event, newValue) => {
-                    dispatch(getMatiere({ id: newValue.value }));
+                    getMatiere(newValue);
+                    // dispatch(getMatiere({ id: newValue.value }));
                 }}
                 className="w-full"
                 renderInput={(params) => <TextField {...params} label="matieres" />}

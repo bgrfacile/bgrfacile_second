@@ -12,7 +12,7 @@ import '@react-pdf-viewer/full-screen/lib/styles/index.css';
 import '@react-pdf-viewer/attachment/lib/styles/index.css';
 import { Alert } from '@mui/material';
 
-export default function CreateContenuPDF({ getContent }) {
+export default function CreateContenuPDF({ getContent, setContent }) {
     const toolbarPluginInstance = toolbarPlugin();
     const bookmarkPluginInstance = bookmarkPlugin();
     const fullScreenPluginInstance = fullScreenPlugin();
@@ -59,7 +59,7 @@ export default function CreateContenuPDF({ getContent }) {
         defaultToolbarButton: true,
 
     });
-    const [url, setUrl] = useState('');
+    const [url, setUrl] = useState(setContent !== undefined ? setContent : '');
     const [isError, setIsError] = useState(false);
     const [messageError, setMessageError] = useState('');
     return (
@@ -87,7 +87,6 @@ export default function CreateContenuPDF({ getContent }) {
                                 setUrl(e.target.result);
                             };
                             reader.readAsDataURL(files[0]);
-                            console.log('data', files[0]);
                             getContent(files[0])
                         }
                     }}

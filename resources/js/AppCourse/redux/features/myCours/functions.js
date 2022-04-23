@@ -1,8 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
 
-export const getEditCours = createAsyncThunk(
-    "cours/getEditCours",
+
+export const getShowCours = createAsyncThunk(
+    "myCours/getShowCours",
     async (data, { rejectWithValue }) => {
         try {
             const response = await client.get(`/cours/${data.courId}`);
@@ -20,7 +21,7 @@ export const getMyCours = createAsyncThunk(
     "myCours/getMyCours",
     async (data, { rejectWithValue }) => {
         try {
-            const res = await client.get(`/cours/user/${data.user_id}`);
+            const res = await client.get(`/cours/me/${data.user_id}`);
             return { data: res.data };
         } catch (err) {
             if (!err.response) {

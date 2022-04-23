@@ -135,6 +135,28 @@ class SolutionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $solution = Solution::findOrFail($id);
+        $solution->delete();
+        return response([
+            'message' => 'solution deleted successfully',
+            'solution' => new SolutionResource($solution),
+        ], 200);
+    }
+
+    public function solutionUser(Request $request)
+    {
+        $user = $request->user();
+        $solutions = $user->solutions;
+        return SolutionResource::collection($solutions);
+    }
+    public function updateIsactif(Request $request, $solutionsId)
+    {
+        $solution = Solution::findOrFail($solutionsId);
+        $solution->isActif = $request->isActif;
+        $solution->save();
+        return response([
+            'message' => 'solution updated successfully',
+            'solution' => new SolutionResource($solution),
+        ], 200);
     }
 }

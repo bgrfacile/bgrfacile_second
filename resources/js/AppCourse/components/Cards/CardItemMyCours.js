@@ -73,9 +73,3 @@ export default function CardItemMyCours({ cour }) {
     </>)
 }
 
-// const changeVisibilitieApi = (courId, isActif) => {
-//     const userId = JSON.parse(localStorage.getItem("user")).user_id;
-//     client.put(`/cours/${courId}/isactif`, { isActif, userId })
-//         .then(res => console.log(res.data))
-//         .catch(error => console.error(error.data));
-// }

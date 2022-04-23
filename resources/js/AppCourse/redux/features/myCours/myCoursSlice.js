@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
     changeStatusActif,
     deleteMyCours,
-    getEditCours,
     getMyCours,
+    getShowCours,
 } from './functions';
 
 
@@ -40,15 +40,8 @@ const myCoursSlice = createSlice({
         [deleteMyCours.fulfilled]: (state, action) => {
             state.cours = state.cours.filter((cour) => cour.id !== action.payload.data.cours.id);
         },
-        [getEditCours.fulfilled]: (state, action) => {
-            state.cours = state.cours.map((cour) => {
-                if (cour.id === action.payload.data.cours.id) {
-                    cour.title = action.payload.data.cours.title;
-                    cour.description = action.payload.data.cours.description;
-                    cour.isActif = action.payload.data.cours.isActif;
-                }
-                return cour;
-            });
+        [getShowCours.fulfilled]: (state, action) => {
+            state.cours = [...state.cours, action.payload.data];
         },
     },
 });

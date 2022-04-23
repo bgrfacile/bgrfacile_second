@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\Exercice\ExerciceFullResource;
-use App\Models\Exercice;
-use App\Models\User;
 use Exception;
+use App\Models\User;
+use App\Models\Exercice;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\Exercice\ExerciceFullResource;
 
 class ExercicesController extends Controller
 {
@@ -120,22 +122,25 @@ class ExercicesController extends Controller
             'isSubjectExam' => 'required',
             'typeContent' => 'required',
             'content' => 'required',
+            'cours_id' => 'nullable',
             'coverImage' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $coverImage = null;
         if ($request->hasFile('coverImage')) {
             $imageName = time() . '_' . $request->file('coverImage')->getClientOriginalName();
-            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('cover_exercice', $imageName, 'public');
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('images_contenus', $imageName, 'public');
         }
-        $user = User::findorFail($request->user_id);
+        $user = User::findorFail(Auth::user()->id); //$request->user_id
         switch ($request->typeContent) {
             case 'PDF':
                 $content = null;
                 if ($request->hasFile('content')) {
-                    $content = "/storage/" . $request->file('content')->storeAs('/contenu/PDF/Exercices', $request->file('content')->getClientOriginalName(), 'public');
+                    $nameContent = time() . '_' . $request->file('content')->getClientOriginalName();
+                    $content = "/storage/" . $request->file('content')->storeAs('contenus_pdf', $nameContent, 'public');
                 }
                 $exercice = $user->exercices()->create([
                     'title' => $request->title,
+                    'slug' => Str::slug($request->title),
                     'coverImage' => $coverImage,
                     'description' => $request->description,
                     'isActif' => $request->isActif ? "1" : "0",
@@ -149,6 +154,7 @@ class ExercicesController extends Controller
             case 'TEXTE':
                 $exercice = $user->exercices()->create([
                     'title' => $request->title,
+                    'slug' => Str::slug($request->title),
                     'coverImage' => $coverImage,
                     'description' => $request->description,
                     'isActif' => $request->isActif ? "1" : "0",
@@ -173,7 +179,9 @@ class ExercicesController extends Controller
                 break;
         }
 
-        // $exercice->cours()->attach($request->cours_id);
+        if ($request->cours_id != "null") {
+            $exercice->cours()->attach($request->cours_id);
+        }
         $exercice->cycles()->attach($request->cycle_id);
         $exercice->levels()->attach($request->level_id);
         $exercice->matieres()->attach($request->matiere_id);
@@ -215,6 +223,32 @@ class ExercicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $exercice = Exercice::findOrFail($id);
+        $exercice->delete();
+        return response([
+            'message' => 'Exercice supprimé avec succès',
+            'exercice' => new ExerciceFullResource($exercice),
+        ], 200);
+    }
+
+    public function exercicesUser($exercicesId)
+    {
+        $user = User::findOrFail($exercicesId);
+        $exercices = $user->exercices()->get()->reverse();
+        return ExerciceFullResource::collection($exercices);
+    }
+
+    public function updateIsactif($exercicesId, Request $request)
+    {
+        $request->validate([
+            'isActif' => 'required|boolean',
+        ]);
+        $exercice = Exercice::findOrFail($exercicesId);
+        $exercice->isActif = $request->isActif;
+        $exercice->save();
+        return response([
+            'message' => 'Exercice mis à jour avec succès',
+            'exercice' => new ExerciceFullResource($exercice),
+        ], 200);
     }
 }

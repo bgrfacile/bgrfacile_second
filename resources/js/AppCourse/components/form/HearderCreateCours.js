@@ -2,7 +2,7 @@ import { LoadingButton } from '@mui/lab';
 import { Autocomplete, Button, ButtonGroup, Checkbox, FormControlLabel, FormGroup, TextField } from '@mui/material';
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { getIsActif, getTitle } from '../../redux/features/createCour/createCoursSlice';
+import { getCycle, getIsActif, getLevel, getMatiere, getTitle } from '../../redux/features/createCour/createCoursSlice';
 import FilterClassement from '../FilterClassement';
 
 export default function HearderCreateCours({ }) {
@@ -20,7 +20,11 @@ export default function HearderCreateCours({ }) {
                     label="titre du cours" variant="outlined"
                     value={title}
                     fullWidth />
-                <FilterClassement />
+                <FilterClassement
+                    getCycle={(cycle) => { dispatch(getCycle({ id: cycle.value })); }}
+                    getLevel={(level) => { dispatch(getLevel({ id: level.value })); }}
+                    getMatiere={(matiere) => { dispatch(getMatiere({ id: matiere.value })); }}
+                />
             </div>
             <div className="col-span-1 h-full w-full flex flex-col justify-start p-2">
                 <ButtonGroup orientation="vertical" variant="contained" aria-label="outlined primary button group">

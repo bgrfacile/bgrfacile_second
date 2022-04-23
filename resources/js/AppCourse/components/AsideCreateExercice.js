@@ -1,5 +1,7 @@
 import React from 'react'
 import { Alert, Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCoverImage, getDescription, getTypeContent } from '../redux/features/createExercice/createExerciceSlice';
 
 const OptionsContenue = [
     'PDF',
@@ -8,13 +10,9 @@ const OptionsContenue = [
     'VIDEO',
     'AUDIO'
 ]
-export default function AsideCreateExercice({
-    coverImage,
-    getDescription,
-    getCoverImage,
-    getTypeContent,
-    typeContent
-}) {
+export default function AsideCreateExercice() {
+    const dispatch = useDispatch();
+    const { description, coverImage, typeContent } = useSelector(state => state.createExercice.data);
     return (<>
         <div className="w-full mb-2">
             <TextField
@@ -24,7 +22,8 @@ export default function AsideCreateExercice({
                 rows={6}
                 variant="outlined"
                 fullWidth
-                onChange={(e) => { getDescription(e.target.value) }}
+                value={description}
+                onChange={(e) => { dispatch(getDescription(e.target.value)) }}
             />
         </div>
         <div className='w-full mb-2'>
@@ -37,7 +36,10 @@ export default function AsideCreateExercice({
                     type="file"
                     hidden
                     accept='image/*'
-                    onChange={(e) => { getCoverImage(e.target.files[0]) }}
+                    onChange={(e) => {
+                        dispatch(getCoverImage({ file: e.target.files[0] }))
+                        // getCoverImage(e.target.files[0])
+                    }}
                 />
             </Button>
             <div className='mt-2 p-1 w-full border-dashed border-2 rounded-sm border-sky-500 h' style={{ minHeight: '2rem', maxHeight: '10rem' }}>
@@ -61,7 +63,7 @@ export default function AsideCreateExercice({
                         label="Type de contenue"
                         onChange={(e) => {
                             if (confirm('Voulez-vous vraiment changer le type de contenue ?, toutes les informations seront perdues')) {
-                                getTypeContent(e.target.value)
+                                dispatch(getTypeContent(e.target.value))
                             }
                         }}>
                         {

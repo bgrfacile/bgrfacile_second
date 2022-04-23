@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import LayoutCourse from './Layouts/LayoutCourse';
 import BonusIndex from './pages/bonus/BonusIndex';
@@ -12,7 +13,6 @@ import Followers from './pages/profile/followers';
 import EditProfile from './pages/profile/editProfile/EditProfile';
 import Infos from './pages/profile/informationPersonnel/Infos';
 import MyCours from './pages/profile/createCours/MyCours';
-import MyExos from './pages/profile/MyExos';
 import Favoris from './pages/profile/Faroris/Favoris';
 import FavorisCours from './pages/profile/Faroris/FavorisCours';
 import FavorisExcerciceSolution from './pages/profile/Faroris/FavorisExcerciceSolution';
@@ -27,14 +27,15 @@ import ViewCours from './pages/Cours/ViewCours';
 import CreateCoursIndex from './pages/profile/createCours/CreateCoursIndex';
 import Search from './pages/search/Search';
 import Nuser from './pages/profile/nUser/Nuser';
-import CreateExercice from "./pages/profile/exercices/CreateExercice";
-import EditMyExercice from "./pages/profile/exercices/EditMyExercice";
-import CreateSolution from "./pages/profile/exercices/CreateSolution";
 import LastCours from "./pages/Cours/LastCours";
 import ListeExercices from "./pages/Exercices/ListeExercices";
 import MonEcole from "./pages/profile/monEcole/monEcole";
 import EditCours from "./pages/profile/createCours/editCours";
-import { useSelector } from 'react-redux';
+import MyExos from './pages/profile/CreateExercices/MyExos';
+import CreateSolution from './pages/profile/CreateExercices/CreateSolution';
+import EditSolution from "./pages/profile/CreateExercices/EditSolution";
+import EditMyExercice from './pages/profile/CreateExercices/EditMyExercice';
+import CreateExercice from './pages/profile/CreateExercices/CreateExercice';
 
 
 
@@ -42,9 +43,8 @@ import { useSelector } from 'react-redux';
 export default function RoutePath() {
     const RequireAuth = ({ children }) => {
         const { isconnect } = useSelector(state => state.user);
-        // let auth = localStorage.getItem('user') ? true : false;
         let location = useLocation();
-        if (!isconnect) {
+        if (!true) {
             return <Navigate to="/signin" state={{ from: location }} replace />;
         }
         return children;
@@ -88,9 +88,11 @@ export default function RoutePath() {
                         {/* <Route path="/profile/my-cours/create/video" element={<RequireAuth><CreateCoursVideo /></RequireAuth>} /> */}
                         {/* <Route path="/profile/my-cours/create/audio" element={<RequireAuth><CreateCoursAudio /></RequireAuth>} /> */}
                         <Route path="/profile/my-exos" element={<RequireAuth><MyExos /></RequireAuth>} />
-                        <Route path="/profile/my-exos/Edit" element={<RequireAuth><EditMyExercice /></RequireAuth>} />
                         <Route path="/profile/my-exos/create" element={<RequireAuth><CreateExercice /></RequireAuth>} />
-                        <Route path="/profile/my-exos/add/solution" element={<RequireAuth><CreateSolution /></RequireAuth>} />
+                        <Route path="/profile/my-exos/edit-:id" element={<RequireAuth><EditMyExercice /></RequireAuth>} />
+
+                        <Route path="/profile/my-exos/add/solution-:exercideId" element={<RequireAuth><CreateSolution /></RequireAuth>} />
+                        <Route path="/profile/my-exos/solution/edit-:id" element={<RequireAuth><EditSolution /></RequireAuth>} />
 
                         <Route path="/profile/mon-ecole" element={<RequireAuth><MonEcole /></RequireAuth>} />
 

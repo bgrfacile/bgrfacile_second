@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createCours } from './functions';
+import { createCours, updateCours } from './functions';
 const initialState = {
     data: {
+        courId: null,
         title: '',
         cycle_id: '',
         level_id: '',
@@ -22,6 +23,9 @@ const createCoursSlice = createSlice({
     name: "createCours",
     initialState,
     reducers: {
+        setCourCreate: (state, action) => {
+            state.data = action.payload;
+        },
         getTitle: (state, action) => {
             state.data.title = action.payload;
         },
@@ -35,9 +39,6 @@ const createCoursSlice = createSlice({
             state.data.image = action.payload.file;
         },
         getTypeContent: (state, action) => {
-            state.data.typeContent = action.payload;
-        },
-        setTypeContent: (state, action) => {
             state.data.typeContent = action.payload;
         },
         getContent: (state, action) => {
@@ -69,18 +70,32 @@ const createCoursSlice = createSlice({
         [createCours.rejected]: (state, action) => {
             state.isLoading = false;
             state.isError = true;
-            state.errorMessage = action.payload.message;
+            state.errorMessage = action.payload.data.message;
+        },
+        [updateCours.pending]: (state, action) => {
+            state.isLoading = true;
+        },
+        [updateCours.fulfilled]: (state, action) => {
+            state.isLoading = false;
+            state.isSuccess = true;
+            state.successMessage = action.payload.data.message;
+            state.data = initialState.data;
+        },
+        [updateCours.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.isError = true;
+            state.errorMessage = action.payload.data.message;
         }
     }
 });
 
 export const {
+    setCourCreate,
     getTitle,
     getIsActif,
     getDescription,
     getCoverImage,
     getTypeContent,
-    setTypeContent,
     getContent,
     getCycle,
     getLevel,

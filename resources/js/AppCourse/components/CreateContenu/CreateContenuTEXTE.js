@@ -2,12 +2,12 @@ import React from 'react'
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 
-export default function CreateContenuTEXTE({ getContent }) {
+export default function CreateContenuTEXTE({ getContent, setContent }) {
     const myEditor = useEditor({
         extensions: [
             StarterKit
         ],
-        content: '<p></p>',
+        content: setContent !== undefined ? setContent : '<p></p>',
         editorProps: {
             spellcheck: 'false',
             class: 'prose prose-slate lg:prose-lg prose-sm sm:prose xl:prose-xl focus:outline-none mx-auto mt-2 px-2 h-full',

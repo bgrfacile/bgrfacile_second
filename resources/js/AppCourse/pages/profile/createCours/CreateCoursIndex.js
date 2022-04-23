@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import HearderCreateCours from '../../../components/form/HearderCreateCours';
 import ListItemChoixContent from '../../../components/ListItemChoixContent';
 import AsideCreateCours from '../../../components/AsideCreateCours';
 import LoadingTypeContent from '../../../components/LoadingTypeContent';
 import { createCours } from './../../../redux/features/createCour/functions';
-import { setContent } from '../../../redux/features/createCour/createCoursSlice';
+import { getTypeContent, setContent } from '../../../redux/features/createCour/createCoursSlice';
 import { useNavigate } from 'react-router-dom';
 import { Alert } from '@mui/material';
 
@@ -32,7 +31,6 @@ export default function CreateCoursIndex() {
         }
         dispatch(createCours(data))
             .then(res => {
-                console.log('res', res);
                 setTimeout(() => {
                     navigate('/cours', { state: { create: true } });
                 }, 1000);
@@ -55,7 +53,9 @@ export default function CreateCoursIndex() {
             </div>
             <div className='col-span-3 bg-white rounded-md w-full h-full flex flex-col p-2'>
                 {typeContent === '' ?
-                    <ListItemChoixContent /> :
+                    <ListItemChoixContent
+                        setTypeContent={(contenue) => dispatch(getTypeContent(contenue))}
+                    /> :
                     <LoadingTypeContent
                         typeContent={typeContent}
                         getContent={(data) => dispatch(setContent(data))}

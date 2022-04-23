@@ -2,12 +2,12 @@ import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
 import { getExerciceById, addRatingExercice, addLike, removeLike } from "./functions";
 
-export const getMyExercice = createAsyncThunk(
-    'exercices/getMyExercice',
-    async () => {
-        const res = await client.get("/my-exercices");
-        return { exercices: res.data };
-    });
+// export const getMyExercice = createAsyncThunk(
+//     'exercices/getMyExercice',
+//     async () => {
+//         const res = await client.get("/my-exercices");
+//         return { exercices: res.data };
+//     });
 
 export const getLastExercice = createAsyncThunk(
     'exercices/getLastExercice',
@@ -43,7 +43,6 @@ const ExerciceSlice = createSlice({
         exercices: [],
         exerciceShow: {},
         exercicesUse: [],
-        myExercicesCreate: [],
         isLoading: false,
         isLoadingShow: true,
         isLoadingAddRating: false,
@@ -137,15 +136,15 @@ const ExerciceSlice = createSlice({
             state.error = action.error.message;
         },
 
-        [getMyExercice.pending]: (state, action) => {
-            state.isLoading = true;
-        },
-        [getMyExercice.fulfilled]: (state, action) => {
-            state.myExercicesCreate = action.payload.exercices;
-        },
-        [getMyExercice.rejected]: (state, action) => {
-            state.error = action.error.message;
-        },
+        // [getMyExercice.pending]: (state, action) => {
+        //     state.isLoading = true;
+        // },
+        // [getMyExercice.fulfilled]: (state, action) => {
+        //     state.myExercicesCreate = action.payload.exercices;
+        // },
+        // [getMyExercice.rejected]: (state, action) => {
+        //     state.error = action.error.message;
+        // },
 
         [getExerciceById.pending]: (state, action) => {
             state.isLoadingShow = true;
