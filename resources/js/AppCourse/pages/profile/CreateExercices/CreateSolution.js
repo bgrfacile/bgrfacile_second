@@ -113,7 +113,7 @@ export default function CreateSolution() {
                 </div>
                 <div className='h-full w-full flex-1'>
                     {typeContent === '' ?
-                        <ListItemChoixContent onChange={(contenue) => setTypeContent(contenue)} /> :
+                        <ListItemChoixContent setTypeContent={(contenue) => setTypeContent(contenue)} /> :
                         <LoadingTypeContent typeContent={typeContent} getContent={(data) => setContent(data)} />}
                 </div>
             </div>

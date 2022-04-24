@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createExercice } from './functions';
+import { createExercice, updateExercices } from './functions';
 
 const initialState = {
     data: {
@@ -68,6 +68,9 @@ const createExerciceSlice = createSlice({
         },
         getContent: (state, action) => {
             state.data.content = action.payload;
+        },
+        setContent: (state, action) => {
+            state.data.content = action.payload;
         }
     },
     extraReducers: {
@@ -93,10 +96,33 @@ const createExerciceSlice = createSlice({
             state.isSuccess = false;
             state.successMessage = "";
         },
+        [updateExercices.pending]: (state, action) => {
+            state.isLoading = true;
+            state.isError = false;
+            state.errorMessage = "";
+            state.isSuccess = false;
+            state.successMessage = "";
+        },
+        [updateExercices.fulfilled]: (state, action) => {
+            state.data = initialState.data;
+            state.isLoading = false;
+            state.isError = false;
+            state.errorMessage = "";
+            state.isSuccess = true;
+            state.successMessage = "";
+        },
+        [updateExercices.rejected]: (state, action) => {
+            state.isLoading = false;
+            state.isError = true;
+            state.errorMessage = action.payload.data.message;
+            state.isSuccess = false;
+            state.successMessage = "";
+        }
     },
 });
 
 export const {
+    setContent,
     setExerciceCreate,
     setInitState,
     getCourId,

@@ -183,7 +183,6 @@ class CoursController extends Controller
             'cycle_id' => 'required',
             'level_id' => 'required',
             'matiere_id' => 'required',
-            // 'content' => 'required',
         ]);
         $cours = Cours::findOrFail($id);
         $coverImage = null;

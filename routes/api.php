@@ -36,7 +36,8 @@ Route::prefix('v1')->group(function () {
         Route::post("/users/{user_id}/follow", [FollowController::class, 'follow']);
         Route::post("/users/{user_id}/unfollow", [FollowController::class, 'unfollow']);
 
-        Route::apiResource('/exercices', ExercicesController::class)->except(['index', 'show']);
+        Route::apiResource('/exercices', ExercicesController::class)->except(['index', 'show', 'update']);
+        Route::post('/exercices/update/{exercices}', [ExercicesController::class, 'update']);
         Route::put('/exercices/{exercicesId}/isactif', [ExercicesController::class, 'updateIsactif']);
         Route::get('/exercices/user/{exercicesId}', [ExercicesController::class, 'exercicesUser']);
         Route::get('/my-exercices', [ExercicesController::class, 'myExercices']);

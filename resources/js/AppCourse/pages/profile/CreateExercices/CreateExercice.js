@@ -47,7 +47,7 @@ export default function CreateExercice() {
             .then(res => {
                 console.log('res', res.data);
                 setTimeout(() => {
-                    navigate('/profile/my-cours', { state: { isSuccess: true } });
+                    navigate('/profile/my-exos', { state: { isSuccess: true } });
                 }, 1000);
             })
     }

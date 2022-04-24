@@ -30,11 +30,11 @@ export default function HeaderUpdateCours() {
             <div className="col-span-1 h-full w-full flex flex-col justify-start p-2">
                 <ButtonGroup orientation="vertical" variant="contained" aria-label="outlined primary button group">
                     <LoadingButton
-                        // loading={isLoading}
+                        loading={isLoading}
                         loadingPosition="start"
                         startIcon={<UpdateSvg />}
                         type="submit"
-                        // disabled={isLoading}
+                        disabled={isLoading}
                         onClick={() => { }}
                         variant="outlined">Enregistrer</LoadingButton>
                 </ButtonGroup>

@@ -212,7 +212,68 @@ class ExercicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title' => 'required|string',
+            'description' => 'nullable|string|min:3',
+            'cycle_id' => 'required',
+            'level_id' => 'required',
+            'matiere_id' => 'required',
+        ]);
+        // dd($request->all());
+        $exercice = Exercice::findOrFail($id);
+        $coverImage = null;
+        if ($request->hasFile('coverImage')) {
+            $imageName = time() . '_' . Str::slug($request->file('coverImage')->getClientOriginalName());
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('images_contenus', $imageName, 'public');
+        }
+
+        $exercice->update([
+            'title' => $request->title,
+            'slug' => Str::slug($request->title),
+            'description' => $request->description,
+            'coverImage' => $coverImage,
+            'isActif' => $request->isActif ? "1" : "0",
+            'is_SubjectExam' => $request->isSubjectExam ? 1 : 0,
+        ]);
+
+        switch ($request->type_content) {
+            case 'PDF':
+                $content = null;
+                if ($request->hasFile('content')) {
+                    $nameContent = time() . '_' . Str::slug($request->file('content')->getClientOriginalName());
+                    $content = "/storage/" . $request->file('content')->storeAs('contenus_pdf', $nameContent, 'public');
+                }
+                $exercice->contents()->update([
+                    'content' => $content,
+                ]);
+                break;
+            case 'TEXTE':
+                $exercice->contents()->updateOrCreate([
+                    'type_content' => $request->type_content,
+                ], [
+                    'content' => $request->content,
+                ]);
+                break;
+            case 'IMAGE':
+                # code...
+                break;
+            case 'VIDEO':
+                # code...
+                break;
+            case 'AUDIO':
+                # code...
+                break;
+            default:
+                throw new Exception("Une Erreur dans la request", 1);
+                break;
+        }
+        $exercice->cycles()->sync($request->cycle_id);
+        $exercice->levels()->sync($request->level_id);
+        $exercice->matieres()->sync($request->matiere_id);
+        return response([
+            'message' => 'Exercice mis à jour avec succès',
+            'exercice' => new ExerciceFullResource($exercice),
+        ], 200);
     }
 
     /**

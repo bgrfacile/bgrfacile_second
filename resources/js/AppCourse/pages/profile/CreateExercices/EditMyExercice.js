@@ -5,9 +5,10 @@ import { Alert } from '@mui/material';
 import HeaderUpdateExercice from '../../../components/HeaderUpdateExercice';
 import AsideUpdateExercice from '../../../components/AsideUpdateExercice';
 import LoadingTypeContent from './../../../components/LoadingTypeContent';
-import { setExerciceCreate, setInitState } from '../../../redux/features/createExercice/createExerciceSlice';
+import { setContent, setExerciceCreate, setInitState } from '../../../redux/features/createExercice/createExerciceSlice';
 import { useEffect } from 'react';
 import { getShowExercice } from '../../../redux/features/myExercices/functions';
+import { updateExercices } from '../../../redux/features/createExercice/functions';
 
 export default function EditMyExercice() {
     const { id } = useParams();
@@ -42,7 +43,7 @@ export default function EditMyExercice() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = {
-            courId,
+            exerciceId,
             user_id,
             title,
             cycle_id,
@@ -54,11 +55,11 @@ export default function EditMyExercice() {
             content,
             type_content: new String(typeContent).toUpperCase()
         }
-        dispatch(updateCours(data))
+        dispatch(updateExercices(data))
             .then(res => {
                 console.log('res', res);
                 setTimeout(() => {
-                    navigate('/profile/my-cours', { state: { create: true } });
+                    navigate('/profile/my-exos', { state: { isSuccess: true } });
                 }, 1000);
             })
     }
