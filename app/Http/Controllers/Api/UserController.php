@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
+use Carbon\Carbon;
+use App\Models\User;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\User\UserResource;
 use App\Http\Resources\User\UserShowResource;
-use App\Models\User;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -27,9 +29,17 @@ class UserController extends Controller
         ]);
         $user = User::findOrFail(Auth::user()->id);
         if ($request->has('numberPhone') && $request->numberPhone != null) {
-            $user->phone()->update([
-                'number_phone' => $request->numberPhone
-            ]);
+            if ($user->phone()->exists()) {
+                $user->phone()->update([
+                    'number_phone' => $request->numberPhone,
+                ]);
+            } else {
+                $user->phone()->create([
+                    'number_phone' => $request->numberPhone,
+                ]);
+            }
+            // $user->phone()->updateOrCreate(['number_phone' => $request->numberPhone]);
+
         }
         $user->update([
             'email' => $request->email,
@@ -57,12 +67,18 @@ class UserController extends Controller
         ]);
         $user = User::findOrFail(Auth::user()->id);
         if ($request->hasFile('file')) {
-            if ($user->url_image != null) {
-                unlink(public_path($user->url_image));
+            try {
+                if ($user->url_image != null && File::exists(public_path($user->url_image))) {
+                    unlink(public_path($user->url_image));
+                }
+                $imageName = time() . '_' . uniqid() . '.' . $request->file('file')->getClientOriginalExtension();
+                $user->url_image = "/storage/" . $request->file('file')->storeAs('images_profile_utilisateurs', $imageName, 'public');
+            } catch (\Exception $e) {
+                return response([
+                    'message' => 'error',
+                    'error' => $e->getMessage(),
+                ], 500);
             }
-            $imageName = time() . '_' . uniqid() . '.' . $request->file('file')->getClientOriginalExtension();
-            // $imageName = time() . '_' . Hash::make($request->file('file')->getClientOriginalName()).'.'.$request->file('file')->getClientOriginalExtension();
-            $user->url_image = "/storage/" . $request->file('file')->storeAs('images_profile_utilisateurs', $imageName, 'public');
         }
         $user->save();
         return response([

@@ -10,7 +10,7 @@ import AsideCreateExercice from '../../../components/AsideCreateExercice';
 import { Alert } from '@mui/material';
 import client from '../../../../api/client';
 import { useLocation } from 'react-router-dom';
-import { getContent, getTypeContent } from '../../../redux/features/createExercice/createExerciceSlice';
+import { getContent, getTypeContent, setInitState } from '../../../redux/features/createExercice/createExerciceSlice';
 import { createExercice } from './../../../redux/features/createExercice/functions';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,6 +20,12 @@ export default function CreateExercice() {
     const user_id = useSelector(state => state.user.profile.user_id);
     const { cours_id, title, description, content, isSubjectExam, coverImage, typeContent, isActif, cycle_id, level_id, matiere_id } = useSelector(state => state.createExercice.data);
     const { isError, errorMessage, isSuccess, successMessage } = useSelector(state => state.createExercice);
+
+    useEffect(() => {
+        return () => {
+            dispatch(setInitState())
+        }
+    }, []);
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -41,7 +47,7 @@ export default function CreateExercice() {
             .then(res => {
                 console.log('res', res.data);
                 setTimeout(() => {
-                    navigate('/exercices', { state: { create: true } });
+                    navigate('/profile/my-cours', { state: { isSuccess: true } });
                 }, 1000);
             })
     }

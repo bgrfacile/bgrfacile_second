@@ -26,7 +26,7 @@ export const updateCours = createAsyncThunk(
             for (const [key, value] of Object.entries(data)) {
                 formData.append(key, value);
             }
-            const response = await client.put(`/cours/${data.courId}`,
+            const response = await client.post(`/cours/update/${data.courId}`,
                 data.content instanceof File ? formData : data,
                 data.content instanceof File ? configFormData : {});
             return { data: response.data };

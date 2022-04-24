@@ -59,6 +59,8 @@ export const userSlice = createSlice({
             state.isLoading = false;
             state.isconnect = true;
             state.profile = action.payload.data.user;
+            state.success = true;
+            state.successMessage = action.payload.data.message;
         },
         [checkConnect.rejected]: (state, action) => {
             state.isLoading = false;
@@ -80,8 +82,8 @@ export const userSlice = createSlice({
             state.isLoading = false;
             state.isconnect = false;
             state.error = true;
-            state.errorMessage = action.payload.message;
-            state.errors = action.payload.errors;
+            state.errorMessage = action.payload.data.message;
+            state.errors = action.payload.data.errors;
         },
 
         [checkRegister.pending]: (state, action) => {
@@ -98,8 +100,8 @@ export const userSlice = createSlice({
             state.isLoading = false;
             state.isconnect = false;
             state.error = true;
-            state.errorMessage = action.payload.message;
-            state.errors = action.payload.errors;
+            state.errorMessage = action.payload.data.message;
+            state.errors = action.payload.data.errors;
         },
 
         [updateProfileImage.pending]: (state, action) => { },

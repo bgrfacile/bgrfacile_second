@@ -186,17 +186,41 @@ class CoursController extends Controller
             // 'content' => 'required',
         ]);
         $cours = Cours::findOrFail($id);
-        // $user = Auth::user();
+        $coverImage = null;
+        if ($request->hasFile('coverImage')) {
+            // if ($cours->coverImage != null) {
+            //     unlink(public_path($cours->coverImage));
+            // }
+            $imageName = time() . '_' . Str::slug($request->file('coverImage')->getClientOriginalName());
+            $coverImage = "/storage/" . $request->file('coverImage')->storeAs('images_contenus', $imageName, 'public');
+        }
         switch ($request->type_content) {
             case 'PDF':
+                $content = null;
+                // $pathContentOfDb = $cours->contents[0]->content;
+                if ($request->hasFile('content')) {
+                    // if ($pathContentOfDb != null) {
+                    //     unlink(public_path($pathContentOfDb));
+                    // }
+                    $nameContent = time() . '_' . Str::slug($request->file('content')->getClientOriginalName());
+                    $content = "/storage/" . $request->file('content')->storeAs('contenus_pdf', $nameContent, 'public');
+                }
                 $cours->title = $request->title;
                 $cours->slug = Str::slug($request->title);
                 $cours->description = $request->description;
+                $cours->coverImage = $coverImage != null ? $coverImage : $cours->coverImage;
+                $cours->contents()->update([
+                    'content' => $content,
+                ]);
                 break;
             case 'TEXTE':
                 $cours->title = $request->title;
                 $cours->slug = Str::slug($request->title);
                 $cours->description = $request->description;
+                $cours->coverImage = $coverImage != null ? $coverImage : $cours->coverImage;
+                $cours->contents()->update([
+                    'content' => $request->content,
+                ]);
                 break;
             case 'IMAGE':
                 // code...

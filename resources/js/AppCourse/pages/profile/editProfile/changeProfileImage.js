@@ -1,9 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateProfileImage } from '../../../redux/features/user/functions';
+import { Alert, Snackbar } from '@mui/material';
 
 export default function ChangeProfileImage() {
+    useEffect(() => {
+        return () => {
+            setMessage('');
+        }
+    }, []);
     const dispatch = useDispatch();
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [isError, setIsError] = useState(false);
+    const [message, setMessage] = useState('');
     const coverImage = useSelector(state => state.user.profile.url_image);
     const [imagePreviewUrl, setImagePreviewUrl] = useState('');
     const [imageFile, setImageFile] = useState('');
@@ -18,16 +27,33 @@ export default function ChangeProfileImage() {
         setIsLoading(true);
         dispatch(updateProfileImage({
             file: imageFile
-        })).then(() => {
+        })).then((res) => {
+            console.log('res', res.payload.data);
+            setMessage(res.payload.data.message);
+            setIsSuccess(true);
             setImagePreviewUrl('')
             setImageFile('')
             setIsLoading(false)
         }).catch(error => {
+            setIsError(true);
+            setMessage(error.response.data.message);
             console.log('error', error);
         });
     }
 
     return (<>
+        <Snackbar
+            anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+            }}
+            open={isSuccess || isError}
+            autoHideDuration={6000}
+            onClose={() => { setIsSuccess(false); setIsError(false) }}>
+            <Alert onClose={() => { setIsSuccess(false); setIsError(false) }} severity={isSuccess ? 'success' : 'error'}>
+                {message}
+            </Alert>
+        </Snackbar>
         <div className="md:grid md:grid-cols-3 md:gap-6 mb-3">
             <div className="px-4 mt-5 md:mt-0 md:col-span-3">
                 <div className="px-4 sm:px-0">

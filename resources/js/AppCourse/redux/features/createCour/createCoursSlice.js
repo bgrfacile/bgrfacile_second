@@ -23,6 +23,14 @@ const createCoursSlice = createSlice({
     name: "createCours",
     initialState,
     reducers: {
+        setInitState: (state) => {
+            state.data = initialState.data;
+            state.isLoading = initialState.isLoading;
+            state.isError = initialState.isError;
+            state.errorMessage = initialState.errorMessage;
+            state.isSuccess = initialState.isSuccess;
+            state.successMessage = initialState.successMessage;
+        },
         setCourCreate: (state, action) => {
             state.data = action.payload;
         },
@@ -90,6 +98,7 @@ const createCoursSlice = createSlice({
 });
 
 export const {
+    setInitState,
     setCourCreate,
     getTitle,
     getIsActif,

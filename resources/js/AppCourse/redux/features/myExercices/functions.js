@@ -1,7 +1,20 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
 
-
+export const getShowExercice = createAsyncThunk(
+    "myExercices/getShowExercice",
+    async (data, { rejectWithValue }) => {
+        try {
+            const response = await client.get(`/exercices/${data.exerciceId}`);
+            return { data: response.data };
+        } catch (error) {
+            if (!error.response) {
+                throw error;
+            }
+            return rejectWithValue(error.response.data);
+        }
+    }
+);
 export const getMyExercicesCreate = createAsyncThunk(
     "exercices/getMyExercicesCreate",
     async (data, { rejectWithValue }) => {

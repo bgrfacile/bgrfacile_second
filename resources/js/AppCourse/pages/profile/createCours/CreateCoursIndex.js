@@ -4,9 +4,10 @@ import ListItemChoixContent from '../../../components/ListItemChoixContent';
 import AsideCreateCours from '../../../components/AsideCreateCours';
 import LoadingTypeContent from '../../../components/LoadingTypeContent';
 import { createCours } from './../../../redux/features/createCour/functions';
-import { getTypeContent, setContent } from '../../../redux/features/createCour/createCoursSlice';
+import { getTypeContent, setContent, setInitState } from '../../../redux/features/createCour/createCoursSlice';
 import { useNavigate } from 'react-router-dom';
 import { Alert } from '@mui/material';
+import { useEffect } from 'react';
 
 export default function CreateCoursIndex() {
     const dispatch = useDispatch();
@@ -14,7 +15,11 @@ export default function CreateCoursIndex() {
     const { user_id } = useSelector(state => state.user.profile);
     const { title, cycle_id, level_id, matiere_id, isActif, description, image, typeContent, content } = useSelector(state => state.createCours.data);
     const { isError, errorMessage, isSuccess, successMessage } = useSelector(state => state.createCours);
-
+    useEffect(() => {
+        return () => {
+            dispatch(setInitState())
+        }
+    }, []);
     const handleSubmit = async (e) => {
         e.preventDefault();
         const data = {
@@ -32,7 +37,7 @@ export default function CreateCoursIndex() {
         dispatch(createCours(data))
             .then(res => {
                 setTimeout(() => {
-                    navigate('/cours', { state: { create: true } });
+                    navigate('/profile/my-cours', { state: { isSuccess: true } });
                 }, 1000);
             })
 

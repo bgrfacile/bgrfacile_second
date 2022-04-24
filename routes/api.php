@@ -45,7 +45,8 @@ Route::prefix('v1')->group(function () {
         Route::put('/solutions/{solutionsId}/isactif', [ExercicesController::class, 'updateIsactif']);
         Route::get('/solutions/me', [SolutionController::class, 'mySolution']);
 
-        Route::apiResource('/cours', CoursController::class)->except(['index', 'show']);
+        Route::apiResource('/cours', CoursController::class)->except(['index', 'show', 'update']);
+        Route::post('/cours/update/{cours}', [CoursController::class, 'update']);
         Route::get('/cours/me/{userId?}', [CoursController::class, 'CoursToUser']);
         Route::put('/cours/{courId}/isactif', [CoursController::class, 'updateVisibilityCours']);
         Route::apiResource('/cours/{cours}/comments', CommentsController::class)->except(['index', 'show']);

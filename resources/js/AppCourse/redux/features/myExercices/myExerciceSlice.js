@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getMyExercicesCreate, changeStatus, deleteExercice } from './functions';
+import { getMyExercicesCreate, changeStatus, deleteExercice, getShowExercice } from './functions';
 
 const myExerciceSlice = createSlice({
     name: "myExercice",
@@ -32,6 +32,9 @@ const myExerciceSlice = createSlice({
         },
         [deleteExercice.fulfilled]: (state, action) => {
             state.exercices = state.exercices.filter((exercice) => exercice.id !== action.payload.data.exercice.id);
+        },
+        [getShowExercice.fulfilled]: (state, action) => {
+            state.exercices = [...state.exercices, action.payload.data];
         }
 
     },

@@ -25,6 +25,17 @@ const createExerciceSlice = createSlice({
     name: "createExercice",
     initialState,
     reducers: {
+        setInitState: (state) => {
+            state.data = initialState.data;
+            state.isLoading = initialState.isLoading;
+            state.isError = initialState.isError;
+            state.errorMessage = initialState.errorMessage;
+            state.isSuccess = initialState.isSuccess;
+            state.successMessage = initialState.successMessage;
+        },
+        setExerciceCreate: (state, action) => {
+            state.data = action.payload;
+        },
         getCourId: (state, action) => {
             state.data.cours_id = action.payload;
         },
@@ -86,6 +97,8 @@ const createExerciceSlice = createSlice({
 });
 
 export const {
+    setExerciceCreate,
+    setInitState,
     getCourId,
     getTitle,
     getIsSubjectExam,

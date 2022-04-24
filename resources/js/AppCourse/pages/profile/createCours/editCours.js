@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Alert } from '@mui/material';
 import LoadingTypeContent from './../../../components/LoadingTypeContent';
-import { setContent, setCourCreate } from '../../../redux/features/createCour/createCoursSlice';
+import { setContent, setCourCreate, setInitState } from '../../../redux/features/createCour/createCoursSlice';
 import { useNavigate } from 'react-router-dom';
 import { updateCours } from '../../../redux/features/createCour/functions';
 import HeaderUpdateCours from './../../../components/form/HeaderUpdateCours';
@@ -35,22 +35,10 @@ export default function EditCours() {
                 content: cours.contents[0].content,
             }));
         }
+        return () => {
+            dispatch(setInitState())
+        }
     }, []);
-    // const [title, setTitle] = useState(cours.title ?? '');
-    // const [cycle, setCycle] = useState({});
-    // const [level, setLevel] = useState({});
-    // const [matiere, setMatiere] = useState({});
-    // const [isActif, setIsActif] = useState(null);
-    // const [description, setDescription] = useState(cours.description ?? '');
-    // const [image, setImage] = useState('');
-    // const [typeContent, setTypeContent] = useState(cours.typeContent ?? '');
-    // const [content, setContent] = useState(cours.content ?? null);
-
-    // const [isLoading, setIsLoading] = useState(false);
-    // const [isError, setIsError] = useState(false);
-    // const [errorMessage, setErrorMessage] = useState('');
-    // const [isSuccess, setIsSuccess] = useState(false);
-    // const [successMessage, setSuccessMessage] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -71,7 +59,7 @@ export default function EditCours() {
             .then(res => {
                 console.log('res', res);
                 setTimeout(() => {
-                    navigate('/profile/my-cours', { state: { create: true } });
+                    navigate('/profile/my-cours', { state: { isSuccess: true } });
                 }, 1000);
             })
     }
