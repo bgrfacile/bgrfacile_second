@@ -14,7 +14,7 @@ export default function TreeViewCompoment({ srcLink }) {
     const loading = useSelector(state => state.cycles.isLoading);
     useEffect(() => {
         dispatch(getAllcycles());
-    }, [dispatch]);
+    }, []);
     return (<div className="py-2 border-b border-gray-500 overflow-x-auto">
         {loading ? <p>Chargement ...</p> :
             <TreeView

@@ -1,6 +1,4 @@
-import {
-    Outlet,
-} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import ListManager from "../../components/ListManager";
 import HeaderCourseView from "../../components/HeaderCourseView";
 

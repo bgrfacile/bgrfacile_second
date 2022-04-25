@@ -29,7 +29,6 @@ export default function HeaderCourseView() {
         }
     }
 
-
     const SpanContentVisiblity = ({ name, content }) => {
         return <div className='min-w-fit pr-2'>
             <span className="text-gray-600 mr-2">

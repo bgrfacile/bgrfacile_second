@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getBasicCycle } from '../redux/features/cycle/BasicCycleSlice';
-import { getLastExercice } from '../redux/features/Exercices/ExerciceSlice';
+import { chargeListLevels, chargeListMatieres, getAllcycles } from '../redux/features/cycle/cyclesSlice';
+import { getLastExercice } from '../redux/features/Exercices/functions';
 import { getListLevels } from '../redux/features/level/levelsSlice';
 import { getListMatiere } from '../redux/features/matiere/matieresSlice';
 import { getLastSolution } from '../redux/features/solutions/solutionSlice';
@@ -11,72 +12,72 @@ import { getLastSolution } from '../redux/features/solutions/solutionSlice';
 export default function StickyHeaderMobile() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const basicCycles = useSelector(state => state.basicCycle.cycles);
+    useEffect(() => {
+        dispatch(getAllcycles());
+    }, []);
+    const { cycles, levelsCycles, matieresLevels } = useSelector(state => state.cycles);
+    const arrayCycles = cycles.map(cycle => ({
+        value: parseInt(cycle.id),
+        label: cycle.name,
+    }));
+    const arrayLevels = levelsCycles.map(level => ({
+        value: parseInt(level.id),
+        label: level.name,
+    }));
+    const arrayMatieres = matieresLevels.map(matiere => ({
+        value: parseInt(matiere.id),
+        label: matiere.name,
+    }));
     const [selectedCycle, setSelectedCycle] = useState(null);
     const [selectedLevel, setSelectedLevel] = useState(null);
-    const levels = useSelector(state => state.levels.levels);
-    const matieres = useSelector(state => state.matieres.matieres);
-    useEffect(() => {
-        dispatch(getLastSolution());
-        dispatch(getListLevels());
-        dispatch(getListMatiere());
-        dispatch(getBasicCycle());
-        dispatch(getLastExercice());
-    }, [dispatch]);
+
     return (<div className='md:hidden block'>
-        <div className=" w-full grid grid-cols-1 grid-rows-1 sm:grid-cols-3 gap-4 justify-between items-center py-1">
+        <div className='w-full grid grid-cols-1 grid-rows-1 sm:grid-cols-3 gap-4 justify-between items-center'>
             <Autocomplete
+                isOptionEqualToValue={(option, value) => option.value === value.value}
                 disablePortal
+                disabled={false}
                 id="basicCycles"
-                options={basicCycles.map(cycle => {
-                    return {
-                        value: cycle.id,
-                        label: cycle.name,
-                    }
-                })}
+                options={arrayCycles}
                 onChange={(event, newValue) => {
-                    console.log(newValue)
+                    dispatch(chargeListLevels(
+                        { id: parseInt(newValue.value) }
+                    ));
                     setSelectedCycle(newValue);
                     navigate(`/cours/${newValue.label}-${newValue.value}`)
-
                 }}
                 className="w-full"
-                renderInput={(params) => <TextField {...params} label="un cycle" />}
+                renderInput={(params) => <TextField {...params} label="le cycle" />}
             />
             <Autocomplete
+                isOptionEqualToValue={(option, value) => option.value === value.value}
                 disablePortal
+                disabled={levelsCycles.length === 0}
                 id="levels"
-                options={levels.map(level => {
-                    return {
-                        value: level.id,
-                        label: level.name
-                    }
-                })}
+                options={arrayLevels}
                 onChange={(event, newValue) => {
-                    console.log(newValue)
+                    dispatch(chargeListMatieres(
+                        { id: parseInt(newValue.value) }
+                    ));
                     setSelectedLevel(newValue);
                     navigate(`/cours/${selectedCycle.label}-${selectedCycle.value}/${newValue.label}-${newValue.value}`)
 
                 }}
                 className="w-full"
-                renderInput={(params) => <TextField {...params} label="le niveau" />}
+                renderInput={(params) => <TextField {...params} label="levels" />}
             />
             <Autocomplete
+                isOptionEqualToValue={(option, value) => option.value === value.value}
                 disablePortal
+                disabled={matieresLevels.length === 0}
                 id="matieres"
-                options={matieres.map(matiere => {
-                    return {
-                        value: matiere.id,
-                        label: matiere.name
-                    }
-                })}
+                options={arrayMatieres}
                 onChange={(event, newValue) => {
-                    console.log(newValue)
                     navigate(`/cours/${selectedCycle.label}-${selectedCycle.value}/${selectedLevel.label}-${selectedLevel.value}/${newValue.label}-${newValue.value}`)
 
                 }}
                 className="w-full"
-                renderInput={(params) => <TextField {...params} label="la matiere" />}
+                renderInput={(params) => <TextField {...params} label="matieres" />}
             />
         </div>
     </div>)

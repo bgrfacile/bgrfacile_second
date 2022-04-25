@@ -14,14 +14,6 @@ import HeaderCourseView from './../../components/HeaderCourseView';
 
 
 export default function ExerciceIndex() {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getLastSolution());
-        dispatch(getListLevels());
-        dispatch(getListMatiere());
-        dispatch(getBasicCycle());
-        dispatch(getLastExercice());
-    }, [dispatch]);
     return (<>
         <div className="absolute inset-0 mx-auto flex h-full w-full">
             <div className="hidden md:block w-1/4 mr-4">

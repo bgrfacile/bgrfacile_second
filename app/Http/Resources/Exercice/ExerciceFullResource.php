@@ -6,6 +6,7 @@ use App\Http\Resources\Content\ContentResource;
 use App\Http\Resources\Cycle\BasicCycleResource;
 use App\Http\Resources\Level\BasicLevelResource;
 use App\Http\Resources\Matiere\BasicMatiereResource;
+use App\Http\Resources\User\UserResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ExerciceFullResource extends JsonResource
@@ -25,14 +26,14 @@ class ExerciceFullResource extends JsonResource
             'coverImage' => $this->coverImage == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($this->coverImage),
             'description' => $this->description,
             'isActif' => $this->isActif,
-            'isHandout' => $this->is_handout,
+            'is_SubjectExam' => $this->is_SubjectExam == 0 ? false : true,
             'contents' => ContentResource::collection($this->contents),
             'cours' => [],
             'comments' => [],
             'likes' => $this->likes->count(),
             'isLike' => $this->islike($request->user()),
             'rating' => round($this->raitings->avg('rating'), 1),
-            'users' => [],
+            'users' => $this->users ? UserResource::collection($this->users) : null,
             'solutions' => [],
             'cycle' => new BasicCycleResource($this->cycles->first()),
             'level' => new BasicLevelResource($this->levels->first()),

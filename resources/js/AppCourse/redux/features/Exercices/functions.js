@@ -61,3 +61,58 @@ export const removeLike = createAsyncThunk(
         }
     }
 );
+
+export const getLastExercice = createAsyncThunk(
+    'exercices/getLastExercice',
+    async (payload, { rejectWithValue }) => {
+        try {
+            const datas = payload;
+            const res = await client.get(`/exercices`);
+            return { data: res.data };
+        } catch (err) {
+            if (!err.response) {
+                throw err
+            }
+            return rejectWithValue(err.response.data)
+        }
+    });
+export const getExosByCycle = createAsyncThunk(
+    'exercices/getExosByCycle',
+    async (data, { rejectWithValue }) => {
+        try {
+            const res = await client.get(`/exercices/getExos/${data.idCycle}`);
+            return { data: res.data };
+        } catch (err) {
+            if (!err.response) {
+                throw err
+            }
+            return rejectWithValue(err.response.data)
+        }
+    });
+export const getExosByLevel = createAsyncThunk(
+    'exercices/getExosByLevel',
+    async (data, { rejectWithValue }) => {
+        try {
+            const res = await client.get(`/exercices/getExos/${data.idCycle}/${data.idLevel}`);
+            return { data: res.data };
+        } catch (err) {
+            if (!err.response) {
+                throw err
+            }
+            return rejectWithValue(err.response.data)
+        }
+    });
+export const getExosByMatiere = createAsyncThunk(
+    'exercices/getExosByMatiere',
+    async (data, { rejectWithValue }) => {
+        try {
+            const res = await client.get(`/exercices/getExos/${data.idCycle}/${data.idLevel}/${data.idMatiere}`);
+            return { data: res.data };
+        } catch (err) {
+            if (!err.response) {
+                throw err
+            }
+            return rejectWithValue(err.response.data)
+        }
+    }
+);

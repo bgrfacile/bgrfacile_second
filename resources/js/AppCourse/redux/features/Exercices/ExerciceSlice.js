@@ -1,56 +1,43 @@
 import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
 import client from "../../../../api/client";
-import { getExerciceById, addRatingExercice, addLike, removeLike } from "./functions";
+import {
+    getExerciceById,
+    addRatingExercice,
+    getLastExercice,
+    getExosByCycle,
+    getExosByLevel,
+    getExosByMatiere,
+} from "./functions";
 
-// export const getMyExercice = createAsyncThunk(
-//     'exercices/getMyExercice',
-//     async () => {
-//         const res = await client.get("/my-exercices");
-//         return { exercices: res.data };
-//     });
 
-export const getLastExercice = createAsyncThunk(
-    'exercices/getLastExercice',
-    async () => {
-        const res = await client.get("/exercices");
-        return { exercices: res.data };
-    });
-
-export const getExosByCycle = createAsyncThunk(
-    'exercices/getExosByCycle',
-    async ({ idCycle }) => {
-        const res = await client.get(`/exercices/getExos/${idCycle}`);
-        return { exercices: res.data };
-    });
-export const getExosByLevel = createAsyncThunk(
-    'exercices/getExosByLevel',
-    async ({ idCycle, idLevel }) => {
-        console.log('idCycle', idCycle);
-        console.log('idLevel', idLevel);
-        const res = await client.get(`/exercices/getExos/${idCycle}/${idLevel}`);
-        return { exercices: res.data };
-    });
-export const getExosByMatiere = createAsyncThunk(
-    'exercices/getExosByMatiere',
-    async ({ idCycle, idLevel, idMatiere }) => {
-        const res = await client.get(`/exercices/getExos/${idCycle}/${idLevel}/${idMatiere}`);
-        return { exercices: res.data };
-    });
-
+const initialState = {
+    exercices: [],
+    exerciceShow: {},
+    exercicesUse: [],
+    isLoading: false,
+    isLoadingShow: true,
+    isLoadingAddRating: false,
+    error: null,
+    levelSelected: "valeur par défaut",
+    matiereSelected: "valeur par défaut",
+}
 const ExerciceSlice = createSlice({
     name: "exercices",
-    initialState: {
-        exercices: [],
-        exerciceShow: {},
-        exercicesUse: [],
-        isLoading: false,
-        isLoadingShow: true,
-        isLoadingAddRating: false,
-        error: null,
-        levelSelected: "valeur par défaut",
-        matiereSelected: "valeur par défaut",
-    },
+    initialState,
     reducers: {
+        handleChargeIsSubject: (state, action) => {
+            const exos = state.exercices.filter(
+                (exo) => {
+                    if (action.payload.isChecked) {
+                        return exo.is_SubjectExam === true
+                    }
+                    else {
+                        return true //exo.is_SubjectExam === false
+                    }
+                }
+            )
+            state.exercicesUse = exos;
+        },
         incrementLike: (state, action) => {
             const { id } = action.payload;
             const exercices = state.exercices.map((exercice) => {
@@ -96,61 +83,57 @@ const ExerciceSlice = createSlice({
             state.isLoading = true;
         },
         [getLastExercice.fulfilled]: (state, action) => {
-            state.exercices = action.payload.exercices;
-            state.exercicesUse = action.payload.exercices;
+            state.isLoading = false;
+            state.exercices = action.payload.data;
+            state.exercicesUse = action.payload.data;
         },
         [getLastExercice.rejected]: (state, action) => {
-            state.error = action.error.message;
+            state.error = action.payload.data.message;
         },
 
         [getExosByCycle.pending]: (state, action) => {
             state.isLoading = true;
         },
         [getExosByCycle.fulfilled]: (state, action) => {
-            state.exercices = action.payload.exercices;
-            state.exercicesUse = action.payload.exercices;
+            state.isLoading = false;
+            state.exercices = action.payload.data;
+            state.exercicesUse = action.payload.data;
         },
         [getExosByCycle.rejected]: (state, action) => {
-            state.error = action.error.message;
+            console.log('rejected cycle', action.payload);
+            state.error = action.payload.data.message;
         },
 
         [getExosByLevel.pending]: (state, action) => {
             state.isLoading = true;
         },
         [getExosByLevel.fulfilled]: (state, action) => {
-            state.exercices = action.payload.exercices;
-            state.exercicesUse = action.payload.exercices;
+            state.isLoading = false;
+            state.exercices = action.payload.data;
+            state.exercicesUse = action.payload.data;
         },
         [getExosByLevel.rejected]: (state, action) => {
-            state.error = action.error.message;
+            console.log('rejected byLevel', action.payload);
+            state.error = action.payload.data.message;
         },
 
         [getExosByMatiere.pending]: (state, action) => {
             state.isLoading = true;
         },
         [getExosByMatiere.fulfilled]: (state, action) => {
-            state.exercices = action.payload.exercices;
-            state.exercicesUse = action.payload.exercices;
+            state.isLoading = false;
+            state.exercices = action.payload.data;
+            state.exercicesUse = action.payload.data;
         },
         [getExosByMatiere.rejected]: (state, action) => {
-            state.error = action.error.message;
+            console.log('rejected matiere', action.payload);
+            state.error = action.payload.data.message;
         },
-
-        // [getMyExercice.pending]: (state, action) => {
-        //     state.isLoading = true;
-        // },
-        // [getMyExercice.fulfilled]: (state, action) => {
-        //     state.myExercicesCreate = action.payload.exercices;
-        // },
-        // [getMyExercice.rejected]: (state, action) => {
-        //     state.error = action.error.message;
-        // },
 
         [getExerciceById.pending]: (state, action) => {
             state.isLoadingShow = true;
         },
         [getExerciceById.fulfilled]: (state, action) => {
-            // state.exerciceShow = action.payload.data;
             state.isLoadingShow = false;
             state.exercices = [
                 ...state.exercices,
@@ -160,7 +143,7 @@ const ExerciceSlice = createSlice({
         },
         [getExerciceById.rejected]: (state, action) => {
             state.isLoadingShow = false;
-            state.error = action.error.message;
+            state.error = action.payload.data.message;
         },
         [addRatingExercice.pending]: (state, action) => {
             state.isLoadingAddRating = true;
@@ -188,6 +171,7 @@ export const {
     setMatiereSelected,
     showIsHandout,
     hiddenIsHandout,
+    handleChargeIsSubject,
 } = ExerciceSlice.actions;
 
 export default ExerciceSlice.reducer;
