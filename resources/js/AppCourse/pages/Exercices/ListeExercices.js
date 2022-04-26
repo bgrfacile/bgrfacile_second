@@ -17,17 +17,13 @@ export default function ListeExercices() {
     }, []);
     useEffect(() => {
         if (cycle && level && matiere) {
-            console.log('getExosByMatiere');
             dispatch(getExosByMatiere({ idCycle, idLevel, idMatiere }));
         } else if (cycle && level) {
-            console.log('getExosByLevel');
             dispatch(getExosByLevel({ idCycle, idLevel }));
         }
         else if (cycle) {
-            console.log('getExosByCycle');
             dispatch(getExosByCycle({ idCycle }))
         } else {
-            console.log('getLastExercice');
             dispatch(getLastExercice());
         }
     }, [dispatch, idCycle, idLevel, idMatiere]);

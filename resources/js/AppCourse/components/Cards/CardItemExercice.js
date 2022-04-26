@@ -17,7 +17,6 @@ export default function CardItemExercice({ exercice }) {
     const [onRaiting, setOnRaiting] = useState(false);
     const like = useSelector(state => state.exercices.exercices.find(el => el.id === exercice.id).likes);
     const isLike = useSelector(state => state.exercices.exercices.find(exercice => exercice.id === exercice.id).isLike);
-    // const like = useSelector(state => state.exercices.exercices.find(exercices => exercices.id === exercice.id).likes);
     const handleLike = async () => {
         const { id } = exercice;
         if (isLike) {
@@ -38,7 +37,7 @@ export default function CardItemExercice({ exercice }) {
             isOpen={onRaiting}
             style={customStyles}
             contentLabel="raiting exercices">
-            <RaitingView model={'exercices'} exerciceId={exercice.id} onClose={() => { setOnRaiting(false) }} />
+            <RaitingView model={'exercice'} exerciceId={exercice.id} onClose={() => { setOnRaiting(false) }} />
         </Modal>
         <article className='bg-white flex flex-col h-full pointer-events-auto rounded-lg'>
             <header>

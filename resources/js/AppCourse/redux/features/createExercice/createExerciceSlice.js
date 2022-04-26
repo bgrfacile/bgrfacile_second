@@ -92,7 +92,7 @@ const createExerciceSlice = createSlice({
         [createExercice.rejected]: (state, action) => {
             state.isLoading = false;
             state.isError = true;
-            state.errorMessage = action.payload;
+            state.errorMessage = action.payload.data.message;
             state.isSuccess = false;
             state.successMessage = "";
         },

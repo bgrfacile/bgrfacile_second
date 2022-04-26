@@ -1,13 +1,8 @@
 import { Autocomplete, TextField } from '@mui/material';
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { getBasicCycle } from '../redux/features/cycle/BasicCycleSlice';
 import { chargeListLevels, chargeListMatieres, getAllcycles } from '../redux/features/cycle/cyclesSlice';
-import { getLastExercice } from '../redux/features/Exercices/functions';
-import { getListLevels } from '../redux/features/level/levelsSlice';
-import { getListMatiere } from '../redux/features/matiere/matieresSlice';
-import { getLastSolution } from '../redux/features/solutions/solutionSlice';
 
 export default function StickyHeaderMobile() {
     const dispatch = useDispatch();

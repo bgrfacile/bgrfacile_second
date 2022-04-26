@@ -21,7 +21,7 @@ class SolutionResource extends JsonResource
             'exercice_id' => $this->exercice_id,
             'exercice' => $this->exercice->title,
             'resumer' => $this->resumer,
-            'isActif' => (int) $this->isActif,
+            'isActif' => $this->isActif,
             'contents' => ContentResource::collection($this->contents),
             'users' => $this->users,
             'created_at' => formaterDate($this->created_at),

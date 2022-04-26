@@ -36,6 +36,7 @@ import CreateSolution from './pages/profile/CreateExercices/CreateSolution';
 import EditSolution from "./pages/profile/CreateExercices/EditSolution";
 import EditMyExercice from './pages/profile/CreateExercices/EditMyExercice';
 import CreateExercice from './pages/profile/CreateExercices/CreateExercice';
+import ViewSolution from './pages/Solution/viewSolution';
 
 
 
@@ -69,6 +70,8 @@ export default function RoutePath() {
                         <Route path=':cycle-:idCycle' element={<ListeExercices />} />
                     </Route>
                     <Route path='/exercices/read/:name-:id' element={<ViewExercice />} />
+
+                    <Route path='/solutions/read/:name-:id' element={<ViewSolution />} />
 
                     <Route path="/formations/*" element={<FormationIndex />} />
                     <Route path="/bonus/*" element={<BonusIndex />} />

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\Solution\SolutionResource;
+use Exception;
 use App\Models\Exercice;
 use App\Models\Solution;
-use Exception;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Solution\SolutionResource;
 
 class SolutionController extends Controller
 {
@@ -57,6 +58,8 @@ class SolutionController extends Controller
         $exercice = Exercice::find($request->exercice_id);
         $solution = $exercice->solutions()->create([
             'resume' => $request->resumer,
+            'title' => $exercice->title,
+            'slug' => Str::slug($exercice->title),
         ]);
         switch ($request->typeContent) {
             case 'PDF':

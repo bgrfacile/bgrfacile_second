@@ -109,7 +109,7 @@ export const HeaderAsideCours = ({ cours }) => {
             isOpen={onComment}
             style={customStyles}
             contentLabel="comment cours">
-            <CommentView cours={cours} onClose={() => { setOnComment(false) }} />
+            <CommentView typeContent='cours' cours={cours} onClose={() => { setOnComment(false) }} />
         </Modal>
         <div className='border-b pb-2 mb-2'>
             <span className='font-medium text-base italic text-red-800'>COURS</span>

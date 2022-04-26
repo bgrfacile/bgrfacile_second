@@ -8,13 +8,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Exercice extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
 
     public function users()
     {
         return $this->belongsToMany(User::class, 'exercices_users', 'exercice_id', 'user_id');
+    }
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
     public function cours()

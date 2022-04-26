@@ -117,13 +117,13 @@ class ExercicesController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'description' => 'string|min:5',
+            'description' => 'nullable|string|min:5',
             'isActif' => 'required',
             'isSubjectExam' => 'required',
             'typeContent' => 'required',
             'content' => 'required',
             'cours_id' => 'nullable',
-            'coverImage' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'coverImage' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $coverImage = null;
         if ($request->hasFile('coverImage')) {

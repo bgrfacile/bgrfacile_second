@@ -23,7 +23,7 @@ const labels = {
 function getLabelText(value) {
     return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 }
-export default function RaitingView({ onClose, courId, model }) {
+export default function RaitingView({ onClose, courId, exerciceId, model }) {
     const dispatch = useDispatch();
     const [starValue, setStarValue] = useState(0);
     const isLoading = useSelector(state => state.cours.isLoadingAddRating);
@@ -32,15 +32,15 @@ export default function RaitingView({ onClose, courId, model }) {
         e.preventDefault();
         const datas = {
             starValue,
-            ratingable_id: courId,
+            ratingable_id: courId ?? exerciceId,
             ratingable_type: model,
         }
-        if (model === 'cours') {
+        if (model === 'cours' || model === 'cour') {
             dispatch(addRatingCourse(datas))
                 .then(() => {
                     onClose();
                 })
-        } else if (model === 'exercice') {
+        } else if (model === 'exercice' || model === 'exercices') {
             dispatch(addRatingExercice(datas))
                 .then(() => {
                     onClose();

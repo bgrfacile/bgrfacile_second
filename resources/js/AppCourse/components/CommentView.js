@@ -5,10 +5,13 @@ import { fetchComments, postComment, deleteComment } from '../redux/features/cou
 import { addComment, deleteCommentCours } from '../redux/features/cours/coursSlice';
 
 
-export default function CommentView({ cours, onClose }) {
+export default function CommentView({ typeContent, exercice, cours, onClose }) {
     const dispatch = useDispatch();
-    const { id } = cours;
-    const { comments } = useSelector(state => state.cours.cours.find(cours => cours.id === id));
+    const { id } = cours || exercice;
+    // const { comments } = useSelector(state => state.cours.cours.find(cours => cours.id === id)) ||
+    //     useSelector(state => state.exercices.exercicesUse.find(exercice => exercice.id === id));
+    const { comments } = typeContent === 'cours' ? useSelector(state => state.cours.cours.find(cours => cours.id === id))
+        : useSelector(state => state.exercices.exercicesUse.find(exercice => exercice.id === id));
     const [isSend, setIsSend] = useState(false);
     // const isLoadingComments = useSelector(state => state.cours.isLoadingComments);
     const userConnect = useSelector(state => state.user.profile);
@@ -22,6 +25,7 @@ export default function CommentView({ cours, onClose }) {
         const datas = {
             user_id: userConnect.user_id,
             content: form.comment.value,
+            typeContent,
             user_name: userConnect.user_name,
             user_url_image: userConnect.url_image,
             createdAt: new Date().toLocaleString(
