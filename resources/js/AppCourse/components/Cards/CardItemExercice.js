@@ -73,7 +73,7 @@ export default function CardItemExercice({ exercice }) {
                     </div>
                 </div>
                 <div className='mb-3 px-2'>
-                    <ul className='snap-x flex flex-wrap text-xs font-semibold -m-1'>
+                    {/* <ul className='snap-x flex flex-wrap text-xs font-semibold -m-1'>
                         <li className="scroll-ml-6 snap-start m-1">
                             <span className="inline-block text-center text-gray-100 py-1 px-3 rounded-full bg-cyan-700 hover:bg-cyan-800 transition-colors duration-75 ease-in-out" >
                                 {exercice.cycle.name}
@@ -89,7 +89,7 @@ export default function CardItemExercice({ exercice }) {
                                 {exercice.matiere.name}
                             </span>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <h3 className='mb-2 px-2 text-2xl font-medium hover:underline tracking-wide'>
                     <Link to={`/exercices/read/${exercice.slug}-${exercice.id}`} state={{ exercice: exercice }} className='text-gray-600 hover:text-gray-700 transition ease-in-out duration-100'>

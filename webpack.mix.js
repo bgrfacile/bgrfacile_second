@@ -13,11 +13,11 @@ const mix = require('laravel-mix');
     Asset du site
 */
 
-// mix.js('resources/js/appSite/app.js', 'public/js/appSite').postCss('resources/css/app.css', 'public/css/appSite', [
-//     require('postcss-import'),
-//     require('tailwindcss'),
-//     require('autoprefixer'),
-// ]);
+mix.js('resources/js/appSite/app.js', 'public/js/appSite').postCss('resources/css/app.css', 'public/css/appSite', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]);
 
 /*
     Asset de appCourse
@@ -35,17 +35,17 @@ mix.js('resources/js/appCourse/app.js', 'public/js/appCourse')
 /*
     Asset de AppDashboard
 */
-// mix.ts('resources/js/backend/app.js', 'public/js/backend')
-//     .react()
-//     .postCss('resources/js/backend/app.css', 'public/css/backend', [
-//         require('postcss-import'),
-//         require('tailwindcss'),
-//         require('autoprefixer'),
-//     ])
-//     .options({
-//         /* hmrOptions: hmrOptions */
-//     })
-//     .webpackConfig(require('./webpack.config'));
+mix.ts('resources/js/backend/app.js', 'public/js/backend')
+    .react()
+    .postCss('resources/js/backend/app.css', 'public/css/backend', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ])
+    .options({
+        /* hmrOptions: hmrOptions */
+    })
+    .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {
     mix.version();

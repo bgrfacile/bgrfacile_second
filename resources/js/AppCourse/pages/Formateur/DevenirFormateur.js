@@ -1,70 +1,104 @@
-import React from 'react'
+import { useState } from 'react'
+import { useSelector } from 'react-redux';
 
 export default function DevenirFormateur() {
+    // const [url, setUrl] = useState(setContent !== undefined ? setContent : '');
+    const [isError, setIsError] = useState(false);
+    const [messageError, setMessageError] = useState('');
+    const { pseudo, email, url_image } = useSelector(state => state.user.profile)
     return (<>
-        <div className="flex h-screen bg-gray-200 items-center justify-center  mt-32 mb-32">
-            <div className="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
-                <div className="flex justify-center py-4">
-                    <div className="flex bg-purple-200 rounded-full md:p-4 p-2 border-2 border-purple-300">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+        <section className="max-w-10/12 m-auto mt-3">
+            <div className="text-center">
+                <h1 className="mx-auto sm:text-3xl font-semibold px-2 py-1 5 whitespace-pre-wrap">Crée son profil professeur</h1>
+                <form action="#" className="w-11/12 mx-auto border-2 border-gray-900 rounded-md p-16 flex flex-col sm:flex-row sm:justify-evenly">
+                    <div className="p-16 flex flex-col border-2 bg-white rounded-lg  border-red-50">
+                        <h1 className="text-lg sm:text-4xl font-semibold tracking-wide mb-2">Details sur vous</h1>
+                        <div className="p-2 border-[0.75px] border-gray-800 rounded flex">
+                            <img
+                                src={url_image}
+                                alt="avatar"
+                                className="h-16 w-16 object-cover rounded-full mb-2"
+                            />
+                        </div>
+                        <div className="p-2 border-[0.75px] border-gray-800 rounded flex">
+                            <strong>pseudo</strong> <span>{pseudo}</span>
+                        </div>
+                        <div className="p-2 border-[0.75px] border-gray-800 rounded mt-3">
+                            <strong>email</strong> <span>{email}</span>
+                        </div>
                     </div>
-                </div>
 
-                <div className="flex justify-center">
-                    <div className="flex">
-                        <h1 className="text-gray-600 font-bold md:text-2xl text-xl">Tailwind Form</h1>
-                    </div>
-                </div>
 
-                <div className="grid grid-cols-1 mt-5 mx-7">
-                    <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Input 1</label>
-                    <input className="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Input 1" />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
-                    <div className="grid grid-cols-1">
-                        <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Input 2</label>
-                        <input className="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Input 2" />
-                    </div>
-                    <div className="grid grid-cols-1">
-                        <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Input 3</label>
-                        <input className="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Input 3" />
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 mt-5 mx-7">
-                    <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Selection</label>
-                    <select className="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
-                        <option>Option 1</option>
-                        <option>Option 2</option>
-                        <option>Option 3</option>
-                    </select>
-                </div>
-
-                <div className="grid grid-cols-1 mt-5 mx-7">
-                    <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Another Input</label>
-                    <input className="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Another Input" />
-                </div>
-
-                <div className="grid grid-cols-1 mt-5 mx-7">
-                    <label className="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Upload Photo</label>
-                    <div className='flex items-center justify-center w-full'>
-                        <label className='flex flex-col border-4 border-dashed w-full h-32 hover:bg-gray-100 hover:border-purple-300 group'>
-                            <div className='flex flex-col items-center justify-center pt-7'>
-                                <svg className="w-10 h-10 text-purple-400 group-hover:text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                <p className='lowercase text-sm text-gray-400 group-hover:text-purple-600 pt-1 tracking-wider'>Select a photo</p>
+                    <div className="p-16 flex flex-col border-2 bg-white rounded-lg  border-red-50">
+                        <h1 className="text-lg sm:text-4xl font-semibold tracking-wide mb-2">Détails sur les compétences</h1>
+                        <div className="p-2 border-[0.75px] border-gray-800 rounded">
+                            <div className='h-fit w-full flex items-center justify-start mb-2'>
+                                <h4 className='text-lg uppercase font-semibold text-center my-2'>Téléchargez votre CV en version PDF.</h4>
+                                <input
+                                    className="form-control block w-full px-2 py-1 text-sm font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    type="file"
+                                    accept="application/pdf"
+                                    onChange={(e) => {
+                                        const files = e.target.files;
+                                        if (parseInt(files[0].size) > 100000000) {
+                                            setIsError(true);
+                                            setMessageError('Le fichier est trop volumineux , il doit être inférieur à 100Mo');
+                                            return;
+                                        }
+                                        if (files && files.length === 1) {
+                                            const reader = new FileReader();
+                                            reader.onload = (e) => {
+                                                // setUrl(URL.createObjectURL(files[0]));
+                                                setUrl(e.target.result);
+                                            };
+                                            reader.readAsDataURL(files[0]);
+                                            // getContent(files[0])
+                                        }
+                                    }}
+                                />
                             </div>
-                            <input type='file' className="hidden" />
-                        </label>
+                        </div>
+                        <div className="p-2 border-[0.75px] border-gray-800 rounded mt-3">
+                            <h4 className='text-lg uppercase font-semibold text-center my-2'>Liste de diplome Obtenue</h4>
+                            <div className='h-fit w-full flex items-center justify-start mb-2'>
+                                <input
+                                    className="form-control block w-full px-2 py-1 text-sm font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    type="text"
+                                    placeholder="Diplome Obtenu"
+                                />
+
+                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                                    <svg viewBox="0 0 20 20" enableBackground="new 0 0 20 20" className="w-6 h-6 inline-block">
+                                        <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
+                                    C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
+                                    C15.952,9,16,9.447,16,10z"/>
+                                    </svg>
+                                </button>
+
+                            </div>
+                        </div>
+                        <div className="p-2 border-[0.75px] border-gray-800 rounded mt-3">
+                            <h4 className='text-lg uppercase font-semibold text-center my-2'>Quelques écoles de référence?</h4>
+                            <div className='h-fit w-full flex items-center justify-start mb-2'>
+                                <input
+                                    className="form-control block w-full px-2 py-1 text-sm font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    type="text"
+                                    placeholder="Diplome Obtenu"
+                                />
+
+                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                                    <svg viewBox="0 0 20 20" enableBackground="new 0 0 20 20" className="w-6 h-6 inline-block">
+                                        <path fill="#FFFFFF" d="M16,10c0,0.553-0.048,1-0.601,1H11v4.399C11,15.951,10.553,16,10,16c-0.553,0-1-0.049-1-0.601V11H4.601
+                                    C4.049,11,4,10.553,4,10c0-0.553,0.049-1,0.601-1H9V4.601C9,4.048,9.447,4,10,4c0.553,0,1,0.048,1,0.601V9h4.399
+                                    C15.952,9,16,9.447,16,10z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" className="w-full bg-gray-600 hover:bg-emerald-600 text-white text-2xl p-2 rounded-xl mt-3">Envoyer</button>
                     </div>
-                </div>
-
-                <div className='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
-                    <button className='w-auto bg-gray-500 hover:bg-gray-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Cancel</button>
-                    <button className='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Create</button>
-                </div>
-
+                </form>
             </div>
-        </div>
+        </section>
     </>)
 }

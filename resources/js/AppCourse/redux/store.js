@@ -15,6 +15,7 @@ import createCoursSlice from './features/createCour/createCoursSlice'
 import myExerciceSlice from './features/myExercices/myExerciceSlice';
 import mySolutionsSlice from './features/mySolution/mySolutionsSlice'
 import createExerciceSlice from './features/createExercice/createExerciceSlice'
+import createProfileProfSlice from './features/createProfileProf/createProfileProfSlice'
 
 export const store = configureStore({
     reducer: {
@@ -34,6 +35,7 @@ export const store = configureStore({
         levels: levelsSlice,
         matieres: matieresSlice,
         userProfile: userProfileSlice,
+        createProfileProf: createProfileProfSlice,
     },
     devTools: true,
     // devTools: process.env.NODE_ENV !== 'production',

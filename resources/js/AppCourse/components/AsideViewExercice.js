@@ -100,11 +100,11 @@ export const HeaderAsideCours = ({ exercice }) => {
                     {exercice.users[0].pseudo}
                 </Link>
             </div>
-            <div className="focus:outline-none flex flex-wrap py-4 w-full overflow-x-auto">
+            {/* <div className="focus:outline-none flex flex-wrap py-4 w-full overflow-x-auto">
                 <div className="min-w-max py-2 mb-1 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{exercice.cycle.name}</div>
                 <div className="min-w-max py-2 mb-1 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{exercice.level.name}</div>
                 <div className="min-w-max py-2 mb-1 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100">{exercice.matiere.name}</div>
-            </div>
+            </div> */}
         </div>
 
         <div className="py-2 mb-2 flex items-center justify-center space-x-4">

@@ -104,8 +104,11 @@ export default function RoutePath() {
                         <Route path="/profile/favoris/exercices-solutions" element={<RequireAuth><FavorisExcerciceSolution /></RequireAuth>} />
 
                         <Route path="/profile/edit" element={<RequireAuth><EditProfile /></RequireAuth>} />
+
                         <Route path='/profile/followers' element={<RequireAuth><Followers /></RequireAuth>} />
+
                         <Route path='/profile/devenir-professeur' element={<RequireAuth><DevenirFormateur /></RequireAuth>} />
+
                         <Route path='/profile/devenir-promoteur' element={<RequireAuth><DevenirPromoteur /></RequireAuth>} />
                     </Route>
 
