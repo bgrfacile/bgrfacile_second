@@ -19,6 +19,7 @@ class CreateInfoProfsTable extends Migration
             $table->text('path_cv')->nullable();
             $table->text('diplomes')->nullable();
             $table->text('ecole_ref')->nullable();
+            $table->boolean('is_accept')->default(false);
             $table->timestamps();
         });
     }

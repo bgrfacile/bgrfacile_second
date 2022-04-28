@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use Carbon\Carbon;
 use App\Models\User;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -107,5 +108,31 @@ class UserController extends Controller
     {
         $userFind = User::findOrFail($user);
         return new UserShowResource($userFind);
+    }
+
+    public function createProfileProf(Request $request)
+    {
+        $request->validate([
+            'user_id' => 'required|exists:users,id',
+            // 'cvPath' => 'required|file|mimes:pdf|max:2048',
+            'diplomes' => 'required|array',
+            'ecolesRef' => 'required|array',
+        ]);
+        $user = User::findOrFail($request->user_id);
+        $user->profileProf()->create([
+            // 'cv_path' => $request->cvPath,
+            'diplomes' => $this->toImplode($request->diplomes),
+            'ecole_ref' => $this->toImplode($request->ecolesRef),
+        ]);
+        return response([
+            'message' => 'user updated successfully',
+            'user' => new UserResource($user),
+        ], 200);
+    }
+
+    private function toImplode($array)
+    {
+        $data = collect($array)->pluck('title')->toArray();
+        return implode(',', $data);
     }
 }

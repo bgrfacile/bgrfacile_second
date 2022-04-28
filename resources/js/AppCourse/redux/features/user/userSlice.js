@@ -31,6 +31,7 @@ const initialValue = {
                 name: ''
             }
         ],
+        isResquestProfs: false,
         user_followers: [],
         user_following: [],
     },
@@ -49,7 +50,10 @@ export const userSlice = createSlice({
     reducers: {
         logout: (state) => {
             state = initialValue
-        }
+        },
+        updateProfileUser: (state, action) => {
+            state.profile = action.payload
+        },
     },
     extraReducers: {
         [checkConnect.pending]: (state, action) => {
@@ -125,6 +129,9 @@ export const userSlice = createSlice({
     }
 })
 
-export const { logout } = userSlice.actions
+export const {
+    logout,
+    updateProfileUser,
+} = userSlice.actions
 
 export default userSlice.reducer

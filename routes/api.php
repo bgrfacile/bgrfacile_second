@@ -61,6 +61,8 @@ Route::prefix('v1')->group(function () {
 
         Route::get('/favoris/cours', [FavorisController::class, 'getCoursFavoris']);
         Route::get('/favoris/exercices', [FavorisController::class, 'getExerciceFavoris']);
+
+        Route::post("/createProfileProf", [UserController::class, 'createProfileProf']);
     });
 
     Route::group([

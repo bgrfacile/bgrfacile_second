@@ -1,12 +1,24 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from 'uuid';
+import { postInfosUser } from "./functions";
 
 
 const initialState = {
     data: {
         userId: null,
-        cv: {},
-        diplomes: [],
-        ecolesRef: [],
+        cv: '',
+        diplomes: [
+            {
+                id: uuidv4(),
+                title: '',
+            }
+        ],
+        ecolesRef: [
+            {
+                id: uuidv4(),
+                title: '',
+            }
+        ],
     },
     isLoading: false,
     isError: false,
@@ -26,36 +38,71 @@ const createProfileProfSlice = createSlice({
             state.isSuccess = initialState.isSuccess;
             state.successMessage = initialState.successMessage;
         },
-        setProfileProfCreate: (state, action) => {
-            state.data = action.payload;
+        handleChangeCv: (state, action) => {
+            console.log('handleChangeCv',action.payload);
+            state.data.cv = action.payload.file;
         },
-        getUserId: (state, action) => {
-            state.data.userId = action.payload;
+        addDiplomes: (state, action) => {
+            state.data.diplomes = [{
+                id: uuidv4(),
+                title: '',
+            }, ...state.data.diplomes];
         },
-        getCv: (state, action) => {
-            state.data.cv = action.payload;
+        handleChangeTitleDiplome: (state, action) => {
+            state.data.diplomes.find(el => el.id === action.payload.diplomeId).title = action.payload.value;
         },
-        getDiplomes: (state, action) => {
-            state.data.diplomes = action.payload;
+        removeDiplome: (state, action) => {
+            state.data.diplomes = state.data.diplomes.filter(el => el.id !== action.payload.diplomeId);
         },
-        getEcolesRef: (state, action) => {
-            state.data.ecolesRef = action.payload;
+        addEcolesRef: (state, action) => {
+            state.data.ecolesRef = [{
+                id: uuidv4(),
+                title: '',
+            }, ...state.data.ecolesRef];
+        },
+        handleChangeTitleEcoleRef: (state, action) => {
+            state.data.ecolesRef.find(el => el.id === action.payload.ecoleRefId).title = action.payload.value;
+        },
+        removeEcoleRef: (state, action) => {
+            state.data.ecolesRef = state.data.ecolesRef.filter(el => el.id !== action.payload.ecoleRefId);
         }
     },
     extraReducers: {
-        [createAsyncThunk("createProfileProf/createProfileProf", (data) => {
-            return client.post("/api/profileProf/create", data);
-        }).fulfilled]: (state, action) => {
-            state.data = action.payload;
-            state.isLoading = false;
+        // [createAsyncThunk("createProfileProf/createProfileProf", (data) => {
+        //     return client.post("/api/profileProf/create", data);
+        // }).fulfilled]: (state, action) => {
+        //     state.data = action.payload;
+        //     state.isLoading = false;
+        //     state.isError = false;
+        //     state.errorMessage = "";
+        //     state.isSuccess = true;
+        //     state.successMessage = "";
+        // },
+        // [createAsyncThunk("createProfileProf/createProfileProf", (data) => {
+        //     return client.post("/api/profileProf/create", data);
+        // }).rejected]: (state, action) => {
+        //     state.isLoading = false;
+        //     state.isError = true;
+        //     state.errorMessage = action.payload.message;
+        //     state.isSuccess = false;
+        //     state.successMessage = "";
+        // }
+        [postInfosUser.pending]: (state, action) => {
+            state.isLoading = true;
             state.isError = false;
             state.errorMessage = "";
-            state.isSuccess = true;
+            state.isSuccess = false;
             state.successMessage = "";
         },
-        [createAsyncThunk("createProfileProf/createProfileProf", (data) => {
-            return client.post("/api/profileProf/create", data);
-        }).rejected]: (state, action) => {
+        [postInfosUser.fulfilled]: (state, action) => {
+            // state.data = action.payload;
+            // state.isLoading = false;
+            // state.isError = false;
+            // state.errorMessage = "";
+            // state.isSuccess = true;
+            // state.successMessage = "";
+        },
+        [postInfosUser.rejected]: (state, action) => {
             state.isLoading = false;
             state.isError = true;
             state.errorMessage = action.payload.message;
@@ -67,11 +114,13 @@ const createProfileProfSlice = createSlice({
 export default createProfileProfSlice.reducer;
 export const {
     setInitState,
-    setProfileProfCreate,
-    getUserId,
-    getCv,
-    getDiplomes,
-    getEcolesRef,
+    handleChangeCv,
+    addDiplomes,
+    removeDiplome,
+    handleChangeTitleDiplome,
+    addEcolesRef,
+    removeEcoleRef,
+    handleChangeTitleEcoleRef,
 } = createProfileProfSlice.actions;
 
 

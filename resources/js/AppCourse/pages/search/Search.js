@@ -68,7 +68,7 @@ export default function Search() {
         <div className='absolute inset-0 mx-auto h-full w-full flex flex-col'>
             <div className="grid grid-cols-4 gap-4 py-4 border-b mb-2">
                 <div className='col-span-1'>
-                    <FormControl fullWidth>
+                    {/* <FormControl fullWidth>
                         <InputLabel className='border-none' id="type-de-recherche">
                             Type de recherche
                         </InputLabel>
@@ -84,7 +84,7 @@ export default function Search() {
                             }}>
                             {typeSearchItems.map((item, index) => <MenuItem key={index} value={item.value}>{item.label}</MenuItem>)}
                         </Select>
-                    </FormControl>
+                    </FormControl> */}
                 </div>
                 <form onSubmit={handleSubmit} className='col-span-3 w-full'>
                     <input

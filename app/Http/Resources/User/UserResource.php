@@ -32,6 +32,7 @@ class UserResource extends JsonResource
             'birthday' => formaterDate($this->infoUser->birthday),
             'createdAt' => formaterDate($this->created_at),
             'roles' => RoleResource::collection($this->roles),
+            'isResquestProfs' => $this->profileProf()->count() > 0 ? true : false,
             'followers' => $this->followers->count(),
             'following' => $this->following->count(),
             'user_followers' => UserLambdaResource::collection($this->followers),
