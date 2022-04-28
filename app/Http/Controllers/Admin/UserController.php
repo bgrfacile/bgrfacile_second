@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\User\UserResource;
+use App\Models\InfoProf;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +15,29 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-
+    public function listProfs()
+    {
+        $users = InfoProf::all();
+        return Inertia::render('devenirProfs/listProfs', [
+            'profs' => $users->map(function ($user) {
+                return [
+                    'id' => $user->id,
+                    'pseudo' => $user->user->pseudo,
+                    'user_id' => $user->user->id,
+                    'is_accept' => $user->is_accept == 1 ? true : false,
+                    'created_at' => formaterDate($user->user->created_at),
+                ];
+            }),
+        ]);
+    }
+    public function acceptProf(Request $request)
+    {
+        $profilProf = InfoProf::findOrFail($request->infoProId);
+        $profilProf->is_accept = 1;
+        $profilProf->save();
+        $profilProf->user->assignRole('professeur');
+        return back();
+    }
     public function all()
     {
         $users = UserResource::collection(User::all());

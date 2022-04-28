@@ -6,7 +6,7 @@ export default function App({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const { auth }= usePage().props
+    const { auth } = usePage().props
     return (<div>
         <div className="flex h-screen bg-gray-100 dark:bg-gray-800 font-roboto">
             <div onClick={() => setSidebarOpen(false)}
@@ -28,6 +28,10 @@ export default function App({ children }) {
                     <Link href={route('users.index')}
                         className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
                         utilisateurs
+                    </Link>
+                    <Link href={route('users.profs')}
+                        className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
+                        demande pour devenir profs
                     </Link>
                     <Link href={route('cycle.index')}
                         className="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">
@@ -115,7 +119,7 @@ export default function App({ children }) {
 
                 <main className="flex-1 overflow-x-hidden overflow-y-auto">
                     {/* <div className="mx-auto px-6 py-4"> */}
-                        {children}
+                    {children}
                     {/* </div> */}
                 </main>
             </div>

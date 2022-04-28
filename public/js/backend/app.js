@@ -55495,6 +55495,16 @@ var map = {
 		9,
 		"resources_js_backend_pages_Users_Index_js"
 	],
+	"./devenirProfs/listProfs": [
+		"./resources/js/backend/pages/devenirProfs/listProfs.js",
+		9,
+		"resources_js_backend_pages_devenirProfs_listProfs_js"
+	],
+	"./devenirProfs/listProfs.js": [
+		"./resources/js/backend/pages/devenirProfs/listProfs.js",
+		9,
+		"resources_js_backend_pages_devenirProfs_listProfs_js"
+	],
 	"./layouts/app": [
 		"./resources/js/backend/pages/layouts/app.js",
 		9,
@@ -55652,7 +55662,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"d1e1b709ad83e3f6","resources_js_backend_pages_Cours_create_js":"147760f6dcc9d051","resources_js_backend_pages_Cours_edit_js":"46fddd39f19cdb9a","resources_js_backend_pages_Cours_show_js":"0f04a1e3de46bcad","resources_js_backend_pages_Cycle_index_js":"36b1da25ffdd126c","resources_js_backend_pages_Cycle_create_js":"1684273ce1efae8b","resources_js_backend_pages_Cycle_edit_js":"c66278590f868c7b","resources_js_backend_pages_Cycle_show_js":"747aefd8ec6d93b1","resources_js_backend_pages_Dashboard_Index_js":"3f6893f32c6df371","resources_js_backend_pages_Level_IndexLevel_js":"539add1dcbee2c90","resources_js_backend_pages_Level_create_js":"5ebb27a59765b111","resources_js_backend_pages_Level_edit_js":"b56f79ac1a9e81ac","resources_js_backend_pages_Matiere_index_js":"3eff7469470161e5","resources_js_backend_pages_Matiere_create_js":"1e7ec76f90aba4df","resources_js_backend_pages_Matiere_edit_js":"06cbf4c33bd9e6b7","resources_js_backend_pages_Matiere_show_js":"75eaa4170dcf5253","resources_js_backend_pages_Quiz_create_js":"1af2495f1a39ac77","resources_js_backend_pages_Quiz_store_quizSlices_js":"acfaeb8bd096837d","resources_js_backend_pages_Quiz_store_store_js":"624654807acdd71b","resources_js_backend_pages_Users_Index_js":"bf0d268152e70c26","resources_js_backend_pages_layouts_app_js":"1822391942cbc821"}[chunkId] + "";
+/******/ 			return "js/" + chunkId + ".js?id=" + {"resources_js_backend_pages_Cours_index_js":"89bcca718e57016e","resources_js_backend_pages_Cours_create_js":"147760f6dcc9d051","resources_js_backend_pages_Cours_edit_js":"46fddd39f19cdb9a","resources_js_backend_pages_Cours_show_js":"e402a5e71907024d","resources_js_backend_pages_Cycle_index_js":"c70e28bff5797575","resources_js_backend_pages_Cycle_create_js":"05b08cd03179a5da","resources_js_backend_pages_Cycle_edit_js":"f34db3290fe88feb","resources_js_backend_pages_Cycle_show_js":"c1c452b0944dc9de","resources_js_backend_pages_Dashboard_Index_js":"fe9e2494f79cd54a","resources_js_backend_pages_Level_IndexLevel_js":"d36fa23c770dd78d","resources_js_backend_pages_Level_create_js":"1dd26ca8941f40ee","resources_js_backend_pages_Level_edit_js":"0a0eb49654479bd8","resources_js_backend_pages_Matiere_index_js":"4504ee529ac6dc08","resources_js_backend_pages_Matiere_create_js":"80ac2c6f94edeed1","resources_js_backend_pages_Matiere_edit_js":"ba304b7042178135","resources_js_backend_pages_Matiere_show_js":"e0a8b825ac9a14dc","resources_js_backend_pages_Quiz_create_js":"439c4fb563b8bafa","resources_js_backend_pages_Quiz_store_quizSlices_js":"acfaeb8bd096837d","resources_js_backend_pages_Quiz_store_store_js":"624654807acdd71b","resources_js_backend_pages_Users_Index_js":"4ef838189b1d6a3b","resources_js_backend_pages_devenirProfs_listProfs_js":"7f5a97cca46ce10c","resources_js_backend_pages_layouts_app_js":"882557cf51f6767c"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	

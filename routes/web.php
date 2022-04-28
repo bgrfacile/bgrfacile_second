@@ -14,12 +14,7 @@ use App\Http\Controllers\Site\CoursController;
 use App\Http\Controllers\Site\DonationController;
 use App\Http\Controllers\Site\EcoleEnLigneController;
 use App\Http\Controllers\Site\HomeController;
-use App\Models\Cycle;
-use App\Models\Level;
-use App\Models\Matiere;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-use Laravel\Socialite\Facades\Socialite;
 
 
 /*
@@ -95,6 +90,8 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('/users')->group(function () {
             Route::get('/', [UserController::class, 'all'])->name('users.index');
+            Route::get('/profs', [UserController::class, 'listProfs'])->name('users.profs');
+            Route::post('/profs', [UserController::class, 'acceptProf'])->name('prof.update');
 
             Route::get('/{user}', [UserController::class, 'show'])->name('users.show');
             Route::get('/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
