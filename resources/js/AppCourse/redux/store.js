@@ -37,6 +37,6 @@ export const store = configureStore({
         userProfile: userProfileSlice,
         createProfileProf: createProfileProfSlice,
     },
-    devTools: true,
+    devTools: false,
     // devTools: process.env.NODE_ENV !== 'production',
 })
