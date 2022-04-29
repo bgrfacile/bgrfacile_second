@@ -35,7 +35,8 @@ class UserController extends Controller
         $profilProf = InfoProf::findOrFail($request->infoProId);
         $profilProf->is_accept = 1;
         $profilProf->save();
-        $profilProf->user->assignRole('professeur');
+        $profilProf->user->syncRoles('professeur');
+        // $profilProf->user->assignRole('professeur');
         return back();
     }
     public function all()

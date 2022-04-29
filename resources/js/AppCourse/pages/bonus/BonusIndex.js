@@ -26,12 +26,17 @@ export default function BonusIndex() {
                     <h1 className="sm:text-4xl text-5xl font-semibold mb-2 text-gray-900">Bonus</h1>
                     <div className="h-1 w-20 bg-blue-500 rounded"></div>
                 </div>
+                <p className="font-medium">
+                    Les Bonus sont des ajouts de points qui vous permettent de gagner des points de compétences.
+                    <br />
+                    <strong> Cette section est en cours de réalisation.</strong>
+                </p>
             </div>
-            <div className="flex flex-wrap -m-4">
+            {/* <div className="flex flex-wrap -m-4">
                 <CardBonus link="/bonus/quizz" label="Podcast" />
                 <CardBonus link="/bonus/quizz" label="Quizz" />
                 <CardBonus link="/bonus/quizz" label="Jeux" />
-            </div>
+            </div> */}
         </div>
     </section>
 }

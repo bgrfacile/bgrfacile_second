@@ -65,9 +65,9 @@ export const HeaderAsideCours = ({ exercice }) => {
     const dispatch = useDispatch();
     const [onRaiting, setOnRaiting] = useState(false);
     const [onComment, setOnComment] = useState(false);
-    const isLike = useSelector(state => state.exercices.exercicesUse.find(el => el.id === exercice.id).isLike);
+    // const isLike = useSelector(state => state.exercices.exercicesUse.find(el => el.id === exercice.id).isLike);
     const handleLike = () => {
-        if (isLike) {
+        if (exercice.isLike) {
             dispatch(removeLike({ exerciceId: exercice.id }));
             dispatch(decrementLike({ id: exercice.id }));
         }
@@ -117,7 +117,7 @@ export const HeaderAsideCours = ({ exercice }) => {
             <button
                 onClick={handleLike}
                 className="hover:scale-110 transform  group-hover:translate-y-0 transition flex items-center p-2 rounded-md text-gray-600 hover:bg-gray-200 ease-linear">
-                {isLike ? <LikeFullSvg className={"w-6 h-6"} /> :
+                {exercice.isLike ? <LikeFullSvg className={"w-6 h-6"} /> :
                     <LikeEmpty className={"w-6 h-6"} />}
                 <div className="text-base ml-1"> {exercice.likes} </div>
             </button>
