@@ -128,7 +128,7 @@
                     <img src="{{ asset('assets/img/undraw_preferences_popup_re_4qk0.svg') }}" alt="illustration de personne qui enregister une école" class="h-fit w-fit object-cover">
                     <h2 class="my-8 font-bold text-lg md:text-2xl">Ecoles en ligne</h2>
                     <p class="flex-1">
-                        Vous êtes un établissement, un institut, un groupe scolaire, ou École supérieure ?
+                        Vous êtes un établissement, un institut, un groupe scolaire, ou une école supérieure ?
                         <strong class="font-semibold">bgrfacile</strong> vous offre la possibilité d'être plus visible
                         et d'exister sur le internet.<br>
                         Vous aurez à votre disposition un espace numérique permettant
@@ -253,7 +253,7 @@
                         <h4 class="text-4xl font font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-gray-200">
                             Bonus de bgrfacile</h4>
                         <p class="mt-3 text-gray-800 dark:text-gray-400">
-                            Des Quizs, des podcasts et des jeux pour vous aider à mieux comprendre les
+                            Des Quizzs, des podcasts et des jeux pour vous aider à mieux comprendre les
                             cours et vous divertir.
                         </p>
                     </div>

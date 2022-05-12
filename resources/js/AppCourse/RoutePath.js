@@ -45,7 +45,8 @@ export default function RoutePath() {
     const RequireAuth = ({ children }) => {
         const { isconnect } = useSelector(state => state.user);
         let location = useLocation();
-        if (!isconnect) {
+        if (false) {
+            // if (!isconnect) {
             return <Navigate to="/signin" state={{ from: location }} replace />;
         }
         return children;

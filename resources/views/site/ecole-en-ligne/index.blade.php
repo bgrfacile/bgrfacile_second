@@ -8,7 +8,7 @@
                 <div class="w-11/12 sm:w-2/3 lg:flex justify-center items-center flex-col  mb-5 sm:mb-10">
                     <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10">
                         Retrouvez plus de {{ $countSchools }}
-                        <span class="text-blue-600"> école en ligne </span>
+                        <span class="text-blue-600"> écoles en ligne </span>
                         avec bgrfacile
                     </h1>
                     <p class="mt-5 sm:mt-10 lg:w-10/12 text-gray-400 font-normal text-center text-sm sm:text-lg">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <button class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-blue-700 hover:bg-white text-sm lg:text-xl lg:font-bold  rounded text-white hover:text-gray-700 px-4 sm:px-10 border border-blue-700 hover:border-gray-700 py-2 sm:py-4 transition ease-in-out">
-                        s'enregister</button>
+                        visiter</button>
                     <button class="ml-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 bg-white hover:bg-blue-700 hover:border-blue-600 text-sm lg:text-xl  lg:font-bold  hover:text-white rounded border border-blue-700 text-blue-700 px-4 sm:px-10 py-2 sm:py-4 transition ease-in-out">
                         se connecter</button>
                 </div>
