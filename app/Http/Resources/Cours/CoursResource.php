@@ -2,16 +2,17 @@
 
 namespace App\Http\Resources\Cours;
 
+use Illuminate\Support\Str;
+use App\Http\Resources\Quiz\QuizResource;
+use App\Http\Resources\User\UserResource;
 use App\Http\Resources\Comment\CommentResource;
 use App\Http\Resources\Content\ContentResource;
-use App\Http\Resources\Cycle\BasicCycleResource;
-use App\Http\Resources\Exercice\ExerciceSimpleResource;
-use App\Http\Resources\Level\BasicLevelResource;
-use App\Http\Resources\Matiere\BasicMatiereResource;
-use App\Http\Resources\Quiz\QuizResource;
 use App\Http\Resources\User\UserLambdaResource;
-use App\Http\Resources\User\UserResource;
+use App\Http\Resources\Cycle\BasicCycleResource;
+use App\Http\Resources\Level\BasicLevelResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Matiere\BasicMatiereResource;
+use App\Http\Resources\Exercice\ExerciceSimpleResource;
 
 class CoursResource extends JsonResource
 {
@@ -26,7 +27,7 @@ class CoursResource extends JsonResource
         return [
             'id' => $this->id,
             'type' => "cours",
-            'title' => $this->title,
+            'title' => Str::upper($this->title),
             'slug' => $this->slug,
             'description' => $this->description,
             'coverImage' => $this->coverImage == null ? url('/assets/img/logo_short_bgrfacile.png.png') : url($this->coverImage),
