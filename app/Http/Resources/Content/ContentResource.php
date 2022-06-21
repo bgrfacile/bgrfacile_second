@@ -15,9 +15,9 @@ class ContentResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
-            'content'=>$this->content,
-            'type_content'=>$this->type_content,
+            'id' => $this->id,
+            'content' => $this->content == null ? "" : url($this->content),
+            'type_content' => $this->type_content,
         ];
     }
 }
