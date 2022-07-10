@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\MatiereController;
 use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\SolutionController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\v2\CoursController as V2CoursController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Cours;
 use Illuminate\Http\Request;
@@ -99,4 +100,9 @@ Route::prefix('v1')->group(function () {
         Route::get('matieres', [MatiereController::class, 'customs']);
         Route::get('matieres/simple', [MatiereController::class, 'nonCustoms']);
     });
+});
+
+
+Route::prefix('v2')->group(function(){
+    Route::get('cours',[V2CoursController::class, 'getCours']);
 });
