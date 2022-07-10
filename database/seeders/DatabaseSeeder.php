@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cours;
 use Illuminate\Database\Seeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             CycleLevelMatiereSeeder::class,
+            Cours::factory(50)->create()
         ]);
     }
 }
