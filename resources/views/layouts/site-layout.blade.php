@@ -115,7 +115,10 @@
                             </span>
                             <ul class="list-unstyled">
                                 <li>
-                                    <a class="text-blueGray-600 dark:text-gray-400 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="{{ route('contact.page') }}">Par Email</a>
+                                    <a class="text-blueGray-600 dark:text-gray-400 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="{{ url("/api/documentation") }}">API</a>
+                                </li>
+                                <li>
+                                    <a class="text-blueGray-600 dark:text-gray-400 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="{{ route('contact.page') }}">Contact par Email</a>
                                 </li>
                                 <li>
                                     <a class="text-blueGray-600 dark:text-gray-400 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="{{ route('about.page') }}">À propos du site</a>

@@ -6,10 +6,58 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @OA\Schema()
+ */
 class Cours extends Model
 {
     use HasFactory,SoftDeletes;
 
+    /**
+     * @OA\Property(
+     *      property="id",
+     *      type="integer",
+     *      description="The identifier of the cours."
+     * )
+     * @OA\Property(
+     *      property="nom",
+     *      type="string",
+     *      description="The name of the cours."
+     * )
+     * @OA\Property(
+     *      property="slug",
+     *      type="string",
+     *      description="The slug of the cours."
+     * )
+     * @OA\Property(
+     *      property="description",
+     *      type="string",
+     *      description="The description of the cours."
+     * )
+     * @OA\Property(
+     *      property="isActif",
+     *      type="boolean",
+     *      description="The status of the cours."
+     * )
+     * @OA\Property(
+     *      property="created_at",
+     *      type="string",
+     *      format="date-time",
+     *      description="The date and time when the cours was created."
+     * )
+     * @OA\Property(
+     *      property="updated_at",
+     *      type="string",
+     *      format="date-time",
+     *      description="The date and time when the cours was updated."
+     * )
+     * @OA\Property(
+     *      property="deleted_at",
+     *      type="string",
+     *      format="date-time",
+     *      description="The date and time when the cours was deleted."
+     * )
+     */
     protected $guarded = [];
 
     public function islike($user)

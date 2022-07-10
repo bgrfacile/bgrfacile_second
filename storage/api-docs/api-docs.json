@@ -1,55 +1,104 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "bgrfacile API",
-        "description": "bgrfacile API documentation",
+        "title": "Api public de l'application",
+        "description": "cette documentation permet de décrire l'api public de l'application bgrfacile sur l'ensemble des ressources disponibles",
         "contact": {
-            "email": "darius@matulionis.lt"
+            "email": "benaja.bendo02@gmail.com"
         },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
-        },
-        "version": "1.0.0",
-        "x-logo": {
-            "url": "https://via.placeholder.com/190x90.png?text=L5-Swagger"
-        }
+        "version": "1.0.0"
     },
     "servers": [
         {
-            "url": "http://127.0.0.1:8000/api",
-            "description": "server api v1"
+            "url": "http://127.0.0.1:8000/api/v2",
+            "description": "server api v2"
         }
     ],
     "paths": {
-        "/v1/cours": {
+        "/cours": {
             "get": {
                 "tags": [
-                    "cours"
+                    "Cours"
                 ],
-                "summary": "Get all cours",
-                "description": "Get all cours",
-                "operationId": "",
+                "summary": "recuperation des cours avec une pagination",
+                "description": "recuperation des cours avec une pagination",
+                "operationId": "cb732472edef4a14f36d7d77a6bca51f",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "limit",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
                 "responses": {
                     "200": {
-                        "description": "Successful operation",
+                        "description": "successful operation",
                         "content": {
-                            "application/json": {}
+                            "application/json": {
+                                "schema": {
+                                    "schema": "Cours",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Cours"
+                                    }
+                                }
+                            }
                         }
-                    },
-                    "401": {
-                        "description": "Unauthenticated"
-                    },
-                    "403": {
-                        "description": "Forbidden"
-                    },
-                    "400": {
-                        "description": "Bad Request"
-                    },
-                    "404": {
-                        "description": "not found"
                     }
                 }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Cours": {
+                "properties": {
+                    "id": {
+                        "description": "The identifier of the cours.",
+                        "type": "integer"
+                    },
+                    "nom": {
+                        "description": "The name of the cours.",
+                        "type": "string"
+                    },
+                    "slug": {
+                        "description": "The slug of the cours.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "The description of the cours.",
+                        "type": "string"
+                    },
+                    "isActif": {
+                        "description": "The status of the cours.",
+                        "type": "boolean"
+                    },
+                    "created_at": {
+                        "description": "The date and time when the cours was created.",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "description": "The date and time when the cours was updated.",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "deleted_at": {
+                        "description": "The date and time when the cours was deleted.",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
             }
         }
     }
