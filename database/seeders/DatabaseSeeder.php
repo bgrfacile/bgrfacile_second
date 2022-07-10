@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             CycleLevelMatiereSeeder::class,
-            Cours::factory(50)->create()
+            CoursSeeder::class,
         ]);
     }
 }
