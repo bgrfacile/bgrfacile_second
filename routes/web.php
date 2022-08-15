@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CycleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CoursController as CoursControllerAdmin;
+use App\Http\Controllers\Admin\EcoleController;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\MatiereController;
 use App\Http\Controllers\Admin\QuizController;
@@ -99,6 +100,8 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('/{users}', [UserController::class, 'destroy'])->name('users.destroy');
         });
         Route::put('/users/{user}/roles', [UserController::class, 'updateRole'])->name('users.update.role');
+
+        Route::get('/ecole',[EcoleController::class,]);
     });
 });
 
