@@ -26,8 +26,6 @@ Route::get('/', HomeController::class)->name('home.page');
 Route::get('/cours/random', [CoursController::class, 'randomCours'])->name('randomCours.page');
 Route::get('/ecole-en-ligne', [EcoleEnLigneController::class, 'index'])->name('ecoleEnLigne.page');
 Route::get('/ecole-en-ligne/create', [EcoleEnLigneController::class, 'create'])->name('ecoleEnLigne.create');
-Route::get('/donation', [DonationController::class, 'index'])->name('donation.page');
-Route::post('/donation', [DonationController::class, 'postDonation'])->name('donation.page.post');
 Route::get('/qui-sommes-nous', [AboutController::class, 'who'])->name('who.page');
 Route::get('/about', [AboutController::class, 'about'])->name('about.page');
 Route::get('/politique-de-confidentialite', [AboutController::class, 'politiqueDeConfidentialite'])->name('politique.page');
@@ -97,7 +95,7 @@ Route::middleware(['auth'])->group(function () {
         });
         Route::put('/users/{user}/roles', [UserController::class, 'updateRole'])->name('users.update.role');
 
-        Route::get('/ecole',[EcoleController::class,]);
+        Route::get('/ecole', [EcoleController::class,]);
     });
 });
 

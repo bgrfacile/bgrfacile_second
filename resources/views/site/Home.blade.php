@@ -345,20 +345,20 @@
     </div>
     </section> --}}
 
-    <section class="bg-gradient-to-r from-cyan-500 to-blue-500 mt-10 headline">
+    {{-- <section class="bg-gradient-to-r from-cyan-500 to-blue-500 mt-10 headline">
         <div class="w-11/12 md:w-4/6 m-auto h-fit flex flex-col-reverse md:flex-row items-center">
             <img src="{{ asset('assets/img/undraw_transfer_money_rywa.svg') }}" alt="" srcset="">
-            <div class="max-w-max h-fit pb-3">
-                <h2 class="text-3xl md:text-6xl font-bold text-white text-center py-5">Faite une Donation</h2>
-                <p class="text-gray-50 mb-2 md:mb-4">
-                    Bgrfacile est un projet en construction, Nous avons besoin de votre aide pour le maintenir.
-                    Faire un don est un moyen simple et efficace de soutenir le site.
-                </p>
-                <a href="{{ route('donation.page') }}" class="btn-paypal my-2" style="margin-bottom: 10px">
-                    <i class="fa fa-lock donate-padlock-icon"></i> <span>Faire un don</span>
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="max-w-max h-fit pb-3">
+        <h2 class="text-3xl md:text-6xl font-bold text-white text-center py-5">Faite une Donation</h2>
+        <p class="text-gray-50 mb-2 md:mb-4">
+            Bgrfacile est un projet en construction, Nous avons besoin de votre aide pour le maintenir.
+            Faire un don est un moyen simple et efficace de soutenir le site.
+        </p>
+        <a href="{{ route('donation.page') }}" class="btn-paypal my-2" style="margin-bottom: 10px">
+            <i class="fa fa-lock donate-padlock-icon"></i> <span>Faire un don</span>
+        </a>
+    </div>
+    </div>
+    </section> --}}
 
 </x-site-layout>

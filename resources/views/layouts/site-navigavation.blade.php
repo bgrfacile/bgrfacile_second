@@ -80,9 +80,6 @@
                     <x-nav-link class="min-w-max" :href="route('who.page')" :active="request()->routeIs('who.page')">
                         {{ __('Qui sommes nous?') }}
                     </x-nav-link>
-                    <x-nav-link class="min-w-max" :href="route('donation.page')" :active="request()->routeIs('donation.page')">
-                        {{ __('Faire un don') }}
-                    </x-nav-link>
                 </div>
             </div>
 
@@ -231,9 +228,6 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('who.page')" :active="request()->routeIs('who.page')">
                 {{ __('Qui sommes nous?') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('donation.page')" :active="request()->routeIs('donation.page')">
-                {{ __('Faire un don') }}
             </x-responsive-nav-link>
         </div>
 
