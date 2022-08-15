@@ -22,10 +22,6 @@ use Illuminate\Support\Facades\Route;
     App Site route
 */
 
-Route::get('/demo', function () {
-    return view('site.demoPageSchool');
-});
-
 Route::get('/', HomeController::class)->name('home.page');
 Route::get('/cours/random', [CoursController::class, 'randomCours'])->name('randomCours.page');
 Route::get('/ecole-en-ligne', [EcoleEnLigneController::class, 'index'])->name('ecoleEnLigne.page');

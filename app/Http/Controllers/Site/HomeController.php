@@ -14,23 +14,23 @@ class HomeController extends Controller
 {
     public function __invoke()
     {
-        if (Role::count() == 0) {
-            app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
-            Role::create(['name' => 'super-admin']);
-            Role::create(['name' => 'admin']);
-            Role::create(['name' => 'etudiant']);
-            Role::create(['name' => 'etudiant-has-ecole']);
-            Role::create(['name' => 'professeur']);
-            Role::create(['name' => 'promoteur']);
-        }
+        // if (Role::count() == 0) {
+        //     app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+        //     Role::create(['name' => 'super-admin']);
+        //     Role::create(['name' => 'admin']);
+        //     Role::create(['name' => 'etudiant']);
+        //     Role::create(['name' => 'etudiant-has-ecole']);
+        //     Role::create(['name' => 'professeur']);
+        //     Role::create(['name' => 'promoteur']);
+        // }
         $countCours = Cours::count();
         $countExercices = Cours::count();
         $countSolutions = Solution::count();
 
         return view('site.Home', [
-            'countCours' => $countCours,
-            'countExercices' => $countExercices,
-            'countSolutions' => $countSolutions,
+            'countCours' => $countCours ?? 0,
+            'countExercices' => $countExercices ?? 0,
+            'countSolutions' => $countSolutions ?? 0,
             'countFormation' => 0,
         ]);
     }
