@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CycleController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CoursController as CoursControllerAdmin;
+use App\Http\Controllers\Admin\EcoleController;
 use App\Http\Controllers\Admin\LevelController;
 use App\Http\Controllers\Admin\MatiereController;
 use App\Http\Controllers\Admin\QuizController;
@@ -20,10 +21,6 @@ use Illuminate\Support\Facades\Route;
 /*
     App Site route
 */
-
-Route::get('/demo', function () {
-    return view('site.demoPageSchool');
-});
 
 Route::get('/', HomeController::class)->name('home.page');
 Route::get('/cours/random', [CoursController::class, 'randomCours'])->name('randomCours.page');
@@ -99,6 +96,8 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('/{users}', [UserController::class, 'destroy'])->name('users.destroy');
         });
         Route::put('/users/{user}/roles', [UserController::class, 'updateRole'])->name('users.update.role');
+
+        Route::get('/ecole',[EcoleController::class,]);
     });
 });
 

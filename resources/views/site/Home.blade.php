@@ -1,4 +1,3 @@
-{{-- style="background-image: url(https://demo.gethugothemes.com/northendlab-light/images/banner/banner-bg.svg)"> --}}
 <x-site-layout>
 
     <x-slot name="title">bgrfacile</x-slot>
