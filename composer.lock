@@ -3326,7 +3326,11 @@
         },
         {
             "name": "symfony/deprecation-contracts",
+<<<<<<< HEAD
             "version": "v3.1.1",
+=======
+            "version": "v3.0.2",
+>>>>>>> 9e8376a2b8a784cfbfea6161b7abb9e2fd252e33
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
@@ -3373,7 +3377,11 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v3.1.1"
+=======
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.0.2"
+>>>>>>> 9e8376a2b8a784cfbfea6161b7abb9e2fd252e33
             },
             "funding": [
                 {
