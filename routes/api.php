@@ -104,5 +104,8 @@ Route::prefix('v1')->group(function () {
 
 
 Route::prefix('v2')->group(function(){
-    Route::get('cours',[V2CoursController::class, 'getCours']);
+    Route::get('/',function(){
+        return response()->json(['message' => 'Welcome to API V2']);
+    });
+    Route::apiResource('/cours', V2CoursController::class);
 });
