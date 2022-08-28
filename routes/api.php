@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\MatiereController;
 use App\Http\Controllers\Api\SearchController;
 use App\Http\Controllers\Api\SolutionController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\v1\HomeController as v1HomeController;
 use App\Http\Controllers\Api\v2\CoursController as V2CoursController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Cours;
@@ -26,8 +27,8 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
+Route::get('/', v1HomeController::class);
 Route::prefix('v1')->group(function () {
-
     Route::group([
         'middleware' => ['cors', 'auth'],
     ], function () {
@@ -103,8 +104,8 @@ Route::prefix('v1')->group(function () {
 });
 
 
-Route::prefix('v2')->group(function(){
-    Route::get('/',function(){
+Route::prefix('v2')->group(function () {
+    Route::get('/', function () {
         return response()->json(['message' => 'Welcome to API V2']);
     });
     Route::apiResource('/cours', V2CoursController::class);
