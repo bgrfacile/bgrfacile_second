@@ -15,15 +15,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', v1HomeController::class);
 
 Route::prefix('v1')->group(function () {
-    Route::group([
-        'middleware' => ['cors', 'auth'],
-    ], function () {
-    });
+    Route::post('/register', [V1AuthController::class, 'createUser']);
+    Route::post('/login', [V1AuthController::class, 'loginUser']);
 
     Route::group([
-        'middleware' => ['cors'],
+        'middleware' => ['auth:sanctum'],
     ], function () {
-        Route::post('/auth/register', [V1AuthController::class ,'createUser']);
-        Route::post('/auth/login', [V1AuthController::class ,'loginUser']);
+        Route::post('/logout', [V1AuthController::class, 'logout']);
+
+        Route::get("ecoles", function () {
+            return [
+                "hello" => "word",
+            ];
+        });
     });
 });
