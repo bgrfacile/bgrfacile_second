@@ -17,6 +17,8 @@ Route::get('/', v1HomeController::class);
 Route::prefix('v1')->group(function () {
     Route::post('/register', [V1AuthController::class, 'createUser']);
     Route::post('/login', [V1AuthController::class, 'loginUser']);
+    Route::post('/forgot-password', [V1AuthController::class, 'forgotPassword']);
+    Route::post('/reset-password', [V1AuthController::class, 'resetPassword']);
 
     Route::group([
         'middleware' => ['auth:sanctum'],

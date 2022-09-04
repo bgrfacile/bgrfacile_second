@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('info_users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('slug')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
@@ -23,7 +24,6 @@ return new class extends Migration
             $table->enum('genre', ['M', 'F']);
             $table->string('city')->nullable();
             $table->string('phone')->nullable();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
