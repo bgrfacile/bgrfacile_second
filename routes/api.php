@@ -26,8 +26,9 @@ Route::prefix('v1')->group(function () {
     ], function () {
         Route::post('/logout', [V1AuthController::class, 'logout']);
 
-        Route::get('/info-user/{user}', [InfoUserController::class, 'index']);
-        Route::post('/info-user/{user}', [InfoUserController::class, 'store']);
+        Route::apiResource("/users",InfoUserController::class);
+        // Route::get('/info-user/{user}', [InfoUserController::class, 'index']);
+        // Route::post('/info-user/{user}', [InfoUserController::class, 'store']);
 
         Route::get("ecoles", function () {
             return [

@@ -17,17 +17,17 @@ class UserResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            "slug" => $this->infoUser->slug,
-            "first_name" => $this->infoUser->first_name,
-            "last_name" => $this->infoUser->last_name,
-            "image_path" => $this->infoUser->image_path,
-            "address" => $this->infoUser->address,
-            "genre" => $this->infoUser->genre,
-            "city" => $this->infoUser->city,
-            "phone" => $this->infoUser->phone,
-            'email' => $this->email,
-            "updated_at" => $this->updated_at,
-            'created_at' => $this->created_at
+            "slug" => $this->infoUser->slug ?? null,
+            "first_name" => $this->infoUser->first_name ?? null,
+            "last_name" => $this->infoUser->last_name ?? null,
+            "image_path" => $this->infoUser->image_path ?? null,
+            "address" => $this->infoUser->address ?? null,
+            "genre" => $this->infoUser->genre ?? null,
+            "city" => $this->infoUser->city ?? null,
+            "phone" => $this->infoUser->phone ?? null,
+            'email' => $this->email ?? null,
+            "updated_at" => $this->updated_at ?? null,
+            'created_at' => $this->created_at ?? null,
         ];
     }
 }
