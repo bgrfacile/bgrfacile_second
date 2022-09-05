@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class InfoUser extends Model
 {
-    use HasFactory,SoftDeletes;
+    use HasFactory, SoftDeletes;
+
+    protected $guarded = [];
 
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\Api\v1\AuthController as V1AuthController;
 use App\Http\Controllers\Api\v1\HomeController as v1HomeController;
+use App\Http\Controllers\Api\v1\InfoUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,9 @@ Route::prefix('v1')->group(function () {
         'middleware' => ['auth:sanctum'],
     ], function () {
         Route::post('/logout', [V1AuthController::class, 'logout']);
+
+        Route::get('/info-user/{user}', [InfoUserController::class, 'index']);
+        Route::post('/info-user/{user}', [InfoUserController::class, 'store']);
 
         Route::get("ecoles", function () {
             return [
