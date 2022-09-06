@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Cours;
+use App\Models\InfoUser;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -16,10 +18,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            RoleSeeder::class,
-            CycleLevelMatiereSeeder::class,
-            CoursSeeder::class,
-        ]);
+        $users = User::factory(10)->create();
+        InfoUser::factory()->create();
+        // $users->map(function ($user) {
+        //     $user->infoUser()->factory()->create();
+        // });
+        // $this->call([
+        //     RoleSeeder::class,
+        //     CycleLevelMatiereSeeder::class,
+        //     CoursSeeder::class,
+        // ]);
     }
 }

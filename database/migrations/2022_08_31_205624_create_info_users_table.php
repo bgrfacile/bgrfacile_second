@@ -15,15 +15,18 @@ return new class extends Migration
     {
         Schema::create('info_users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')
+                  ->index()
+                  ->constrained()
+                  ->cascadeOnDelete();
             $table->string('slug')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->text('image_path')->nullable();
             $table->string('address')->nullable();
-            $table->enum('genre', ['M', 'F']);
+            $table->enum('genre', ['M', 'F'])->nullable();
             $table->string('city')->nullable();
             $table->string('phone')->nullable();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
