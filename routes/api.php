@@ -20,15 +20,13 @@ Route::prefix('v1')->group(function () {
     Route::post('/login', [V1AuthController::class, 'loginUser']);
     Route::post('/forgot-password', [V1AuthController::class, 'forgotPassword']);
     Route::post('/reset-password', [V1AuthController::class, 'resetPassword']);
-
+    Route::apiResource("/users", InfoUserController::class)->only(['index']);
     Route::group([
         'middleware' => ['auth:sanctum'],
     ], function () {
         Route::post('/logout', [V1AuthController::class, 'logout']);
 
-        Route::apiResource("/users",InfoUserController::class);
-        // Route::get('/info-user/{user}', [InfoUserController::class, 'index']);
-        // Route::post('/info-user/{user}', [InfoUserController::class, 'store']);
+        Route::apiResource("/users", InfoUserController::class)->except(['store','index']);
 
         Route::get("ecoles", function () {
             return [

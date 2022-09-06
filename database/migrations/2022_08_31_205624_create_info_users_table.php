@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->text('image_path')->nullable();
             $table->string('address')->nullable();
-            $table->enum('genre', ['M', 'F']);
+            $table->enum('genre', ['M', 'F'])->nullable();
             $table->string('city')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();

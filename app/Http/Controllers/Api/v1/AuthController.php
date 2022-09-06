@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\v1\User\UserResource;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -41,11 +42,14 @@ class AuthController extends Controller
                 "email" => $request->email,
                 "password" => Hash::make($request->password)
             ]);
+            $user->infoUser()->create([
+                'slug' => Str::slug($request->name)
+            ]);
             return response()->json([
                 "success" => true,
                 "message" => "user created successfully",
                 "data" => [
-                    "user" => $user,
+                    "user" => new UserResource($user),
                     'access_token' => $user->createToken("create_user")->plainTextToken,
                     'token_type' => 'Bearer',
                 ]
@@ -89,7 +93,7 @@ class AuthController extends Controller
                 "success" => true,
                 "message" => "user Logged In Successefully",
                 "data" => [
-                    "user" => $user,
+                    "user" => new UserResource($user),
                     'access_token' => $user->createToken("create_user")->plainTextToken,
                     'token_type' => 'Bearer',
                 ]

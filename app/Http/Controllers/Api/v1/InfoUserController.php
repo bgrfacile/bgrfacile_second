@@ -18,12 +18,7 @@ class InfoUserController extends Controller
      */
     public function index()
     {
-        // $collectUser = collect($user);
-        // return $collectUser->concat([
-        //     'info'=>"salut"
-        // ]);
-        return User::paginate(15);
-
+        return new UserCollection(User::paginate(15));
     }
 
     /**
@@ -35,22 +30,21 @@ class InfoUserController extends Controller
      */
     public function store(Request $request, User $user)
     {
-        $request->validate([
-            "user_id" => "required",
-            "slug" => "string",
-            "first_name" => "string",
-            "last_name" => "string",
-            "image_path" => "image",
-            "address" => "string",
-            "genre" => "in:M,F",
-            "city" => "string",
-            "phone" => "string",
-        ]);
-        $user->infoUser()->create($request->all());
-        return response()->json([
-            "success" => true,
-            "message" => "mise à jour des informations de l'utilisateur",
-        ]);
+        // $request->validate([
+        //     "slug" => "string",
+        //     "first_name" => "string",
+        //     "last_name" => "string",
+        //     "image_path" => "image",
+        //     "address" => "string",
+        //     "genre" => "in:M,F",
+        //     "city" => "string",
+        //     "phone" => "string",
+        // ]);
+        // $user->infoUser()->create($request->all());
+        // return response()->json([
+        //     "success" => true,
+        //     "message" => "mise à jour des informations de l'utilisateur",
+        // ]);
     }
 
     /**
@@ -71,10 +65,9 @@ class InfoUserController extends Controller
      * @param  User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $user)
+    public function update(Request $request, User $user)
     {
         $request->validate([
-            "user_id" => "required",
             "slug" => "string",
             "first_name" => "string",
             "last_name" => "string",
@@ -88,6 +81,9 @@ class InfoUserController extends Controller
         return response()->json([
             "success" => true,
             "message" => "mise à jour des informations de l'utilisateur",
+            "data" => [
+                "user" => new UserResource($user)
+            ]
         ]);
     }
 
