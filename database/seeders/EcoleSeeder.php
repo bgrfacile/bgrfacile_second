@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ecole;
+use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -15,21 +17,17 @@ class EcoleSeeder extends Seeder
      */
     public function run()
     {
-        $fake = \Faker\Factory::create();
-        for($i = 0; $i < 10; $i++) {
-            $ecole = [
-                'name' => $fake->name,
-                'slug' => $fake->slug,
-                'email' => $fake->email,
-                'adresse' => $fake->address,
-                'site_web' => $fake->url,
-                'description' => $fake->text,
-                'logo_path' => $fake->imageUrl,
-                'image_path' => $fake->imageUrl,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ];
-            DB::table('ecoles')->insert($ecole);
+        for ($i = 0; $i < 10; $i++) {
+            Ecole::create([
+                'name' => Factory::create()->name(),
+                'slug' => Factory::create()->slug,
+                'email' => Factory::create()->email,
+                'site_web' => Factory::create()->url,
+                'description' => Factory::create()->sentence(50),
+                'avantages' => Factory::create()->sentence(100),
+                'path_logo' => Factory::create()->imageUrl(),
+                'path_baniere' => Factory::create()->imageUrl(),
+            ]);
         }
     }
 }

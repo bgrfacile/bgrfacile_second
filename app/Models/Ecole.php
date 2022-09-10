@@ -11,4 +11,14 @@ class Ecole extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
+    public function location()
+    {
+        return $this->hasOne(Location::class);
+    }
+
+    public function imagesEcole()
+    {
+        return $this->hasMany(ImagesEcole::class);
+    }
 }

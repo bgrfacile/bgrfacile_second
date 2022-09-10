@@ -2,7 +2,9 @@
 
 
 use App\Http\Controllers\Api\v1\AuthController as V1AuthController;
+use App\Http\Controllers\Api\v1\EcoleController;
 use App\Http\Controllers\Api\v1\HomeController as v1HomeController;
+use App\Http\Controllers\Api\v1\ImageEcoleController;
 use App\Http\Controllers\Api\v1\InfoUserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,17 +23,17 @@ Route::prefix('v1')->group(function () {
     Route::post('/forgot-password', [V1AuthController::class, 'forgotPassword']);
     Route::post('/reset-password', [V1AuthController::class, 'resetPassword']);
     Route::apiResource("/users", InfoUserController::class)->only(['index']);
+    Route::apiResource("/ecoles", EcoleController::class)->only(['index']);
+
     Route::group([
-        'middleware' => ['auth:sanctum'],
+        // 'middleware' => ['auth:sanctum'],
     ], function () {
         Route::post('/logout', [V1AuthController::class, 'logout']);
 
-        Route::apiResource("/users", InfoUserController::class)->except(['store','index']);
-
-        Route::get("ecoles", function () {
-            return [
-                "hello" => "word",
-            ];
-        });
+        Route::apiResource('/image-ecoles', ImageEcoleController::class)->except(['index', 'update']);
+        Route::post('/image-ecoles/{id}', [ImageEcoleController::class, 'update']);
+        Route::apiResource("/ecoles", EcoleController::class)->except(['index', 'update']);
+        Route::post('/ecoles/{id}', [EcoleController::class, 'update']);
+        Route::apiResource("/users", InfoUserController::class)->except(['store', 'index']);
     });
 });
