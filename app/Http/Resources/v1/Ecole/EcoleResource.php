@@ -4,6 +4,7 @@ namespace App\Http\Resources\v1\Ecole;
 
 use App\Http\Resources\v1\ImageEcole\ImageEcoleCollection;
 use App\Http\Resources\v1\ImageEcole\ImageEcoleResource;
+use App\Http\Resources\v1\Location\LocationRessource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class EcoleResource extends JsonResource
@@ -28,6 +29,7 @@ class EcoleResource extends JsonResource
             "path_baniere" => url($this->path_baniere),
             // "images_ecole" => new ImageEcoleCollection($this->imagesEcole),
             "images_ecole" => ImageEcoleResource::collection($this->imagesEcole),
+            "location" => new LocationRessource($this->location),
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];
