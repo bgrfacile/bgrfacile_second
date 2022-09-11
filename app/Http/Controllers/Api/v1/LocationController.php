@@ -16,7 +16,7 @@ class LocationController extends Controller
      */
     public function index()
     {
-        //
+        return Location::paginate(15);
     }
 
     /**
