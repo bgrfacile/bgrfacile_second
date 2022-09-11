@@ -21,6 +21,7 @@ class EcoleSeeder extends Seeder
             Ecole::create([
                 'name' => Factory::create()->name(),
                 'slug' => Factory::create()->slug,
+                'category' => Factory::create()->randomElement(['public', 'private']),
                 'email' => Factory::create()->email,
                 'site_web' => Factory::create()->url,
                 'description' => Factory::create()->sentence(50),

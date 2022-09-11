@@ -32,6 +32,7 @@ class EcoleController extends Controller
         $request->validate([
             "name" => "required|string|unique:ecoles,name",
             "slug" => "nullable|string",
+            "category" => "required|in:public,private",
             "email" => "nullable|email",
             "site_web" => "nullable|string|url",
             "description" => "nullable|string|max:800",
@@ -50,6 +51,7 @@ class EcoleController extends Controller
         $ecole =  Ecole::create([
             "name" => $request->name,
             "slug" => Str::slug($request->name),
+            "category" => $request->category,
             "email" => $request->email,
             "site_web" => $request->site_web,
             "description" => $request->description,
@@ -88,6 +90,7 @@ class EcoleController extends Controller
         $request->validate([
             "name" => "string|unique:ecoles,name",
             "slug" => "string",
+            "category" => "nullable|in:public,private",
             "email" => "email",
             "site_web" => "string|url",
             "description" => "string|max:800",
@@ -106,6 +109,7 @@ class EcoleController extends Controller
         $ecole = Ecole::findOrFail($id);
         $result = $ecole->update([
             "name" => $request->name ?? $ecole->name,
+            "category" => $request->category ?? $ecole->category,
             // "slug" => $request->name != null ? Str::slug($request->name) : $ecole->slug,
             "email" => $request->email ?? $ecole->email,
             "site_web" => $request->site_web ?? $ecole->site_web,
