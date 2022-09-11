@@ -32,6 +32,7 @@ Route::prefix('v1')->group(function () {
         Route::post('/logout', [V1AuthController::class, 'logout']);
 
         Route::apiResource("/ecoles", EcoleController::class)->except(['index', 'update']);
+        Route::get('/ecoles/search/{name}', [EcoleController::class, 'search']);
         Route::post('/ecoles/{id}', [EcoleController::class, 'update']);
 
         Route::apiResource('/image-ecoles', ImageEcoleController::class)->except(['index', 'update']);
@@ -40,5 +41,6 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('/locations', LocationController::class)->except(['index']);
 
         Route::apiResource("/users", InfoUserController::class)->except(['store', 'index']);
+        Route::get('/users/search/{name}', [InfoUserController::class, 'search']);
     });
 });

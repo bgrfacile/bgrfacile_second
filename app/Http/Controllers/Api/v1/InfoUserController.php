@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\User\UserCollection;
 use App\Http\Resources\v1\User\UserResource;
+use App\Models\InfoUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -100,5 +101,11 @@ class InfoUserController extends Controller
             "success" => true,
             "message" => "utilisation supprimer avec success"
         ]);
+    }
+
+    public function search(string $name)
+    {
+        $users = User::where('name', 'like', '%' . $name . '%')->paginate(10);
+        return new UserCollection($users);
     }
 }

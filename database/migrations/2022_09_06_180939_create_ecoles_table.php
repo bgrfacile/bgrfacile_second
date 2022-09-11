@@ -23,6 +23,7 @@ return new class extends Migration
             $table->longText('avantages')->nullable();
             $table->text('path_logo')->nullable();
             $table->text('path_baniere')->nullable();
+            $table->enum('category', ['private', 'public'])->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

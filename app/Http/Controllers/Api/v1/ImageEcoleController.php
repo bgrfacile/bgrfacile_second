@@ -28,7 +28,7 @@ class ImageEcoleController extends Controller
         ]);
         $path_image = null;
         if ($request->hasFile('path_image')) {
-            saveFileToStorageDirectory($request, "path_image", "images_ecoles");
+            $path_image = saveFileToStorageDirectory($request, "path_image", "images_ecoles");
             // $imageName = time() . '_' . $request->file('path_image')->getClientOriginalName();
             // $path_image = "/storage/" . $request->file('path_image')->storeAs('images_ecoles', $imageName, 'public');
         }
@@ -73,9 +73,7 @@ class ImageEcoleController extends Controller
         $path_image = $imageEcole->path_image;
         if ($request->hasFile('path_image')) {
             Storage::delete(storage_path($imageEcole->path_image));
-            saveFileToStorageDirectory($request, "path_image", "images_ecoles");
-            // $imageName = time() . '_' . Str::slug($request->file('path_image')->getClientOriginalName());
-            // $path_image = DIRECTORY_SEPARATOR . "storage" . DIRECTORY_SEPARATOR . $request->file('path_image')->storeAs('images_ecoles', $imageName, 'public');
+            $path_image = saveFileToStorageDirectory($request, "path_image", "images_ecoles");
         }
         $imageUpadate = $imageEcole->update([
             "path_image" => $path_image,

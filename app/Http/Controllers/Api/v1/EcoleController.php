@@ -130,4 +130,10 @@ class EcoleController extends Controller
             "success" => $result,
         ], 200);
     }
+
+    public function search(string $name)
+    {
+        $ecoles = Ecole::where('name', 'like', '%' . $name . '%')->paginate(10);
+        return new EcoleCollection($ecoles);
+    }
 }
