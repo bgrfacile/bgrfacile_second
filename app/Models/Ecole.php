@@ -21,4 +21,8 @@ class Ecole extends Model
     {
         return $this->hasMany(ImagesEcole::class);
     }
+    public function typeEcole()
+    {
+        return $this->belongsToMany(TypeEcole::class,"ecole_has_type","ecole_id","type_ecole_id");
+    }
 }

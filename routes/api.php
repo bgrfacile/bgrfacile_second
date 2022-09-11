@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\v1\HomeController as v1HomeController;
 use App\Http\Controllers\Api\v1\ImageEcoleController;
 use App\Http\Controllers\Api\v1\InfoUserController;
 use App\Http\Controllers\Api\v1\LocationController;
+use App\Http\Controllers\Api\v1\TypeEcoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +35,8 @@ Route::prefix('v1')->group(function () {
         Route::apiResource("/ecoles", EcoleController::class)->except(['index', 'update']);
         Route::get('/ecoles/search/{name}', [EcoleController::class, 'search']);
         Route::post('/ecoles/{id}', [EcoleController::class, 'update']);
+
+        Route::apiResource("/type-ecoles", TypeEcoleController::class);
 
         Route::apiResource('/image-ecoles', ImageEcoleController::class)->except(['index', 'update']);
         Route::post('/image-ecoles/{id}', [ImageEcoleController::class, 'update']);
