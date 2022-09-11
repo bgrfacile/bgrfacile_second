@@ -10,4 +10,9 @@ class Cycle extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function ecoles()
+    {
+        return $this->belongsToMany(Ecole::class, "cycles_has_ecoles", "cycle_id", "ecole_id");
+    }
 }

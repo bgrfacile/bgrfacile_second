@@ -1,9 +1,7 @@
 <?php
 
-use Database\Seeders\CycleSeeder;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -15,14 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cycles', function (Blueprint $table) {
+        Schema::create('cycles_has_ecoles', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->foreignId('cycle_id')
+                ->index()
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('ecole_id')
+                ->index()
+                ->constrained()
+                ->cascadeOnDelete();
             $table->timestamps();
         });
-        Artisan::call("db:seed", [
-            "--class" => CycleSeeder::class,
-        ]);
     }
 
     /**
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cycles');
+        Schema::dropIfExists('cycles_has_ecoles');
     }
 };

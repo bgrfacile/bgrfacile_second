@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\v1\Ecole;
 
+use App\Http\Resources\v1\Cycle\CycleCollection;
 use App\Http\Resources\v1\ImageEcole\ImageEcoleCollection;
 use App\Http\Resources\v1\ImageEcole\ImageEcoleResource;
 use App\Http\Resources\v1\Location\LocationRessource;
@@ -28,6 +29,7 @@ class EcoleResource extends JsonResource
                     "name" => $typeEcole->name,
                 ];
             }),
+            "cycles" => new CycleCollection($this->cycles),
             "email" => $this->email,
             "site_web" => $this->site_web,
             "description" => $this->description,

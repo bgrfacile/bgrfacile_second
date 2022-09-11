@@ -38,6 +38,8 @@ Route::prefix('v1')->group(function () {
         Route::post('/ecoles/{id}', [EcoleController::class, 'update']);
         Route::post('/ecoles/add/type-ecole', [EcoleController::class, 'addTypeEcole']);
         Route::post('/ecoles/remove/type-ecole', [EcoleController::class, 'removeTypeEcole']);
+        Route::post('/ecoles/add/cycle', [EcoleController::class, 'addCycle']);
+        Route::post('/ecoles/remove/cycle', [EcoleController::class, 'removeCycle']);
 
         Route::apiResource("/type-ecoles", TypeEcoleController::class);
 

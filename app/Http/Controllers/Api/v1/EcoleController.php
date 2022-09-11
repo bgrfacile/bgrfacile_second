@@ -164,4 +164,31 @@ class EcoleController extends Controller
             "success" => $result,
         ], 200);
     }
+
+
+    public function addCycle(Request $request)
+    {
+        $request->validate([
+            "cycle_id" => "required",
+            "ecole_id" => "required"
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $result = $ecole->cycles()->attach($request->cycle_id);
+        return response()->json([
+            "success" => $result,
+        ], 200);
+    }
+
+    public function removeCycle(Request $request)
+    {
+        $request->validate([
+            "cycle_id" => "required",
+            "ecole_id" => "required"
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $result = $ecole->cycles()->detach($request->cycle_id);
+        return response()->json([
+            "success" => $result,
+        ], 200);
+    }
 }

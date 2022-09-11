@@ -29,7 +29,7 @@ class CycleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "name" => "required|string",
+            "name" => "required|string|unique:cycles,name",
         ]);
         $cycle = Cycle::create([
             "name" => $request->name
