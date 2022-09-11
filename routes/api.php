@@ -35,6 +35,8 @@ Route::prefix('v1')->group(function () {
         Route::apiResource("/ecoles", EcoleController::class)->except(['index', 'update']);
         Route::get('/ecoles/search/{name}', [EcoleController::class, 'search']);
         Route::post('/ecoles/{id}', [EcoleController::class, 'update']);
+        Route::post('/ecoles/add/type-ecole', [EcoleController::class, 'addTypeEcole']);
+        Route::post('/ecoles/remove/type-ecole', [EcoleController::class, 'removeTypeEcole']);
 
         Route::apiResource("/type-ecoles", TypeEcoleController::class);
 

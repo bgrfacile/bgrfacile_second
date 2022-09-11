@@ -22,6 +22,12 @@ class EcoleResource extends JsonResource
             "name" => $this->name,
             "slug" => $this->slug,
             'category' => $this->category,
+            'type_ecole' => $this->typeEcole->map(function ($typeEcole) {
+                return [
+                    "id" => $typeEcole->id,
+                    "name" => $typeEcole->name,
+                ];
+            }),
             "email" => $this->email,
             "site_web" => $this->site_web,
             "description" => $this->description,

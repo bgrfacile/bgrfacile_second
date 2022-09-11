@@ -140,4 +140,28 @@ class EcoleController extends Controller
         $ecoles = Ecole::where('name', 'like', '%' . $name . '%')->paginate(10);
         return new EcoleCollection($ecoles);
     }
+    public function addTypeEcole(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "type_ecole_id" => "required"
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $result = $ecole->typeEcole()->attach($request->type_ecole_id);
+        return response()->json([
+            "success" => $result,
+        ], 200);
+    }
+    public function removeTypeEcole(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "type_ecole_id" => "required"
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $result = $ecole->typeEcole()->detach($request->type_ecole_id);
+        return response()->json([
+            "success" => $result,
+        ], 200);
+    }
 }
