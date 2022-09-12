@@ -46,6 +46,8 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource('/cycles', CycleController::class);
         Route::get('/cycles/search/{name}', [CycleController::class, 'search']);
+        Route::post('/cycles/add/level', [CycleController::class, 'addLevel']);
+        Route::post('/cycles/remove/level', [CycleController::class, 'removeLevel']);
 
         Route::apiResource('/levels', LevelController::class);
         Route::get('/levels/search/{name}', [LevelController::class, 'search']);

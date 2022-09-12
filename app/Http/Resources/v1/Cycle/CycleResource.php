@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\v1\Cycle;
 
+use App\Http\Resources\v1\Level\LevelCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CycleResource extends JsonResource
@@ -17,6 +18,7 @@ class CycleResource extends JsonResource
         return [
             "id" => $this->id,
             "name" => $this->name,
+            "levels" => new LevelCollection($this->levels),
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];

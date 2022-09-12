@@ -23,7 +23,6 @@ return new class extends Migration
                 ->index()
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->timestamps();
         });
     }
 

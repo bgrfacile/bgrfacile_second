@@ -89,4 +89,31 @@ class CycleController extends Controller
         $cycles = Cycle::where('name', 'like', '%' . $name . '%')->paginate(15);
         return new CycleCollection($cycles);
     }
+
+    public function addLevel(Request $request)
+    {
+        $request->validate([
+            "cycle_id" => "required",
+            "level_id" => "required"
+        ]);
+        $cycle = Cycle::findOrFail($request->cycle_id);
+        $result = $cycle->levels()->attach($request->level_id);
+        return response()->json([
+            "success" => true,
+            "data" => new CycleResource($cycle)
+        ], 200);
+    }
+    public function removeLevel(Request $request)
+    {
+        $request->validate([
+            "cycle_id" => "required",
+            "level_id" => "required"
+        ]);
+        $cycle = Cycle::findOrFail($request->cycle_id);
+        $result = $cycle->levels()->detach($request->level_id);
+        return response()->json([
+            "success" => true,
+            "data" => new CycleResource($cycle)
+        ], 200);
+    }
 }

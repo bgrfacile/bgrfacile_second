@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cycles_has_ecoles', function (Blueprint $table) {
+        Schema::create('cycles_has_levels', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cycle_id')
                 ->index()
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->foreignId('ecole_id')
+            $table->foreignId('level_id')
                 ->index()
                 ->constrained()
                 ->cascadeOnDelete();
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cycles_has_ecoles');
+        Schema::dropIfExists('cycles_has_levels');
     }
 };

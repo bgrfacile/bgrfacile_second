@@ -15,4 +15,9 @@ class Cycle extends Model
     {
         return $this->belongsToMany(Ecole::class, "cycles_has_ecoles", "cycle_id", "ecole_id");
     }
+
+    public function levels()
+    {
+        return $this->belongsToMany(Level::class, "cycles_has_levels", "cycle_id", "level_id");
+    }
 }

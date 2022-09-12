@@ -10,4 +10,9 @@ class Level extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function cycles()
+    {
+        return $this->belongsToMany(Cycle::class, "cycles_has_levels", "level_id", "cycle_id");
+    }
 }
