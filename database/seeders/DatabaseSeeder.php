@@ -20,13 +20,12 @@ class DatabaseSeeder extends Seeder
     {
         $users = User::factory(10)->create();
         InfoUser::factory()->create();
-        // $users->map(function ($user) {
-        //     $user->infoUser()->factory()->create();
-        // });
-        // $this->call([
-        //     RoleSeeder::class,
-        //     CycleLevelMatiereSeeder::class,
-        //     CoursSeeder::class,
-        // ]);
+
+        $this->call([
+            EcoleSeeder::class,
+            CoursSeeder::class,
+            // RoleSeeder::class,
+            // CycleLevelMatiereSeeder::class,
+        ]);
     }
 }

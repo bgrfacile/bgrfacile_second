@@ -15,12 +15,12 @@ class CoursSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 100; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             Cours::create([
-                'title' => Factory::create()->sentence,
-                'slug' => Factory::create()->slug,
-                'description' => Factory::create()->paragraph,
-                'coverImage' => Factory::create()->imageUrl,
+                'name' => Factory::create()->name(),
+                'slug' => Factory::create()->slug(),
+                'description' => Factory::create()->paragraph(),
+                'path_image' => Factory::create()->imageUrl(),
             ]);
         }
     }

@@ -13,17 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ecoles', function (Blueprint $table) {
+        Schema::create('cours', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('slug')->unique()->nullable();
-            $table->string('email')->nullable();
-            $table->string('site_web')->nullable();
+            $table->string('name');
+            $table->string('slug')->nullable();
             $table->text('description')->nullable();
-            $table->longText('avantages')->nullable();
-            $table->text('path_logo')->nullable();
-            $table->text('path_baniere')->nullable();
-            $table->enum('category', ['private', 'public'])->nullable();
+            $table->text('path_image')->nullable();
+            $table->boolean('is_actif')->default(true)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -36,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ecoles');
+        Schema::dropIfExists('cours');
     }
 };
