@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\v1\ImageEcoleController;
 use App\Http\Controllers\Api\v1\InfoUserController;
 use App\Http\Controllers\Api\v1\LevelController;
 use App\Http\Controllers\Api\v1\LocationController;
+use App\Http\Controllers\Api\v1\MatiereController;
 use App\Http\Controllers\Api\v1\TypeEcoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,9 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource('/levels', LevelController::class);
         Route::get('/levels/search/{name}', [LevelController::class, 'search']);
+
+        Route::apiResource('/matieres', MatiereController::class);
+        Route::get('/matieres/search/{name}', [MatiereController::class, 'search']);
 
         Route::apiResource('/image-ecoles', ImageEcoleController::class)->except(['index', 'update']);
         Route::post('/image-ecoles/{id}', [ImageEcoleController::class, 'update']);
