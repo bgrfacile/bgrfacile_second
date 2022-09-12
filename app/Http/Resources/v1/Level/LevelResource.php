@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\v1\Level;
 
+use App\Http\Resources\v1\Matiere\MatiereCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class LevelResource extends JsonResource
@@ -17,6 +18,7 @@ class LevelResource extends JsonResource
         return [
             "id" => $this->id,
             "name" => $this->name,
+            "matieres" => new MatiereCollection($this->matieres),
         ];
     }
 }

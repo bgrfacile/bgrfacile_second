@@ -92,4 +92,31 @@ class LevelController extends Controller
         $levels = Level::where('name', 'like', '%' . $name . '%')->paginate(15);
         return new LevelCollection($levels);
     }
+
+    public function addMatiere(Request $request)
+    {
+        $request->validate([
+            "matiere_id" => "required",
+            "level_id" => "required"
+        ]);
+        $level = Level::findOrFail($request->level_id);
+        $result = $level->matieres()->attach($request->matiere_id);
+        return response()->json([
+            "success" => true,
+            "data" => new LevelResource($level)
+        ], 200);
+    }
+    public function removeMatiere(Request $request)
+    {
+        $request->validate([
+            "matiere_id" => "required",
+            "level_id" => "required"
+        ]);
+        $level = Level::findOrFail($request->level_id);
+        $result = $level->matieres()->detach($request->matiere_id);
+        return response()->json([
+            "success" => true,
+            "data" => new LevelResource($level)
+        ], 200);
+    }
 }

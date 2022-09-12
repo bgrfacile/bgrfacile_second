@@ -52,6 +52,8 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource('/levels', LevelController::class);
         Route::get('/levels/search/{name}', [LevelController::class, 'search']);
+        Route::post('/levels/add/matiere', [LevelController::class, 'addMatiere']);
+        Route::post('/levels/remove/matiere', [LevelController::class, 'removeMatiere']);
 
         Route::apiResource('/matieres', MatiereController::class);
         Route::get('/matieres/search/{name}', [MatiereController::class, 'search']);
