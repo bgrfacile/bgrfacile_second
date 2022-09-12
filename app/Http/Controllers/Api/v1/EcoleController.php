@@ -149,7 +149,8 @@ class EcoleController extends Controller
         $ecole = Ecole::findOrFail($request->ecole_id);
         $result = $ecole->typeEcole()->attach($request->type_ecole_id);
         return response()->json([
-            "success" => $result,
+            "success" => true,
+            "data" => new EcoleResource($ecole)
         ], 200);
     }
     public function removeTypeEcole(Request $request)
@@ -161,7 +162,8 @@ class EcoleController extends Controller
         $ecole = Ecole::findOrFail($request->ecole_id);
         $result = $ecole->typeEcole()->detach($request->type_ecole_id);
         return response()->json([
-            "success" => $result,
+            "success" => true,
+            "data" => new EcoleResource($ecole)
         ], 200);
     }
 

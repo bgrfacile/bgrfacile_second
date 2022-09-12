@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             EcoleSeeder::class,
+            CoursSeeder::class,
             // RoleSeeder::class,
             // CycleLevelMatiereSeeder::class,
-            // CoursSeeder::class,
         ]);
     }
 }
