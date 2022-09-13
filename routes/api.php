@@ -71,6 +71,8 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('/cours', CoursController::class)->except(['update']);
         Route::post('/cours/{cours}', [CoursController::class, 'update']);
         Route::get('/cours/search/{name}', [CoursController::class, 'search']);
+        Route::post('/cours/add/content', [CoursController::class, 'addContent']);
+        Route::post('/cours/remove/content', [CoursController::class, 'removeContent']);
 
         Route::apiResource('/contents', ContentController::class)->except(['update']);
         Route::post('/contents/{contents}', [ContentController::class, 'update']);

@@ -6,6 +6,7 @@ use App\Models\Cours;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\v1\Content\ContentResource;
 use App\Http\Resources\v1\Cours\CoursCollection;
 use App\Http\Resources\v1\Cours\CoursResource;
 
@@ -129,5 +130,40 @@ class CoursController extends Controller
             ->orWhere('description', 'like', '%' . $name . '%')
             ->paginate(15);
         return new CoursCollection($cours);
+    }
+
+    public function addContent(Request $request)
+    {
+        $request->validate([
+            'cour_id' => "required",
+            "type_content" => "required",
+            "content" => "required"
+        ]);
+        $cour = Cours::findOrFail($request->cour_id);
+        $contentValue = $request->content;
+        if ($request->type_content != "texte" && $request->hasFile("content")) {
+            $contentValue = saveFileToStorageDirectory($request, "content", "contenus");
+        }
+
+        $content = $cour->contents()->create([
+            "type_content" => $request->type_content,
+            "content" => $contentValue,
+        ]);
+        return response()->json([
+            "data" => new ContentResource($content)
+        ]);
+    }
+    public function removeContent(Request $request)
+    {
+        $request->validate([
+            'cour_id' => "required",
+            'content_id' => "required"
+        ]);
+        $cour = Cours::findOrFail($request->cour_id);
+        $result = $cour->contents()->where('id', '=', $request->content_id)->delete();
+        return response()->json([
+            "success" => $result,
+            "data" => new CoursResource($cour)
+        ]);
     }
 }

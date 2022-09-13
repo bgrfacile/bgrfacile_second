@@ -30,7 +30,7 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "type_content" => "nullable",
+            "type_content" => "required",
             "content" => "required",
             "contentable_id" => "required",
             "contentable_type" => "required",
