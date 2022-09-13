@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Cours extends Model
+class Content extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
 
-    public function contents()
+    public function contentable()
     {
-        return $this->morphMany(Content::class, 'contentable');
+        return $this->morphTo();
     }
+
 }

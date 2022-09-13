@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Resources\v1\Cours;
+namespace App\Http\Resources\v1\Content;
 
-use App\Http\Resources\v1\Content\ContentCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CoursResource extends JsonResource
+class ContentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,12 +16,9 @@ class CoursResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "name" => $this->name,
-            "slug" => $this->slug,
-            "description" => $this->description,
-            "path_image" => url($this->path_image),
-            "is_actif" => $this->is_actif,
-            "contents" => new ContentCollection($this->contents),
+            "content" => $this->type_content != "texte" ? url($this->content) : $this->content,
+            "type_content" => $this->type_content,
+            "contentable_type" => $this->contentable_type,
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];

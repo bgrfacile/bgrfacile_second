@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Api\v1\AuthController as V1AuthController;
+use App\Http\Controllers\Api\v1\ContentController;
 use App\Http\Controllers\Api\v1\CoursController;
 use App\Http\Controllers\Api\v1\CycleController;
 use App\Http\Controllers\Api\v1\EcoleController;
@@ -70,5 +71,8 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('/cours', CoursController::class)->except(['update']);
         Route::post('/cours/{cours}', [CoursController::class, 'update']);
         Route::get('/cours/search/{name}', [CoursController::class, 'search']);
+
+        Route::apiResource('/contents', ContentController::class)->except(['update']);
+        Route::post('/contents/{contents}', [ContentController::class, 'update']);
     });
 });
