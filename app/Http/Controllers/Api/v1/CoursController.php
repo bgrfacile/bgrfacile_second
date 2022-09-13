@@ -6,6 +6,7 @@ use App\Models\Cours;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\v1\Content\ContentResource;
 use App\Http\Resources\v1\Cours\CoursCollection;
 use App\Http\Resources\v1\Cours\CoursResource;
 
@@ -129,5 +130,131 @@ class CoursController extends Controller
             ->orWhere('description', 'like', '%' . $name . '%')
             ->paginate(15);
         return new CoursCollection($cours);
+    }
+
+    public function addContent(Request $request)
+    {
+        $request->validate([
+            'cour_id' => "required",
+            "type_content" => "required",
+            "content" => "required"
+        ]);
+        $cour = Cours::findOrFail($request->cour_id);
+        $contentValue = $request->content;
+        if ($request->type_content != "texte" && $request->hasFile("content")) {
+            $contentValue = saveFileToStorageDirectory($request, "content", "contenus");
+        }
+
+        $content = $cour->contents()->create([
+            "type_content" => $request->type_content,
+            "content" => $contentValue,
+        ]);
+        return response()->json([
+            "data" => new ContentResource($content)
+        ]);
+    }
+    public function removeContent(Request $request)
+    {
+        $request->validate([
+            'cour_id' => "required",
+            'content_id' => "required"
+        ]);
+        $cour = Cours::findOrFail($request->cour_id);
+        $result = $cour->contents()->where('id', '=', $request->content_id)->delete();
+        return response()->json([
+            "success" => $result,
+            "data" => new CoursResource($cour)
+        ]);
+    }
+    public function addCycle(Request $request)
+    {
+        $request->validate([
+            "cour_id" => "required",
+            "cycle_id" => "required",
+        ]);
+
+        $cour = Cours::findOrFail($request->cour_id);
+        $result = $cour->cycles()->attach($request->cycle_id);
+
+        return response()->json([
+            "success" => $result,
+            "data" => new CoursResource($cour)
+        ]);
+    }
+    public function addLevel(Request $request)
+    {
+        $request->validate([
+            "cour_id" => "required",
+            "level_id" => "required",
+        ]);
+
+        $cour = Cours::findOrFail($request->cour_id);
+        $result = $cour->levels()->attach($request->level_id);
+
+        return response()->json([
+            "success" => $result,
+            "data" => new CoursResource($cour)
+        ]);
+    }
+    public function addMatiere(Request $request)
+    {
+        $request->validate([
+            "cour_id" => "required",
+            "matiere_id" => "required",
+        ]);
+
+        $cour = Cours::findOrFail($request->cour_id);
+        $result = $cour->matieres()->attach($request->matiere_id);
+
+        return response()->json([
+            "success" => $result,
+            "data" => new CoursResource($cour)
+        ]);
+    }
+
+    public function removeCycle(Request $request)
+    {
+        $request->validate([
+            "cour_id" => "required",
+            "cycle_id" => "required",
+        ]);
+
+        $cour = Cours::findOrFail($request->cour_id);
+        $result = $cour->cycles()->detach($request->cycle_id);
+
+        return response()->json([
+            "success" => $result,
+            "data" => new CoursResource($cour)
+        ]);
+    }
+    public function removeLevel(Request $request)
+    {
+        $request->validate([
+            "cour_id" => "required",
+            "level_id" => "required",
+        ]);
+
+        $cour = Cours::findOrFail($request->cour_id);
+        $result = $cour->levels()->detach($request->level_id);
+
+        return response()->json([
+            "success" => $result,
+            "data" => new CoursResource($cour)
+        ]);
+    }
+    public function removeMatiere(Request $request)
+    {
+        $request->validate([
+            "cour_id" => "required",
+            "matiere_id" => "required",
+        ]);
+
+        $cour = Cours::findOrFail($request->cour_id);
+        $result = $cour->matieres()->detach($request->matiere_id);
+
+        return response()->json([
+            "success" => $result,
+            "data" => new CoursResource($cour)
+        ]);
     }
 }

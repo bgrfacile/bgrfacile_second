@@ -2,6 +2,10 @@
 
 namespace App\Http\Resources\v1\Cours;
 
+use App\Http\Resources\v1\Content\ContentCollection;
+use App\Http\Resources\v1\Cycle\CycleCollection;
+use App\Http\Resources\v1\Level\LevelCollection;
+use App\Http\Resources\v1\Matiere\MatiereCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class CoursResource extends JsonResource
@@ -21,6 +25,10 @@ class CoursResource extends JsonResource
             "description" => $this->description,
             "path_image" => url($this->path_image),
             "is_actif" => $this->is_actif,
+            "contents" => new ContentCollection($this->contents),
+            "cycles" => new CycleCollection($this->cycles),
+            "levels" => new LevelCollection($this->levels),
+            "matieres" => new MatiereCollection($this->matieres),
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];

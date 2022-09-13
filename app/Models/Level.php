@@ -20,4 +20,9 @@ class Level extends Model
     {
         return $this->belongsToMany(Matiere::class, "levels_has_matieres", "level_id", "matiere_id");
     }
+
+    public function cours()
+    {
+        return $this->belongsToMany(Cours::class, "cours_has_levels", "level_id", "cour_id");
+    }
 }

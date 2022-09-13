@@ -20,4 +20,8 @@ class Cycle extends Model
     {
         return $this->belongsToMany(Level::class, "cycles_has_levels", "cycle_id", "level_id");
     }
+    public function cours()
+    {
+        return $this->belongsToMany(Cours::class, "cours_has_cycles", "cycle_id", "cour_id");
+    }
 }

@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Api\v1\AuthController as V1AuthController;
+use App\Http\Controllers\Api\v1\ContentController;
 use App\Http\Controllers\Api\v1\CoursController;
 use App\Http\Controllers\Api\v1\CycleController;
 use App\Http\Controllers\Api\v1\EcoleController;
@@ -70,5 +71,16 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('/cours', CoursController::class)->except(['update']);
         Route::post('/cours/{cours}', [CoursController::class, 'update']);
         Route::get('/cours/search/{name}', [CoursController::class, 'search']);
+        Route::post('/cours/add/content', [CoursController::class, 'addContent']);
+        Route::post('/cours/remove/content', [CoursController::class, 'removeContent']);
+        Route::post('/cours/add/cycle', [CoursController::class, 'addCycle']);
+        Route::post('/cours/add/level', [CoursController::class, 'addLevel']);
+        Route::post('/cours/add/matiere', [CoursController::class, 'addMatiere']);
+        Route::post('/cours/remove/cycle', [CoursController::class, 'removeCycle']);
+        Route::post('/cours/remove/level', [CoursController::class, 'removeLevel']);
+        Route::post('/cours/remove/matiere', [CoursController::class, 'removeMatiere']);
+
+        Route::apiResource('/contents', ContentController::class)->except(['update']);
+        Route::post('/contents/{contents}', [ContentController::class, 'update']);
     });
 });
