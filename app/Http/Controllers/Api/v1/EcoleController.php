@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\Ecole\EcoleResource;
 use App\Http\Resources\v1\Ecole\EcoleCollection;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class EcoleController extends Controller
 {
@@ -189,6 +191,38 @@ class EcoleController extends Controller
         ]);
         $ecole = Ecole::findOrFail($request->ecole_id);
         $result = $ecole->cycles()->detach($request->cycle_id);
+        return response()->json([
+            "success" => $result,
+        ], 200);
+    }
+
+    public function addUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+            // "role_id" => "required",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        // $user = User::findOrFail($request->user_id);
+        // $user->assignRole("apprenant-ecole");
+        $ecole->demandesEcole()->create([
+            "user_id" => $request->user_id,
+            "ecole_id" => $request->ecole_id,
+        ]);
+        return response()->json([
+            "data" => new EcoleResource($ecole),
+        ], 200);
+    }
+
+    public function removeUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $result = $ecole->users()->detach($request->user_id);
         return response()->json([
             "success" => $result,
         ], 200);

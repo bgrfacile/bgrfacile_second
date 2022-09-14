@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\User\UserCollection;
 use App\Http\Resources\v1\User\UserResource;
+use App\Models\Ecole;
 use App\Models\InfoUser;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -105,7 +106,82 @@ class InfoUserController extends Controller
 
     public function search(string $name)
     {
-        $users = User::where('name', 'like', '%' . $name . '%')->paginate(10);
+        $users = User::where('name', 'like', '%' . $name . '%')
+            ->orWhere('email', 'like', '%' . $name . '%')
+            ->paginate(15);
         return new UserCollection($users);
+    }
+
+    public function addEcole(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $user = User::findOrFail($request->user_id);
+        if (count($user->demandesUser()->where('ecole_id', $request->ecole_id)->where('user_id', $request->user_id)->get()) == 0) {
+            $user->demandesUser()->create([
+                "user_id" => $request->user_id,
+                "ecole_id" => $request->ecole_id,
+            ]);
+            return response()->json([
+                "data" => new UserResource($user),
+            ], 200);
+        }
+
+        return response()->json([
+            "message" => "impossible de faire cette demande",
+        ], 400);
+    }
+
+    public function removeEcole(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $user = User::findOrFail($request->user_id);
+        $demandeRecup = $user->demandesUser()
+            ->where('ecole_id', $request->ecole_id)
+            ->where('user_id', $request->user_id)
+            ->first();
+        if ($demandeRecup != null) {
+            if ($demandeRecup->response == false) {
+                $result = $demandeRecup->first()->delete();
+                return response()->json([
+                    "success" => $result,
+                ], 200);
+            }
+        }
+        return response()->json([
+            "message" => "impossible de faire cette demande",
+        ], 400);
+    }
+
+    public function acceptEcole(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $user = User::findOrFail($request->user_id);
+        $demandeRecup = $user->demandesUser()
+            ->where('ecole_id', $request->ecole_id)
+            ->where('user_id', $request->user_id)
+            ->where('demandeable_type', "App\Models\Ecole")
+            ->first();
+        // dd($demandeRecup);
+        if ($demandeRecup != null) {
+            if ($demandeRecup->response == false) {
+                $demandeRecup->response = true;
+                $result = $demandeRecup->save();
+                return response()->json([
+                    "success" => $result,
+                ], 200);
+            }
+        }
+        return response()->json([
+            "message" => "impossible de faire cette demande",
+        ], 400);
     }
 }

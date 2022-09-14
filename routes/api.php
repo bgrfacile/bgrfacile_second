@@ -44,6 +44,8 @@ Route::prefix('v1')->group(function () {
         Route::post('/ecoles/remove/type-ecole', [EcoleController::class, 'removeTypeEcole']);
         Route::post('/ecoles/add/cycle', [EcoleController::class, 'addCycle']);
         Route::post('/ecoles/remove/cycle', [EcoleController::class, 'removeCycle']);
+        Route::post('/ecoles/add/user', [EcoleController::class, 'addUser']);
+        Route::post('/ecoles/remove/user', [EcoleController::class, 'removeUser']);
 
         Route::apiResource("/type-ecoles", TypeEcoleController::class);
 
@@ -67,6 +69,9 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource("/users", InfoUserController::class)->except(['store', 'index']);
         Route::get('/users/search/{name}', [InfoUserController::class, 'search']);
+        Route::post('/users/add/ecole', [InfoUserController::class, 'addEcole']);
+        Route::post('/users/remove/ecole', [InfoUserController::class, 'removeEcole']);
+        Route::put('/users/accept/ecole', [InfoUserController::class, 'acceptEcole']);
 
         Route::apiResource('/cours', CoursController::class)->except(['update']);
         Route::post('/cours/{cours}', [CoursController::class, 'update']);

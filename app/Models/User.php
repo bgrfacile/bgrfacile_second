@@ -43,8 +43,18 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->notify(new ResetPasswordNotification($url));
     }
 
+    public function demandesUser()
+    {
+        return $this->morphMany(EcolesHasUsers::class, 'demandeables', "demandeable_type");
+    }
+
     public function infoUser()
     {
         return $this->hasOne(InfoUser::class);
     }
+
+    // public function ecoles()
+    // {
+    //     return $this->belongsToMany(Ecole::class, "ecoles_has_users", "user_id", "ecole_id");
+    // }
 }

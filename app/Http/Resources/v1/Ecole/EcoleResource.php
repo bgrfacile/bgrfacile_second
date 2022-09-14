@@ -6,6 +6,8 @@ use App\Http\Resources\v1\Cycle\CycleCollection;
 use App\Http\Resources\v1\ImageEcole\ImageEcoleCollection;
 use App\Http\Resources\v1\ImageEcole\ImageEcoleResource;
 use App\Http\Resources\v1\Location\LocationRessource;
+use App\Http\Resources\v1\Role\RoleCollection;
+use App\Http\Resources\v1\User\UserCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class EcoleResource extends JsonResource
@@ -22,6 +24,13 @@ class EcoleResource extends JsonResource
             "id" => $this->id,
             "name" => $this->name,
             "slug" => $this->slug,
+            // "users" => $this->users->map(function ($user) {
+            //     return [
+            //         "id" => $user->id,
+            //         "name" => $user->name,
+            //         "roles" => new RoleCollection($user->roles),
+            //     ];
+            // }),
             'category' => $this->category,
             'type_ecole' => $this->typeEcole->map(function ($typeEcole) {
                 return [
@@ -39,6 +48,8 @@ class EcoleResource extends JsonResource
             // "images_ecole" => new ImageEcoleCollection($this->imagesEcole),
             "images_ecole" => ImageEcoleResource::collection($this->imagesEcole),
             "location" => new LocationRessource($this->location),
+            "users" => $this->demandesEcole->where("response", true),
+            "demandes" => $this->demandesEcole->where("response", false),
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];
