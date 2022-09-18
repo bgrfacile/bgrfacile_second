@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Events\AcceptDemandeEvent;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\User\UserCollection;
 use App\Http\Resources\v1\User\UserResource;
@@ -119,14 +120,29 @@ class InfoUserController extends Controller
             "user_id" => "required",
         ]);
         $user = User::findOrFail($request->user_id);
-        if (count($user->demandesUser()->where('ecole_id', $request->ecole_id)->where('user_id', $request->user_id)->get()) == 0) {
-            $user->demandesUser()->create([
-                "user_id" => $request->user_id,
-                "ecole_id" => $request->ecole_id,
-            ]);
-            return response()->json([
-                "data" => new UserResource($user),
-            ], 200);
+        $demandeHasUser = $user->demandesUser();
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $demandeHasEcole = $ecole->demandesEcole();
+
+        if (count($demandeHasUser
+            ->where('ecole_id', $request->ecole_id)
+            ->where('user_id', $request->user_id)
+            ->get()) == 0) {
+            if (
+                $demandeHasEcole
+                ->where('ecole_id', $request->ecole_id)
+                ->where('user_id', $request->user_id)
+                ->where('demandeable_type', "App\Models\Ecole")
+                ->first() == null
+            ) {
+                $demandeHasUser->create([
+                    "user_id" => $request->user_id,
+                    "ecole_id" => $request->ecole_id,
+                ]);
+                return response()->json([
+                    "data" => new UserResource($user),
+                ], 200);
+            }
         }
 
         return response()->json([
@@ -164,17 +180,23 @@ class InfoUserController extends Controller
             "ecole_id" => "required",
             "user_id" => "required",
         ]);
-        $user = User::findOrFail($request->user_id);
-        $demandeRecup = $user->demandesUser()
+        // $user = User::findOrFail($request->user_id);
+        // $demandeRecup = $user->demandesUser()
+        //     ->where('ecole_id', $request->ecole_id)
+        //     ->where('user_id', $request->user_id)
+        //     ->where('demandeable_type', "App\Models\Ecole")
+        //     ->first();
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $demandeHasEcole = $ecole->demandesEcole()
             ->where('ecole_id', $request->ecole_id)
             ->where('user_id', $request->user_id)
             ->where('demandeable_type', "App\Models\Ecole")
             ->first();
-        // dd($demandeRecup);
-        if ($demandeRecup != null) {
-            if ($demandeRecup->response == false) {
-                $demandeRecup->response = true;
-                $result = $demandeRecup->save();
+        if ($demandeHasEcole != null) {
+            if ($demandeHasEcole->response == false) {
+                $demandeHasEcole->response = true;
+                $result = $demandeHasEcole->save();
+                event(new AcceptDemandeEvent($request->user_id));
                 return response()->json([
                     "success" => $result,
                 ], 200);

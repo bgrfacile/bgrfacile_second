@@ -28,7 +28,7 @@ class UserResource extends JsonResource
             "city" => $this->infoUser->city ?? null,
             "phone" => $this->infoUser->phone ?? null,
             "roles" => new RoleCollection($this->roles),
-            "demandes" => $this->demandesUser->where("response", false),
+            "demandes" => $this->demandesUser->where("response", false)->where("user_id", $this->id),
             "ecoles" => $this->demandesUser->where("response", true),
             "updated_at" => $this->updated_at ?? null,
             'created_at' => $this->created_at ?? null,
