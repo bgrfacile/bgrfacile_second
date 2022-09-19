@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('ecoles_has_users', function (Blueprint $table) {
             $table->id();
-            $table->boolean("response")->default(false);
+            $table->enum("response", ["attente", "accepter", "refuser"])->default("attente");
             $table->string('demandeable_type');
             $table->integer('demandeables_id');
             $table->foreignId('ecole_id')

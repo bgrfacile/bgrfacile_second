@@ -201,21 +201,66 @@ class EcoleController extends Controller
         $request->validate([
             "ecole_id" => "required",
             "user_id" => "required",
-            // "role_id" => "required",
         ]);
         $ecole = Ecole::findOrFail($request->ecole_id);
-        // $user = User::findOrFail($request->user_id);
-        // $user->assignRole("apprenant-ecole");
-        $ecole->demandesEcole()->create([
-            "user_id" => $request->user_id,
-            "ecole_id" => $request->ecole_id,
-        ]);
+        $demandeEcole = $ecole->demandesEcole();
+        $user = User::findOrFail($request->user_id);
+        $demandeUser = $user->demandesUser();
+
+        if (
+            count($demandeEcole
+                ->where('ecole_id', $request->ecole_id)
+                ->where('user_id', $request->user_id)
+                ->get()) == 0
+        ) {
+            if (
+                $demandeUser
+                ->where('ecole_id', $request->ecole_id)
+                ->where('user_id', $request->user_id)
+                ->where('demandeable_type', "App\Models\Ecole")
+                ->first() == null
+            ) {
+                $demandeEcole->create([
+                    "user_id" => $request->user_id,
+                    "ecole_id" => $request->ecole_id,
+                ]);
+                return response()->json([
+                    "data" => new EcoleResource($ecole),
+                ], 200);
+            }
+        }
+
         return response()->json([
-            "data" => new EcoleResource($ecole),
-        ], 200);
+            "message" => "impossible de faire cette demande",
+        ], 400);
     }
 
     public function removeUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $demandeEcole = $ecole->demandesEcole();
+        $user = User::findOrFail($request->user_id);
+        $demandeUser = $user->demandesUser();
+
+        if (
+            $demandeUser->where('ecole_id', $request->ecole_id)->first() ||
+            $demandeEcole->where('user_id', $request->user_id)->first()
+        ) {
+            $result =  $demandeEcole->where('user_id', $request->user_id)->where('user_id', $request->user_id)->delete($request->user_id);
+            return response()->json([
+                "success" => $result,
+            ], 200);
+        }
+        return response()->json([
+            "message" => "impossible de faire cette demande",
+        ], 400);
+    }
+
+    public function acceptUser(Request $request)
     {
         $request->validate([
             "ecole_id" => "required",
@@ -226,5 +271,9 @@ class EcoleController extends Controller
         return response()->json([
             "success" => $result,
         ], 200);
+    }
+    public function refuserUser(Request $request)
+    {
+        dd(" refuser demande");
     }
 }

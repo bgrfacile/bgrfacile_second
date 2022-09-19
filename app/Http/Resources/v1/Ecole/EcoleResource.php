@@ -9,6 +9,7 @@ use App\Http\Resources\v1\Location\LocationRessource;
 use App\Http\Resources\v1\Role\RoleCollection;
 use App\Http\Resources\v1\User\UserCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\DB;
 
 class EcoleResource extends JsonResource
 {
@@ -24,13 +25,6 @@ class EcoleResource extends JsonResource
             "id" => $this->id,
             "name" => $this->name,
             "slug" => $this->slug,
-            // "users" => $this->users->map(function ($user) {
-            //     return [
-            //         "id" => $user->id,
-            //         "name" => $user->name,
-            //         "roles" => new RoleCollection($user->roles),
-            //     ];
-            // }),
             'category' => $this->category,
             'type_ecole' => $this->typeEcole->map(function ($typeEcole) {
                 return [
@@ -45,11 +39,16 @@ class EcoleResource extends JsonResource
             "avantages" => $this->avantages,
             "path_logo" => url($this->path_logo),
             "path_baniere" => url($this->path_baniere),
-            // "images_ecole" => new ImageEcoleCollection($this->imagesEcole),
             "images_ecole" => ImageEcoleResource::collection($this->imagesEcole),
             "location" => new LocationRessource($this->location),
-            "users" => $this->demandesEcole->where("response", true),
-            "demandes" => $this->demandesEcole->where("response", false),
+            "demandes" => DB::table("ecoles_has_users")
+                ->where("response", "attente")
+                ->where("ecole_id", $this->id)
+                ->get(),
+            "users" => DB::table("ecoles_has_users")
+                ->where("response", "accepter")
+                ->where("ecole_id", $this->id)
+                ->get(),
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];

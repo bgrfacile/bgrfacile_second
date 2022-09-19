@@ -39,7 +39,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function sendPasswordResetNotification($token)
     {
-        $url = "https://spa.test/reset-password?token=" . $token;
+        $url = url() . "?token=" . $token;
         $this->notify(new ResetPasswordNotification($url));
     }
 
@@ -53,8 +53,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(InfoUser::class);
     }
 
-    // public function ecoles()
-    // {
-    //     return $this->belongsToMany(Ecole::class, "ecoles_has_users", "user_id", "ecole_id");
-    // }
+    public function ecoles()
+    {
+        return $this->belongsToMany(Ecole::class, "ecoles_has_users", "user_id", "ecole_id");
+    }
 }

@@ -10,6 +10,7 @@ use App\Models\Ecole;
 use App\Models\InfoUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class InfoUserController extends Controller
@@ -156,14 +157,23 @@ class InfoUserController extends Controller
             "ecole_id" => "required",
             "user_id" => "required",
         ]);
-        $user = User::findOrFail($request->user_id);
-        $demandeRecup = $user->demandesUser()
-            ->where('ecole_id', $request->ecole_id)
-            ->where('user_id', $request->user_id)
-            ->first();
-        if ($demandeRecup != null) {
-            if ($demandeRecup->response == false) {
-                $result = $demandeRecup->first()->delete();
+        // $user = User::findOrFail($request->user_id);
+        // $demandeRecup = $user->demandesUser()
+        //     ->where('ecole_id', $request->ecole_id)
+        //     ->where('user_id', $request->user_id)
+        //     ->first();
+        $demandeRecup = DB::table("ecoles_has_users")
+            ->where("user_id", $request->user_id)
+            ->where("ecole_id", $request->ecole_id);
+        if ($demandeRecup->first() != null) {
+            if (boolval($demandeRecup->first()->response)) {
+                $demandeRecup->first()->response = false;
+                // $demandeRecup->save();
+                return response()->json([
+                    "message" => "mise à jour avec succes",
+                ], 200);
+            } else {
+                $result = $demandeRecup->delete();
                 return response()->json([
                     "success" => $result,
                 ], 200);
@@ -180,12 +190,6 @@ class InfoUserController extends Controller
             "ecole_id" => "required",
             "user_id" => "required",
         ]);
-        // $user = User::findOrFail($request->user_id);
-        // $demandeRecup = $user->demandesUser()
-        //     ->where('ecole_id', $request->ecole_id)
-        //     ->where('user_id', $request->user_id)
-        //     ->where('demandeable_type', "App\Models\Ecole")
-        //     ->first();
         $ecole = Ecole::findOrFail($request->ecole_id);
         $demandeHasEcole = $ecole->demandesEcole()
             ->where('ecole_id', $request->ecole_id)
@@ -195,8 +199,8 @@ class InfoUserController extends Controller
         if ($demandeHasEcole != null) {
             if ($demandeHasEcole->response == false) {
                 $demandeHasEcole->response = true;
-                $result = $demandeHasEcole->save();
                 event(new AcceptDemandeEvent($request->user_id));
+                $result = $demandeHasEcole->save();
                 return response()->json([
                     "success" => $result,
                 ], 200);

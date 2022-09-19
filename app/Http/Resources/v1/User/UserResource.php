@@ -4,6 +4,7 @@ namespace App\Http\Resources\v1\User;
 
 use App\Http\Resources\v1\Role\RoleCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\DB;
 
 class UserResource extends JsonResource
 {
@@ -28,8 +29,14 @@ class UserResource extends JsonResource
             "city" => $this->infoUser->city ?? null,
             "phone" => $this->infoUser->phone ?? null,
             "roles" => new RoleCollection($this->roles),
-            "demandes" => $this->demandesUser->where("response", false)->where("user_id", $this->id),
-            "ecoles" => $this->demandesUser->where("response", true),
+            "demandes" => DB::table("ecoles_has_users")
+                ->where("response", "attente")
+                ->where("user_id", $this->id)
+                ->get(),
+            "ecoles" => DB::table("ecoles_has_users")
+                ->where("response", "accepter")
+                ->where("user_id", $this->id)
+                ->get(),
             "updated_at" => $this->updated_at ?? null,
             'created_at' => $this->created_at ?? null,
         ];

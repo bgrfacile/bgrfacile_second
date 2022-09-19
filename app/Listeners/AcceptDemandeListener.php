@@ -27,6 +27,8 @@ class AcceptDemandeListener
     public function handle(AcceptDemandeEvent $event)
     {
         $user = User::findOrFail($event->user_id);
-        $user->assignRole("apprenant-ecole");
+        if (!$user->hasRole("apprenant-ecole")) {
+            $user->assignRole("apprenant-ecole");
+        }
     }
 }

@@ -46,6 +46,8 @@ Route::prefix('v1')->group(function () {
         Route::post('/ecoles/remove/cycle', [EcoleController::class, 'removeCycle']);
         Route::post('/ecoles/add/user', [EcoleController::class, 'addUser']);
         Route::post('/ecoles/remove/user', [EcoleController::class, 'removeUser']);
+        Route::put('/ecoles/accept/user', [EcoleController::class, 'acceptUser']);
+        Route::put('/ecoles/refuser/user', [EcoleController::class, 'refuserUser']);
 
         Route::apiResource("/type-ecoles", TypeEcoleController::class);
 
