@@ -22,6 +22,13 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
+/**
+ * @OA\Info(
+ *      version="0.0.1",
+ *      title="bgrfacile",
+ *      description="api bgrfacile documentation",
+ * )
+ */
 Route::get('/', v1HomeController::class);
 
 Route::prefix('v1')->group(function () {
@@ -66,13 +73,15 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource('/image-ecoles', ImageEcoleController::class)->except(['index', 'update']);
         Route::post('/image-ecoles/{id}', [ImageEcoleController::class, 'update']);
-
+        /**
+         * ok
+         */
         Route::apiResource('/locations', LocationController::class);
 
         Route::apiResource("/users", InfoUserController::class)->except(['store', 'index']);
         Route::get('/users/search/{name}', [InfoUserController::class, 'search']);
         Route::post('/users/add/ecole', [InfoUserController::class, 'addEcole']);
-        Route::post('/users/remove/ecole', [InfoUserController::class, 'removeEcole']);
+        Route::put('/users/refuse/ecole', [InfoUserController::class, 'refuseEcole']);
         Route::put('/users/accept/ecole', [InfoUserController::class, 'acceptEcole']);
 
         Route::apiResource('/cours', CoursController::class)->except(['update']);

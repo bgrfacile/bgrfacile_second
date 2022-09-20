@@ -16,8 +16,13 @@ use Illuminate\Support\Facades\Validator;
 class InfoUserController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
+     * @OA\Get(
+     *     path="/users",
+     *     description="all users pagninate",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data")
+     * )
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -26,33 +31,28 @@ class InfoUserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
      * @param  \Illuminate\Http\Request  $request
      * @param  App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, User $user)
     {
-        // $request->validate([
-        //     "slug" => "string",
-        //     "first_name" => "string",
-        //     "last_name" => "string",
-        //     "image_path" => "image",
-        //     "address" => "string",
-        //     "genre" => "in:M,F",
-        //     "city" => "string",
-        //     "phone" => "string",
-        // ]);
-        // $user->infoUser()->create($request->all());
-        // return response()->json([
-        //     "success" => true,
-        //     "message" => "mise à jour des informations de l'utilisateur",
-        // ]);
     }
 
     /**
-     * Display the specified resource.
+     * @OA\Get(
+     *     path="/users/{id}",
+     *     description="all users pagninate",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  User  $user
      * @return \Illuminate\Http\Response
@@ -63,8 +63,19 @@ class InfoUserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
+     * @OA\PUT(
+     *     path="/users/{id}",
+     *     description="all users pagninate",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      * @param  \Illuminate\Http\Request  $request
      * @param  User  $user
      * @return \Illuminate\Http\Response
@@ -92,7 +103,19 @@ class InfoUserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * @OA\DELETE(
+     *     path="/users/{id}",
+     *     description="all users pagninate",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -106,6 +129,21 @@ class InfoUserController extends Controller
         ]);
     }
 
+    /**
+     *     @OA\GET(
+     *     path="/users/{name}",
+     *     description="recherche user",
+     *     @OA\parameter(
+     *          name="name",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function search(string $name)
     {
         $users = User::where('name', 'like', '%' . $name . '%')
@@ -114,6 +152,16 @@ class InfoUserController extends Controller
         return new UserCollection($users);
     }
 
+    /**
+     *     @OA\POST(
+     *     path="/users/add/ecole",
+     *     description="envoyer demande adhesion à une école",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function addEcole(Request $request)
     {
         $request->validate([
@@ -151,17 +199,22 @@ class InfoUserController extends Controller
         ], 400);
     }
 
-    public function removeEcole(Request $request)
+    /**
+     *     @OA\PUT(
+     *     path="/users/refuse/ecole",
+     *     description="refuser demande adhesion faite par une école",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
+    public function refuseEcole(Request $request)
     {
         $request->validate([
             "ecole_id" => "required",
             "user_id" => "required",
         ]);
-        // $user = User::findOrFail($request->user_id);
-        // $demandeRecup = $user->demandesUser()
-        //     ->where('ecole_id', $request->ecole_id)
-        //     ->where('user_id', $request->user_id)
-        //     ->first();
         $demandeRecup = DB::table("ecoles_has_users")
             ->where("user_id", $request->user_id)
             ->where("ecole_id", $request->ecole_id);
@@ -184,6 +237,16 @@ class InfoUserController extends Controller
         ], 400);
     }
 
+    /**
+     *     @OA\PUT(
+     *     path="/users/accept/ecole",
+     *     description="accepter demande adhesion faite par une école",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function acceptEcole(Request $request)
     {
         $request->validate([

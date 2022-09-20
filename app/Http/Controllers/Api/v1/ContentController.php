@@ -12,7 +12,14 @@ use Illuminate\Http\Request;
 class ContentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *     @OA\GET(
+     *     path="/contents",
+     *     description="contents paginer",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @return \Illuminate\Http\Response
      */
@@ -22,7 +29,14 @@ class ContentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     *     @OA\POST(
+     *     path="/contents",
+     *     description="creer contents",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -61,7 +75,19 @@ class ContentController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     *     @OA\GET(
+     *     path="/contents/{id}",
+     *     description="creer contents",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  Content  $content
      * @return \Illuminate\Http\Response
@@ -72,7 +98,19 @@ class ContentController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     *     @OA\PUT(
+     *     path="/contents/{id}",
+     *     description="creer contents",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -105,7 +143,19 @@ class ContentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     *     @OA\DELETE(
+     *     path="/contents/{id}",
+     *     description="creer contents",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
