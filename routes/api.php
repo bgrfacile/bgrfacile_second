@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\v1\InfoUserController;
 use App\Http\Controllers\Api\v1\LevelController;
 use App\Http\Controllers\Api\v1\LocationController;
 use App\Http\Controllers\Api\v1\MatiereController;
+use App\Http\Controllers\Api\v1\ParentController;
 use App\Http\Controllers\Api\v1\TypeEcoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,8 @@ Route::prefix('v1')->group(function () {
         Route::delete('/ecoles/remove/user', [EcoleController::class, 'removeUser']);
         Route::put('/ecoles/accept/user', [EcoleController::class, 'acceptUser']);
         Route::put('/ecoles/refuser/user', [EcoleController::class, 'refuserUser']);
+
+        Route::apiResource("/parents", ParentController::class);
 
         Route::apiResource("/type-ecoles", TypeEcoleController::class);
 
