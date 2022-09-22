@@ -10,95 +10,428 @@
     },
     "servers": [
         {
-            "url": "http://127.0.0.1:8000/api/v2",
+            "url": "http://127.0.0.1:8000/api/v1",
             "description": "server api v2"
         }
     ],
     "paths": {
-        "/cours": {
+        "/contents": {
             "get": {
-                "tags": [
-                    "Cours"
-                ],
-                "summary": "recuperation des cours avec une pagination",
-                "description": "recuperation des cours avec une pagination",
-                "operationId": "cb732472edef4a14f36d7d77a6bca51f",
+                "description": "contents paginer",
+                "operationId": "8e8ba9c7a63f4d63658e500216685efa",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "post": {
+                "description": "creer contents",
+                "operationId": "891778468733036c3f22111313ad6505",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/contents/{id}": {
+            "get": {
+                "description": "creer contents",
+                "operationId": "c38d301e795122f49db7b86cba5818df",
                 "parameters": [
                     {
-                        "name": "page",
-                        "in": "query",
-                        "description": "page",
-                        "required": false,
-                        "type": "integer"
-                    },
-                    {
-                        "name": "limit",
-                        "in": "query",
-                        "description": "limit",
-                        "required": false,
-                        "type": "integer"
+                        "name": "id",
+                        "in": "path",
+                        "required": true
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "successful operation",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "schema": "Cours",
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Cours"
-                                    }
-                                }
-                            }
-                        }
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "put": {
+                "description": "creer contents",
+                "operationId": "a5932f1179ff049fd7b8e8cf55829d07",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "delete": {
+                "description": "creer contents",
+                "operationId": "0ef4c527764054c6a719b0d6fcf28e95",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
                     }
                 }
             }
-        }
-    },
-    "components": {
-        "schemas": {
-            "Cours": {
-                "properties": {
-                    "id": {
-                        "description": "The identifier of the cours.",
-                        "type": "integer"
-                    },
-                    "nom": {
-                        "description": "The name of the cours.",
-                        "type": "string"
-                    },
-                    "slug": {
-                        "description": "The slug of the cours.",
-                        "type": "string"
-                    },
-                    "description": {
-                        "description": "The description of the cours.",
-                        "type": "string"
-                    },
-                    "isActif": {
-                        "description": "The status of the cours.",
-                        "type": "boolean"
-                    },
-                    "created_at": {
-                        "description": "The date and time when the cours was created.",
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "updated_at": {
-                        "description": "The date and time when the cours was updated.",
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "deleted_at": {
-                        "description": "The date and time when the cours was deleted.",
-                        "type": "string",
-                        "format": "date-time"
+        },
+        "/cours": {
+            "get": {
+                "description": "cours paginer",
+                "operationId": "ce31ac4161154a8c459f074e723e545e",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
                     }
-                },
-                "type": "object"
+                }
+            },
+            "post": {
+                "description": "creer un cours",
+                "operationId": "29ab2eeaffaf0ac7ac664a5ca8280695",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/{id}": {
+            "get": {
+                "description": "creer un cours",
+                "operationId": "3168d42667e24c3713c736cebc55dde5",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "put": {
+                "description": "creer un cours",
+                "operationId": "f96025b4230809f4ef76513c799b079f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "delete": {
+                "description": "supprimer un cours",
+                "operationId": "e1fe3239512dbe861231628d52170433",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/{name}": {
+            "get": {
+                "description": "rechercher un cours",
+                "operationId": "73c6ca07da1fee580371133f17468389",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/add/content": {
+            "post": {
+                "description": "ajouter un contenu à un cours",
+                "operationId": "3e287fdd0f94474e99601d8837cb0757",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/remove/content": {
+            "post": {
+                "description": "supprimer un contenu à un cours",
+                "operationId": "31a0cf340cd3621789f0116afa6ad433",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/add/cycle": {
+            "post": {
+                "description": "ajouter un cycle à un cours",
+                "operationId": "e5212a98da8de0da784a4b5891a6a037",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/add/level": {
+            "post": {
+                "description": "ajouter un level à un cours",
+                "operationId": "6a4be0c1f599d446b2acf5becb23414d",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/add/matiere": {
+            "post": {
+                "description": "ajouter un matiere à un cours",
+                "operationId": "07f861f7b6585564059dc7565c708439",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/remove/cycle": {
+            "post": {
+                "description": "ajouter un matiere à un cours",
+                "operationId": "43495a906e2bd0586ff45af9eb0c8a38",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/remove/level": {
+            "post": {
+                "description": "supprimer un level à un cours",
+                "operationId": "0102c37a63797a2e305e176701fb4160",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/cours/remove/matiere": {
+            "post": {
+                "description": "supprimer une matiere à un cours",
+                "operationId": "65f023b7a147a429bf3dd8ce7a520fb7",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/users": {
+            "get": {
+                "description": "all users pagninate",
+                "operationId": "2650038043af00c7c13c885136d3f6bf",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "get": {
+                "description": "all users pagninate",
+                "operationId": "9e20a7825fea558f5316cd2eb45aff62",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "put": {
+                "description": "all users pagninate",
+                "operationId": "e88c6e5f7ad0958b6b78c84748cd6145",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "delete": {
+                "description": "all users pagninate",
+                "operationId": "7361161788debc1eb1e7a9cb5c290663",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/users/{name}": {
+            "get": {
+                "description": "recherche user",
+                "operationId": "2687aa05181fd8721fae2ba1fbabb7f5",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/users/add/ecole": {
+            "post": {
+                "description": "envoyer demande adhesion à une école",
+                "operationId": "642409a72432264330ec26a9b5f99c9e",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/users/refuse/ecole": {
+            "put": {
+                "description": "refuser demande adhesion faite par une école",
+                "operationId": "0e27d69a6869b0394ce77461b24cfff1",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/users/accept/ecole": {
+            "put": {
+                "description": "accepter demande adhesion faite par une école",
+                "operationId": "4d93c2615bc25884ae57a7678134236a",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/locations": {
+            "get": {
+                "description": "locations paginer",
+                "operationId": "732be291eaa237b3f0f05e3ba0515167",
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            }
+        },
+        "/locations/{id}": {
+            "get": {
+                "description": "locations paginer",
+                "operationId": "eb2776423337fc4ed7d8949a03fb5028",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "put": {
+                "description": "locations paginer",
+                "operationId": "f6c358b2abff2b69cd77a9aab24a326c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
+            },
+            "delete": {
+                "description": "locations delete",
+                "operationId": "43c5d3da20086c376fdda3ba8ea0322f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json avec une clé data"
+                    }
+                }
             }
         }
     }

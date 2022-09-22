@@ -15,10 +15,17 @@ return new class extends Migration
     {
         Schema::create('ecoles', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
+            $table->string('slug')->unique()->nullable();
+            $table->string('email')->nullable();
+            $table->string('site_web')->nullable();
             $table->text('description')->nullable();
-            $table->text('logo_path')->nullable();
+            $table->longText('avantages')->nullable();
+            $table->text('path_logo')->nullable();
+            $table->text('path_baniere')->nullable();
+            $table->enum('category', ['private', 'public'])->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
