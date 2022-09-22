@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\Ecole\EcoleResource;
 use App\Http\Resources\v1\Ecole\EcoleCollection;
+use App\Models\User;
 
 class EcoleController extends Controller
 {
     /**
+     * Liste de tous les cours
+     *
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -22,9 +25,11 @@ class EcoleController extends Controller
     }
 
     /**
+     * Creation d'un cours
+     *
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,13 +47,13 @@ class EcoleController extends Controller
         ]);
         $path_logo = null;
         if ($request->hasFile('path_logo')) {
-            $path_logo =  saveFileToStorageDirectory($request, "path_logo", "logo_ecole");
+            $path_logo = saveFileToStorageDirectory($request, "path_logo", "logo_ecole");
         }
         $path_baniere = null;
         if ($request->hasFile('path_baniere')) {
-            $path_baniere =  saveFileToStorageDirectory($request, "path_baniere", "baniere_ecole");
+            $path_baniere = saveFileToStorageDirectory($request, "path_baniere", "baniere_ecole");
         }
-        $ecole =  Ecole::create([
+        $ecole = Ecole::create([
             "name" => $request->name,
             "slug" => Str::slug($request->name),
             "category" => $request->category,
@@ -71,7 +76,7 @@ class EcoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Ecole  $ecole
+     * @param Ecole $ecole
      * @return \Illuminate\Http\Response
      */
     public function show(Ecole $ecole)
@@ -82,7 +87,7 @@ class EcoleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, int $id)
@@ -100,11 +105,11 @@ class EcoleController extends Controller
         ]);
         $path_logo = $request->path_logo;
         if ($request->hasFile('path_logo')) {
-            $path_logo =  saveFileToStorageDirectory($request, "path_logo", "logo_ecole");
+            $path_logo = saveFileToStorageDirectory($request, "path_logo", "logo_ecole");
         }
         $path_baniere = $request->path_baniere;
         if ($request->hasFile('path_baniere')) {
-            $path_baniere =  saveFileToStorageDirectory($request, "path_baniere", "baniere_ecole");
+            $path_baniere = saveFileToStorageDirectory($request, "path_baniere", "baniere_ecole");
         }
         $ecole = Ecole::findOrFail($id);
         $result = $ecole->update([
@@ -140,6 +145,7 @@ class EcoleController extends Controller
         $ecoles = Ecole::where('name', 'like', '%' . $name . '%')->paginate(10);
         return new EcoleCollection($ecoles);
     }
+
     public function addTypeEcole(Request $request)
     {
         $request->validate([
@@ -153,6 +159,7 @@ class EcoleController extends Controller
             "data" => new EcoleResource($ecole)
         ], 200);
     }
+
     public function removeTypeEcole(Request $request)
     {
         $request->validate([
@@ -192,5 +199,87 @@ class EcoleController extends Controller
         return response()->json([
             "success" => $result,
         ], 200);
+    }
+
+    public function addUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $demandeEcole = $ecole->demandesEcole();
+        $user = User::findOrFail($request->user_id);
+        $demandeUser = $user->demandesUser();
+
+        if (
+            count($demandeEcole
+                ->where('ecole_id', $request->ecole_id)
+                ->where('user_id', $request->user_id)
+                ->get()) == 0
+        ) {
+            if (
+                $demandeUser
+                ->where('ecole_id', $request->ecole_id)
+                ->where('user_id', $request->user_id)
+                ->where('demandeable_type', "App\Models\Ecole")
+                ->first() == null
+            ) {
+                $demandeEcole->create([
+                    "user_id" => $request->user_id,
+                    "ecole_id" => $request->ecole_id,
+                ]);
+                return response()->json([
+                    "data" => new EcoleResource($ecole),
+                ], 200);
+            }
+        }
+
+        return response()->json([
+            "message" => "impossible de faire cette demande",
+        ], 400);
+    }
+
+    public function removeUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $demandeEcole = $ecole->demandesEcole();
+        $user = User::findOrFail($request->user_id);
+        $demandeUser = $user->demandesUser();
+
+        if (
+            $demandeUser->where('ecole_id', $request->ecole_id)->first() ||
+            $demandeEcole->where('user_id', $request->user_id)->first()
+        ) {
+            $result = $demandeEcole->where('user_id', $request->user_id)->where('user_id', $request->user_id)->delete($request->user_id);
+            return response()->json([
+                "success" => $result,
+            ], 200);
+        }
+        return response()->json([
+            "message" => "impossible de faire cette demande",
+        ], 400);
+    }
+
+    public function acceptUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $result = $ecole->users()->detach($request->user_id);
+        return response()->json([
+            "success" => $result,
+        ], 200);
+    }
+
+    public function refuserUser(Request $request)
+    {
+        dd(" refuser demande");
     }
 }

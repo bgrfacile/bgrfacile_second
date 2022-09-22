@@ -6,7 +6,7 @@
 
 ## About App
 
-bgrfacile est une application web: le backend est gérer par ``Laravel`` et le front end par ``reactJs``.
+Bgrfacile est une application web : le backend est gérer par ``Laravel`` et le front end par ``reactJs``.
 
 ## Structures du projet  
 

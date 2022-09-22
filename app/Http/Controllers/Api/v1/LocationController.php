@@ -10,7 +10,14 @@ use Illuminate\Http\Request;
 class LocationController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *     @OA\GET(
+     *     path="/locations",
+     *     description="locations paginer",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @return \Illuminate\Http\Response
      */
@@ -48,7 +55,19 @@ class LocationController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     *     @OA\GET(
+     *     path="/locations/{id}",
+     *     description="locations paginer",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -60,7 +79,19 @@ class LocationController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     *     @OA\PUT(
+     *     path="/locations/{id}",
+     *     description="locations paginer",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -87,7 +118,19 @@ class LocationController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     *     @OA\DELETE(
+     *     path="/locations/{id}",
+     *     description="locations delete",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

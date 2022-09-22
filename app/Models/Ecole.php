@@ -12,6 +12,11 @@ class Ecole extends Model
 
     protected $guarded = [];
 
+    public function demandesEcole()
+    {
+        return $this->morphMany(EcolesHasUsers::class, 'demandeables', "demandeable_type");
+    }
+
     public function location()
     {
         return $this->hasOne(Location::class);
@@ -30,4 +35,8 @@ class Ecole extends Model
     {
         return $this->belongsToMany(Cycle::class, "cycles_has_ecoles", "ecole_id", "cycle_id");
     }
+    // public function users()
+    // {
+    //     return $this->belongsToMany(User::class, "ecoles_has_users", "ecole_id", "user_id");
+    // }
 }

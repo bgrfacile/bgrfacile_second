@@ -13,7 +13,14 @@ use App\Http\Resources\v1\Cours\CoursResource;
 class CoursController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     *     @OA\GET(
+     *     path="/cours",
+     *     description="cours paginer",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @return \Illuminate\Http\Response
      */
@@ -23,7 +30,14 @@ class CoursController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     *     @OA\POST(
+     *     path="/cours",
+     *     description="creer un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -58,7 +72,19 @@ class CoursController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     *     @OA\GET(
+     *     path="/cours/{id}",
+     *     description="creer un cours",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  Cours  $cour
      * @return \Illuminate\Http\Response
@@ -69,7 +95,19 @@ class CoursController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     *     @OA\PUT(
+     *     path="/cours/{id}",
+     *     description="creer un cours",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  Cours  $cour
@@ -109,7 +147,19 @@ class CoursController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     *     @OA\DELETE(
+     *     path="/cours/{id}",
+     *     description="supprimer un cours",
+     *     @OA\parameter(
+     *          name="id",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
      *
      * @param  Cours  $cour
      * @return \Illuminate\Http\Response
@@ -122,7 +172,21 @@ class CoursController extends Controller
             "success" => $result,
         ], 201);
     }
-
+    /**
+     *     @OA\GET(
+     *     path="/cours/{name}",
+     *     description="rechercher un cours",
+     *     @OA\parameter(
+     *          name="name",
+     *          in="path",
+     *          required=true,
+     *      ),
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function search(string $name)
     {
         $cours = Cours::where('is_actif', "1")
@@ -132,6 +196,16 @@ class CoursController extends Controller
         return new CoursCollection($cours);
     }
 
+    /**
+     *     @OA\POST(
+     *     path="/cours/add/content",
+     *     description="ajouter un contenu à un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function addContent(Request $request)
     {
         $request->validate([
@@ -153,6 +227,17 @@ class CoursController extends Controller
             "data" => new ContentResource($content)
         ]);
     }
+
+    /**
+     *     @OA\POST(
+     *     path="/cours/remove/content",
+     *     description="supprimer un contenu à un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function removeContent(Request $request)
     {
         $request->validate([
@@ -166,6 +251,17 @@ class CoursController extends Controller
             "data" => new CoursResource($cour)
         ]);
     }
+
+    /**
+     *     @OA\POST(
+     *     path="/cours/add/cycle",
+     *     description="ajouter un cycle à un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function addCycle(Request $request)
     {
         $request->validate([
@@ -181,6 +277,17 @@ class CoursController extends Controller
             "data" => new CoursResource($cour)
         ]);
     }
+
+    /**
+     *     @OA\POST(
+     *     path="/cours/add/level",
+     *     description="ajouter un level à un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function addLevel(Request $request)
     {
         $request->validate([
@@ -196,6 +303,17 @@ class CoursController extends Controller
             "data" => new CoursResource($cour)
         ]);
     }
+
+    /**
+     *     @OA\POST(
+     *     path="/cours/add/matiere",
+     *     description="ajouter un matiere à un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function addMatiere(Request $request)
     {
         $request->validate([
@@ -212,6 +330,16 @@ class CoursController extends Controller
         ]);
     }
 
+    /**
+     *     @OA\POST(
+     *     path="/cours/remove/cycle",
+     *     description="ajouter un matiere à un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function removeCycle(Request $request)
     {
         $request->validate([
@@ -227,6 +355,17 @@ class CoursController extends Controller
             "data" => new CoursResource($cour)
         ]);
     }
+
+    /**
+     *     @OA\POST(
+     *     path="/cours/remove/level",
+     *     description="supprimer un level à un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function removeLevel(Request $request)
     {
         $request->validate([
@@ -242,6 +381,17 @@ class CoursController extends Controller
             "data" => new CoursResource($cour)
         ]);
     }
+
+    /**
+     *     @OA\POST(
+     *     path="/cours/remove/matiere",
+     *     description="supprimer une matiere à un cours",
+     *     @OA\Response(
+     *      response=200,
+     *      description="json avec une clé data"
+     * ),
+     * ),
+     */
     public function removeMatiere(Request $request)
     {
         $request->validate([

@@ -15,6 +15,7 @@ class HomeController extends Controller
             'data' => [
                 "version" => "1.0",
                 "language" => app()->getLocale(),
+                "api-documentation" => url("/") . "/api/documentation",
                 "support" => env("APP_SUPPORT")
             ]
         ];

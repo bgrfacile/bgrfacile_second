@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\v1\InfoUserController;
 use App\Http\Controllers\Api\v1\LevelController;
 use App\Http\Controllers\Api\v1\LocationController;
 use App\Http\Controllers\Api\v1\MatiereController;
+use App\Http\Controllers\Api\v1\ParentController;
 use App\Http\Controllers\Api\v1\TypeEcoleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,13 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
+/**
+ * @OA\Info(
+ *      version="0.0.1",
+ *      title="bgrfacile",
+ *      description="api bgrfacile documentation",
+ * )
+ */
 Route::get('/', v1HomeController::class);
 
 Route::prefix('v1')->group(function () {
@@ -44,6 +52,12 @@ Route::prefix('v1')->group(function () {
         Route::post('/ecoles/remove/type-ecole', [EcoleController::class, 'removeTypeEcole']);
         Route::post('/ecoles/add/cycle', [EcoleController::class, 'addCycle']);
         Route::post('/ecoles/remove/cycle', [EcoleController::class, 'removeCycle']);
+        Route::post('/ecoles/add/user', [EcoleController::class, 'addUser']);
+        Route::delete('/ecoles/remove/user', [EcoleController::class, 'removeUser']);
+        Route::put('/ecoles/accept/user', [EcoleController::class, 'acceptUser']);
+        Route::put('/ecoles/refuser/user', [EcoleController::class, 'refuserUser']);
+
+        Route::apiResource("/parents", ParentController::class);
 
         Route::apiResource("/type-ecoles", TypeEcoleController::class);
 
@@ -62,11 +76,16 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource('/image-ecoles', ImageEcoleController::class)->except(['index', 'update']);
         Route::post('/image-ecoles/{id}', [ImageEcoleController::class, 'update']);
-
+        /**
+         * ok
+         */
         Route::apiResource('/locations', LocationController::class);
 
         Route::apiResource("/users", InfoUserController::class)->except(['store', 'index']);
         Route::get('/users/search/{name}', [InfoUserController::class, 'search']);
+        Route::post('/users/add/ecole', [InfoUserController::class, 'addEcole']);
+        Route::put('/users/refuse/ecole', [InfoUserController::class, 'refuseEcole']);
+        Route::put('/users/accept/ecole', [InfoUserController::class, 'acceptEcole']);
 
         Route::apiResource('/cours', CoursController::class)->except(['update']);
         Route::post('/cours/{cours}', [CoursController::class, 'update']);
