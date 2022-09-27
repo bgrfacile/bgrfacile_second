@@ -9,6 +9,7 @@ use App\Http\Resources\v1\User\UserResource;
 use App\Models\Ecole;
 use App\Models\InfoUser;
 use App\Models\User;
+use App\Services\v1\CustumerQuery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -23,11 +24,35 @@ class InfoUserController extends Controller
      *      response=200,
      *      description="json avec une clé data")
      * )
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new UserCollection(User::paginate(15));
+        $queryItems = $request->query();
+        if(count($queryItems) == 0){
+            return new UserCollection(User::paginate(15));
+        }else{
+            $users = collect([]);
+            foreach($queryItems as $query){
+                if ($query == 'apprenant') {
+                    $users = User::whereHas('roles', function ($q) use ($query) {
+                        $q->where('roles.name', '=', $query);
+                    })->paginate(15);
+                } elseif ($query == 'apprenant-ecole') {
+                    $users = User::whereHas('roles', function ($q) use ($query) {
+                        $q->where('roles.name', '=', $query);
+                    })->paginate(15);
+                }
+            }
+            return new UserCollection($users);
+        }
+
+        // $filter = new CustumerQuery();
+        // $queryItems = $filter->transform($request);  // [['colum','orperator','value']]
+
+
+
     }
 
     /**

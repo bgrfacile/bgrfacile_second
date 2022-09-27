@@ -33,6 +33,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', v1HomeController::class);
 
 Route::prefix('v1')->group(function () {
+    Route::middleware(['cors'])->group(function () {
     Route::post('/register', [V1AuthController::class, 'createUser']);
     Route::post('/login', [V1AuthController::class, 'loginUser']);
     Route::post('/forgot-password', [V1AuthController::class, 'forgotPassword']);
@@ -101,5 +102,6 @@ Route::prefix('v1')->group(function () {
 
         Route::apiResource('/contents', ContentController::class)->except(['update']);
         Route::post('/contents/{contents}', [ContentController::class, 'update']);
+        });
     });
 });

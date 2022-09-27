@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
                 "city" => Factory::create()->city(),
                 "phone" => Factory::create()->phoneNumber()
             ]);
+            $user->assignRole("apprenant");
         });
 
         $this->call([

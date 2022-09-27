@@ -97,7 +97,7 @@ class AuthController extends Controller
                     'access_token' => $user->createToken("create_user")->plainTextToken,
                     'token_type' => 'Bearer',
                 ]
-            ], 201);
+            ], 200);
         } catch (\Throwable $th) {
             return response()->json([
                 "status" => false,

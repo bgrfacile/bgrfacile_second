@@ -3,6 +3,7 @@
 namespace App\Http\Resources\v1\User;
 
 use App\Http\Resources\v1\Role\RoleCollection;
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
 
@@ -37,8 +38,8 @@ class UserResource extends JsonResource
                 ->where("response", "accepter")
                 ->where("user_id", $this->id)
                 ->get(),
-            "updated_at" => $this->updated_at ?? null,
-            'created_at' => $this->created_at ?? null,
+            "updated_at" => Carbon::parse($this->updated_at)->timestamp  ?? null,
+            'created_at' => Carbon::parse($this->created_at)->timestamp  ?? null,
         ];
     }
 }
