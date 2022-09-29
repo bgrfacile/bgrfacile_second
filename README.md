@@ -4,6 +4,9 @@
 </a>
 </p>
 
+## A revoir  
+- sur une école, permettre de l'école de donner le coup d'une formation dans l'établissement.
+
 ## About App
 
 Bgrfacile est une application web : le backend est gérer par ``Laravel`` et le front end par ``reactJs``.

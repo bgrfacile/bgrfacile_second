@@ -15,9 +15,16 @@ class CycleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new CycleCollection(Cycle::paginate(15));
+        $queryItems = collect($request->query());
+        // if(count($queryItems) != 0){
+            if ($queryItems->has("paginate")) {
+                return new CycleCollection(Cycle::all());
+        }
+        // } else {
+            return new CycleCollection(Cycle::paginate(15));
+        // }
     }
 
     /**
