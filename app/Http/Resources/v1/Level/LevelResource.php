@@ -18,6 +18,7 @@ class LevelResource extends JsonResource
         return [
             "id" => $this->id,
             "name" => $this->name,
+            'slug' => $this->slug,
             "matieres" => new MatiereCollection($this->matieres),
         ];
     }
