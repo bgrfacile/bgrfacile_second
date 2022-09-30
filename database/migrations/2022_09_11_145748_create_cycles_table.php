@@ -1,5 +1,6 @@
 <?php
 
+use Database\Seeders\CycleLevelMatiereSeeder;
 use Database\Seeders\CycleSeeder;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,6 +19,7 @@ return new class extends Migration
         Schema::create('cycles', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
+            $table->string('slug')->nullable();
             $table->timestamps();
         });
         Artisan::call("db:seed", [

@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Cycle;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class CycleSeeder extends Seeder
 {
@@ -15,17 +16,9 @@ class CycleSeeder extends Seeder
      */
     public function run()
     {
-        Cycle::create([
-            "name" => "collège général"
-        ]);
-        Cycle::create([
-            "name" => "collège technique"
-        ]);
-        Cycle::create([
-            "name" => "lycée général"
-        ]);
-        Cycle::create([
-            "name" => "lycée technique"
-        ]);
+        Cycle::create(['name' => 'Collège Général', 'slug' => Str::slug('Collège Général')]);
+        Cycle::create(['name' => 'Collège Technique', 'slug' => Str::slug('Collège Technique')]);
+        Cycle::create(['name' => 'Lycée Général', 'slug' => Str::slug('Lycée Général')]);
+        Cycle::create(['name' => 'Lycée Technique', 'slug' => Str::slug('Lycée Technique')]);
     }
 }
