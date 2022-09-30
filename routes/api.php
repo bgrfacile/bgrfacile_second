@@ -43,7 +43,7 @@ Route::prefix('v1')->group(function () {
         Route::apiResource("/ecoles", EcoleController::class)->only(['index']);
 
         Route::group([
-            // 'middleware' => ['auth:sanctum'],
+            'middleware' => ['auth:sanctum'],
         ], function () {
             Route::post('/logout', [V1AuthController::class, 'logout']);
 
