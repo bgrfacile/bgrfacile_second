@@ -17,11 +17,27 @@ use Illuminate\Validation\ValidationException;
 class AuthController extends Controller
 {
     /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function createToken(Request $request): \Illuminate\Http\JsonResponse
+    {
+        $request->validate([
+            'token_name' => 'string'
+        ]);
+        $token = $request->user()->createToken($request->token_name);
+
+        return response()->json([
+            'data' => ['token' => $token->plainTextToken]
+        ], 200);
+    }
+
+    /**
      * Create User
      * @param Request $request
-     * @return User
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function createUser(Request $request)
+    public function createUser(Request $request): \Illuminate\Http\JsonResponse
     {
         try {
             $validateUser = Validator::make($request->all(), [
@@ -65,9 +81,9 @@ class AuthController extends Controller
     /**
      * login User
      * @param Request $request
-     * @return User
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function loginUser(Request $request)
+    public function loginUser(Request $request): \Illuminate\Http\JsonResponse
     {
         try {
             $validatUser = Validator::make($request->all(), [
@@ -106,17 +122,39 @@ class AuthController extends Controller
         }
     }
 
-    public function logout(Request $request)
+    /**
+     * @param Request $request
+     * @return mixed
+     */
+    public function me(Request $request): \Illuminate\Http\JsonResponse
     {
-        auth()->user()->tokens()->delete();
+        if (\auth()->check()) {
+            $user = $request->user();
+            return response()->json([
+                "success" => true,
+                "message" => "Authentification réussie",
+                "data" => [
+                    "user" => new UserResource($user)
+                ]
+            ], 200);
+        } else {
+            return response()->json([
+                'message' => 'Authentification echec',
+            ], 404);
+        }
+    }
 
+    public function logout(Request $request): array
+    {
+        //auth()->user()->tokens()->delete();
+        $request->user()->currentAccessToken()->delete();
         return [
             "status" => true,
             "message" => "Logged out",
         ];
     }
 
-    public function forgotPassword(Request $request)
+    public function forgotPassword(Request $request): array|\Illuminate\Http\JsonResponse
     {
         try {
             $validate = Validator::make($request->all(), [

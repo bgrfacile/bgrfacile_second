@@ -43,8 +43,10 @@ Route::prefix('v1')->group(function () {
         Route::apiResource("/ecoles", EcoleController::class)->only(['index']);
 
         Route::group([
-            // 'middleware' => ['auth:sanctum'],
+            'middleware' => ['auth:sanctum'],
         ], function () {
+            Route::post('/tokens/create', [V1AuthController::class, 'createToken']);
+            Route::post('/me', [V1AuthController::class, 'me']);
             Route::post('/logout', [V1AuthController::class, 'logout']);
 
             Route::apiResource("/ecoles", EcoleController::class)->except(['index', 'update']);
