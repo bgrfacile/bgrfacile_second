@@ -13,9 +13,9 @@ class TypeEcoleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return TypeEcoleCollection
      */
-    public function index()
+    public function index(): TypeEcoleCollection
     {
         return new TypeEcoleCollection(TypeEcole::paginate(15));
     }
@@ -24,9 +24,9 @@ class TypeEcoleController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): \Illuminate\Http\JsonResponse
     {
         $request->validate([
             'name' => "required|string"

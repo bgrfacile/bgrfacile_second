@@ -18,7 +18,7 @@ class EcoleSeeder extends Seeder
     public function run()
     {
         for ($i = 0; $i < 10; $i++) {
-            Ecole::create([
+            $ecole = Ecole::create([
                 'name' => Factory::create()->name(),
                 'slug' => Factory::create()->slug,
                 'category' => Factory::create()->randomElement(['public', 'private']),
@@ -29,6 +29,13 @@ class EcoleSeeder extends Seeder
                 'path_logo' => Factory::create()->imageUrl(),
                 'path_baniere' => Factory::create()->imageUrl(),
             ]);
+            for ($j = 0; $j < 3; $j++) {
+                $ecole->imagesEcole()->create([
+                    'path_image' => Factory::create()->imageUrl(),
+                    'description' => Factory::create()->sentence(10),
+                ]);
+            }
+            $ecole->typeEcole()->attach(Factory::create()->randomElement(['1', '2', '3', '4']));
         }
     }
 }

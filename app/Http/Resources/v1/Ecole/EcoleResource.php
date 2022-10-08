@@ -7,6 +7,7 @@ use App\Http\Resources\v1\ImageEcole\ImageEcoleCollection;
 use App\Http\Resources\v1\ImageEcole\ImageEcoleResource;
 use App\Http\Resources\v1\Location\LocationRessource;
 use App\Http\Resources\v1\Role\RoleCollection;
+use App\Http\Resources\v1\TypeEcoleResource;
 use App\Http\Resources\v1\User\UserCollection;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,7 @@ class EcoleResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
     public function toArray($request)
@@ -26,12 +27,13 @@ class EcoleResource extends JsonResource
             "name" => $this->name,
             "slug" => $this->slug,
             'category' => $this->category,
-            'type_ecole' => $this->typeEcole->map(function ($typeEcole) {
-                return [
-                    "id" => $typeEcole->id,
-                    "name" => $typeEcole->name,
-                ];
-            }),
+//            'type_ecole' => $this->typeEcole->map(function ($typeEcole) {
+//                return [
+//                    "id" => $typeEcole->id,
+//                    "name" => $typeEcole->name,
+//                ];
+//            }),
+            'type_ecole' => TypeEcoleResource::collection($this->typeEcole),
             "cycles" => new CycleCollection($this->cycles),
             "email" => $this->email,
             "site_web" => $this->site_web,

@@ -25,16 +25,17 @@ class InfoUserController extends Controller
      *      description="json avec une clé data")
      * )
      * @param Request $request
-     * @return \Illuminate\Http\Response
+     * @return UserCollection
      */
-    public function index(Request $request)
+    public function index(Request $request): UserCollection
     {
         $queryItems = $request->query();
-        if(count($queryItems) == 0){
+        if (count($queryItems) == 0) {
             return new UserCollection(User::paginate(15));
-        }else{
+        }
+        else {
             $users = collect([]);
-            foreach($queryItems as $query){
+            foreach ($queryItems as $query) {
                 if ($query == 'apprenant') {
                     $users = User::whereHas('roles', function ($q) use ($query) {
                         $q->where('roles.name', '=', $query);
@@ -50,14 +51,11 @@ class InfoUserController extends Controller
 
         // $filter = new CustumerQuery();
         // $queryItems = $filter->transform($request);  // [['colum','orperator','value']]
-
-
-
     }
 
     /**
-     * @param  \Illuminate\Http\Request  $request
-     * @param  App\Models\User $user
+     * @param \Illuminate\Http\Request $request
+     * @param App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, User $user)
@@ -79,7 +77,7 @@ class InfoUserController extends Controller
      * ),
      * ),
      *
-     * @param  User  $user
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -101,8 +99,8 @@ class InfoUserController extends Controller
      *      description="json avec une clé data"
      * ),
      * ),
-     * @param  \Illuminate\Http\Request  $request
-     * @param  User  $user
+     * @param \Illuminate\Http\Request $request
+     * @param User $user
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
@@ -142,7 +140,7 @@ class InfoUserController extends Controller
      * ),
      * ),
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
@@ -155,7 +153,7 @@ class InfoUserController extends Controller
     }
 
     /**
-     *     @OA\GET(
+     * @OA\GET(
      *     path="/users/{name}",
      *     description="recherche user",
      *     @OA\parameter(
@@ -178,7 +176,7 @@ class InfoUserController extends Controller
     }
 
     /**
-     *     @OA\POST(
+     * @OA\POST(
      *     path="/users/add/ecole",
      *     description="envoyer demande adhesion à une école",
      *     @OA\Response(
@@ -199,15 +197,15 @@ class InfoUserController extends Controller
         $demandeHasEcole = $ecole->demandesEcole();
 
         if (count($demandeHasUser
-            ->where('ecole_id', $request->ecole_id)
-            ->where('user_id', $request->user_id)
-            ->get()) == 0) {
-            if (
-                $demandeHasEcole
                 ->where('ecole_id', $request->ecole_id)
                 ->where('user_id', $request->user_id)
-                ->where('demandeable_type', "App\Models\Ecole")
-                ->first() == null
+                ->get()) == 0) {
+            if (
+                $demandeHasEcole
+                    ->where('ecole_id', $request->ecole_id)
+                    ->where('user_id', $request->user_id)
+                    ->where('demandeable_type', "App\Models\Ecole")
+                    ->first() == null
             ) {
                 $demandeHasUser->create([
                     "user_id" => $request->user_id,
@@ -225,7 +223,7 @@ class InfoUserController extends Controller
     }
 
     /**
-     *     @OA\PUT(
+     * @OA\PUT(
      *     path="/users/refuse/ecole",
      *     description="refuser demande adhesion faite par une école",
      *     @OA\Response(
@@ -263,7 +261,7 @@ class InfoUserController extends Controller
     }
 
     /**
-     *     @OA\PUT(
+     * @OA\PUT(
      *     path="/users/accept/ecole",
      *     description="accepter demande adhesion faite par une école",
      *     @OA\Response(

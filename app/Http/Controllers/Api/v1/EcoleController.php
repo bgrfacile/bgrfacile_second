@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1;
 
+use App\Enums\PaginateType;
 use App\Models\Ecole;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -12,16 +13,12 @@ use App\Models\User;
 
 class EcoleController extends Controller
 {
-    /**
-     * Liste de tous les cours
-     *
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index(Request $request): EcoleCollection
     {
-        return new EcoleCollection(Ecole::paginate(15));
+        $queryItems = $request->query();
+        return new EcoleCollection(Ecole::paginate(PaginateType::standards));
+
     }
 
     /**
@@ -30,7 +27,7 @@ class EcoleController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
@@ -88,7 +85,7 @@ class EcoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(Request $request, int $id)
     {
@@ -220,10 +217,10 @@ class EcoleController extends Controller
         ) {
             if (
                 $demandeUser
-                ->where('ecole_id', $request->ecole_id)
-                ->where('user_id', $request->user_id)
-                ->where('demandeable_type', "App\Models\Ecole")
-                ->first() == null
+                    ->where('ecole_id', $request->ecole_id)
+                    ->where('user_id', $request->user_id)
+                    ->where('demandeable_type', "App\Models\Ecole")
+                    ->first() == null
             ) {
                 $demandeEcole->create([
                     "user_id" => $request->user_id,

@@ -54,6 +54,10 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.php'));
             Route::redirect('/', '/api');
         });
+        Route::get('/some_url', function () {
+            return "message: Unauthenticated.";
+        }
+        )->name('signin.page');
     }
 
     /**
