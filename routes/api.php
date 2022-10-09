@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\v1\LocationController;
 use App\Http\Controllers\Api\v1\MatiereController;
 use App\Http\Controllers\Api\v1\ParentController;
 use App\Http\Controllers\Api\v1\TypeEcoleController;
+use App\Http\Controllers\Api\v1\CalendarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +32,6 @@ use Illuminate\Support\Facades\Route;
  * )
  */
 Route::get('/', v1HomeController::class);
-Route::get('/calendar', [v1HomeController::class, 'calendar']);
 
 Route::prefix('v1')->group(function () {
     Route::middleware(['cors'])->group(function () {
@@ -49,9 +49,10 @@ Route::prefix('v1')->group(function () {
         Route::apiResource("/users", InfoUserController::class)->only(['index']);
         Route::apiResource("/ecoles", EcoleController::class)->only(['index']);
         Route::apiResource("/type-ecoles", TypeEcoleController::class)->only(['index', 'show']);
+        Route::apiResource("/calendar", CalendarController::class);
 
         Route::group([
-            'middleware' => ['auth:sanctum'],
+//            'middleware' => ['auth:sanctum'],
         ], function () {
             /**
              * Auth
