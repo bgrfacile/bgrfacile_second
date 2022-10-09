@@ -11,19 +11,19 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 /**
- * @param $date
+ * @param string $date
  * @return string
  */
-function formaterDate($date)
+function formaterDate(string $date): string
 {
     return Carbon::parse($date)->format('d M. Y');
 }
 
 /**
- * @param $date
+ * @param string $date
  * @return string
  */
-function formaterDateWithTime(string $date)
+function formaterDateWithTime(string $date): string
 {
     return Carbon::parse($date)->format('d M. Y H:i');
 }
@@ -38,8 +38,7 @@ function formaterDateWithTime(string $date)
 function saveFileToStorageDirectory(Request $request, string $key_name, string $name_directory_storage = ""): string
 {
     $imageName = time() . '_' . trim(str_replace(" ", "_", $request->file($key_name)->getClientOriginalName()));
-    $path = DIRECTORY_SEPARATOR . "storage" . DIRECTORY_SEPARATOR . $request->file($key_name)->storeAs($name_directory_storage, $imageName, 'public');
-    return $path;
+    return DIRECTORY_SEPARATOR . "storage" . DIRECTORY_SEPARATOR . $request->file($key_name)->storeAs($name_directory_storage, $imageName, 'public');
 }
 
 /**
@@ -68,25 +67,9 @@ function createCalendar(?string $t_start, ?string $t_end, ?string $t_interval, s
                 'Saturday',
                 'Sunday',
             ],
-            //'daysMonth' => allDayInMonth($month->days()),
         ];
     });
 }
-
-//function allDayInMonth($days)
-//{
-//    return $days->map(function (Day $day) {
-//        return [
-//            "name_day" => $day->weekDay()->name(),
-//            "month_day" => $day->month()->name(),
-//            "number_day" => $day->number(),
-//            "year_day" => $day->year()->toString(),
-//            "isWeekend" => $day->isWeekend(),
-//            "date" => $day->toString(),
-//        ];
-//    });
-//}
-
 function allWeeksInMonth(MonthDays $days): array
 {
     $allNameDay = [
@@ -134,7 +117,6 @@ function allWeeksInMonth(MonthDays $days): array
             })->all();
             $weeks[] = $week;
             $week = [];
-
         }
     });
 

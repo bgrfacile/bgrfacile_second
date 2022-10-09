@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\Calendar\CalendarCollection;
 use App\Http\Resources\v1\Calendar\CalendarResource;
 use App\Models\Calendar;
+use \App\Services\Calendar\CalendarCreator;
 use Illuminate\Http\Request;
 
 class CalendarController extends Controller
@@ -37,10 +38,9 @@ class CalendarController extends Controller
             't_interval' => 'string',
             //'t_pause' => 'string|array',
         ]);
-        // les donnees seront enregistrer dans le tableau des heures
         $calendar = Calendar::create([
             'ecole_id' => $request->ecole_id,
-            'calendars_json' => createCalendar($request->t_start, $request->t_end, $request->t_interval, $request->t_pause),
+            'calendars_json' => (new CalendarCreator($request))->create(),
         ]);
         return response()->json([
             'success' => true,
