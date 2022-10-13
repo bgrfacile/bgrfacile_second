@@ -18,6 +18,10 @@ class CalendarCreator
     private string $t_end;
     private string $t_interval;
     private string|array|null $t_pause;
+    private ?string $name;
+    private ?string $teacher;
+    private ?string $room;
+    private ?string $color;
     const DAYS = [
         "Monday",
         "Tuesday",
@@ -27,7 +31,6 @@ class CalendarCreator
         "Saturday",
         "Sunday",
     ];
-
 
     public function __construct(
         Request $request,
@@ -103,6 +106,73 @@ class CalendarCreator
         $this->t_pause = $t_pause;
     }
 
+    /**
+     * @return string|null
+     */
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string|null $name
+     */
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTeacher(): ?string
+    {
+        return $this->teacher;
+    }
+
+    /**
+     * @param string|null $teacher
+     */
+    public function setTeacher(?string $teacher): void
+    {
+        $this->teacher = $teacher;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRoom(): ?string
+    {
+        return $this->room;
+    }
+
+    /**
+     * @param string|null $room
+     */
+    public function setRoom(?string $room): void
+    {
+        $this->room = $room;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param string|null $color
+     */
+    public function setColor(?string $color): void
+    {
+        $this->color = $color;
+    }
+
+
+// *********************************************************************************************************************
+// *********************************************************************************************************************
     public function create(): array
     {
         $calendarGregorian = (GregorianCalendar::UTC())->now();
@@ -118,6 +188,7 @@ class CalendarCreator
             'hours' => $this->hourResource(false),
             'days' => self::DAYS,
             'weeks' => $this->weeksResource($month->days()),
+//            'days_in_month' => $this->allDaysResource($month->days()),
         ];
     }
 
@@ -162,7 +233,7 @@ class CalendarCreator
                 "number_day" => "  ",
                 "year" => "  ",
                 "date" => "  ",
-                "is_weekend" => "  ",
+                "is_weekend" => false,
                 "hours" => $this->hourResource(true) ?? [],
             ];
     }
@@ -185,11 +256,30 @@ class CalendarCreator
     private function coursResource(): array
     {
         return [
-            "name" => "Cours 1",
-            "teacher" => "Teacher 1",
-            "room" => "Room 1",
-            "color" => "#000000",
+            "name" => $this->name ?? "... ",
+            "teacher" => $this->teacher ?? "",
+            "room" => $this->room ?? " ",
+            "color" => $this->color ?? null,
         ];
+    }
+
+    // store coursResource
+    private function storeCoursResource(
+        string $name,
+        string $teacher,
+        string $room,
+        string $color,
+        string $date,
+        string $hour
+    ): void
+    {
+    }
+
+    private function allDaysResource(MonthDays $days): array
+    {
+        return collect($days->map(function (Day $day) {
+            return $this->dayResource($day);
+        }))->all();
     }
 
     private function hoursRanges(): array
@@ -209,4 +299,6 @@ class CalendarCreator
     {
         return collect($this->hoursRanges());
     }
+
+
 }

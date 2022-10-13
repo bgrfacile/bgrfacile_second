@@ -53,6 +53,7 @@ class AuthController extends Controller
                     "errors" => $validateUser->errors()
                 ], 401);
             }
+            $request->session()->regenerate();
             $user = User::create([
                 "name" => $request->name,
                 "email" => $request->email,
@@ -104,7 +105,9 @@ class AuthController extends Controller
                     "message" => "identifiants non valide"
                 ], 401);
             }
+            Auth::attempt($request->only(["email", "password"]), true);
             $user = User::where('email', $request->email)->first();
+            $request->session()->regenerate();
             return response()->json([
                 "success" => true,
                 "message" => "user Logged In Successefully",
@@ -129,6 +132,7 @@ class AuthController extends Controller
     public function me(Request $request): \Illuminate\Http\JsonResponse
     {
         if (\auth()->check()) {
+            $request->session()->regenerate();
             $user = $request->user();
             return response()->json([
                 "success" => true,
@@ -148,6 +152,11 @@ class AuthController extends Controller
     {
         //auth()->user()->tokens()->delete();
         $request->user()->currentAccessToken()->delete();
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
         return [
             "status" => true,
             "message" => "Logged out",

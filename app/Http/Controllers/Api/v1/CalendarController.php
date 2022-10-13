@@ -38,14 +38,15 @@ class CalendarController extends Controller
             't_interval' => 'string',
             //'t_pause' => 'string|array',
         ]);
+        $myCalendar = new CalendarCreator($request);
         $calendar = Calendar::create([
             'ecole_id' => $request->ecole_id,
-            'calendars_json' => (new CalendarCreator($request))->create(),
+            'calendars_json' => $myCalendar->create(),
         ]);
         return response()->json([
             'success' => true,
             'message' => 'calendar created successfully',
-            'data' => $calendar,
+            'data' => new CalendarResource($calendar),
         ]);
     }
 
@@ -100,6 +101,84 @@ class CalendarController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'calendar deleted successfully',
+            'data' => new CalendarResource($calendar),
+        ]);
+    }
+
+    public function addEvent(Request $request)
+    {
+        $request->validate([
+            'calendar_id' => 'required|integer',
+            'event' => 'required|array',
+        ]);
+        $calendar = Calendar::findOrfail($request->calendar_id);
+
+        $myCalendar = $calendar->calendars_json;
+        $newCalendar = collect($myCalendar)->map(function ($item) use ($request) {
+            if ($item['month_name'] === $request->month_name) {
+                $weeks= collect($item['weeks'])->map(function ($week) use ($request) {
+                    return collect($week)->map(function ($day) use ($request) {
+                        if ($day['number_day'] === $request->number_day) {
+                            $hours = collect($day['hours'])->map(function ($hour) use ($request) {
+                                if ($hour['hour'] === $request->hour) {
+                                    $event = collect($hour['event'])->replace($request->event)->all();
+                                    return collect($hour)->replace(['event' => $event])->all();
+                                }
+                                return $hour;
+                            })->all();
+                            return collect($day)->replace(['hours' => $hours])->all();
+                        }
+                        return $day;
+                    })->all();
+                })->all();
+                return collect($item)->replace(['weeks' => $weeks])->all();
+            }
+            return $item;
+        })->all();
+        /*$month = (collect($myCalendar)->filter(function ($item) {
+            return $item['month_name'] === 'January';
+        })->first())['days_in_month'];
+        $day = collect($month)->filter(function ($item) {
+            return $item['number_day'] === 1;
+        })->first();
+        $hour = collect($day['hours'])->filter(function ($item) {
+            return $item['hour'] === '08:00';
+        })->first();
+        $event = collect($hour['event'])->toArray();
+        $event['name'] = $request->event['name'];
+        $event['teacher'] = $request->event['teacher'];
+        $event['room'] = $request->event['room'];
+        $event['color'] = $request->event['color'];
+//        $hour = collect($hour['event'])->replace($event);
+        $hour['event'] = $event;
+//        dd($hour);
+        $dayChange = collect($day['hours'])->map(function ($item) use ($hour) {
+            if ($item['hour'] === '08:00') {
+                return $hour;
+            }
+            return $item;
+        });
+        $monthChange = collect($month)->map(function ($item) use ($dayChange) {
+            if ($item['number_day'] === 1) {
+                $item['hours'] = $dayChange;
+                return $item;
+            }
+            return $item;
+        });
+        $myCalendarChange = collect($myCalendar)->map(function ($item) use ($monthChange) {
+            if ($item['month_name'] === 'January') {
+                $item['days_in_month'] = $monthChange;
+                return $item;
+            }
+            return $item;
+        });*/
+
+        $calendar->update([
+            'calendars_json' => $newCalendar,
+        ]);
+        return response()->json([
+            'success' => true,
+            'message' => 'event added successfully',
             'data' => new CalendarResource($calendar),
         ]);
     }

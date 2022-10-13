@@ -17,6 +17,8 @@ use App\Http\Controllers\Api\v1\TypeEcoleController;
 use App\Http\Controllers\Api\v1\CalendarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +36,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', v1HomeController::class);
 
 Route::prefix('v1')->group(function () {
-    Route::middleware(['cors'])->group(function () {
+    Route::middleware(['cors','web'])->group(function () {
         /**
          * Auth
          */
@@ -50,15 +52,16 @@ Route::prefix('v1')->group(function () {
         Route::apiResource("/ecoles", EcoleController::class)->only(['index']);
         Route::apiResource("/type-ecoles", TypeEcoleController::class)->only(['index', 'show']);
         Route::apiResource("/calendar", CalendarController::class);
+        Route::post("/calendar/add/event", [CalendarController::class, 'addEvent']);
 
         Route::group([
-//            'middleware' => ['auth:sanctum'],
+           'middleware' => ['auth:sanctum','web'],
         ], function () {
             /**
              * Auth
              */
             Route::post('/tokens/create', [V1AuthController::class, 'createToken']);
-            Route::post('/me', [V1AuthController::class, 'me']);
+            Route::get('/me', [V1AuthController::class, 'me']);
             Route::post('/logout', [V1AuthController::class, 'logout']);
 
             /**
