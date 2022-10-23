@@ -36,6 +36,7 @@ use Illuminate\Support\Facades\Schema;
 Route::get('/', v1HomeController::class);
 
 Route::prefix('v1')->group(function () {
+
     Route::middleware(['cors','web'])->group(function () {
         /**
          * Auth
@@ -45,6 +46,7 @@ Route::prefix('v1')->group(function () {
         Route::post('/logout', [V1AuthController::class, 'logout']);
         Route::post('/forgot-password', [V1AuthController::class, 'forgotPassword']);
         Route::post('/reset-password', [V1AuthController::class, 'resetPassword']);
+
         /**
          * Other route without
          */
@@ -61,8 +63,8 @@ Route::prefix('v1')->group(function () {
              * Auth
              */
             Route::post('/tokens/create', [V1AuthController::class, 'createToken']);
-            Route::get('/me', [V1AuthController::class, 'me']);
             Route::post('/logout', [V1AuthController::class, 'logout']);
+            Route::get('/me', [V1AuthController::class, 'me']);
 
             /**
              * Ecole route
