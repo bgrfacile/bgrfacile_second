@@ -17,9 +17,26 @@ class CalendarController extends Controller
      *
      * @return CalendarCollection
      */
-    public function index(): CalendarCollection
+    public function index(Request $request): CalendarCollection
     {
-        return new CalendarCollection(Calendar::all());
+        // return new CalendarCollection(Calendar::all());
+
+        $queryItems = $request->query();
+        if (count($queryItems) == 0) {
+            return new CalendarCollection(Calendar::all());
+        } else {
+            $calendars = null;
+            $queryCollect = collect($queryItems);
+            if ($queryCollect->has('ecole_id') && $queryCollect['ecole_id'] != null) {
+                $calendars = Calendar::where('ecole_id', $queryCollect['ecole_id'])->get();
+                if (count($calendars) === 0) {
+                    return abort(404);
+                }else{
+                    return new CalendarCollection($calendars);
+                }
+            }
+
+        }
     }
 
     /**
@@ -116,7 +133,7 @@ class CalendarController extends Controller
         $myCalendar = $calendar->calendars_json;
         $newCalendar = collect($myCalendar)->map(function ($item) use ($request) {
             if ($item['month_name'] === $request->month_name) {
-                $weeks= collect($item['weeks'])->map(function ($week) use ($request) {
+                $weeks = collect($item['weeks'])->map(function ($week) use ($request) {
                     return collect($week)->map(function ($day) use ($request) {
                         if ($day['number_day'] === $request->number_day) {
                             $hours = collect($day['hours'])->map(function ($hour) use ($request) {
@@ -182,5 +199,4 @@ class CalendarController extends Controller
             'data' => new CalendarResource($calendar),
         ]);
     }
-
 }

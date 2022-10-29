@@ -33,11 +33,11 @@ use Illuminate\Support\Facades\Schema;
  *      description="api bgrfacile documentation",
  * )
  */
-Route::get('/', v1HomeController::class);
+Route::get('/', v1HomeController::class)->name('home.api');
 
 Route::prefix('v1')->group(function () {
 
-    Route::middleware(['cors','web'])->group(function () {
+    Route::middleware(['web', 'cors'])->group(function () {
         /**
          * Auth
          */
@@ -50,14 +50,30 @@ Route::prefix('v1')->group(function () {
         /**
          * Other route without
          */
+        Route::apiResource('/cycles', CycleController::class)->only(['index']);
+
+        Route::apiResource('/levels', LevelController::class)->only(['index']);
+
+        Route::apiResource('/matieres', MatiereController::class)->only(['index']);
+
         Route::apiResource("/users", InfoUserController::class)->only(['index']);
+
+        Route::get("/cours", [CoursController::class, 'index']);
+
         Route::apiResource("/ecoles", EcoleController::class)->only(['index']);
+
         Route::apiResource("/type-ecoles", TypeEcoleController::class)->only(['index', 'show']);
+
         Route::apiResource("/calendar", CalendarController::class);
         Route::post("/calendar/add/event", [CalendarController::class, 'addEvent']);
 
+
+
+        /**
+         * Route with auth
+         */
         Route::group([
-           'middleware' => ['auth:sanctum','web'],
+            'middleware' => ['auth:sanctum', 'api'],
         ], function () {
             /**
              * Auth
@@ -90,7 +106,7 @@ Route::prefix('v1')->group(function () {
             /**
              * Cycle feat
              */
-            Route::apiResource('/cycles', CycleController::class);
+            Route::apiResource('/cycles', CycleController::class)->except(['index']);
             Route::get('/cycles/search/{name}', [CycleController::class, 'search']);
             Route::post('/cycles/add/level', [CycleController::class, 'addLevel']);
             Route::post('/cycles/remove/level', [CycleController::class, 'removeLevel']);
@@ -98,7 +114,7 @@ Route::prefix('v1')->group(function () {
             /**
              * Levels feat
              */
-            Route::apiResource('/levels', LevelController::class);
+            Route::apiResource('/levels', LevelController::class)->except(['index']);
             Route::get('/levels/search/{name}', [LevelController::class, 'search']);
             Route::post('/levels/add/matiere', [LevelController::class, 'addMatiere']);
             Route::post('/levels/remove/matiere', [LevelController::class, 'removeMatiere']);
@@ -106,7 +122,7 @@ Route::prefix('v1')->group(function () {
             /**
              * Matiere feat
              */
-            Route::apiResource('/matieres', MatiereController::class);
+            Route::apiResource('/matieres', MatiereController::class)->except(['index']);
             Route::get('/matieres/search/{name}', [MatiereController::class, 'search']);
 
             Route::apiResource('/image-ecoles', ImageEcoleController::class)->except(['index', 'update']);
@@ -123,7 +139,7 @@ Route::prefix('v1')->group(function () {
             Route::put('/users/refuse/ecole', [InfoUserController::class, 'refuseEcole']);
             Route::put('/users/accept/ecole', [InfoUserController::class, 'acceptEcole']);
 
-            Route::apiResource('/cours', CoursController::class)->except(['update']);
+            Route::apiResource('/cours', CoursController::class)->except(['update', 'index']);
             Route::post('/cours/{cours}', [CoursController::class, 'update']);
             Route::get('/cours/search/{name}', [CoursController::class, 'search']);
             Route::post('/cours/add/content', [CoursController::class, 'addContent']);
