@@ -29,6 +29,12 @@ class CoursResource extends JsonResource
             "cycles" => new CycleCollection($this->cycles),
             "levels" => new LevelCollection($this->levels),
             "matieres" => new MatiereCollection($this->matieres),
+            "authors" => $this->authors->map(function ($author) {
+                return [
+                    "id" => $author->id,
+                    "name" => $author->name,
+                ];
+            }),
             "created_at" => $this->created_at,
             "updated_at" => $this->updated_at,
         ];

@@ -24,9 +24,22 @@ class CoursController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new CoursCollection(Cours::paginate(15));
+        $queryItems = $request->query();
+        $cours = Cours::paginate(15);
+        if (count($queryItems) != 0) {
+            $collectQuery = collect($queryItems);
+            if ($collectQuery->has('q')) {
+                $cours = Cours::where('is_actif', "1")
+                    ->where('name', 'like', '%' . $collectQuery->get('q') . '%')
+                    ->orWhere('description', 'like', '%' . $collectQuery->get('q') . '%')
+                    ->paginate(15)
+                    ->appends($request->query());
+            }
+            return new CoursCollection($cours);
+        }
+        return new CoursCollection($cours);
     }
 
     /**
@@ -62,6 +75,8 @@ class CoursController extends Controller
             "path_image" => $path_image,
             "is_actif" => $request->is_actif != null ? $request->is_actif : true,
         ]);
+
+        $cour->authors()->attach(auth()->user()->id);
 
         return response()->json([
             "message" => "creation avec success",
