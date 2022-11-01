@@ -1,24 +1,25 @@
 <?php
 
 
-use App\Http\Controllers\Api\v1\AuthController as V1AuthController;
-use App\Http\Controllers\Api\v1\ContentController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 use App\Http\Controllers\Api\v1\CoursController;
 use App\Http\Controllers\Api\v1\CycleController;
 use App\Http\Controllers\Api\v1\EcoleController;
-use App\Http\Controllers\Api\v1\HomeController as v1HomeController;
-use App\Http\Controllers\Api\v1\ImageEcoleController;
-use App\Http\Controllers\Api\v1\InfoUserController;
 use App\Http\Controllers\Api\v1\LevelController;
-use App\Http\Controllers\Api\v1\LocationController;
-use App\Http\Controllers\Api\v1\MatiereController;
 use App\Http\Controllers\Api\v1\ParentController;
-use App\Http\Controllers\Api\v1\TypeEcoleController;
+use App\Http\Controllers\Api\v1\ContentController;
+use App\Http\Controllers\Api\v1\MatiereController;
 use App\Http\Controllers\Api\v1\CalendarController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+use App\Http\Controllers\Api\v1\InfoUserController;
+use App\Http\Controllers\Api\v1\LocationController;
+use App\Http\Controllers\Api\v1\TypeEcoleController;
+use App\Http\Controllers\Api\v1\ImageEcoleController;
+use App\Http\Controllers\Api\v1\AuthController as V1AuthController;
+use App\Http\Controllers\Api\v1\HomeController as v1HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,17 @@ Route::get('/', v1HomeController::class)->name('home.api');
 Route::prefix('v1')->group(function () {
 
     Route::middleware(['web', 'cors'])->group(function () {
+
+        Route::get('/test', function () {
+            $datas = DB::table("ecoles_has_users")
+                ->where("response", "accepter")
+                ->where("user_id", 1)
+                ->get();
+            dd($datas->map(function ($data) {
+                return $data->ecole_id;
+            }));
+            return response()->json(['message' => 'test']);
+        });
         /**
          * Auth
          */
@@ -92,10 +104,12 @@ Route::prefix('v1')->group(function () {
             Route::post('/ecoles/remove/type-ecole', [EcoleController::class, 'removeTypeEcole']);
             Route::post('/ecoles/add/cycle', [EcoleController::class, 'addCycle']);
             Route::post('/ecoles/remove/cycle', [EcoleController::class, 'removeCycle']);
-            Route::post('/ecoles/add/user', [EcoleController::class, 'addUser']);
-            Route::delete('/ecoles/remove/user', [EcoleController::class, 'removeUser']);
-            Route::put('/ecoles/accept/user', [EcoleController::class, 'acceptUser']);
-            Route::put('/ecoles/refuser/user', [EcoleController::class, 'refuserUser']);
+
+            Route::post('/ecoles/user/ajout', [EcoleController::class, 'ajoutForcedUser']);
+            Route::post('/ecoles/user/demande', [EcoleController::class, 'demandeAtUser']);
+            Route::put('/ecoles/user/accept', [EcoleController::class, 'acceptDemandeUser']);
+            Route::put('/ecoles/user/refuse', [EcoleController::class, 'refuseDemandeUser']);
+            Route::delete('/ecoles/user/delete', [EcoleController::class, 'deleteDemandeUser']);
 
             Route::apiResource("/type-ecoles", TypeEcoleController::class)->except(['index', 'show']);
             /**
@@ -135,9 +149,12 @@ Route::prefix('v1')->group(function () {
              */
             Route::apiResource("/users", InfoUserController::class)->except(['store', 'index']);
             Route::get('/users/search/{name}', [InfoUserController::class, 'search']);
-            Route::post('/users/add/ecole', [InfoUserController::class, 'addEcole']);
-            Route::put('/users/refuse/ecole', [InfoUserController::class, 'refuseEcole']);
-            Route::put('/users/accept/ecole', [InfoUserController::class, 'acceptEcole']);
+            Route::post('/users/ecole/ajout', [InfoUserController::class, 'ajoutForcedEcole']);
+            Route::post('/users/ecole/demande', [InfoUserController::class, 'demandeAtEcole']);
+            Route::put('/users/ecole/accept', [InfoUserController::class, 'acceptDemandeEcole']);
+            Route::put('/users/ecole/refuse', [InfoUserController::class, 'refuseDemandeEcole']);
+            Route::delete('/users/ecole/delete', [InfoUserController::class, 'deleteDemandeEcole']);
+
 
             Route::apiResource('/cours', CoursController::class)->except(['update', 'index']);
             Route::post('/cours/{cours}', [CoursController::class, 'update']);

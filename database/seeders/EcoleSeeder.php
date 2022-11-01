@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\Ecole;
 use Faker\Factory;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Cycle;
+use App\Models\Ecole;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class EcoleSeeder extends Seeder
 {
@@ -29,12 +30,13 @@ class EcoleSeeder extends Seeder
                 'path_logo' => Factory::create()->imageUrl(),
                 'path_baniere' => Factory::create()->imageUrl(),
             ]);
-            for ($j = 0; $j < 3; $j++) {
+            for ($j = 0; $j < 4; $j++) {
                 $ecole->imagesEcole()->create([
                     'path_image' => Factory::create()->imageUrl(),
                     'description' => Factory::create()->sentence(10),
                 ]);
             }
+            $ecole->cycles()->attach(Cycle::all()->random(2));
             $ecole->typeEcole()->attach(Factory::create()->randomElement(['1', '2', '3', '4']));
         }
     }

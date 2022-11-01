@@ -30,27 +30,16 @@ class InfoUserController extends Controller
     public function index(Request $request): UserCollection
     {
         $queryItems = $request->query();
-        if (count($queryItems) == 0) {
-            return new UserCollection(User::paginate(15));
-        }
-        else {
-            $users = collect([]);
-            foreach ($queryItems as $query) {
-                if ($query == 'apprenant') {
-                    $users = User::whereHas('roles', function ($q) use ($query) {
-                        $q->where('roles.name', '=', $query);
-                    })->paginate(15);
-                } elseif ($query == 'apprenant-ecole') {
-                    $users = User::whereHas('roles', function ($q) use ($query) {
-                        $q->where('roles.name', '=', $query);
-                    })->paginate(15);
-                }
+        $users = User::paginate(15);
+        if (count($queryItems) != 0) {
+            $collectQuery = collect($queryItems);
+            if ($collectQuery->has('role')) {
+                $users = User::whereHas('roles', function ($q) use ($collectQuery) {
+                    $q->where('roles.name', '=', $collectQuery->get('role'));
+                })->paginate(15);
             }
-            return new UserCollection($users);
         }
-
-        // $filter = new CustumerQuery();
-        // $queryItems = $filter->transform($request);  // [['colum','orperator','value']]
+        return new UserCollection($users);
     }
 
     /**
@@ -175,125 +164,91 @@ class InfoUserController extends Controller
         return new UserCollection($users);
     }
 
-    /**
-     * @OA\POST(
-     *     path="/users/add/ecole",
-     *     description="envoyer demande adhesion à une école",
-     *     @OA\Response(
-     *      response=200,
-     *      description="json avec une clé data"
-     * ),
-     * ),
-     */
-    public function addEcole(Request $request)
+    public function ajoutForcedEcole(Request $request)
     {
         $request->validate([
             "ecole_id" => "required",
             "user_id" => "required",
         ]);
         $user = User::findOrFail($request->user_id);
-        $demandeHasUser = $user->demandesUser();
-        $ecole = Ecole::findOrFail($request->ecole_id);
-        $demandeHasEcole = $ecole->demandesEcole();
-
-        if (count($demandeHasUser
-                ->where('ecole_id', $request->ecole_id)
-                ->where('user_id', $request->user_id)
-                ->get()) == 0) {
-            if (
-                $demandeHasEcole
-                    ->where('ecole_id', $request->ecole_id)
-                    ->where('user_id', $request->user_id)
-                    ->where('demandeable_type', "App\Models\Ecole")
-                    ->first() == null
-            ) {
-                $demandeHasUser->create([
-                    "user_id" => $request->user_id,
-                    "ecole_id" => $request->ecole_id,
-                ]);
-                return response()->json([
-                    "data" => new UserResource($user),
-                ], 200);
-            }
-        }
+        $user->demandesUser()->create([
+            "response" => 'accepter',
+            "user_id" => $user->id,
+            "ecole_id" => $request->ecole_id,
+        ]);
+        // event(new AcceptDemandeEvent($user));
 
         return response()->json([
-            "message" => "impossible de faire cette demande",
-        ], 400);
+            "message" => "ecole ajouter avec success",
+        ], 200);
     }
-
-    /**
-     * @OA\PUT(
-     *     path="/users/refuse/ecole",
-     *     description="refuser demande adhesion faite par une école",
-     *     @OA\Response(
-     *      response=200,
-     *      description="json avec une clé data"
-     * ),
-     * ),
-     */
-    public function refuseEcole(Request $request)
+    public function demandeAtEcole(Request $request)
     {
         $request->validate([
             "ecole_id" => "required",
             "user_id" => "required",
         ]);
-        $demandeRecup = DB::table("ecoles_has_users")
-            ->where("user_id", $request->user_id)
-            ->where("ecole_id", $request->ecole_id);
-        if ($demandeRecup->first() != null) {
-            if (boolval($demandeRecup->first()->response)) {
-                $demandeRecup->first()->response = false;
-                // $demandeRecup->save();
-                return response()->json([
-                    "message" => "mise à jour avec succes",
-                ], 200);
-            } else {
-                $result = $demandeRecup->delete();
-                return response()->json([
-                    "success" => $result,
-                ], 200);
-            }
+        $user = User::findOrFail($request->user_id);
+        $demandes = DB::table("ecoles_has_users")
+            ->where("ecoles_has_users.user_id", $user->id)
+            ->where("ecoles_has_users.ecole_id", $request->ecole_id)
+            ->get();
+        if (count($demandes) > 0) {
+            return response()->json([
+                "message" => "demande deja envoyer",
+            ], 200);
         }
+        $user->demandesUser()->create([
+            "response" => 'attente',
+            "user_id" => $user->id,
+            "ecole_id" => $request->ecole_id,
+        ]);
         return response()->json([
-            "message" => "impossible de faire cette demande",
-        ], 400);
+            "message" => "demande envoyer",
+        ], 200);
     }
-
-    /**
-     * @OA\PUT(
-     *     path="/users/accept/ecole",
-     *     description="accepter demande adhesion faite par une école",
-     *     @OA\Response(
-     *      response=200,
-     *      description="json avec une clé data"
-     * ),
-     * ),
-     */
-    public function acceptEcole(Request $request)
+    public function acceptDemandeEcole(Request $request)
     {
         $request->validate([
             "ecole_id" => "required",
             "user_id" => "required",
         ]);
-        $ecole = Ecole::findOrFail($request->ecole_id);
-        $demandeHasEcole = $ecole->demandesEcole()
-            ->where('ecole_id', $request->ecole_id)
-            ->where('user_id', $request->user_id)
-            ->where('demandeable_type', "App\Models\Ecole")
-            ->first();
-        if ($demandeHasEcole != null) {
-            if ($demandeHasEcole->response == false) {
-                $demandeHasEcole->response = true;
-                event(new AcceptDemandeEvent($request->user_id));
-                $result = $demandeHasEcole->save();
-                return response()->json([
-                    "success" => $result,
-                ], 200);
-            }
-        }
+        $user = User::findOrFail($request->user_id);
+        $user->demandesUser()->update([
+            "response" => 'accepter',
+            "ecole_id" => $request->ecole_id,
+        ]);
         return response()->json([
-            "message" => "impossible de faire cette demande",
-        ], 400);
+            "message" => "demande accepter",
+        ], 200);
+    }
+    public function refuseDemandeEcole(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $user = User::findOrFail($request->user_id);
+        $user->demandesUser()->update([
+            "response" => 'refuser',
+            "ecole_id" => $request->ecole_id,
+        ]);
+        return response()->json([
+            "message" => "demande refuser",
+        ], 200);
+    }
+    public function deleteDemandeEcole(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "required",
+        ]);
+        $user = User::findOrFail($request->user_id);
+        $user->demandesUser()->delete([
+            "ecole_id" => $request->ecole_id,
+        ]);
+        return response()->json([
+            "message" => "supprimer avec success",
+        ], 200);
     }
 }

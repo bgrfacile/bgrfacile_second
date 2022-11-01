@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->longText('content');
-            $table->enum('type_content',['texte','pdf','image','video','audio'])->nullable();
+            $table->enum('type_content',['text','pdf','image','video','audio'])->nullable();
             $table->integer('contentable_id');
             $table->string('contentable_type');
             $table->timestamps();

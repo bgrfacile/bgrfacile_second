@@ -2,10 +2,12 @@
 
 namespace App\Http\Resources\v1\User;
 
-use App\Http\Resources\v1\Role\RoleCollection;
 use Carbon\Carbon;
-use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\User;
+use App\Models\Ecole;
 use Illuminate\Support\Facades\DB;
+use App\Http\Resources\v1\Role\RoleCollection;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserResource extends JsonResource
 {
@@ -17,6 +19,14 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
+        $listeDemandes = DB::table("ecoles_has_users")
+            ->where("response", "attente")
+            ->where("user_id", $this->id)
+            ->get();
+        $listeEcolesAccepter = DB::table("ecoles_has_users")
+            ->where("response", "accepter")
+            ->where("user_id", $this->id)
+            ->get();
         return [
             'id' => $this->id,
             'name' => $this->name,
@@ -30,16 +40,54 @@ class UserResource extends JsonResource
             "city" => $this->infoUser->city ?? null,
             "phone" => $this->infoUser->phone ?? null,
             "roles" => new RoleCollection($this->roles),
-            "demandes" => DB::table("ecoles_has_users")
-                ->where("response", "attente")
-                ->where("user_id", $this->id)
-                ->get(),
-            "ecoles" => DB::table("ecoles_has_users")
-                ->where("response", "accepter")
-                ->where("user_id", $this->id)
-                ->get(),
-            "updated_at" => Carbon::parse($this->updated_at)->timestamp  ?? null,
-            'created_at' => Carbon::parse($this->created_at)->timestamp  ?? null,
+            "demandes" => $listeDemandes->map(function ($demande) {
+                if ($demande->demandeable_type === 'App\\Models\\Ecole') {
+                    $ecole = Ecole::find($demande->ecole_id);
+                    return [
+                        "initiateur" => 'ecole',
+                        "response" => $demande->response,
+                        "demande_id" => $demande->id,
+                        "ecole_id" => $ecole->id,
+                        "ecole_name" => $ecole->name,
+                        "demande_at" => $demande->created_at,
+                    ];
+                } elseif ($demande->demandeable_type === 'App\\Models\\User') {
+                    $ecole = Ecole::find($demande->ecole_id);
+                    return [
+                        "initiateur" => 'user',
+                        "response" => $demande->response,
+                        "demande_id" => $demande->id,
+                        "ecole_id" => $ecole->id,
+                        "ecole_name" => $ecole->name,
+                        "demande_at" => $demande->created_at,
+                    ];
+                }
+            }),
+            "ecoles" => $listeEcolesAccepter->map(function ($demande) {
+                if ($demande->demandeable_type === 'App\\Models\\Ecole') {
+                    $ecole = Ecole::find($demande->ecole_id);
+                    return [
+                        "initiateur" => 'ecole',
+                        "response" => $demande->response,
+                        "demande_id" => $demande->id,
+                        "ecole_id" => $ecole->id,
+                        "ecole_name" => $ecole->name,
+                        "accept_at" => $demande->updated_at,
+                    ];
+                } elseif ($demande->demandeable_type === 'App\\Models\\User') {
+                    $ecole = Ecole::find($demande->ecole_id);
+                    return [
+                        "initiateur" => 'ecole',
+                        "response" => $demande->response,
+                        "demande_id" => $demande->id,
+                        "ecole_id" => $ecole->id,
+                        "ecole_name" => $ecole->name,
+                        "accept_at" => $demande->updated_at,
+                    ];
+                }
+            }),
+            "updated_at" => $this->updated_at,
+            'created_at' => $this->created_at,
         ];
     }
 }

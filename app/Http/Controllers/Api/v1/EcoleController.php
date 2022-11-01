@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Api\v1;
 
-use App\Enums\PaginateType;
+use App\Models\User;
 use App\Models\Ecole;
+use App\Enums\PaginateType;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\Ecole\EcoleResource;
 use App\Http\Resources\v1\Ecole\EcoleCollection;
-use App\Models\User;
 
 class EcoleController extends Controller
 {
@@ -18,7 +19,6 @@ class EcoleController extends Controller
     {
         $queryItems = $request->query();
         return new EcoleCollection(Ecole::paginate(PaginateType::standards));
-
     }
 
     /**
@@ -198,85 +198,127 @@ class EcoleController extends Controller
         ], 200);
     }
 
-    public function addUser(Request $request)
+    public function ajoutForcedUser(Request $request)
     {
         $request->validate([
             "ecole_id" => "required",
-            "user_id" => "required",
+            "user_id" => "nullable",
+            "email" => "nullable|email",
         ]);
         $ecole = Ecole::findOrFail($request->ecole_id);
-        $demandeEcole = $ecole->demandesEcole();
-        $user = User::findOrFail($request->user_id);
-        $demandeUser = $user->demandesUser();
-
-        if (
-            count($demandeEcole
-                ->where('ecole_id', $request->ecole_id)
-                ->where('user_id', $request->user_id)
-                ->get()) == 0
-        ) {
-            if (
-                $demandeUser
-                    ->where('ecole_id', $request->ecole_id)
-                    ->where('user_id', $request->user_id)
-                    ->where('demandeable_type', "App\Models\Ecole")
-                    ->first() == null
-            ) {
-                $demandeEcole->create([
-                    "user_id" => $request->user_id,
+        if ($request->email !== null) {
+            $user = User::where('email', $request->email)->first();
+            if ($user == null) {
+                $ecole->demandesEcole()->create([
+                    "response" => "accepter",
+                    "user_id" => $user->id,
                     "ecole_id" => $request->ecole_id,
                 ]);
-                return response()->json([
-                    "data" => new EcoleResource($ecole),
-                ], 200);
             }
-        }
-
-        return response()->json([
-            "message" => "impossible de faire cette demande",
-        ], 400);
-    }
-
-    public function removeUser(Request $request)
-    {
-        $request->validate([
-            "ecole_id" => "required",
-            "user_id" => "required",
-        ]);
-        $ecole = Ecole::findOrFail($request->ecole_id);
-        $demandeEcole = $ecole->demandesEcole();
-        $user = User::findOrFail($request->user_id);
-        $demandeUser = $user->demandesUser();
-
-        if (
-            $demandeUser->where('ecole_id', $request->ecole_id)->first() ||
-            $demandeEcole->where('user_id', $request->user_id)->first()
-        ) {
-            $result = $demandeEcole->where('user_id', $request->user_id)->where('user_id', $request->user_id)->delete($request->user_id);
             return response()->json([
-                "success" => $result,
+                "message" => "user ajouter avec success",
             ], 200);
         }
-        return response()->json([
-            "message" => "impossible de faire cette demande",
-        ], 400);
-    }
 
-    public function acceptUser(Request $request)
-    {
-        $request->validate([
-            "ecole_id" => "required",
-            "user_id" => "required",
+        // event(new AcceptDemandeEvent($user));
+        $ecole->demandesEcole()->create([
+            "response" => "accepter",
+            "user_id" => $request->user_id,
+            "ecole_id" => $request->ecole_id,
         ]);
-        $ecole = Ecole::findOrFail($request->ecole_id);
-        $result = $ecole->users()->detach($request->user_id);
         return response()->json([
-            "success" => $result,
+            "message" => "user ajouter avec success",
         ], 200);
     }
 
-    public function refuserUser(Request $request)
+    public function demandeAtUser(Request $request)
     {
-        dd(" refuser demande");
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "nullable",
+            "email" => "nullable|email",
+        ]);
+        $demandes = DB::table("ecoles_has_users")
+            ->where("ecoles_has_users.user_id", $request->user_id)
+            ->where("ecoles_has_users.ecole_id", $request->ecole_id)
+            ->get();
+        if (count($demandes) > 0) {
+            return response()->json([
+                "message" => "demande deja envoyer",
+            ], 200);
+        }
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        if ($request->email !== null) {
+            $user = User::where('email', $request->email)->first();
+            if ($user == null) {
+                $ecole->demandesEcole()->create([
+                    "response" => "attente",
+                    "user_id" => $user->id,
+                    "ecole_id" => $request->ecole_id,
+                ]);
+            }
+            return response()->json([
+                "message" => "demande envoyer",
+            ], 200);
+        }
+        // event(new AcceptDemandeEvent($user));
+        $ecole->demandesEcole()->create([
+            "response" => "attente",
+            "user_id" => $request->user_id,
+            "ecole_id" => $request->ecole_id,
+        ]);
+        return response()->json([
+            "message" => "demande envoyer",
+        ], 200);
+    }
+    public function acceptDemandeUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "nullable",
+            "email" => "nullable|email",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        // event(new AcceptDemandeEvent($user));
+        $ecole->demandesEcole()->update([
+            "response" => "accepter",
+            "user_id" => $request->user_id,
+        ]);
+        return response()->json([
+            "message" => "demande accepter",
+        ], 200);
+    }
+    public function refuseDemandeUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "nullable",
+            "email" => "nullable|email",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        // event(new AcceptDemandeEvent($user));
+        $ecole->demandesEcole()->update([
+            "response" => "refuser",
+            "user_id" => $request->user_id,
+        ]);
+        return response()->json([
+            "message" => "demande accepter",
+        ], 200);
+    }
+    public function deleteDemandeUser(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "user_id" => "nullable",
+            "email" => "nullable|email",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        // event(new AcceptDemandeEvent($user));
+        $ecole->demandesEcole()->delete([
+            "user_id" => $request->user_id,
+        ]);
+        return response()->json([
+            "message" => "supprimer avec success",
+        ], 200);
     }
 }
