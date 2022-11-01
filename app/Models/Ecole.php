@@ -39,4 +39,8 @@ class Ecole extends Model
     // {
     //     return $this->belongsToMany(User::class, "ecoles_has_users", "ecole_id", "user_id");
     // }
+    public function tuteurs()
+    {
+        return $this->belongsToMany(Tuteur::class);
+    }
 }

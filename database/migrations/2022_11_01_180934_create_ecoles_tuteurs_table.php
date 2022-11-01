@@ -13,14 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('parents', function (Blueprint $table) {
+        Schema::create('ecoles_tuteurs', function (Blueprint $table) {
             $table->id();
-            $table->string("first_name")->nullable();
-            $table->string("last_name")->nullable();
-            $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('password')->nullable();
-            $table->text('image_path')->nullable();
+            $table->foreignId('ecole_id')
+                ->nullable()
+                ->index()
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->foreignId('tuteur_id')
+                ->nullable()
+                ->index()
+                ->constrained()
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -32,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parents');
+        Schema::dropIfExists('ecoles_tuteurs');
     }
 };

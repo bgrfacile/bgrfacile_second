@@ -20,6 +20,7 @@ use App\Http\Controllers\Api\v1\TypeEcoleController;
 use App\Http\Controllers\Api\v1\ImageEcoleController;
 use App\Http\Controllers\Api\v1\AuthController as V1AuthController;
 use App\Http\Controllers\Api\v1\HomeController as v1HomeController;
+use App\Http\Controllers\Api\v1\TuteurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,13 +42,6 @@ Route::prefix('v1')->group(function () {
     Route::middleware(['web', 'cors'])->group(function () {
 
         Route::get('/test', function () {
-            $datas = DB::table("ecoles_has_users")
-                ->where("response", "accepter")
-                ->where("user_id", 1)
-                ->get();
-            dd($datas->map(function ($data) {
-                return $data->ecole_id;
-            }));
             return response()->json(['message' => 'test']);
         });
         /**
@@ -113,9 +107,9 @@ Route::prefix('v1')->group(function () {
 
             Route::apiResource("/type-ecoles", TypeEcoleController::class)->except(['index', 'show']);
             /**
-             * Parent feat
+             * Tuteur feat
              */
-            Route::apiResource("/parents", ParentController::class);
+            Route::apiResource("/tuteurs", TuteurController::class);
 
             /**
              * Cycle feat

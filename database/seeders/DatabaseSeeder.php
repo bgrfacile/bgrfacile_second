@@ -49,11 +49,9 @@ class DatabaseSeeder extends Seeder
             "ecole_id" => 1,
         ]);
 
-
         $users = User::factory(10)->create();
         $users->each(function ($user) {
             $user->infoUser()->create([
-                // "user_id" => Factory::create()->randomElement(User::all()),
                 "slug" => Factory::create()->slug(),
                 "first_name" => Factory::create()->firstName(),
                 "last_name" => Factory::create()->lastName(),
@@ -93,13 +91,10 @@ class DatabaseSeeder extends Seeder
             $level = Level::find($i);
             $level->matieres()->attach($matieresIds_college);
         }
-
-        $level5 = Level::find(5);
-        $level5->matieres()->attach($matieresIds_lycee);
-        $level6 = Level::find(6);
-        $level6->matieres()->attach($matieresIds_lycee);
-        $level7 = Level::find(7);
-        $level7->matieres()->attach($matieresIds_lycee);
+        for ($i = 5; $i <= 7; $i++) {
+            $level = Level::find($i);
+            $level->matieres()->attach($matieresIds_lycee);
+        }
 
         $this->call([
             CoursSeeder::class,

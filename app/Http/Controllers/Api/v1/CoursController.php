@@ -80,9 +80,7 @@ class CoursController extends Controller
 
         return response()->json([
             "message" => "creation avec success",
-            "data" => [
-                "cour" => new CoursResource($cour)
-            ]
+            "data" => new CoursResource($cour)
         ], 201);
     }
 

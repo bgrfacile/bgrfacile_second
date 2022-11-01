@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\v1\Parent;
+namespace App\Http\Resources\v1\Tuteur;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class ParentCollection extends ResourceCollection
+class TuteurCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.

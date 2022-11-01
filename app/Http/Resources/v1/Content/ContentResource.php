@@ -16,7 +16,7 @@ class ContentResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "content" => $this->type_content != "texte" ? url($this->content) : $this->content,
+            "content" => $this->type_content != "text" ? url($this->content) : $this->content,
             "type_content" => $this->type_content,
             "contentable_type" => $this->contentable_type,
             "created_at" => $this->created_at,
