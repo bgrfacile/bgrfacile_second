@@ -110,6 +110,10 @@ Route::prefix('v1')->group(function () {
              * Tuteur feat
              */
             Route::apiResource("/tuteurs", TuteurController::class);
+            Route::post("/tuteurs/user/ajout", [TuteurController::class, 'ajoutUser']);
+            Route::post("/tuteurs/user/remove", [TuteurController::class, 'removeUser']);
+            Route::post("/tuteurs/ecole/ajout", [TuteurController::class, 'ajoutEcole']);
+            Route::post("/tuteurs/ecole/remove", [TuteurController::class, 'removeEcole']);
 
             /**
              * Cycle feat

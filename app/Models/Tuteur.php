@@ -12,11 +12,11 @@ class Tuteur extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'users_tuteurs');
     }
 
     public function ecoles()
     {
-        return $this->belongsToMany(Ecole::class);
+        return $this->belongsToMany(Ecole::class, 'ecoles_tuteurs');
     }
 }

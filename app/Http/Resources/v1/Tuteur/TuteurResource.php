@@ -23,8 +23,18 @@ class TuteurResource extends JsonResource
             'path_image' => $this->image_path,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            // 'users' => $this->users,
-            // 'ecoles' => $this->ecoles,
+            'users' => $this->users->map(function ($user) {
+                return [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                ];
+            }),
+            'ecoles' => $this->ecoles->map(function ($ecole) {
+                return [
+                    'id' => $ecole->id,
+                    'name' => $ecole->name,
+                ];
+            }),
         ];
     }
 }

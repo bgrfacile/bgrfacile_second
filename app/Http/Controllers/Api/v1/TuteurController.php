@@ -118,4 +118,54 @@ class TuteurController extends Controller
             "data" => new TuteurResource($tuteur)
         ]);
     }
+
+    public function ajoutUser(Request $request)
+    {
+        $request->validate([
+            'tuteur_id' => 'required|integer',
+            'user_id' => 'required|integer',
+        ]);
+        $tuteur = Tuteur::findOrFail($request->tuteur_id);
+        $tuteur->users()->attach($request->user_id);
+        return response()->json([
+            "message" => "ajout avec success",
+        ]);
+    }
+    public function removeUser(Request $request)
+    {
+        $request->validate([
+            'tuteur_id' => 'required|integer',
+            'user_id' => 'required|integer',
+        ]);
+        $tuteur = Tuteur::findOrFail($request->tuteur_id);
+        $tuteur->users()->detach($request->user_id);
+        return response()->json([
+            "message" => "suppression avec success",
+        ]);
+    }
+
+    public function ajoutEcole(Request $request)
+    {
+        $request->validate([
+            'tuteur_id' => 'required|integer',
+            'user_id' => 'required|integer',
+        ]);
+        $tuteur = Tuteur::findOrFail($request->tuteur_id);
+        $tuteur->ecoles()->attach($request->user_id);
+        return response()->json([
+            "message" => "ajout avec success",
+        ]);
+    }
+    public function removeEcole(Request $request)
+    {
+        $request->validate([
+            'tuteur_id' => 'required|integer',
+            'user_id' => 'required|integer',
+        ]);
+        $tuteur = Tuteur::findOrFail($request->tuteur_id);
+        $tuteur->ecoles()->detach($request->user_id);
+        return response()->json([
+            "message" => "suppression avec success",
+        ]);
+    }
 }
