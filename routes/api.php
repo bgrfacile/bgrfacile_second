@@ -98,6 +98,7 @@ Route::prefix('v1')->group(function () {
             Route::post('/ecoles/remove/type-ecole', [EcoleController::class, 'removeTypeEcole']);
             Route::post('/ecoles/add/cycle', [EcoleController::class, 'addCycle']);
             Route::post('/ecoles/remove/cycle', [EcoleController::class, 'removeCycle']);
+            Route::post('/demandes', [EcoleController::class, 'demandes']);
 
             Route::post('/ecoles/user/ajout', [EcoleController::class, 'ajoutForcedUser']);
             Route::post('/ecoles/user/demande', [EcoleController::class, 'demandeAtUser']);

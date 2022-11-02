@@ -321,4 +321,42 @@ class EcoleController extends Controller
             "message" => "supprimer avec success",
         ], 200);
     }
+
+    public function demandes(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+        ]);
+        $listeDemandes = DB::table("ecoles_has_users")
+            ->where("response", "attente")
+            ->where("ecole_id", $request->ecole_id)
+            ->get();
+        // $ecole = Ecole::findOrFail($request->ecole_id);
+        return response()->json([
+            "success" => true,
+            "data" => $listeDemandes->map(function ($demande) {
+                if ($demande->demandeable_type === 'App\\Models\\Ecole') {
+                    $user = User::find($demande->user_id);
+                    return [
+                        "initiateur" => 'ecole',
+                        "response" => $demande->response,
+                        "demande_id" => $demande->id,
+                        "user_id" => $user->id,
+                        "user_name" => $user->name,
+                        "demande_at" => $demande->created_at,
+                    ];
+                } elseif ($demande->demandeable_type === 'App\\Models\\User') {
+                    $user = User::find($demande->user_id);
+                    return [
+                        "initiateur" => 'user',
+                        "response" => $demande->response,
+                        "demande_id" => $demande->id,
+                        "user_id" => $user->id,
+                        "user_name" => $user->name,
+                        "demande_at" => $demande->created_at,
+                    ];
+                }
+            }),
+        ], 200);
+    }
 }
