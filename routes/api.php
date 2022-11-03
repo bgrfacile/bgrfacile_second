@@ -106,6 +106,10 @@ Route::prefix('v1')->group(function () {
             Route::put('/ecoles/user/refuse', [EcoleController::class, 'refuseDemandeUser']);
             Route::delete('/ecoles/user/delete', [EcoleController::class, 'deleteDemandeUser']);
 
+            Route::post('/ecoles/localisation/ajout', [EcoleController::class, 'ajoutLocalisation']);
+            Route::put('/ecoles/localisation/update', [EcoleController::class, 'updateLocalisation']);
+            Route::delete('/ecoles/localisation/delete', [EcoleController::class, 'deleteLocalisation']);
+
             Route::apiResource("/type-ecoles", TypeEcoleController::class)->except(['index', 'show']);
             /**
              * Tuteur feat

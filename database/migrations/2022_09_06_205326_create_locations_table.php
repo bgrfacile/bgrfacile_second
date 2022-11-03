@@ -19,9 +19,10 @@ return new class extends Migration
                 ->index()
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('adresse')->nullable();
-            $table->float('lng')->nullable();
-            $table->float('lat')->nullable();
+            $table->string('address')->nullable();
+            $table->float('longitude')->nullable();
+            $table->float('latitude')->nullable();
+            $table->string('code_postal')->nullable();
             $table->timestamps();
         });
     }

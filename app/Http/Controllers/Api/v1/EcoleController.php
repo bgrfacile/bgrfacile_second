@@ -359,4 +359,62 @@ class EcoleController extends Controller
             }),
         ], 200);
     }
+
+    public function ajoutLocalisation(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "latitude" => "required",
+            "longitude" => "required",
+            "address" => "string",
+            "code_postal" => "string",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $ecole->location()->create([
+            "latitude" => $request->latitude,
+            "longitude" => $request->longitude,
+            "address" => $request->address,
+            "code_postal" => $request->code_postal,
+        ]);
+        return response()->json([
+            "message" => "localisation ajouter avec success",
+        ], 200);
+    }
+
+    public function updateLocalisation(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "localisation_id" => "required",
+            "latitude" => "required",
+            "longitude" => "required",
+            "address" => "string",
+            "code_postal" => "string",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $ecole->location()->update([
+            "latitude" => $request->latitude,
+            "longitude" => $request->longitude,
+            "address" => $request->address,
+            "code_postal" => $request->code_postal,
+        ]);
+        return response()->json([
+            "message" => "localisation modifier avec success",
+        ], 200);
+    }
+
+    public function deleteLocalisation(Request $request)
+    {
+        $request->validate([
+            "ecole_id" => "required",
+            "localisation_id" => "required",
+        ]);
+        $ecole = Ecole::findOrFail($request->ecole_id);
+        $ecole->location()->delete([
+            "id" => $request->localisation_id,
+        ]);
+        return response()->json([
+            "message" => "localisation supprimer avec success",
+        ], 200);
+    }
 }

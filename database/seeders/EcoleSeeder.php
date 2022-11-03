@@ -26,7 +26,7 @@ class EcoleSeeder extends Seeder
                 'email' => Factory::create()->email,
                 'site_web' => Factory::create()->url,
                 'description' => Factory::create()->sentence(50),
-                'avantages' => Factory::create()->sentence(100),
+                'avantages' => Factory::create()->randomHtml(2, 3),
                 'path_logo' => Factory::create()->imageUrl(),
                 'path_baniere' => Factory::create()->imageUrl(),
             ]);
@@ -36,6 +36,12 @@ class EcoleSeeder extends Seeder
                     'description' => Factory::create()->sentence(10),
                 ]);
             }
+            $ecole->location()->create([
+                'address' => Factory::create()->address,
+                'latitude' => Factory::create()->latitude,
+                'longitude' => Factory::create()->longitude,
+                'code_postal' => Factory::create()->postcode,
+            ]);
             $ecole->cycles()->attach(Cycle::all()->random(2));
             $ecole->typeEcole()->attach(Factory::create()->randomElement(['1', '2', '3', '4']));
         }
